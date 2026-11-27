@@ -1,0 +1,7 @@
+沉月会出生点已完成。月冠高 **8.60 米**，建筑占地 **9.86 × 9.00 米**，共 **82,478 个三角形**。完成了 8 版预览和 7 次修订。实际地图复查中，两尊甲士完整可见，门洞通透，右侧水流接到阶脚。[模型文件](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/out/spawn_me.glb) · [实地图截图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/out/rounds/r8_map.jpg)
+
+有一处高度调整。现有台面会遮住低于 Y=0 的水面，因此水面主体放在台面上方约 **2 厘米**，比池沿低约 **6 厘米**。台面前部的构件最高 **11.7 厘米**，符合 12 厘米限高。
+
+[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/out/preview_game.jpg) · [近看](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/out/preview_close.jpg) · [定稿对照](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/out/compare.jpg)
+
+建模脚本已重跑，生成的 GLB 与交付文件逐字节一致。[建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/build.py) · [尺寸、逐轮记录与设计差异](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_me/out/NOTES.md)

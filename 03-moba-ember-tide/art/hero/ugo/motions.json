@@ -1,0 +1,129 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ugo_skeleton.json",
+ "out_dir": "art/hero/ugo/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_idle/motion.npz",
+   "loop": [
+    48,
+    110
+   ],
+   "from": 0
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_run/motion.npz",
+   "loop": [
+    10,
+    26
+   ],
+   "from": 2,
+   "stride": true
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_attack1/motion.npz",
+   "segments": [
+    [
+     4,
+     17
+    ],
+    [
+     26,
+     33
+    ]
+   ]
+  },
+  "attack2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_attack2/motion.npz",
+   "segments": [
+    [
+     14,
+     26
+    ],
+    [
+     47,
+     58
+    ]
+   ]
+  },
+  "q": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_q/motion.npz",
+   "segments": [
+    [
+     8,
+     14
+    ],
+    [
+     24,
+     40
+    ],
+    [
+     79,
+     87
+    ]
+   ]
+  },
+  "w": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_w/motion.npz",
+   "segments": [
+    [
+     5,
+     10
+    ],
+    [
+     31,
+     50
+    ],
+    [
+     76,
+     89
+    ]
+   ]
+  },
+  "e": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_e/motion.npz",
+   "segments": [
+    [
+     6,
+     12
+    ],
+    [
+     19,
+     32
+    ],
+    [
+     50,
+     66
+    ]
+   ]
+  },
+  "r": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_r/motion.npz",
+   "segments": [
+    [
+     5,
+     26
+    ],
+    [
+     44,
+     74
+    ],
+    [
+     84,
+     116
+    ]
+   ]
+  },
+  "death": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ugo_death_fix/motion.npz",
+   "range": [
+    1,
+    80
+   ],
+   "settle": false
+  }
+ }
+}

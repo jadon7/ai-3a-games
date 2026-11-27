@@ -1,0 +1,4 @@
+vero_v9 runSpeed 6.6 LeftFoot:-0.12 LeftToeBase:-0.38 RightFoot:-0.68 RightToeBase:-0.4
+vero runSpeed 6.65 LeftFoot:-0.19 LeftToeBase:-0.44 RightFoot:-0.07 RightToeBase:-0.38
+seren_v9 runSpeed 4.75 LeftFoot:-0.02 LeftToeBase:-0.14 RightFoot:0.09 RightToeBase:-0.02
+seren runSpeed 4.78 LeftFoot:-0.09 LeftToeBase:-0.12 RightFoot:0.03 RightToeBase:0.02

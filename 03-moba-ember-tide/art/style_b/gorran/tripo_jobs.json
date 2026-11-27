@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_gorran_b",
+  "image": "art/style_b/gorran/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

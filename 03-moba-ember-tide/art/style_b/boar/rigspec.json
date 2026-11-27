@@ -1,0 +1,11 @@
+{
+ "_说明": "炽鬃野猪 B（w-beast）。Tripo 四足绑骨 41 根，原始坐标面朝 -Y、左 +X。躯干 Spine_0 骨盆、Spine_1、Spine_2 胸；脖子 Head_0，头 Head_1（獠牙、吻部都在它上面），Head_2 下巴尖、bone_7/bone_8 耳朵跟着头。左前腿：肩胛 bone_9、上臂 bone_10、前臂 0_Left_Limb_0、掌 0_Left_Limb_1、蹄 Limb_2..4；右前腿的肩胛叫 Spine_3、上臂叫 Spine_4（本身不管顶点，右上臂的肉在它的子骨骼 Spine_5 上，跟着走）、前臂 0_Right_Limb_0、掌 0_Right_Limb_1。后腿：大腿 Limb_0、小腿 Limb_1、跖骨 Limb_2、蹄 Limb_3..5。尾巴 bone_36..40 不受控。",
+ "name": "boar_b", "old": "boar", "forward": [0, -1, 0], "target_length": 1.2, "root_bone_length": 0.12,
+ "bones": {"tripo::Root": ["root", 0], "tripo::Spine_0": ["spine", 0], "tripo::Head_0": ["neck", 0], "tripo::Head_1": ["head", 0],
+  "bone_9": ["scapula", 1], "bone_10": ["upper_f", 1], "tripo::0_Left_Limb_0": ["lower_f", 1], "tripo::0_Left_Limb_1": ["paw_f", 1],
+  "tripo::Spine_3": ["scapula", -1], "tripo::Spine_4": ["upper_f", -1], "tripo::0_Right_Limb_0": ["lower_f", -1], "tripo::0_Right_Limb_1": ["paw_f", -1],
+  "tripo::1_Left_Limb_0": ["upper_h", 1], "tripo::1_Left_Limb_1": ["lower_h", 1], "tripo::1_Left_Limb_2": ["hock", 1],
+  "tripo::1_Right_Limb_0": ["upper_h", -1], "tripo::1_Right_Limb_1": ["lower_h", -1], "tripo::1_Right_Limb_2": ["hock", -1]},
+ "chains": [{"name": "spine", "bones": ["tripo::Spine_1", "tripo::Spine_2"]}],
+ "feet": ["tripo::0_Left_Limb_3", "tripo::0_Right_Limb_3", "tripo::1_Left_Limb_4", "tripo::1_Right_Limb_4"]
+}

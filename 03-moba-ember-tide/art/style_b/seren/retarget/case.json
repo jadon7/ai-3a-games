@@ -1,0 +1,63 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik_feet": {
+   "ik": true,
+   "hands": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/seren.npz",
+ "src_build": "art/style_b/seren/src_build.json",
+ "src_timing": "art/style_b/seren/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/seren_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 5.6,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "attack1",
+   "q",
+   "r",
+   "run"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "塞伦的全部旧动作 → 塞伦 B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型、绑骨和螺壳长铳）。长铳双手拿：右手握枪托、左手托枪管，副手跟主手",
+ "tgt_rig": "../rigs/seren_b.npz",
+ "tgt_model": "../seren_b_rigged.glb",
+ "labels": [
+  "塞伦（旧模型）",
+  "B·只搬旋转",
+  "B·只加脚 IK",
+  "B·脚 + 副手 IK"
+ ],
+ "name": "seren_b",
+ "hands": {
+  "lead": "Right",
+  "follow": "Left"
+ }
+}

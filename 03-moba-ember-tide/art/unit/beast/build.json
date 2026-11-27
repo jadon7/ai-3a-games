@@ -1,0 +1,15 @@
+{
+ "name": "beast",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_skeleton.json",
+ "out": "art/unit/beast/game.glb",
+ "packed": "public/assets/unit/beast.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/unit/beast/motions/idle.npz",
+  "run": "art/unit/beast/motions/run.npz",
+  "attack1": "art/unit/beast/motions/attack1.npz",
+  "attack2": "art/unit/beast/motions/attack2.npz",
+  "roar": "art/unit/beast/motions/roar.npz",
+  "death": "art/unit/beast/motions/death.npz"
+ }
+}

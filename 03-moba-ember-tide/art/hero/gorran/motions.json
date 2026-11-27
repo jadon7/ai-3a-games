@@ -1,0 +1,109 @@
+{
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/gorran_skeleton.json",
+  "out_dir": "art/hero/gorran/motions",
+  "fps": 30,
+  "smooth": {
+    "Hand": 1.0,
+    "ForeArm": 1.0
+  },
+  "actions": {
+    "idle": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_idle/motion.npz",
+      "loop": [
+        44,
+        52
+      ],
+      "from": 8
+    },
+    "run": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_run/motion.npz",
+      "loop": [
+        17,
+        21
+      ],
+      "from": 20,
+      "stride": true
+    },
+    "attack1": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_attack1/motion.npz",
+      "segments": [
+        [
+          8,
+          18
+        ],
+        [
+          26,
+          56
+        ]
+      ]
+    },
+    "q": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_q/motion.npz",
+      "segments": [
+        [
+          14,
+          24
+        ],
+        [
+          73,
+          112
+        ]
+      ]
+    },
+    "w": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_w/motion.npz",
+      "segments": [
+        [
+          2,
+          32
+        ],
+        [
+          18,
+          30
+        ],
+        [
+          70,
+          118
+        ]
+      ]
+    },
+    "e": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_e/motion.npz",
+      "segments": [
+        [
+          10,
+          24
+        ],
+        [
+          46,
+          70
+        ],
+        [
+          104,
+          120
+        ]
+      ]
+    },
+    "r": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_r/motion.npz",
+      "segments": [
+        [
+          4,
+          44
+        ],
+        [
+          104,
+          116
+        ]
+      ]
+    },
+    "death": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/gorran_death/motion.npz",
+      "range": [
+        6,
+        120
+      ],
+      "settle": false
+    }
+  }
+}

@@ -1,0 +1,171 @@
+<meta charset="utf-8">
+<title>烬与潮 卡通版</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：换画风 B 的验收。顶部说明 → 现在的样子 → 要你定的 → 花费 → 按环境、建筑、角色、特效、界面分节的“改前 / 改后” → 回归和不足 */
+:root{
+  --bg:#eef3f8; --surface:#ffffff; --surface-2:#e2e9f2; --fg:#0f1d33; --muted:#52627a; --line:#cbd5e2;
+  --gold:#a8730f; --tide:#0b6f8a; --ok:#1d7a4a; --part:#9a6a00; --wait:#0b6f8a; --shot:#07101f;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0a1424; --surface:#111e33; --surface-2:#1a2a44; --fg:#e8eef7; --muted:#9aaac0; --line:#26385a; --gold:#f2c35a; --tide:#57d0e6; --ok:#5bd08f; --part:#e8b84a; --wait:#57d0e6; --shot:#030810; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0a1424; --surface:#111e33; --surface-2:#1a2a44; --fg:#e8eef7; --muted:#9aaac0; --line:#26385a; --gold:#f2c35a; --tide:#57d0e6; --ok:#5bd08f; --part:#e8b84a; --wait:#57d0e6; --shot:#030810; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:48px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--gold)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lede{margin:14px 0 0;max-width:50em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em;text-wrap:balance}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:56em}
+code{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stack{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.b{border-color:var(--gold);color:var(--gold)}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.decide{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.decide section{min-width:0;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.decide h3{margin:0;font:700 15.5px/1.4 var(--body)}
+.decide p{margin:0;font-size:14px;line-height:1.7;color:var(--muted)}
+.decide p.rec{color:var(--fg)}
+.decide p.rec b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--gold);margin-right:8px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.nums div{background:var(--surface);border:1px solid var(--line);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.nums b{font:600 26px/1.2 var(--util);font-variant-numeric:tabular-nums}
+.nums span{font-size:13px;color:var(--muted)}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:36px} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 换画风 B · 明快卡通</p>
+  <h1>卡通版验收</h1>
+  <p class="lede">你说“git 记录一版，然后风格换卡通的吧”，选的是路子一“卡通厚涂”。换之前的厚涂写实版已经存档（<code>main</code> 分支和标签 <code>v9-painted</code>，也就是线上 moba.dsxzai.com 现在跑的那一版），随时能换回去。卡通版全部做在分支 <code>style-b</code> 上：地图、墙石、建筑、10 个英雄、2 种小兵、6 种野怪、特效、界面、海报和图标都换了，玩法和数值没动。旧动作全部直接套到了新模型上，一段动作视频都没重出。<b>还没发布到线上</b>，等你定。</p>
+</header>
+
+<section>
+  <h2>现在的样子</h2>
+  <p class="note">刚截的（最终代码，1920×1080）：首页、选英雄、载入、对局。</p>
+  <div class="stack">
+    <div class="row"><figure><img src="img/now_home.jpg" alt="首页" loading="lazy"><figcaption><span class="who b">首页</span>亮地图上一层淡深海蓝，主按钮亮金。</figcaption></figure><figure><img src="img/now_pick.jpg" alt="选英雄" loading="lazy"><figcaption><span class="who b">选英雄</span>十张卡通海报卡，深海蓝玻璃加金边。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/now_load.jpg" alt="载入" loading="lazy"><figcaption><span class="who b">载入</span>两队十张卡通海报。</figcaption></figure><figure><img src="img/now_game.jpg" alt="对局" loading="lazy"><figcaption><span class="who b">对局</span>卡通的岚在打野，顶栏头像和技能图标都是新的。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/now_phone_load.jpg" alt="手机载入" loading="lazy"><figcaption><span class="who b">手机</span>载入页（844×390）。</figcaption></figure><figure><img src="img/now_phone_game.jpg" alt="手机对局" loading="lazy"><figcaption><span class="who b">手机</span>对局。</figcaption></figure></div>
+  </div>
+</section>
+
+<section>
+  <h2>要你定的</h2>
+  <div class="decide">
+    <section><h3>发布到线上吗</h3><p>发布就是把 moba.dsxzai.com 换成卡通版（一条命令）。拿到地址的人下次打开就是卡通版。厚涂版在标签 <code>v9-painted</code> 里，想换回去再发一次就行。进一局要下载的资源比厚涂版小：电脑档 44.6 → 25.4 MB，手机档 35.6 → 22.8 MB。</p><p class="rec"><b>建议</b>先在本机试一局（<code>http://localhost:5183/</code>），觉得可以就发。</p></section>
+    <section><h3>两版要不要都挂在线上</h3><p>做视频时如果想让观众对比两种画风，可以把厚涂版另挂在一个子域名上（比如 moba-v9.dsxzai.com），卡通版用主域名。这要在你的 Cloudflare 上多建一个站和一条解析记录。</p><p class="rec"><b>建议</b>需要对比素材再挂，不需要就只发卡通版。</p></section>
+    <section><h3>宣传片要不要按卡通版重剪</h3><p>现在的宣传片是厚涂版的画面。按原来的分镜重录重剪，一个 Opus 任务约 2 小时，不花积分。</p></section>
+    <section><h3>卡通版能不能过</h3><p>你说过以后，我把 <code>style-b</code> 合进 <code>main</code>。合之前厚涂版一直在 <code>v9-painted</code> 里。</p></section>
+  </div>
+</section>
+
+<section>
+  <h2>花了多少</h2>
+  <p class="note">评估时给第 2 档报的是 Tripo 1300–1600、即梦 2200–4000、并行 3–4 天。实际都比报价少，主要因为旧动作全部套上了，没有重出动作视频，Tripo 的模型也都是一次过、没有重出。</p>
+  <div class="nums">
+    <div><b>1230</b><span>Tripo 积分（4390 → 3160）：18 个角色的模型和绑骨，3 把武器</span></div>
+    <div><b>1178</b><span>即梦积分（6633 → 5455）：设定图、地面重画、出生点设计稿、武器图、海报图标</span></div>
+    <div><b>19 次</b><span>Codex 建模：10 座建筑，合计约 185 分钟</span></div>
+    <div><b>约 1 天</b><span>从 11 月 20 日傍晚开工到 21 日凌晨，最多 6 个 Opus 任务并行</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>地图</h2>
+  <p class="note">现在和设计稿 B 最大的差距原来是亮度（我方草地 B 是 129,184,87，厚涂版只有 75,102,42），不是饱和度。光照改成分阶光、影子硬而有颜色，地面九个区参照 B 的设计稿重画，墙、石头、台阶、城墙改成圆润干净的整条厚板。墙和石头的位置、挡路范围逐项核对过一点没变，寻路、卡兵、两边对称都不受影响。</p>
+  <div class="stack">
+    <div class="row one"><figure><img src="img/env_me.jpg" alt="我方：设计稿 B / 改前 / 改后" loading="lazy"><figcaption><span class="who b">我方</span>设计稿 B / 改前 / 改后。</figcaption></figure></div>
+    <div class="row one"><figure><img src="img/env_foe.jpg" alt="对方：设计稿 B / 改前 / 改后" loading="lazy"><figcaption><span class="who b">对方</span>设计稿 B / 改前 / 改后。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/walls_foe.jpg" alt="对方墙近景" loading="lazy"><figcaption><span class="who b">墙</span>对方的墙：设计稿 / 改前 / 只换光 / 改后。</figcaption></figure><figure><img src="img/moss.jpg" alt="我方墙青苔改前改后" loading="lazy"><figcaption><span class="who b">青苔</span>我方白墙上的亮绿斑块收成墙顶淡淡几块。</figcaption></figure></div>
+  </div>
+</section>
+
+<section>
+  <h2>建筑</h2>
+  <p class="note">两个阵营的塔（外塔、内塔、高地塔）、水晶、出生点先出 B 设计稿，再交给 Codex 重建，材质照 B 的色板。高度和占地照游戏里原来的，所以塔比设计稿瘦高。被拆、爆炸、挡视线时变透明都照常。</p>
+  <div class="row"><figure><img src="img/towers_me.jpg" alt="我方三档塔" loading="lazy"><figcaption><span class="who b">塔</span>我方三档：设计稿 / 改前 / 改后。</figcaption></figure><figure><img src="img/core_foe.jpg" alt="对方水晶" loading="lazy"><figcaption><span class="who b">水晶</span>对方：设计稿 / 改前 / 改后。</figcaption></figure></div>
+</section>
+
+<section>
+  <h2>角色</h2>
+  <p class="note">先拿岚和葛隆出了两个路子请你选（你选了卡通厚涂），再给其余 16 个角色出设定图。每个角色：设定图 → Tripo 出模型和绑骨 → 用新写的工具把旧动作套上去（脚自动踩地）→ 进游戏。所有动作的出手时间点和旧版一帧不差，没有一段动作要重做。四足（卡兹、托尔格、奥森和四种野怪）的骨架每只都要先认骨头、修错绑，步骤写成了文档。</p>
+  <div class="stack">
+    <div class="row one"><figure><img src="img/sheets.jpg" alt="16 个角色的卡通设定图" loading="lazy"><figcaption><span class="who b">设定图</span>每格左边是旧设定，右边是卡通版。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/h_lan.jpg" alt="岚" loading="lazy"><figcaption><span class="who b">岚</span>设定图 / 游戏里卡通版 / 旧版。</figcaption></figure><figure><img src="img/h_gorran.jpg" alt="葛隆" loading="lazy"><figcaption><span class="who b">葛隆</span>同上。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/h_hedda.jpg" alt="赫达" loading="lazy"><figcaption><span class="who b">赫达</span></figcaption></figure><figure><img src="img/h_moko.jpg" alt="摩珂" loading="lazy"><figcaption><span class="who b">摩珂</span>法杖重做成浮木杖加海螺月牙。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/h_ugo.jpg" alt="乌戈" loading="lazy"><figcaption><span class="who b">乌戈</span></figcaption></figure><figure><img src="img/h_vero.jpg" alt="薇萝" loading="lazy"><figcaption><span class="who b">薇萝</span>连弩从黑铁换成木头加铜。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/h_seren.jpg" alt="塞伦" loading="lazy"><figcaption><span class="who b">塞伦</span></figcaption></figure><figure><img src="img/h_torg.jpg" alt="托尔格" loading="lazy"><figcaption><span class="who b">托尔格</span>设定图 / 卡通版 / 旧版，附颜色量数。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/h_kaz.jpg" alt="卡兹" loading="lazy"><figcaption><span class="who b">卡兹</span></figcaption></figure><figure><img src="img/h_osen.jpg" alt="奥森" loading="lazy"><figcaption><span class="who b">奥森</span></figcaption></figure></div>
+    <div class="row"><figure><img src="img/minions.jpg" alt="两队小兵" loading="lazy"><figcaption><span class="who b">小兵</span>同一个模型，我方青蓝、对方余烬红；比英雄暗一档。</figcaption></figure><figure><img src="img/beast.jpg" alt="岩甲巨兽" loading="lazy"><figcaption><span class="who b">Boss</span>岩甲巨兽：设定图 / 卡通版 / 旧版。</figcaption></figure></div>
+  </div>
+</section>
+
+<section>
+  <h2>特效、界面、海报</h2>
+  <p class="note">特效原来是按暗青绿地面调的，白色和浅青的在亮地面上看不清、焦黑的痕迹像污渍：改成核心亮而有色、边缘同色系深一档、地上痕迹用暖褐。界面从“黑铁加旧铜”换成“深海蓝玻璃加亮金”，布局和操作不动。海报、头像、技能和装备图标按卡通厚涂重出（125 张）。</p>
+  <div class="stack">
+    <div class="row one"><figure><img src="img/fx.jpg" alt="特效改前改后" loading="lazy"><figcaption><span class="who b">特效</span>每格左改前、右改后。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/ui_game.jpg" alt="对局界面改前改后" loading="lazy"><figcaption><span class="who b">界面</span>对局，上改前、下改后。</figcaption></figure><figure><img src="img/bars.jpg" alt="头顶血条改前改后" loading="lazy"><figcaption><span class="who b">血条</span>头顶血条从黑底换成深海蓝，自己那条亮金边。</figcaption></figure></div>
+    <div class="row one"><figure><img src="img/splash.jpg" alt="海报改前改后" loading="lazy"><figcaption><span class="who b">海报</span>上旧下新。</figcaption></figure></div>
+    <div class="row one"><figure><img src="img/skill48.jpg" alt="技能图标 48 像素" loading="lazy"><figcaption><span class="who b">图标</span>48 像素下的技能图标，旧 / 新交替排。</figcaption></figure></div>
+  </div>
+</section>
+
+<section>
+  <h2>回归、帧率、还不够好的</h2>
+  <div class="tbl"><table><thead><tr><th>检查</th><th>结果</th></tr></thead><tbody>
+  <tr><td>类型检查、打包</td><td>都过。上线资源 74.4 → 50.6 MB（电脑档 44.6 → 25.4，手机档 35.6 → 22.8）</td></tr>
+  <tr><td>鼠标键盘（右键移动、拖着走、技能瞄准取消、钩引、商店、回城、小地图等）</td><td>和厚涂版一致，无报错。中途有几次钩引没钩中，在机器空闲时复查两遍都钩中，是六个任务同时跑、负载太高造成的</td></tr>
+  <tr><td>触屏（摇杆、攻击键、技能点按和拖动瞄准、取消、商店、计分板、竖屏暂停等）</td><td>全过，无报错</td></tr>
+  <tr><td>全电脑五对五，新老英雄混搭</td><td>两局 17:58、20:23 分出胜负，无报错</td></tr>
+  <tr><td>十人团战帧率（正常速度、不锁帧，厚涂版和卡通版轮流量）</td><td>电脑档 22 对 23，手机档 29 对 35，卡通版持平或略快（当时机器上别的程序占着显卡，绝对数都低，看相对）</td></tr>
+  </tbody></table></div>
+  <div class="cols" style="margin-top:20px">
+    <section><h3>我看下来还不够好的</h3><ul>
+      <li>几个英雄在亮草地上不比地面亮（葛隆、乌戈、狼），靠深色轮廓和朝光一侧的亮边才认出来。</li>
+      <li>卡兹毛色偏冷蓝灰，设定图是暖紫炭灰；卡兹跑步后脚有点滑。</li>
+      <li>薇萝的红偏玫红，抬弩时弩臂会穿过头胸；塞伦的骨白枪托偏粗。</li>
+      <li>卡兹的眼缝、奥森的烛火、薇萝的火油罐不发光（游戏只认青色发光，旧版也一样）。</li>
+      <li>塔比设计稿瘦高，青铜框架偏细；出生点的石像偏小。</li>
+      <li>特效多数是颜色更饱和、白光少了，幅度中等；摩珂 W 还是透明泡，奥森 E 在亮地面上是一块偏重的深色。</li>
+      <li>48 像素下有几组图标比较像（托尔格 Q 和 W 都是钟、两把弩、三双靴子）；几张海报景别不统一。</li>
+    </ul></section>
+    <section><h3>没验证的</h3><ul>
+      <li>真手机上的样子和帧率（只在电脑的 Chrome 里按手机参数跑过）。</li>
+      <li>每个角色的蒙皮只在拼图和测试场里看过，没有在 Blender 里逐根看权重。</li>
+    </ul></section>
+    <section><h3>顺带的事</h3><ul>
+      <li>磁盘满过两次，大头是 Adobe 的媒体缓存（20 GB，你剪视频生成的，我没动）；我清过 4.7 GB 残留的临时文件。</li>
+      <li>关掉了两个早先测试留下没退出的无界面 Chrome。</li>
+    </ul></section>
+  </div>
+</section>
+
+<footer class="foot">换画风 B · 2026-11-21 · 本页私有。参照王者荣耀等只看画面和做法，没有用它们的素材。</footer>
+</div>

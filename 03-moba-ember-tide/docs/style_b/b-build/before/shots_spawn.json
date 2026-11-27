@@ -1,0 +1,34 @@
+[
+ {
+  "name": "spawn_me",
+  "q": "cam=-102.3,0,26,42,3,125",
+  "fps": 60,
+  "calls": 39,
+  "tris": 237832,
+  "errors": []
+ },
+ {
+  "name": "spawn_foe",
+  "q": "cam=102.3,0,26,42,3,-55",
+  "fps": 60,
+  "calls": 43,
+  "tris": 192670,
+  "errors": []
+ },
+ {
+  "name": "g_spawn_me",
+  "q": "cam=-100,0,27,56,0",
+  "fps": 60,
+  "calls": 48,
+  "tris": 324408,
+  "errors": []
+ },
+ {
+  "name": "g_spawn_foe",
+  "q": "cam=100,0,27,56,0",
+  "fps": 60,
+  "calls": 43,
+  "tris": 190812,
+  "errors": []
+ }
+]

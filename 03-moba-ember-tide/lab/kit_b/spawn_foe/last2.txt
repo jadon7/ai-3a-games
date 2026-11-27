@@ -1,0 +1,7 @@
+已完成第二轮返工，更新了[出生点模型](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/spawn_foe.glb>)。共改了四版，每版都在预览页和地图页检查过。[设计稿对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/compare.jpg>) · [甲士近看](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/rounds/b2_r4_guard_angle.jpg>)
+
+两尊甲士各高 **2.90 米**，肩宽 **1.20 米**。平顶桶盔正面刻出 T 形缝，两块圆肩甲各宽 **0.55 米**。胸甲和披风各成一整块，双手交叠在剑柄上。剑身长 **1.50 米**、宽 **0.20 米**，剑尖落在高 **0.60 米**的方墩上。
+
+整件模型高 **8.62 米**，共 **66,222 个三角形**，低于 70,000 上限。逐网格核对确认，改动只涉及两尊甲士和像墩。与设计稿相比，盔顶仍较宽，游戏远景下拇指和剑柄的分界较弱。
+
+[游戏镜头](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/preview_game.jpg>) · [地图实景](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/preview_map.jpg>) · [四版记录与项目测量输出](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/NOTES.md>)

@@ -1,0 +1,11 @@
+第二轮返工已完成，共改四版。每版都在游戏预览页和中路地图复查。三座塔的指定分段半径全部达标，面数均低于 32,000。
+
+| 模型 | 定稿大形 | 三角形 |
+| --- | --- | ---: |
+| [外塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/tower_me_1.glb) | 四根铜框离开石身，柱脚半径 1.78 米，新月钩外缘半径 1.63 米 | 17,984 |
+| [内塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/tower_me_2.glb) | 下钟半径从 1.65 米收到 1.15 米，新月钩外缘半径 1.75 米 | 26,672 |
+| [高地塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/tower_me_3.glb) | 双钟石身，腰带位于 3.2 米和 6.0 米，莲冠由六片外瓣和五片内瓣组成 | 31,952 |
+
+为保留塔高和 `crystal` 旋转原点，三颗晶体均向下加长 0.10 米，包围盒中心和游戏点光各下降 0.05 米。与设计稿相比，外塔和内塔的钩根仍偏薄，钩与晶体之间的留白稍多。
+
+[设计稿与成品对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/compare.jpg) · [中路地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_map.jpg) · [游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_game.jpg) · [三塔近看](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_close.jpg) · [四版记录与原始量测](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/NOTES.md)

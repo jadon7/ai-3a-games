@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_seren_b",
+  "image": "art/style_b/seren/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

@@ -1,0 +1,252 @@
+{
+ "mode": "phone",
+ "errors": [],
+ "min": 60,
+ "avg": 60,
+ "bigFightSeconds": 8,
+ "bigFightMin": 60,
+ "bigFightAvg": 60,
+ "maxFighting": 9,
+ "samples": [
+  {
+   "fps": 60,
+   "t": 253,
+   "fighting": 0,
+   "onScreen": 1
+  },
+  {
+   "fps": 60,
+   "t": 254,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 255,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 256,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 257,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 258,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 259,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 260,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 261,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 262,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 263,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 264,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 265,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 266,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 267,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 268,
+   "fighting": 0,
+   "onScreen": 4
+  },
+  {
+   "fps": 60,
+   "t": 269,
+   "fighting": 0,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 270,
+   "fighting": 2,
+   "onScreen": 8
+  },
+  {
+   "fps": 60,
+   "t": 271,
+   "fighting": 8,
+   "onScreen": 9
+  },
+  {
+   "fps": 60,
+   "t": 272,
+   "fighting": 8,
+   "onScreen": 9
+  },
+  {
+   "fps": 60,
+   "t": 273,
+   "fighting": 9,
+   "onScreen": 9
+  },
+  {
+   "fps": 60,
+   "t": 274,
+   "fighting": 7,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 274,
+   "fighting": 7,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 275,
+   "fighting": 4,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 276,
+   "fighting": 7,
+   "onScreen": 8
+  },
+  {
+   "fps": 60,
+   "t": 277,
+   "fighting": 6,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 277,
+   "fighting": 6,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 278,
+   "fighting": 5,
+   "onScreen": 7
+  },
+  {
+   "fps": 60,
+   "t": 279,
+   "fighting": 4,
+   "onScreen": 6
+  },
+  {
+   "fps": 60,
+   "t": 279,
+   "fighting": 2,
+   "onScreen": 6
+  },
+  {
+   "fps": 60,
+   "t": 280,
+   "fighting": 1,
+   "onScreen": 6
+  },
+  {
+   "fps": 60,
+   "t": 281,
+   "fighting": 1,
+   "onScreen": 6
+  },
+  {
+   "fps": 60,
+   "t": 282,
+   "fighting": 1,
+   "onScreen": 6
+  },
+  {
+   "fps": 60,
+   "t": 283,
+   "fighting": 0,
+   "onScreen": 5
+  },
+  {
+   "fps": 60,
+   "t": 283,
+   "fighting": 0,
+   "onScreen": 5
+  },
+  {
+   "fps": 60,
+   "t": 284,
+   "fighting": 0,
+   "onScreen": 5
+  },
+  {
+   "fps": 60,
+   "t": 285,
+   "fighting": 0,
+   "onScreen": 5
+  },
+  {
+   "fps": 60,
+   "t": 286,
+   "fighting": 0,
+   "onScreen": 5
+  },
+  {
+   "fps": 60,
+   "t": 287,
+   "fighting": 0,
+   "onScreen": 5
+  },
+  {
+   "fps": 60,
+   "t": 288,
+   "fighting": 0,
+   "onScreen": 5
+  }
+ ]
+}

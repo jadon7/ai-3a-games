@@ -1,0 +1,15 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> moba@0.2.0 build
+> vite build
+
+vite v6.4.6 building for production...
+transforming...
+✓ 76 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/map.html                 2.12 kB │ gzip:   1.18 kB
+dist/app/map-zGfVPK2y.js  1,510.74 kB │ gzip: 484.77 kB
+✓ built in 1.32s
+
+上线的资源 277 个，50.6 MB；电脑档 25.4 MB，手机档 22.8 MB；代码 1.5 MB；版本 468c8696ae

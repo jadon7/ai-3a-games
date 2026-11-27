@@ -1,0 +1,132 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/hedda_skeleton.json",
+ "out_dir": "art/hero/hedda/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0,
+  "ForeArm": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_idle/motion.npz",
+   "loop": [
+    40,
+    80
+   ],
+   "from": 4
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_run/motion.npz",
+   "loop": [
+    12,
+    24
+   ],
+   "from": 10,
+   "stride": true
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_attack1/motion.npz",
+   "segments": [
+    [
+     14,
+     18
+    ],
+    [
+     23,
+     37
+    ],
+    [
+     47,
+     62
+    ]
+   ]
+  },
+  "attack2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_attack2/motion.npz",
+   "segments": [
+    [
+     16,
+     31
+    ],
+    [
+     70,
+     84
+    ]
+   ]
+  },
+  "q": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_q/motion.npz",
+   "segments": [
+    [
+     29,
+     48
+    ],
+    [
+     50,
+     78
+    ],
+    [
+     92,
+     110
+    ]
+   ]
+  },
+  "w": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_w/motion.npz",
+   "segments": [
+    [
+     5,
+     18
+    ],
+    [
+     30,
+     60
+    ]
+   ]
+  },
+  "e": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_e/motion.npz",
+   "segments": [
+    [
+     2,
+     24
+    ],
+    [
+     70,
+     106
+    ]
+   ]
+  },
+  "r": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_r/motion.npz",
+   "segments": [
+    [
+     6,
+     18
+    ],
+    [
+     48,
+     72
+    ],
+    [
+     88,
+     110
+    ]
+   ]
+  },
+  "death": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/hedda_death/motion.npz",
+   "segments": [
+    [
+     0,
+     46
+    ],
+    [
+     64,
+     100
+    ]
+   ],
+   "settle": false
+  }
+ }
+}

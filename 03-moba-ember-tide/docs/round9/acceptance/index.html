@@ -1,0 +1,206 @@
+<meta charset="utf-8">
+<title>烬与潮 第九轮</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：第九轮验收。顶部说明 → 12 条总表 → 要你定的事 → 按主题的小节（说明加图）→ 回归和花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:48px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lede{margin:14px 0 0;max-width:48em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em;text-wrap:balance}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:54em}
+code{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.row.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stack{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap;color:var(--muted)}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.wait{color:var(--tide)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:62em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.decide{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.decide section{min-width:0;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--tide);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.decide h3{margin:0;font:700 15.5px/1.4 var(--body)}
+.decide p{margin:0;font-size:14px;line-height:1.7;color:var(--muted)}
+.decide p.rec{color:var(--fg)}
+.decide p.rec b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--tide);margin-right:8px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:62em}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+.live{display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;padding:12px 22px;border:1px solid var(--line);font:600 15px/1 var(--util);letter-spacing:.08em;color:var(--fg);text-decoration:none;background:color-mix(in srgb,var(--tide) 14%,transparent)}
+.live small{font-weight:500;color:var(--muted);letter-spacing:0}
+@media (max-width:760px){ .row,.row.four{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:36px} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 第九轮 · 你看完阶段 8 提的 12 条</p>
+  <h1>第九轮验收</h1>
+  <p class="lede">这一轮全部交给 Opus 5.5 做（按你说的），我负责派活、看证据、合并、跑回归。前后四批、二十多个任务，都已合进 <code>phase9</code> 分支，整体回归全过。最大的变化：五对五、十个英雄可以自由选（新加了四个，其中两个不是人形），特效改了两轮再收尾，界面整套换了，装备扩到 44 件。<b>已按你说的重新发布到 moba.dsxzai.com</b>（2026-11-20），线上就是这一页说的版本。</p>
+  <a class="live" href="https://moba.dsxzai.com/" target="_blank" rel="noopener">moba.dsxzai.com<small>　点开就是主菜单；手机上横过来玩</small></a>
+</header>
+
+<section>
+  <h2>12 条逐条</h2>
+  <p class="note">“做完”是照你的原话做到了；“有差距”是做了、但我看下来离你要的还差一截，差在哪写在后面的小节里；“等你定”是你让我判断和评估的两条。</p>
+  <div class="tbl"><table><thead><tr><th>条</th><th>你的原话</th><th>状态</th><th>做成了什么</th></tr></thead><tbody>
+  <tr><td class="id">1</td><td>现在的特效都比较粗糙，要重点优化一下特效（技能、回城、攻击、胜利失败）</td><td class="st part">有差距</td><td>回城、普攻、胜负演出、受击都重做了；技能特效改了两轮再收尾一轮，大部分技能并排看是另一个档次。还弱的：托尔格 W、摩珂 E、塞伦普攻和 Q、乌戈大招张嘴那段</td></tr>
+  <tr><td class="id">2</td><td>手感很差，很多动作前摇都很长，移动的手感也很差</td><td class="st ok">做完</td><td>普攻前摇从攻击间隔的 36%–51% 降到 20%，技能出手 ≤0.3 秒、大招 ≤0.4 秒；改成右键移动和攻击、按下就走（130 毫秒 → 15 毫秒）、按住右键拖着走；转身快一倍</td></tr>
+  <tr><td class="id">3</td><td>防御塔的攻击距离要大于角色</td><td class="st ok">做完</td><td>塔 9.5 → 11.5 米、水晶 10 → 14 米，比最远的英雄普攻多 1.7 米；走近对方的塔会亮出射程圈</td></tr>
+  <tr><td class="id">4</td><td>UI 很粗糙，参照 LoL、Dota、王者荣耀（首页、选人、进游戏加载、游戏中）</td><td class="st part">有差距</td><td>首页、选人、加载、对局、商店、计分板、结算整套换成“黑铁加旧铜”；对局底栏又推了一轮。还差：底栏是 CSS 拼的，没有整块画的金属框</td></tr>
+  <tr><td class="id">5</td><td>角色海报也很粗糙，要有写真感，要足够好看</td><td class="st ok">做完</td><td>十个英雄的竖版、横版、头像全部重出（写真质感，即梦 Image 2.5 Pro）。整体偏暗、偏游戏主视觉</td></tr>
+  <tr><td class="id">6</td><td>商店道具太少，每个道具会有升级过程，有被动，放到特定职业上效果更适合</td><td class="st ok">做完</td><td>44 件，基础 → 进阶 → 成装三层合成（只付差价），18 件成装各有被动，按坦克、斗士、刺客、法师、射手、辅助各 3 件，放错职业吃不满</td></tr>
+  <tr><td class="id">7</td><td>应该是 5v5，角色允许自己选，有打野、辅助、上单、法师、射手</td><td class="st ok">做完</td><td>五对五，先选位置再选英雄，英雄不绑阵营；十个英雄每个位置两个（你答“要加新英雄”，新加了卡兹、赫达、乌戈、塞伦）；电脑按位置打。数值还没完全压平，见“平衡”</td></tr>
+  <tr><td class="id">8</td><td>角色死亡后不应该留下血条 UI</td><td class="st ok">做完</td><td>阵亡后血条、等级牌、脚下的圈都收起来</td></tr>
+  <tr><td class="id">9</td><td>很多小兵在地形上会被卡住动不了</td><td class="st ok">做完</td><td>改之前一局卡 251 次、最长 180 秒；找到五个根因都改了，三局里被地形卡住 0 次</td></tr>
+  <tr><td class="id">10</td><td>战争迷雾不应该直接压黑，参照 Dota</td><td class="st ok">做完</td><td>看不见的地方压暗、去饱和、偏冷，立着的东西一起暗，边缘平滑；对方在迷雾里放的技能也不再画出来</td></tr>
+  <tr><td class="id">11</td><td>地图实现跟设计稿还是存在巨大的差距，判断差距来源，能从什么层面优化</td><td class="st wait">等你定</td><td>出了报告：差在光是平的、绿色跑偏、东西摆得太满太匀。三件便宜的可以马上做，几件大的会动你以前认可过的东西</td></tr>
+  <tr><td class="id">12</td><td>全部修完之后，评估一下改成最早那个有点动漫感的风格要多少成本</td><td class="st wait">等你定</td><td>出了报告和试验图：三档方案，从 0 积分半天到即梦近万积分一周。建议现在不换</td></tr>
+  </tbody></table></div>
+</section>
+
+<section>
+  <h2>要你定的事</h2>
+  <div class="decide">
+    <section style="border-top-color:var(--ok)"><h3>重新发布到线上（已发布）</h3><p>你说“发布到线上”以后发了：新传了 120 个文件，线上的 <code>sw.js</code> 和本地打包的一模一样。对着线上地址跑了鼠标和触屏两套测试，判断项和本地完全一致，没有报错；线上首页写着“五对五”，十个英雄都在。老玩家下次打开会自动换成新版。进一局要下载的量这次没重新量：十个英雄都在场，会比阶段 8 量的 26 MB 多。</p></section>
+    <section><h3>地图要不要接着改（第 11 条）</h3><p>便宜的三件：重配光、全图铺一层大块树冠投影、草丛接受阴影并把饱和度收回 1.0。都不动你以前认可过的东西。大一点的（野区构图、大冠树、塔和水晶照设计稿重建）会改你认可过的，要你点头。</p><p class="rec"><b>建议</b>先做便宜的三件，一个任务半天左右，不花积分。</p></section>
+    <section><h3>要不要试卡通画风（第 12 条）</h3><p>只换光和颜色几乎不花钱，但英雄的贴图本身是暗铁灰钢，亮绿地图上会站着一群灰暗的写实角色。真要换得重出全部角色模型：即梦 2200–4000、Tripo 1300–1600、多个任务并行 3–4 天。</p><p class="rec"><b>建议</b>现在不换。想看看英雄换过去的样子，下一步是拿岚和葛隆各出一张卡通镜头图，约 10–50 即梦积分。</p></section>
+    <section><h3>第九轮能不能过</h3><p>你说过以后，我把阶段 8 和第九轮的分支合进主线（<code>main</code>），再接着做你定的下一步。现在 <code>phase8</code>、<code>phase9</code> 都还没合进去。</p></section>
+  </div>
+</section>
+
+<section>
+  <h2>现在的样子</h2>
+  <p class="note">下面四张是刚截的（最终代码，1920×1080）。首页写的是“五对五”，右下是十个英雄；选人照 LoL，两侧是两队栏位；加载是两队十张英雄卡加真实进度。</p>
+  <div class="stack">
+    <div class="row"><figure><img src="img/now_home.jpg" alt="首页：标题、开始对局、观战、测试场，右下十个英雄头像" loading="lazy"><figcaption><span class="who ours">首页</span>“五对五 · 三条线 · 一条河”，右下按阵营排着十个英雄。</figcaption></figure><figure><img src="img/now_pick.jpg" alt="选人界面：中间十张英雄卡，两侧两队五个栏位" loading="lazy"><figcaption><span class="who ours">选人</span>先选位置再选英雄；同一队不重复，两队之间可以撞（照 LoL 匹配）。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/now_load.jpg" alt="加载界面：上下两排各五张英雄写真卡" loading="lazy"><figcaption><span class="who ours">加载</span>两队十张写真卡，下面是真实的加载进度。</figcaption></figure><figure><img src="img/now_game.jpg" alt="对局画面：顶栏十个头像，底栏技能格和装备格" loading="lazy"><figcaption><span class="who ours">对局</span>顶栏十个头像带血条；底栏技能格放大、回城和商店在技能旁边。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/now_phone_pick.jpg" alt="手机横屏的选人界面" loading="lazy"><figcaption><span class="who ours">手机</span>手机横屏的选人（844×390）。</figcaption></figure><figure><img src="img/now_phone_game.jpg" alt="手机横屏的对局画面" loading="lazy"><figcaption><span class="who ours">手机</span>手机横屏的对局：玻璃底加细铜圈的技能键，照王者荣耀的路子。</figcaption></figure></div>
+  </div>
+</section>
+
+<section>
+  <h2>十个英雄（第 7 条）</h2>
+  <p class="note">你答“要加新英雄”以后，补了四个，做到每个位置两个：卡兹（烬誓庭打野，四足巨型猞猁）、赫达（烬誓庭辅助，背炉的女铁匠）、乌戈（沉月会法师，两足鮟鱇鱼人）、塞伦（沉月会射手，螺壳盔）。十个里四个不是人形。模型和动作照以前的管线做（Tripo 图转 3D、绑骨、即梦视频转动作），四个都是一次出成；技能、特效、电脑打法各一个任务。个头统一过：小兵缩到 1.45 米，人形英雄 3.3 米、四足 2.8 米起，十个都明显比小兵大。</p>
+  <div class="stack">
+    <div class="row one"><figure><img src="img/lineup.jpg" alt="十个英雄各和一排小兵站在一起" loading="lazy"><figcaption><span class="who ours">个头</span>十个英雄各和一排小兵站在一起（新四个是借老英雄技能截的，头顶名字是借来的那个）。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/kaz.jpg" alt="卡兹全部技能的代表帧" loading="lazy"><figcaption><span class="who new">卡兹</span>扑杀、裂爪、炉吼、焚猎（锁定一个英雄 6 秒，期间被杀就刷新技能、回血）。</figcaption></figure><figure><img src="img/hedda.jpg" alt="赫达全部技能的代表帧" loading="lazy"><figcaption><span class="who new">赫达</span>钳钩拉人、铁镣绷断拽回、护火冲到队友身边、炉心坠砸人堆击飞。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/ugo.jpg" alt="乌戈全部技能的代表帧" loading="lazy"><figcaption><span class="who new">乌戈</span>冷光束、诱光魅惑、磷潮减速并照出敌人、渊口（巨嘴从地下咬合）。这张是收尾前的，大招预告后来改了。</figcaption></figure><figure><img src="img/seren.jpg" alt="塞伦全部技能的代表帧" loading="lazy"><figcaption><span class="who new">塞伦</span>满潮弹、压满溅射、珍珠雷定身、反冲后滑、沉月弹穿墙。这张是收尾前的，普攻和珍珠雷后来改了。</figcaption></figure></div>
+  </div>
+</section>
+
+<section>
+  <h2>特效（第 1 条）</h2>
+  <p class="note">第一轮只升级了零件（粒子、刀光、拖尾、命中、顿帧），技能本身改前改后看不出差别，它自己也承认了。第二轮每个技能先找 LoL、Dota 2、王者里机制相近的技能当标杆、写分镜再做；找到的根因是青色发光落在青绿色的地面上没有反差，改成下面垫深色、上面叠亮边。最后一轮收尾：共用的东西、老英雄、新英雄各一个任务，专挑还弱的改。</p>
+  <div class="pairs">
+    <div class="pair"><h3>共用的东西（十个英雄都受益）</h3><ul><li>伤害数字：每个目标一摞，不再叠成一片；只显示自己打出和自己挨的（照 LoL）。</li><li>眩晕不再喷彩纸一样的星星，改成头顶一圈五颗小金星；减速、定身、沉默各有常驻小图标。</li><li>命中时每个目标身上那个一样的白圈去掉了；受击闪白按伤害比例、压了一档。</li><li>对方在迷雾里放的技能不再画出来。</li></ul><div class="row one"><figure><img src="img/polish_lib.jpg" alt="共用特效改前改后七组对比" loading="lazy"><figcaption><span class="who ours">左前右后</span>伤害数字、状态图标、护盾、闪白、命中、迷雾、队伍色、头顶名字。</figcaption></figure></div></div>
+    <div class="pair"><h3>六个老英雄</h3><p>第二轮三组（岚和托尔格、摩珂和奥森、葛隆和薇萝），收尾时又压了葛隆那几团太亮的橙火：火团减半、闪光压一半，形状改由贴地漫开的火来出；火场改成暗的地面加一圈立着的火苗，看得出范围。</p><div class="row one"><figure><img src="img/polish_old.jpg" alt="老英雄收尾改前改后" loading="lazy"><figcaption><span class="who ours">左前右后</span>葛隆 Q W E R、两个火场、薇萝 W、托尔格 W、摩珂 E、奥森 Q。</figcaption></figure></div><div class="row"><figure><img src="img/fx2a.jpg" alt="岚和托尔格第二轮的代表帧" loading="lazy"><figcaption><span class="who ours">第二轮</span>岚、托尔格。</figcaption></figure><figure><img src="img/fx2b.jpg" alt="摩珂和奥森第二轮的代表帧" loading="lazy"><figcaption><span class="who ours">第二轮</span>摩珂、奥森。</figcaption></figure></div></div>
+    <div class="pair"><h3>四个新英雄</h3><p>塞伦按最终身高重录；珍珠雷变成会张开的扇贝壳；乌戈大招的预告从一圈像钟面的白牙换成水下浮上来的鱼头影子，咬合后不再留下果冻一样的圆顶；卡兹 E 从几根线变成一整片热浪；赫达的预警圈改暗红、烙印挪到胸口。</p><div class="row one"><figure><img src="img/polish_new.jpg" alt="新英雄收尾改前改后" loading="lazy"><figcaption><span class="who ours">左前右后</span>塞伦、乌戈、卡兹、赫达。</figcaption></figure></div></div>
+    <div class="pair"><h3>回城、普攻、胜负、死亡血条（第 1、8 条）</h3><div class="row one"><figure><img src="img/recall.jpg" alt="回城特效改前改后" loading="lazy"><figcaption><span class="who ours">回城</span>上一行改前、下一行改后，每 0.45 秒一帧。</figcaption></figure></div><div class="row one"><figure><img src="img/ending.jpg" alt="胜利和失败的结束演出" loading="lazy"><figcaption><span class="who ours">胜负</span>慢动作、推近水晶，胜利金字收拢、失败灰红字落下。</figcaption></figure></div><div class="row"><figure><img src="img/attack.jpg" alt="普攻命中改前改后" loading="lazy"><figcaption><span class="who ours">普攻</span>刀光、拖尾、命中火花。</figcaption></figure><figure><img src="img/deathbar.jpg" alt="阵亡后血条收起的改前改后" loading="lazy"><figcaption><span class="who ours">第 8 条</span>上改前（阵亡后血条还在）、下改后。</figcaption></figure></div></div>
+  </div>
+  <div class="cols" style="margin-top:20px"><section><h3>我看下来还弱的</h3><ul><li>托尔格 W：水墙往外推，但从上往下看还是“一圈”。</li><li>摩珂 E：浪矮了、透了，缩小看还是一条青色带子。</li><li>塞伦普攻和 Q：从细白线变成粗水柱，好认了，但只是“更粗更亮”；水柱白芯偏亮。</li><li>乌戈大招张嘴那一段还是个碗形。</li><li>赫达的预警圈是一整片实心暗红，偏重。</li><li>那圈火苗在亮草地上偏亮，请你看看算不算光太多。</li></ul></section><section><h3>没验证的</h3><ul><li>真手机上的帧率和样子（只在电脑的 Chrome 里按手机参数跑过）。</li><li>迷雾藏特效只看位置不分是谁放的：自己英雄死了、附近没队友时，他留在地上的火场也看不见（LoL 里自己人的能看见）。</li></ul></section></div>
+</section>
+
+<section>
+  <h2>手感、塔、卡兵（第 2、3、9 条）</h2>
+  <p class="note">手感：普攻在出手前快放、出手后原速收招，每秒伤害不变；收招能被移动、普攻、技能打断；前摇里按的命令排队不再被吞。操作改成行业习惯：右键移动和攻击、按住右键拖着走、左键只确认技能和拖镜头、瞄准时右键取消。塔射程原来两边算距离的口径不一样，远程英雄能站在 10.2 米白拆塔，现在塔和水晶都比最远的英雄普攻多 1.7 米。卡兵的五个根因：绕路时跳过近拐点、并排走的偏移落进墙里、和自己人的推力抵消、减速时不重新寻路、野怪不寻路。</p>
+  <div class="row"><figure><img src="img/stuck_before.jpg" alt="改前一局里小兵卡住的位置分布" loading="lazy"><figcaption><span class="who">改前</span>一局里卡住的位置（251 次），集中在边路塔座和河岸拐角。</figcaption></figure><figure><img src="img/stuck_after.jpg" alt="改后小兵卡住的位置分布" loading="lazy"><figcaption><span class="who ours">改后</span>三局里被地形卡住 0 次。</figcaption></figure></div>
+</section>
+
+<section>
+  <h2>界面（第 4 条）</h2>
+  <p class="note">整套换成“黑铁加旧铜”，共用零件在一个文件里，首页、选人、加载、对局、商店、计分板、结算都用它。对局底栏第二轮：底栏加宽到屏宽的 57%，技能格放大、键位写在铜牌上、能放时亮边；血条照 LoL 分级（自己绿描金边、队友蓝、对方红）；团战时头顶名字挤就淡掉、只留血条。</p>
+  <div class="stack">
+    <div class="row one"><figure><img src="img/hud.jpg" alt="对局底栏第二轮改前改后" loading="lazy"><figcaption><span class="who ours">左前右后</span>同一局面（8:34，岚 10 级）。</figcaption></figure></div>
+    <div class="row"><figure><img src="img/home_ui.jpg" alt="首页第一轮改前改后" loading="lazy"><figcaption><span class="who ours">第一轮</span>首页改前改后（当时还是三对三，现在的样子见上面）。</figcaption></figure><figure><img src="img/phone_ui.jpg" alt="手机对局界面第一轮改前改后" loading="lazy"><figcaption><span class="who ours">第一轮</span>手机对局改前改后。</figcaption></figure></div>
+  </div>
+  <div class="cols" style="margin-top:20px"><section><h3>离顶流还差的</h3><ul><li>底栏的质感是 CSS 渐变和细线拼的，没有 LoL / Dota 那种整块画的金属框。</li><li>召唤师技能的位置放的是回城和商店；顶栏头像没有“大招好了”的标记。</li><li>手机底部正中还留着自己的血条和装备栏（王者荣耀只有头顶一条）。</li><li>首页没有主视觉立绘。</li></ul></section></div>
+</section>
+
+<section>
+  <h2>海报（第 5 条）和装备（第 6 条）</h2>
+  <p class="note">海报先拿岚试了五个即梦模型，定了 Image 2.5 Pro（照片质感强、听话、手和武器结构稳，4 积分一张）。十个英雄都有竖版、横版、头像，选人和加载里用的就是这些。装备 44 件：基础 10、进阶 11、进阶鞋 5、成装 18；新加了暴击、护甲穿透、法术穿透、韧性；被动的触发方式和职业打法对上（射手靠普攻、法师只认技能命中、刺客先手和收人头、坦克靠挨打和被控、辅助给队友），商店里每件写“适合谁”，有推荐出装；电脑照出装单攒配件合成。</p>
+  <div class="row"><figure><img src="img/poster.jpg" alt="海报新旧对比" loading="lazy"><figcaption><span class="who ours">海报</span>旧版和新版。它自己说：整体偏暗、偏游戏主视觉，不是真正通透的棚拍。</figcaption></figure><figure><img src="img/items.jpg" alt="44 件装备的图标" loading="lazy"><figcaption><span class="who ours">装备</span>44 件的图标。</figcaption></figure></div>
+</section>
+
+<section>
+  <h2>平衡</h2>
+  <p class="note">十个英雄放在一起以后专门调过一轮：改前改后各打 8 局混搭阵容的全电脑对战，另外 6 局镜像局查两边公不公平。</p>
+  <div class="cols"><section><h3>改好的</h3><ul><li>一局人头从平均 17 个升到约 20 个：原来脱战回血约是 LoL 的两倍多，消耗打出去很快回满；电脑占优势时更敢动手、队友在打会一起上。</li><li>辅助照 LoL 的辅助装加了任务收入，10 分钟身家从射手的 0.59 倍到 0.67 倍。</li><li>电脑按当前射程打人，射手后期用得上射程优势。</li><li>地图两边原来不公平：只放小兵对推 20 分钟，右上三座外塔全倒。查出四个原因（一方的兵总是先算、两队队形左右反了、兵线两头不一样长、一块大石头只压在一边的兵线上），修完后两边塔血几乎一样。</li></ul></section><section><h3>没压平的</h3><ul><li>中路乌戈仍压着奥森，上路葛隆仍比托尔格死得少。不过每批只有 8 局，两批之间结果会整个反过来，样本不够；要定强弱至少得打 30 局。</li><li>打野 10 分钟仍是全场最富（射手的 1.15 倍，LoL 约 0.85）；射手的绝对收入掉了约 400。</li><li>前 9 分钟的人头没变多；一边倒的局没减少。最后这次回归的四局里，三局人头差 10 个以上（13:3、15:5、20:3）。</li></ul></section></div>
+</section>
+
+<section>
+  <h2>地图差距（第 11 条）</h2>
+  <p class="note">只判断、没改。量下来差在三件事：一是光是平的，整屏的大块明暗只有设计稿的一半（没有树冠投影、天光补光太强、地面贴图被画成没有投影）；二是绿色一侧的颜色跑偏，饱和度高 40%–70%，偏柠檬黄绿；三是东西摆得太满太匀，一屏四到六段一样的墙。不建议换引擎。完整报告在项目里的 <code>docs/round9/map_gap/REPORT.md</code>。</p>
+  <div class="row one"><figure><img src="img/mapgap.jpg" alt="设计稿和游戏里同一处的对比" loading="lazy"><figcaption><span class="who">对比</span>设计稿（左）和游戏里同一处（右）。</figcaption></figure></div>
+  <div class="tbl" style="margin-top:12px"><table><thead><tr><th>档</th><th>做什么</th><th>动不动你认可过的</th></tr></thead><tbody>
+  <tr><td>便宜</td><td>重配光（天光降、影子更冷更实）；全图铺一层画面外的大块树冠投影；草丛接受阴影，调色饱和度收回 1.0</td><td>不动</td></tr>
+  <tr><td>中档</td><td>地面加低频明暗、环境光遮蔽、野区构图、大冠树、水</td><td>野区构图和大冠树会动</td></tr>
+  <tr><td>大动</td><td>建筑各自的贴图、塔和水晶照设计稿重建、离线烘焙光照</td><td>会动</td></tr>
+  </tbody></table></div>
+</section>
+
+<section>
+  <h2>换卡通画风的成本（第 12 条）</h2>
+  <p class="note">你记得的“有点动漫感的那个”，是最早定画风时并排给的方向 B “明快卡通”（王者荣耀峡谷那样亮、干净）；当时你选了 A“厚涂写实”。B 当时只画过环境，没画过英雄。评估任务在单独的分支上做了一个“只改光照和着色”的试验，没合进游戏。完整报告在 <code>docs/round9/stylecost/REPORT.md</code>。</p>
+  <div class="stack">
+    <div class="row one"><figure><img src="img/style_env.jpg" alt="设计稿 B、现在的游戏、只改光照的试验三张并排" loading="lazy"><figcaption><span class="who">环境</span>设计稿 B / 现在 / 只改光照和着色。草地的颜色和亮度追得上（现在和 B 最大的差别是亮度）。</figcaption></figure></div>
+    <div class="row one"><figure><img src="img/style_hero.jpg" alt="英雄在试验里提亮、加描边的样子" loading="lazy"><figcaption><span class="who">英雄</span>现在 / 提亮 / 再加描边。贴图本身是暗铁灰钢，着色器变不出原来没有的颜色。</figcaption></figure></div>
+  </div>
+  <div class="tbl" style="margin-top:12px"><table><thead><tr><th>档</th><th>改什么</th><th class="n">像设计稿</th><th class="n">Tripo</th><th class="n">即梦</th><th>时间</th></tr></thead><tbody>
+  <tr><td>1</td><td>只改光照和颜色</td><td class="n">三到四成</td><td class="n">0</td><td class="n">0</td><td>半天到一天</td></tr>
+  <tr><td>2</td><td>地图全换；10 个英雄、6 种野怪、2 种小兵重出模型；动作沿用旧的</td><td class="n">约八成</td><td class="n">1300–1600</td><td class="n">2200–4000</td><td>并行 3–4 天</td></tr>
+  <tr><td>3</td><td>第 2 档全部，动作也重出视频</td><td class="n">九成以上</td><td class="n">1300–1600</td><td class="n">8600–10000（超出余额）</td><td>5–7 天</td></tr>
+  </tbody></table></div>
+  <p class="note" style="margin-top:12px">第 2 档成不成取决于一件没试过的事：旧动作能不能直接套到新模型上。套不上就得往第 3 档走。余额是按记录推算的，没有实查。</p>
+</section>
+
+<section>
+  <h2>回归和花费</h2>
+  <div class="tbl"><table><thead><tr><th>检查</th><th>结果</th></tr></thead><tbody>
+  <tr><td>类型检查、打包</td><td>都过。代码 1.5 MB，资源 277 个</td></tr>
+  <tr><td>鼠标键盘（右键移动、拖着走、技能瞄准取消、商店、回城、小地图等）</td><td>和以前一致，无报错</td></tr>
+  <tr><td>触屏 28 项（摇杆、攻击键、技能点按和拖动瞄准、取消、商店、计分板、竖屏暂停等）</td><td>全过，无报错</td></tr>
+  <tr><td>全电脑五对五，四局新老英雄混搭（普通、困难各两局）</td><td>16:34–20:20 分出胜负，无报错；三局人头差距很大（见“平衡”）</td></tr>
+  <tr><td>团战帧率（十个人挤在一起打）</td><td>各任务改前改后都量过，没有变低；无界面 Chrome 锁 60 帧，只能说明没掉帧</td></tr>
+  </tbody></table></div>
+  <div class="cols" style="margin-top:20px"><section><h3>花费</h3><ul><li>即梦约 2850 积分：四个新英雄的设计 343、模型动作约 1755、海报 331、新英雄海报图标 262、界面 96、地图分析 42、装备图标 24。</li><li>Tripo 290（四个新英雄，都是一次出成）。</li><li>Cloudflare：只是把同一个静态站 jinyuchao 重新发布了一版，域名和别的记录没碰。</li></ul></section><section><h3>顺带的事</h3><ul><li>按你说的清了磁盘：删了约 9.9 GB 的过程文件（录像原始帧、截图、临时文件、宣传片原始录屏），git 管着的文件一个没动，宣传片成品留着。</li><li>本机的 ffmpeg 起不来（Homebrew 把 x265 升到 4.3 了），任务们都用旧版库绕开，没动系统。根治要你在终端跑 <code>brew upgrade ffmpeg</code>。</li><li>本机的 <code>python3</code> 中途变成 3.15、没装 Pillow，拼图改用 3.14。</li></ul></section></div>
+</section>
+
+<footer class="foot">第九轮 · 2026-11-20 · 本页私有。参照 LoL、Dota 2、王者荣耀只看画面和做法，没有用它们的素材。</footer>
+</div>

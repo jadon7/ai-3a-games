@@ -1,0 +1,4 @@
+== h_end7
+{"out":"docs/trailer/raw/h_end7.mp4","ok":true,"rep":{"t":728,"over":0,"kills":[5,15],"towers":[3,9],"lanes":"021 对 333","order":["defend","boss"],"camps":12,"boss":["troll 还有71秒","beast100%"],"buff":[[0,0],[0,1]],"heroes":["lan L11 0% 4/6/1 金449 装4 刀13 线0 [阵亡] 打202 跟兵线189 阵亡119 清兵51 回防42 等兵26","gorran* L15 15% 11/2/4 金5311 装5 刀51 线0 [清兵] 跟
+== t_tower2
+{"out":"docs/trailer/raw/t_tower2.mp4","ok":true,"rep":{"t":316,"over":0,"kills":[2,5],"towers":[9,8],"lanes":"333 对 233","order":["push","defend"],"camps":12,"boss":["troll100%","beast 还有157秒"],"buff":[[0,107],[0,0]],"heroes":["lan L5 92% 0/3/0 金707 装1 刀10 线0 [打 gorran] 跟兵线162 清兵52 阵亡32 打16 回防12 等兵10","vero* L6 87% 0/1/0 金817 装1 刀13 线1 [引导技�

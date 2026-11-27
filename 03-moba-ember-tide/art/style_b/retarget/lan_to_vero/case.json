@@ -1,0 +1,55 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/lan.npz",
+ "src_build": "art/hero/lan/build.json",
+ "src_timing": "public/assets/hero/lan.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 6.0,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "hook",
+   "r_end"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "岚的全部动作 → 薇萝的模型（手臂短 3%、A 字手臂多张开 8 度、脚踝高 30%）",
+ "tgt_rig": "../rigs/vero.npz",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+ "hide_weapon_tgt": true,
+ "labels": [
+  "岚（原）",
+  "薇萝·只搬旋转",
+  "薇萝·加脚 IK"
+ ],
+ "name": "lan_to_vero"
+}

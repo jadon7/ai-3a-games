@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_osen_stag",
+  "image": "art/hero/osen_stag/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

@@ -1,0 +1,12 @@
+// Cloudflare 的部署配置（阶段 8）。用的是 Workers 的静态资源托管：没有服务端代码，dist/ 里的文件原样发出去。
+// 发布：npm run build && npx wrangler deploy
+//   · 缓存规则在 dist/_headers 里（打包时由 vite.config.ts 生成）
+//   · 找不到的地址回 dist/404.html
+//   · 自定义域名写在 routes 里（custom_domain: true，Cloudflare 自己建解析记录和证书；域名得在同一个账号下）
+{
+  "name": "jinyuchao",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./dist", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" },
+  // 2026-11-20 用户定的域名
+  "routes": [{ "pattern": "moba.dsxzai.com", "custom_domain": true }]
+}

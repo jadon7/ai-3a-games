@@ -1,0 +1,58 @@
+{
+ "moveSpeed": 6.0,
+ "runSpeed": 10.8,
+ "attackRange": 2.1,
+ "attacks": [
+  {
+   "clip": "attack1",
+   "swing": 0.27,
+   "hit": 0.41,
+   "end": 0.9,
+   "hands": [
+    "R"
+   ],
+   "speed": 1.4
+  },
+  {
+   "clip": "attack2",
+   "swing": 0.35,
+   "hit": 0.5,
+   "end": 0.95,
+   "hands": [
+    "L"
+   ],
+   "speed": 1.4
+  }
+ ],
+ "hook": {
+  "clip": "hook",
+  "release": 0.48,
+  "end": 1.5,
+  "range": 11,
+  "cd": 6,
+  "speed": 1.6,
+  "pre": 0.2
+ },
+ "veil": {
+  "clip": "veil",
+  "start": 1.0,
+  "end": 1.9,
+  "dur": 4,
+  "cd": 10,
+  "boost": 1.35,
+  "speed": 1.7,
+  "pre": 0.1
+ },
+ "death": {
+  "clip": "death"
+ },
+ "skills": {
+  "r": {
+   "clip": "r",
+   "release": 0.83,
+   "end": 1.05,
+   "speed": 2.0,
+   "pre": 0.25
+  }
+ }
+}

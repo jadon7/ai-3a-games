@@ -1,0 +1,13 @@
+[
+ {"name": "tower_moon", "image": "concepts/buildings/tower-moon.png", "face_limit": 20000},
+ {"name": "base_cinder", "image": "concepts/buildings/base-cinder.png", "face_limit": 30000},
+ {"name": "base_moon", "image": "concepts/buildings/base-moon.png", "face_limit": 30000},
+ {"name": "tree_c1", "image": "concepts/props/tree_c1.png", "face_limit": 6000},
+ {"name": "tree_c2", "image": "concepts/props/tree_c2.png", "face_limit": 8000},
+ {"name": "tree_m1", "image": "concepts/props/tree_m1_crop.png", "face_limit": 8000},
+ {"name": "tree_m2", "image": "concepts/props/tree_m2.png", "face_limit": 6000},
+ {"name": "rock_c", "image": "concepts/props/rock_c.png", "face_limit": 4000},
+ {"name": "rock_m", "image": "concepts/props/rock_m.png", "face_limit": 5000},
+ {"name": "prop_c", "image": "concepts/props/prop_c.png", "face_limit": 8000},
+ {"name": "prop_m", "image": "concepts/props/prop_m.png", "face_limit": 8000}
+]

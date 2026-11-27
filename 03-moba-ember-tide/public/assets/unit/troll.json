@@ -1,0 +1,11 @@
+{
+ "height": 6.0, "ring": 2.6, "bar": 0.5,
+ "runSpeed": 3.86,
+ "attacks": [
+  {"clip": "attack1", "swing": 0.55, "hit": 0.86, "end": 1.46, "hands": [], "speed": 1.15},
+  {"clip": "attack2", "swing": 1.27, "hit": 1.52, "end": 2.55, "hands": []}
+ ],
+ "skills": {"roar": {"clip": "roar", "release": 1.05, "end": 2.83}},
+ "death": {"clip": "death"},
+ "points": {"hand": "Head", "chest": "Spine2", "up": 0.3}
+}

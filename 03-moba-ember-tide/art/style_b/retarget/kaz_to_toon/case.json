@@ -1,0 +1,107 @@
+{
+ "name": "kaz_to_toon",
+ "title": "卡兹的全部动作 → 卡兹自己改成卡通比例的模型（toonify.py：头 1.35 倍、前爪 1.3 倍、后爪 1.15 倍、四条腿上两节 0.75）",
+ "kind": "quadruped",
+ "map": "same",
+ "mode": "delta",
+ "src_rig": "../rigs/kaz.npz",
+ "tgt_rig": "../rigs/kaz_toon.npz",
+ "src_build": "art/hero/kaz/build.json",
+ "src_timing": "public/assets/hero/kaz.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz.blend",
+ "tgt_model": "../models/kaz_toon.blend",
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 2.8,
+ "game_h": 2.8,
+ "move_speed": 6.0,
+ "tip_src": "tripo::Head_1",
+ "tip_tgt": "tripo::Head_1",
+ "legs": [
+  {
+   "tgt": [
+    "tripo::0_Left_Limb_1",
+    "tripo::0_Left_Limb_2",
+    "tripo::0_Left_Limb_3"
+   ],
+   "src_end": "tripo::0_Left_Limb_3"
+  },
+  {
+   "tgt": [
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1",
+    "tripo::1_Left_Limb_2"
+   ],
+   "src_end": "tripo::1_Left_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::0_Right_Limb_1",
+    "tripo::0_Right_Limb_2",
+    "tripo::0_Right_Limb_3"
+   ],
+   "src_end": "tripo::0_Right_Limb_3"
+  },
+  {
+   "tgt": [
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1",
+    "tripo::1_Right_Limb_2"
+   ],
+   "src_end": "tripo::1_Right_Limb_2"
+  }
+ ],
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "bone_32",
+   "verts_of": "tripo::Head_1"
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "卡兹（原）",
+  "卡通卡兹·只搬旋转",
+  "卡通卡兹·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.0,
+  "zc": 0.42
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "r"
+  ],
+  "loops": {
+   "run": 4
+  },
+  "spacing": 1.6,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.35
+ }
+}

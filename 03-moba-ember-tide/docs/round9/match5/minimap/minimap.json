@@ -1,0 +1,86 @@
+{
+ "q": "h=lan&seed=31",
+ "at": [
+  {
+   "t": 90,
+   "shot": "minimap_01m30",
+   "heroes": [
+    "绿 jungle lan L3 [回城]",
+    "绿 top gorran L3 [回城]",
+    "绿 sup moko L2 [跟着 vero]",
+    "绿 adc vero L2 [跟兵线]",
+    "绿 mid osen L3 [清兵]",
+    "红 jungle lan L3 [回城]",
+    "红 sup moko L2 [跟着 vero]",
+    "红 adc vero L2 [跟兵线]",
+    "红 top torg L3 [跟兵线]",
+    "红 mid osen L3 [清兵]"
+   ]
+  },
+  {
+   "t": 180,
+   "shot": "minimap_03m00",
+   "heroes": [
+    "绿 jungle lan L4 [打野 骨面山魈]",
+    "绿 top gorran L4 [在出生点回血]",
+    "绿 sup moko L3 [跟着 vero]",
+    "绿 adc vero L3 [跟兵线]",
+    "绿 mid osen L4 [跟兵线]",
+    "红 jungle lan L4 [打野 苔背狼]",
+    "红 sup moko L3 [跟着 vero]",
+    "红 adc vero L3 [跟兵线]",
+    "红 top torg L5 [跟兵线]",
+    "红 mid osen L4 [清兵]"
+   ]
+  },
+  {
+   "t": 300,
+   "shot": "minimap_05m00",
+   "heroes": [
+    "绿 jungle lan L6 [打野 骨面山魈]",
+    "绿 top gorran L5 [清兵]",
+    "绿 sup moko L4 [跟兵线]",
+    "绿 adc vero L4 [跟兵线]",
+    "绿 mid osen L5 [清兵]",
+    "红 jungle lan L6 [打野 骨面山魈]",
+    "红 sup moko L5 [跟着 vero]",
+    "红 adc vero L5 [跟兵线]",
+    "红 top torg L6 [打 gorran]",
+    "红 mid osen L6 [清兵]"
+   ]
+  },
+  {
+   "t": 420,
+   "shot": "minimap_07m00",
+   "heroes": [
+    "绿 jungle lan L8 [打 岩甲巨兽]",
+    "绿 top gorran L7 [在出生点回血]",
+    "绿 sup moko L6 [打 岩甲巨兽]",
+    "绿 adc vero L6 [清兵]",
+    "绿 mid osen L8 [清兵]",
+    "红 jungle lan L8 [打 岩甲巨兽]",
+    "红 sup moko L5 [打 岩甲巨兽]",
+    "红 adc vero L5 [跟兵线]",
+    "红 top torg L9 [跟兵线]",
+    "红 mid osen L8 [清兵]"
+   ]
+  },
+  {
+   "t": 540,
+   "shot": "minimap_09m00",
+   "heroes": [
+    "绿 jungle lan L10 [打 岩石巨魔]",
+    "绿 top gorran L9 [打 岩石巨魔]",
+    "绿 sup moko L7 [跟着 vero]",
+    "绿 adc vero L8 [吃亏，后撤]",
+    "绿 mid osen L9 [回城]",
+    "红 jungle lan L9 [打 岩石巨魔]",
+    "红 sup moko L7 [打 岩石巨魔]",
+    "红 adc vero L8 [清兵]",
+    "红 top torg L11 [跟兵线]",
+    "红 mid osen L10 [打 岩石巨魔]"
+   ]
+  }
+ ],
+ "errors": []
+}

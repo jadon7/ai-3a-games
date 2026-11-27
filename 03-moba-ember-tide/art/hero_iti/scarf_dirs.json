@@ -1,0 +1,5 @@
+[{"wait": 1500},
+ {"js": "(() => { const a = __play.actor; window.__o = [a.pos.x, a.pos.z]; a.moveTo(a.pos.x, a.pos.z + 14); return 1; })()"}, {"wait": 900}, {"shot": "dir_s1"}, {"wait": 350}, {"shot": "dir_s2"},
+ {"js": "(() => { const a = __play.actor; a.teleport(__o[0], __o[1]); a.moveTo(__o[0], __o[1] - 14); return 1; })()"}, {"wait": 900}, {"shot": "dir_n1"}, {"wait": 350}, {"shot": "dir_n2"},
+ {"js": "(() => { const a = __play.actor; a.teleport(__o[0], __o[1]); a.moveTo(__o[0] + 14, __o[1]); return 1; })()"}, {"wait": 900}, {"shot": "dir_e1"}, {"wait": 350}, {"shot": "dir_e2"},
+ {"js": "(() => { const a = __play.actor; a.teleport(__o[0], __o[1]); a.moveTo(__o[0] - 14, __o[1]); return 1; })()"}, {"wait": 900}, {"shot": "dir_w1"}, {"wait": 350}, {"shot": "dir_w2"}]

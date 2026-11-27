@@ -1,0 +1,562 @@
+{
+ "lan": {
+  "id": "lan",
+  "ms": 6,
+  "as": 1.6640000000000001,
+  "range": 2.1,
+  "move": {
+   "start": 0.017,
+   "full": 0.017,
+   "stop": 0.008,
+   "step": 0.008
+  },
+  "turn": {
+   "t180": 0.233,
+   "newDirFull": 0.017,
+   "minSpeedWhileTurning": 5.89
+  },
+  "attack": {
+   "windup": 0.267,
+   "period": 0.601,
+   "windupPct": 44,
+   "backswing": 0.342,
+   "land": 0.267,
+   "clip": "attack1",
+   "moveAfterHit": 0.017,
+   "hits6s": 10,
+   "meanGap": 0.605
+  },
+  "skills": {
+   "Q": {
+    "ok": true,
+    "fire": 0.292,
+    "dmg": 0.533,
+    "dash": 0.325,
+    "locked": 0.542,
+    "states": "cast>attack",
+    "clip": "hook",
+    "moveAfter": 0.55,
+    "firedWhileSpamMove": true
+   },
+   "W": {
+    "ok": true,
+    "fire": 0.583,
+    "dmg": -1,
+    "dash": -1,
+    "locked": 1.125,
+    "states": "cast>idle",
+    "clip": "veil",
+    "moveAfter": 1.125,
+    "firedWhileSpamMove": true
+   },
+   "R": {
+    "ok": true,
+    "fire": 0.408,
+    "dmg": 0.5,
+    "dash": 0.417,
+    "locked": 2.45,
+    "states": "cast>lock>idle",
+    "clip": "r",
+    "moveAfter": 2.458,
+    "firedWhileSpamMove": true
+   }
+  },
+  "queue": {
+   "skillDuringSkill": {
+    "pair": "Q→W",
+    "accepted": false,
+    "fired": false,
+    "at": -1
+   },
+   "moveDuringSkill": {
+    "key": "Q",
+    "moved": false,
+    "at": -1
+   },
+   "attackDuringSkill": {
+    "key": "Q",
+    "attacked": false,
+    "at": -1
+   }
+  },
+  "mouse": {
+   "left": 127,
+   "right": 133
+  },
+  "errors": []
+ },
+ "torg": {
+  "id": "torg",
+  "ms": 5,
+  "as": 1.28,
+  "range": 3.4,
+  "move": {
+   "start": 0.016,
+   "full": 0.016,
+   "stop": 0.009,
+   "step": 0.008
+  },
+  "turn": {
+   "t180": 0.234,
+   "newDirFull": 0.017,
+   "minSpeedWhileTurning": 4.9
+  },
+  "attack": {
+   "windup": 0.333,
+   "period": 0.781,
+   "windupPct": 43,
+   "backswing": 0.45,
+   "land": 0.333,
+   "clip": "attack1",
+   "moveAfterHit": 0.008,
+   "hits6s": 8,
+   "meanGap": 0.784
+  },
+  "skills": {
+   "Q": {
+    "ok": true,
+    "fire": 0.384,
+    "dmg": 0.384,
+    "dash": -1,
+    "locked": 1.117,
+    "states": "cast>idle",
+    "clip": "q",
+    "moveAfter": 1.117,
+    "firedWhileSpamMove": true
+   },
+   "W": {
+    "ok": true,
+    "fire": 0.65,
+    "dmg": 0.884,
+    "dash": -1,
+    "locked": 1.076,
+    "states": "cast>idle",
+    "clip": "w",
+    "moveAfter": 1.075,
+    "firedWhileSpamMove": true
+   },
+   "R": {
+    "ok": true,
+    "fire": 0.474,
+    "dmg": 0.916,
+    "dash": 0.525,
+    "locked": 1.541,
+    "states": "cast>lock>idle",
+    "clip": "r",
+    "moveAfter": 1.55,
+    "firedWhileSpamMove": true
+   }
+  },
+  "queue": {
+   "skillDuringSkill": {
+    "pair": "Q→W",
+    "accepted": false,
+    "fired": false,
+    "at": -1
+   },
+   "moveDuringSkill": {
+    "key": "Q",
+    "moved": true,
+    "at": 1.117
+   },
+   "attackDuringSkill": {
+    "key": "Q",
+    "attacked": true,
+    "at": 2.35
+   }
+  },
+  "mouse": {
+   "left": 127,
+   "right": 132
+  },
+  "errors": []
+ },
+ "moko": {
+  "id": "moko",
+  "ms": 5.6,
+  "as": 1.088,
+  "range": 7.5,
+  "move": {
+   "start": 0.016,
+   "full": 0.016,
+   "stop": 0.008,
+   "step": 0.008
+  },
+  "turn": {
+   "t180": 0.234,
+   "newDirFull": 0.017,
+   "minSpeedWhileTurning": 5.48
+  },
+  "attack": {
+   "windup": 0.434,
+   "period": 0.919,
+   "windupPct": 47,
+   "backswing": 0.274,
+   "land": 0.734,
+   "clip": "attack1",
+   "moveAfterHit": 0.017,
+   "hits6s": 7,
+   "meanGap": 0.926
+  },
+  "skills": {
+   "Q": {
+    "ok": true,
+    "fire": 0.483,
+    "dmg": -1,
+    "dash": -1,
+    "locked": 0.825,
+    "states": "cast>idle",
+    "clip": "q",
+    "moveAfter": 0.824,
+    "firedWhileSpamMove": true
+   },
+   "W": {
+    "ok": true,
+    "fire": 0.5,
+    "dmg": -1,
+    "dash": -1,
+    "locked": 0.841,
+    "states": "cast>idle",
+    "clip": "w",
+    "moveAfter": 0.842,
+    "firedWhileSpamMove": true
+   },
+   "E": {
+    "ok": true,
+    "fire": 0.566,
+    "dmg": 0.141,
+    "dash": -1,
+    "locked": 0.908,
+    "states": "cast>idle",
+    "clip": "e",
+    "moveAfter": 0.908,
+    "firedWhileSpamMove": true
+   },
+   "R": {
+    "ok": true,
+    "fire": 0.625,
+    "dmg": 0.633,
+    "dash": -1,
+    "locked": 1.15,
+    "states": "cast>idle",
+    "clip": "r",
+    "moveAfter": 1.15,
+    "firedWhileSpamMove": true
+   }
+  },
+  "queue": {
+   "skillDuringSkill": {
+    "pair": "Q→W",
+    "accepted": false,
+    "fired": false,
+    "at": -1
+   },
+   "moveDuringSkill": {
+    "key": "Q",
+    "moved": true,
+    "at": 0.825
+   },
+   "attackDuringSkill": {
+    "key": "Q",
+    "attacked": true,
+    "at": 1.267
+   }
+  },
+  "mouse": {
+   "left": 128,
+   "right": 133
+  },
+  "errors": []
+ },
+ "gorran": {
+  "id": "gorran",
+  "ms": 5.4,
+  "as": 1.28,
+  "range": 2.4,
+  "move": {
+   "start": 0.017,
+   "full": 0.017,
+   "stop": 0.008,
+   "step": 0.008
+  },
+  "turn": {
+   "t180": 0.233,
+   "newDirFull": 0.016,
+   "minSpeedWhileTurning": 5.28
+  },
+  "attack": {
+   "windup": 0.4,
+   "period": 0.781,
+   "windupPct": 51,
+   "backswing": 0.383,
+   "land": 0.4,
+   "clip": "attack1",
+   "moveAfterHit": 0.009,
+   "hits6s": 8,
+   "meanGap": 0.784
+  },
+  "skills": {
+   "Q": {
+    "ok": true,
+    "fire": 0.225,
+    "dmg": 0.351,
+    "dash": 0.25,
+    "locked": 0.358,
+    "states": "cast>lock>idle",
+    "clip": "q",
+    "moveAfter": 0.366,
+    "firedWhileSpamMove": true
+   },
+   "W": {
+    "ok": true,
+    "fire": 0.366,
+    "dmg": 2.874,
+    "dash": -1,
+    "locked": 2.882,
+    "states": "cast>channel>idle",
+    "clip": "w",
+    "moveAfter": 0.383,
+    "firedWhileSpamMove": true
+   },
+   "E": {
+    "ok": true,
+    "fire": 0.775,
+    "dmg": 0.775,
+    "dash": -1,
+    "locked": 1.241,
+    "states": "cast>idle",
+    "clip": "e",
+    "moveAfter": 1.242,
+    "firedWhileSpamMove": true
+   },
+   "R": {
+    "ok": true,
+    "fire": 0.8,
+    "dmg": 0.4,
+    "dash": -1,
+    "locked": 1.375,
+    "states": "cast>idle",
+    "clip": "r",
+    "moveAfter": 1.368,
+    "firedWhileSpamMove": true
+   }
+  },
+  "queue": {
+   "skillDuringSkill": {
+    "pair": "Q→W",
+    "accepted": false,
+    "fired": false,
+    "at": -1
+   },
+   "moveDuringSkill": {
+    "key": "Q",
+    "moved": false,
+    "at": -1
+   },
+   "attackDuringSkill": {
+    "key": "Q",
+    "attacked": true,
+    "at": 1.733
+   }
+  },
+  "mouse": {
+   "left": 125,
+   "right": 132
+  },
+  "errors": []
+ },
+ "vero": {
+  "id": "vero",
+  "ms": 5.7,
+  "as": 1.344,
+  "range": 8.5,
+  "move": {
+   "start": 0.016,
+   "full": 0.016,
+   "stop": 0.009,
+   "step": 0.008
+  },
+  "turn": {
+   "t180": 0.233,
+   "newDirFull": 0.017,
+   "minSpeedWhileTurning": 5.59
+  },
+  "attack": {
+   "windup": 0.266,
+   "period": 0.744,
+   "windupPct": 36,
+   "backswing": 0.375,
+   "land": 0.458,
+   "clip": "attack1",
+   "moveAfterHit": 0.017,
+   "hits6s": 8,
+   "meanGap": 0.752
+  },
+  "skills": {
+   "Q": {
+    "ok": true,
+    "fire": 0.65,
+    "dmg": 0.709,
+    "dash": -1,
+    "locked": 1.142,
+    "states": "cast>idle",
+    "clip": "q",
+    "moveAfter": 1.142,
+    "firedWhileSpamMove": true
+   },
+   "W": {
+    "ok": true,
+    "fire": 0.067,
+    "dmg": -1,
+    "dash": 0.092,
+    "locked": 0.575,
+    "states": "cast>idle",
+    "clip": "w",
+    "moveAfter": 0.583,
+    "firedWhileSpamMove": true
+   },
+   "E": {
+    "ok": true,
+    "fire": 0.684,
+    "dmg": 1.292,
+    "dash": -1,
+    "locked": 0.967,
+    "states": "cast>idle",
+    "clip": "e",
+    "moveAfter": 0.974,
+    "firedWhileSpamMove": true
+   },
+   "R": {
+    "ok": true,
+    "fire": 0.292,
+    "dmg": 0.358,
+    "dash": -1,
+    "locked": 3.301,
+    "states": "cast>channel>idle",
+    "clip": "r",
+    "moveAfter": 0.317,
+    "firedWhileSpamMove": true
+   }
+  },
+  "queue": {
+   "skillDuringSkill": {
+    "pair": "Q→W",
+    "accepted": false,
+    "fired": false,
+    "at": -1
+   },
+   "moveDuringSkill": {
+    "key": "Q",
+    "moved": true,
+    "at": 1.134
+   },
+   "attackDuringSkill": {
+    "key": "Q",
+    "attacked": true,
+    "at": 1.417
+   }
+  },
+  "mouse": {
+   "left": 140,
+   "right": 133
+  },
+  "errors": []
+ },
+ "osen": {
+  "id": "osen",
+  "ms": 5.6,
+  "as": 1.088,
+  "range": 8.5,
+  "move": {
+   "start": 0.017,
+   "full": 0.017,
+   "stop": 0.009,
+   "step": 0.008
+  },
+  "turn": {
+   "t180": 0.233,
+   "newDirFull": 0.017,
+   "minSpeedWhileTurning": 5.5
+  },
+  "attack": {
+   "windup": 0.35,
+   "period": 0.919,
+   "windupPct": 38,
+   "backswing": 0.359,
+   "land": 0.65,
+   "clip": "attack1",
+   "moveAfterHit": 0.016,
+   "hits6s": 7,
+   "meanGap": 0.926
+  },
+  "skills": {
+   "Q": {
+    "ok": true,
+    "fire": 0.592,
+    "dmg": 0.667,
+    "dash": -1,
+    "locked": 1.292,
+    "states": "cast>idle",
+    "clip": "q",
+    "moveAfter": 1.292,
+    "firedWhileSpamMove": true
+   },
+   "W": {
+    "ok": true,
+    "fire": 0.592,
+    "dmg": 1.392,
+    "dash": -1,
+    "locked": 1.358,
+    "states": "cast>idle",
+    "clip": "w",
+    "moveAfter": 1.358,
+    "firedWhileSpamMove": true
+   },
+   "E": {
+    "ok": true,
+    "fire": 0.601,
+    "dmg": 0.608,
+    "dash": -1,
+    "locked": 1.434,
+    "states": "cast>idle",
+    "clip": "e",
+    "moveAfter": 1.434,
+    "firedWhileSpamMove": true
+   },
+   "R": {
+    "ok": true,
+    "fire": 0.75,
+    "dmg": 1.592,
+    "dash": -1,
+    "locked": 3.825,
+    "states": "cast>idle",
+    "clip": "r",
+    "moveAfter": 3.825,
+    "firedWhileSpamMove": true
+   }
+  },
+  "queue": {
+   "skillDuringSkill": {
+    "pair": "Q→W",
+    "accepted": false,
+    "fired": false,
+    "at": -1
+   },
+   "moveDuringSkill": {
+    "key": "Q",
+    "moved": true,
+    "at": 1.291
+   },
+   "attackDuringSkill": {
+    "key": "Q",
+    "attacked": true,
+    "at": 1.642
+   }
+  },
+  "mouse": {
+   "left": 128,
+   "right": 131
+  },
+  "errors": []
+ }
+}

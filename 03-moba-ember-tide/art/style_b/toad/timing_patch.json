@@ -1,0 +1,5 @@
+{
+ "_说明": "盖在旧巨蟾时间表上的几项。height：两边摆正后身长一样（1.1），新模型包围盒高 0.608 对旧的 0.586，按身长不变 2.39；points：新骨架的头 Head_1（旧的是 bone_37），躯干就是 Root",
+ "height": 2.39,
+ "points": {"hand": "tripo::Head_1", "chest": "tripo::Root", "up": 0.3}
+}

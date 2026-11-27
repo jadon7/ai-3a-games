@@ -1,0 +1,11 @@
+Model Information:
+* title:	G17 Pistol - Animated
+* source:	https://sketchfab.com/3d-models/g17-pistol-animated-7723ab14e70446ef8e06a134984f287f
+* author:	user77 (https://sketchfab.com/user77)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "G17 Pistol - Animated" (https://sketchfab.com/3d-models/g17-pistol-animated-7723ab14e70446ef8e06a134984f287f) by user77 (https://sketchfab.com/user77) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

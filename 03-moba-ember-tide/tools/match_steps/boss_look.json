@@ -1,0 +1,9 @@
+[
+{"js":"(()=>{const s=__sim,c=s.camps.find(c=>c.mob===window.__mob);s.spawnCamp(c);s.gainXp(s.hero,1e5);const a=__actors.get(s.hero.id);a.teleport(c.x+c.fx*8,c.z+c.fz*8);window.__c=c;window.__b=c.mobs[0];return [c.x,c.z]})()","log":"camp"},
+{"wait":1500},{"shot":"a_idle"},
+{"js":"__play.attack(__b)"},{"until":"__b.state==='attack'","timeout":20000},{"wait":250},{"shot":"b_attack"},
+{"until":"__b.state==='heavy'","timeout":30000},{"wait":700},{"shot":"c_warn"},{"until":"__b.struck","timeout":8000},{"wait":120},{"shot":"d_slam"},
+{"js":"__b.hp=__b.max*0.52;__sim.hero.hp=__sim.hero.max"},{"until":"__b.state==='roar'","timeout":30000},{"wait":1100},{"shot":"e_roar"},
+{"js":"__sim.hero.hp=__sim.hero.max;__sim.damage(__b,__b.hp-50,__sim.hero,{type:'true'})"},{"until":"!__b.alive","timeout":30000},{"wait":2600},{"shot":"f_dead"},
+{"js":"[[...__sim.hero.h.mods.keys()],__sim.teamBuff]","log":"buff"}
+]

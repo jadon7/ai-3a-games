@@ -1,0 +1,7 @@
+[
+{"js":"(() => { window.__hc = {}; window.__hcIv = setInterval(() => { for (const a of __actors.values()) { if (a.kit.id !== 'hedda') continue; const r = (__hc[a.ent.team] ??= { Q: 0, W: 0, E: 0, R: 0, prev: {} }); for (const k of ['Q','W','E','R']) { const c = a.cdLeft(k); if (c > (r.prev[k] ?? 0) + 1) r[k]++; r.prev[k] = c; } } }, 100); __setSpeed(16); return 1; })()"},
+{"until":"__sim.time>720||__sim.over","timeout":900000},{"js":"__report()","log":"12分"},
+{"until":"__sim.time>1500||__sim.over","timeout":900000},{"js":"__report()","log":"25分"},
+{"until":"__sim.time>2100||__sim.over","timeout":900000},{"js":"__report()","log":"35分"},
+{"js":"({ t: Math.round(__sim.time), over: __sim.over, kills: __sim.kills, casts: Object.fromEntries(Object.entries(__hc).map(([k, v]) => [k, { Q: v.Q, W: v.W, E: v.E, R: v.R }])), hs: [...__actors.values()].map(a => { const e = a.ent, h = e.h; return [h.kit + (e.team ? '*' : ''), h.pos, h.level, h.kills + '/' + h.deaths + '/' + h.assists, 'cs' + h.cs, 'dmg' + Math.round(h.dmg), 'gold' + Math.round(h.gold + h.items.length * 0)].join(' '); }) })","log":"结束"}
+]

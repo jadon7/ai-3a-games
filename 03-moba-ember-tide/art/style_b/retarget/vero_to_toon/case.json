@@ -1,0 +1,62 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik_feet": {
+   "ik": true,
+   "hands": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/vero.npz",
+ "src_build": "art/hero/vero/build.json",
+ "src_timing": "public/assets/hero/vero.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 5.7,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "attack1",
+   "q",
+   "run"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "薇萝的全部动作 → 薇萝自己改成卡通比例的模型（头 1.35、手 1.4、腿 0.75、脚 1.1，再加手臂缩到 0.85）。薇萝的弩是双手拿的：右手握、左手托，用来试“副手跟着主手”的手部 IK",
+ "tgt_rig": "../rigs/vero_toon.npz",
+ "tgt_model": "../models/vero_toon_rigged.glb",
+ "labels": [
+  "薇萝（原）",
+  "卡通·只搬旋转",
+  "卡通·只加脚 IK",
+  "卡通·脚 + 副手 IK"
+ ],
+ "name": "vero_to_toon",
+ "hands": {
+  "lead": "Right",
+  "follow": "Left"
+ }
+}

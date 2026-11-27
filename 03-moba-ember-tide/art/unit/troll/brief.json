@@ -1,0 +1,35 @@
+{
+ "name": "troll",
+ "title": "岩石巨魔（Boss，守上面那个河心岛）",
+ "legs": 2,
+ "height_guess": 6.0,
+ "ring_guess": 2.6,
+ "move_speed": 3.4,
+ "look": "一只灰白色岩石皮肤的巨魔，肩背上长着青苔，腰上缠着粗麻绳和破皮裙，头上一对小角。两足直立，手臂粗长。",
+ "have": {
+  "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/troll.blend",
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/troll_skeleton.json",
+  "weights": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/runs/troll/jointnet.pt",
+  "ref": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/ref/troll_ref.png",
+  "motions": {
+   "attack1": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/troll_punch/motion.npz（右直拳、左横扫、收拳，三下里挑一下干净的裁出来）",
+   "attack2": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/troll_slam/motion.npz（下蹲蓄力、双臂举过头顶、双拳砸地、起身；后面的仰头咆哮不要）"
+  },
+  "prompts": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/prompts/troll_slam.txt、troll_punch.txt（照这个写法）",
+  "note": "权重和骨架是管线早期做的。动手前先确认它们和现在的脚本对得上：cd V2R && PY scripts/pipeline.py exam troll --seed 1 --reuse（或者不加 --reuse 重渲一次）。对不上就按 CREATURE_PIPELINE 的第三段在远程重训一次（两足，从现有的 runs/troll/jointnet.pt 起步）。"
+ },
+ "clips_new": {
+  "idle": "原地站立：缓慢而深的呼吸，双肩和胸口明显起伏；头慢慢转向左边、再转向右边；一只手握拳又松开。双脚不动。",
+  "run": "像在跑步机上一样原地沉重地大步行走：步子大而慢，每一步落下身体都往下一沉，上身左右摇晃，两条粗长的手臂前后大幅摆动。是走，不是跑。",
+  "roar": "咆哮：先弯腰低头、双拳在身前攥紧蓄力，然后猛地挺直身体、仰头张开嘴，双臂向两侧张开、胸口挺出，保持一秒，再收回站姿。",
+  "death": "死亡：身体摇晃两下，右膝先跪下，接着左膝也跪下，上身向前倾倒，双手撑在地上，头垂下去，停住不动。不要躺倒、不要翻身。"
+ },
+ "clips_all": [
+  "idle",
+  "run",
+  "attack1",
+  "attack2",
+  "roar",
+  "death"
+ ]
+}

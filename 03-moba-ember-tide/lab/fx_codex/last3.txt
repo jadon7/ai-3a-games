@@ -1,0 +1,12 @@
+第三轮返工已完成，共做四版。最终四条录像均为 **1600×900、30 帧/秒**。
+
+| 技能 | 试验页 | 27 米游戏镜头 | 细节镜头 |
+| --- | --- | --- | --- |
+| R · 绯月千刃 | [循环播放](http://localhost:5251/lab/fx_codex/index.html?play=r&loop=1&cam=top) | [录像](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_top.mp4) | [18 米录像](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_mid.mp4) |
+| 被动 · 烬痕引爆 | [循环播放](http://localhost:5251/lab/fx_codex/index.html?play=passive&loop=1&cam=top) | [录像](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_top.mp4) | [12 米录像](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_close.mp4) |
+
+**R 的两弯刀现在同时扫入。** 刀面分三档透光，五道速度线沿弧滚动。中心细环收紧后，四道光芒和九道贴地尖芒同时放出。对 1.15～1.25 秒取 13 个样点，游戏画面里的 X 夹角为 **86.08°～86.16°**，可见交点距落点最远 **0.254 米**。[R 连续帧](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_top_sheet.jpg)
+
+**被动在第三击后 74 毫秒引爆。** 三道暖白尖头落入胸口，尖刺从硬边爆团中射出。爆团可见半径实测 **0.896 米**，随后从中心破开，露出目标。尖刺在爆后 **0.40 秒**内收完。[被动连续帧](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_close_sheet.jpg) · [参考、第二轮与本版并排](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/reference_vs_game.jpg)
+
+电脑档和手机档的绘制峰值均为 **R 14 次、被动 5 次**。两项技能的粒子峰值均为电脑 **28 个**、手机 **14 个**。已复看草地、红土和横屏手机档。手机画面能读出 X，但血条仍会遮住部分细纹。手机数据来自桌面 Chrome 模拟，真机帧率尚未测量。[逐帧统计](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/stats.json) · [第三轮返工记录](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/NOTES.md:126)

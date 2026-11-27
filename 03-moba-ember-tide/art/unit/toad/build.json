@@ -1,0 +1,14 @@
+{
+ "name": "toad",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/toad_skeleton.json",
+ "out": "art/unit/toad/game.glb",
+ "packed": "public/assets/unit/toad.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/unit/toad/motions/idle.npz",
+  "run": "art/unit/toad/motions/run.npz",
+  "attack1": "art/unit/toad/motions/attack1.npz",
+  "attack2": "art/unit/toad/motions/attack2.npz",
+  "death": "art/unit/toad/motions/death.npz"
+ }
+}

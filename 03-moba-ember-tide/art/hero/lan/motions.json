@@ -1,0 +1,90 @@
+{
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_skeleton.json",
+  "out_dir": "art/hero/lan/motions",
+  "fps": 30,
+  "smooth": {
+    "Hand": 1.0
+  },
+  "actions": {
+    "idle": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_idle/motion.npz",
+      "loop": [
+        60,
+        112
+      ],
+      "from": 4
+    },
+    "run": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_run/motion.npz",
+      "loop": [
+        10,
+        44
+      ],
+      "from": 16,
+      "stride": true
+    },
+    "attack1": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_attack/motion.npz",
+      "range": [
+        20,
+        50
+      ]
+    },
+    "attack2": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_attack/motion.npz",
+      "range": [
+        75,
+        110
+      ]
+    },
+    "hook": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_hook/motion.npz",
+      "segments": [
+        [
+          22,
+          50
+        ],
+        [
+          86,
+          114
+        ]
+      ]
+    },
+    "veil": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_veil/motion.npz",
+      "segments": [
+        [
+          3,
+          16
+        ],
+        [
+          64,
+          108
+        ]
+      ]
+    },
+    "death": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_death/motion.npz",
+      "range": [
+        14,
+        120
+      ],
+      "settle": false
+    },
+    "r": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_ult/motion.npz",
+      "range": [
+        14,
+        40
+      ],
+      "settle": false
+    },
+    "r_end": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lan_ult/motion.npz",
+      "range": [
+        62,
+        114
+      ]
+    }
+  }
+}

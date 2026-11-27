@@ -1,0 +1,228 @@
+{
+ "wind_low": {
+  "file": "wind_low.wav",
+  "kind": "loop",
+  "duration": 12.0,
+  "bytes": 2304044,
+  "lufs": -20.0,
+  "peak_db": -9.4,
+  "below_200hz": 0.076,
+  "loop_check": {
+   "seam_d1": 0.01901,
+   "d1_rms": 0.0254,
+   "d1_p999": 0.10083,
+   "seam_d2": 0.03555,
+   "d2_p999": 0.11951,
+   "spec_seam": 3.30839,
+   "spec_med": 2.72694,
+   "spec_p95": 4.20645,
+   "spec_rank": 0.74895,
+   "frames": 240,
+   "remainder": 0,
+   "hf_seam_db": -36.13508,
+   "hf_med_db": -36.23169,
+   "hf_max_db": -35.32544
+  }
+ },
+ "wind_high": {
+  "file": "wind_high.wav",
+  "kind": "loop",
+  "duration": 12.0,
+  "bytes": 2304044,
+  "lufs": -20.0,
+  "peak_db": -9.5,
+  "below_200hz": 0.113,
+  "loop_check": {
+   "seam_d1": 0.0155,
+   "d1_rms": 0.02945,
+   "d1_p999": 0.11273,
+   "seam_d2": 0.02161,
+   "d2_p999": 0.14343,
+   "spec_seam": 3.38402,
+   "spec_med": 2.84187,
+   "spec_p95": 4.36792,
+   "spec_rank": 0.79079,
+   "frames": 240,
+   "remainder": 0,
+   "hf_seam_db": -32.21493,
+   "hf_med_db": -32.64097,
+   "hf_max_db": -31.73062
+  }
+ },
+ "cloth_loop": {
+  "file": "cloth_loop.wav",
+  "kind": "loop",
+  "duration": 8.0,
+  "bytes": 1536044,
+  "lufs": -20.0,
+  "peak_db": -3.6,
+  "below_200hz": 0.035,
+  "loop_check": {
+   "seam_d1": 3e-05,
+   "d1_rms": 0.00964,
+   "d1_p999": 0.0665,
+   "seam_d2": 6e-05,
+   "d2_p999": 0.02136,
+   "spec_seam": 9.30161,
+   "spec_med": 9.88519,
+   "spec_p95": 30.13942,
+   "spec_rank": 0.49686,
+   "frames": 160,
+   "remainder": 0,
+   "hf_seam_db": -70.54651,
+   "hf_med_db": -53.70304,
+   "hf_max_db": -40.53053
+  }
+ },
+ "music_bed": {
+  "file": "music_bed.wav",
+  "kind": "loop",
+  "duration": 36.0,
+  "bytes": 6912044,
+  "lufs": -20.0,
+  "peak_db": -7.8,
+  "below_200hz": 0.575,
+  "loop_check": {
+   "seam_d1": 0.00211,
+   "d1_rms": 0.00293,
+   "d1_p999": 0.01596,
+   "seam_d2": 0.00012,
+   "d2_p999": 0.00583,
+   "spec_seam": 2.22881,
+   "spec_med": 2.77993,
+   "spec_p95": 4.28437,
+   "spec_rank": 0.19611,
+   "frames": 720,
+   "remainder": 0,
+   "hf_seam_db": -76.98705,
+   "hf_med_db": -76.52415,
+   "hf_max_db": -73.63939
+  }
+ },
+ "boost": {
+  "file": "boost.wav",
+  "kind": "sfx",
+  "duration": 2.4,
+  "bytes": 460844,
+  "lufs": -16.3,
+  "peak_db": -3.5,
+  "below_200hz": 0.305
+ },
+ "flip": {
+  "file": "flip.wav",
+  "kind": "sfx",
+  "duration": 1.5,
+  "bytes": 288044,
+  "lufs": -16.8,
+  "peak_db": -3.5,
+  "below_200hz": 0.059
+ },
+ "whoosh_pass_1": {
+  "file": "whoosh_pass_1.wav",
+  "kind": "sfx",
+  "duration": 1.0,
+  "bytes": 192044,
+  "lufs": -16.8,
+  "peak_db": -3.5,
+  "below_200hz": 0.194
+ },
+ "whoosh_pass_2": {
+  "file": "whoosh_pass_2.wav",
+  "kind": "sfx",
+  "duration": 1.25,
+  "bytes": 240044,
+  "lufs": -17.3,
+  "peak_db": -3.5,
+  "below_200hz": 0.292
+ },
+ "whoosh_pass_3": {
+  "file": "whoosh_pass_3.wav",
+  "kind": "sfx",
+  "duration": 0.8,
+  "bytes": 153644,
+  "lufs": -17.5,
+  "peak_db": -3.5,
+  "below_200hz": 0.274
+ },
+ "hoop": {
+  "file": "hoop.wav",
+  "kind": "sfx",
+  "duration": 2.3,
+  "bytes": 441640,
+  "lufs": -15.9,
+  "peak_db": -3.5,
+  "below_200hz": 0.058
+ },
+ "hoop_combo_1": {
+  "file": "hoop_combo_1.wav",
+  "kind": "sfx",
+  "duration": 2.3,
+  "bytes": 441640,
+  "lufs": -17.1,
+  "peak_db": -3.5,
+  "below_200hz": 0.011
+ },
+ "hoop_combo_2": {
+  "file": "hoop_combo_2.wav",
+  "kind": "sfx",
+  "duration": 2.3,
+  "bytes": 441640,
+  "lufs": -15.8,
+  "peak_db": -3.5,
+  "below_200hz": 0.011
+ },
+ "hoop_combo_3": {
+  "file": "hoop_combo_3.wav",
+  "kind": "sfx",
+  "duration": 2.3,
+  "bytes": 441640,
+  "lufs": -16.1,
+  "peak_db": -3.5,
+  "below_200hz": 0.009
+ },
+ "hoop_combo_4": {
+  "file": "hoop_combo_4.wav",
+  "kind": "sfx",
+  "duration": 2.3,
+  "bytes": 441640,
+  "lufs": -15.4,
+  "peak_db": -3.5,
+  "below_200hz": 0.009
+ },
+ "hoop_combo_5": {
+  "file": "hoop_combo_5.wav",
+  "kind": "sfx",
+  "duration": 2.3,
+  "bytes": 441640,
+  "lufs": -17.0,
+  "peak_db": -3.5,
+  "below_200hz": 0.044
+ },
+ "hit": {
+  "file": "hit.wav",
+  "kind": "sfx",
+  "duration": 1.9,
+  "bytes": 364844,
+  "lufs": -22.4,
+  "peak_db": -3.5,
+  "below_200hz": 0.254
+ },
+ "cloud_dive": {
+  "file": "cloud_dive.wav",
+  "kind": "sfx",
+  "duration": 1.8,
+  "bytes": 345644,
+  "lufs": -20.8,
+  "peak_db": -3.5,
+  "below_200hz": 0.32
+ },
+ "ui_click": {
+  "file": "ui_click.wav",
+  "kind": "sfx",
+  "duration": 0.14,
+  "bytes": 26924,
+  "lufs": null,
+  "peak_db": -8.0,
+  "below_200hz": 0.001
+ }
+}

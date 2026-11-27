@@ -1,0 +1,25 @@
+{
+ "type": "text_to_model",
+ "status": "success",
+ "progress": 100,
+ "input": {
+  "pbr": true,
+  "prompt": "photorealistic special forces operator, full body, standing in T-pose with arms straight out horizontally, multicam camouflage combat shirt with long sleeves, coyote tan tactical gloves with knuckle padding, black digital wristwatch on left wrist, tan plate carrier, multicam pants, tan boots, highly detailed fabric texture",
+  "delight": false,
+  "texture": true,
+  "export_uv": true,
+  "model_version": "P2-20260801",
+  "texture_quality": "detailed",
+  "texture_version": "v3.5-20260815",
+  "texture_alignment": "geometry"
+ },
+ "output": {
+  "model_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/9d2dde61-d0e6-4519-82e7-ecbb487f58f2/tripo_pbr_model_9d2dde61-d0e6-4519-82e7-ecbb487f58f2.glb?<签名参数已删除>",
+  "rendered_image_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/9d2dde61-d0e6-4519-82e7-ecbb487f58f2/legacy_mesh.webp?<签名参数已删除>",
+  "generated_image_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/9d2dde61-d0e6-4519-82e7-ecbb487f58f2/text2image_9d2dde61-d0e6-4519-82e7-ecbb487f58f2.jpeg?<签名参数已删除>"
+ },
+ "task_id": "9d2dde61-d0e6-4519-82e7-ecbb487f58f2",
+ "created_at": "2026-11-23T15:10:59.950054Z",
+ "completed_at": "2026-11-23T15:12:50.089757Z",
+ "credits_consumed": 120.0
+}

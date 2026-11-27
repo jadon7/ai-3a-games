@@ -1,0 +1,16 @@
+{
+ "_说明": "托尔格 B（钟龟，Tripo 新绑的四足骨架 38 根，名字全乱：Head_* 是左前腿、0_Right_Limb_* 是脖子、Spine_6 是右前臂、0_Left_Limb_* 是右前脚的脚趾）→ 旧钟龟的骨骼名（27 根）。按骨骼管的肉和位置对的（inspect/weights.txt）。肩胛（bone_25、bone_11）、脚趾、头盔上的碎骨头没有对应，跟着父骨骼走",
+ "_keep": ["tripo::Root", "tripo::1_Right_Limb_0", "tripo::1_Right_Limb_1", "tripo::1_Right_Limb_2"],
+ "bone_1": "tripo::1_Left_Limb_0",
+ "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_1",
+ "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_2",
+ "bone_26": "tripo::0_Right_Limb_0",
+ "tripo::Spine_6": "tripo::0_Right_Limb_1",
+ "bone_28": "tripo::0_Right_Limb_2",
+ "tripo::Head_0": "tripo::0_Left_Limb_0",
+ "tripo::Head_1": "tripo::0_Left_Limb_1",
+ "tripo::Head_2": "tripo::0_Left_Limb_2",
+ "tripo::0_Right_Limb_0": "bone_13",
+ "tripo::0_Right_Limb_1": "bone_14",
+ "bone_21": "tripo::Head_1"
+}

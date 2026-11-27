@@ -1,0 +1,14 @@
+[
+ {
+  "name": "hero_seren",
+  "image": "art/hero/seren/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ },
+ {
+  "name": "weapon_seren",
+  "image": "art/hero/seren/weapon_ref.png",
+  "face_limit": 12000,
+  "texture_quality": "standard"
+ }
+]

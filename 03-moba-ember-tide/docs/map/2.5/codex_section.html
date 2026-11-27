@@ -1,0 +1,26 @@
+<p class="note">同一份任务说明、同一张设计图，只把推理强度从 high 换成 xhigh。它用了约 25 分钟（high 那次约 18 分钟），做了 6 版，交了一个 12.7 万三角形、5.6MB 的模型，带 7 张贴图，其中两张是法线图（石头的凿痕、青铜的铸纹）。</p>
+  <div class="pairs">
+    <div class="pair">
+      <div class="row one">
+        <figure class="wide"><img src="img/x_compare.jpg" alt="左：设计图。右：xhigh 版，它自己渲染的" loading="lazy"><figcaption><span class="who new">Codex xhigh</span>左：设计图。右：xhigh 版（它自己用 Blender 渲染的）</figcaption></figure>
+      </div>
+      <div class="row one">
+        <figure class="wide"><img src="img/x_close3.jpg" alt="样板间里近看，三版并排" loading="lazy"><figcaption><span class="who ours">游戏里</span>样板间里近看，同一机位。左：我用代码拼的。中：Codex high。右：Codex xhigh</figcaption></figure>
+      </div>
+      <div class="row one">
+        <figure class="wide"><img src="img/x_game3.jpg" alt="游戏镜头，三版并排" loading="lazy"><figcaption><span class="who ours">游戏里</span>游戏镜头。左：我的。中：high。右：xhigh</figcaption></figure>
+      </div>
+      <ul>
+        <li>xhigh 比 high 好在哪：石芯有了一块块的石缝和雕出来的凹槽，不再是光滑的一整根；钩爪更厚实，根部多了弯月形的肩甲；前面那片叶形肋镂空得更有层次。它自己渲染的那张图里，青铜的锈色和石头的质感都更接近设计图。</li>
+        <li>xhigh 不如 high 的地方：青铜做得很深，直接放进游戏里几乎是黑的，游戏镜头下反而不如 high 那版好认。钟形底也比 high 那版素，设计图上那些饰带和发光的缺口少了。</li>
+        <li>发黑主要不是模型的问题：两版的青铜都用了偏高的金属度，而我们的场景没有环境反射，金属面就照不亮；xhigh 的底色又更深。下面这张是把两版的金属度都调到原来的 15% 之后的样子，都好认多了。</li>
+      </ul>
+      <div class="row one">
+        <figure class="wide"><img src="img/x_metal.jpg" alt="把金属度调低之后。左：high。右：xhigh" loading="lazy"><figcaption><span class="who ours">游戏里</span>只把金属度调低，别的不动。左：high。右：xhigh</figcaption></figure>
+      </div>
+      <ul>
+        <li>我的判断：xhigh 在结构和石头上有进步，但不是换了一个档次，多花的时间大约四成。真正拉开差距的是材质和颜色，这两样靠提高推理强度解决不了，要在任务说明里写死：我们定的颜色值、场景没有环境反射所以金属度要低、石头要分缝。</li>
+        <li>建议不变：2.7 做三档塔和水晶时，形状交给它（用 xhigh），材质换成我们这一套。</li>
+      </ul>
+    </div>
+  </div>

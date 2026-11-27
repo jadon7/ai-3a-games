@@ -1,0 +1,131 @@
+{
+ "name": "hedda",
+ "raw": "art/style_b/hedda/tripo_rigged_forge.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/hedda_b_rigged.glb",
+ "out": "art/style_b/hedda/check/game.glb",
+ "packed": "art/style_b/hedda/check/packed.glb",
+ "pose_out": "art/style_b/hedda/check/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 512,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "gear": [
+  {
+   "type": "script",
+   "path": "art/style_b/hedda/gear.py",
+   "func": "make_tongs",
+   "side": "Right",
+   "name": "tongs"
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.012,
+    -0.048
+   ],
+   "yaw": -8,
+   "lean": 5,
+   "roll": -2
+  },
+  "spine": [
+   [
+    1,
+    -3
+   ],
+   [
+    1,
+    -3
+   ],
+   [
+    1,
+    -2
+   ]
+  ],
+  "head": {
+   "yaw": 6,
+   "pitch": 2
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.175,
+     -0.04,
+     0.066
+    ],
+    "pole": [
+     0.35,
+     -1,
+     0
+    ],
+    "toe": 12
+   },
+   "Right": {
+    "ankle": [
+     -0.175,
+     0.05,
+     0.066
+    ],
+    "pole": [
+     -0.35,
+     -1,
+     0
+    ],
+    "toe": -14
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     -0.13,
+     -0.14,
+     0.585
+    ],
+    "pole": [
+     0.6,
+     0.3,
+     -0.6
+    ],
+    "blade": [
+     0,
+     0,
+     1
+    ],
+    "shrug": 0
+   },
+   "Right": {
+    "wrist": [
+     -0.172,
+     -0.12,
+     0.452
+    ],
+    "pole": [
+     -0.6,
+     0.6,
+     -0.1
+    ],
+    "blade": [
+     0,
+     0,
+     1
+    ],
+    "edge": [
+     0,
+     -1,
+     0
+    ],
+    "shrug": -9
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.004,
+   "chest": 1.2,
+   "shoulder": 1.0,
+   "hand": 0.004
+  }
+ },
+ "motions": {},
+ "_note": "赫达 B：raw 是 Tripo 绑好骨的人（建模图里先把炉子抠掉，make_ref.py）再由 add_forge.py 装上脚本建的炉子；火钳和炉子的形状照第九轮，贴图按 B 重画（gear.py）"
+}

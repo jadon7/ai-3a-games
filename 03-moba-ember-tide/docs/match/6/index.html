@@ -1,0 +1,161 @@
+<meta charset="utf-8">
+<title>烬与潮 三对三</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：阶段 6 验收。顶部说明 → 一串小节，每节是说明加录像、表格、图片或几栏文字 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.row.three{grid-template-columns:minmax(0,1fr)}}
+.wide img{aspect-ratio:auto}
+.clip{display:flex;flex-direction:column;gap:6px;min-width:0}
+.clip video{width:100%;display:block;background:#000;border:1px solid var(--line)}
+.clip p{margin:0;font-size:13.5px;color:var(--muted)}
+.clip b{color:var(--fg);font-weight:600}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;margin:16px 0 0;padding:0;list-style:none;font-size:14.5px}
+.keys li{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:0 8px;align-items:baseline}
+.keys b{font:600 13px/1.6 var(--util);letter-spacing:.04em;color:var(--tide)}
+.stack{display:flex;flex-direction:column;gap:10px}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 6 · 电脑对手、野区、Boss</p>
+  <h1>三对三，<em>能打完一整局</em></h1>
+  <p class="lede">野怪营地、两只 Boss、电脑对手都做完了：你选一个英雄，同阵营的两个是电脑队友，对面三个是电脑对手，从出门打到水晶爆掉。六只怪都是新做的模型和动作。电脑的三档难度在数值上拉开了，但电脑互打时“困难”并不稳赢“简单”，这一条我照实写在下面。</p>
+</header>
+<section>
+  <h2>一整局</h2>
+  <p class="note">都是电脑在打（自己的英雄也交给了电脑），镜头跟着我方的一个英雄。第一段是 16 倍速的整局，后两段是原速。</p>
+  <div class="row one"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/full.mp4"></video><p><b>整局，16 倍速。</b>这一局打了 22 分 31 秒，对方赢，击杀 5 比 3。镜头跟着我方的岚。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/fight.mp4"></video><p><b>团战，原速。</b>两边的英雄凑到一起时的样子：技能是电脑按每个英雄的连招表放的。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/boss.mp4"></video><p><b>打 Boss，原速。</b>队伍的安排叫了够用的人过去；地上的红圈是 Boss 重击的预警，电脑会往外走。</p></div></div>
+</section>
+<section>
+  <h2>电脑对手会什么</h2>
+  <p class="note">代码在 <code>src/map/game/bot.ts</code>。它下的命令和你一样（走、打、放技能、回城、买装备），只看得见自己那一队看得见的东西，数值不作弊。每隔零点几秒想一次，按下面的顺序找第一件该做的事。</p>
+  <div class="cols"><section><h3>保命和补给</h3><ul><li>站在重击的预警圈里就往外走</li><li>被塔盯上、或者塔下没有自己的小兵顶着，就退出射程</li><li>血少了回家：没人追原地回城，有人追边跑边放保命技能</li><li>在出生点按这个英雄的出装单买装备；攒够钱也会专门回去买</li></ul></section><section><h3>打架</h3><ul><li>看得见的对面英雄里挑血少的、脆的、近的</li><li>估两边的本钱（人数、血量、等级、塔、小兵），占优才上，明显吃亏往自己塔下退</li><li>按每个英雄的连招表放技能：非指向技能会预判走位，范围技能挑能圈到最多人的地方</li><li>对线是一套一套地换血；对面残了才咬住不放，只剩一丝血会越塔</li></ul></section><section><h3>对线和野区</h3><ul><li>跟着自己的兵线，先补一刀能打死的兵</li><li>小兵扎堆了用技能清</li><li>塔下有自己的小兵顶着就拆塔</li><li>线上没事、附近的营地刷了就去打野（先走进营地再动手）</li></ul></section><section><h3>队伍的安排（抱团）</h3><ul><li>高地塔或水晶挨打、对面两个以上英雄压到塔下：回防</li><li>附近有队友打起来了：过去帮</li><li>人齐、血够、等级够：去打 Boss，只叫够用的人，线上留人</li><li>对面死得只剩一个、或者拿到巨魔之怒：一起推；八分钟后领先的一方抱团推</li></ul></section></div>
+</section>
+<section>
+  <h2>三档难度差在哪</h2>
+  <p class="note">左上角可以选，网址里是 <code>?diff=easy|normal|hard</code>；队友默认和对手同一档，<code>?ally=</code> 可以单独指定。</p>
+  <div class="tbl"><table><thead><tr><th></th><th>简单</th><th>普通</th><th>困难</th></tr></thead><tbody><tr><td>多久想一次</td><td>0.6 秒，还有三成的时候发愣</td><td>0.35 秒</td><td>0.2 秒</td></tr><tr><td>技能瞄得准不准</td><td>偏 1 到 2 米，不预判</td><td>偏半米左右，预判六成</td><td>偏 0.2 米，按弹道速度预判</td></tr><tr><td>该放技能时放的概率</td><td>三成</td><td>七成五</td><td>每次都放</td></tr><tr><td>会不会卡最后一刀</td><td>四次里一次</td><td>十次里七次</td><td>几乎每次</td></tr><tr><td>塔下要几个小兵顶着才拆</td><td>3 个</td><td>2 个</td><td>1 个</td></tr><tr><td>多大优势才开打</td><td>本钱是对面的 1.3 倍</td><td>0.95 倍</td><td>0.88 倍</td></tr><tr><td>血剩多少回家</td><td>18%</td><td>26%</td><td>30%</td></tr><tr><td>打野、打 Boss、抱团、专门回家买装备</td><td>都不会</td><td>会</td><td>会</td></tr><tr><td>躲重击的预警圈</td><td>五次里一次</td><td>三次里两次</td><td>几乎每次</td></tr><tr><td>越塔追残血</td><td>不会</td><td>对面剩 12% 以下</td><td>对面剩 22% 以下</td></tr></tbody></table></div>
+</section>
+<section>
+  <h2>电脑互打的结果</h2>
+  <p class="note">最后一版电脑的八局：六个英雄都交给电脑，16 倍速跑完，都打到水晶爆掉，没有报错。<b>困难对简单两胜两负</b>：困难的电脑人头拿得多，但推塔并不比简单的快，所以这一条没做到。普通对普通四局里烬誓庭赢了三局。电脑的打法前后调了九批、约六十局，中间出现过沉月会十局赢八九局、困难把把输给简单的版本，最后停在这里。这八局是把塔的血量降两成之前跑的；降了以后只跑了最上面录像的那一局。</p>
+  <div class="tbl"><table><thead><tr><th>我方（左下）</th><th>对方（右上）</th><th>胜方</th><th class=n>时长</th><th class=n>击杀 我:对</th><th class=n>剩的塔 我:对</th></tr></thead><tbody><tr><td>沉月会 · 普通</td><td>烬誓庭 · 普通</td><td>我方</td><td class=n>24:56</td><td class=n>5 : 5</td><td class=n>6 : 0</td></tr><tr><td>烬誓庭 · 普通</td><td>沉月会 · 普通</td><td>我方</td><td class=n>28:22</td><td class=n>6 : 2</td><td class=n>2 : 1</td></tr><tr><td>沉月会 · 普通</td><td>烬誓庭 · 普通</td><td>对方</td><td class=n>25:28</td><td class=n>5 : 5</td><td class=n>3 : 2</td></tr><tr><td>烬誓庭 · 普通</td><td>沉月会 · 普通</td><td>我方</td><td class=n>19:33</td><td class=n>2 : 5</td><td class=n>7 : 0</td></tr><tr><td>沉月会 · 困难</td><td>烬誓庭 · 简单</td><td>对方（简单）</td><td class=n>19:35</td><td class=n>5 : 0</td><td class=n>0 : 8</td></tr><tr><td>烬誓庭 · 困难</td><td>沉月会 · 简单</td><td>对方（简单）</td><td class=n>25:24</td><td class=n>4 : 2</td><td class=n>0 : 7</td></tr><tr><td>沉月会 · 简单</td><td>烬誓庭 · 困难</td><td>对方（困难）</td><td class=n>13:55</td><td class=n>1 : 7</td><td class=n>3 : 7</td></tr><tr><td>烬誓庭 · 简单</td><td>沉月会 · 困难</td><td>对方（困难）</td><td class=n>22:59</td><td class=n>1 : 1</td><td class=n>5 : 4</td></tr></tbody></table></div>
+</section>
+<section>
+  <h2>野区</h2>
+  <p class="note">每方野区上下各一组：一个增益怪、一窝狼、一窝山魈，开局 20 秒刷出来。野怪被英雄打了才还手，追出营地九米会回头并回血。增益怪每隔八秒来一次重击，地上先出红圈，圈定在出手那一刻，走得出去。四段录像都是在真实的营地里录的；一个人打增益怪撑不了这么久，录的时候英雄的血掉到三成五以下会被续到六成。</p>
+  <div class="row"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/wild_toad.mp4"></video><p><b>石背巨蟾（蓝增益怪）。</b>普攻是前探撞，重击是原地跃起砸地、减速。打掉拿“潮纹”：冷却缩减 15%，回蓝加快。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/wild_boar.mp4"></video><p><b>烬鬃野猪（红增益怪）。</b>普攻是獠牙上挑，重击是刨地蓄力后人立前顶、把人顶开。打掉拿“烬纹”：普攻附带灼烧和减速。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/wild_wolf.mp4"></video><p><b>苔背狼，一窝三只。</b>血少、跑得快，围着咬。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/wild_mandrill.mp4"></video><p><b>骨面山魈，一窝两只。</b>双臂举过头顶砸下来。</p></div></div>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/camps.jpg" alt="六个营地里的样子。上排：我方的石背巨蟾、烬鬃野猪、苔背狼；下排：我方的骨面山魈、对方野区的野猪和狼。" loading="lazy"><figcaption><span class="who ours">对局里</span>六个营地里的样子。上排：我方的石背巨蟾、烬鬃野猪、苔背狼；下排：我方的骨面山魈、对方野区的野猪和狼。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>野怪和 Boss 的数值</h2>
+  <p class="note">血和攻击每过一分钟涨 4.5%。金币给打最后一下的英雄，经验分给身边的队友；Boss 的钱、经验、增益全队都有。</p>
+  <div class="tbl"><table><thead><tr><th>怪</th><th>在哪</th><th class=n>血</th><th class=n>攻击</th><th>重击</th><th>打掉以后</th></tr></thead><tbody><tr><td>苔背狼 ×3</td><td>靠河的小营地</td><td class=n>1150</td><td class=n>62</td><td>没有</td><td>每只 34 金、50 经验；50 秒后重刷</td></tr><tr><td>骨面山魈 ×2</td><td>靠基地的小营地</td><td class=n>1900</td><td class=n>96</td><td>没有</td><td>每只 52 金、80 经验；50 秒后重刷</td></tr><tr><td>石背巨蟾</td><td>蓝增益营地</td><td class=n>4400</td><td class=n>150</td><td>每 8 秒，半径 4.2 米，2 倍伤害，减速四成</td><td>110 金、220 经验，“潮纹”100 秒；80 秒后重刷</td></tr><tr><td>烬鬃野猪</td><td>红增益营地</td><td class=n>4400</td><td class=n>165</td><td>每 8 秒，半径 3.4 米，2.2 倍伤害，顶开 3 米</td><td>110 金、220 经验，“烬纹”100 秒；80 秒后重刷</td></tr><tr><td>岩甲巨兽</td><td>下河心岛，2:30 出</td><td class=n>15000</td><td class=n>240</td><td>每 9 秒，半径 5.6 米，2.4 倍伤害，眩晕 0.8 秒</td><td>全队各 180 金、350 经验，“兽鳞”120 秒：攻击法强 +12%，双抗 +15</td></tr><tr><td>岩石巨魔</td><td>上河心岛，5:00 出</td><td class=n>24000</td><td class=n>320</td><td>每 10 秒，半径 6.2 米，2.6 倍伤害，眩晕 1 秒</td><td>全队各 250 金、450 经验，“巨魔之怒”150 秒：拆建筑 +30%，每波兵三条线各多一个超级兵</td></tr></tbody></table></div>
+</section>
+<section>
+  <h2>两只 Boss</h2>
+  <p class="note">Boss 不吃眩晕、定身、击退、嘲讽，减速只吃四成；掉到半血咆哮一次，之后出手更快。两段录像是一个满级英雄单独去打（同样续了血），为的是把 Boss 的动作录全；正常是两三个人一起打，见最上面那段。</p>
+  <div class="row"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/boss_troll.mp4"></video><p><b>岩石巨魔，六米高。</b>直拳、双拳砸地（预警圈在身前）、咆哮、跪倒。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/boss_beast.mp4"></video><p><b>岩甲巨兽。</b>用角顶、人立起来双前脚砸地、咆哮、趴下。</p></div></div>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/boss_troll.jpg" alt="岩石巨魔：待机、直拳、重击预警、落下、咆哮、死亡。" loading="lazy"><figcaption><span class="who ours">对局里</span>岩石巨魔：待机、直拳、重击预警、落下、咆哮、死亡。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>界面和操作</h2>
+  <p class="note">这一阶段只把 3v3 需要的信息加上，美术（头像、图标、计分板、播报的样式）留给阶段 7。</p>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/hud.jpg" alt="两队在巨魔的河心岛上打起来。顶栏两侧是两队的小头像（血量、阵亡倒计时），中间是击杀数和剩的塔；右上是击杀播报；中间一行是大事提示；英雄栏上方是身上的增益。" loading="lazy"><figcaption><span class="who ours">对局里</span>两队在巨魔的河心岛上打起来。顶栏两侧是两队的小头像（血量、阵亡倒计时），中间是击杀数和剩的塔；右上是击杀播报；中间一行是大事提示；英雄栏上方是身上的增益。</figcaption></figure></div></div>
+  <div class="cols"><section><h3>新加的</h3><ul><li>顶栏：两队头像、击杀数；对面的人不在视野里头像变淡</li><li>击杀播报、第一滴血、Boss 出现和被打掉的提示</li><li>增益的名字和剩余秒数；回城读条</li><li>小地图：别的英雄是白边的大点，野怪是琥珀色的菱形</li><li>左上角选电脑的难度</li></ul></section><section><h3>改了键位（照 LoL）</h3><ul><li><b>B 回城</b>：原地站 5 秒回出生点，挨打或者下别的命令会断；英雄栏右边也有按钮</li><li><b>P 商店</b>：原来是 B。点金币照样能开</li></ul></section><section><h3>规则上多的</h3><ul><li>击杀 300 金，助攻 130 金（十秒内打过他的算）</li><li>在塔下打对面英雄，塔和附近的小兵会转过来打你</li><li>带着野怪增益被杀，增益归击杀你的人</li><li>十分钟以后复活时间越来越长</li></ul></section></div>
+</section>
+<section>
+  <h2>为了 3v3 动过的数值</h2>
+  <p class="note">阶段 5 的数值是按“一个人打小兵和塔”定的。有了对面的英雄以后，第一版电脑互打五分钟零击杀，下面这些是为此改的。你验收过的手感会有变化，所以单列出来。</p>
+  <div class="tbl"><table><thead><tr><th>改了什么</th><th>原来</th><th>现在</th><th>为什么</th></tr></thead><tbody><tr><td>英雄打英雄的伤害</td><td>不变</td><td>乘 1.25</td><td>互相打半天谁也打不死谁</td></tr><tr><td>回血</td><td>挨打后 1 倍、脱战 2.5 倍</td><td>0.35 倍、1 倍</td><td>脱战十秒回 15%，对线时消耗等于白打</td></tr><tr><td>升级</td><td>110 + 70 × 等级</td><td>80 + 55 × 等级；小兵经验加四成</td><td>三个人分三条线，六级要来得早一点</td></tr><tr><td>复活时间</td><td>7 秒 + 每级 1.6 秒</td><td>十分钟后每过一秒再加 0.04 秒</td><td>后期一波团战要能定胜负</td></tr><tr><td>普攻打建筑</td><td>只算攻击力</td><td>法强也算八成</td><td>法师和辅助一个人守的线推不动</td></tr><tr><td>岚</td><td>攻速 1.5；大招每刀 85% 攻击力、冷却 60 秒</td><td>攻速 1.3；75%、70 秒</td><td>电脑用她六局里三局只死 0 到 1 次，拆塔是别人的两倍</td></tr><tr><td>奥森</td><td>血 2800、护甲 20、射程 8、攻击 120</td><td>3100、24、8.5、132</td><td>对上刺客太脆，最多一局死 9 次</td></tr><tr><td>葛隆</td><td>攻击 150、攻速 0.95</td><td>165、1.0</td><td>他守的线推不动</td></tr></tbody></table></div>
+</section>
+<section>
+  <h2>六只怪是怎么做的</h2>
+  <p class="note">四只新怪从设计图做起，两只 Boss 用动作管线里现成的模型，补了待机、行走、咆哮、死亡。六个后台任务各做一只，都一次做成。形态有意拉开：三只四足、一只弓背长臂的两足、一只两足巨人、一只四足甲龙。</p>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/concepts.jpg" alt="四只新怪的设计图：石背巨蟾、烬鬃野猪、苔背狼、骨面山魈。" loading="lazy"><figcaption><span class="who ours">设计图</span>四只新怪的设计图：石背巨蟾、烬鬃野猪、苔背狼、骨面山魈。</figcaption></figure></div></div>
+  <div class="how" style="margin-top:16px"><section><h3>流程</h3><p>即梦出设计图 → Tripo 转模型、绑骨 → 四足的手写一份骨骼映射 → 远程那台机器渲染训练图、训练关节识别 → 即梦出双机位的动作视频 → 读成骨骼动作、整理 → 进游戏。手册在 <code>tools/MONSTER_PIPELINE.md</code>。</p></section><section><h3>各任务自己报的毛病</h3><p>巨魔举臂时腋下的皮被拉成一片发白的膜（原模型绑骨的问题，没修）；野猪的跑步是慢步快放，步子碎；山魈的跑步是冲刺放慢；巨蟾和狼的嘴不会动；趴下、跪下的几只肚皮或手会陷进地里几厘米。</p></section><section><h3>进游戏以后我调的</h3><p>巨兽放大到约 4.1 米高、走得更慢；狼背上的苔藓原样太亮太黄，压了亮度和饱和度；山魈抬亮一点；每只怪的出手时间对到动作上；同一窝的怪动作错开，不会齐步走。</p></section></div>
+</section>
+<section>
+  <h2>验证、差距和花费</h2>
+  <div class="cols"><section><h3>验证过</h3><ul><li>最后一版电脑互打八局，都打到水晶爆掉，无报错（结果见“电脑互打的结果”）</li><li>真实浏览器窗口、两倍分辨率（画布 2149×1209）：出生点、对线、团战、打 Boss 都是 60 帧，最慢的一帧 19 到 51 毫秒</li><li>点击测试（真实鼠标键盘）全过，含新加的回城和商店改键</li><li>测试场里岚、奥森、托尔格的技能测试无报错；单人模式由电脑代打一整局打赢</li><li>你换线时队友会让线（脚本验证：你走上路，原来在上路的队友几秒后去了下路）</li></ul></section><section><h3>还差的</h3><ul><li>电脑的三档难度在电脑互打里拉不开；对线偏保守，人头少；不会躲非指向技能，不会绕后和蹲草</li><li>阵营平衡只粗调过，哪边强随改动来回摆；一局偏长</li><li>野怪的动作有上面列的毛病；没有专门的受击反应</li><li>Boss 没有专门的血条和出场演出；拿到增益只有脚边一圈小光点</li><li>界面是临时版：头像是名字的第一个字，没有计分板</li></ul></section><section><h3>没验证</h3><ul><li>我没有亲手打完一整局 3v3，全是脚本和电脑互打</li><li>你对电脑时三档难度的实际手感</li><li>手机、触屏、Safari、Firefox</li></ul></section><section><h3>花费</h3><ul><li>即梦 1389 积分：设计图 84，动作视频 1305（余额 10728）</li><li>Tripo 260：四个模型 160、四次绑骨 100（余额 4680）</li><li>六个后台任务合计约 367 万 token</li><li>每加一种新怪：约 Tripo 65、即梦 200 到 290、一个多小时</li></ul></section></div>
+</section>
+<footer class="foot">直接开一局：网址 <code>map.html?h=lan</code>（英雄可以写 lan、torg、moko、gorran、vero、osen），左上角可以换英雄和电脑的难度；<code>&amp;auto=1</code> 把自己的英雄也交给电脑，<code>&amp;solo=1</code> 回到没有电脑的单人模式。测试场 <code>?arena=1</code> 左上角多了“放野怪”。这一页是私有的。</footer>
+</div>

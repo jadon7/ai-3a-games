@@ -1,0 +1,46 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/troll_skeleton.json",
+ "out_dir": "art/unit/troll/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "art/unit/troll/retimed/idle.npz",
+   "loop": [
+    80,
+    116
+   ],
+   "pick": [
+    2,
+    110
+   ]
+  },
+  "run": {
+   "src": "art/unit/troll/retimed/run.npz",
+   "loop": [
+    34,
+    42
+   ],
+   "pick": [
+    24,
+    62
+   ],
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/unit/troll/retimed/attack1.npz"
+  },
+  "attack2": {
+   "src": "art/unit/troll/retimed/attack2.npz"
+  },
+  "roar": {
+   "src": "art/unit/troll/retimed/roar.npz"
+  },
+  "death": {
+   "src": "art/unit/troll/retimed/death.npz",
+   "settle": false
+  }
+ }
+}

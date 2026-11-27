@@ -1,0 +1,11 @@
+Model Information:
+* title:	Building scan No. 1 - Interior
+* source:	https://sketchfab.com/3d-models/building-scan-no-1-interior-6c6d15c2d3ec423b854c3623b9122c0d
+* author:	3Dystopia (https://sketchfab.com/Dystopia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Building scan No. 1 - Interior" (https://sketchfab.com/3d-models/building-scan-no-1-interior-6c6d15c2d3ec423b854c3623b9122c0d) by 3Dystopia (https://sketchfab.com/Dystopia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,29 @@
+# 渲染帧和中间产物（可由脚本重新生成）
+renders*/
+shots/*.blend
+shots/*.blend1
+shots/meta/
+*.blend1
+__pycache__/
+tests/**/*.png
+tests/**/*.jpg
+tests/*.png
+tests/*.jpg
+tests/*.exr
+assets/clouds/vdb/
+# 大体积成片不入库（1080p 成片入库留档）
+out/wukong_4k.mp4
+out/wukong_vertical_1080x1920.mp4
+out/wukong_1080p_v1.mp4
+out/v2/*.mp4
+# v2 写实版：可由脚本重新生成的大体积中间产物
+assets/clouds/trail_cache/
+assets/clouds/vdb_real/
+assets/clouds/clouds_real.blend
+assets/env/env_real.blend
+assets/char/cape_real.abc
+assets/char/wk_real_raw.blend
+assets/char/wukong_real.blend
+assets/char/wukong_real_final.blend
+# Poly Haven 下载的贴图（可重新下载）
+assets/env/ph/

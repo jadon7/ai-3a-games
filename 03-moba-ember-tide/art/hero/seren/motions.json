@@ -1,0 +1,54 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/seren_skeleton.json",
+ "out_dir": "art/hero/seren/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/seren_idle/motion.npz",
+   "loop": [
+    60,
+    112
+   ],
+   "from": 4
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/seren_run/motion.npz",
+   "loop": [
+    14,
+    34
+   ],
+   "from": 8,
+   "stride": true
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/seren/retimed/attack1.npz"
+  },
+  "attack2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/seren/retimed/attack2.npz"
+  },
+  "q": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/seren/retimed/q.npz"
+  },
+  "w": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/seren/retimed/w.npz"
+  },
+  "e": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/seren/retimed/e.npz",
+   "pin": true
+  },
+  "r": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/seren/retimed/r.npz"
+  },
+  "death": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/seren_death/motion.npz",
+   "range": [
+    2,
+    104
+   ],
+   "settle": false
+  }
+ }
+}

@@ -1,0 +1,9 @@
+// Cloudflare 部署配置：纯静态站点（Workers 静态资源），内容就是 npm run build 生成的 dist/。
+// 部署：npm run deploy（先打包再 wrangler deploy）。自定义域名在 routes 里，换域名改这一行再部署即可。
+{
+  "name": "khamsin",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist" },
+  "workers_dev": true,
+  "routes": [{ "pattern": "khamsin.dsxzai.com", "custom_domain": true }]
+}

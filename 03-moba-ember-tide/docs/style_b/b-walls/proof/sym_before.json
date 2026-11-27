@@ -1,0 +1,5794 @@
+{
+ "errors": [],
+ "static": {
+  "fountain": [
+   [
+    -102.3,
+    0
+   ],
+   [
+    102.3,
+    0
+   ]
+  ],
+  "lanes": [
+   {
+    "lane": "中",
+    "len": 178.9,
+    "midU": 0,
+    "midV": 0,
+    "start0": [
+     -58.9,
+     58.9
+    ],
+    "end": [
+     58.9,
+     -58.9
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "tier": 1,
+      "s0": 66,
+      "s1": 112,
+      "u": -22,
+      "v": 0
+     },
+     {
+      "team": 1,
+      "tier": 1,
+      "s0": 112,
+      "s1": 66,
+      "u": 22,
+      "v": 0
+     },
+     {
+      "team": 0,
+      "tier": 2,
+      "s0": 42,
+      "s1": 138,
+      "u": -45,
+      "v": 0
+     },
+     {
+      "team": 1,
+      "tier": 2,
+      "s0": 138,
+      "s1": 42,
+      "u": 45,
+      "v": 0
+     },
+     {
+      "team": 0,
+      "tier": 3,
+      "s0": 8,
+      "s1": 170,
+      "u": -73.3,
+      "v": 0
+     },
+     {
+      "team": 1,
+      "tier": 3,
+      "s0": 170,
+      "s1": 8,
+      "u": 73.3,
+      "v": 0
+     }
+    ]
+   },
+   {
+    "lane": "上",
+    "len": 239.7,
+    "midU": 0,
+    "midV": -82,
+    "start0": [
+     -63.9,
+     56.8
+    ],
+    "end": [
+     56.8,
+     -63.9
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "tier": 1,
+      "s0": 90,
+      "s1": 150,
+      "u": -25,
+      "v": -67.5
+     },
+     {
+      "team": 1,
+      "tier": 1,
+      "s0": 150,
+      "s1": 90,
+      "u": 25,
+      "v": -67.5
+     },
+     {
+      "team": 0,
+      "tier": 2,
+      "s0": 54,
+      "s1": 186,
+      "u": -51,
+      "v": -43.3
+     },
+     {
+      "team": 1,
+      "tier": 2,
+      "s0": 186,
+      "s1": 54,
+      "u": 51,
+      "v": -43.3
+     },
+     {
+      "team": 0,
+      "tier": 3,
+      "s0": 18,
+      "s1": 222,
+      "u": -77,
+      "v": -17.9
+     },
+     {
+      "team": 1,
+      "tier": 3,
+      "s0": 222,
+      "s1": 18,
+      "u": 77,
+      "v": -17.9
+     }
+    ]
+   },
+   {
+    "lane": "下",
+    "len": 239.7,
+    "midU": 0,
+    "midV": 82,
+    "start0": [
+     -56.8,
+     63.9
+    ],
+    "end": [
+     63.9,
+     -56.8
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "tier": 1,
+      "s0": 90,
+      "s1": 150,
+      "u": -25,
+      "v": 67.5
+     },
+     {
+      "team": 1,
+      "tier": 1,
+      "s0": 150,
+      "s1": 90,
+      "u": 25,
+      "v": 67.5
+     },
+     {
+      "team": 0,
+      "tier": 2,
+      "s0": 54,
+      "s1": 186,
+      "u": -51,
+      "v": 43.3
+     },
+     {
+      "team": 1,
+      "tier": 2,
+      "s0": 186,
+      "s1": 54,
+      "u": 51,
+      "v": 43.3
+     },
+     {
+      "team": 0,
+      "tier": 3,
+      "s0": 18,
+      "s1": 222,
+      "u": -77,
+      "v": 17.9
+     },
+     {
+      "team": 1,
+      "tier": 3,
+      "s0": 222,
+      "s1": 18,
+      "u": 77,
+      "v": 17.9
+     }
+    ]
+   }
+  ],
+  "camps": [
+   {
+    "kind": "buff",
+    "mob": "toad",
+    "side": 0,
+    "top": true,
+    "buff": "blue",
+    "u": -32,
+    "v": -30,
+    "from0": 82.9,
+    "from1": 142.5
+   },
+   {
+    "kind": "buff",
+    "mob": "boar",
+    "side": 0,
+    "top": false,
+    "buff": "red",
+    "u": -32,
+    "v": 30,
+    "from0": 83.7,
+    "from1": 142.5
+   },
+   {
+    "kind": "buff",
+    "mob": "boar",
+    "side": 1,
+    "top": true,
+    "buff": "red",
+    "u": 32,
+    "v": -30,
+    "from0": 142.6,
+    "from1": 82.9
+   },
+   {
+    "kind": "buff",
+    "mob": "toad",
+    "side": 1,
+    "top": false,
+    "buff": "blue",
+    "u": 32,
+    "v": 30,
+    "from0": 142.8,
+    "from1": 83.4
+   },
+   {
+    "kind": "small",
+    "mob": "wolf",
+    "side": 0,
+    "top": true,
+    "buff": "",
+    "u": -20,
+    "v": -57,
+    "from0": 102.1,
+    "from1": 139.5
+   },
+   {
+    "kind": "small",
+    "mob": "wolf",
+    "side": 0,
+    "top": false,
+    "buff": "",
+    "u": -20,
+    "v": 57,
+    "from0": 101.2,
+    "from1": 140.3
+   },
+   {
+    "kind": "small",
+    "mob": "wolf",
+    "side": 1,
+    "top": true,
+    "buff": "",
+    "u": 20,
+    "v": -57,
+    "from0": 139.4,
+    "from1": 101.7
+   },
+   {
+    "kind": "small",
+    "mob": "wolf",
+    "side": 1,
+    "top": false,
+    "buff": "",
+    "u": 20,
+    "v": 57,
+    "from0": 140.7,
+    "from1": 102.5
+   },
+   {
+    "kind": "small",
+    "mob": "mandrill",
+    "side": 0,
+    "top": true,
+    "buff": "",
+    "u": -54,
+    "v": -19,
+    "from0": 66.3,
+    "from1": 160.5
+   },
+   {
+    "kind": "small",
+    "mob": "mandrill",
+    "side": 0,
+    "top": false,
+    "buff": "",
+    "u": -54,
+    "v": 19,
+    "from0": 65.2,
+    "from1": 161
+   },
+   {
+    "kind": "small",
+    "mob": "mandrill",
+    "side": 1,
+    "top": true,
+    "buff": "",
+    "u": 54,
+    "v": -19,
+    "from0": 161.7,
+    "from1": 65.8
+   },
+   {
+    "kind": "small",
+    "mob": "mandrill",
+    "side": 1,
+    "top": false,
+    "buff": "",
+    "u": 54,
+    "v": 19,
+    "from0": 161.7,
+    "from1": 65.6
+   },
+   {
+    "kind": "boss",
+    "mob": "troll",
+    "side": 2,
+    "top": true,
+    "buff": "",
+    "u": 0,
+    "v": -46,
+    "from0": 118.6,
+    "from1": 118.6
+   },
+   {
+    "kind": "boss",
+    "mob": "beast",
+    "side": 2,
+    "top": false,
+    "buff": "",
+    "u": 0,
+    "v": 46,
+    "from0": 118.5,
+    "from1": 118.8
+   }
+  ],
+  "t1": [
+   {
+    "team": 0,
+    "lane": 0,
+    "from0": 84.5,
+    "from1": 127.7
+   },
+   {
+    "team": 1,
+    "lane": 0,
+    "from0": 128.3,
+    "from1": 83.8
+   },
+   {
+    "team": 0,
+    "lane": 1,
+    "from0": 103.2,
+    "from1": 153.6
+   },
+   {
+    "team": 0,
+    "lane": 2,
+    "from0": 103.2,
+    "from1": 154.4
+   },
+   {
+    "team": 1,
+    "lane": 1,
+    "from0": 153.4,
+    "from1": 103.2
+   },
+   {
+    "team": 1,
+    "lane": 2,
+    "from0": 154.6,
+    "from1": 103.2
+   }
+  ]
+ },
+ "run": {
+  "meet": [
+   {
+    "t": 29.5,
+    "u": 1.6
+   },
+   {
+    "t": 38.6,
+    "u": -0.1
+   },
+   {
+    "t": 38,
+    "u": 2
+   }
+  ],
+  "log": [
+   {
+    "t": 33,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -21.9,
+      -21.9
+     ],
+     [
+      -19.9,
+      -19.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 61,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -25.9,
+      -25.9
+     ],
+     [
+      -23.9,
+      -23.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 94,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -15.9,
+      -15.9
+     ],
+     [
+      -13.9,
+      -13.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 123,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -21.9,
+      -21.9
+     ],
+     [
+      -19.9,
+      -19.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 151,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -27.9,
+      -27.9
+     ],
+     [
+      -25.9,
+      -25.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 183,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -17.9,
+      -17.9
+     ],
+     [
+      -15.9,
+      -15.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 212,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -23.9,
+      -23.9
+     ],
+     [
+      -23.9,
+      -23.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 244,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -15.9,
+      -15.9
+     ],
+     [
+      -13.9,
+      -13.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 272,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -23.9,
+      -23.9
+     ],
+     [
+      -21.9,
+      -21.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 301,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -27.9,
+      10.1
+     ],
+     [
+      -25.9,
+      -25.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 333,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -19.9,
+      -19.9
+     ],
+     [
+      -17.9,
+      -17.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 361,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      12.1,
+      -25.9
+     ],
+     [
+      14.1,
+      -23.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 394,
+    "front": [
+     [
+      -1.4,
+      0.6
+     ],
+     [
+      -17.9,
+      -17.9
+     ],
+     [
+      -15.9,
+      -15.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 422,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -23.9,
+      16.1
+     ],
+     [
+      -21.9,
+      16.1
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 450,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -29.9,
+      -29.9
+     ],
+     [
+      -27.9,
+      10.1
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 483,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      12.1,
+      -21.9
+     ],
+     [
+      -19.9,
+      -19.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4518,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 511,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -27.9,
+      6.1
+     ],
+     [
+      -25.9,
+      12.1
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4518,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 543,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -19.9,
+      -19.9
+     ],
+     [
+      -17.9,
+      -17.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4518,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 572,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -25.9,
+      14.1
+     ],
+     [
+      -23.9,
+      -23.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4518,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 604,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -15.9,
+      -15.9
+     ],
+     [
+      -13.9,
+      -13.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 632,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      12.1,
+      -23.9
+     ],
+     [
+      -21.9,
+      -21.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 661,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      10.1,
+      -27.9
+     ],
+     [
+      -25.9,
+      -25.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4532,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 693,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -19.9,
+      -19.9
+     ],
+     [
+      -17.9,
+      -17.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4331,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 721,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      14.1,
+      -25.9
+     ],
+     [
+      14.1,
+      -23.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4331,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 754,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -17.9,
+      -17.9
+     ],
+     [
+      -17.9,
+      16.1
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4488,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4331,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 782,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -23.9,
+      -23.9
+     ],
+     [
+      -21.9,
+      -21.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4488,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4331,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 810,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -29.9,
+      14.1
+     ],
+     [
+      20.1,
+      -27.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4488,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4331,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 843,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -21.9,
+      -21.9
+     ],
+     [
+      -19.9,
+      -19.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4499,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4488,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4266,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4109,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 871,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -27.9,
+      -27.9
+     ],
+     [
+      -25.9,
+      20.1
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4266,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4488,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4700,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4266,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4109,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   },
+   {
+    "t": 903,
+    "front": [
+     [
+      -1.4,
+      -1.4
+     ],
+     [
+      -17.9,
+      -17.9
+     ],
+     [
+      -15.9,
+      -15.9
+     ]
+    ],
+    "towers": [
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4266,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4488,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4457,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4327,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4266,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 1,
+      "kind": "tower",
+      "hp": 4109,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 2,
+      "kind": "tower",
+      "hp": 5400,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 1,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 2,
+      "tier": 3,
+      "kind": "tower",
+      "hp": 6300,
+      "alive": true
+     },
+     {
+      "team": 0,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     },
+     {
+      "team": 1,
+      "lane": 0,
+      "tier": 0,
+      "kind": "core",
+      "hp": 8000,
+      "alive": true
+     }
+    ]
+   }
+  ],
+  "fall": [],
+  "over": 0,
+  "t": 903
+ }
+}

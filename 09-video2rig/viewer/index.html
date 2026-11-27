@@ -1,0 +1,886 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>怪物动画查看器</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: a grey photo-studio stage. The 3D canvas takes the wide left column with its transport bar
+   directly under it; the right rail holds the source video, camera presets and toggles. Below, three
+   report sections read from the manifest. Stacks to one column under 960px. */
+:root {
+  --bg: #dcdcd8;          /* page: warm stone grey */
+  --surface: #eaeae6;     /* panels */
+  --surface-2: #d1d1cc;   /* pressed / track */
+  --ink: #1e2021;
+  --muted: #5c605f;
+  --line: #bdbeb8;
+  --accent: #9a5a1c;      /* ochre, like lichen on rock */
+  --accent-ink: #fffaf3;
+  --stage: #8f918d;       /* 3D background: mid studio grey */
+  --stage-grid: #6f716d;
+  --stage-grid-2: #7f817d;
+  --overlay: rgba(30, 32, 33, 0.72);
+  --overlay-ink: #f3f3ef;
+  --frame: #ffd49a;
+  --font-ui: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", sans-serif;
+  --font-num: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1f2020; --surface: #2a2b2b; --surface-2: #353736; --ink: #e8e8e3; --muted: #a2a5a2;
+    --line: #444645; --accent: #e09a52; --accent-ink: #1f1608; --stage: #4a4c4b; --stage-grid: #626463;
+    --stage-grid-2: #565857; --overlay: rgba(12, 13, 13, 0.75); --overlay-ink: #f0f0ea; --frame: #ffc77a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1f2020; --surface: #2a2b2b; --surface-2: #353736; --ink: #e8e8e3; --muted: #a2a5a2;
+  --line: #444645; --accent: #e09a52; --accent-ink: #1f1608; --stage: #4a4c4b; --stage-grid: #626463;
+  --stage-grid-2: #565857; --overlay: rgba(12, 13, 13, 0.75); --overlay-ink: #f0f0ea; --frame: #ffc77a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 14px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 40px;
+  overflow-x: hidden;
+}
+.wrap { max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
+h1 { margin: 0; font-size: 22px; line-height: 1.25; font-weight: 650; text-wrap: balance; }
+.sub { margin: 2px 0 0; color: var(--muted); }
+h2 { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted); }
+
+button {
+  font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer; line-height: 1.3; white-space: nowrap;
+}
+button:hover { border-color: var(--muted); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+.viewport-col { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.viewport {
+  position: relative; width: 100%; height: min(72vh, 760px); min-height: 360px;
+  background: var(--stage); border-radius: var(--radius); overflow: hidden;
+}
+.viewport canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.hud {
+  position: absolute; left: 10px; top: 10px; padding: 3px 8px; border-radius: 4px;
+  background: var(--overlay); color: var(--overlay-ink); font-size: 12px; pointer-events: none;
+}
+.hud-frame { left: auto; right: 10px; font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.loading {
+  position: absolute; inset: 0; display: grid; place-items: center; color: var(--overlay-ink);
+  background: var(--overlay); font-size: 14px; text-align: center; padding: 16px;
+}
+.studio-frame {
+  position: absolute; border: 1.5px dashed var(--frame); pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.18);
+}
+.studio-frame span {
+  position: absolute; right: 0; bottom: 0; font-size: 11px;   /* 取景框内右下角：不和左上、右上的角标以及左下的操作提示重叠 */
+  color: var(--frame); background: var(--overlay); padding: 1px 6px; border-radius: 3px 0 0 0;
+}
+.hint { position: absolute; left: 10px; bottom: 10px; font-size: 12px; color: var(--overlay-ink); background: var(--overlay); padding: 3px 8px; border-radius: 4px; pointer-events: none; }
+
+.transport {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.transport .play { min-width: 72px; }
+.scrub { flex: 1 1 260px; display: flex; align-items: center; gap: 10px; min-width: 0; }
+.scrub input { flex: 1; min-width: 0; accent-color: var(--accent); }
+.frame-label { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: 13px; white-space: nowrap; }
+.speed-label { color: var(--muted); font-size: 12px; }
+
+.rail { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.panel-head button { padding: 3px 8px; font-size: 12px; }
+.video-box { position: relative; width: 100%; max-width: 100%; aspect-ratio: 854 / 480; background: var(--stage); border-radius: 4px; overflow: hidden; }
+.video-box video { width: 100%; height: 100%; display: block; object-fit: contain; }
+.half { position: absolute; top: 0; bottom: 0; width: 50%; pointer-events: none; border: 2px solid transparent; }
+.half.l { left: 0; } .half.r { right: 0; }
+.half.on { border-color: var(--frame); }
+.half span { position: absolute; left: 4px; bottom: 4px; font-size: 11px; background: var(--overlay); color: var(--overlay-ink); padding: 0 5px; border-radius: 3px; }
+.vnote { margin: 0; color: var(--muted); font-size: 12px; }
+.action-note { margin: 0; font-size: 13px; }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.group-label { font-size: 12px; color: var(--muted); }
+.toggles { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.toggles label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.toggles input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+
+.report { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.report section { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.kv { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.kv li { padding: 10px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; }
+.kv .k { min-width: 0; }
+.kv .v { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; white-space: nowrap; }
+.kv .n { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
+.kv li.kv-group { display: block; padding: 14px 0 4px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.kv li.kv-group:first-child { padding-top: 8px; }
+.notes { margin: 0; padding: 0 0 0 1.2em; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; max-width: 65ch; }
+.notes-global { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.who { font-weight: 400; letter-spacing: 0; }
+.char-kind { font-size: 12px; color: var(--muted); }
+.empty { color: var(--muted); }
+kbd { font-family: var(--font-num); font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; padding: 0 4px; background: var(--surface); }
+.keys { color: var(--muted); font-size: 12px; }
+
+@media (max-width: 960px) {
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .report { grid-template-columns: minmax(0, 1fr); }
+  .viewport { height: 58vh; min-height: 320px; }
+}
+@media (max-width: 520px) {
+  h1 { font-size: 19px; }
+  .transport { padding: 8px; }
+  .hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="title">怪物动画查看器</h1>
+      <p class="sub" id="subtitle"></p>
+    </div>
+    <div class="group" id="char-group" hidden>
+      <span class="group-label">角色 <span class="char-kind" id="char-kind"></span></span>
+      <div class="seg" id="characters" role="group" aria-label="角色"></div>
+    </div>
+    <div class="group">
+      <span class="group-label">动作</span>
+      <div class="seg" id="actions" role="group" aria-label="动作"></div>
+    </div>
+  </header>
+
+  <div class="stage">
+    <div class="viewport-col">
+      <div class="viewport" id="viewport">
+        <div class="hud" id="hud-cam">自由视角 · 透视</div>
+        <div class="hud hud-frame" id="hud-frame">--</div>
+        <div class="studio-frame" id="studio-frame" hidden><span id="studio-frame-label">视频画幅 8:9</span></div>
+        <div class="hint">拖动旋转 · 滚轮/双指缩放 · 右键/双指平移</div>
+        <div class="loading" id="loading">正在加载模型…</div>
+      </div>
+      <div class="transport">
+        <button class="play" id="btn-play" type="button" aria-label="播放/暂停">暂停</button>
+        <button id="btn-prev" type="button" aria-label="上一帧" title="上一帧（←）">◀ 帧</button>
+        <button id="btn-next" type="button" aria-label="下一帧" title="下一帧（→）">帧 ▶</button>
+        <div class="scrub">
+          <input id="scrub" type="range" min="1" max="121" step="1" value="1" aria-label="帧进度">
+          <span class="frame-label" id="frame-label">第 1 / 121 帧</span>
+        </div>
+        <span class="speed-label">速度</span>
+        <div class="seg" id="speeds" role="group" aria-label="播放速度"></div>
+      </div>
+      <div class="keys"><kbd>空格</kbd> 播放 / 暂停　<kbd>←</kbd> <kbd>→</kbd> 逐帧</div>
+    </div>
+
+    <aside class="rail">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>SEEDANCE 原视频</h2>
+          <button id="btn-video-toggle" type="button" aria-expanded="true">收起</button>
+        </div>
+        <div id="video-body" class="group">
+          <div class="video-box">
+            <video id="video" muted playsinline preload="auto"></video>
+            <div class="half l" id="half-l"><span>正面机位</span></div>
+            <div class="half r" id="half-r"><span>侧面机位</span></div>
+          </div>
+          <p class="vnote">与 3D 动画共用一条时间轴（静音）。视频第 i 帧对应动画第 i+1 帧。</p>
+        </div>
+        <p class="action-note" id="action-note"></p>
+      </div>
+
+      <div class="panel">
+        <div class="group">
+          <span class="group-label">视角预设</span>
+          <div class="seg" id="views"></div>
+        </div>
+        <div class="group">
+          <span class="group-label">对照机位（正交，还原生成视频时的相机）</span>
+          <div class="seg" id="studios"></div>
+        </div>
+        <div class="group">
+          <span class="group-label">显示</span>
+          <div class="toggles">
+            <label><input type="checkbox" id="tg-skel"> 骨架</label>
+            <label><input type="checkbox" id="tg-grid" checked> 地面网格</label>
+            <label><input type="checkbox" id="tg-rotate"> 自动旋转</label>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="report">
+    <section><h2>指标<span class="who" id="metrics-who"></span></h2><ul class="kv" id="metrics"></ul></section>
+    <section><h2>成本</h2><ul class="kv" id="costs"></ul></section>
+    <section>
+      <h2>注意事项<span class="who" id="notes-who"></span></h2>
+      <ol class="notes" id="notes"></ol>
+      <div class="notes-global" id="notes-global-wrap" hidden>
+        <span class="group-label">所有角色通用</span>
+        <ol class="notes" id="notes-global"></ol>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="assets/manifest.js"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const D = window.V2R || {};
+const FPS = D.fps || 24;
+const DEFAULT_STUDIO = { orthoHeight: 1.8, centerHeight: 0.76, aspect: 8 / 9 };
+// 多角色结构：D.characters。旧的单角色结构（顶层 model / actions / metrics / notes / studio）也能读，当成一个角色。
+const NEW_SHAPE = Array.isArray(D.characters);
+const CHARS = (NEW_SHAPE ? D.characters
+  : [{ id: 'default', label: '', model: D.model, studio: D.studio, actions: D.actions, metrics: D.metrics, notes: D.notes }])
+  .filter((c) => c && c.id);
+const GLOBAL_NOTES = NEW_SHAPE && Array.isArray(D.notes) ? D.notes : [];
+const MULTI = CHARS.length > 1;
+const $ = (id) => document.getElementById(id);
+
+let ch = null;                          // 当前角色（manifest 里的那一项）
+let ACTIONS = [];                       // 当前角色的动作
+let ST = Object.assign({}, DEFAULT_STUDIO);  // 当前角色的对照机位参数
+
+// ---------- static text from manifest ----------
+if (D.title) $('title').textContent = D.title;
+$('subtitle').textContent = D.subtitle || '';
+function kvItem(it) {
+  const li = document.createElement('li');
+  const k = document.createElement('span'); k.className = 'k'; k.textContent = it.label ?? '';
+  const v = document.createElement('span'); v.className = 'v'; v.textContent = it.value ?? '';
+  li.append(k, v);
+  if (it.note) { const n = document.createElement('span'); n.className = 'n'; n.textContent = it.note; li.append(n); }
+  return li;
+}
+// 有 group 字段时按 group 分组（按第一次出现的顺序），每组前面加一个小标题；没有 group 的项归到“其他”
+function fillKV(el, items) {
+  el.replaceChildren();
+  if (!Array.isArray(items) || !items.length) { el.innerHTML = '<li class="empty">暂无数据</li>'; return; }
+  const groups = new Map();
+  for (const it of items) {
+    const g = typeof it.group === 'string' ? it.group.trim() : '';
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push(it);
+  }
+  const grouped = [...groups.keys()].some(Boolean);
+  for (const [g, list] of groups) {
+    if (grouped) { const h = document.createElement('li'); h.className = 'kv-group'; h.textContent = g || '其他'; el.append(h); }
+    for (const it of list) el.append(kvItem(it));
+  }
+}
+function fillNotes(el, list) {
+  el.replaceChildren();
+  const items = Array.isArray(list) ? list : [];
+  for (const t of items) { const li = document.createElement('li'); li.textContent = typeof t === 'string' ? t : (t.text ?? ''); el.append(li); }
+  if (!items.length) el.innerHTML = '<li class="empty">暂无</li>';
+  return items.length;
+}
+fillKV($('costs'), D.costs);
+
+function renderCharacterInfo() {
+  const who = MULTI && ch ? ' · ' + (ch.label || ch.id) : '';
+  $('metrics-who').textContent = who;
+  $('notes-who').textContent = who;
+  fillKV($('metrics'), ch && ch.metrics);
+  const n = fillNotes($('notes'), ch && ch.notes);
+  const g = fillNotes($('notes-global'), GLOBAL_NOTES);
+  $('notes-global-wrap').hidden = !g;
+  $('notes').hidden = !n && g > 0;
+  $('char-kind').textContent = ch && ch.kind ? '· ' + ch.kind : '';
+  for (const b of $('characters').children) b.setAttribute('aria-pressed', String(!!ch && b.dataset.id === ch.id));
+}
+
+// character switcher (hidden when there is only one character)
+$('char-group').hidden = !MULTI;
+if (MULTI) {
+  for (const c of CHARS) {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = c.label || c.id; b.dataset.id = c.id;
+    if (c.kind) b.title = c.kind;
+    b.setAttribute('aria-pressed', 'false');
+    b.onclick = () => { setCharacter(c.id).catch((e) => console.error(e)); };
+    $('characters').append(b);
+  }
+}
+
+// ---------- three.js setup ----------
+const vp = $('viewport');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+vp.prepend(renderer.domElement);
+
+const scene = new THREE.Scene();
+const persp = new THREE.PerspectiveCamera(35, 1, 0.01, 100);
+const ortho = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.01, 100);
+let camera = persp;
+let mode = 'persp'; // 'persp' | 'front' | 'side'
+
+const controls = new OrbitControls(persp, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.screenSpacePanning = true;
+controls.minDistance = 0.3;
+controls.maxDistance = 12;
+controls.autoRotateSpeed = 1.5;
+
+// studio lighting: soft sky/ground fill, warm key with shadow, cool rim
+scene.add(new THREE.HemisphereLight(0xeef0f2, 0x5a5650, 1.6));
+const key = new THREE.DirectionalLight(0xfff3e4, 2.6);
+key.position.set(1.6, 2.6, 2.0);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+Object.assign(key.shadow.camera, { left: -1.5, right: 1.5, top: 1.5, bottom: -1.5, near: 0.1, far: 8 });
+key.shadow.bias = -0.0005;
+key.shadow.normalBias = 0.01;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xdfe7f0, 0.8); fill.position.set(-2, 1.2, 1.2); scene.add(fill);
+const rim = new THREE.DirectionalLight(0xffffff, 1.2); rim.position.set(-0.8, 2.0, -2.4); scene.add(rim);
+
+const shadowFloor = new THREE.Mesh(new THREE.CircleGeometry(4, 64), new THREE.ShadowMaterial({ opacity: 0.28 }));
+shadowFloor.rotation.x = -Math.PI / 2; shadowFloor.receiveShadow = true; scene.add(shadowFloor);
+let grid = null;
+
+function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function applyTheme() {
+  scene.background = new THREE.Color(css('--stage') || '#8f918d');
+  const on = grid ? grid.visible : true;
+  if (grid) { scene.remove(grid); grid.geometry.dispose(); grid.material.dispose(); }
+  grid = new THREE.GridHelper(4, 40, new THREE.Color(css('--stage-grid')), new THREE.Color(css('--stage-grid-2')));
+  grid.position.y = 0.0005; grid.visible = on; scene.add(grid);
+}
+applyTheme();
+try { matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme); } catch (e) {}
+new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+// ---------- framing ----------
+// 透视相机按当前角色的包围盒取景。模型加载前先用一个约 1.0 高的占位盒子。
+const fitBox = new THREE.Box3(new THREE.Vector3(-0.45, 0, -0.3), new THREE.Vector3(0.45, 1.0, 0.3));
+const TARGET = new THREE.Vector3(0, 0.5, 0);
+const FIT_MARGIN = 0.8;  // 包围盒占画面受限方向的 80%
+
+// dir：从取景中心指向相机的方向。返回让包围盒 8 个角都落在画面里所需的相机距离。
+function fitDistance(dir) {
+  const c = fitBox.getCenter(new THREE.Vector3());
+  const f = dir.clone().negate();
+  const right = new THREE.Vector3().crossVectors(f, persp.up);
+  if (right.lengthSq() < 1e-12) right.set(1, 0, 0);
+  right.normalize();
+  const up = new THREE.Vector3().crossVectors(right, f).normalize();
+  const tanV = Math.tan(THREE.MathUtils.degToRad(persp.fov / 2)) * FIT_MARGIN;
+  const tanH = tanV * Math.max(persp.aspect || 1, 0.05);
+  const p = new THREE.Vector3();
+  let d = 0;
+  for (let i = 0; i < 8; i++) {
+    p.set(i & 1 ? fitBox.max.x : fitBox.min.x, i & 2 ? fitBox.max.y : fitBox.min.y, i & 4 ? fitBox.max.z : fitBox.min.z).sub(c);
+    const z = p.dot(dir);
+    d = Math.max(d, z + Math.abs(p.dot(right)) / tanH, z + Math.abs(p.dot(up)) / tanV);
+  }
+  return Math.max(d, 0.1);
+}
+function framePersp(dirIn) {
+  const dir = dirIn.clone().normalize();
+  fitBox.getCenter(TARGET);
+  const r = fitBox.getSize(new THREE.Vector3()).length() / 2;
+  controls.minDistance = Math.max(0.05, r * 0.4);
+  controls.maxDistance = Math.max(12, r * 20);
+  controls.target.copy(TARGET);
+  persp.position.copy(TARGET).addScaledVector(dir, fitDistance(dir));
+  persp.lookAt(TARGET);
+  controls.update();
+}
+// 阴影相机的范围跟着角色大小走（四足怪物更长）
+function fitShadow() {
+  const s = fitBox.getSize(new THREE.Vector3()), c = fitBox.getCenter(new THREE.Vector3());
+  const ext = Math.max(1.5, Math.max(s.x, s.y, s.z) * 0.9 + Math.hypot(c.x, c.z));
+  Object.assign(key.shadow.camera, { left: -ext, right: ext, top: ext, bottom: -ext });
+  key.shadow.camera.updateProjectionMatrix();
+}
+
+// ---------- camera presets ----------
+// dir 是相对取景中心的方向（距离由包围盒算出）
+const VIEWS = [
+  { id: 'front', label: '正面', dir: [0, 0.1, 2.8] },
+  { id: 'side', label: '侧面', dir: [-2.8, 0.1, 0] },
+  { id: 'back', label: '背面', dir: [0, 0.1, -2.8] },
+  { id: 'top', label: '俯视', dir: [0, 2.7, 0.001] },
+  { id: 'q34', label: '3/4 视角', dir: [1.9, 0.55, 2.0] },
+  { id: 'reset', label: '重置', dir: [1.9, 0.55, 2.0] },
+];
+const STUDIOS = [
+  { id: 'front', label: '正面机位', dir: [0, 0, 1] },  // camera on +Z looking -Z
+  { id: 'side', label: '侧面机位', dir: [-1, 0, 0] },  // camera on -X looking +X, character faces right
+];
+
+function setPersp(v) {
+  mode = 'persp'; camera = persp; controls.object = persp;
+  if (v.id === 'reset') { controls.autoRotate = false; $('tg-rotate').checked = false; }
+  framePersp(new THREE.Vector3(...v.dir));
+  $('studio-frame').hidden = true;
+  $('hud-cam').textContent = (v.id === 'reset' ? '自由视角' : v.label) + ' · 透视';
+  markHalves(); markViewButtons(v.id === 'reset' ? null : v.id, null);
+}
+function ratioLabel(a) {
+  for (let q = 1; q <= 32; q++) { const p = Math.round(a * q); if (p > 0 && Math.abs(p / q - a) < 1e-3) return p + ':' + q; }
+  return a.toFixed(2) + ':1';
+}
+function orthoFrustum() {
+  const w = vp.clientWidth, h = vp.clientHeight, A = w / h, s = ST.aspect, H = ST.orthoHeight;
+  let vw, vh;
+  if (A >= s) { vh = H; vw = H * A; } else { vw = H * s; vh = vw / A; }
+  ortho.left = -vw / 2; ortho.right = vw / 2; ortho.top = vh / 2; ortho.bottom = -vh / 2;
+  ortho.updateProjectionMatrix();
+  // 8:9 frame overlay in CSS px
+  const fw = (H * s) / vw * w, fh = H / vh * h, f = $('studio-frame');
+  Object.assign(f.style, { width: fw + 'px', height: fh + 'px', left: (w - fw) / 2 + 'px', top: (h - fh) / 2 + 'px' });
+}
+function setStudio(st) {
+  mode = st.id; camera = ortho; controls.object = ortho;
+  controls.autoRotate = false; $('tg-rotate').checked = false;
+  ortho.zoom = 1; ortho.up.set(0, 1, 0);
+  const c = new THREE.Vector3(0, ST.centerHeight, 0);
+  ortho.position.set(st.dir[0] * 10, ST.centerHeight, st.dir[2] * 10);
+  controls.target.copy(c); ortho.lookAt(c);
+  orthoFrustum(); controls.update();
+  $('studio-frame').hidden = false;
+  $('hud-cam').textContent = '对照机位 · ' + st.label + '（正交）';
+  markHalves(); markViewButtons(null, st.id);
+}
+function markHalves() {
+  $('half-l').classList.toggle('on', mode === 'front');
+  $('half-r').classList.toggle('on', mode === 'side');
+}
+function markViewButtons(v, s) {
+  for (const b of $('views').children) b.setAttribute('aria-pressed', String(b.dataset.id === v));
+  for (const b of $('studios').children) b.setAttribute('aria-pressed', String(b.dataset.id === s));
+}
+// 换角色后重新取景：透视模式保留当前的观察方向，只按新包围盒调距离和中心；对照机位用新角色的参数重摆
+function refitCamera() {
+  if (mode === 'persp') {
+    const dir = persp.position.clone().sub(controls.target);
+    if (dir.lengthSq() < 1e-8) dir.set(...VIEWS[4].dir);
+    framePersp(dir);
+  } else {
+    const st = STUDIOS.find((s) => s.id === mode);
+    if (st) setStudio(st);
+  }
+}
+for (const v of VIEWS) {
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = v.label; b.dataset.id = v.id;
+  if (v.id !== 'reset') b.setAttribute('aria-pressed', 'false');
+  b.onclick = () => setPersp(v); $('views').append(b);
+}
+for (const s of STUDIOS) {
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = s.label; b.dataset.id = s.id;
+  b.setAttribute('aria-pressed', 'false'); b.onclick = () => setStudio(s); $('studios').append(b);
+}
+controls.addEventListener('start', () => {
+  // once the user moves the camera, the 8:9 frame no longer matches; keep the camera free
+  $('studio-frame').hidden = true;
+  markViewButtons(null, null);
+  if (mode !== 'persp') $('hud-cam').textContent = '对照机位（已手动调整）· 正交';
+  else $('hud-cam').textContent = '自由视角 · 透视';
+});
+
+function resize() {
+  const w = vp.clientWidth, h = vp.clientHeight;
+  renderer.setSize(w, h, false);
+  persp.aspect = w / h; persp.updateProjectionMatrix();
+  orthoFrustum();
+}
+new ResizeObserver(resize).observe(vp);
+resize();
+setPersp(VIEWS[4]);
+
+// ---------- toggles ----------
+let skel = null;
+$('tg-skel').onchange = (e) => { if (skel) skel.visible = e.target.checked; };
+$('tg-grid').onchange = (e) => { if (grid) grid.visible = e.target.checked; };
+$('tg-rotate').onchange = (e) => {
+  controls.autoRotate = e.target.checked;
+  if (e.target.checked) { $('studio-frame').hidden = true; markViewButtons(null, null); }
+};
+
+// ---------- timeline ----------
+const video = $('video');
+video.muted = true; video.defaultMuted = true; video.loop = false;
+let mixer = null, clips = [], curAction = null, curClip = null, cur = null;
+let u = 0;                // master time = video time (s); animation time = u + 1/FPS
+let playing = true, speed = 1;
+let frames = 121, dur = 121 / FPS;
+let lastSeekAt = 0;
+let lastShownFrame = -1;
+
+const SPEEDS = [0.25, 0.5, 1];
+for (const s of SPEEDS) {
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = s + '×';
+  b.dataset.s = s; b.setAttribute('aria-pressed', String(s === speed));
+  b.onclick = () => { speed = s; for (const x of $('speeds').children) x.setAttribute('aria-pressed', String(+x.dataset.s === s)); video.playbackRate = s; };
+  $('speeds').append(b);
+}
+
+function hasClip(a) { return !!(a && THREE.AnimationClip.findByName(clips, a.id)); }
+// 动作按钮按当前角色重建；模型加载好之前全部禁用
+function buildActionButtons() {
+  $('actions').replaceChildren();
+  ACTIONS.forEach((a, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = a.label || a.id;
+    b.dataset.i = i; b.setAttribute('aria-pressed', 'false'); b.disabled = true;
+    b.onclick = () => selectAction(i);
+    $('actions').append(b);
+  });
+}
+function enableActionButtons() {
+  for (const b of $('actions').children) {
+    const a = ACTIONS[+b.dataset.i];
+    const ok = hasClip(a);
+    b.disabled = !ok; b.title = ok ? '' : '模型里没有名为 “' + a.id + '” 的动画';
+  }
+}
+
+function frameOf(t) { return Math.min(frames, Math.floor(t * FPS + 1e-6) + 1); }
+function animTime() { return u + 1 / FPS; }
+
+function selectAction(i) {
+  const a = ACTIONS[i]; if (!a) return;
+  cur = i;
+  frames = a.frames || 121; dur = frames / FPS;
+  $('scrub').max = frames;
+  for (const b of $('actions').children) b.setAttribute('aria-pressed', String(+b.dataset.i === i));
+  $('action-note').textContent = a.note || '';
+  if (mixer) {
+    mixer.stopAllAction();
+    curClip = THREE.AnimationClip.findByName(clips, a.id);
+    curAction = curClip ? mixer.clipAction(curClip) : null;
+    if (curAction) { curAction.reset(); curAction.setLoop(THREE.LoopRepeat, Infinity); curAction.play(); }
+  }
+  if (a.video) { video.src = a.video; video.load(); }
+  else video.removeAttribute('src');
+  u = 0; lastSeekAt = 0; lastShownFrame = -1;
+  setPlaying(true);
+}
+function selectActionById(id) {
+  const i = ACTIONS.findIndex((a) => a.id === id);
+  if (i < 0 || !hasClip(ACTIONS[i])) return false;
+  selectAction(i); return true;
+}
+
+function setPlaying(p) {
+  playing = p;
+  $('btn-play').textContent = p ? '暂停' : '播放';
+  if (!p) { try { video.pause(); } catch (e) {} }
+}
+function setFrame(n) {
+  n = Math.max(1, Math.min(frames, n));
+  u = (n - 1) / FPS;
+}
+function step(d) { setPlaying(false); setFrame(frameOf(u) + d); }
+
+$('btn-play').onclick = () => setPlaying(!playing);
+$('btn-prev').onclick = () => step(-1);
+$('btn-next').onclick = () => step(1);
+let scrubResume = false, scrubbing = false;
+const scrub = $('scrub');
+scrub.addEventListener('pointerdown', () => { scrubbing = true; scrubResume = playing; setPlaying(false); });
+scrub.addEventListener('input', () => { if (playing) setPlaying(false); setFrame(+scrub.value); });
+scrub.addEventListener('change', () => { scrubbing = false; if (scrubResume) setPlaying(true); scrubResume = false; });
+window.addEventListener('pointerup', () => { scrubbing = false; });
+
+window.addEventListener('keydown', (e) => {
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' && t.type !== 'range' && t.type !== 'checkbox' || t.isContentEditable || t.tagName === 'TEXTAREA')) return;
+  if (e.code === 'Space') { e.preventDefault(); setPlaying(!playing); }
+  else if (e.key === 'ArrowLeft' && t !== scrub) { e.preventDefault(); step(-1); }
+  else if (e.key === 'ArrowRight' && t !== scrub) { e.preventDefault(); step(1); }
+});
+window.addEventListener('keyup', (e) => { if (e.code === 'Space') e.preventDefault(); });
+
+// video panel collapse
+$('btn-video-toggle').onclick = () => {
+  const body = $('video-body'), open = body.hidden;
+  body.hidden = !open;
+  $('btn-video-toggle').textContent = open ? '收起' : '展开';
+  $('btn-video-toggle').setAttribute('aria-expanded', String(open));
+};
+
+function syncVideo(wrapped) {
+  if (!video.currentSrc || video.readyState < 1 || video.seeking) return;
+  const vd = isFinite(video.duration) ? video.duration : dur;
+  const now = performance.now();
+  if (playing) {
+    // small drift: nudge the playback rate; large drift or loop wrap: seek
+    const err = u - video.currentTime;
+    if ((wrapped || Math.abs(err) > 0.1) && now - lastSeekAt > 150) {
+      video.currentTime = Math.min(u, vd - 0.001); lastSeekAt = now; video.playbackRate = speed;
+    } else {
+      const rate = speed * (1 + Math.max(-0.15, Math.min(0.15, err * 3)));
+      if (Math.abs(video.playbackRate - rate) > 0.01) video.playbackRate = rate;
+    }
+    if (video.paused) video.play().catch(() => {});
+  } else {
+    if (!video.paused) video.pause();
+    const want = Math.min((frameOf(u) - 1 + 0.5) / FPS, vd - 0.001);
+    if (Math.abs(video.currentTime - want) > 0.25 / FPS) video.currentTime = want;
+  }
+}
+
+// ---------- load models ----------
+const loader = new GLTFLoader();
+// 发布成 Artifact 时不能直接托管 .glb，所以模型以 base64 文本（.txt）的形式随页面发布，这里取回后解码。
+// 本地直接给 .glb 也行。
+async function fetchModel(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  if (!/\.txt$/i.test(url)) return res.arrayBuffer();
+  const bin = atob((await res.text()).trim());
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes.buffer;
+}
+function parseGLB(buf) { return new Promise((resolve, reject) => loader.parse(buf, '', resolve, reject)); }
+
+// 当前姿势下模型的世界包围盒（蒙皮网格按骨骼当前姿势算）
+function measure(root, out) {
+  root.updateMatrixWorld(true);
+  out.makeEmpty();
+  const b = new THREE.Box3();
+  root.traverse((o) => {
+    if (!o.isMesh || !o.geometry) return;
+    if (o.isSkinnedMesh && typeof o.computeBoundingBox === 'function') { o.computeBoundingBox(); b.copy(o.boundingBox); }
+    else { if (!o.geometry.boundingBox) o.geometry.computeBoundingBox(); b.copy(o.geometry.boundingBox); }
+    b.applyMatrix4(o.matrixWorld); out.union(b);
+  });
+  return out;
+}
+// 所有动画抽样若干帧取并集，用来取景（静止姿势常是 T-pose，和实际动作的范围不一样）
+function measureAnimated(root, gltfClips) {
+  const all = new THREE.Box3(), tmp = new THREE.Box3();
+  if (!gltfClips.length) return all;
+  const m = new THREE.AnimationMixer(root);
+  const N = 8;
+  for (const clip of gltfClips) {
+    const a = m.clipAction(clip); a.play();
+    for (let k = 0; k <= N; k++) { a.time = Math.max(0, clip.duration * k / N - 1e-4); m.update(0); all.union(measure(root, tmp)); }
+    a.stop();
+  }
+  m.stopAllAction(); m.uncacheRoot(root);
+  root.updateMatrixWorld(true);
+  return all;
+}
+
+const cache = new Map();   // 角色 id → Promise<entry>（加载中或已加载）
+const loaded = new Map();  // 角色 id → entry（已加载好，可直接复用）
+function loadCharacter(c) {
+  if (cache.has(c.id)) return cache.get(c.id);
+  const p = (async () => {
+    if (!c.model) throw new Error('清单里没有填 model');
+    const gltf = await parseGLB(await fetchModel(c.model));
+    const root = gltf.scene;
+    root.traverse((o) => {
+      if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; }
+    });
+    const gltfClips = gltf.animations || [];
+    const rest = measure(root, new THREE.Box3());
+    const anim = measureAnimated(root, gltfClips);
+    const skelHelper = new THREE.SkeletonHelper(root);
+    skelHelper.material.linewidth = 2;
+    const entry = { id: c.id, root, clips: gltfClips, skel: skelHelper, rest, fit: anim.isEmpty() ? rest.clone() : anim };
+    loaded.set(c.id, entry);
+    return entry;
+  })();
+  cache.set(c.id, p);
+  p.catch(() => { if (cache.get(c.id) === p) cache.delete(c.id); });  // 失败的不缓存，再切过来会重试
+  return p;
+}
+
+let active = null;        // 当前在场景里的 entry
+let charSeq = 0;          // 每次切换 +1；加载回来时序号不对就丢弃
+let loadingId = null, loadError = null, charPromise = null;
+
+function showLoading(text) { const el = $('loading'); el.textContent = text; el.hidden = false; }
+
+// 把当前角色从场景里撤下：停掉 mixer、移除模型和骨架辅助线（缓存里的模型留着复用，不 dispose）
+function detach() {
+  if (mixer) { mixer.stopAllAction(); if (active) mixer.uncacheRoot(active.root); }
+  mixer = null; curAction = null; curClip = null; clips = []; cur = null;
+  if (active) { scene.remove(active.root); scene.remove(active.skel); }
+  active = null; skel = null;
+  try { video.pause(); } catch (e) {}
+  video.removeAttribute('src'); video.load();
+  lastShownFrame = -1;
+  $('hud-frame').textContent = '--';
+  $('frame-label').textContent = '--';
+  $('action-note').textContent = '';
+  if (window.__v2r) window.__v2r.root = null;
+}
+
+function attach(entry, actionId) {
+  active = entry;
+  scene.add(entry.root);
+  entry.skel.visible = $('tg-skel').checked;
+  scene.add(entry.skel);
+  skel = entry.skel;
+  mixer = new THREE.AnimationMixer(entry.root);
+  clips = entry.clips;
+  if (!entry.fit.isEmpty()) fitBox.copy(entry.fit);
+  fitShadow();
+  refitCamera();
+  enableActionButtons();
+  $('loading').hidden = true;
+  let i = actionId ? ACTIONS.findIndex((a) => a.id === actionId && hasClip(a)) : -1;
+  if (i < 0) i = ACTIONS.findIndex(hasClip);
+  if (i >= 0) selectAction(i);
+  else $('hud-frame').textContent = '没有可播放的动作';
+  window.__v2r.root = entry.root;
+}
+
+// 切换角色。返回 Promise，加载完成（或失败）后给出 state()；加载期间又切到别的角色时给出 null。
+function setCharacter(id, actionId) {
+  const c = CHARS.find((x) => x.id === id);
+  if (!c) return Promise.reject(new Error('没有这个角色：' + id));
+  if (ch === c && active) {
+    if (actionId) selectActionById(actionId);
+    return Promise.resolve(state());
+  }
+  if (ch === c && loadingId === c.id && charPromise) return charPromise;
+  const seq = ++charSeq;
+  detach();
+  ch = c;
+  ACTIONS = Array.isArray(c.actions) ? c.actions : [];
+  ST = Object.assign({}, DEFAULT_STUDIO, c.studio || {});
+  $('studio-frame-label').textContent = '视频画幅 ' + ratioLabel(ST.aspect);
+  orthoFrustum();
+  renderCharacterInfo();
+  buildActionButtons();
+  loadError = null;
+  const name = c.label || c.id;
+  const ready = loaded.get(c.id);
+  if (ready) { loadingId = null; charPromise = null; attach(ready, actionId); return Promise.resolve(state()); }
+  loadingId = c.id;
+  showLoading(MULTI ? '正在加载「' + name + '」模型…' : '正在加载模型…');
+  charPromise = loadCharacter(c).then((entry) => {
+    if (seq !== charSeq) return null;   // 加载期间又切到了别的角色
+    loadingId = null; charPromise = null;
+    attach(entry, actionId);
+    return state();
+  }, (err) => {
+    if (seq !== charSeq) return null;
+    loadingId = null; charPromise = null;
+    loadError = err && err.message ? err.message : String(err);
+    showLoading((MULTI ? '「' + name + '」' : '') + '模型加载失败：' + loadError + '。请通过 http 服务打开本页。');
+    $('hud-frame').textContent = '--';
+    console.error(err);
+    return state();
+  });
+  return charPromise;
+}
+
+// ---------- loop ----------
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min((now - last) / 1000, 0.1); last = now;
+  update(dt);
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+function update(dt) {
+  let wrapped = false;
+  if (curAction && playing) {
+    u += dt * speed;
+    if (u >= dur) { u %= dur; wrapped = true; }
+  }
+  if (curAction && mixer) {
+    curAction.time = Math.min(animTime(), curClip.duration - 1e-4);
+    mixer.update(0);
+  }
+  if (cur != null) {
+    syncVideo(wrapped);
+    const n = frameOf(u);
+    if (n !== lastShownFrame) {
+      lastShownFrame = n;
+      if (!scrubbing) scrub.value = n;
+      const txt = '第 ' + n + ' / ' + frames + ' 帧';
+      $('frame-label').textContent = txt;
+      $('hud-frame').textContent = txt;
+    }
+  }
+  controls.update();
+}
+requestAnimationFrame(tick);
+
+// ---------- inspection hook ----------
+const size3 = (b) => (b && !b.isEmpty() ? b.getSize(new THREE.Vector3()).toArray().map((x) => +x.toFixed(4)) : null);
+function bboxInfo() {
+  if (!active) return null;
+  return {
+    rest: size3(active.rest),                     // 静止姿势的包围盒尺寸 [x, y, z]
+    fit: size3(active.fit),                       // 所有动画抽样后的包围盒尺寸（取景用）
+    fitMin: active.fit.min.toArray(), fitMax: active.fit.max.toArray(),
+  };
+}
+function state() {
+  return {
+    character: ch ? ch.id : null, loading: loadingId, error: loadError,
+    action: cur != null && ACTIONS[cur] ? ACTIONS[cur].id : null, playing, speed, frame: frameOf(u), frames,
+    masterTime: u, animTime: curAction ? curAction.time : null, videoTime: video.currentTime,
+    video: video.getAttribute('src'),
+    mode, camera: camera.position.toArray(), target: controls.target.toArray(), zoom: camera.zoom,
+    bbox: bboxInfo(), modelsInScene: active ? 1 : 0, cached: [...loaded.keys()],
+  };
+}
+window.__v2r = {
+  characters: CHARS.map((c) => c.id),
+  get character() { return ch ? ch.id : null; },
+  get action() { return cur != null && ACTIONS[cur] ? ACTIONS[cur].id : null; },
+  get bbox() { return bboxInfo(); },
+  get loading() { return loadingId; },
+  get error() { return loadError; },
+  root: null,
+  state,
+  setCharacter,                                   // __v2r.setCharacter('beast', 'walk?') → Promise<state | null>
+  setAction: (id) => selectActionById(id),        // 当前角色内切动作，成功返回 true
+  setFrame: (n) => { setPlaying(false); setFrame(n); },
+  // returns the current 3D frame as a 2D canvas (for side-by-side checks against the video)
+  grab: () => {
+    update(0);
+    renderer.render(scene, camera);
+    const c = document.createElement('canvas');
+    c.width = renderer.domElement.width; c.height = renderer.domElement.height;
+    c.getContext('2d').drawImage(renderer.domElement, 0, 0);
+    return c;
+  },
+};
+
+// ---------- initial character / action from URL (?c=<角色id>&a=<动作id>) ----------
+let qs;
+try { qs = new URLSearchParams(location.search); } catch (e) { qs = new URLSearchParams(); }
+const initChar = CHARS.find((c) => c.id === qs.get('c')) || CHARS[0];
+if (initChar) window.__v2r.ready = setCharacter(initChar.id, qs.get('a') || null);
+else { showLoading('清单里没有角色。'); renderCharacterInfo(); window.__v2r.ready = Promise.resolve(null); }
+</script>

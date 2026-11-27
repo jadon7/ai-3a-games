@@ -1,0 +1,367 @@
+{
+ "_说明": "炽鬃野猪 B（w-beast）。Tripo 四足绑骨 41 根，原始坐标面朝 -Y、左 +X。躯干 Spine_0 骨盆、Spine_1、Spine_2 胸；脖子 Head_0，头 Head_1（獠牙、吻部都在它上面），Head_2 下巴尖、bone_7/bone_8 耳朵跟着头。左前腿：肩胛 bone_9、上臂 bone_10、前臂 0_Left_Limb_0、掌 0_Left_Limb_1、蹄 Limb_2..4；右前腿的肩胛叫 Spine_3、上臂叫 Spine_4（本身不管顶点，右上臂的肉在它的子骨骼 Spine_5 上，跟着走）、前臂 0_Right_Limb_0、掌 0_Right_Limb_1。后腿：大腿 Limb_0、小腿 Limb_1、跖骨 Limb_2、蹄 Limb_3..5。尾巴 bone_36..40 不受控。",
+ "_取舍": "换画风 B（w-beast）自动生成（art/style_b/beasts/make_rigmap.py）：活动范围照抄 boar_rigmap.json；跟踪点只是骨骼的头和脚的尾巴（不训练，只给 prep_rig 摆正用）",
+ "kind": "quadruped",
+ "forward": [
+  0,
+  -1,
+  0
+ ],
+ "target_length": 1.2,
+ "root_bone_length": 0.12,
+ "reparent": {},
+ "role_dofs": {
+  "neck": [
+   [
+    "pitch",
+    -35,
+    50
+   ],
+   [
+    "yaw",
+    -35,
+    35
+   ],
+   [
+    "roll",
+    -18,
+    18
+   ]
+  ],
+  "head": [
+   [
+    "pitch",
+    -45,
+    45
+   ],
+   [
+    "yaw",
+    -40,
+    40
+   ],
+   [
+    "roll",
+    -25,
+    25
+   ]
+  ],
+  "lower_f": [
+   [
+    "pitch",
+    -80,
+    30
+   ]
+  ],
+  "paw_f": [
+   [
+    "pitch",
+    -25,
+    110
+   ]
+  ],
+  "upper_h": [
+   [
+    "fwd",
+    -60,
+    60
+   ],
+   [
+    "out",
+    -10,
+    30
+   ],
+   [
+    "twist",
+    -15,
+    15
+   ]
+  ],
+  "lower_h": [
+   [
+    "pitch",
+    -60,
+    70
+   ]
+  ],
+  "hock": [
+   [
+    "pitch",
+    -70,
+    50
+   ]
+  ]
+ },
+ "role_speed": {},
+ "bones": {
+  "tripo::Root": [
+   "root",
+   0
+  ],
+  "tripo::Spine_0": [
+   "spine",
+   0
+  ],
+  "tripo::Head_0": [
+   "neck",
+   0
+  ],
+  "tripo::Head_1": [
+   "head",
+   0
+  ],
+  "bone_9": [
+   "scapula",
+   1
+  ],
+  "bone_10": [
+   "upper_f",
+   1
+  ],
+  "tripo::0_Left_Limb_0": [
+   "lower_f",
+   1
+  ],
+  "tripo::0_Left_Limb_1": [
+   "paw_f",
+   1
+  ],
+  "tripo::Spine_3": [
+   "scapula",
+   -1
+  ],
+  "tripo::Spine_4": [
+   "upper_f",
+   -1
+  ],
+  "tripo::0_Right_Limb_0": [
+   "lower_f",
+   -1
+  ],
+  "tripo::0_Right_Limb_1": [
+   "paw_f",
+   -1
+  ],
+  "tripo::1_Left_Limb_0": [
+   "upper_h",
+   1
+  ],
+  "tripo::1_Left_Limb_1": [
+   "lower_h",
+   1
+  ],
+  "tripo::1_Left_Limb_2": [
+   "hock",
+   1
+  ],
+  "tripo::1_Right_Limb_0": [
+   "upper_h",
+   -1
+  ],
+  "tripo::1_Right_Limb_1": [
+   "lower_h",
+   -1
+  ],
+  "tripo::1_Right_Limb_2": [
+   "hock",
+   -1
+  ],
+  "tripo::Spine_1": [
+   "spine",
+   0
+  ],
+  "tripo::Spine_2": [
+   "spine",
+   0
+  ]
+ },
+ "chains": [
+  {
+   "name": "spine",
+   "role": "spine",
+   "bones": [
+    "tripo::Spine_1",
+    "tripo::Spine_2"
+   ],
+   "dofs": [
+    [
+     "pitch",
+     -7,
+     7
+    ],
+    [
+     "yaw",
+     -9,
+     9
+    ],
+    [
+     "twist",
+     -6,
+     6
+    ]
+   ]
+  }
+ ],
+ "joints": [
+  {
+   "name": "Root",
+   "bone": "tripo::Root",
+   "group": "M"
+  },
+  {
+   "name": "Spine_0",
+   "bone": "tripo::Spine_0",
+   "group": "M"
+  },
+  {
+   "name": "Head_0",
+   "bone": "tripo::Head_0",
+   "group": "M"
+  },
+  {
+   "name": "Head_1",
+   "bone": "tripo::Head_1",
+   "group": "M"
+  },
+  {
+   "name": "bone_9",
+   "bone": "bone_9",
+   "group": "L"
+  },
+  {
+   "name": "bone_10",
+   "bone": "bone_10",
+   "group": "L"
+  },
+  {
+   "name": "0_LeftL0",
+   "bone": "tripo::0_Left_Limb_0",
+   "group": "L"
+  },
+  {
+   "name": "0_LeftL1",
+   "bone": "tripo::0_Left_Limb_1",
+   "group": "L"
+  },
+  {
+   "name": "Spine_3",
+   "bone": "tripo::Spine_3",
+   "group": "R"
+  },
+  {
+   "name": "Spine_4",
+   "bone": "tripo::Spine_4",
+   "group": "R"
+  },
+  {
+   "name": "0_RightL0",
+   "bone": "tripo::0_Right_Limb_0",
+   "group": "R"
+  },
+  {
+   "name": "0_RightL1",
+   "bone": "tripo::0_Right_Limb_1",
+   "group": "R"
+  },
+  {
+   "name": "1_LeftL0",
+   "bone": "tripo::1_Left_Limb_0",
+   "group": "L"
+  },
+  {
+   "name": "1_LeftL1",
+   "bone": "tripo::1_Left_Limb_1",
+   "group": "L"
+  },
+  {
+   "name": "1_LeftL2",
+   "bone": "tripo::1_Left_Limb_2",
+   "group": "L"
+  },
+  {
+   "name": "1_RightL0",
+   "bone": "tripo::1_Right_Limb_0",
+   "group": "R"
+  },
+  {
+   "name": "1_RightL1",
+   "bone": "tripo::1_Right_Limb_1",
+   "group": "R"
+  },
+  {
+   "name": "1_RightL2",
+   "bone": "tripo::1_Right_Limb_2",
+   "group": "R"
+  },
+  {
+   "name": "Spine_1",
+   "bone": "tripo::Spine_1",
+   "group": "M"
+  },
+  {
+   "name": "Spine_2",
+   "bone": "tripo::Spine_2",
+   "group": "M"
+  },
+  {
+   "name": "Foot0",
+   "bone": "tripo::0_Left_Limb_3",
+   "group": "M",
+   "at": "tail"
+  },
+  {
+   "name": "Foot1",
+   "bone": "tripo::0_Right_Limb_3",
+   "group": "M",
+   "at": "tail"
+  },
+  {
+   "name": "Foot2",
+   "bone": "tripo::1_Left_Limb_4",
+   "group": "M",
+   "at": "tail"
+  },
+  {
+   "name": "Foot3",
+   "bone": "tripo::1_Right_Limb_4",
+   "group": "M",
+   "at": "tail"
+  }
+ ],
+ "torso_joints": [
+  "Root",
+  "Spine_0",
+  "bone_9",
+  "bone_10",
+  "Spine_3",
+  "Spine_4",
+  "1_LeftL0",
+  "1_RightL0",
+  "Spine_1",
+  "Spine_2"
+ ],
+ "root_joint": "Root",
+ "ground_joints": [
+  "Foot0",
+  "Foot1",
+  "Foot2",
+  "Foot3"
+ ],
+ "joint_weight": {},
+ "sampling": {
+  "t_xy": [
+   0.06,
+   0.16
+  ],
+  "pitch": [
+   0,
+   12,
+   -40,
+   30
+  ],
+  "pitch_uniform": [
+   0.12,
+   -45,
+   -12
+  ]
+ }
+}

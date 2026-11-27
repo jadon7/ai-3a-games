@@ -1,0 +1,629 @@
+{
+ "_说明": "卡兹 B（换画风 B 路子一的新模型，w-quad）。Tripo 新绑的四足骨架 43 根，已经用 tools/retarget/quad_rename.py 按骨骼角色改成旧卡兹的骨骼名（映射在 moba/art/style_b/kaz/rig/rename.json），所以这份照 kaz_rigmap.json 抄，只改了：模型原始坐标面朝 -Y；新骨架的脖子只有两节（bone_32、bone_33，没有 Head_0）。这份只用来摆正出 kaz_b.blend 给套动作和出品，不训练（自由度表没改，用不上）。错绑修过：见 moba/art/style_b/kaz/rig/fix_weights.json",
+ "kind": "quadruped",
+ "forward": [
+  0,
+  -1,
+  0
+ ],
+ "target_length": 1.05,
+ "root_bone_length": 0.15,
+ "reparent": {},
+ "role_dofs": {
+  "head": [
+   [
+    "pitch",
+    -45,
+    50
+   ],
+   [
+    "yaw",
+    -40,
+    40
+   ],
+   [
+    "roll",
+    -30,
+    30
+   ]
+  ],
+  "scapula": [
+   [
+    "fwd",
+    -18,
+    18
+   ]
+  ],
+  "upper_f": [
+   [
+    "fwd",
+    -60,
+    95
+   ],
+   [
+    "out",
+    -35,
+    45
+   ],
+   [
+    "twist",
+    -25,
+    25
+   ]
+  ],
+  "lower_f": [
+   [
+    "pitch",
+    -125,
+    35
+   ]
+  ],
+  "paw_f": [
+   [
+    "pitch",
+    -30,
+    110
+   ]
+  ],
+  "toe_f": [
+   [
+    "pitch",
+    -50,
+    95
+   ]
+  ],
+  "upper_hW": [
+   [
+    "pitch",
+    -80,
+    80
+   ],
+   [
+    "roll",
+    -30,
+    30
+   ],
+   [
+    "yaw",
+    -15,
+    15
+   ]
+  ],
+  "lower_h": [
+   [
+    "pitch",
+    -50,
+    110
+   ]
+  ],
+  "hock": [
+   [
+    "pitch",
+    -140,
+    55
+   ]
+  ],
+  "foot_h": [
+   [
+    "pitch",
+    -50,
+    95
+   ]
+  ]
+ },
+ "role_speed": {
+  "toe_f": 14,
+  "upper_hW": 16
+ },
+ "bones": {
+  "tripo::Root": [
+   "root",
+   0
+  ],
+  "tripo::Spine_0": [
+   "spine",
+   0
+  ],
+  "tripo::Spine_1": [
+   "spine",
+   0
+  ],
+  "tripo::Spine_2": [
+   "spine",
+   0
+  ],
+  "tripo::Spine_3": [
+   "spine",
+   0
+  ],
+  "bone_32": [
+   "neck_seg",
+   0
+  ],
+  "bone_33": [
+   "neck_seg",
+   0
+  ],
+  "tripo::Head_1": [
+   "head",
+   0
+  ],
+  "tripo::0_Left_Limb_0": [
+   "scapula",
+   1
+  ],
+  "tripo::0_Left_Limb_1": [
+   "upper_f",
+   1
+  ],
+  "tripo::0_Left_Limb_2": [
+   "lower_f",
+   1
+  ],
+  "tripo::0_Left_Limb_3": [
+   "paw_f",
+   1
+  ],
+  "tripo::0_Left_Limb_4": [
+   "toe_f",
+   1
+  ],
+  "tripo::0_Right_Limb_0": [
+   "scapula",
+   -1
+  ],
+  "tripo::0_Right_Limb_1": [
+   "upper_f",
+   -1
+  ],
+  "tripo::0_Right_Limb_2": [
+   "lower_f",
+   -1
+  ],
+  "tripo::0_Right_Limb_3": [
+   "paw_f",
+   -1
+  ],
+  "tripo::0_Right_Limb_4": [
+   "toe_f",
+   -1
+  ],
+  "tripo::1_Left_Limb_0": [
+   "upper_hW",
+   1
+  ],
+  "tripo::1_Left_Limb_1": [
+   "lower_h",
+   1
+  ],
+  "tripo::1_Left_Limb_2": [
+   "hock",
+   1
+  ],
+  "tripo::1_Left_Limb_4": [
+   "foot_h",
+   1
+  ],
+  "tripo::1_Right_Limb_0": [
+   "upper_hW",
+   -1
+  ],
+  "tripo::1_Right_Limb_1": [
+   "lower_h",
+   -1
+  ],
+  "tripo::1_Right_Limb_2": [
+   "hock",
+   -1
+  ],
+  "tripo::1_Right_Limb_4": [
+   "foot_h",
+   -1
+  ]
+ },
+ "chains": [
+  {
+   "name": "spine",
+   "role": "spine",
+   "bones": [
+    "tripo::Spine_0",
+    "tripo::Spine_1",
+    "tripo::Spine_2",
+    "tripo::Spine_3"
+   ],
+   "dofs": [
+    [
+     "pitch",
+     -8,
+     9
+    ],
+    [
+     "yaw",
+     -8,
+     8
+    ],
+    [
+     "roll",
+     -5,
+     5
+    ]
+   ]
+  },
+  {
+   "name": "neck",
+   "role": "neck",
+   "bones": [
+    "bone_32",
+    "bone_33"
+   ],
+   "dofs": [
+    [
+     "pitch",
+     -18,
+     22
+    ],
+    [
+     "yaw",
+     -15,
+     15
+    ],
+    [
+     "roll",
+     -8,
+     8
+    ]
+   ]
+  }
+ ],
+ "joints": [
+  {
+   "name": "Root",
+   "bone": "tripo::Root",
+   "group": "M"
+  },
+  {
+   "name": "TailBase",
+   "bone": "bone_6",
+   "group": "M"
+  },
+  {
+   "name": "Spine0",
+   "bone": "tripo::Spine_0",
+   "group": "M"
+  },
+  {
+   "name": "Spine2",
+   "bone": "tripo::Spine_2",
+   "group": "M"
+  },
+  {
+   "name": "Spine3",
+   "bone": "tripo::Spine_3",
+   "group": "M"
+  },
+  {
+   "name": "PlateTop",
+   "bone": "tripo::Spine_5",
+   "group": "M",
+   "region": [
+    "tripo::Spine_5",
+    "tripo::Spine_6",
+    "tripo::Spine_4"
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ],
+   "top": 0.01
+  },
+  {
+   "name": "PlateL",
+   "bone": "tripo::Spine_5",
+   "group": "L",
+   "region": [
+    "tripo::Spine_5",
+    "tripo::Spine_6",
+    "tripo::Spine_4"
+   ],
+   "axis": [
+    1,
+    0,
+    0.6
+   ],
+   "top": 0.01
+  },
+  {
+   "name": "PlateR",
+   "bone": "tripo::Spine_5",
+   "group": "R",
+   "region": [
+    "tripo::Spine_5",
+    "tripo::Spine_6",
+    "tripo::Spine_4"
+   ],
+   "axis": [
+    -1,
+    0,
+    0.6
+   ],
+   "top": 0.01
+  },
+  {
+   "name": "Neck",
+   "bone": "bone_32",
+   "group": "M"
+  },
+  {
+   "name": "NeckMid",
+   "bone": "bone_33",
+   "group": "M"
+  },
+  {
+   "name": "Head",
+   "bone": "tripo::Head_1",
+   "group": "M"
+  },
+  {
+   "name": "Nose",
+   "bone": "tripo::Head_1",
+   "group": "M",
+   "region": [
+    "tripo::Head_1",
+    "bone_36"
+   ],
+   "axis": [
+    0,
+    -1,
+    0
+   ],
+   "top": 0.004
+  },
+  {
+   "name": "Chin",
+   "bone": "tripo::Head_1",
+   "group": "M",
+   "region": [
+    "bone_37",
+    "bone_36"
+   ],
+   "axis": [
+    0,
+    -0.3,
+    -1
+   ],
+   "top": 0.01
+  },
+  {
+   "name": "LeftEar",
+   "bone": "tripo::Head_1",
+   "group": "L",
+   "region": [
+    "bone_38",
+    "bone_39"
+   ],
+   "axis": [
+    0.2,
+    0,
+    1
+   ],
+   "top": 0.004
+  },
+  {
+   "name": "RightEar",
+   "bone": "tripo::Head_1",
+   "group": "R",
+   "region": [
+    "tripo::Head_2",
+    "tripo::Head_3"
+   ],
+   "axis": [
+    -0.2,
+    0,
+    1
+   ],
+   "top": 0.004
+  },
+  {
+   "name": "LeftFShoulder",
+   "bone": "tripo::0_Left_Limb_1",
+   "group": "L"
+  },
+  {
+   "name": "LeftFElbow",
+   "bone": "tripo::0_Left_Limb_2",
+   "group": "L"
+  },
+  {
+   "name": "LeftFWrist",
+   "bone": "tripo::0_Left_Limb_3",
+   "group": "L"
+  },
+  {
+   "name": "LeftFFetlock",
+   "bone": "tripo::0_Left_Limb_4",
+   "group": "L"
+  },
+  {
+   "name": "LeftFToe",
+   "bone": "tripo::0_Left_Limb_4",
+   "group": "L",
+   "region": [
+    "tripo::0_Left_Limb_4",
+    "tripo::0_Left_Limb_5"
+   ],
+   "axis": [
+    0,
+    -1,
+    -0.3
+   ],
+   "top": 0.06
+  },
+  {
+   "name": "LeftHHip",
+   "bone": "tripo::1_Left_Limb_0",
+   "group": "L"
+  },
+  {
+   "name": "LeftHKnee",
+   "bone": "tripo::1_Left_Limb_1",
+   "group": "L"
+  },
+  {
+   "name": "LeftHHock",
+   "bone": "tripo::1_Left_Limb_2",
+   "group": "L"
+  },
+  {
+   "name": "LeftHAnkle",
+   "bone": "tripo::1_Left_Limb_4",
+   "group": "L"
+  },
+  {
+   "name": "LeftHToeTip",
+   "bone": "tripo::1_Left_Limb_4",
+   "group": "L",
+   "region": [
+    "tripo::1_Left_Limb_4"
+   ],
+   "axis": [
+    0,
+    -1,
+    -0.3
+   ],
+   "top": 0.06
+  },
+  {
+   "name": "RightFShoulder",
+   "bone": "tripo::0_Right_Limb_1",
+   "group": "R"
+  },
+  {
+   "name": "RightFElbow",
+   "bone": "tripo::0_Right_Limb_2",
+   "group": "R"
+  },
+  {
+   "name": "RightFWrist",
+   "bone": "tripo::0_Right_Limb_3",
+   "group": "R"
+  },
+  {
+   "name": "RightFFetlock",
+   "bone": "tripo::0_Right_Limb_4",
+   "group": "R"
+  },
+  {
+   "name": "RightFToe",
+   "bone": "tripo::0_Right_Limb_4",
+   "group": "R",
+   "region": [
+    "tripo::0_Right_Limb_4",
+    "tripo::0_Right_Limb_5"
+   ],
+   "axis": [
+    0,
+    -1,
+    -0.3
+   ],
+   "top": 0.06
+  },
+  {
+   "name": "RightHHip",
+   "bone": "tripo::1_Right_Limb_0",
+   "group": "R"
+  },
+  {
+   "name": "RightHKnee",
+   "bone": "tripo::1_Right_Limb_1",
+   "group": "R"
+  },
+  {
+   "name": "RightHHock",
+   "bone": "tripo::1_Right_Limb_2",
+   "group": "R"
+  },
+  {
+   "name": "RightHAnkle",
+   "bone": "tripo::1_Right_Limb_4",
+   "group": "R"
+  },
+  {
+   "name": "RightHToeTip",
+   "bone": "tripo::1_Right_Limb_4",
+   "group": "R",
+   "region": [
+    "tripo::1_Right_Limb_4"
+   ],
+   "axis": [
+    0,
+    -1,
+    -0.3
+   ],
+   "top": 0.06
+  }
+ ],
+ "torso_joints": [
+  "Root",
+  "TailBase",
+  "Spine0",
+  "Spine2",
+  "Spine3",
+  "PlateTop",
+  "Neck",
+  "LeftHHip",
+  "RightHHip",
+  "LeftFShoulder",
+  "RightFShoulder"
+ ],
+ "root_joint": "Root",
+ "ground_joints": [
+  "LeftFToe",
+  "RightFToe",
+  "LeftHToeTip",
+  "RightHToeTip",
+  "LeftFFetlock",
+  "RightFFetlock",
+  "LeftHAnkle",
+  "RightHAnkle"
+ ],
+ "joint_weight": {
+  "Nose": 0.8,
+  "Chin": 0.6,
+  "LeftEar": 0.8,
+  "RightEar": 0.8,
+  "PlateTop": 0.8,
+  "PlateL": 0.7,
+  "PlateR": 0.7
+ },
+ "sampling": {
+  "t_xy": [
+   0.06,
+   0.16
+  ],
+  "pitch": [
+   0,
+   12,
+   -45,
+   35
+  ],
+  "pitch_uniform": [
+   0.12,
+   -55,
+   -15
+  ],
+  "t_z": [
+   0.0,
+   0.4
+  ],
+  "pitch_follow": {
+   "roles": [
+    "upper_hW"
+   ],
+   "kind": "pitch",
+   "gain": -1.0,
+   "sigma": 18,
+   "prob": 0.8
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/moko_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/r.npz",
+    "r_spin": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/r_spin.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/motions_fx/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/../moko_b_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/r.npz",
+    "r_spin": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/r_spin.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/fk/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/../moko_b_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/r.npz",
+    "r_spin": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/r_spin.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/motions/ik/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "idle",
+  "run",
+  "attack1",
+  "q",
+  "w",
+  "e",
+  "r",
+  "r_spin",
+  "death"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   30,
+   10
+  ],
+  [
+   90,
+   12
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 1.25,
+ "zc": 0.48,
+ "game_h": 3.3,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/retarget/render"
+}

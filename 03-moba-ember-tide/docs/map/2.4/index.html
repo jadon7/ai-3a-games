@@ -1,0 +1,278 @@
+<title>烬与潮 山体和高低</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：2.4 验收。顶部说明 → 全图总览 → 五层高低 → 逐项（设计稿 / 我们的）→ 规矩对照 → Codex 建模试验 → 还差在哪、没验证的、花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.row .sq img{aspect-ratio:1/1}
+.wide img{aspect-ratio:auto}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 2.4 · 山体和高低层次</p>
+  <h1>整张图的墙、台阶和山，<em>立起来了</em></h1>
+  <p class="lede">这一关把整张 156 米的地图第一次用正式的做法搭出来，只看一类东西：墙、山体、高低和它们之间的连接。地面先用平涂的布局图顶着（2.5 才画），草丛和树没有（2.6），防御塔、水晶、出生点是白色的占位模型（2.7）。画面里立着的白色小人是两米高，用来看比例。最后一节是你中途交代的 Codex（GPT 6.2 Astra）建模试验。</p>
+</header>
+
+<section>
+  <h2>全图</h2>
+  <p class="note">左边是正俯视，右边是斜着看。我方（绿）在左下，对方（红）在右上。全图 60 帧，默认镜头下约 20 万三角形。</p>
+  <div class="row">
+    <figure class="wide"><img src="img/top.jpg" alt="正俯视整张图：三路、河道、两个 Boss 潭、两个基地高地、一圈城墙和墙外的山石" loading="lazy"><figcaption><span class="who ours">现在</span>正俯视整张图：三路、河道、两个 Boss 潭、两个基地高地、一圈城墙和墙外的山石</figcaption></figure>
+    <figure class="wide"><img src="img/persp.jpg" alt="斜看全图：野区的片状薄墙 52 段，基地在高地上，三个口子各一段台阶" loading="lazy"><figcaption><span class="who ours">现在</span>斜看全图：野区的片状薄墙 52 段，基地在高地上，三个口子各一段台阶</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>高低一共六层</h2>
+  <p class="note">布局没有改：能走的地方、墙的位置、塔位都和 2.1 灰盒一致。只有一处挪动：基地口子的坡道原来骑在墙线上，现在改成墙线外面的一段台阶，更像设计稿，能不能走不变。</p>
+  <div class="tbl"><table class="narrow">
+    <thead><tr><th>层</th><th class="n">高度</th><th>在哪、怎么连</th></tr></thead>
+    <tbody>
+      <tr><td>河床</td><td class="n">-1.2 米</td><td>河道全程；两个 Boss 潭再深半米，颜色更青</td></tr>
+      <tr><td>过河的路</td><td class="n">-0.6 米</td><td>中路过河的地方沉在浅水下面，水面连续盖过去（你点名要的）；水面在 -0.26 米</td></tr>
+      <tr><td>平地</td><td class="n">0 米上下</td><td>兵线和河边是平的；野区是很缓的丘和洼，高低在一米上下；营地是一小块平的洼地</td></tr>
+      <tr><td>Boss 的石台</td><td class="n">+0.4 米</td><td>潭中间一块露出水面的岩石，边上一圈压着水的石头，背后立着三块大石</td></tr>
+      <tr><td>基地高地</td><td class="n">+2.4 米</td><td>一圈挡墙托着；三个口子各八级台阶下到平地</td></tr>
+      <tr><td>出生点的台子</td><td class="n">+3.15 米</td><td>比广场再高三级弧形台阶，背靠地图的角</td></tr>
+      <tr><td>墙外的山</td><td class="n">+4 到 +12 米</td><td>城墙外面地面一路往上，隔一段冒出一组山石；河道两头是连成一排的山崖</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>逐项看</h2>
+  <p class="note">有设计稿的放设计稿对照；没有设计稿的（城墙、山崖、Boss 潭）我照 2.2 定的规矩和王者荣耀的结构做，下面写明。</p>
+  <div class="pairs">
+
+    <div class="pair">
+      <h3>一、基地高地的挡墙和口子</h3>
+      <ul>
+        <li>挡墙从外面看三米八：墙脚石、两层大料石、一道齐着广场地面的腰线、女儿墙、出檐的压顶。从广场里面看只有齐胸高。</li>
+        <li>口子是八级台阶，每级高 0.3 米，和兵线一样宽。两侧是一级一级矮下来的护墙，收在方墩上；墙线上立两根八角门墩，带铜箍和嵌铜片。</li>
+        <li>和设计稿的差别：设计稿的墙更白、门墩上有旗、台阶底下有半圆的铺地。旗和铺地分别是 2.7、2.5 的事。墙在这个角度背光，所以显暗。</li>
+      </ul>
+      <div class="row">
+        <figure><img src="img/c_gate.jpg" alt="2.2 定的高地口子" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的高地口子</figcaption></figure>
+        <figure><img src="img/gate_front.jpg" alt="我方中路口子，从外面正对着看（游戏里不是这个角度，转过来对照设计稿用）" loading="lazy"><figcaption><span class="who ours">现在</span>我方中路口子，从外面正对着看（游戏里不是这个角度，转过来对照设计稿用）</figcaption></figure>
+      </div>
+      <div class="row three">
+        <figure><img src="img/foe_gate.jpg" alt="对方中路口子，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>对方中路口子，游戏镜头</figcaption></figure>
+        <figure><img src="img/gate_game.jpg" alt="我方中路口子，游戏镜头（从高地里面往外看）" loading="lazy"><figcaption><span class="who ours">现在</span>我方中路口子，游戏镜头（从高地里面往外看）</figcaption></figure>
+        <figure><img src="img/side_gate.jpg" alt="我方下路口子，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>我方下路口子，游戏镜头</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>二、野区的墙，铺到了全图</h3>
+      <ul>
+        <li>样板间里认可的那套墙（弧形墙身、墙脚石、两层错缝料石、压顶、八角墩柱、青铜卡子、大石头、残墙）铺到全图，每方 26 段，一共 52 段。</li>
+        <li>营地窝在弧形墙围出的凹口里，地面是踩秃的土。墙脚有一溜矮草，墙顶有苔和阔叶草。</li>
+        <li>草丛这一关没有，所以设计稿里墙边的高草现在是空的。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/c_jungle.jpg" alt="2.2 定的野区墙加石块" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的野区墙加石块</figcaption></figure>
+        <figure><img src="img/camp.jpg" alt="我方增益怪的凹口，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>我方增益怪的凹口，游戏镜头</figcaption></figure>
+        <figure><img src="img/low.jpg" alt="压低镜头看野区：墙是薄的一片，彼此隔得开" loading="lazy"><figcaption><span class="who ours">现在</span>压低镜头看野区：墙是薄的一片，彼此隔得开</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>三、地图边缘的城墙和墙外的山</h3>
+      <ul>
+        <li>城墙三米六高，绕地图一圈，隔十来米一根墩柱；上高地的地方和基地的角上是大墩。两方各用自己的石材。</li>
+        <li>墙外的地面一路往上。城墙后面隔一段冒出一组山石，高矮错开、平顶长苔，从墙头上露出来。</li>
+        <li>河道两头（左上角、右下角）不砌墙，换成前矮后高的两排山崖把角堵住。</li>
+        <li>这一项没有设计稿，是照规矩做的。山石现在只有形状和一种石头材质，没有岩层的纹理。树在 2.6。</li>
+      </ul>
+      <div class="row">
+        <figure><img src="img/north.jpg" alt="北边的城墙（对方一侧），游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>北边的城墙（对方一侧），游戏镜头</figcaption></figure>
+        <figure><img src="img/west.jpg" alt="西边的城墙（我方一侧）和墙后的山石" loading="lazy"><figcaption><span class="who ours">现在</span>西边的城墙（我方一侧）和墙后的山石</figcaption></figure>
+      </div>
+      <div class="row">
+        <figure><img src="img/cliff.jpg" alt="左上角河道尽头的山崖，转过镜头看" loading="lazy"><figcaption><span class="who ours">现在</span>左上角河道尽头的山崖，转过镜头看</figcaption></figure>
+        <figure><img src="img/cliff_top.jpg" alt="同一个角正俯视：山崖把两方的城墙接起来" loading="lazy"><figcaption><span class="who ours">现在</span>同一个角正俯视：山崖把两方的城墙接起来</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>四、Boss 潭和河边</h3>
+      <ul>
+        <li>潭比河道深，中间是露出水面的石台；两岸各一道弧形墙把它围成一个坑（墙在画面外）。</li>
+        <li>河道两头挨着边路的地方，有三级弧形石阶从路边走进水里。</li>
+        <li>石台现在是一块平的灰石，表面的画法要等 2.5。</li>
+      </ul>
+      <div class="row">
+        <figure><img src="img/boss.jpg" alt="Boss 的石台，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>Boss 的石台，游戏镜头</figcaption></figure>
+        <figure><img src="img/quay.jpg" alt="河道尽头走进水里的石阶" loading="lazy"><figcaption><span class="who ours">现在</span>河道尽头走进水里的石阶</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>五、出生点的台子</h3>
+      <ul>
+        <li>只做了高低：比广场高三级弧形台阶的台子，背靠地图的角，角上一座大墩。</li>
+        <li>设计稿里的拱门、雕像、水池、水槽都是 2.7 的建筑，这里是白色的占位。</li>
+      </ul>
+      <div class="row">
+        <figure><img src="img/c_spawn.jpg" alt="2.2 定的出生点方案一" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的出生点方案一</figcaption></figure>
+        <figure><img src="img/spawn.jpg" alt="我方基地的角：台子、三级台阶、背后的城墙" loading="lazy"><figcaption><span class="who ours">现在</span>我方基地的角：台子、三级台阶、背后的城墙</figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>规矩逐条对照</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>规矩（2.2 定的）</th><th>现在</th><th>情况</th></tr></thead>
+    <tbody>
+      <tr><td>墙是薄的一片，不做成山</td><td>野区墙厚 1.3 到 1.6 米、高两米出头；挡墙和城墙厚两米上下</td><td class="st ok">做到</td></tr>
+      <tr><td>高地和地图边缘用砌出来的整墙；野区用残段加大石块</td><td>两种都铺到了全图</td><td class="st ok">做到</td></tr>
+      <tr><td>一段墙最多两种材质</td><td>料石加青铜（对方是玄武岩加暗铁）</td><td class="st ok">做到</td></tr>
+      <tr><td>端头要收：柱墩、包边、压着的石块</td><td>门墩、墩柱、卡子、大石头、方墩</td><td class="st ok">做到</td></tr>
+      <tr><td>重要的口子上放旗或火盆</td><td>没有</td><td class="st miss">留到 2.7</td></tr>
+      <tr><td>地面开阔，默认都能走</td><td>墙的位置没有动。口子两侧的护墙和门墩比布局里的挡路范围多占约一米宽</td><td class="st part">基本做到</td></tr>
+      <tr><td>影子是层次的主要来源</td><td>墙、台阶、山石都有清楚的落影和接地暗影</td><td class="st ok">做到</td></tr>
+      <tr><td>树只在城墙外面</td><td>墙外现在只有山石，没有树</td><td class="st part">留到 2.6</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Codex 建模试验（GPT 6.2 Astra）</h2>
+  <p class="note">你中途说让 Codex 并行建个模看看。我给它的任务是：照同一张定稿的设计图，自己建我方外塔（不许用图转 3D）。它用了大约 18 分钟，改了 4 轮，交了一个 12.6 万三角形、3.8MB 的模型。下面第一张是它自己渲染的对照，后两张是我把它的模型放进样板间，和我用代码拼的那座塔在同一个机位、同样的光下截的。</p>
+  <div class="pairs">
+    <div class="pair">
+      <div class="row one">
+        <figure class="wide"><img src="img/astra_compare.jpg" alt="左：设计图。右：Codex 建的模型（它自己用 Blender 渲染的）" loading="lazy"><figcaption><span class="who new">Codex</span>左：设计图。右：Codex 建的模型（它自己用 Blender 渲染的）</figcaption></figure>
+      </div>
+      <div class="row one">
+        <figure class="wide"><img src="img/astra_close.jpg" alt="样板间里近看。左：我做的。右：Codex 做的" loading="lazy"><figcaption><span class="who ours">游戏里</span>样板间里近看。左：我做的。右：Codex 做的</figcaption></figure>
+      </div>
+      <div class="row one">
+        <figure class="wide"><img src="img/astra_game.jpg" alt="游戏镜头。左：我做的。右：Codex 做的" loading="lazy"><figcaption><span class="who ours">游戏里</span>游戏镜头。左：我做的。右：Codex 做的</figcaption></figure>
+      </div>
+      <ul>
+        <li>形状上它明显更接近设计图：外翻成钩的爪、撇开的钟形底、雕出窗洞的石芯、带晶窗和卷纹的叶形肋，这些我那一版都没有做出来。</li>
+        <li>放进游戏里的问题：石头是光滑的一整块白，没有石块的缝和手绘的笔触，和周围长苔的旧石头不是一家；卷纹是细线，游戏镜头下看不清；水晶偏蓝，我们定的是青色；塔身比我的细，远看存在感弱一些。</li>
+        <li>我的判断：形状用它的，材质换成我们这一套（石块分缝、手绘石材、铜绿、青色），是目前最好的组合。2.7 做三档塔和水晶时可以照这个分工来。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>还差在哪，没验证的</h2>
+  <div class="cols">
+    <section>
+      <h3>还差的</h3>
+      <ul>
+        <li>地面是平涂的布局图，近看发糊，石板像拼布。这是 2.5 的事，这一关请不要按地面来判断。</li>
+        <li>山石只有大形，没有岩层和裂纹的画法；城墙外面没有树，显得秃。</li>
+        <li>高地的墙比设计稿暗、比设计稿素：没有旗、没有排水口这类小构件。</li>
+        <li>野区的起伏很缓（高低在一米上下），俯视时几乎看不出来，压低镜头才明显。</li>
+        <li>对方一侧沿用我方的造型，只换了石材和颜色，没有单独设计。</li>
+        <li>Boss 的石台是一块平的灰石。</li>
+      </ul>
+    </section>
+    <section>
+      <h3>没验证的</h3>
+      <ul>
+        <li>帧率：应用内浏览器里默认镜头实测 60 帧（2232×1164）。拉远看全图只在无界面的 Chrome 里测过（1600×900，60 帧，约 123 万三角形）。手机没测。</li>
+        <li>没有英雄和小兵走过台阶：台阶是八级硬台阶，脚下的走法到阶段 3 才能验证。</li>
+        <li>口子两侧的护墙、河道两头的山崖、河边的石阶，都比布局里“能走的范围”多占了一点地方，没有逐米核对。阶段 4 做寻路前要把布局同步。</li>
+        <li>页面一进来要算两秒左右的地形和墙，没有做加载提示。</li>
+      </ul>
+    </section>
+    <section>
+      <h3>花费</h3>
+      <ul>
+        <li>即梦：这一关没有用，余额还是 15916。</li>
+        <li>Tripo：没有用。</li>
+        <li>Codex：一次建模任务，约 18 分钟。为了让它能用 Blender，是按你 Codex 自己的默认权限（完全访问）跑的，任务里限定它只写自己的文件夹。</li>
+        <li>代码没有提交（项目不是 git 仓库）。</li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+<footer class="foot">打开方式：开发服务器起着的时候访问 <code>localhost:5183/map.html</code>。拖动或 WASD 平移，滚轮缩放（能一直拉远到看全图），Q / E 转镜头。Codex 的模型和脚本在项目的 <code>lab/astra_tower/</code>；在样板间里看它：<code>localhost:5183/slice.html?tower=astra</code>。</footer>
+</div>

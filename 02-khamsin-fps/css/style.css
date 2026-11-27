@@ -1,0 +1,296 @@
+:root {
+  --f: #58e0ff; --e: #ff6a3d; --amber: #ffb347; --ink: rgba(8, 11, 14, 0.62); --line: rgba(255, 255, 255, 0.16);
+  --font: "DIN Alternate", "Avenir Next Condensed", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; font-family: var(--font); color: #fff; user-select: none; -webkit-user-select: none; cursor: default; overscroll-behavior: none; touch-action: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { position: fixed; inset: 0; }
+/* 舞台：画布 + 界面都在里面。尺寸、旋转（竖屏时转成横屏）和下面这些变量由 src/core/view.js 写入
+   --svw / --svh 舞台宽高的 1%；--ui HUD 缩放；--um 菜单缩放；--tu 触屏按钮缩放；--sl/--sr/--st/--sb 刘海、圆角、底部横条让出的安全边距（已按舞台方向换算） */
+#stage { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; overflow: hidden; transform-origin: 0 0; touch-action: none; --svw: 1vw; --svh: 1vh; --ui: 1; --um: 1; --tu: 1;
+  --sl: env(safe-area-inset-left, 0px); --sr: env(safe-area-inset-right, 0px); --st: env(safe-area-inset-top, 0px); --sb: env(safe-area-inset-bottom, 0px); }
+html.rot #stage { --sl: env(safe-area-inset-top, 0px); --sr: env(safe-area-inset-bottom, 0px); --st: env(safe-area-inset-right, 0px); --sb: env(safe-area-inset-left, 0px); }
+#gl { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+.hidden { display: none !important; }
+kbd { display: inline-block; min-width: 1.5em; padding: 0.05em 0.45em; margin-right: 0.5em; border: 1px solid rgba(255, 255, 255, 0.45); border-radius: 3px; font: 600 0.82em var(--font); text-align: center; background: rgba(255, 255, 255, 0.08); letter-spacing: 0.04em; }
+
+/* ---------- HUD ---------- */
+/* HUD 按 --ui 整体缩放（左上角为原点，逻辑尺寸 = 舞台尺寸 / --ui），--vw / --vh 是 HUD 逻辑尺寸的 1% */
+#hud { position: absolute; left: 0; top: 0; width: calc(100% / var(--ui)); height: calc(100% / var(--ui)); transform: scale(var(--ui)); transform-origin: 0 0; pointer-events: none; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  --vw: calc(var(--svw) / var(--ui)); --vh: calc(var(--svh) / var(--ui)); --hl: calc(var(--sl) / var(--ui)); --hr: calc(var(--sr) / var(--ui)); --hb: calc(var(--sb) / var(--ui)); }
+.panel { position: absolute; padding: 10px 16px; background: linear-gradient(100deg, var(--ink), rgba(8, 11, 14, 0.25)); border-left: 2px solid var(--f); backdrop-filter: blur(3px); }
+.lbl { font-size: 11px; letter-spacing: 0.22em; opacity: 0.7; text-transform: uppercase; }
+
+#scorebar { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; }
+#scorebar .team { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.12em; }
+#scorebar .tname { opacity: 0.85; width: 92px; text-align: right; }
+#scorebar .team.e .tname { text-align: left; }
+#scorebar .bar { width: 170px; height: 6px; background: rgba(255, 255, 255, 0.14); transform: skewX(-20deg); overflow: hidden; }
+#scorebar .bar i { display: block; height: 100%; width: 0; transition: width 0.3s; }
+#scorebar .f .bar i { background: var(--f); float: right; box-shadow: 0 0 10px var(--f); }
+#scorebar .e .bar i { background: var(--e); box-shadow: 0 0 10px var(--e); }
+#scorebar b { font-size: 26px; min-width: 40px; text-align: center; }
+#scorebar .f b { color: var(--f); } #scorebar .e b { color: var(--e); }
+#timer { text-align: center; padding: 2px 16px; background: var(--ink); border-top: 2px solid var(--amber); min-width: 96px; }
+#timer small { display: block; font-size: 10px; letter-spacing: 0.3em; opacity: 0.7; }
+#clock { font-size: 22px; letter-spacing: 0.06em; }
+
+#minimapWrap { position: absolute; left: 22px; top: 22px; width: 190px; height: 190px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.28); background: rgba(8, 11, 14, 0.5); box-shadow: 0 0 0 4px rgba(8, 11, 14, 0.35); }
+#minimap { width: 100%; height: 100%; }
+.mmN { position: absolute; top: 3px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--amber); display: none; }
+
+#killfeed { position: absolute; right: 22px; top: 22px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-size: 13px; }
+#killfeed div { padding: 3px 10px; background: var(--ink); border-right: 2px solid var(--line); animation: kfin 0.25s ease-out; letter-spacing: 0.04em; }
+#killfeed .f { color: var(--f); } #killfeed .e { color: var(--e); } #killfeed .me { border-right-color: var(--amber); background: rgba(60, 40, 8, 0.7); }
+#killfeed em { font-style: normal; opacity: 0.6; margin: 0 8px; }
+@keyframes kfin { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: none; } }
+
+#announce { position: absolute; top: 96px; left: 50%; transform: translateX(-50%); padding: 7px 22px; font-size: 15px; letter-spacing: 0.08em; background: var(--ink); border-left: 3px solid var(--amber); opacity: 0; transition: opacity 0.35s; white-space: nowrap; }
+#announce.on { opacity: 1; } #announce.good { border-color: var(--f); } #announce.warn { border-color: var(--e); color: #ffd9cc; }
+#warn { position: absolute; top: 140px; left: 50%; transform: translateX(-50%); padding: 5px 18px; font-size: 14px; color: #fff; background: rgba(170, 30, 10, 0.75); letter-spacing: 0.1em; opacity: 0; }
+#warn.on { opacity: 1; animation: blink 0.35s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0.35; } }
+
+#cross, #mcross, #hit { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+#cross .c { position: absolute; background: #fff; box-shadow: 0 0 2px #000; }
+#cross .t, #cross .b { width: 2px; height: 9px; left: -1px; } #cross .l, #cross .r { width: 9px; height: 2px; top: -1px; }
+#cross .t { bottom: var(--gap, 8px); } #cross .b { top: var(--gap, 8px); } #cross .l { right: var(--gap, 8px); } #cross .r { left: var(--gap, 8px); }
+#cross .dot { position: absolute; width: 2px; height: 2px; left: -1px; top: -1px; background: #fff; box-shadow: 0 0 2px #000; }
+#chargeRing { position: absolute; left: -26px; top: -26px; width: 52px; height: 52px; border-radius: 50%; background: conic-gradient(var(--f) calc(var(--ch, 0) * 360deg), rgba(255, 255, 255, 0.12) 0); -webkit-mask: radial-gradient(circle, transparent 21px, #000 22px); mask: radial-gradient(circle, transparent 21px, #000 22px); opacity: 0; }
+#mcross i { position: absolute; background: var(--f); box-shadow: 0 0 6px var(--f); }
+#mcross i:nth-child(1), #mcross i:nth-child(2) { width: 2px; height: 16px; left: -1px; } #mcross i:nth-child(1) { top: -40px; } #mcross i:nth-child(2) { top: 24px; }
+#mcross i:nth-child(3), #mcross i:nth-child(4) { width: 16px; height: 2px; top: -1px; } #mcross i:nth-child(3) { left: -40px; } #mcross i:nth-child(4) { left: 24px; }
+#mcross b { position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border: 2px solid var(--f); border-radius: 50%; opacity: 0.8; box-shadow: 0 0 8px var(--f), inset 0 0 8px rgba(88, 224, 255, 0.4); }
+#hit i { position: absolute; width: 12px; height: 2px; background: #fff; left: -6px; top: -1px; opacity: 0; }
+#hit i:nth-child(1) { transform: rotate(45deg) translateX(13px); } #hit i:nth-child(2) { transform: rotate(135deg) translateX(13px); } #hit i:nth-child(3) { transform: rotate(225deg) translateX(13px); } #hit i:nth-child(4) { transform: rotate(315deg) translateX(13px); }
+#hit.on i { animation: hitm 0.22s ease-out; } #hit.head i { background: var(--amber); } #hit.kill i { background: var(--e); width: 16px; height: 3px; }
+@keyframes hitm { 0% { opacity: 1; } 100% { opacity: 0; } }
+#dmg { position: absolute; left: 50%; top: 50%; }
+#dmg i { position: absolute; left: -70px; top: -150px; width: 140px; height: 36px; transform-origin: 70px 150px; background: radial-gradient(ellipse at 50% 100%, rgba(255, 60, 30, 0.9), rgba(255, 60, 30, 0) 70%); animation: dmgf 1.1s ease-out forwards; }
+@keyframes dmgf { 0% { opacity: 1; } 100% { opacity: 0; } }
+#popups { position: absolute; left: calc(50% + 60px); top: calc(50% + 28px); font-size: 14px; letter-spacing: 0.06em; }
+#popups div { animation: pop 1.9s ease-out forwards; white-space: nowrap; }
+#popups b { color: var(--amber); margin-left: 8px; }
+@keyframes pop { 0% { opacity: 0; transform: translateX(-10px); } 10% { opacity: 1; transform: none; } 75% { opacity: 1; } 100% { opacity: 0; transform: translateY(-8px); } }
+#prompt { position: absolute; left: 50%; top: 62%; transform: translateX(-50%); padding: 6px 18px; font-size: 15px; background: var(--ink); border-bottom: 2px solid var(--amber); letter-spacing: 0.08em; opacity: 0; transition: opacity 0.15s; }
+#prompt.on { opacity: 1; }
+#speed { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); text-align: center; font-size: 13px; opacity: 0.85; }
+#speed small { font-size: 9px; letter-spacing: 0.2em; margin-left: 4px; opacity: 0.7; }
+#speed .sbar { width: 120px; height: 2px; background: rgba(255, 255, 255, 0.2); margin-top: 3px; } #speed .sbar i { display: block; height: 100%; width: 0; background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+
+#bl { left: 26px; bottom: 26px; width: 250px; }
+#hpbar { height: 10px; margin: 6px 0 4px; background: rgba(255, 255, 255, 0.14); transform: skewX(-20deg); overflow: hidden; }
+#hpf { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #dff7ff, var(--f)); transition: width 0.12s; }
+#hpf.low { background: linear-gradient(90deg, #ffb09a, var(--e)); }
+#hpn { font-size: 26px; line-height: 1; }
+#bc { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; gap: 8px; }
+.ab { position: relative; width: 62px; padding: 6px 6px 8px; background: var(--ink); border-top: 2px solid var(--line); text-align: center; font-size: 12px; }
+.ab kbd { position: absolute; left: 4px; top: 4px; margin: 0; font-size: 10px; min-width: 0; padding: 0 4px; }
+.ab .ic { margin-top: 12px; letter-spacing: 0.1em; }
+.ab .pips { display: flex; gap: 3px; justify-content: center; margin-top: 5px; } .ab .pips i { width: 20px; height: 4px; background: rgba(255, 255, 255, 0.2); overflow: hidden; position: relative; }
+.ab .pips i::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--p, 0) * 100%); background: var(--f); }
+.ab .cd { height: 4px; margin-top: 5px; background: rgba(255, 255, 255, 0.2); } .ab .cd i { display: block; height: 100%; width: 100%; background: var(--f); }
+.ab.wide { width: 150px; } .ab .meter { height: 6px; margin-top: 5px; background: rgba(255, 255, 255, 0.2); transform: skewX(-20deg); overflow: hidden; }
+#mechFill { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #ffe0a8, var(--amber)); }
+#mechPct { position: absolute; right: 6px; top: 4px; font-size: 11px; opacity: 0.8; }
+#abV.ready { border-top-color: var(--amber); animation: rdy 0.9s ease-in-out infinite; } #abV.ready .ic::after { content: ' 就绪'; color: var(--amber); }
+@keyframes rdy { 50% { background: rgba(120, 78, 10, 0.75); } }
+#br { right: 26px; bottom: 26px; min-width: 220px; text-align: right; border-left: none; border-right: 2px solid var(--amber); background: linear-gradient(260deg, var(--ink), rgba(8, 11, 14, 0.25)); }
+#wname { font-size: 17px; letter-spacing: 0.08em; } #wtag { font-size: 11px; opacity: 0.65; letter-spacing: 0.2em; }
+#ammo b { font-size: 46px; line-height: 1; } #ammo span { font-size: 15px; opacity: 0.6; margin-left: 6px; } #ammo.low b { color: var(--e); }
+#slots { display: flex; gap: 6px; justify-content: flex-end; margin-top: 4px; font-size: 11px; } #slots i { font-style: normal; padding: 1px 7px; border: 1px solid var(--line); opacity: 0.55; } #slots i.on { opacity: 1; border-color: var(--amber); color: var(--amber); }
+
+#cockpit { position: absolute; inset: 0; display: none; z-index: 0; }
+#scorebar, #minimapWrap, #killfeed, #announce, #warn, #popups, #prompt, #hit, #dmg, #mcross { z-index: 2; }
+#softHint { position: absolute; left: 50%; bottom: 6px; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.1em; opacity: 0; color: var(--amber); white-space: nowrap; z-index: 3; }
+body.soft #softHint { opacity: 0.85; }
+#cockpit svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mstat { position: absolute; bottom: 9%; width: 240px; font-size: 13px; } .mstat.l { left: 16%; } .mstat.r { right: 16%; text-align: right; }
+.mbar { height: 9px; margin: 5px 0 2px; background: rgba(255, 255, 255, 0.15); transform: skewX(-20deg); overflow: hidden; } .mbar i { display: block; height: 100%; width: 100%; background: var(--f); box-shadow: 0 0 10px var(--f); }
+.mbar.core i { background: var(--amber); box-shadow: 0 0 10px var(--amber); float: right; width: 0; } .mstat b { font-size: 22px; }
+.mrow { position: absolute; left: 50%; bottom: 3.2%; transform: translateX(-50%); display: flex; gap: 26px; font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; color: #cfefff; }
+#doom { position: absolute; left: 50%; top: 24%; transform: translateX(-50%); padding: 8px 26px; background: rgba(170, 30, 10, 0.8); font-size: 20px; letter-spacing: 0.15em; display: none; animation: blink 0.4s steps(2) infinite; }
+body.mech #cockpit { display: block; } body.mech #bl, body.mech #br, body.mech #bc, body.mech #cross, body.mech #speed { display: none; } body:not(.mech) #mcross { display: none; }
+#scope { position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at 50% 50%, transparent 0, transparent calc(27 * var(--vh)), rgba(0, 0, 0, 0.94) calc(28.5 * var(--vh))), linear-gradient(#000, #000) 50% 50% / 1px calc(56 * var(--vh)) no-repeat, linear-gradient(#000, #000) 50% 50% / calc(56 * var(--vh)) 1px no-repeat; }
+#dead { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; flex-direction: column; background: radial-gradient(circle, rgba(60, 0, 0, 0.2), rgba(20, 0, 0, 0.7)); }
+#dead h2 { font-size: 64px; letter-spacing: 0.4em; margin: 0; color: #ffd0c4; } #dead p { letter-spacing: 0.2em; opacity: 0.8; }
+#letter { position: absolute; inset: 0; display: none; }
+#letter i { position: absolute; left: 0; right: 0; height: calc(11 * var(--vh)); background: #000; } #letter .t { top: 0; } #letter .b { bottom: 0; }
+#letter .ttl { position: absolute; left: calc(7 * var(--vw) + var(--hl)); bottom: calc(16 * var(--vh)); } #letter h1 { font-size: 58px; margin: 0; letter-spacing: 0.18em; font-weight: 600; } #letter p { margin: 4px 0; letter-spacing: 0.4em; color: var(--amber); } #letter small { opacity: 0.55; letter-spacing: 0.2em; }
+body.intro #letter { display: block; } body.intro #hud > *:not(#letter) { display: none !important; }
+
+/* ---------- 菜单 ---------- */
+.screen { position: absolute; left: 0; top: 0; width: calc(100% / var(--um)); height: calc(100% / var(--um)); transform: scale(var(--um)); transform-origin: 0 0; --vw: calc(var(--svw) / var(--um)); --vh: calc(var(--svh) / var(--um)); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-left: calc(9 * var(--vw) + var(--sl) / var(--um)); background: linear-gradient(90deg, rgba(5, 7, 9, 0.88) 0%, rgba(5, 7, 9, 0.55) 38%, rgba(5, 7, 9, 0) 70%); }
+#loading { background: radial-gradient(circle at 30% 40%, #1c1410, #050506 70%); align-items: center; padding: 0; }
+#pause, #end { background: rgba(5, 7, 9, 0.72); backdrop-filter: blur(6px); align-items: center; padding: 0; }
+.logo h1 { font-size: 104px; line-height: 0.95; margin: 0; letter-spacing: 0.1em; font-weight: 700; background: linear-gradient(180deg, #fff 30%, #ffcf8a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; }
+.logo h2 { font-size: 26px; margin: 6px 0 0; letter-spacing: 0.9em; font-weight: 400; color: var(--amber); }
+.logo p { margin: 14px 0 0; letter-spacing: 0.25em; opacity: 0.75; font-size: 14px; }
+.btns { display: flex; flex-direction: column; gap: 10px; margin-top: 44px; } .btns.row { flex-direction: row; justify-content: center; }
+button { font: 500 18px var(--font); letter-spacing: 0.3em; color: #fff; padding: 13px 34px; min-width: 260px; text-align: left; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.22); border-left: 3px solid rgba(255, 255, 255, 0.5); cursor: pointer; transition: all 0.15s; pointer-events: auto; }
+button:hover { background: rgba(255, 179, 71, 0.2); border-color: var(--amber); padding-left: 44px; }
+button.primary { border-left-color: var(--amber); background: rgba(255, 179, 71, 0.14); }
+/* 两个切换地图的按钮并排占一行 */
+/* 选择地图：每张图一行，名字 + 一句介绍；当前地图高亮 */
+#mapList { display: flex; flex-direction: column; gap: 8px; }
+#mapList button { display: flex; align-items: baseline; gap: 16px; width: 100%; min-width: 0; padding: 11px 20px; letter-spacing: 0.12em; }
+#mapList button b { font-weight: 600; min-width: 7.5em; } #mapList button span { font-size: 13px; letter-spacing: 0.05em; opacity: 0.7; white-space: normal; }
+#mapList button.cur { border-left-color: var(--amber); background: rgba(255, 179, 71, 0.14); } #mapList button.cur b::after { content: ' · 当前'; color: var(--amber); font-weight: 400; font-size: 13px; }
+.foot { position: absolute; left: calc(9 * var(--vw) + var(--sl) / var(--um)); bottom: 26px; font-size: 12px; letter-spacing: 0.2em; opacity: 0.5; }
+.panelbox { margin-top: 30px; padding: 22px 26px; width: min(760px, calc(80 * var(--vw))); background: rgba(8, 11, 14, 0.78); border-left: 3px solid var(--amber); backdrop-filter: blur(6px); }
+.panelbox h3, .mwrap h3 { margin: 0 0 14px; font-size: 22px; letter-spacing: 0.3em; font-weight: 500; }
+.keys { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 26px; font-size: 14px; }
+.tip { font-size: 13px; opacity: 0.7; letter-spacing: 0.06em; line-height: 1.6; }
+.panelbox label { display: flex; align-items: center; gap: 14px; margin: 12px 0; font-size: 15px; letter-spacing: 0.1em; } .panelbox label > :first-child { }
+.panelbox label input[type=range] { flex: 0 0 260px; accent-color: var(--amber); pointer-events: auto; } .panelbox select, .panelbox input { pointer-events: auto; font: 15px var(--font); }
+.panelbox select { background: #14181c; color: #fff; border: 1px solid var(--line); padding: 4px 10px; } .panelbox small { opacity: 0.55; font-size: 12px; }
+.panelbox .back { margin-top: 14px; min-width: 0; padding: 8px 26px; font-size: 14px; }
+.mwrap.small { text-align: center; } .mwrap.small .btns { align-items: center; margin-top: 20px; } .mwrap.small button { text-align: center; }
+#end .mwrap { text-align: center; } #end .logo h1 { font-size: 88px; } #endScore { font-size: 40px; margin-top: 22px; letter-spacing: 0.1em; } #endScore .f { color: var(--f); } #endScore .e { color: var(--e); }
+.stats { display: grid; grid-template-columns: repeat(4, 150px); gap: 12px; justify-content: center; margin-top: 26px; }
+.stats div { padding: 12px 6px; background: rgba(255, 255, 255, 0.06); border-top: 2px solid var(--line); } .stats b { display: block; font-size: 30px; color: var(--amber); } .stats span { font-size: 12px; letter-spacing: 0.2em; opacity: 0.7; }
+#end.lose .logo h1 { background: linear-gradient(180deg, #fff 30%, #ff9a7a 100%); -webkit-background-clip: text; background-clip: text; }
+.lbar { width: min(520px, calc(60 * var(--vw))); height: 3px; background: rgba(255, 255, 255, 0.15); margin-top: 46px; } #lfill { display: block; height: 100%; width: 0; background: var(--amber); box-shadow: 0 0 12px var(--amber); transition: width 0.2s; }
+#ltext { letter-spacing: 0.25em; font-size: 13px; opacity: 0.7; } #loading .logo { text-align: center; }
+
+/* 自动对战（录制用）：隐藏鼠标指针；H 键隐藏整个界面 */
+body.demo, body.demo #gl, body.demo #hud { cursor: none; } body.demo .screen { cursor: default; }
+body.nohud #hud { display: none !important; }
+
+/* ====================================================================== */
+/* 机甲座舱全息 HUD（DOM 由 src/ui/cockpit.js 生成在 #cockpit 里；立体内饰在 3D 场景里） */
+/* ====================================================================== */
+body.mech #mcross, body.mech #warn { display: none; } body.mech #announce { top: 122px; }
+#cockpit { --ck: var(--f); color: #d8f6ff; font-size: 12px; letter-spacing: 0.08em; text-shadow: 0 0 6px rgba(88, 224, 255, 0.55), 0 1px 2px rgba(0, 0, 0, 0.8); }
+#cockpit.doom { --ck: #ff7a4a; --f: #ff7a4a; color: #ffe2d6; text-shadow: 0 0 6px rgba(255, 110, 60, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8); }
+#cockpit kbd { font-size: 10px; margin: 0 0 0 0.3em; padding: 0 0.4em; border-color: rgba(88, 224, 255, 0.5); background: rgba(88, 224, 255, 0.08); text-shadow: none; }
+.ck-vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, transparent 55%, rgba(0, 10, 14, 0.28) 100%); transition: box-shadow 0.25s; }
+#cockpit.hit .ck-vig { box-shadow: inset 0 0 140px rgba(255, 70, 30, 0.4); transition: none; }
+#cockpit.doom .ck-vig { box-shadow: inset 0 0 180px rgba(255, 40, 10, 0.45); animation: blink 0.5s steps(2) infinite; }
+/* 罗盘带 */
+.ck-compass { position: absolute; left: 50%; top: 70px; width: 440px; height: 44px; transform: translateX(-50%); }
+.ck-compass::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 26px; border-bottom: 1px solid rgba(88, 224, 255, 0.5); -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent); mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent); }
+.ck-compass { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent); }
+.ck-tape { position: absolute; left: 50%; top: 0; height: 26px; will-change: transform; }
+.ck-tape span { position: absolute; top: 2px; width: 40px; margin-left: -20px; text-align: center; font-size: 10px; color: rgba(190, 240, 255, 0.75); }
+.ck-tape span::after { content: ''; position: absolute; left: 50%; bottom: -11px; width: 1px; height: 5px; background: rgba(88, 224, 255, 0.6); }
+.ck-tape span.s::after { height: 8px; } .ck-tape span.m { color: var(--amber); font-size: 12px; font-weight: 700; top: 0; } .ck-tape span.m::after { height: 10px; bottom: -10px; background: var(--amber); }
+.ck-compass > i { position: absolute; left: 50%; top: 21px; margin-left: -5px; border: 5px solid transparent; border-bottom-color: var(--ck); }
+.ck-compass > b { position: absolute; left: 50%; top: 30px; transform: translateX(-50%); font-size: 12px; letter-spacing: 0.16em; color: var(--ck); }
+/* 准星 */
+.ck-ret { position: absolute; left: 50%; top: 50%; width: 0; height: 0; --gap: 9px; --rl: 0; }
+.ck-ret i { position: absolute; background: var(--ck); box-shadow: 0 0 6px var(--ck); }
+.ck-ret i.t, .ck-ret i.b { width: 2px; height: 13px; left: -1px; } .ck-ret i.t { top: calc(-13px - var(--gap)); } .ck-ret i.b { top: var(--gap); }
+.ck-ret i.l, .ck-ret i.r { width: 13px; height: 2px; top: -1px; } .ck-ret i.l { left: calc(-13px - var(--gap)); } .ck-ret i.r { left: var(--gap); }
+.ck-ret em { position: absolute; left: -2px; top: -2px; width: 4px; height: 4px; border-radius: 50%; background: #fff; box-shadow: 0 0 6px var(--ck); }
+.ck-ret::before { content: ''; position: absolute; left: -44px; top: -44px; width: 88px; height: 88px; border-radius: 50%; border: 1px solid rgba(88, 224, 255, 0.28); border-left-color: transparent; border-right-color: transparent; }
+.ck-ret .arc { position: absolute; left: -36px; top: -36px; width: 72px; height: 72px; border-radius: 50%; opacity: 0; background: conic-gradient(var(--amber) calc(var(--rl) * 360deg), rgba(255, 179, 71, 0.14) 0); -webkit-mask: radial-gradient(circle, transparent 32px, #000 33px); mask: radial-gradient(circle, transparent 32px, #000 33px); }
+.ck-ret.rl .arc { opacity: 1; } .ck-ret.rl i { background: var(--amber); box-shadow: 0 0 6px var(--amber); opacity: 0.6; }
+.ck-ret.empty i { background: var(--e); box-shadow: 0 0 6px var(--e); } .ck-ret.beam i, .ck-ret.beam em { background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+.ck-ret small { position: absolute; left: -40px; top: 52px; width: 80px; text-align: center; font-size: 10px; color: rgba(190, 240, 255, 0.8); }
+/* 锁定框（敌我识别色：敌方红） */
+.ck-lock { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; --s: 60px; transition: opacity 0.12s; will-change: transform; }
+.ck-lock.on { opacity: 1; }
+.ck-lock i { position: absolute; width: 10px; height: 10px; border: 2px solid var(--e); filter: drop-shadow(0 0 4px var(--e)); }
+.ck-lock i:nth-child(1) { left: calc(var(--s) / -2); top: calc(var(--s) / -2); border-right: none; border-bottom: none; } .ck-lock i:nth-child(2) { left: calc(var(--s) / 2 - 10px); top: calc(var(--s) / -2); border-left: none; border-bottom: none; }
+.ck-lock i:nth-child(3) { left: calc(var(--s) / -2); top: calc(var(--s) / 2 - 10px); border-right: none; border-top: none; } .ck-lock i:nth-child(4) { left: calc(var(--s) / 2 - 10px); top: calc(var(--s) / 2 - 10px); border-left: none; border-top: none; }
+.ck-lock span { position: absolute; left: -80px; width: 160px; top: calc(var(--s) / 2 + 5px); text-align: center; font-size: 10px; color: #ffd0c2; text-shadow: 0 0 5px rgba(255, 90, 54, 0.7), 0 1px 2px #000; white-space: nowrap; }
+.ck-lock .hp { position: absolute; left: -24px; width: 48px; height: 3px; top: calc(var(--s) / 2 + 21px); background: rgba(255, 255, 255, 0.18); display: none; } .ck-lock.mech .hp { display: block; } .ck-lock .hp b { display: block; height: 100%; width: var(--w, 100%); background: var(--e); }
+/* 告警 */
+.ck-warn { position: absolute; left: 50%; top: 31%; transform: translateX(-50%); padding: 4px 18px; font-size: 13px; letter-spacing: 0.14em; color: #fff; background: rgba(170, 30, 10, 0.72); border-left: 2px solid var(--e); border-right: 2px solid var(--e); opacity: 0; white-space: nowrap; text-shadow: none; }
+.ck-warn.on { opacity: 1; animation: blink 0.4s steps(2) infinite; }
+.ck-doom { position: absolute; left: 50%; top: 23%; transform: translateX(-50%); padding: 8px 26px; background: rgba(170, 30, 10, 0.82); font-size: 19px; letter-spacing: 0.15em; color: #fff; display: none; white-space: nowrap; text-shadow: none; animation: blink 0.4s steps(2) infinite; }
+.ck-doom.on { display: block; } .ck-doom kbd { font-size: 0.8em; border-color: #fff; }
+/* 左右面板：投在风挡下沿的全息块 */
+.ck-panel { position: absolute; bottom: 28%; width: 236px; padding: 7px 10px 8px; background: linear-gradient(180deg, rgba(4, 18, 26, 0.52), rgba(4, 18, 26, 0.24)); border-top: 1px solid rgba(88, 224, 255, 0.55); }   /* 底色加深：读数压在窗外的机炮 / 动力拳上也看得清 */
+.ck-panel::before { content: ''; position: absolute; top: -1px; width: 9px; height: 9px; border-top: 2px solid var(--ck); }
+.ck-panel.l { right: 55.5%; transform: perspective(700px) rotateY(13deg); transform-origin: 100% 50%; } .ck-panel.l::before { left: 0; border-left: 2px solid var(--ck); }
+.ck-panel.r { left: 55.5%; transform: perspective(700px) rotateY(-13deg); transform-origin: 0 50%; } .ck-panel.r::before { right: 0; border-right: 2px solid var(--ck); }
+.ck-row { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; } .ck-row .k { flex: 1; font-size: 10px; letter-spacing: 0.16em; color: rgba(190, 240, 255, 0.78); }
+.ck-row b { font-size: 26px; line-height: 1; font-weight: 600; color: #fff; } .ck-row small { font-size: 10px; opacity: 0.7; }
+.ck-row.sub { align-items: center; margin-top: 5px; } .ck-row.sub .k { flex: none; width: 92px; } .ck-row .v { width: 40px; text-align: right; font-size: 11px; color: rgba(190, 240, 255, 0.8); } .ck-row .v.ok { color: var(--ck); } .ck-row .v.hot { color: var(--amber); }
+.ck-seg { display: flex; gap: 2px; margin: 4px 0 2px; height: 8px; } .ck-seg i { flex: 1; background: rgba(88, 224, 255, 0.14); transform: skewX(-18deg); }
+.ck-seg i.on { background: var(--ck); box-shadow: 0 0 6px var(--ck); } .ck-seg i.low { background: var(--e); box-shadow: 0 0 6px var(--e); } .ck-seg.ammo { height: 11px; gap: 3px; } .ck-seg i.rl { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+.ck-bar { flex: 1; height: 4px; background: rgba(88, 224, 255, 0.16); overflow: hidden; } .ck-bar i { display: block; height: 100%; width: var(--w, 0%); background: var(--ck); box-shadow: 0 0 6px var(--ck); }
+.ck-bar.sh i { background: #9fe8ff; } .ck-bar.core i { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+.ck-pips { display: flex; gap: 5px; } .ck-pips i { width: 26px; height: 5px; background: linear-gradient(90deg, var(--ck) calc(var(--p, 1) * 100%), rgba(88, 224, 255, 0.16) 0); transform: skewX(-18deg); }
+.ck-core { position: absolute; left: 50%; bottom: 30.5%; width: 168px; transform: translateX(-50%); text-align: center; } .ck-core .k { display: block; font-size: 10px; letter-spacing: 0.16em; color: rgba(255, 214, 160, 0.9); text-shadow: 0 0 6px rgba(255, 179, 71, 0.5), 0 1px 2px #000; }
+.ck-core .ck-bar { height: 5px; margin: 5px 0 3px; } .ck-core .v { font-size: 11px; color: rgba(255, 214, 160, 0.9); } .ck-core .v.ok { color: var(--amber); animation: blink 0.8s steps(2) infinite; } .ck-core .v.hot { color: #fff; }
+.ck-exit { position: absolute; left: 50%; bottom: 27.4%; transform: translateX(-50%); font-size: 10px; opacity: 0.6; white-space: nowrap; text-align: center; } .ck-exit .ck-bar { height: 2px; margin-top: 3px; background: none; }
+/* 启动序列：自检文字 + 各块依次淡入 */
+.ck-boot { position: absolute; left: 50%; top: 57%; transform: translateX(-50%); font: 12px/1.7 ui-monospace, Menlo, monospace; color: var(--ck); white-space: nowrap; opacity: var(--ob, 0); }
+/* --o1..--o5：各块的点亮进度（0→1），由 cockpit.js 按启动进度每帧写入；刚亮起时过曝一下 */
+#cockpit.boot .ck-b1 { opacity: var(--o1, 0); filter: brightness(calc(3 - 2 * var(--o1, 0))); } #cockpit.boot .ck-b2 { opacity: var(--o2, 0); filter: brightness(calc(3 - 2 * var(--o2, 0))); }
+#cockpit.boot .ck-b3 { opacity: var(--o3, 0); filter: brightness(calc(3 - 2 * var(--o3, 0))); } #cockpit.boot .ck-b4 { opacity: var(--o4, 0); filter: brightness(calc(3 - 2 * var(--o4, 0))); }
+#cockpit.boot .ck-ret { opacity: var(--o5, 0); } #cockpit.boot .ck-exit { opacity: 0; }
+/* 机甲模式下沿用的通用元素：命中标记放大、受击方向弧换成全息风格 */
+body.mech #hit i { width: 16px; height: 2px; left: -8px; box-shadow: 0 0 6px #fff; }
+body.mech #dmg i { top: -190px; transform-origin: 70px 190px; background: radial-gradient(ellipse at 50% 100%, rgba(255, 90, 54, 0.95), rgba(255, 90, 54, 0) 70%); border-bottom: 2px solid rgba(255, 150, 120, 0.9); }
+/* ====================== 机甲座舱 HUD 结束 ====================== */
+
+/* ====================================================================== */
+/* 移动端：触屏按钮（DOM 由 src/ui/touch.js 生成）、手机版 HUD 与菜单 */
+/* ====================================================================== */
+#touch { position: absolute; inset: 0; display: none; touch-action: none; z-index: 5; font-size: calc(12.5px * var(--tu)); letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.92); }
+#touch.show { display: block; }
+body.intro #touch .tb, body.intro #touch .tj, body.nohud #touch .tb, body.nohud #touch .tj { display: none !important; }
+body.demo #touch { pointer-events: none; } body.demo #touch .tb:not(.pause), body.demo #touch .tj { display: none !important; } body.demo #touch .pause { pointer-events: auto; }
+.tb { position: absolute; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(8, 11, 14, 0.38); border: 1.5px solid rgba(255, 255, 255, 0.34); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.22); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85); white-space: nowrap; }
+.tb.rb { width: calc(var(--d) * var(--tu) * 1px); height: calc(var(--d) * var(--tu) * 1px); right: calc(var(--r) * var(--tu) * 1px + var(--sr)); bottom: calc(var(--b) * var(--tu) * 1px + var(--sb)); }
+.tb span { pointer-events: none; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.tb.on { background: rgba(255, 179, 71, 0.36); border-color: var(--amber); transform: scale(0.94); }
+.tb.lit { background: rgba(88, 224, 255, 0.28); border-color: var(--f); color: #dff8ff; }
+.tb.dim { opacity: 0.46; } .tb.gone { display: none !important; }
+.tb.ready { border-color: var(--amber); color: #ffe2b0; animation: tbReady 0.9s ease-in-out infinite; }
+@keyframes tbReady { 50% { background: rgba(160, 104, 14, 0.62); box-shadow: 0 0 14px rgba(255, 179, 71, 0.55); } }
+.tb.fire { background: rgba(255, 106, 61, 0.2); border-color: rgba(255, 160, 120, 0.72); color: #ffe0d4; } .tb.fire svg { width: 48%; height: 48%; }
+.tb.fire.on { background: rgba(255, 106, 61, 0.5); border-color: #ffb89c; }
+/* 充能环（--p：0→1）与数量角标 */
+.tb::before { content: ''; position: absolute; inset: -1.5px; border-radius: 50%; background: conic-gradient(var(--f) calc(var(--p, 0) * 360deg), transparent 0); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); pointer-events: none; }
+.tb b { position: absolute; right: -3px; top: -5px; font-size: 0.86em; font-weight: 600; color: var(--amber); pointer-events: none; }
+/* 模式：m-p 飞行员 / m-m 机甲 / m-r 仅双界试炼 / m-t 仅旧城 / m-ctx 有交互对象时才出现 */
+#touch:not(.mech) .m-m:not(.m-p), #touch.mech .m-p:not(.m-m), #touch:not(.rift) .m-r, #touch.rift .m-t { display: none; }
+#touch .m-ctx { display: none; } #touch .m-ctx.vis { display: flex; }
+/* 小地图下方的单个功能键：呼叫机甲 / 透视 / 离舱 */
+.tb.side { left: calc(20px * var(--tu) + var(--sl)); top: calc(226px * var(--ui) + var(--st)); width: calc(52px * var(--tu)); height: calc(52px * var(--tu)); }
+.tb.side b { right: auto; left: 100%; top: 50%; margin: -0.6em 0 0 7px; }
+.tb.use { right: calc(150px * var(--tu) + var(--sr)); bottom: calc(232px * var(--tu) + var(--sb)); height: calc(46px * var(--tu)); padding: 0 calc(18px * var(--tu)); border-radius: 999px; border-color: var(--amber); color: #ffe2b0; font-size: 1.08em; animation: tbReady 0.9s ease-in-out infinite; }
+.tb.use::before, .tb.pause::before { display: none; }
+.tb.pause { right: calc(10px + var(--sr)); top: calc(8px + var(--st)); width: calc(36px * var(--tu)); height: calc(36px * var(--tu)); border-radius: 8px; }
+.tb.pause span { gap: 18%; } .tb.pause i { display: block; width: 12%; height: 42%; background: rgba(255, 255, 255, 0.9); }
+/* 摇杆：平时在左下角半透明提示位置，按下后跟到手指落点 */
+.tj { position: absolute; left: calc(58px * var(--tu) + var(--sl)); bottom: calc(40px * var(--tu) + var(--sb)); width: calc(112px * var(--tu)); height: calc(112px * var(--tu)); border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.3); background: radial-gradient(circle, rgba(255, 255, 255, 0.06), rgba(8, 11, 14, 0.3)); opacity: 0.38; pointer-events: none; }
+.tj.on { opacity: 0.95; }
+.tj i { position: absolute; left: 27%; top: 27%; width: 46%; height: 46%; border-radius: 50%; background: rgba(255, 255, 255, 0.24); border: 1.5px solid rgba(255, 255, 255, 0.55); }
+
+/* —— 触屏设备上的 HUD：去掉按键提示，生命 / 弹药收成底部中间的两条，给两侧拇指区让位 —— */
+html.touch kbd { display: none; } html.touch .keys kbd { display: inline-block; }
+html.touch .keys.kb, html.touch .tip.kb, html:not(.touch) .keys.tc { display: none; }
+html.touch #prompt, html.touch #softHint, html.touch #speed, html.touch #bc, html.touch #slots, html.touch #wtag, html.touch #bl .lbl, html.touch .ck-exit, html.touch #riftPhase > div:nth-child(2) { display: none !important; }
+html.touch #scorebar { top: 10px; } html.touch #scorebar .tname { display: none; } html.touch #scorebar .bar { width: 150px; }
+html.touch #minimapWrap { left: calc(20px + var(--hl)); top: 14px; }
+html.touch #killfeed { right: calc(84px + var(--hr)); top: 14px; }
+html.touch #bl, html.touch #br { left: 50%; right: auto; width: 260px; min-width: 0; transform: translateX(-50%); display: flex; align-items: center; border: none; backdrop-filter: none; }
+html.touch #bl { bottom: calc(58px + var(--hb)); padding: 0 6px; gap: 10px; background: none; }
+html.touch #hpbar { flex: 1; margin: 0; height: 9px; } html.touch #hpn { font-size: 20px; min-width: 38px; text-align: right; }
+html.touch #br { bottom: calc(10px + var(--hb)); padding: 3px 14px 4px; justify-content: space-between; align-items: baseline; text-align: left; background: var(--ink); border-bottom: 2px solid var(--amber); }
+html.touch body.mech #bl, html.touch body.mech #br { display: none; }
+html.touch #wname { font-size: 15px; } html.touch #ammo b { font-size: 32px; } html.touch #ammo span { font-size: 13px; }
+/* 准星和命中标记不跟着 HUD 一起缩小（缩到 0.6 倍后线宽只剩 1px 出头，手机上看不清） */
+html.touch #cross, html.touch #hit, html.touch #mcross, html.touch .ck-ret { transform: scale(max(1, calc(0.92 / var(--ui)))); }
+html.touch #riftPhase { bottom: calc(96px + var(--hb)); padding: 4px 16px 6px; } html.touch #riftBlock { bottom: calc(150px + var(--hb)); }
+html.touch #letter small { font-size: 15px; }
+/* —— 触屏设备上的菜单：紧凑版面，按钮排两列 —— */
+html.touch .logo h1 { font-size: 78px; } html.touch .logo h2 { font-size: 20px; letter-spacing: 0.8em; } html.touch .logo p { margin-top: 8px; font-size: 13px; }
+html.touch button { min-width: 0; padding: 13px 22px; font-size: 16px; letter-spacing: 0.22em; } html.touch button:hover { padding-left: 22px; background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.22); border-left-color: rgba(255, 255, 255, 0.5); }
+html.touch button.primary:hover { border-left-color: var(--amber); background: rgba(255, 179, 71, 0.14); } html.touch button:active { background: rgba(255, 179, 71, 0.3); border-color: var(--amber); }
+html.touch #mapList button { padding: 9px 18px; } html.touch #mapList button:hover { padding-left: 18px; }
+html.touch #mainBtns { display: grid; grid-template-columns: 236px 236px; gap: 10px 12px; margin-top: 26px; } html.touch #mainBtns .primary { grid-column: 1 / 3; }
+html.touch #menu.sub .logo { display: none; } html.touch .panelbox { margin-top: 0; padding: 16px 22px; width: min(840px, calc(84 * var(--vw))); }
+html.touch .panelbox h3 { margin-bottom: 10px; font-size: 19px; } html.touch .keys { gap: 7px 22px; font-size: 13.5px; } html.touch .panelbox .tip { margin: 10px 0 0; } html.touch .panelbox label { margin: 9px 0; }
+html.touch .panelbox label:has(#optSprint) { display: none; }   /* 触屏没有冲刺键，始终自动冲刺 */
+html.touch .panelbox .back { padding: 9px 26px; margin-top: 12px; } html.touch .foot { bottom: 12px; font-size: 11px; }
+html.touch #end .logo h1 { font-size: 62px; } html.touch #endScore { font-size: 30px; margin-top: 8px; } html.touch .stats { margin-top: 12px; gap: 8px; grid-template-columns: repeat(4, 140px); }
+html.touch .stats div { padding: 6px; } html.touch .stats b { font-size: 23px; } html.touch #end .btns { margin-top: 16px; } html.touch #end .btns button, html.touch #pause button { text-align: center; }
+html.touch .mwrap.small .btns { margin-top: 14px; }
+/* ====================== 移动端结束 ====================== */

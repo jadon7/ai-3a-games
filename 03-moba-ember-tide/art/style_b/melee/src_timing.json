@@ -1,0 +1,1 @@
+{"height": 1.45, "runSpeed": 1.95, "walk": {"runSpeed": 1.95}, "attacks": [{"clip": "attack", "hit": 0.95}], "_note": "小兵没有自己的时间表（游戏读 public/assets/unit/units.json 的 height、walkSpeed、hit），这份是照 units.json 的 melee 写成英雄时间表的样子给 tools/retarget/run_case.py 用的；walk.runSpeed = walkSpeed"}

@@ -1,0 +1,11 @@
+第三轮完成，交付第 3 版。三座塔都收窄了塔颈，加深了分节石檐，加厚了铁爪。主晶下部现在坐进带赤陶沿的铁碗。外塔有一条宽饰带，内塔和高地塔各有两条。
+
+| 模型 | 总高 | 塔身底部 → 塔颈半径 | 三角形数 |
+| --- | ---: | ---: | ---: |
+| [外塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_1.glb) | 7.20 米 | 1.75 → 1.05 米 | 18,644 |
+| [内塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_2.glb) | 8.80 米 | 1.75 → 1.10 米 | 26,731 |
+| [高地塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_3.glb) | 10.60 米 | 1.75 → 1.15 米 | 31,865 |
+
+三版都在游戏预览页和地图页看过。最终地图里能分辨外塔、内塔和高地塔的 1、2、3 道石檐。与设计稿相比，背光侧的檐面仍偏暗，正面铁爪也遮住了部分陶色碗沿。
+
+[设计稿与成品](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/compare.jpg) · [第二轮与第三轮同机位对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/rounds/b3_r3_before_after.jpg) · [游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_game.jpg) · [地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_map.jpg) · [三版记录与实测数据](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/NOTES.md:120)

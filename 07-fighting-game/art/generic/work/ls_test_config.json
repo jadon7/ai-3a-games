@@ -1,0 +1,1 @@
+{"id": "lingshuang", "rig": "public/assets/fighters/lingshuang/lingshuang.glb", "frame_ref": "art/fighter/lingshuang/tripo_rigged.glb", "sources": {"v1a": "art/generic/lingshuang/v1_a.glb", "v1b": "art/generic/lingshuang/v1_b.glb", "v1e": "art/generic/lingshuang/v1_e.glb"}, "out": "art/generic/work/ls_test.glb"}

@@ -1,0 +1,6 @@
+[
+ {"name": "unit_toad", "image": "art/unit/toad/ref.png", "face_limit": 35000, "texture_quality": "detailed"},
+ {"name": "unit_boar", "image": "art/unit/boar/ref.png", "face_limit": 35000, "texture_quality": "detailed"},
+ {"name": "unit_wolf", "image": "art/unit/wolf/ref.png", "face_limit": 22000, "texture_quality": "detailed"},
+ {"name": "unit_mandrill", "image": "art/unit/mandrill/ref.png", "face_limit": 26000, "texture_quality": "detailed"}
+]

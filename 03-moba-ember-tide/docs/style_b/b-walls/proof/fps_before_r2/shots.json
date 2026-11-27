@@ -1,0 +1,65 @@
+[
+ {
+  "name": "01_me",
+  "q": "cam=-20,2,36,50,0,-20",
+  "fps": 256,
+  "fpsMin": 201,
+  "calls": 93,
+  "tris": 785232,
+  "errors": []
+ },
+ {
+  "name": "02_foe",
+  "q": "cam=22,-2,36,50,0,0",
+  "fps": 221,
+  "fpsMin": 150,
+  "calls": 94,
+  "tris": 749674,
+  "errors": []
+ },
+ {
+  "name": "03_core_me",
+  "q": "cam=-90.3,0,48,58,4",
+  "fps": 145,
+  "fpsMin": 142,
+  "calls": 109,
+  "tris": 753060,
+  "errors": []
+ },
+ {
+  "name": "04_jungle_me",
+  "q": "cam=-32,-30,36,52,0,180",
+  "fps": 217,
+  "fpsMin": 162,
+  "calls": 83,
+  "tris": 743156,
+  "errors": []
+ },
+ {
+  "name": "06_gate_me",
+  "q": "cam=-69,0,48,50,0,135",
+  "fps": 274,
+  "fpsMin": 258,
+  "calls": 110,
+  "tris": 684770,
+  "errors": []
+ },
+ {
+  "name": "08_wide",
+  "q": "cam=-40,10,80,55",
+  "fps": 121,
+  "fpsMin": 118,
+  "calls": 215,
+  "tris": 1556686,
+  "errors": []
+ },
+ {
+  "name": "20_wide_foe",
+  "q": "cam=40,-10,80,55",
+  "fps": 174,
+  "fpsMin": 171,
+  "calls": 224,
+  "tris": 1391552,
+  "errors": []
+ }
+]

@@ -1,0 +1,88 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/hedda_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/run_m.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/attack2.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/hedda/motions_fix/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/../hedda_b_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/attack2.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/fk/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/../hedda_b_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/attack2.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/motions/ik/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "game_h": 3.3,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/hedda/retarget/render",
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "e",
+   "r",
+   "death"
+  ],
+  "size": [
+   1440,
+   640
+  ],
+  "spacing": 0.85,
+  "view": [
+   15,
+   18
+  ],
+  "ortho": 3.06,
+  "zc": 0.45,
+  "loops": {
+   "run": 4
+  },
+  "run_speed": {
+   "run": [
+    1.5151515151515151,
+    1.6,
+    1.6515151515151514
+   ]
+  }
+ }
+}

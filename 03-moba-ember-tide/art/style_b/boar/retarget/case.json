@@ -1,0 +1,29 @@
+{
+ "name": "boar_b",
+ "title": "炽鬃野猪：旧模型的全部动作 → 卡通厚涂的新模型（两次 Tripo 绑骨，骨骼名和拓扑不一样：新的右前腿肩胛叫 Spine_3、上臂叫 Spine_4，躯干少一节；按骨骼角色对应）",
+ "kind": "quadruped", "mode": "delta", "k": 1.07,
+ "src_rig": "../rigs/boar.npz", "tgt_rig": "../rigs/boar_b.npz",
+ "src_build": "art/unit/boar/build.json", "src_timing": "art/style_b/boar/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/boar.blend", "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/boar_b.blend", "tgt_blend_name": "boar_b", "tex": 1024,
+ "src_root": "tripo::Root", "tgt_root": "tripo::Root", "src_game_h": 2.7, "game_h": 2.83, "move_speed": 4.6,
+ "tip_src": "tripo::Head_1", "tip_tgt": "tripo::Head_1",
+ "map": {
+  "tripo::Root": "tripo::Root", "tripo::Head_0": "tripo::Spine_4", "tripo::Head_1": "tripo::Head_1",
+  "bone_9": "bone_10", "bone_10": "tripo::0_Left_Limb_0", "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_1", "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_2",
+  "tripo::Spine_3": "bone_5", "tripo::Spine_4": "tripo::0_Right_Limb_0", "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_1", "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_2",
+  "tripo::1_Left_Limb_0": "bone_34", "tripo::1_Left_Limb_1": "bone_35", "tripo::1_Left_Limb_2": "bone_36",
+  "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_0", "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_1", "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_2"
+ },
+ "chains": [{"tgt": ["tripo::Spine_0", "tripo::Spine_1", "tripo::Spine_2"], "src": ["tripo::Spine_0", "tripo::Spine_1", "tripo::Spine_2", "tripo::Spine_3"]}],
+ "legs": [
+  {"tgt": ["bone_10", "tripo::0_Left_Limb_0", "tripo::0_Left_Limb_1"], "src_end": "tripo::0_Left_Limb_2"},
+  {"tgt": ["tripo::Spine_4", "tripo::0_Right_Limb_0", "tripo::0_Right_Limb_1"], "src_end": "tripo::0_Right_Limb_2"},
+  {"tgt": ["tripo::1_Left_Limb_0", "tripo::1_Left_Limb_1", "tripo::1_Left_Limb_2"], "src_end": "bone_36"},
+  {"tgt": ["tripo::1_Right_Limb_0", "tripo::1_Right_Limb_1", "tripo::1_Right_Limb_2"], "src_end": "tripo::1_Right_Limb_2"}
+ ],
+ "ground_chains": [{"name": "头", "base": "tripo::Head_0", "verts_of": "tripo::Head_1"}],
+ "variants": {"fk": {"ik": false}, "ik": {"ik": true}}, "out_dir": "motions",
+ "labels": ["旧野猪（原）", "卡通野猪·只搬旋转", "卡通野猪·加脚 IK"],
+ "render": {"frames": 8, "views": [[40, 14], [90, 10]], "ortho": 2.2, "zc": 0.45},
+ "video": {"clips": ["run", "attack1", "attack2", "death"], "loops": {"run": 4}, "spacing": 2.0, "view": [22, 22], "zc": 0.4}
+}

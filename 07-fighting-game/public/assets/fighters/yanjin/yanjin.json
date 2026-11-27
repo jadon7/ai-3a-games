@@ -1,0 +1,244 @@
+{
+ "id": "yanjin",
+ "height": 1.92,
+ "skeleton": "mixamo",
+ "weapon": null,
+ "stance": {
+  "lead": "L"
+ },
+ "clips": {
+  "idle": {
+   "loop": true,
+   "dur": 2.83
+  },
+  "walk_f": {
+   "loop": true,
+   "dur": 1.03,
+   "stride": 0.16
+  },
+  "walk_b": {
+   "loop": true,
+   "dur": 1.67,
+   "stride": 0.14
+  },
+  "jump": {
+   "dur": 2.4,
+   "takeoff": 1.0,
+   "land": 1.67,
+   "recover": 2.2
+  },
+  "block": {
+   "dur": 3.67,
+   "hold": [
+    0.42,
+    2.67
+   ],
+   "recover": 3.43
+  },
+  "light1": {
+   "dur": 1.13,
+   "hits": [
+    {
+     "t": 0.33,
+     "limb": "LH"
+    }
+   ],
+   "recover": 0.9
+  },
+  "light2": {
+   "dur": 1.53,
+   "hits": [
+    {
+     "t": 0.47,
+     "limb": "RH"
+    }
+   ],
+   "recover": 1.37
+  },
+  "light3": {
+   "dur": 2.2,
+   "hits": [
+    {
+     "t": 0.73,
+     "limb": "RE"
+    }
+   ],
+   "recover": 2.0
+  },
+  "heavy": {
+   "dur": 2.03,
+   "hits": [
+    {
+     "t": 0.47,
+     "limb": "RH"
+    }
+   ],
+   "recover": 1.97
+  },
+  "lunge": {
+   "dur": 2.3,
+   "hits": [
+    {
+     "t": 1.03,
+     "limb": "BODY"
+    }
+   ],
+   "recover": 2.2
+  },
+  "launcher": {
+   "dur": 2.17,
+   "hits": [
+    {
+     "t": 0.73,
+     "limb": "RH"
+    }
+   ],
+   "recover": 1.9,
+   "takeoff": 0.73,
+   "land": 1.37
+  },
+  "sweep": {
+   "dur": 1.83,
+   "hits": [
+    {
+     "t": 0.67,
+     "limb": "RF"
+    }
+   ],
+   "recover": 1.73
+  },
+  "air": {
+   "dur": 2.33,
+   "hits": [
+    {
+     "t": 1.03,
+     "limb": "RF"
+    }
+   ],
+   "recover": 2.1,
+   "takeoff": 0.77,
+   "land": 1.57
+  },
+  "grab": {
+   "dur": 3.67,
+   "hits": [
+    {
+     "t": 0.3,
+     "limb": "LH"
+    },
+    {
+     "t": 0.97,
+     "limb": "RH"
+    },
+    {
+     "t": 1.5,
+     "limb": "RH"
+    },
+    {
+     "t": 2.2,
+     "limb": "RH"
+    },
+    {
+     "t": 2.2,
+     "limb": "LH"
+    }
+   ],
+   "recover": 3.53
+  },
+  "sp1": {
+   "dur": 3.87,
+   "hits": [
+    {
+     "t": 1.53,
+     "limb": "RH"
+    }
+   ],
+   "recover": 3.77,
+   "release": 1.53
+  },
+  "sp2": {
+   "dur": 3.03,
+   "hits": [
+    {
+     "t": 1.73,
+     "limb": "RH"
+    }
+   ],
+   "recover": 2.87,
+   "release": 1.73
+  },
+  "sp3": {
+   "dur": 3.47,
+   "hits": [
+    {
+     "t": 1.23,
+     "limb": "RH"
+    }
+   ],
+   "recover": 3.27,
+   "release": 1.23
+  },
+  "ult_start": {
+   "dur": 3.87,
+   "hits": [
+    {
+     "t": 2.6,
+     "limb": "RH"
+    }
+   ],
+   "recover": 3.73
+  },
+  "ult_combo": {
+   "dur": 4.8,
+   "hits": [
+    {
+     "t": 0.33,
+     "limb": "RH"
+    },
+    {
+     "t": 0.77,
+     "limb": "LH"
+    },
+    {
+     "t": 1.03,
+     "limb": "RH"
+    },
+    {
+     "t": 1.27,
+     "limb": "LH"
+    },
+    {
+     "t": 1.5,
+     "limb": "RH"
+    },
+    {
+     "t": 1.8,
+     "limb": "LH"
+    },
+    {
+     "t": 2.23,
+     "limb": "RE"
+    },
+    {
+     "t": 2.63,
+     "limb": "RH"
+    },
+    {
+     "t": 3.47,
+     "limb": "RH"
+    }
+   ],
+   "recover": 4.63,
+   "takeoff": 3.37,
+   "land": 3.97
+  },
+  "win": {
+   "dur": 3.37
+  },
+  "intro": {
+   "dur": 4.67,
+   "recover": 4.67
+  }
+ },
+ "notes": "时间都是成品动作里的秒（30 帧每秒），从成品 GLB 逐帧量的：hit = 出手肢体（拳=中指根、肘=前臂根、脚=脚尖）第一次到达最远伸展 95% 的时刻；recover = 手脚末端回到第一帧 3.5% 身高以内；takeoff/land = 双脚最低点高于 6% 身高的起止。估的：block.hold（看视频估：双臂竖起到开始放下）、lunge 的 BODY（左肩撞出去的时刻，按左手/左脚最前估）、launcher 的 hit 取右拳往前上方出去最快的时刻（拳举到最高在 0.90）、sp3 的 release 取右拳砸到最前最低的时刻。ult_combo 视频里是 6 拳（右左右左右左）+ 右肘 + 右手摆击 + 腾空上勾拳，比设计多两拳，按实际量的列。walk 的 stride 按落地脚相对胯后滑的距离量（身高=1）：walk_f 每圈 0.12~0.14（hero_motion 原速法 0.19），取 0.16；walk_b 约 0.14。垫步步子小，按原速播移速偏慢（约 0.3 m/s），游戏里可以加快播放。所有动作都原地（胯的水平位移去掉了），竖直起伏保留；idle_pose 是脚本摆的架势呼吸循环（3.2 秒），idle 是视频读出来的。win 结尾不回架势（站直昂首定格），intro 开头不是架势（正身站立）、结尾是架势。"
+}

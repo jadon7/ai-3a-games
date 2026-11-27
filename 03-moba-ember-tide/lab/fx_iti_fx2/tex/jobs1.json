@@ -1,0 +1,10 @@
+[
+ {"name": "iti-fx2-rune", "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_iti/tex/raw/rune.png", "model": "jm_image_model_gg_bp_21", "ratio": "1:1", "resolution": "2K",
+  "prompt": "游戏技能特效贴图，完全正俯视的圆形魔法阵，纯黑色背景。一个干净、对称、精致的绯红色法阵：最外圈是一道明亮的细圆环和一圈尖锐的锯齿刻纹，内侧一圈环带里排满锋利的符文刻纹，再往里是两个交错的大三角形组成的六芒星细线和三层同心细圆，中心是一个小的十字形和一弯新月的纹样。所有线条都是发光的绯红到品红色，线芯偏白热，线条锐利干净、粗细分明。没有烟雾、没有粒子、没有文字、没有透视变形，图案正圆、居中、几乎占满画面。高对比，背景纯黑，适合作为加法混合的发光贴图。"},
+ {"name": "iti-fx2-crack", "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_iti/tex/raw/crack.png", "model": "jm_image_model_gg_bp_21", "ratio": "1:1", "resolution": "2K",
+  "prompt": "游戏技能特效贴图，完全正俯视的地面炸裂裂纹，纯黑色背景。从画面中心向四周辐射的锐利裂缝：十几条主裂缝从中心炸开，向外不规则地折线延伸并分叉成更细的裂纹，伸到画面边缘附近；中心有一圈破碎的圆形凹坑轮廓和几块碎裂的石板边缘。裂缝里透出炽热的光：裂缝中线白热，两侧是饱和的绯红、品红色辉光，越往外越细越暗。背景完全纯黑，没有地面纹理，没有烟雾，没有文字，没有透视。高对比，适合作为加法混合的发光贴图。"},
+ {"name": "iti-fx2-bloom", "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_iti/tex/raw/bloom.png", "model": "jm_image_model_gg_bp_21", "ratio": "1:1", "resolution": "2K",
+  "prompt": "手游技能特效贴图（王者荣耀风格），正面的绯红色花形爆裂，纯黑色背景。八片又长又尖的花瓣状能量从中心向外炸开，像一朵猛然绽放的绯红色莲花又像星芒：中心一团白热的光核，花瓣内层是亮品红、外层是深绯红，花瓣是锐利的尖角，边缘是两三阶的硬边色块（动漫风格，不是柔和渐变）；花瓣之间夹着八道细长锐利的白色尖芒射线；外围零星飞出几颗赤金色的小火星碎片。干净、锐利、对称、居中，没有烟雾，没有文字，背景纯黑。"},
+ {"name": "iti-fx2-slash", "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_iti/tex/raw/slash.png", "model": "jm_image_model_gg_bp_21", "ratio": "1:1", "resolution": "2K",
+  "prompt": "手游技能特效贴图（王者荣耀风格），一道巨大的新月形刀气，纯黑色背景。月牙沿着一个大圆弧从左下扫到右下，占满画面上半部分，外弧前沿是一道极亮的白热锐利细线，往内侧是饱和的绯红到品红色的能量身体，身体里有很多顺着弧线方向的细丝流线和速度纹，内侧边缘碎成丝缕渐渐消失，两头尖锐收细；外沿零星有几颗赤金色火星。干净锐利，层次清楚，没有人物，没有文字，背景纯黑。"}
+]

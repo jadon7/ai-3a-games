@@ -1,0 +1,5 @@
+第四轮已交付。八片铁叶沿用第三轮的弧线，合抱晶体下半部，正前方留缝。**离地 5 米处，八道净缝实测均为 0.419 米**，符合 0.35 至 0.50 米的目标。[模型](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/core_foe.glb>) · [设计稿对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/rounds/b4_compare.jpg>) · [地图实拍](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/rounds/b4_map.jpg>)
+
+叶根、叶腹和圆头宽度分别为 **1.00、1.85、0.45 米**，叶腹厚 **0.36 米**。赤陶带宽 **0.50 米**，每片两侧各有五颗铆钉。
+
+为满足面数上限，叶片纵向采样从 14 层减至 12 层。最终模型共 **59,980 个三角形**。已核对叶片组件以外的 22 个网格，均与第三轮一致。[第四轮量测记录](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/NOTES.md>)

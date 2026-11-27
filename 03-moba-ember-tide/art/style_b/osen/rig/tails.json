@@ -1,0 +1,7 @@
+{
+ "_说明": "dir 模式搭标架用（奥森先试全 delta，这份备用）",
+ "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_1",
+ "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_2",
+ "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_1",
+ "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_2"
+}

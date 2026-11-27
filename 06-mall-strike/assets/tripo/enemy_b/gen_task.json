@@ -1,0 +1,25 @@
+{
+ "type": "text_to_model",
+ "status": "success",
+ "progress": 100,
+ "input": {
+  "pbr": true,
+  "prompt": "photorealistic armed militia fighter, full body, standing in T-pose with arms straight out horizontally, black shemagh scarf wrapped over face, tan baseball cap, faded coyote brown fleece jacket, olive chest rig with magazine pouches, dark jeans, brown hiking boots, black gloves, no weapon, realistic worn clothing",
+  "delight": false,
+  "texture": true,
+  "export_uv": true,
+  "model_version": "P2-20260801",
+  "texture_quality": "detailed",
+  "texture_version": "v3.5-20260815",
+  "texture_alignment": "geometry"
+ },
+ "output": {
+  "model_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/e27645e3-2a8c-40f1-ba7e-8249763ada8e/tripo_pbr_model_e27645e3-2a8c-40f1-ba7e-8249763ada8e.glb?<签名参数已删除>",
+  "rendered_image_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/e27645e3-2a8c-40f1-ba7e-8249763ada8e/legacy_mesh.webp?<签名参数已删除>",
+  "generated_image_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/e27645e3-2a8c-40f1-ba7e-8249763ada8e/text2image_e27645e3-2a8c-40f1-ba7e-8249763ada8e.jpeg?<签名参数已删除>"
+ },
+ "task_id": "e27645e3-2a8c-40f1-ba7e-8249763ada8e",
+ "created_at": "2026-11-23T15:06:20.093119Z",
+ "completed_at": "2026-11-23T15:07:45.232049Z",
+ "credits_consumed": 120.0
+}

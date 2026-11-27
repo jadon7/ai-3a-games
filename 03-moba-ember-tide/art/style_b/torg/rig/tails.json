@@ -1,0 +1,11 @@
+{
+ "_说明": "dir 模式搭标架用：腿上两节（上臂/大腿、前臂/小腿）的尾巴指向下一节的头。掌和脚用 delta，不用改",
+ "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_1",
+ "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_2",
+ "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_1",
+ "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_2",
+ "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_1",
+ "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_2",
+ "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_1",
+ "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_2"
+}

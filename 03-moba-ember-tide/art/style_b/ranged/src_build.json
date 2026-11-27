@@ -1,0 +1,117 @@
+{
+ "name": "ranged",
+ "raw": "art/unit/ranged/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ranged_rigged.glb",
+ "out": "art/unit/ranged/game.glb",
+ "packed": "public/assets/unit/ranged.glb",
+ "pose_out": "art/unit/ranged/stance.npz",
+ "tex": 1024,
+ "motions": {
+  "walk": "art/unit/ranged/motions/walk.npz",
+  "attack": "art/unit/ranged/motions/attack.npz",
+  "death": "art/unit/ranged/motions/death.npz"
+ },
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.005,
+    -0.025
+   ],
+   "yaw": -6,
+   "lean": 3
+  },
+  "spine": [
+   [
+    3,
+    -2
+   ],
+   [
+    3,
+    -2
+   ],
+   [
+    2,
+    -2
+   ]
+  ],
+  "head": {
+   "yaw": 10,
+   "pitch": 3
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.015,
+     -0.06,
+     0
+    ],
+    "pole": [
+     0.2,
+     -1,
+     0
+    ],
+    "toe": 8
+   },
+   "Right": {
+    "offset": [
+     -0.02,
+     0.05,
+     0
+    ],
+    "pole": [
+     -0.4,
+     -0.9,
+     0
+    ],
+    "toe": -22
+   }
+  },
+  "arms": {
+   "Left": {
+    "dir": [
+     0.35,
+     -0.3,
+     -0.9
+    ],
+    "reach": 0.9,
+    "pole": [
+     0.9,
+     0.5,
+     0.1
+    ],
+    "blade": [
+     0.2,
+     -0.9,
+     0.1
+    ]
+   },
+   "Right": {
+    "dir": [
+     -0.3,
+     -0.55,
+     -0.75
+    ],
+    "reach": 0.8,
+    "pole": [
+     -0.9,
+     0.4,
+     -0.2
+    ],
+    "blade": [
+     0.1,
+     -0.35,
+     0.93
+    ]
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.004
+  }
+ },
+ "palm_by_hand": true
+}

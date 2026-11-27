@@ -1,0 +1,26 @@
+卡住 {"who":"moko*","id":25,"t":229.5,"x":59.54,"z":53.65,"uv":[4.2,80],"state":"move","target":"ranged0","tgDist":8.3,"lane":0,"s":null,"route":null,"dur":3,"traveled":15.25,"doing":"清兵"}
+卡住 {"who":"vero","id":21,"t":243.9,"x":-65.46,"z":-2.18,"uv":[-44.7,-47.8],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":12.27,"doing":"跟兵线"}
+卡住 {"who":"vero","id":21,"t":245.3,"x":-65.94,"z":-8.28,"uv":[-40.8,-52.5],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":12.27,"doing":"吃亏，后撤"}
+卡住 {"who":"lan*","id":26,"t":348.4,"x":35.69,"z":-33.27,"uv":[48.8,1.7],"state":"move","target":"melee0","tgDist":7.6,"lane":0,"s":null,"route":null,"dur":3,"traveled":16,"doing":"清兵"}
+卡住 {"who":"gorran","id":22,"t":391.6,"x":42.93,"z":-43.05,"uv":[60.8,-0.1],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.12,"doing":"跟兵线"}
+卡住 {"who":"torg*","id":24,"t":575.7,"x":-30.43,"z":-18.75,"uv":[-8.3,-34.8],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":8.59,"doing":"打 岩石巨魔"}
+卡住 {"who":"lan*","id":26,"t":719.4,"x":59.17,"z":-65.84,"uv":[88.4,-4.7],"state":"move","target":"melee0","tgDist":3.5,"lane":0,"s":null,"route":null,"dur":3.3,"traveled":16.41,"doing":"清兵"}
+卡住 {"who":"torg*","id":24,"t":815.6,"x":-6.8,"z":-16.3,"uv":[6.7,-16.3],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":6.61,"doing":"去帮 lan"}
+卡住 {"who":"moko*","id":25,"t":820.9,"x":26.45,"z":-9.26,"uv":[25.3,12.2],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":11.39,"doing":"去帮 torg"}
+卡住 {"who":"melee0","id":2601,"t":906.6,"x":42.72,"z":63.91,"uv":[-15,75.4],"state":"walk","target":null,"tgDist":null,"lane":2,"s":103,"route":2,"dur":3.3,"traveled":2.23,"doing":null}
+卡住 {"who":"moko*","id":25,"t":918.1,"x":-21.04,"z":-32.5,"uv":[8.1,-37.9],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.92,"doing":"打 岩石巨魔"}
+卡住 {"who":"osen","id":23,"t":929.3,"x":-8.57,"z":-16.37,"uv":[5.5,-17.6],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.35,"doing":"吃亏，后撤"}
+卡住 {"who":"moko*","id":25,"t":929.3,"x":-12.3,"z":-32.22,"uv":[14.1,-31.5],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.24,"doing":"吃亏，后撤"}
+卡住 {"who":"osen","id":23,"t":937.3,"x":-17.21,"z":-22.1,"uv":[3.5,-27.8],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.34,"doing":"打 岩石巨魔"}
+卡住 {"who":"moko*","id":25,"t":951.9,"x":30.84,"z":-43.18,"uv":[52.3,-8.7],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":11.59,"doing":"打 岩石巨魔"}
+卡住 {"who":"osen","id":23,"t":982.6,"x":4,"z":-26,"uv":[21.2,-15.6],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":7.04,"doing":"跟兵线"}
+卡住 {"who":"osen","id":23,"t":1150.9,"x":-29.69,"z":33.32,"uv":[-44.6,2.6],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.27,"doing":"回防"}
+卡住 {"who":"moko*","id":25,"t":1249.7,"x":-14.2,"z":-32.4,"uv":[12.9,-32.9],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":18.14,"doing":"吃亏，后撤"}
+卡住 {"who":"osen","id":23,"t":1259,"x":-31.16,"z":-14.55,"uv":[-11.7,-32.3],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.36,"doing":"吃亏，后撤"}
+卡住 {"who":"moko*","id":25,"t":1259,"x":-14.49,"z":-32.5,"uv":[12.7,-33.2],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.38,"doing":"吃亏，后撤"}
+卡住 {"who":"osen","id":23,"t":1265.7,"x":-31.16,"z":-14.57,"uv":[-11.7,-32.3],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":17.35,"doing":"吃亏，后撤"}
+卡住 {"who":"lan*","id":26,"t":1275,"x":57.67,"z":-56.88,"uv":[81,0.6],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":8.67,"doing":"吃亏，后撤"}
+卡住 {"who":"lan*","id":26,"t":1276.4,"x":57.65,"z":-56.85,"uv":[81,0.6],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":7.46,"doing":"吃亏，后撤"}
+卡住 {"who":"lan*","id":26,"t":1280.4,"x":57.56,"z":-57.02,"uv":[81,0.4],"state":"move","target":null,"tgDist":null,"lane":0,"s":null,"route":null,"dur":3,"traveled":15.99,"doing":"吃亏，后撤"}
+{"时间":1288,"结果":1,"卡住次数":24,"超过三秒":24,"按种类":{"moko":7,"vero":2,"lan":5,"gorran":1,"torg":2,"melee":1,"osen":6},"最长":3.3,"errors":[]}
+{"t":1288,"over":1,"kills":[3,4],"towers":[3,2],"lanes":"111 对 011","order":["push","defend"],"camps":12,"boss":["troll 还有204秒","beast 还有23秒"],"buff":[[0,0],[134,0]],"heroes":["vero L15 100% 0/1/2 金2671 装6 刀53 线1 [跟兵线] 跟兵线414 打334 清兵187 回防57 回城45 吃亏，后撤43","gorran L15 100% 2/1/1 金3653 装6 刀66 线0 [跟兵线] 跟兵线397 打346 清兵194 拆塔41 回城35 阵亡32","osen L15 95% 1/3/2 金2499 装6 刀31 线2 [跟兵线] 跟兵线404 打300 清兵249 阵亡109 吃亏，后撤42 打野41","torg* L15 77% 0/1/2 金1557 装6 刀36 线1 [回防] 打442 跟兵线325 清兵149 回防90 阵亡51 打野39","moko* L15 54% 1/1/1 金1429 装6 刀35 线2 [吃亏，后撤] 跟兵线339 清兵312 打268 回防87 吃亏，后撤70 阵亡51","lan* L15 60% 3/2/1 金3915 装6 刀75 线0 [在出生点回血] 跟兵线318 清兵281 打212 吃亏，后撤107 阵亡76 守54"]}

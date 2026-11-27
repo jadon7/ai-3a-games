@@ -1,0 +1,31 @@
+{
+ "_说明": "奥森 B（烛角鹿，Tripo 新绑的四足骨架 31 根）→ 旧烛角鹿（stag）的骨骼名（25 根）。按骨骼管的肉和位置对的（inspect/weights.txt、inspect/*_bones.jpg）：新骨架前腿多一节肩胛（带权重，旧的那根没权重）；右前腿少一节蹄骨（掌骨连蹄一起管）；脖子三节（Head_0~2）对旧的一节（Spine_3），头连鹿角蜡烛是 Head_3；尾巴三节，第一节 bone_1 对旧的 bone_24（尾巴），后两节跟着它",
+ "_keep": [
+  "tripo::Root",
+  "tripo::Spine_0",
+  "tripo::Spine_1",
+  "tripo::Spine_2",
+  "tripo::1_Left_Limb_0",
+  "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_2",
+  "tripo::1_Right_Limb_0",
+  "tripo::1_Right_Limb_1",
+  "tripo::1_Right_Limb_2",
+  "tripo::0_Right_Limb_0",
+  "tripo::0_Right_Limb_1"
+ ],
+ "bone_4": "bone_16",
+ "bone_8": "bone_20",
+ "tripo::Spine_3": "bone_4",
+ "tripo::0_Left_Limb_0": "bone_5",
+ "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_0",
+ "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_1",
+ "tripo::0_Left_Limb_3": "tripo::0_Left_Limb_2",
+ "bone_27": "bone_9",
+ "bone_28": "bone_10",
+ "tripo::Head_0": "tripo::Spine_3",
+ "tripo::Head_1": "x::neck1",
+ "tripo::Head_2": "x::neck2",
+ "tripo::Head_3": "tripo::Head_0",
+ "bone_1": "bone_24"
+}

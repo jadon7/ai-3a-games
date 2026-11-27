@@ -1,0 +1,55 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/lan.npz",
+ "src_build": "art/style_b/lan/src_build.json",
+ "src_timing": "art/style_b/lan/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 6.0,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "hook",
+   "r_end",
+   "death"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "岚的全部旧动作 → 岚 B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型和绑骨，武器脚本建）",
+ "tgt_rig": "../rigs/lan_b.npz",
+ "tgt_model": "../lan_b_rigged.glb",
+ "labels": [
+  "岚（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "name": "lan_b"
+}

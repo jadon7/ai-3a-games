@@ -1,0 +1,141 @@
+{
+ "name": "ugo",
+ "raw": "art/hero/ugo/tripo_rigged_fix.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ugo_rigged.glb",
+ "out": "art/hero/ugo/game.glb",
+ "packed": "public/assets/hero/ugo.glb",
+ "pose_out": "art/hero/ugo/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "palm_by_hand": true,
+ "motions": {
+  "idle": "art/hero/ugo/motions_fix/idle.npz",
+  "run": "art/hero/ugo/motions_fix/run.npz",
+  "attack1": "art/hero/ugo/motions_fix/attack1.npz",
+  "attack2": "art/hero/ugo/motions_fix/attack2.npz",
+  "q": "art/hero/ugo/motions_fix/q.npz",
+  "w": "art/hero/ugo/motions_fix/w.npz",
+  "e": "art/hero/ugo/motions_fix/e.npz",
+  "r": "art/hero/ugo/motions_fix/r.npz",
+  "death": "art/hero/ugo/motions_fix/death.npz"
+ },
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.01,
+    -0.035
+   ],
+   "yaw": 0,
+   "lean": 10
+  },
+  "spine": [
+   [
+    6,
+    0
+   ],
+   [
+    7,
+    0
+   ],
+   [
+    6,
+    0
+   ]
+  ],
+  "head": {
+   "yaw": 0,
+   "pitch": -18
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.012,
+     0.0,
+     0
+    ],
+    "pole": [
+     0.25,
+     -1,
+     0
+    ],
+    "toe": 12
+   },
+   "Right": {
+    "offset": [
+     -0.012,
+     0.0,
+     0
+    ],
+    "pole": [
+     -0.25,
+     -1,
+     0
+    ],
+    "toe": -12
+   }
+  },
+  "arms": {
+   "Left": {
+    "dir": [
+     0.1,
+     -0.9,
+     -0.42
+    ],
+    "reach": 0.84,
+    "pole": [
+     0.6,
+     0.5,
+     -0.6
+    ],
+    "blade": [
+     -0.75,
+     0.0,
+     0.65
+    ],
+    "edge": [
+     0.12,
+     -0.9,
+     -0.4
+    ],
+    "shrug": 4
+   },
+   "Right": {
+    "dir": [
+     -0.1,
+     -0.9,
+     -0.42
+    ],
+    "reach": 0.84,
+    "pole": [
+     -0.6,
+     0.5,
+     -0.6
+    ],
+    "blade": [
+     0.75,
+     0.0,
+     0.65
+    ],
+    "edge": [
+     -0.12,
+     -0.9,
+     -0.4
+    ],
+    "shrug": 4
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.2,
+   "shoulder": 0.8,
+   "hand": 0.004
+  }
+ },
+ "grip": {
+  "Left": 0,
+  "Right": 0
+ },
+ "_note": "套动作出品用的“源” build.json：旧乌戈的动作和站姿（旧的就没有武器，钓竿灯长在头上）"
+}

@@ -1,0 +1,37 @@
+MESH_BBOX [-0.29 -0.5  -0.  ] [0.29  0.5   0.739]
+W tripo::Root              parent=-                      wsum= 14598.4 n>0.3=17075 centroid=(+0.016,+0.082,+0.404) head=(+0.000,+0.000,+0.008) box x[-0.29,0.29] y[-0.33,0.50] z[0.14,0.74]
+W bone_1                   parent=tripo::Root            wsum=   220.4 n>0.3=  357 centroid=(+0.181,+0.219,+0.191) head=(+0.119,+0.189,+0.235) box x[0.08,0.26] y[0.15,0.31] z[0.13,0.26]
+W tripo::1_Left_Limb_0     parent=bone_1                 wsum=   337.0 n>0.3=  485 centroid=(+0.216,+0.247,+0.119) head=(+0.197,+0.213,+0.164) box x[0.14,0.27] y[0.16,0.33] z[0.06,0.18]
+W tripo::1_Left_Limb_1     parent=tripo::1_Left_Limb_0   wsum=   412.6 n>0.3=  487 centroid=(+0.224,+0.263,+0.045) head=(+0.209,+0.264,+0.071) box x[0.15,0.29] y[0.19,0.34] z[0.00,0.12]
+W tripo::1_Right_Limb_0    parent=tripo::Root            wsum=   269.5 n>0.3=  415 centroid=(-0.145,+0.249,+0.205) head=(-0.123,+0.225,+0.301) box x[-0.24,-0.04] y[0.16,0.32] z[0.13,0.28]
+W tripo::1_Right_Limb_1    parent=tripo::1_Right_Limb_0  wsum=   331.6 n>0.3=  440 centroid=(-0.190,+0.261,+0.129) head=(-0.182,+0.232,+0.176) box x[-0.25,-0.10] y[0.18,0.32] z[0.06,0.22]
+W tripo::1_Right_Limb_2    parent=tripo::1_Right_Limb_1  wsum=   531.8 n>0.3=  606 centroid=(-0.206,+0.248,+0.037) head=(-0.201,+0.260,+0.067) box x[-0.29,-0.13] y[0.17,0.32] z[0.00,0.11]
+W tripo::Spine_0           parent=tripo::Root            wsum=     0.0 n>0.3=    0 centroid=(+0.099,+0.303,+0.352) head=(+0.002,+0.045,+0.321) -
+W tripo::Spine_1           parent=tripo::Spine_0         wsum=     0.0 n>0.3=    0 centroid=(-0.070,+0.238,+0.291) head=(+0.002,+0.018,+0.321) -
+W tripo::Spine_2           parent=tripo::Spine_1         wsum=     0.0 n>0.3=    0 centroid=(+0.091,+0.273,+0.410) head=(+0.002,-0.057,+0.352) -
+W tripo::Spine_3           parent=tripo::Spine_2         wsum=  3978.0 n>0.3= 6233 centroid=(+0.072,-0.132,+0.418) head=(+0.001,-0.058,+0.352) box x[-0.26,0.29] y[-0.30,0.10] z[0.16,0.63]
+W tripo::0_Right_Limb_0    parent=tripo::Spine_3         wsum=   336.2 n>0.3=  506 centroid=(+0.010,-0.313,+0.334) head=(+0.002,-0.244,+0.352) box x[-0.10,0.10] y[-0.40,-0.24] z[0.25,0.43]
+W tripo::0_Right_Limb_1    parent=tripo::0_Right_Limb_0  wsum=   448.2 n>0.3=  646 centroid=(+0.011,-0.369,+0.388) head=(+0.002,-0.334,+0.371) box x[-0.08,0.09] y[-0.47,-0.27] z[0.30,0.46]
+W bone_21                  parent=tripo::0_Right_Limb_1  wsum=   928.5 n>0.3= 1013 centroid=(+0.001,-0.427,+0.479) head=(+0.002,-0.389,+0.434) box x[-0.09,0.09] y[-0.50,-0.32] z[0.39,0.57]
+W bone_22                  parent=bone_21                wsum=     5.3 n>0.3=    2 centroid=(-0.056,-0.472,+0.486) head=(+0.002,-0.408,+0.492) box x[-0.07,-0.07] y[-0.47,-0.47] z[0.49,0.49]
+W bone_23                  parent=tripo::0_Right_Limb_1  wsum=     0.6 n>0.3=    0 centroid=(-0.047,-0.462,+0.431) head=(+0.002,-0.451,+0.324) -
+W tripo::0_Right_Limb_2    parent=tripo::0_Right_Limb_1  wsum=    10.2 n>0.3=    0 centroid=(-0.004,-0.460,+0.416) head=(+0.002,-0.420,+0.379) -
+W bone_25                  parent=tripo::Spine_3         wsum=    66.8 n>0.3=   70 centroid=(-0.196,-0.232,+0.328) head=(-0.127,-0.178,+0.367) box x[-0.23,-0.16] y[-0.26,-0.20] z[0.30,0.35]
+W bone_26                  parent=bone_25                wsum=   382.0 n>0.3=  491 centroid=(-0.186,-0.222,+0.231) head=(-0.154,-0.178,+0.328) box x[-0.25,-0.10] y[-0.30,-0.12] z[0.15,0.32]
+W tripo::Spine_6           parent=bone_26                wsum=   594.2 n>0.3=  754 centroid=(-0.196,-0.248,+0.128) head=(-0.182,-0.193,+0.196) box x[-0.27,-0.12] y[-0.31,-0.17] z[0.04,0.23]
+W bone_28                  parent=tripo::Spine_6         wsum=   277.5 n>0.3=  389 centroid=(-0.198,-0.245,+0.042) head=(-0.193,-0.213,+0.074) box x[-0.27,-0.13] y[-0.31,-0.18] z[0.00,0.08]
+W bone_29                  parent=bone_28                wsum=     0.2 n>0.3=    0 centroid=(-0.202,-0.146,+0.021) head=(-0.193,-0.232,+0.008) -
+W tripo::0_Left_Limb_0     parent=bone_28                wsum=    39.7 n>0.3=   49 centroid=(-0.257,-0.289,+0.014) head=(-0.256,-0.268,+0.016) box x[-0.27,-0.23] y[-0.31,-0.25] z[0.00,0.04]
+W tripo::0_Left_Limb_1     parent=bone_28                wsum=    44.1 n>0.3=   57 centroid=(-0.168,-0.312,+0.016) head=(-0.197,-0.287,+0.016) box x[-0.23,0.24] y[-0.33,-0.29] z[0.00,0.04]
+W tripo::0_Left_Limb_2     parent=bone_28                wsum=     7.5 n>0.3=    0 centroid=(-0.205,-0.296,+0.049) head=(-0.193,-0.244,+0.031) -
+W bone_33                  parent=bone_28                wsum=    38.5 n>0.3=   58 centroid=(-0.151,-0.296,+0.015) head=(-0.154,-0.264,+0.012) box x[-0.18,-0.13] y[-0.32,-0.27] z[-0.00,0.03]
+W bone_34                  parent=bone_26                wsum=     5.7 n>0.3=    0 centroid=(-0.090,-0.257,+0.266) head=(-0.158,-0.291,+0.289) -
+W bone_35                  parent=bone_26                wsum=   635.2 n>0.3=  665 centroid=(-0.255,-0.161,+0.298) head=(-0.193,-0.221,+0.352) box x[-0.29,-0.21] y[-0.24,-0.08] z[0.20,0.41]
+W bone_11                  parent=tripo::Spine_1         wsum=    12.0 n>0.3=    0 centroid=(+0.178,-0.202,+0.255) head=(+0.127,-0.131,+0.367) -
+W tripo::Head_0            parent=bone_11                wsum=   333.5 n>0.3=  443 centroid=(+0.181,-0.211,+0.237) head=(+0.162,-0.135,+0.336) box x[0.09,0.25] y[-0.28,-0.10] z[0.14,0.33]
+W tripo::Head_1            parent=tripo::Head_0          wsum=   506.1 n>0.3=  621 centroid=(+0.214,-0.234,+0.125) head=(+0.197,-0.205,+0.211) box x[0.13,0.27] y[-0.30,-0.16] z[0.04,0.24]
+W tripo::Head_2            parent=tripo::Head_1          wsum=   276.9 n>0.3=  385 centroid=(+0.217,-0.240,+0.042) head=(+0.189,-0.205,+0.074) box x[0.14,0.28] y[-0.31,-0.17] z[0.00,0.09]
+W bone_15                  parent=tripo::Head_2          wsum=    29.3 n>0.3=   45 centroid=(-0.027,-0.275,+0.007) head=(+0.186,-0.232,+0.012) box x[-0.21,0.20] y[-0.32,-0.23] z[-0.00,0.02]
+W bone_16                  parent=tripo::Head_2          wsum=    36.2 n>0.3=   47 centroid=(+0.112,-0.305,+0.015) head=(+0.205,-0.291,+0.016) box x[-0.22,0.20] y[-0.32,-0.29] z[0.00,0.04]
+W tripo::Spine_4           parent=tripo::Head_2          wsum=    48.4 n>0.3=   58 centroid=(+0.248,-0.287,+0.013) head=(+0.236,-0.260,+0.016) box x[0.21,0.28] y[-0.32,-0.26] z[0.00,0.04]
+W tripo::Spine_5           parent=tripo::Head_2          wsum=     2.9 n>0.3=    0 centroid=(+0.164,-0.227,+0.014) head=(+0.189,-0.205,+0.012) -

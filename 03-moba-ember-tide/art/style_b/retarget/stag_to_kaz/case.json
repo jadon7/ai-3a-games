@@ -1,0 +1,162 @@
+{
+ "name": "stag_to_kaz",
+ "title": "奥森（烛角鹿）的全部动作 → 卡兹（猞猁）的模型：跨物种（偶蹄 → 趾行），骨骼数 25 → 50，按骨骼角色对应",
+ "kind": "quadruped",
+ "src_rig": "../rigs/stag.npz",
+ "tgt_rig": "../rigs/kaz.npz",
+ "src_build": "art/hero/osen_stag/build.json",
+ "src_timing": "public/assets/hero/osen.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/stag.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz.blend",
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 3.4,
+ "game_h": 2.8,
+ "move_speed": 6.0,
+ "tip_src": "tripo::Head_0",
+ "tip_tgt": "tripo::Head_1",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "tripo::Head_1": "tripo::Head_0",
+  "tripo::0_Left_Limb_1": "bone_5",
+  "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_0",
+  "tripo::0_Left_Limb_3": "tripo::0_Left_Limb_1",
+  "tripo::0_Left_Limb_4": "tripo::0_Left_Limb_2",
+  "tripo::1_Left_Limb_0": "bone_16",
+  "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_0",
+  "tripo::1_Left_Limb_2": "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_4": "tripo::1_Left_Limb_2",
+  "tripo::0_Right_Limb_1": "bone_10",
+  "tripo::0_Right_Limb_2": "tripo::0_Right_Limb_0",
+  "tripo::0_Right_Limb_3": "tripo::0_Right_Limb_1",
+  "tripo::0_Right_Limb_4": "tripo::0_Right_Limb_2",
+  "tripo::1_Right_Limb_0": "bone_20",
+  "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_0",
+  "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_1",
+  "tripo::1_Right_Limb_4": "tripo::1_Right_Limb_2"
+ },
+ "chains": [
+  {
+   "tgt": [
+    "tripo::Spine_0",
+    "tripo::Spine_1",
+    "tripo::Spine_2",
+    "tripo::Spine_3"
+   ],
+   "src": [
+    "tripo::Spine_0",
+    "tripo::Spine_1",
+    "tripo::Spine_2"
+   ]
+  },
+  {
+   "tgt": [
+    "bone_32",
+    "bone_33",
+    "tripo::Head_0"
+   ],
+   "src": [
+    "tripo::Spine_3"
+   ]
+  }
+ ],
+ "legs": [
+  {
+   "tgt": [
+    "tripo::0_Left_Limb_1",
+    "tripo::0_Left_Limb_2",
+    "tripo::0_Left_Limb_3"
+   ],
+   "src_end": "tripo::0_Left_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1",
+    "tripo::1_Left_Limb_2"
+   ],
+   "src_end": "tripo::1_Left_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::0_Right_Limb_1",
+    "tripo::0_Right_Limb_2",
+    "tripo::0_Right_Limb_3"
+   ],
+   "src_end": "tripo::0_Right_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1",
+    "tripo::1_Right_Limb_2"
+   ],
+   "src_end": "tripo::1_Right_Limb_2"
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "奥森（鹿，原）",
+  "卡兹·只搬旋转",
+  "卡兹·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.0,
+  "zc": 0.42,
+  "ortho_src": 1.25
+ },
+ "video": {
+  "clips": [
+   "run",
+   "gallop",
+   "attack1",
+   "q"
+  ],
+  "loops": {
+   "run": 4,
+   "gallop": 3
+  },
+  "spacing": 1.6,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.35
+ },
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "bone_32",
+   "verts_of": "tripo::Head_1"
+  }
+ ],
+ "ref_pose": {
+  "src": [
+   "art/hero/osen_stag/motions/idle.npz",
+   0
+  ],
+  "tgt": [
+   "art/hero/kaz/motions/idle.npz",
+   0
+  ]
+ }
+}

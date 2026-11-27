@@ -1,0 +1,110 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/stag_skeleton.json",
+ "out_dir": "art/hero/osen_stag/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_idle/motion_dg.npz",
+   "loop": [
+    70,
+    118
+   ],
+   "from": 1
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_run2/motion_dg.npz",
+   "loop": [
+    10,
+    50
+   ],
+   "from": 12,
+   "stride": true
+  },
+  "gallop": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_run/motion_fix.npz",
+   "loop": [
+    18,
+    48
+   ],
+   "from": 12,
+   "stride": true
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_attack1/motion_dg.npz",
+   "range": [
+    5,
+    44
+   ]
+  },
+  "q": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_q/motion_dg.npz",
+   "segments": [
+    [
+     5,
+     17
+    ],
+    [
+     26,
+     57
+    ]
+   ]
+  },
+  "w": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_w/motion_dg.npz",
+   "segments": [
+    [
+     8,
+     21
+    ],
+    [
+     45,
+     54
+    ],
+    [
+     86,
+     116
+    ]
+   ]
+  },
+  "e": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_e/motion_dg.npz",
+   "segments": [
+    [
+     40,
+     66
+    ],
+    [
+     88,
+     118
+    ]
+   ]
+  },
+  "r": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_r/motion_dg.npz",
+   "segments": [
+    [
+     1,
+     13
+    ],
+    [
+     23,
+     118
+    ]
+   ]
+  },
+  "death": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/stag_death/motion_dg.npz",
+   "segments": [
+    [
+     2,
+     22
+    ],
+    [
+     44,
+     104
+    ]
+   ],
+   "settle": false
+  }
+ }
+}

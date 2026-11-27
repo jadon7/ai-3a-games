@@ -1,0 +1,3 @@
+[
+  {"name": "unit_melee", "image": "art/unit/melee_ref.png", "face_limit": 10000, "texture_quality": "standard"}
+]

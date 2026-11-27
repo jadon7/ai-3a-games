@@ -1,0 +1,11 @@
+[
+{"js":"__setSpeed(16)"},
+{"until":"__sim.time>240||__sim.over","timeout":600000},{"js":"__report()","log":"4分"},
+{"until":"__sim.time>480||__sim.over","timeout":600000},{"js":"__report()","log":"8分"},
+{"until":"__sim.time>720||__sim.over","timeout":600000},{"js":"__report()","log":"12分"},
+{"until":"__sim.time>960||__sim.over","timeout":600000},{"js":"__report()","log":"16分"},
+{"until":"__sim.time>1200||__sim.over","timeout":600000},{"js":"__report()","log":"20分"},
+{"until":"__sim.time>1500||__sim.over","timeout":600000},{"js":"__report()","log":"25分"},
+{"until":"__sim.time>1800||__sim.over","timeout":600000},{"js":"__report()","log":"30分"},
+{"shot":"end"}
+]

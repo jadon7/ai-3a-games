@@ -1,0 +1,209 @@
+<title>烬与潮 阶段 2 验收</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：返工说明。顶部结论 → 整张地图 → 第一版和现在的并排 → 和 Dota 2 的并排 → 三路各处 → 还差什么和花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · MOBA 项目 · 阶段 2 返工 · 第二轮优化</p>
+  <h1>树林围出的<em>走廊</em>，稳在 60 帧</h1>
+  <p class="lede">你说细节和画质离 Dota 2 还差得明显，我对着原图逐项查了四轮。这一轮改的是：树全部换成枝叶分明的贴图树，树林填满野区、只留小路和营地；地面撒上成簇的植物和杂物；颜色和发光整体收敛；河道、泉水重做；另外修掉了一个帧率问题，真实浏览器里从 15 帧到 60 帧。</p>
+</header>
+
+<section class="how">
+  <section>
+    <h3>地图结构</h3>
+    <ul>
+      <li>水晶和出生点在左下角和右上角，各自的高地上。</li>
+      <li>上、中、下三条线，每条线每方三座塔，水晶前两座，每方 11 座。</li>
+      <li>河道从左上到右下斜穿，河里两座河心岛是两个 Boss 的位置。</li>
+      <li>四片野区，每方 6 个野怪营地。地图关于河道镜像对称。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>这一轮改了什么</h3>
+    <ul>
+      <li>树：原来图转 3D 的树叶子糊成一团。现在枝叶画在带透明的贴图上，一片片分明，树冠朝阳面亮、内部暗，影子是叶子的形状。每方 3 到 4 种树形。</li>
+      <li>树林：两侧按河道镜像，填满野区，只留出小路和营地，路变成了树围出来的走廊。</li>
+      <li>地面：两张发糊的底纹换成细节清晰的；加了 16 种植物、32 种地面杂物，落叶靠着树、草长在林子边、碎石成摊。</li>
+      <li>颜色：饱和度、对比度、锐化和发光都降了，烬誓庭一侧从“满屏橙红”收成灰褐配暗红。</li>
+      <li>河道和泉水：河里有成组的礁石，岸边有芦苇，岸线泡沫不再是一条白线；泉水从一张发光圆片改成有深浅的一池光。</li>
+      <li>流畅度：Retina 屏上原来按全分辨率画，只有 15 帧。现在限定渲染像素并按实测帧率自动调，去掉了一个几乎看不出效果却很耗时的后期环节。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>关于换不换引擎</h3>
+    <p>我的判断是不换。差距主要在制作方法，不在渲染器：Dota 2 的画面靠整张手绘的地表和大量物件的融合处理，这些浏览器里都能显示。换成原生引擎会丢掉网页版和手机版，这台电脑的磁盘也装不下 UE5。这一轮的结果也支持这个判断：画面的提升全部来自换素材和换摆法，流畅度的问题出在分辨率和一个后期环节上，都不是渲染器的上限。如果你看完仍然觉得不够，再往上走的一步是换到原生引擎，代价是放弃“打开浏览器就能玩”。</p>
+  </section>
+</section>
+
+<section class="big">
+  <h2>整张地图</h2>
+  <p class="note">左下是烬誓庭，右上是沉月会。</p>
+  <figure><img src="v2/overview.jpg" alt="整张三路地图的俯瞰"><figcaption><span class="who ours">现在</span>三路、河道、两座河心岛、四片野区</figcaption></figure>
+</section>
+
+<section>
+  <h2>这一轮优化前后</h2>
+  <p class="note">同一个机位。左边是这一轮开始时，右边是现在。</p>
+  <div class="pairs">
+    <div class="pair"><h3>烬誓庭野区</h3><div class="row">
+      <figure><img src="prev/jungle_c.jpg" alt="优化前的烬誓庭野区" loading="lazy"><figcaption><span class="who old">优化前</span>一片空旷的沙地，零星几棵看不清叶子的树</figcaption></figure>
+      <figure><img src="v2/jungle_c.jpg" alt="现在的烬誓庭野区" loading="lazy"><figcaption><span class="who ours">现在</span>树林围出的营地，地面有落叶、枯草和裂纹</figcaption></figure>
+    </div></div>
+    <div class="pair"><h3>沉月会中路外塔</h3><div class="row">
+      <figure><img src="prev/mid_m.jpg" alt="优化前的沉月会中路" loading="lazy"><figcaption><span class="who old">优化前</span></figcaption></figure>
+      <figure><img src="v2/mid_m.jpg" alt="现在的沉月会中路" loading="lazy"><figcaption><span class="who ours">现在</span></figcaption></figure>
+    </div></div>
+    <div class="pair"><h3>烬誓庭中路外塔</h3><div class="row">
+      <figure><img src="prev/mid_c.jpg" alt="优化前的烬誓庭中路" loading="lazy"><figcaption><span class="who old">优化前</span></figcaption></figure>
+      <figure><img src="v2/mid_c.jpg" alt="现在的烬誓庭中路" loading="lazy"><figcaption><span class="who ours">现在</span></figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>第一版和现在</h2>
+  <p class="note">同一类位置。左边是你打回的第一版，右边是现在。</p>
+  <div class="pairs">
+    <div class="pair"><h3>水晶</h3><div class="row">
+      <figure><img src="shots/base_c.jpg" alt="第一版的烬誓庭基地" loading="lazy"><figcaption><span class="who old">第一版</span>贴图平铺的地面，建筑直接摆在上面</figcaption></figure>
+      <figure><img src="v2/base_c.jpg" alt="现在的烬誓庭水晶" loading="lazy"><figcaption><span class="who ours">现在</span>水晶坐在画出来的石台上，四周有旗帜、火盆和焦痕</figcaption></figure>
+    </div></div>
+    <div class="pair"><h3>高地坡道</h3><div class="row">
+      <figure><img src="shots/ramp_c.jpg" alt="第一版的坡道" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+      <figure><img src="v2/ramp_c.jpg" alt="现在的坡道" loading="lazy"><figcaption><span class="who ours">现在</span></figcaption></figure>
+    </div></div>
+    <div class="pair"><h3>中路外塔</h3><div class="row">
+      <figure><img src="shots/lane_c.jpg" alt="第一版的中路外塔" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+      <figure><img src="v2/mid_c.jpg" alt="现在的中路外塔" loading="lazy"><figcaption><span class="who ours">现在</span></figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>和 Dota 2 并排</h2>
+  <p class="note">Dota 2 只用来对标水准。我们的题材是暗色调奇幻，所以整体比它的天辉一侧暗、冷。</p>
+  <div class="pairs">
+    <div class="pair"><div class="row three">
+      <figure><img src="refs/t4.jpg" alt="Dota 2 河道坡道和防御塔" loading="lazy"><figcaption><span class="who">DOTA 2</span>河道和防御塔</figcaption></figure>
+      <figure><img src="v2/mid_m.jpg" alt="沉月会中路外塔" loading="lazy"><figcaption><span class="who ours">现在</span>沉月会中路外塔</figcaption></figure>
+      <figure><img src="v2/river.jpg" alt="中路过河" loading="lazy"><figcaption><span class="who ours">现在</span>中路过河的浅滩</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row three">
+      <figure><img src="refs/t2.jpg" alt="Dota 2 基地" loading="lazy"><figcaption><span class="who">DOTA 2</span>基地</figcaption></figure>
+      <figure><img src="v2/base_m.jpg" alt="沉月会水晶" loading="lazy"><figcaption><span class="who ours">现在</span>沉月会水晶</figcaption></figure>
+      <figure><img src="v2/fountain_c.jpg" alt="烬誓庭出生点" loading="lazy"><figcaption><span class="who ours">现在</span>烬誓庭出生点</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row three">
+      <figure><img src="refs/t3.jpg" alt="Dota 2 Boss 坑" loading="lazy"><figcaption><span class="who">DOTA 2</span>Boss 坑</figcaption></figure>
+      <figure><img src="v2/island1.jpg" alt="上游河心岛" loading="lazy"><figcaption><span class="who ours">现在</span>上游河心岛</figcaption></figure>
+      <figure><img src="v2/island2.jpg" alt="下游河心岛" loading="lazy"><figcaption><span class="who ours">现在</span>下游河心岛</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row three">
+      <figure><img src="refs/t6.jpg" alt="Dota 2 夜魇野区" loading="lazy"><figcaption><span class="who">DOTA 2</span>夜魇野区</figcaption></figure>
+      <figure><img src="v2/jungle_c.jpg" alt="烬誓庭上野区" loading="lazy"><figcaption><span class="who ours">现在</span>烬誓庭上野区营地</figcaption></figure>
+      <figure><img src="v2/jungle_m.jpg" alt="沉月会下野区" loading="lazy"><figcaption><span class="who ours">现在</span>沉月会下野区营地</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>边路和夜晚</h2>
+  <div class="pairs"><div class="pair"><div class="row three">
+    <figure><img src="v2/top_c.jpg" alt="烬誓庭上路外塔" loading="lazy"><figcaption><span class="who ours">现在</span>烬誓庭上路外塔</figcaption></figure>
+    <figure><img src="v2/bot_m.jpg" alt="沉月会下路外塔" loading="lazy"><figcaption><span class="who ours">现在</span>沉月会下路外塔</figcaption></figure>
+    <figure><img src="v2/night_base_c.jpg" alt="夜晚的烬誓庭水晶" loading="lazy"><figcaption><span class="who ours">现在</span>夜晚的烬誓庭水晶</figcaption></figure>
+  </div></div></div>
+</section>
+
+<section class="cols">
+  <section>
+    <h3>和 Dota 2 还差在哪</h3>
+    <ul>
+      <li>高低地的崖壁还是地形本身的坡，没有雕出来的岩壁。这是现在最明显的一处。</li>
+      <li>建筑和防御塔还是原来的模型和贴图精度，这一轮没动。</li>
+      <li>树、植物、杂物都是面片。俯视镜头下成立，自由飞行贴近看能看出是片。</li>
+      <li>烬誓庭兵线上的土路还偏软，没有 Dota 2 路面那种清楚的车辙和石块。</li>
+      <li>Dota 2 的树冠是成块的大叶团，明暗面更概括；我们的叶子更碎。</li>
+      <li>野怪营地还是空地，等阶段 4 放野怪时布置。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>没验证的</h3>
+    <ul>
+      <li>帧率只在这台 M3 Max 上测过：无界面 Chrome 1080p 下 15 个机位都是 60 帧，应用内浏览器 Retina 屏稳定 60 帧。别的机器没测。</li>
+      <li>手机没测。全部素材现在约 37MB。</li>
+      <li>树林只做到两侧疏密一致，每棵树的位置不是逐棵镜像。做寻路时要按实际位置建。</li>
+      <li>英雄站上去以后的明度关系，要等阶段 3。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>这一轮的花费</h3>
+    <ul>
+      <li>即梦：9 张图集加 2 张底纹，约 260 积分。余额 17661。</li>
+      <li>Tripo：没有新增。余额 740，后面的角色大约要 550。</li>
+      <li>崖壁如果要做成模型，大约 4 到 6 个，120 到 180 Tripo 额度，会挤占角色的预算。</li>
+    </ul>
+  </section>
+</section>
+
+<footer class="foot">Dota 2 的参考图来自 interfaceingame.com 和 Steam 商店页，版权属于 Valve，这里只用作内部对标。来源链接在项目的 <code>refs/dota2/sources.md</code>。</footer>
+</div>

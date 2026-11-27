@@ -1,0 +1,123 @@
+{
+ "_common": {
+  "convention": "GLB：+Y 向上，原点在树干底部地面处，保持源模型真实高度；单个节点、单个网格、两个材质（<名字>_bark 不透明、<名字>_foliage alphaMode MASK）",
+  "foliage": "叶片卡片正反两面各有一份几何（位置相同、绕序相反），法线统一为\"从树冠中心向外\"的球形法线；材质 doubleSided=false，按普通单面材质渲染即可，不要改成 DoubleSide",
+  "card": "<名字>_card.png：原始高模的正交侧视图，1024x1024 直通透明，平光（白色环境光 + 自然遮蔽），颜色已向透明区外扩。画面宽 cardWidthM、高 cardHeightM（像素不是正方形），树干底部在底边正中。视角：相机在 glTF +Z 一侧朝 -Z 看，画面右 = +X。_card_b.png 是转 90° 的另一个视角（相机在 +X 一侧朝 -X 看，画面右 = -Z），宽 cardBWidthM",
+  "leafAtlas": "<名字>_leaves.png 是嵌在 GLB 里的叶簇图集的副本（阔叶树 4x4 共 16 块；杉树是 8 条竖条）",
+  "extra": "fir_b 是同一套杉树素材里较矮的另一棵（影片里也用了），不需要可以忽略",
+  "units": "米",
+  "fir": "杉树针叶很细，贴图里大量半透明像素：MASK 阈值设得低（0.22），更好的做法是运行时用 alphaHash 或 alphaToCoverage"
+ },
+ "jacaranda": {
+  "file": "jacaranda.glb",
+  "card": "jacaranda_card.png",
+  "height": 19.39,
+  "crownRadius": 10.51,
+  "tris": 15378,
+  "cardWidthM": 26.22,
+  "cardHeightM": 19.58,
+  "cardB": "jacaranda_card_b.png",
+  "cardBWidthM": 19.62,
+  "cardBHeightM": 19.58,
+  "leafAtlas": "jacaranda_leaves.png",
+  "crownBottom": 2.88,
+  "woodTris": 11578,
+  "foliage": "950 张叶簇卡片，每张约 1.84 m",
+  "materials": {
+   "jacaranda_bark": [
+    "OPAQUE",
+    null
+   ],
+   "jacaranda_foliage": [
+    "MASK",
+    0.45
+   ]
+  },
+  "sizeMB": 2.33,
+  "sourceTris": 3863832
+ },
+ "fir": {
+  "file": "fir.glb",
+  "card": "fir_card.png",
+  "height": 18.85,
+  "crownRadius": 2.77,
+  "tris": 3268,
+  "cardWidthM": 6.73,
+  "cardHeightM": 19.03,
+  "cardB": "fir_card_b.png",
+  "cardBWidthM": 7.24,
+  "cardBHeightM": 19.03,
+  "leafAtlas": "fir_leaves.png",
+  "crownBottom": 6.45,
+  "woodTris": 3076,
+  "foliage": "8 片过树干的竖直面片（每片是 45° 扇区枝叶的侧视图）",
+  "materials": {
+   "fir_bark": [
+    "OPAQUE",
+    null
+   ],
+   "fir_foliage": [
+    "MASK",
+    0.22
+   ]
+  },
+  "sizeMB": 1.53,
+  "sourceTris": 4176819
+ },
+ "tree_small_02": {
+  "file": "tree_small_02.glb",
+  "card": "tree_small_02_card.png",
+  "height": 4.48,
+  "crownRadius": 2.28,
+  "tris": 5970,
+  "cardWidthM": 3.22,
+  "cardHeightM": 4.52,
+  "cardB": "tree_small_02_card_b.png",
+  "cardBWidthM": 5.98,
+  "cardBHeightM": 4.52,
+  "leafAtlas": "tree_small_02_leaves.png",
+  "crownBottom": 1.72,
+  "woodTris": 3742,
+  "foliage": "557 张叶簇卡片，每张约 0.53 m",
+  "materials": {
+   "tree_small_02_bark": [
+    "OPAQUE",
+    null
+   ],
+   "tree_small_02_foliage": [
+    "MASK",
+    0.45
+   ]
+  },
+  "sizeMB": 1.97,
+  "sourceTris": 2062487
+ },
+ "fir_b": {
+  "file": "fir_b.glb",
+  "card": "fir_b_card.png",
+  "height": 13.98,
+  "crownRadius": 2.51,
+  "tris": 3066,
+  "cardWidthM": 6.06,
+  "cardHeightM": 14.11,
+  "cardB": "fir_b_card_b.png",
+  "cardBWidthM": 6.35,
+  "cardBHeightM": 14.11,
+  "leafAtlas": "fir_b_leaves.png",
+  "crownBottom": 4.59,
+  "woodTris": 2874,
+  "foliage": "8 片过树干的竖直面片（每片是 45° 扇区枝叶的侧视图）",
+  "materials": {
+   "fir_b_bark": [
+    "OPAQUE",
+    null
+   ],
+   "fir_b_foliage": [
+    "MASK",
+    0.22
+   ]
+  },
+  "sizeMB": 1.27,
+  "sourceTris": 2300624
+ }
+}

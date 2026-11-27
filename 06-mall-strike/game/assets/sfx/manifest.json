@@ -1,0 +1,100 @@
+{
+ "shot": [
+  "shot_0.wav",
+  "shot_1.wav",
+  "shot_2.wav",
+  "shot_3.wav",
+  "shot_4.wav",
+  "shot_5.wav"
+ ],
+ "eshot": [
+  "eshot_0.wav",
+  "eshot_1.wav",
+  "eshot_2.wav",
+  "eshot_3.wav"
+ ],
+ "snap": [
+  "snap_0.wav",
+  "snap_1.wav",
+  "snap_2.wav",
+  "snap_3.wav"
+ ],
+ "whizz": [
+  "whizz_0.wav",
+  "whizz_1.wav",
+  "whizz_2.wav"
+ ],
+ "impact": [
+  "impact_0.wav",
+  "impact_1.wav",
+  "impact_2.wav",
+  "impact_3.wav"
+ ],
+ "casing": [
+  "casing_0.wav",
+  "casing_1.wav",
+  "casing_2.wav",
+  "casing_3.wav"
+ ],
+ "step": [
+  "step_0.wav",
+  "step_1.wav",
+  "step_2.wav",
+  "step_3.wav",
+  "step_4.wav",
+  "step_5.wav"
+ ],
+ "flesh": [
+  "flesh_0.wav",
+  "flesh_1.wav",
+  "flesh_2.wav"
+ ],
+ "fall": [
+  "fall_0.wav",
+  "fall_1.wav"
+ ],
+ "ads_in": [
+  "ads_in.wav"
+ ],
+ "ads_out": [
+  "ads_out.wav"
+ ],
+ "tick": [
+  "tick.wav"
+ ],
+ "tick_kill": [
+  "tick_kill.wav"
+ ],
+ "medal": [
+  "medal.wav"
+ ],
+ "hurt": [
+  "hurt_0.wav",
+  "hurt_1.wav",
+  "hurt_2.wav"
+ ],
+ "empty_click": [
+  "empty_click.wav"
+ ],
+ "mag_out": [
+  "mag_out.wav"
+ ],
+ "mag_in": [
+  "mag_in.wav"
+ ],
+ "mag_drop": [
+  "mag_drop.wav"
+ ],
+ "bolt": [
+  "bolt.wav"
+ ],
+ "heartbeat": [
+  "heartbeat.wav"
+ ],
+ "ambience_loop": [
+  "ambience_loop.wav"
+ ],
+ "ir_hall": [
+  "ir_hall.wav"
+ ]
+}

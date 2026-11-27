@@ -1,0 +1,53 @@
+{
+ "lineup": {
+  "teams": [
+   [
+    {
+     "id": "torg",
+     "pos": "top"
+    },
+    {
+     "id": "lan",
+     "pos": "jungle"
+    },
+    {
+     "id": "osen",
+     "pos": "mid"
+    },
+    {
+     "id": "seren",
+     "pos": "adc"
+    },
+    {
+     "id": "moko",
+     "pos": "sup"
+    }
+   ],
+   [
+    {
+     "id": "gorran",
+     "pos": "top"
+    },
+    {
+     "id": "kaz",
+     "pos": "jungle"
+    },
+    {
+     "id": "ugo",
+     "pos": "mid"
+    },
+    {
+     "id": "vero",
+     "pos": "adc"
+    },
+    {
+     "id": "hedda",
+     "pos": "sup"
+    }
+   ]
+  ],
+  "me": "jungle"
+ },
+ "url": "http://localhost:5241/map.html?h=lan&diff=normal&pos=mid&a=torg%2Ckaz%2Clan%2Cseren%2Cmoko&b=gorran%2Clan%2Cosen%2Cvero%2Chedda",
+ "errors": []
+}

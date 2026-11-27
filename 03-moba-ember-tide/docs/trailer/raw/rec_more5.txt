@@ -1,0 +1,2 @@
+== h_end6
+{"out":"docs/trailer/raw/h_end6.mp4","ok":true,"rep":{"t":1170,"over":1,"kills":[13,17],"towers":[2,3],"lanes":"110 对 012","order":["push","defend"],"camps":12,"boss":["troll 还有84秒","beast 还有98秒"],"buff":[[48,0],[14,0]],"heroes":["lan L15 84% 8/9/3 金4377 装6 刀48 线0 [打 gorran] 跟兵线328 打324 阵亡172 清兵166 回防73 去帮16","gorran* L15 90% 11/3/4 金5533 装6 刀4

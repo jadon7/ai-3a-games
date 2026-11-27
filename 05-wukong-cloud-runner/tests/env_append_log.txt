@@ -1,0 +1,30 @@
+APPEND 0.8 s; objects 184
+00:12.137  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/env_append_b.png'
+RENDERED b 10.8s (含首帧场景同步)
+00:24.261  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/env_append_b.png'
+RENDERED b again 12.1s (persistent data, 纯渲染)
+00:34.200  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/env_append_a.png'
+RENDERED a 9.9s (含首帧场景同步)
+00:40.968  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/env_append_a.png'
+RENDERED a again 6.8s (persistent data, 纯渲染)
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit
+       41.74 real         8.14 user         4.92 sys
+          5265522688  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              495258  page reclaims
+                5452  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  25  voluntary context switches
+              102461  involuntary context switches
+         96468665070  instructions retired
+         39695646175  cycles elapsed
+         18372287760  peak memory footprint

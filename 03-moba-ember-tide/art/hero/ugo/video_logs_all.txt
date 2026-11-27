@@ -1,0 +1,9 @@
+完成 run 01
+完成 idle 01
+完成 attack2 01
+完成 attack1 01
+完成 w 01
+完成 q 01
+完成 r 01
+完成 e 01
+完成 death 01

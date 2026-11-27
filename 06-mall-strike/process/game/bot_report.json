@@ -1,0 +1,25 @@
+{
+ "errs": [],
+ "score": {
+  "us": 3,
+  "them": 1,
+  "limit": 30,
+  "timeLeft": 461.2297680000956
+ },
+ "deaths": 1,
+ "reloads": 1,
+ "frames": 1107,
+ "avgFps": 55.338655575870824,
+ "minFps": 37.99999999999999,
+ "killfeed": [
+  "大师>Kodiak",
+  "大师>Viper_77",
+  "RAVEN.k>大师",
+  "大师>Ghost_09"
+ ],
+ "decals": 16,
+ "mode": "playing",
+ "health": 100,
+ "ammo": 20,
+ "reserve": 90
+}

@@ -1,0 +1,7 @@
+# 查两边偏不偏：两队一模一样的阵容（镜像），普通和困难各几局。两边对称的话 0 队、1 队各赢一半上下
+m1:h=torg&a=torg,lan,ugo,seren,moko&b=torg,lan,ugo,seren,moko&diff=normal
+m2:h=gorran&a=gorran,kaz,osen,vero,hedda&b=gorran,kaz,osen,vero,hedda&diff=normal
+m3:h=torg&a=torg,kaz,osen,seren,moko&b=torg,kaz,osen,seren,moko&diff=hard
+m4:h=gorran&a=gorran,lan,ugo,vero,hedda&b=gorran,lan,ugo,vero,hedda&diff=hard
+m5:h=torg&a=torg,kaz,ugo,vero,hedda&b=torg,kaz,ugo,vero,hedda&diff=normal
+m6:h=gorran&a=gorran,lan,osen,seren,moko&b=gorran,lan,osen,seren,moko&diff=hard

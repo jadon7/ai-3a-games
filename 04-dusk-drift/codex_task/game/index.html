@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#211c19"><title>Selva 47 · 雨后俱乐部赛</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body data-mode="load">
+<canvas id="view" aria-label="Selva 47 实时赛道画面"></canvas>
+<div id="shade"></div>
+<div class="topline">
+  <div class="identity"><span class="stripes" aria-hidden="true"><i></i><i></i><i></i></span><span>CIRCUITO DI SELVA</span></div>
+  <div class="actions">
+    <button id="cameraButton" class="raceAction" title="切换视角 · C" aria-label="切换视角">视角 <kbd>C</kbd></button>
+    <button id="soundButton" title="开关声音 · M" aria-pressed="false"><span id="soundLabel">静音</span> <kbd>M</kbd></button>
+    <button id="pauseButton" class="raceAction" title="暂停 · Esc">暂停 <kbd>ESC</kbd></button>
+  </div>
+</div>
+<section id="loading"><span class="loadName">SELVA 47</span><p id="loadText">正在准备赛道…</p><div class="loadRail"><i id="loadBar"></i></div></section>
+<section id="intro" hidden>
+  <h1>SELVA <b>47</b></h1>
+  <div class="eventLine"><strong>雨后俱乐部赛</strong><span>3 圈</span><span id="trackLength"></span></div>
+  <button class="start" id="startButton">进入发车位 <kbd>ENTER</kbd></button>
+  <p class="introKeys">方向键驾驶 <i></i> 空格漂移</p>
+</section>
+<div id="hud" hidden>
+  <div id="raceStanding"><div class="stat"><label>排名</label><div><b id="place">3</b><small> / 3</small></div></div><div class="stat"><label>圈数</label><div><b id="lap">1</b><small> / 3</small></div></div></div>
+  <div class="chronos"><div><label>本圈</label><b id="currentLap">0:00.000</b></div><div><label>最佳</label><span id="bestLap">—</span></div></div>
+  <canvas id="map" aria-label="赛道图和三辆车的位置"></canvas>
+  <div id="cluster"><div class="tach" id="tach"></div><div class="speedrow"><div class="gear"><b id="gear">N</b><small>挡位</small></div><b id="speed">000</b><span>KM/H</span></div></div>
+  <div id="drift" hidden><span>漂移</span><b id="driftAngle"></b><small id="driftLength"></small></div>
+</div>
+<div id="signal" hidden><span id="signalName">准备发车</span><b id="signalNumber">3</b></div>
+<section id="panel" class="dialog" hidden aria-live="polite">
+  <div class="dialogBody"><div class="sectionMark"></div><h2 id="panelTitle">比赛暂停</h2>
+    <div id="result" hidden></div>
+    <dl class="controls" id="controlList"><dt>↑ / W</dt><dd>油门</dd><dt>↓ / S</dt><dd>刹车 · 停稳后倒车</dd><dt>← → / A D</dt><dd>转向</dd><dt>空格 + 转向</dt><dd>手刹漂移</dd><dt>C / H</dt><dd>切换视角 / 隐藏仪表</dd><dt>R / M</dt><dd>回到赛道 / 声音</dd></dl>
+    <div class="dialogActions"><button class="start" id="resumeButton">继续比赛 <kbd>ESC</kbd></button><button class="secondary" id="restartButton">重新发车</button></div>
+  </div>
+</section>
+<div id="notice" role="status"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/attack2.npz",
+    "hook": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/hook.npz",
+    "veil": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/veil.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/death.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/r.npz",
+    "r_end": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/r_end.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/attack2.npz",
+    "hook": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/hook.npz",
+    "veil": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/veil.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/death.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/r.npz",
+    "r_end": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/fk/r_end.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": true
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/attack2.npz",
+    "hook": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/hook.npz",
+    "veil": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/veil.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/death.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/r.npz",
+    "r_end": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/motions/ik/r_end.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": true
+  }
+ ],
+ "clips": [
+  "idle",
+  "run",
+  "attack1",
+  "attack2",
+  "hook",
+  "veil",
+  "death",
+  "r",
+  "r_end"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   30,
+   10
+  ],
+  [
+   90,
+   12
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 1.25,
+ "zc": 0.48,
+ "game_h": 3.3,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_vero/render"
+}

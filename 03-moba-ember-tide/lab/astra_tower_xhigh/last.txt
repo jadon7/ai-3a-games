@@ -1,0 +1,7 @@
+[防御塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/astra_tower_xhigh/out/tower_me_outer.glb) · [定稿与模型并排图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/astra_tower_xhigh/out/compare.png) · [56° 游戏视角](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/astra_tower_xhigh/out/render_game_angle.png)
+
+模型高 **7.51 米**，占地半径 **1.707 米**，共 **127,488 个三角形**，文件大小 **5.59 MB**。已用项目的 three.js r170 和 `GLTFLoader` 加载并渲染，确认 `crystal` 节点可单独绕 Y 轴旋转。重跑建模后，GLB 的哈希一致。
+
+按定稿可见的轮廓，四片铜肋做成两支高钩和两片短冠。设计角按石座椭圆估算为 32.4°。与定稿相比，石芯的凹槽仍较规则，侧钩长柄更直，前肋下半部的卷纹较浅。
+
+共完成六版。四向渲染、逐轮对照和重建命令见[制作记录](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/astra_tower_xhigh/out/NOTES.md)。

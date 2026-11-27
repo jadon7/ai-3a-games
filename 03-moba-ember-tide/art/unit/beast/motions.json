@@ -1,0 +1,43 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_skeleton.json",
+ "out_dir": "art/unit/beast/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "art/unit/beast/src/idle.npz",
+   "pick": [
+    0,
+    208
+   ],
+   "loop": [
+    208,
+    208
+   ]
+  },
+  "run": {
+   "src": "art/unit/beast/src/run.npz",
+   "pick": [
+    0,
+    40
+   ],
+   "loop": [
+    40,
+    40
+   ],
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/unit/beast/src/attack1.npz"
+  },
+  "attack2": {
+   "src": "art/unit/beast/src/attack2.npz"
+  },
+  "roar": {
+   "src": "art/unit/beast/src/roar.npz"
+  },
+  "death": {
+   "src": "art/unit/beast/src/death.npz",
+   "settle": false
+  }
+ }
+}

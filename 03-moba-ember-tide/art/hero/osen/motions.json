@@ -1,0 +1,70 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/osen_skeleton.json",
+ "out_dir": "art/hero/osen/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "art/hero/osen/motions_src/idle.npz",
+   "loop": [
+    60,
+    115
+   ],
+   "from": 4
+  },
+  "run": {
+   "src": "art/hero/osen/motions_src/run.npz",
+   "loop": [
+    10,
+    40
+   ],
+   "from": 26,
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/hero/osen/motions_src/attack1.npz",
+   "range": [
+    0,
+    999
+   ]
+  },
+  "q": {
+   "src": "art/hero/osen/motions_src/q.npz",
+   "range": [
+    0,
+    999
+   ]
+  },
+  "w": {
+   "src": "art/hero/osen/motions_src/w.npz",
+   "range": [
+    0,
+    999
+   ]
+  },
+  "e": {
+   "src": "art/hero/osen/motions_src/e.npz",
+   "range": [
+    0,
+    999
+   ]
+  },
+  "r": {
+   "src": "art/hero/osen/motions_src/r.npz",
+   "range": [
+    0,
+    999
+   ]
+  },
+  "death": {
+   "src": "art/hero/osen/motions_src/death.npz",
+   "range": [
+    0,
+    999
+   ],
+   "settle": false
+  }
+ }
+}

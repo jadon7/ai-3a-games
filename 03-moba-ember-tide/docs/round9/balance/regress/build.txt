@@ -1,0 +1,4 @@
+dist/app/map-B3Oye5L-.js  1,446.26 kB │ gzip: 458.55 kB
+✓ built in 3.98s
+
+上线的资源 277 个，74.4 MB；电脑档 44.6 MB，手机档 35.6 MB；代码 1.4 MB；版本 9264d1da28

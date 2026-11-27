@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_ugo",
+  "image": "art/hero/ugo/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

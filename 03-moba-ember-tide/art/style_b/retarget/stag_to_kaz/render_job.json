@@ -1,0 +1,85 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/stag.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/death.npz",
+    "gallop": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/gallop.npz"
+   },
+   "root": "tripo::Root",
+   "label": "src",
+   "ortho": 1.25
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/death.npz",
+    "gallop": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/fk/gallop.npz"
+   },
+   "root": "tripo::Root",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/death.npz",
+    "gallop": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/motions/ik/gallop.npz"
+   },
+   "root": "tripo::Root",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "idle",
+  "run",
+  "attack1",
+  "q",
+  "w",
+  "e",
+  "r",
+  "death",
+  "gallop"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   40,
+   14
+  ],
+  [
+   90,
+   10
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 2.0,
+ "zc": 0.42,
+ "game_h": 2.8,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/stag_to_kaz/render"
+}

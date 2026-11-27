@@ -1,0 +1,86 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/attack2.npz",
+    "hook": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/hook.npz",
+    "veil": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/veil.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/death.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/r.npz",
+    "r_end": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/lan/motions/r_end.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/seren_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/attack2.npz",
+    "hook": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/hook.npz",
+    "veil": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/veil.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/death.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/r.npz",
+    "r_end": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/fk/r_end.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": true
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/seren_rigged.glb",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/attack2.npz",
+    "hook": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/hook.npz",
+    "veil": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/veil.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/death.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/r.npz",
+    "r_end": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/motions/ik/r_end.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": true
+  }
+ ],
+ "game_h": 3.3,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-retarget/art/style_b/retarget/lan_to_seren/render",
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "hook",
+   "r_end"
+  ],
+  "size": [
+   1440,
+   640
+  ],
+  "spacing": 0.85,
+  "view": [
+   15,
+   18
+  ],
+  "ortho": 3.06,
+  "zc": 0.45,
+  "loops": {
+   "run": 4
+  },
+  "run_speed": {
+   "run": [
+    3.272727272727273,
+    3.3075757575757576,
+    3.460606060606061
+   ]
+  }
+ }
+}

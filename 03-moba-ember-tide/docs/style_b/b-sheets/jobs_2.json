@@ -1,0 +1,90 @@
+[
+ {
+  "name": "sbs-vero-p1-sheet-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/vero-p1-sheet-v2.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "refs": [
+   "sbs-vero-p1-sheet"
+  ],
+  "prompt": "照着参考图重画同一张图，只改颜色：线稿、形状、姿势、比例、所有的设计和卡通厚涂的画法都和参考图完全一样。颜色这样改：紧身皮上衣和护臂上的红色从粉红、品红改成深樱桃红（像红葡萄酒那样的暗红，略微偏紫，亮面是清楚饱满的红色，暗面是深酒红；不要粉色、不要品红、不要偏橙）；短披肩、帽子、长裤和高筒靴是深浅不同的暖棕色和深咖啡色，不要接近黑色；黄铜面罩和扣件是明亮的金色；火油罐的橙光仍然是全身最亮的颜色。纯中性灰色背景，没有地面，没有投影，画面里没有文字。"
+ },
+ {
+  "name": "sbs-kaz-p1-sheet-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/kaz-p1-sheet-v2.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "4:3",
+  "resolution": "2K",
+  "refs": [
+   "sbs-kaz-p1-sheet"
+  ],
+  "prompt": "照着参考图重画同一张图，只改颜色：线稿、形状、姿势、比例、所有的设计和卡通厚涂的画法都和参考图完全一样。颜色这样改：身上的毛从浅米灰改成中深的炭灰色（明显比参考图暗，像一只深灰色的猞猁，亮面是中灰，暗面是深炭灰但不要纯黑），身上的条纹淡一点、只是比底色深一档的几道；肚子、下巴、脸颊两侧的颊毛和耳朵里面仍然是干净的奶白色；黑铁面甲和肩甲仍然是深蓝灰色的铁，倒角边缘有清楚的亮色高光；黄铜是明亮的金色；耳簇和眼缝是饱和的熔岩红。"
+ },
+ {
+  "name": "sbs-wolf-p1-sheet-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/wolf-p1-sheet-v2.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "4:3",
+  "resolution": "2K",
+  "refs": [
+   "sbs-wolf-p1-sheet"
+  ],
+  "prompt": "照着参考图重画同一只狼，线稿、姿势、比例、卡通厚涂的画法都和参考图一样，只改背上的青苔和一点毛色：背上那一层青色的东西现在像一块布或毯子，改成真正的青苔——一层厚厚的、由一簇簇蓬松的小苔藓团堆起来的苔垫，边缘参差、和狼毛自然地长在一起，颜色是偏青一点的深苔绿（比明亮的黄绿色草地暗一档，不要鲜艳的青色、不要蓝绿色），里面夹着几片浅黄绿色的小地衣和两三株小蕨叶；狼的毛色比参考图稍暗一点，是中等亮度的暖灰褐色，肚子和嘴边仍然是奶白色。纯中性灰色背景，没有地面，没有投影，画面里没有文字。"
+ },
+ {
+  "name": "sbs-mandrill-p1-sheet-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/mandrill-p1-sheet-v2.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "refs": [
+   "sbs-mandrill-p1-sheet"
+  ],
+  "prompt": "照着参考图重画同一张图，只改颜色：线稿、形状、姿势、比例、所有的设计和卡通厚涂的画法都和参考图完全一样。颜色这样改：全身的毛从姜橙色改成深巧克力褐色（亮面是明亮的暖褐色，暗面是深褐，不要橙色、不要姜黄色），头顶、后背、肩膀和手臂外侧的毛明显带一层墨绿色；露出的皮肤是浅蓝灰色；骨面具和骨片是干净的暖白色，是全身最亮的颜色。纯中性灰色背景，没有地面，没有投影，画面里没有文字。"
+ },
+ {
+  "name": "sbs-hedda-p1-sheet-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/hedda-p1-sheet-v2.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "refs": [
+   "sbs-hedda-p1-sheet"
+  ],
+  "prompt": "照着参考图重画同一张图，只改颜色：线稿、形状、姿势、比例、所有的设计和卡通厚涂的画法都和参考图完全一样。颜色这样改：皮围裙从橙棕色改成焦褐色（深栗棕色，亮面是暖棕，暗面是深褐，不要橙色）；麻布短袖衫仍然是干净明亮的暖白色；熔炉、烟囱、项圈仍然是深蓝灰色的铁，倒角边缘有亮色高光；长裤是深灰色；手套和靴子是深棕色；炉门的橙金色光仍然是全身最亮的颜色。纯中性灰色背景，没有地面，没有投影，画面里没有文字。"
+ },
+ {
+  "name": "sbs-hedda-p1-back",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/hedda-p1-back.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "refs": [
+   "sbs-hedda-p1-sheet"
+  ],
+  "prompt": "画参考图里这个女铁匠的背面全身像，给 3D 建模当背面参考：角色、比例、画风、颜色都和参考图一样，同样是 A 字站姿（双臂向两侧斜下张开约 45 度、双手空着），只是转过身去、从正后方看。背后的样子：后脑勺的灰白短发和头顶的短发髻，额头上的护目镜从后面只露出一点带子；背上用两条宽皮带背着一座黑铁圆筒形小熔炉（深蓝灰色的铁，几道铁箍和铆钉），炉子从肩膀下面一直到腰；炉子的一侧（从背后看在画面右侧，也就是她自己的右边）斜伸出一截方形黑铁烟囱，高出头顶约半个头；炉子靠右腰的位置有一扇小炉门，透出橙金色的光；皮围裙在背后只是腰上系的带子和打的结，麻布短袖衫的背面是干净的暖白色；长裤是深灰色，厚底皮靴是深棕色。纯中性灰色背景，没有场景，没有地面，没有投影，光线均匀柔和，画面里没有文字、没有武器、没有别的物体。不要黑色粗描边。"
+ },
+ {
+  "name": "sbs-toad-p1-sheet-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/toad-p1-sheet-v2.png",
+  "model": "jm_image_model_gg_bp_21",
+  "ratio": "4:3",
+  "resolution": "2K",
+  "refs": [
+   "sbs-toad-p1-sheet"
+  ],
+  "prompt": "照着参考图重画同一张图，只改颜色：线稿、形状、姿势、比例、所有的设计和卡通厚涂的画法都和参考图完全一样。颜色这样改：皮肤从鲜艳的天蓝色改成青灰蓝色（像湿润的青灰色石头，饱和度低一些，亮面是明亮的浅青灰，暗面是深一档的青灰蓝）；肚皮和下颌仍然是干净的浅灰白色；背上的卵石疙瘩是浅灰色带一点青；青苔从黄绿色改成偏青的深苔绿；背脊上几道清亮的浅蓝色潮水纹路，是全身最亮的颜色。眼睛是浅蓝色。纯中性灰色背景，没有地面，没有投影，画面里没有文字。"
+ },
+ {
+  "name": "sbs-gorran-p1-sheet-bright-v2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/gorran-p1-sheet-bright-v2.png",
+  "model": "jm_image_model_gg_bp",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "refs": [
+   "sb-gorran-p1-sheet"
+  ],
+  "prompt": "把参考图里这个重装骑士重新画一张 3D 建模用的正面设定图，设计、比例和卡通厚涂的画法照参考图，但姿势必须改：标准的 A 字站姿，两条胳膊从肩膀向身体两侧抬起，斜向下张开约 45 度，胳膊和身体之间要露出一大块灰色背景，手肘伸直，两只铁手套张开、手掌朝下、五指分开，不要握拳、不要垂在身体旁边；两腿分开与肩同宽。保持他的身份：平顶铁桶盔，面罩上 T 形的窄缝透出琥珀色火光；他自己的右肩（画面左侧）一块巨大的铁砧形肩甲，砧角平伸出去；另一侧圆厚的肩甲；胸口正中方形的炉栅透出琥珀色炉火；甲片边缘少而大的黄铜铆钉；宽皮带和方形铁扣；身前一片皮围裙到膝盖上方；方头铁靴；约五头身，宽厚敦实。颜色比参考图亮一档：铁甲是中等亮度的钢蓝灰色，亮面接近浅灰蓝，每块甲片的倒角边缘都有一道清楚的浅色高光，整体仍然是冷色的铁，不要变成银白色；皮围裙是暖棕色；关节处的内衬是酒红色；炉火的琥珀色是全身最亮的颜色。单个角色居中，全身入画，头顶和脚下都留出空白。纯中性灰色背景，没有场景，没有地面，没有投影，光线均匀柔和，画面里没有文字、没有武器、没有别的物体。不要黑色粗描边。"
+ }
+]

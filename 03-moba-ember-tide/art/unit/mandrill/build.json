@@ -1,0 +1,13 @@
+{
+ "name": "mandrill",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/mandrill_skeleton.json",
+ "out": "art/unit/mandrill/game.glb",
+ "packed": "public/assets/unit/mandrill.glb",
+ "tex": 1024,
+ "motions": {
+  "idle": "art/unit/mandrill/motions/idle.npz",
+  "run": "art/unit/mandrill/motions/run.npz",
+  "attack1": "art/unit/mandrill/motions/attack1.npz",
+  "death": "art/unit/mandrill/motions/death.npz"
+ }
+}

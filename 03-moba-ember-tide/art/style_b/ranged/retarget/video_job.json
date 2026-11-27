@@ -1,0 +1,67 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ranged_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged/motions/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged/motions/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged/motions/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/../ranged_b_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/fk/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/fk/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/fk/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/../ranged_b_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/ik/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/ik/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/ik/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "game_h": 1.37,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/render",
+ "video": {
+  "clips": [
+   "walk",
+   "attack",
+   "death"
+  ],
+  "size": [
+   1440,
+   640
+  ],
+  "spacing": 0.85,
+  "view": [
+   15,
+   18
+  ],
+  "ortho": 3.06,
+  "zc": 0.45,
+  "loops": {
+   "walk": 4
+  },
+  "run_speed": {
+   "walk": [
+    1.875912408759124,
+    2.4051094890510947,
+    2.72992700729927
+   ]
+  }
+ }
+}

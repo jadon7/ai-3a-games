@@ -1,0 +1,276 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lingshuang_skeleton.json",
+ "out_dir": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0,
+  "ForeArm": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_idle/motion.npz",
+   "loop": [
+    40,
+    84
+   ],
+   "from": 6
+  },
+  "walk_f": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_walk_f/motion.npz",
+   "loop": [
+    14,
+    40
+   ],
+   "from": 8,
+   "stride": true
+  },
+  "walk_b": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_walk_b/motion.npz",
+   "loop": [
+    14,
+    40
+   ],
+   "from": 24,
+   "stride": true
+  },
+  "light1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_light1/motion.npz",
+   "segments": [
+    [
+     5,
+     30
+    ],
+    [
+     44,
+     59
+    ]
+   ],
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "light2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_light2/motion.npz",
+   "segments": [
+    [
+     3,
+     32
+    ],
+    [
+     44,
+     58
+    ]
+   ],
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "heavy": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_heavy/motion.npz",
+   "segments": [
+    [
+     5,
+     32
+    ],
+    [
+     40,
+     58
+    ]
+   ],
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "block": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_block/motion.npz",
+   "range": [
+    15,
+    89
+   ],
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "jump": {
+   "segments": [
+    [
+     5,
+     60
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_jump/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "light3": {
+   "segments": [
+    [
+     10,
+     52
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_light3/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "lunge": {
+   "segments": [
+    [
+     6,
+     26
+    ],
+    [
+     44,
+     64
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_lunge/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "launcher": {
+   "segments": [
+    [
+     6,
+     60
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_launcher/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "sweep": {
+   "segments": [
+    [
+     9,
+     55
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_sweep/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "air": {
+   "segments": [
+    [
+     3,
+     36
+    ],
+    [
+     42,
+     58
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_air/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "grab": {
+   "segments": [
+    [
+     8,
+     38
+    ],
+    [
+     42,
+     56
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_grab/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "sp1": {
+   "segments": [
+    [
+     17,
+     36
+    ],
+    [
+     46,
+     78
+    ],
+    [
+     90,
+     106
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_sp1/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "sp2": {
+   "segments": [
+    [
+     4,
+     24
+    ],
+    [
+     34,
+     62
+    ],
+    [
+     72,
+     96
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_sp2/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "sp3": {
+   "segments": [
+    [
+     4,
+     66
+    ],
+    [
+     78,
+     108
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_sp3/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "ult_start": {
+   "segments": [
+    [
+     3,
+     106
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_ult_start/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  },
+  "ult_combo": {
+   "segments": [
+    [
+     15,
+     120
+    ]
+   ],
+   "return": 0.7,
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_ult_combo/motion.npz",
+   "pin": true
+  },
+  "win": {
+   "segments": [
+    [
+     3,
+     62
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_win/motion.npz",
+   "pin": true
+  },
+  "intro": {
+   "segments": [
+    [
+     3,
+     106
+    ]
+   ],
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/lingshuang_intro/motion.npz",
+   "pin": true,
+   "blend_end": 0.3
+  }
+ }
+}

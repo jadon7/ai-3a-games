@@ -1,0 +1,580 @@
+{
+ "_common": {
+  "convention": "glTF +Y 向上，车头 +Z，左侧 +X；原点在地面、前后轴中点、左右居中；顶层 5 个节点 body / wheel_FL / wheel_FR / wheel_RL / wheel_RR，均无旋转无缩放",
+  "wheelNode": "wheel_XX 原点在轮心、轮轴沿局部 X；子节点 wheel_XX_spin 是会转的部分（轮胎/轮辋/刹车盘），wheel_XX_fixed 是卡钳/轮毂（转向时跟着转、不自转）。只想简单处理时直接转 wheel_XX 整体也可以。wheel_XX_spin 节点可能带外倾角旋转：自转要绕它自身的 X 轴",
+  "materials": "所有材质 doubleSided=true（沿用原模型设置，Capri 的 GLASS 除外）；没有导出切线；贴图为 JPEG（带透明的为 PNG）",
+  "units": "米"
+ },
+ "e30": {
+  "file": "e30.glb",
+  "wheelbase": 2.5754,
+  "trackFront": 1.4194,
+  "trackRear": 1.4203,
+  "wheelRadiusFront": 0.3139,
+  "wheelRadiusRear": 0.314,
+  "wheelCenterHeightFront": 0.3225,
+  "wheelCenterHeightRear": 0.3215,
+  "length": 4.35,
+  "width": 1.7191,
+  "height": 1.3372,
+  "frontAxleToNose": 0.7738,
+  "rearAxleToTail": 1.0008,
+  "groundClearanceMin": 0.0,
+  "tris": 137652,
+  "sizeMB": 7.25,
+  "bodyPaintMaterials": [
+   "Skin1"
+  ],
+  "brakelightNodes": [
+   "brakelight_tail",
+   "brakelight_stop"
+  ],
+  "brakelightMaterials": [
+   "Taillight.003"
+  ],
+  "notes": [
+   "车漆 Skin1 是 2048 涂装贴图（白底 FINA 涂装，车号 7），已加清漆层 (clearcoat 1.0 / 粗糙度 0.05)，底层粗糙度由 0.92 改为 0.45",
+   "玻璃 Glass.002 / INT_Glass.001 改为深色低粗糙度 BLEND 半透明（alpha 0.38 / 0.30），去掉了 transmission",
+   "刹车灯：brakelight_tail(原 rear_lights) 与 brakelight_stop(原 brake_lights) 共用材质 Taillight.003，自发光强度 9.49（KHR_materials_emissive_strength）；不刹车时把该材质 emissiveIntensity 调到 0~1 即可",
+   "纯色无贴图的 9 个哑光材质合并成 body_flat（材质 flat_vc，颜色在顶点色 COLOR_0 里）",
+   "原绑定里轮胎离地约 1.5 cm，导出时整体下移，轮胎最低点 = y 0",
+   "去掉了影片里隐藏的破损玻璃、灯光光束、备用安全带网格",
+   "车轮节点 wheel_XX_spin 可能带外倾角的旋转（见 wheelCamberDeg），游戏里要绕节点自身的 X 轴转（Euler 顺序 ZYX）"
+  ],
+  "verts": 126429,
+  "drawPrimitives": 68,
+  "materialCount": 42,
+  "glassMaterials": [
+   "Glass.002",
+   "INT_Glass.001"
+  ],
+  "clearcoatMaterials": [
+   "Taillight.002",
+   "Skin1",
+   "Carpaint.003",
+   "M_Visor",
+   "M_Helmet_E30",
+   "Taillight.003"
+  ],
+  "nodes": {
+   "body": [
+    "body_flat",
+    "body_mesh",
+    "brakelight_stop",
+    "brakelight_tail"
+   ],
+   "wheel": [
+    "wheel_XX_spin",
+    "wheel_XX_fixed"
+   ]
+  },
+  "wheelCamberDeg": {
+   "FL": 6.0,
+   "FR": -6.0,
+   "RL": 2.5,
+   "RR": -2.5
+  }
+ },
+ "capri": {
+  "file": "capri.glb",
+  "wheelbase": 2.5145,
+  "trackFront": 1.5224,
+  "trackRear": 1.5912,
+  "wheelRadiusFront": 0.2947,
+  "wheelRadiusRear": 0.347,
+  "wheelCenterHeightFront": 0.2979,
+  "wheelCenterHeightRear": 0.347,
+  "length": 5.0,
+  "width": 2.0209,
+  "height": 1.17,
+  "frontAxleToNose": 1.1446,
+  "rearAxleToTail": 1.3409,
+  "groundClearanceMin": 0.0,
+  "tris": 221345,
+  "sizeMB": 9.24,
+  "bodyPaintMaterials": [
+   "PAINT"
+  ],
+  "brakelightNodes": [
+   "brakelight_rear"
+  ],
+  "brakelightMaterials": [
+   "LIGHTS_brake"
+  ],
+  "notes": [
+   "车漆 PAINT 是 1024 涂装贴图（银蓝/橙色虚构涂装，车号 76），自带金属漆 + 清漆层 + 清漆法线贴图",
+   "刹车灯：brakelight_rear 用独立材质 LIGHTS_brake（自发光贴图，强度 2.79，BLEND）；前灯仍用 LIGHTS",
+   "后轮没有 wheel_XX_fixed 节点；前后轮半径不同（0.295 / 0.347）",
+   "原模型有 8 套 UV，材质实际用到的几套与第一套相同，已合并为 1 套；座舱漆 PAINT_FLAT1_CPIT.001 的清漆法线贴图因此去掉"
+  ],
+  "verts": 191745,
+  "drawPrimitives": 44,
+  "materialCount": 30,
+  "glassMaterials": [
+   "GAUGE_GLASS",
+   "GLASS",
+   "LIGHTSGLASS"
+  ],
+  "clearcoatMaterials": [
+   "PAINT_FLAT2_CPIT",
+   "PAINT_FLAT1_CPIT",
+   "PAINT",
+   "PAINT_FLAT1_CPIT.001",
+   "GLASS",
+   "M_Visor",
+   "M_Helmet_CAPRI"
+  ],
+  "nodes": {
+   "body": [
+    "body_flat",
+    "body_mesh",
+    "brakelight_rear"
+   ],
+   "wheel": [
+    "wheel_XX_spin",
+    "wheel_XX_fixed (仅前轮)"
+   ]
+  }
+ },
+ "stratos": {
+  "file": "stratos.glb",
+  "wheelbase": 2.1161,
+  "trackFront": 1.4192,
+  "trackRear": 1.4366,
+  "wheelRadiusFront": 0.2982,
+  "wheelRadiusRear": 0.2982,
+  "wheelCenterHeightFront": 0.2982,
+  "wheelCenterHeightRear": 0.2982,
+  "length": 3.71,
+  "width": 1.8084,
+  "height": 1.3579,
+  "frontAxleToNose": 0.8372,
+  "rearAxleToTail": 0.7568,
+  "groundClearanceMin": 0.0,
+  "tris": 116908,
+  "sizeMB": 4.21,
+  "bodyPaintMaterials": [
+   "bodywork"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "notes": [
+   "车漆 bodywork 是 2048 涂装贴图（白底 Alitalia 绿红涂装，车号 10），金属度/粗糙度来自贴图，没有清漆层（可在运行时给 bodywork 加 clearcoat）",
+   "没有独立的刹车灯网格：尾灯烘在 mechanical 材质贴图里，brakelightNodes 为空",
+   "车轮没有 wheel_XX_fixed 节点；mechanical 材质同时用于车轮和底盘机械件"
+  ],
+  "verts": 80318,
+  "drawPrimitives": 14,
+  "materialCount": 7,
+  "glassMaterials": [],
+  "clearcoatMaterials": [
+   "M_Visor",
+   "M_Helmet_STRATOS"
+  ],
+  "nodes": {
+   "body": [
+    "body_flat",
+    "body_mesh"
+   ],
+   "wheel": [
+    "wheel_XX_spin"
+   ]
+  }
+ },
+ "escort": {
+  "file": "escort.glb",
+  "wheelbase": 2.4974,
+  "trackFront": 1.6094,
+  "trackRear": 1.6094,
+  "wheelRadiusFront": 0.3194,
+  "wheelRadiusRear": 0.3194,
+  "wheelCenterHeightFront": 0.3194,
+  "wheelCenterHeightRear": 0.3194,
+  "length": 4.2,
+  "width": 1.9011,
+  "height": 1.42,
+  "frontAxleToNose": 0.8458,
+  "rearAxleToTail": 0.8568,
+  "groundClearanceMin": 0.0,
+  "tris": 250123,
+  "sizeMB": 9.35,
+  "bodyPaintMaterials": [
+   "Ford_EscortRSCosworthCossieV2_1994PaintA_Material"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 0,
+  "droppedHidden": 0,
+  "notes": [
+   "ESCORT: 车漆 ['Ford_EscortRSCosworthCossieV2_1994PaintA_Material'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "height 记的是车顶高度；包围盒最高点 1.6626 m 是车顶旗杆/灯架",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现"
+  ],
+  "heightWithAntenna": 1.6626,
+  "source": {
+   "title": "Ford Escort RS Cosworth COSSIE",
+   "author": "heynic（vecarz）",
+   "site": "Sketchfab",
+   "uid": "c01027fc5bbd4e5ea7f0ef17a5e06147",
+   "license": "CC BY 4.0（需署名）"
+  }
+ },
+ "p917": {
+  "file": "p917.glb",
+  "wheelbase": 2.3497,
+  "trackFront": 1.5948,
+  "trackRear": 1.6591,
+  "wheelRadiusFront": 0.2964,
+  "wheelRadiusRear": 0.3163,
+  "wheelCenterHeightFront": 0.2989,
+  "wheelCenterHeightRear": 0.3163,
+  "length": 4.2725,
+  "width": 2.1585,
+  "height": 0.992,
+  "frontAxleToNose": 1.0042,
+  "rearAxleToTail": 0.9186,
+  "groundClearanceMin": -0.0147,
+  "tris": 282070,
+  "sizeMB": 9.31,
+  "bodyPaintMaterials": [
+   "body"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 5,
+  "droppedHidden": 0,
+  "notes": [
+   "P917: 车漆 ['body'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现",
+   "车轮节点 wheel_XX_spin 可能带外倾角的旋转（见 wheelCamberDeg），游戏里要绕节点自身的 X 轴转（Euler 顺序 ZYX）"
+  ],
+  "source": {
+   "title": "Porsche 917k LM Red",
+   "author": "heynic（vecarz）",
+   "site": "Sketchfab",
+   "uid": "1b0f1751a3064ea1a015cdfceebf7918",
+   "license": "CC BY 4.0（需署名）"
+  },
+  "wheelCamberDeg": {
+   "FL": 1.0,
+   "FR": -1.0,
+   "RL": 0.87,
+   "RR": -0.87
+  }
+ },
+ "l037": {
+  "file": "l037.glb",
+  "wheelbase": 2.4461,
+  "trackFront": 1.5214,
+  "trackRear": 1.5276,
+  "wheelRadiusFront": 0.2926,
+  "wheelRadiusRear": 0.2924,
+  "wheelCenterHeightFront": 0.296,
+  "wheelCenterHeightRear": 0.2958,
+  "length": 3.92,
+  "width": 1.8834,
+  "height": 1.1153,
+  "frontAxleToNose": 0.8302,
+  "rearAxleToTail": 0.6437,
+  "groundClearanceMin": 0.0,
+  "tris": 76259,
+  "sizeMB": 7.19,
+  "bodyPaintMaterials": [
+   "Meshpart3Mtl"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 0,
+  "droppedHidden": 2,
+  "notes": [
+   "L037: 车漆 ['Meshpart3Mtl'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "L037: 车漆导入后偏粉，改回深红",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现"
+  ],
+  "source": {
+   "title": "Lancia 037 Stradale 1978",
+   "author": "heynic（vecarz）",
+   "site": "Sketchfab",
+   "uid": "36f1c5964de14e0088d828e88a3749b9",
+   "license": "CC BY 4.0（需署名）"
+  }
+ },
+ "delta": {
+  "file": "delta.glb",
+  "wheelbase": 2.4591,
+  "trackFront": 1.4093,
+  "trackRear": 1.3907,
+  "wheelRadiusFront": 0.295,
+  "wheelRadiusRear": 0.2949,
+  "wheelCenterHeightFront": 0.2946,
+  "wheelCenterHeightRear": 0.2945,
+  "length": 3.9,
+  "width": 1.6999,
+  "height": 1.38,
+  "frontAxleToNose": 0.8027,
+  "rearAxleToTail": 0.6382,
+  "groundClearanceMin": 0.0,
+  "tris": 149561,
+  "sizeMB": 13.25,
+  "bodyPaintMaterials": [
+   "Paint"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 0,
+  "droppedHidden": 0,
+  "notes": [
+   "DELTA: 车漆 ['Paint'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "height 记的是车顶高度；包围盒最高点 1.7115 m 是天线",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现"
+  ],
+  "heightWithAntenna": 1.7115,
+  "source": {
+   "title": "FREE Lancia Delta HF Integrale evo 2",
+   "author": "begemot.988888",
+   "site": "Sketchfab",
+   "uid": "85614131e0dc4613a948472aaa935fc7",
+   "license": "CC BY 4.0（需署名）"
+  }
+ },
+ "gt40": {
+  "file": "gt40.glb",
+  "wheelbase": 2.3501,
+  "trackFront": 1.3796,
+  "trackRear": 1.3795,
+  "wheelRadiusFront": 0.3216,
+  "wheelRadiusRear": 0.3402,
+  "wheelCenterHeightFront": 0.3216,
+  "wheelCenterHeightRear": 0.3402,
+  "length": 4.18,
+  "width": 1.8129,
+  "height": 1.0879,
+  "frontAxleToNose": 1.1031,
+  "rearAxleToTail": 0.7268,
+  "groundClearanceMin": -0.0,
+  "tris": 193089,
+  "sizeMB": 8.57,
+  "bodyPaintMaterials": [
+   "Paint1Mtl"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 2,
+  "droppedHidden": 0,
+  "notes": [
+   "GT40: 车漆 ['Paint1Mtl'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现"
+  ],
+  "source": {
+   "title": "Ford GT40 Mark II",
+   "author": "heynic（vecarz）",
+   "site": "Sketchfab",
+   "uid": "16e6376958604b3d83b541ee67f4b4c9",
+   "license": "CC BY 4.0（需署名）"
+  }
+ },
+ "mustang": {
+  "file": "mustang.glb",
+  "wheelbase": 2.7439,
+  "trackFront": 1.5103,
+  "trackRear": 1.5103,
+  "wheelRadiusFront": 0.3031,
+  "wheelRadiusRear": 0.3031,
+  "wheelCenterHeightFront": 0.3031,
+  "wheelCenterHeightRear": 0.3031,
+  "length": 4.7601,
+  "width": 1.8751,
+  "height": 1.2709,
+  "frontAxleToNose": 0.9518,
+  "rearAxleToTail": 1.0643,
+  "groundClearanceMin": 0.0,
+  "tris": 270876,
+  "sizeMB": 9.52,
+  "bodyPaintMaterials": [
+   "carpaint"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 4,
+  "droppedHidden": 4,
+  "notes": [
+   "MUSTANG: 车漆 ['carpaint'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "MUSTANG: 车漆导入后是金色，改回原作的深绿",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现"
+  ],
+  "source": {
+   "title": "Ford Mustang John Bowe 1969",
+   "author": "heynic（vecarz）",
+   "site": "Sketchfab",
+   "uid": "91a5454aaf02492a9c7e959b8eb6db9f",
+   "license": "CC BY 4.0（需署名）"
+  }
+ },
+ "countach": {
+  "file": "countach.glb",
+  "wheelbase": 2.5015,
+  "trackFront": 1.6554,
+  "trackRear": 1.5814,
+  "wheelRadiusFront": 0.3043,
+  "wheelRadiusRear": 0.3126,
+  "wheelCenterHeightFront": 0.3203,
+  "wheelCenterHeightRear": 0.3317,
+  "length": 4.2,
+  "width": 2.1196,
+  "height": 1.0844,
+  "frontAxleToNose": 0.9145,
+  "rearAxleToTail": 0.784,
+  "groundClearanceMin": 0.0,
+  "tris": 174956,
+  "sizeMB": 8.56,
+  "bodyPaintMaterials": [
+   "Meshpart19Mtl.001"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 7,
+  "droppedHidden": 0,
+  "notes": [
+   "COUNTACH: 车漆 ['Meshpart19Mtl.001'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现",
+   "车轮节点 wheel_XX_spin 可能带外倾角的旋转（见 wheelCamberDeg），游戏里要绕节点自身的 X 轴转（Euler 顺序 ZYX）"
+  ],
+  "source": {
+   "title": "Lamborghini Countach 5000QV",
+   "author": "heynic（vecarz）",
+   "site": "Sketchfab",
+   "uid": "309d92b27c1041a3ab79b8919e7d92b5",
+   "license": "CC BY 4.0（需署名）"
+  },
+  "wheelCamberDeg": {
+   "FL": 1.0,
+   "FR": -1.0,
+   "RL": 1.0,
+   "RR": -1.0
+  }
+ },
+ "z280": {
+  "file": "z280.glb",
+  "wheelbase": 2.3024,
+  "trackFront": 1.4916,
+  "trackRear": 1.4946,
+  "wheelRadiusFront": 0.3241,
+  "wheelRadiusRear": 0.3242,
+  "wheelCenterHeightFront": 0.3243,
+  "wheelCenterHeightRear": 0.3243,
+  "length": 4.3,
+  "width": 1.8502,
+  "height": 1.2218,
+  "frontAxleToNose": 1.1028,
+  "rearAxleToTail": 0.8948,
+  "groundClearanceMin": 0.0,
+  "tris": 106810,
+  "sizeMB": 5.16,
+  "bodyPaintMaterials": [
+   "280z_CarPaint"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 0,
+  "droppedHidden": 0,
+  "notes": [
+   "Z280: 车漆 ['280z_CarPaint'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现",
+   "车轮节点 wheel_XX_spin 可能带外倾角的旋转（见 wheelCamberDeg），游戏里要绕节点自身的 X 轴转（Euler 顺序 ZYX）；原模型前轮打着约 30° 方向，导出时已转正"
+  ],
+  "source": {
+   "title": "[FREE] Datsun 280Z",
+   "author": "TinoD2",
+   "site": "Sketchfab",
+   "uid": "0789ab2ece9442de94b3c41595e0ecbd",
+   "license": "CC BY 4.0（需署名）"
+  },
+  "wheelCamberDeg": {
+   "FL": 3.5,
+   "FR": -3.12,
+   "RL": 2.5,
+   "RR": -2.5
+  }
+ },
+ "s15": {
+  "file": "s15.glb",
+  "wheelbase": 2.4817,
+  "trackFront": 1.6791,
+  "trackRear": 1.5998,
+  "wheelRadiusFront": 0.3008,
+  "wheelRadiusRear": 0.3008,
+  "wheelCenterHeightFront": 0.3147,
+  "wheelCenterHeightRear": 0.3008,
+  "length": 4.75,
+  "width": 1.9471,
+  "height": 1.2695,
+  "frontAxleToNose": 1.146,
+  "rearAxleToTail": 1.1223,
+  "groundClearanceMin": -0.0,
+  "tris": 231841,
+  "sizeMB": 9.37,
+  "bodyPaintMaterials": [
+   "Body"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 17,
+  "droppedHidden": 2,
+  "notes": [
+   "S15: 车漆 ['Body'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现",
+   "车轮节点 wheel_XX_spin 可能带外倾角的旋转（见 wheelCamberDeg），游戏里要绕节点自身的 X 轴转（Euler 顺序 ZYX）"
+  ],
+  "source": {
+   "title": "Nissan Silvia S15 LBWK Super Silhouette",
+   "author": "sohyalebret",
+   "site": "Sketchfab",
+   "uid": "faa3ea6d43f14cec93eda98963bf9a5f",
+   "license": "CC BY 4.0（需署名）"
+  },
+  "wheelCamberDeg": {
+   "FL": 4.25,
+   "FR": -4.25,
+   "RL": -0.5,
+   "RR": 0.5
+  }
+ },
+ "m190": {
+  "file": "m190.glb",
+  "wheelbase": 2.7,
+  "trackFront": 1.4703,
+  "trackRear": 1.4702,
+  "wheelRadiusFront": 0.3135,
+  "wheelRadiusRear": 0.3134,
+  "wheelCenterHeightFront": 0.3143,
+  "wheelCenterHeightRear": 0.3133,
+  "length": 4.4879,
+  "width": 1.9155,
+  "height": 1.38,
+  "frontAxleToNose": 0.7629,
+  "rearAxleToTail": 1.025,
+  "groundClearanceMin": 0.0,
+  "tris": 178451,
+  "sizeMB": 7.15,
+  "bodyPaintMaterials": [
+   "Car_body_color"
+  ],
+  "brakelightNodes": [],
+  "brakelightMaterials": [],
+  "flatMaterialsMerged": 19,
+  "droppedHidden": 0,
+  "notes": [
+   "M190: 车漆 ['Car_body_color'] 加清漆层(coat 1.0/0.05)，金属度上限 0.35",
+   "height 记的是车顶高度；包围盒最高点 1.5191 m 是天线",
+   "车轮由导入脚本自动分组；没有独立刹车灯网格，刹车由游戏里的尾灯光晕表现"
+  ],
+  "heightWithAntenna": 1.5191,
+  "source": {
+   "title": "Mercedes 190E EVO 1982 3D Model Free",
+   "author": "betier",
+   "site": "Sketchfab",
+   "uid": "15e5576f4b724f2db357165caed3492b",
+   "license": "CC BY 4.0（需署名）"
+  }
+ }
+}

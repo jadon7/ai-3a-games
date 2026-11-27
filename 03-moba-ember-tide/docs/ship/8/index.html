@@ -1,0 +1,163 @@
+<meta charset="utf-8">
+<title>烬与潮 打磨和上线</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：阶段 8 验收。顶部说明 → 一串小节，每节是说明加录像、表格、图片或几栏文字 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.row.three{grid-template-columns:minmax(0,1fr)}}
+.wide img{aspect-ratio:auto}
+.clip{display:flex;flex-direction:column;gap:6px;min-width:0}
+.clip video{width:100%;display:block;background:#000;border:1px solid var(--line)}
+.clip p{margin:0;font-size:13.5px;color:var(--muted)}
+.clip b{color:var(--fg);font-weight:600}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;margin:16px 0 0;padding:0;list-style:none;font-size:14.5px}
+.keys li{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:0 8px;align-items:baseline}
+.keys b{font:600 13px/1.6 var(--util);letter-spacing:.04em;color:var(--tide)}
+.stack{display:flex;flex-direction:column;gap:10px}
+.clip audio{width:100%;display:block}
+.live{display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;padding:12px 22px;border:1px solid var(--line);font:600 15px/1 var(--util);letter-spacing:.08em;color:var(--fg);text-decoration:none;background:color-mix(in srgb,var(--tide) 14%,transparent)}
+.live small{font-weight:500;color:var(--muted);letter-spacing:0}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 8 · 打磨和上线</p>
+  <h1>打磨和上线</h1>
+  <p class="lede">这一阶段做了六件事：把进一局要下载的东西从 66 MB 压到 26 MB（手机 20 MB）；做了手机横屏的界面和触屏操作；做成能装到主屏幕、断网也能开的 PWA；对着 Dota 2 的截图改了调色、影子、河面和面板质感；加了音效；宣传片交给 Opus 5.5 做了一条。游戏已经发布到 <b>moba.dsxzai.com</b>（你选的域名）。</p>
+</header>
+<section>
+  <h2>已经上线</h2>
+  <p class="note">发布在你的 Cloudflare 账号下，一个叫 <code>jinyuchao</code> 的静态站（Workers 的静态资源托管），域名 moba.dsxzai.com 是发布时自动绑的（解析记录和证书都是 Cloudflare 自己建的）。任何拿到地址的人都能打开。重新发布只要 <code>npm run build &amp;&amp; npx wrangler deploy</code>。从这台电脑的网络第一次打开，选好英雄到进对局用了 15 到 27 秒（都花在下载那 20 多 MB 上，Cloudflare 在大陆没有节点）；第二次起走缓存，几秒。</p>
+  <a class="live" href="https://moba.dsxzai.com/" target="_blank" rel="noopener">moba.dsxzai.com<small>　点开就是主菜单；手机上横过来玩</small></a>
+</section>
+<section>
+  <h2>宣传片（Opus 5.5 做的）</h2>
+  <p class="note">交给 Opus 5.5 做的（后台任务，前后约两个小时）：它自己写分镜、自己从游戏里录素材、自己用 ffmpeg 剪，改了三轮；水晶爆炸的效果修好以后又重录重剪了结尾。它没有用实时录屏（只有二十帧上下）：写了一个脚本把页面的时间接管过来，每推进三十分之一秒截一张图，所以每一帧都准，慢放也平滑。成片 1920×1080、30 帧、64.8 秒、<b>没有声音</b>（没有配乐素材，留给你配）。我把成片每秒抽一帧看过，结尾那一段抽得更密：没有白屏，没有网址和调试字。下面是压到 13 MB 的网页版；质量优先的那一份（118 MB）在项目里的 <code>docs/trailer/trailer.mp4</code>，分镜和能重现的命令在 <code>docs/trailer/README.md</code>。</p>
+  <div class="row one"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/trailer_web.mp4"></video><p><b>《烬与潮》宣传片，64.8 秒，无声。</b></p></div></div>
+  <div class="cols"><section><h3>分镜</h3><ul><li>0–10 秒：地图大远景（河把绿岸和红岸分开）→ 沉月会一侧、烬誓庭一侧 → 压暗的河道上淡入标题</li><li>10–17 秒：六张英雄立绘卡，每张一秒多，硬切</li><li>17–24 秒：塔下二打二带击杀慢放；葛隆打野猪</li><li>24–34 秒：六个英雄各一个技能特写，左下角是英雄名和技能名</li><li>34–40 秒：岩甲巨兽、岩石巨魔两只 Boss</li><li>40–50 秒：五人团战带击杀慢放；奥森的大招收人头</li><li>50–57 秒：推塔，塔倒下炸开 → 水晶爆掉（全片最高点，半速）</li><li>57–65 秒：手机外框里的触屏对局，“手机横屏，也能玩” → 落版：标题加“三对三 · 三条线 · 一条河”</li></ul></section><section><h3>它自己说还弱的地方</h3><ul><li>六个技能特写都在测试场同一个河道口、对着同一组靶子，背景一样，有点像测试录像。</li><li>团战和推塔里血条、伤害数字多，画面挤。</li><li>Boss 只有打架的画面，没拍到倒下。</li><li>手机那一镜是电脑在打，摇杆不会动，只能看出是触屏布局。</li><li>水晶爆掉那一镜里打水晶的人几乎不在画面中，看着像水晶自己炸了；推塔那一镜开头有一块半透明的技能范围提示入画。</li><li>中间几段都在烬誓庭的红地上，颜色变化少；立绘原图只有 600×800，放大后在大屏上会有点软。</li><li>它和我都只看过抽帧，没有在播放器里从头到尾实时看一遍，节奏是按秒数判断的。</li></ul></section></div>
+</section>
+<section>
+  <h2>做宣传片时顺带查出的游戏问题</h2>
+  <p class="note">Opus 5.5 录素材时报了五个游戏本身的问题。我逐个核实，修了三个。</p>
+  <div class="tbl"><table><thead><tr><th>它报的问题</th><th>我做了什么</th></tr></thead><tbody><tr><td>塔和水晶被拆时没有爆炸，一帧里直接换成残座；水晶是一局的结尾，很不够劲</td><td><b>已修。</b>现在会炸开：一团亮光、两圈冲击波、飞溅的碎晶和火星、往上翻的烟尘、地裂，镜头震一下；水晶接着再炸两下，一下比一下大。宣传片的结尾按新效果重录重剪了</td></tr><tr><td>观战时建筑挡住人：镂空只认网址里那个英雄，导播去看别人时墙会把人整个挡住</td><td><b>已修。</b>观战时镂空跟着导播正在看的地方</td></tr><tr><td>导播会长时间盯着一个人单挑 Boss（有一段 35 秒），几乎不看打小野怪</td><td><b>已改。</b>打野和人少的 Boss 战看十几秒就歇十二秒；打小野怪的分数提到普通对线之上。跑了五分钟观战没有报错，但换镜头的节奏有没有变好，我没有长时间看过</td></tr><tr><td>分出胜负后整局定格，英雄停在动作中间</td><td><b>查了，没改。</b>实测英雄是回到待机动作、还在动；停住的是小兵。平时有结算界面盖着</td></tr><tr><td>薇萝大招的箭太细，画面里看不清</td><td><b>没改。</b>记在差距里</td></tr></tbody></table></div>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/boom.jpg" alt="水晶爆掉的三帧（间隔约四分之一秒）：冲击波、光柱、碎晶，然后是烟尘和地裂。" loading="lazy"><figcaption><span class="who ours">现在</span>水晶爆掉的三帧（间隔约四分之一秒）：冲击波、光柱、碎晶，然后是烟尘和地裂。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>手机横屏和触屏</h2>
+  <p class="note">布局照手机 MOBA 的行业习惯（王者荣耀、LoL 手游）：左下摇杆，右下一个大的攻击键，技能键绕着它排成一段弧，大招在最上面、大一圈；小地图在左上，下面是金币（点开商店）；血条蓝条在底部正中。技能键点一下自动对准最合适的目标，按住拖动自己瞄，拖进右上角的“取消”圈就不放。点地面照样能走。竖着拿会盖一层提示并暂停。</p>
+  <div class="row one"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/touch_vero.mp4"></video><p><b>一段真的发触摸事件的操作（844×390，手机档画质）。</b>白色圆点是手指的位置：推摇杆走到兵线 → 按住攻击键 → 点一下技能自动对准 → 按住第三个技能拖着瞄再松手 → 大招拖着瞄、拖进“取消” → 再放一次 → 开商店。这是脚本在电脑的 Chrome 里按手机的参数跑的，不是真手机。</p></div></div>
+  <div class="stack" style="margin-top:12px"><div class="row"><figure class="wide"><img src="img/m_before.jpg" alt="这一阶段之前：手机上是桌面界面的缩小版，没有任何触屏操作，技能只能点那排小图标。" loading="lazy"><figcaption><span class="who ref">之前</span>这一阶段之前：手机上是桌面界面的缩小版，没有任何触屏操作，技能只能点那排小图标。</figcaption></figure><figure class="wide"><img src="img/m_after.jpg" alt="现在：摇杆、攻击键、弧形排开的技能键（这个英雄有四个技能，大招 6 级前是锁着的）。" loading="lazy"><figcaption><span class="who ours">现在</span>现在：摇杆、攻击键、弧形排开的技能键（这个英雄有四个技能，大招 6 级前是锁着的）。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/m_aim.jpg" alt="按住技能拖动：地上出指示线，右上角出现“取消”圈。" loading="lazy"><figcaption><span class="who ours">瞄准</span>按住技能拖动：地上出指示线，右上角出现“取消”圈。</figcaption></figure><figure class="wide"><img src="img/m_shop.jpg" alt="商店：占满屏幕的高度，点一件看说明，点“购买”买下。" loading="lazy"><figcaption><span class="who ours">商店</span>商店：占满屏幕的高度，点一件看说明，点“购买”买下。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/m_pick.jpg" alt="选人：手机横屏有自己的排法，六张卡和右边的详情一屏放下，不用滚。" loading="lazy"><figcaption><span class="who ours">选人</span>选人：手机横屏有自己的排法，六张卡和右边的详情一屏放下，不用滚。</figcaption></figure><figure class="wide"><img src="img/m_result.jpg" alt="结算：大字和比分并成一行，卡片压矮。" loading="lazy"><figcaption><span class="who ours">结算</span>结算：大字和比分并成一行，卡片压矮。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/m_home.jpg" alt="主菜单。“烬”改成了火的颜色、“潮”改成了水的颜色（之前两个字的颜色配反了）。" loading="lazy"><figcaption><span class="who ours">主菜单</span>主菜单。“烬”改成了火的颜色、“潮”改成了水的颜色（之前两个字的颜色配反了）。</figcaption></figure><figure class="wide"><img src="img/m_ipad.jpg" alt="平板的尺寸（1180×820）：同一套布局，按钮按屏幕高度放大，镜头不拉近。" loading="lazy"><figcaption><span class="who ours">平板</span>平板的尺寸（1180×820）：同一套布局，按钮按屏幕高度放大，镜头不拉近。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/wk_game.jpg" alt="Safari 的内核（WebKit）里跑出来的样子：渲染和 Chrome 一致，解压模型、触屏布局、离线缓存都正常。" loading="lazy"><figcaption><span class="who ours">WebKit</span>Safari 的内核（WebKit）里跑出来的样子：渲染和 Chrome 一致，解压模型、触屏布局、离线缓存都正常。</figcaption></figure><figure class="wide"><img src="img/wk_pick.jpg" alt="WebKit 里的选人界面。" loading="lazy"><figcaption><span class="who ours">WebKit</span>WebKit 里的选人界面。</figcaption></figure></div></div>
+  <div class="how" style="margin-top:16px"><section><h3>手机上画质自己降</h3><p>手机和平板用贴图小一号的模型（2048 → 1024，法线 512）、小一号的阴影，总像素封顶 170 万。帧率不到 45 就降分辨率，最低降到一半；降到底还不到 30 帧再关阴影。用软件渲染模拟了一台很慢的设备，确认它会一档一档降下去。</p></section><section><h3>位移技能不乱飞</h3><p>技能点一下默认对准敌人，但薇萝的翻滚不该朝敌人滚过去：这类技能标了“朝摇杆的方向”，没推摇杆就朝面前。</p></section><section><h3>苹果手机的全屏</h3><p>苹果的浏览器不给网页全屏，只能“添加到主屏幕”。主菜单在苹果手机上会多一句提示；安卓上第一次点屏幕就进全屏并锁横屏，能装的浏览器在主菜单上多一个“安装到桌面”。</p></section></div>
+</section>
+<section>
+  <h2>下载量：66 MB → 26 MB，手机 20 MB</h2>
+  <p class="note">量的是“选好英雄进一局”实际下载的字节数（打包版，本机量的）。代码那 1.07 MB 是没压缩的大小，CDN 会再压到三分之一左右。</p>
+  <div class="tbl"><table><thead><tr><th>资源</th><th class=n>之前</th><th class=n>电脑</th><th class=n>手机</th><th>怎么做的</th></tr></thead><tbody><tr><td>建筑（塔、水晶、出生点，10 件）</td><td class=n>30.6 MB</td><td class=n>3.0 MB</td><td class=n>3.0 MB</td><td>网格用 meshopt 压，再套一层 gzip；页面里自己解压，不指望 CDN。画面逐像素对比过，看不出差别</td></tr><tr><td>英雄（6 个）</td><td class=n>11.7 MB</td><td class=n>9.3 MB</td><td class=n>5.3 MB</td><td>手机档贴图小一号；都再套一层 gzip</td></tr><tr><td>小兵和野怪（8 种）</td><td class=n>11.3 MB</td><td class=n>7.2 MB</td><td class=n>5.1 MB</td><td>小野怪在电脑上也只用 1024 的贴图；手机档更小。野怪是进了对局以后在后台下的，不挡进游戏</td></tr><tr><td>地面</td><td class=n>6.2 MB</td><td class=n>3.5 MB</td><td class=n>3.5 MB</td><td>“哪里是草”的蒙版从 4096 的 PNG 换成 2048 的 WebP（3.1 MB → 0.4 MB）</td></tr><tr><td>墙和石头的贴图</td><td class=n>2.3 MB</td><td class=n>1.6 MB</td><td class=n>1.6 MB</td><td>JPG 换 WebP</td></tr><tr><td>代码</td><td class=n>4.1 MB（60 个请求）</td><td class=n>1.07 MB（1 个）</td><td class=n>1.07 MB</td><td>以前只有开发模式；现在有正式的打包</td></tr><tr><td>合计</td><td class=n>66.3 MB</td><td class=n>26.0 MB</td><td class=n>19.8 MB</td><td></td></tr></tbody></table></div>
+  <div class="cols"><section><h3>顺手清掉的</h3><ul><li>阶段 1 原型的旧代码（<code>src/main.ts</code>、<code>src/world/</code>）和它专用的 36 MB 旧资源，仓库里的 <code>public/</code> 从 118 MB 降到 69 MB。都还在 git 历史里。</li><li>不再用的两个依赖（n8ao、postprocessing）。</li></ul></section><section><h3>打包</h3><ul><li><code>npm run build</code> 只出游戏这一页，<code>/</code> 和 <code>/map.html</code> 都是游戏；调试页用的资源不上线。</li><li>带哈希的代码永久缓存，模型贴图缓存一天，页面每次都问。</li><li>手册：<code>tools/SHIP.md</code>。</li></ul></section></div>
+</section>
+<section>
+  <h2>装到主屏幕，断网也能开</h2>
+  <p class="note">有 manifest、图标、service worker。外壳（页面和代码）装的时候就存好；模型贴图用到才存，进过一次对局以后在后台把这一档剩下的补齐。重新上线以后，老用户下次打开就换成新版，旧缓存整个删掉。</p>
+  <div class="tbl"><table class="narrow"><thead><tr><th>离线测试（打包版，脚本跑的）</th><th>结果</th></tr></thead><tbody><tr><td>service worker 装上并接管</td><td>是</td></tr><tr><td>manifest</td><td>烬与潮 / 全屏 / 横屏 / 3 个图标都拿得到</td></tr><tr><td>进一局以后缓存里的文件</td><td>78 个</td></tr><tr><td>断网后重新打开同一局</td><td>能进，对局在走</td></tr><tr><td>断网后打开主菜单</td><td>能开</td></tr></tbody></table></div>
+  <div class="stack" style="margin-top:12px"><div class="row"><figure class="wide"><img src="img/icon.jpg" alt="应用图标：一道青色的浪和一团橙色的余烬咬合在一起（即梦出的两版里选的这一版；另一版水晶碑的留作徽记）。" loading="lazy"><figcaption><span class="who ours">图标</span>应用图标：一道青色的浪和一团橙色的余烬咬合在一起（即梦出的两版里选的这一版；另一版水晶碑的留作徽记）。</figcaption></figure><figure class="wide"><img src="img/m_portrait.jpg" alt="竖着拿：盖一层提示，对局暂停；横回来接着走。" loading="lazy"><figcaption><span class="who ours">竖屏</span>竖着拿：盖一层提示，对局暂停；横回来接着走。</figcaption></figure></div></div>
+  <div class="cols"><section><h3>这次测试抓到的一个真问题</h3><ul><li>service worker 的注册原来挂在页面的 load 事件上，但挂的那一刻 load 有时已经过了，结果就是没注册上（WebKit 里碰巧注册上了，Chrome 里没有）。离线测试超时才发现，已经改成“页面已经载完就直接注册”。</li></ul></section></div>
+</section>
+<section>
+  <h2>对着 Dota 2 的截图改了三轮</h2>
+  <p class="note">做法是在同一类场景下把我们的截图和 Dota 2 的参考图并排放，挑最显眼的差距改。第一轮：Dota 2 有一层柔和的调色、影子又软又浅，我们的画面偏灰、影子又硬又黑。第二轮：桌面界面的面板太平。第三轮：近镜头下河面的粼光是一块一块的白，是画面里最碎的东西，Dota 2 的河是平静的。下面每组图都是左边改之前、右边改之后（同一个机位、同一个时刻）。</p>
+  <div class="stack" style="margin-top:12px"><div class="row"><figure class="wide"><img src="img/ref_dota_h6.jpg" alt="Dota 2：暗部偏青蓝、亮部偏暖，影子软，四角压暗，英雄从地面上跳出来。" loading="lazy"><figcaption><span class="who ref">Dota 2 参考</span>Dota 2：暗部偏青蓝、亮部偏暖，影子软，四角压暗，英雄从地面上跳出来。</figcaption></figure><figure class="wide"><img src="img/desk_lane.jpg" alt="我们现在的对线画面（观战模式）。" loading="lazy"><figcaption><span class="who ours">现在</span>我们现在的对线画面（观战模式）。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/grade_lane.jpg" alt="调色和软影：饱和度提了一点，暗部往青蓝偏、不压成死黑，发黄的草绿往正绿拉了一点；塔的影子边缘变软、颜色变浅。" loading="lazy"><figcaption><span class="who ours">左旧右新</span>调色和软影：饱和度提了一点，暗部往青蓝偏、不压成死黑，发黄的草绿往正绿拉了一点；塔的影子边缘变软、颜色变浅。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/grade_hero.jpg" alt="同上，带英雄的一张。调色写在色调映射那一步里，不多画一遍全屏，手机上也不多花钱；暗角是盖在画布上的一层渐变。" loading="lazy"><figcaption><span class="who ours">左旧右新</span>同上，带英雄的一张。调色写在色调映射那一步里，不多画一遍全屏，手机上也不多花钱；暗角是盖在画布上的一层渐变。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/grade_foe.jpg" alt="烬誓庭一侧。" loading="lazy"><figcaption><span class="who ours">左旧右新</span>烬誓庭一侧。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/water_ab.jpg" alt="河面：粼光和明暗起伏压到原来的四成，河底的石头露出来了。" loading="lazy"><figcaption><span class="who ours">左旧右新</span>河面：粼光和明暗起伏压到原来的四成，河底的石头露出来了。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/ref_dota_river.jpg" alt="Dota 2 的河：平静，几乎没有高光。" loading="lazy"><figcaption><span class="who ref">Dota 2 参考</span>Dota 2 的河：平静，几乎没有高光。</figcaption></figure><figure class="wide"><img src="img/desk_boss.jpg" alt="我们现在的河道 Boss 战。" loading="lazy"><figcaption><span class="who ours">现在</span>我们现在的河道 Boss 战。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/hud_before.jpg" alt="面板：纯平的深色块。" loading="lazy"><figcaption><span class="who ref">之前</span>面板：纯平的深色块。</figcaption></figure><figure class="wide"><img src="img/hud_after.jpg" alt="现在：底上一层很淡的颗粒，顶边一条往两头淡出的金线，四角有小角花，技能格描了细金边，头像框描金。" loading="lazy"><figcaption><span class="who ours">现在</span>现在：底上一层很淡的颗粒，顶边一条往两头淡出的金线，四角有小角花，技能格描了细金边，头像框描金。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>音效</h2>
+  <p class="note">之前游戏完全没有声音。现在有了：打中、开火、放技能（沉月会是往上扬的水声，烬誓庭是往下沉的火声）、击杀、拆塔、升级、补到刀的金币声、Boss 的重击和咆哮、界面按钮、买装备、胜负，加一层很低的风声。全部用 WebAudio 现场合成，没有任何音频文件；小兵互殴的声音很轻，离镜头远的听不见，同一种声音不堆叠。菜单里可以关。<b>我听不了声音</b>：只能确认有声、没有爆音（峰值 −12 dB），事件和声音对得上；好不好听要你来听，下面是录下来的 16 秒。</p>
+  <div class="row one"><div class="clip"><audio controls preload="metadata" src="vid/sfx_fight.mp3"></audio><p><b>观战模式里的一段打架，原样录的。</b>这些是合成出来的占位级音效，能分清谁打了谁、放了什么，谈不上录音棚的质感。</p></div></div>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/sfx_spectrum.jpg" alt="这 16 秒的频谱：一根根竖线是打中和出手，中间那一簇是一次击杀的提示音，底下一层是风声。" loading="lazy"><figcaption><span class="who ours">频谱</span>这 16 秒的频谱：一根根竖线是打中和出手，中间那一簇是一次击杀的提示音，底下一层是风声。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>验证了什么</h2>
+  <p class="note">下面这些都是在最终代码的打包版上跑的。</p>
+  <div class="tbl"><table><thead><tr><th>检查</th><th>怎么跑的</th><th>结果</th></tr></thead><tbody><tr><td>触屏操作</td><td><code>tools/touch_test.mjs</code>：手机横屏、真的发触摸事件。摇杆（方向、走、停）、攻击键（点、按住）、技能（点一下自动对准、拖动瞄准、反方向打不中、拖进取消）、点地面、小地图、商店买东西、计分板、菜单、回城、竖屏暂停</td><td>28 项全过</td></tr><tr><td>鼠标和键盘</td><td><code>tools/click_test.mjs</code>（阶段 7 的那套）</td><td>21 项和之前一致</td></tr><tr><td>Safari 的内核</td><td><code>tools/webkit_test.mjs</code>：WebKit 按 iPhone 横屏走主菜单 → 选人 → 对局 → 推摇杆 → 开商店</td><td>全过，无报错，本机显卡 60 帧</td></tr><tr><td>离线</td><td><code>tools/offline_test.mjs</code>：进一局后断网，重新打开</td><td>能进对局、能开主菜单</td></tr><tr><td>自动降画质</td><td>软件渲染模拟很慢的设备，带 <code>?adapt=1</code></td><td>分辨率一档一档降到下限</td></tr><tr><td>整局</td><td>一整局全电脑的三对三（薇萝，普通难度，16 倍速）</td><td>19 分 04 秒分出胜负，无报错</td></tr><tr><td>线上</td><td>对着线上地址把上面几套都再跑了一遍：触屏 28 项、鼠标键盘 21 项、WebKit、断网；另外查了文件类型、压缩和缓存头</td><td>全过。代码经 CDN 压缩后实际传输 333 KB；带哈希的代码永久缓存，模型贴图缓存一天，找不到的地址是真的 404</td></tr></tbody></table></div>
+</section>
+<section>
+  <h2>差距、没验证的、花费</h2>
+  <div class="cols"><section><h3>和 Dota 2 比还差的</h3><ul><li>场景的层次：Dota 2 有高大的树冠压边、成片的植被和雾，我们的地图更空、更平。这是内容量的差距，不是这一阶段调参数能补的。</li><li>英雄在画面里还是偏小偏暗，没有 Dota 2 那种一眼跳出来的轮廓光。</li><li>音效是合成的占位级；没有配乐、没有英雄语音。</li><li>面板加了质感，但还是没有雕花的外框。</li><li>阶段 6、7 留下的那些没动：电脑三档难度拉不开、对线偏保守、阵营平衡只是粗调、野怪动作的毛病、没有技能加点和装备合成。</li><li>薇萝大招的箭太细，画面里看不清；被拆以后的塔和水晶只剩一截矮石座，没有倒塌的过程（现在靠爆炸盖过去）。</li></ul></section><section><h3>没验证的</h3><ul><li><b>真手机。</b>没有在任何一台真的手机上跑过。iOS 模拟器的访问授权没人应答，所以也没用上；用 WebKit 内核代替，只能说明同一个内核下能跑、布局对。刘海和地址栏的实际占位、真实显卡的帧率和发热、内存够不够，都不知道。</li><li>安卓上的全屏和锁横屏、“安装到桌面”的弹窗。</li><li>声音好不好听。</li><li>我没有亲手打完一整局。</li><li>别的网络（尤其是手机流量）下第一次打开要多久；很多人同时打开时的表现。</li></ul></section><section><h3>花费和动过的东西</h3><ul><li>即梦 42 积分（两版应用图标），余额 10421。Tripo 没花。</li><li>装了三个开发用的包：wrangler（发布）、playwright-core 加它的 WebKit（测试 Safari 内核）。</li><li>启动过一次 iPhone 16 模拟器，授权没人应答后已经关掉。</li><li>Cloudflare：新建了一个静态站 jinyuchao，给 dsxzai.com 加了一条 moba 的解析记录（发布时自动建的）。别的项目和记录没碰。页面里多出来的 beacon.min.js 是你这个域名在 Cloudflare 上本来就开着的网站统计，不是我加的。</li></ul></section></div>
+</section>
+<footer class="foot">阶段 8 · 2026-11-20 · 本页私有。Dota 2 的截图只作对比参考，版权归 Valve。</footer>
+</div>

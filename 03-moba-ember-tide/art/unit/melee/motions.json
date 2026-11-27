@@ -1,0 +1,40 @@
+{
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/melee_skeleton.json",
+  "out_dir": "art/unit/melee/motions",
+  "fps": 30,
+  "smooth": {
+    "Hand": 1.0
+  },
+  "actions": {
+    "walk": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/melee_run/motion.npz",
+      "loop": [
+        10,
+        40
+      ],
+      "from": 20,
+      "stride": true
+    },
+    "attack": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/melee_attack/motion.npz",
+      "segments": [
+        [
+          6,
+          20
+        ],
+        [
+          27,
+          58
+        ]
+      ]
+    },
+    "death": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/melee_death/motion.npz",
+      "range": [
+        42,
+        100
+      ],
+      "settle": false
+    }
+  }
+}

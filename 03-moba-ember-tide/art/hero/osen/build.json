@@ -1,0 +1,135 @@
+{
+ "name": "osen",
+ "raw": "art/hero/osen/tripo_rigged_palm.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/osen_rigged.glb",
+ "out": "art/hero/osen/game.glb",
+ "packed": "public/assets/hero/osen.glb",
+ "pose_out": "art/hero/osen/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "motions": {
+  "idle": "art/hero/osen/motions/idle.npz",
+  "run": "art/hero/osen/motions/run.npz",
+  "attack1": "art/hero/osen/motions/attack1.npz",
+  "q": "art/hero/osen/motions/q.npz",
+  "w": "art/hero/osen/motions/w.npz",
+  "e": "art/hero/osen/motions/e.npz",
+  "r": "art/hero/osen/motions/r.npz",
+  "death": "art/hero/osen/motions/death.npz"
+ },
+ "gear": [
+  {
+   "type": "file",
+   "src": "art/models_src/weapon_osen_raw.glb",
+   "side": "Right",
+   "length": 1.15,
+   "grip": 0.5,
+   "roll": -35,
+   "offset": [
+    -0.01,
+    0,
+    0
+   ]
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.005,
+    0.002
+   ],
+   "yaw": -4,
+   "lean": 1
+  },
+  "spine": [
+   [
+    1,
+    -1
+   ],
+   [
+    3,
+    -1
+   ],
+   [
+    7,
+    -1
+   ]
+  ],
+  "head": {
+   "yaw": 5,
+   "pitch": -2
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     -0.055,
+     -0.03,
+     0
+    ],
+    "pole": [
+     0.12,
+     -1,
+     0
+    ],
+    "toe": -12
+   },
+   "Right": {
+    "offset": [
+     0.05,
+     0.02,
+     0
+    ],
+    "pole": [
+     -0.12,
+     -1,
+     0
+    ],
+    "toe": 10
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.05,
+     -0.15,
+     0.655
+    ],
+    "pole": [
+     0.7,
+     0.2,
+     -0.7
+    ],
+    "blade": [
+     0.35,
+     -0.65,
+     0.5
+    ]
+   },
+   "Right": {
+    "wrist": [
+     -0.195,
+     -0.12,
+     0.563
+    ],
+    "pole": [
+     -0.6,
+     0.5,
+     -0.5
+    ],
+    "blade": [
+     -0.05,
+     -0.09,
+     1
+    ]
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.003
+  }
+ }
+}

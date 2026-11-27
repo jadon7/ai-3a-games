@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_torg_b",
+  "image": "art/style_b/torg/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

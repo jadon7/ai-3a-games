@@ -1,0 +1,61 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ranged_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged/motions/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged/motions/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged/motions/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/../ranged_b_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/fk/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/fk/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/fk/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/../ranged_b_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/ik/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/ik/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/motions/ik/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "walk",
+  "attack",
+  "death"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   30,
+   10
+  ],
+  [
+   90,
+   12
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 1.25,
+ "zc": 0.48,
+ "game_h": 1.37,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/ranged/retarget/render"
+}

@@ -1,0 +1,256 @@
+<title>烬与潮 样板间</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：样板间第二版验收。顶部说明 → 五条意见逐条“设计稿 / 第一版 / 第二版” → 现在的整体 → 做法上改了什么 → 规矩对照 → 还差在哪、没验证的、花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 2.3 · 样板间 · 第二版</p>
+  <h1>照着设计稿，把五处<em>重做</em>了一遍</h1>
+  <p class="lede">你对第一版提了五条。这一版每条都是放大设计稿、量了颜色之后重做的，不是在第一版上修。下面每条并排放三张图：设计稿、第一版、第二版，都是游戏里实时渲染的截图。应用内浏览器里仍然稳定 60 帧。最后写了还差在哪。</p>
+</header>
+
+<section>
+  <h2>你提的五条，逐条对照</h2>
+  <p class="note">每条先是你的原话，再是我改了什么，然后是三张图。</p>
+  <div class="pairs">
+
+    <div class="pair">
+      <h3>一、地砖和草地</h3>
+      <p class="said"><b>你说</b>地砖和草坪的结合度要参考设计稿那种感觉，融合度再高一些，地砖的形状也多给一些软边缘</p>
+      <ul>
+        <li>石板从一块块尖角的多边形，换成磨圆了角的旧石板，一排排铺、大小不一。</li>
+        <li>石板的颜色照设计稿量的值压成橄榄灰，和草地是一个色系，不再是一条发白的路。</li>
+        <li>草和苔从缝里、从路边爬上石板：路中间只有零星几块苔，越靠边盖得越多，最外面的石板半埋在草里。缝里长着真的小草。</li>
+        <li>塔脚下改成一块圆石、一圈大石板、一圈窄的收边石，圈外散进路面，不再有缺口里露出一块硬邦邦的绿。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/c1_concept.jpg" alt="设计稿：石板路碎进草地" loading="lazy"><figcaption><span class="who">设计稿</span></figcaption></figure>
+        <figure><img src="img/c1_v1.jpg" alt="第一版：发白的多边形石板" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+        <figure><img src="img/c1_v2.jpg" alt="第二版：橄榄灰的旧石板，草爬上来" loading="lazy"><figcaption><span class="who new">第二版</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>二、防御塔</h3>
+      <p class="said"><b>你说</b>防御塔现在看起来少点结构感、设计感</p>
+      <ul>
+        <li>第一版是把设计图交给图转 3D 得到的模型，肋条糊成了一团，镂空里透光的部分也没了。这一版不用那个模型，照设计图在代码里一层一层建出来。</li>
+        <li>从下到上：一圈收边石的石座 → 青铜的钟形底，箍两道金边，四面嵌带金框的发光饰牌 → 三段石芯，中段只留四根石柱，晶芯从柱子之间透出来 → 四根叶形的青铜肋，镶金边、嵌晶条，在塔顶弯成四只爪拢住水晶。</li>
+        <li>发光的只有水晶、晶芯和晶条，照明范围很小。</li>
+      </ul>
+      <div class="row three tall">
+        <figure><img src="img/c2_concept.jpg" alt="定稿的外塔设计图" loading="lazy"><figcaption><span class="who">设计图</span></figcaption></figure>
+        <figure><img src="img/c2_v1.jpg" alt="第一版：图转 3D 的塔" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+        <figure><img src="img/c2_v2.jpg" alt="第二版：分层建出来的塔" loading="lazy"><figcaption><span class="who new">第二版</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>三、草丛的颜色</h3>
+      <p class="said"><b>你说</b>草丛的颜色也没有做好融合，参考设计图的感觉来</p>
+      <ul>
+        <li>第一版是一整块鲜艳的翠绿。这一版照设计稿量的三个颜色来：根部是暗的青绿，中段是比草地深一档的橄榄绿，只有晒到太阳的叶尖亮成草地那种黄绿。</li>
+        <li>叶子改得更高、更窄、更直；轮廓有进有出，边上矮、中间高，外面一圈半高的草过渡到地表的短草。</li>
+        <li>草丛一直长到背后的墙脚，中间不留一条空地。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/c3_concept.jpg" alt="设计稿里的草丛" loading="lazy"><figcaption><span class="who">设计稿</span></figcaption></figure>
+        <figure><img src="img/c3_v1.jpg" alt="第一版：翠绿的草丛" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+        <figure><img src="img/c3_v2.jpg" alt="第二版：根暗、尖亮的草丛" loading="lazy"><figcaption><span class="who new">第二版</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>四、河流的质感</h3>
+      <p class="said"><b>你说</b>河流的质感也再靠齐一下设计稿</p>
+      <ul>
+        <li>第一版的水像一层灰白的薄膜。这一版水本身很清，颜色是河底透上来的：越深越偏青绿、越暗。</li>
+        <li>隔着水看，河底的石板随水纹轻轻晃；河底铺的是一块挨一块的大扁石。</li>
+        <li>水面有起伏的明暗、波峰上淡淡的亮线、成片的细碎粼光；岸边一道断断续续的细白沫。</li>
+        <li>河里的石头挪到岸边的浅水里，泡在水里的一截同样偏青绿。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/c4_concept.jpg" alt="设计稿里的河道" loading="lazy"><figcaption><span class="who">设计稿</span></figcaption></figure>
+        <figure><img src="img/c4_v1.jpg" alt="第一版的河道" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+        <figure><img src="img/c4_v2.jpg" alt="第二版的河道" loading="lazy"><figcaption><span class="who new">第二版</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>五、野区的墙</h3>
+      <p class="said"><b>你说</b>野区的墙体要参考设计稿中那种有结构感的，不要这么随意</p>
+      <ul>
+        <li>第一版是一排随手码的方块加一个大方墩。这一版每段墙都有讲究：墙身是一条缓缓的弧，凹的一面兜着草丛。</li>
+        <li>从下到上是宽出一圈的墙脚石、两层上下错缝的大块料石、出檐的压顶，每块石料都顺着墙弯。</li>
+        <li>两段墙相接的地方立一根八角墩柱，有柱础、青铜箍和柱帽。完好的一头用青铜卡子收住，抵着比墙还高的大石头；另一头是矮一截的残墙。</li>
+        <li>墙顶长苔，冒出几丛阔叶草；墙脚一溜矮草把墙和草地接起来。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/c5_concept_a.jpg" alt="设计稿：弧形的墙和草丛" loading="lazy"><figcaption><span class="who">设计稿</span></figcaption></figure>
+        <figure><img src="img/c5_v1.jpg" alt="第一版的墙" loading="lazy"><figcaption><span class="who old">第一版</span></figcaption></figure>
+        <figure><img src="img/c5_v2.jpg" alt="第二版的墙和草丛" loading="lazy"><figcaption><span class="who new">第二版</span></figcaption></figure>
+      </div>
+      <div class="row">
+        <figure><img src="img/c5_concept_b.jpg" alt="设计稿：墙两头抵着大石头" loading="lazy"><figcaption><span class="who">设计稿</span>墙两头抵着大石头，青铜卡子收边</figcaption></figure>
+        <figure><img src="img/c5_v2b.jpg" alt="第二版：拉近看墙" loading="lazy"><figcaption><span class="who new">第二版</span>拉近看：墩柱、压顶、卡子、大石头</figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>现在的整体</h2>
+  <p class="note">对照设计稿时还发现一处不在你的五条里、但影响很大：设计稿的太阳更低，影子拉得长。所以把太阳改到了左后方，影子往右前方落。</p>
+  <div class="pairs">
+    <div class="pair"><div class="row">
+      <figure class="big"><img src="img/far.jpg" alt="拉远看整个样板间" loading="lazy"><figcaption><span class="who new">第二版</span>拉远看整块</figcaption></figure>
+      <figure class="big"><img src="img/main.jpg" alt="一进来看到的画面" loading="lazy"><figcaption><span class="who new">第二版</span>平时的镜头距离</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row">
+      <figure><img src="img/ground.jpg" alt="拉近看石板和草" loading="lazy"><figcaption><span class="who new">第二版</span>拉近看石板和缝里的草</figcaption></figure>
+      <figure><img src="img/water.jpg" alt="拉近看水" loading="lazy"><figcaption><span class="who new">第二版</span>拉近看水下的石板</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>做法上改了什么</h2>
+  <div class="how">
+    <section><h3>地面：整张一次画完</h3><p>第一版把地面切成九块分别重绘再拼，每块都会各自乱加东西，接缝也对不上。这一版整块 60 米一次画成一张图，布局、颜色、融合都在这一张里定下来，没有接缝，也没再凭空多出小路和小溪。然后切四块各细化一遍补清晰度，再和底图混合。</p></section>
+    <section><h3>塔和墙：在代码里建</h3><p>塔和墙都不用现成模型，是按结构一件件建出来的，所以每一层的尺寸、颜色都能单独调。塔的结构写在 <code>src/map/slice/tower.ts</code> 开头，墙的在 <code>stone.ts</code> 开头。</p></section>
+    <section><h3>植被：按画好的地面来长</h3><p>地表的小草直接读地面贴图的颜色，画的是草的地方才长，所以缝里的草和画是对得上的。</p></section>
+  </div>
+</section>
+
+<section>
+  <h2>规矩逐条对照</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>规矩</th><th>现状</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>地面是一张连续的画，石板从草里长出来、边缘碎开</td><td class="st2 ok">做到</td><td>整张一次重绘，没有接缝。成品每米约 68 个像素。</td></tr>
+      <tr><td>建筑和地面有对应：塔脚下的同心圆地砖</td><td class="st2 ok">做到</td><td>圆石、一圈大石板、一圈收边石，和塔的石座同心。</td></tr>
+      <tr><td>过河的地方水面连续盖过路</td><td class="st2 ok">做到</td><td>石板沉在水下约三十五厘米，两侧缓缓落到河床。</td></tr>
+      <tr><td>水清澈见底，细碎的粼光铺满所有水面</td><td class="st2 ok">做到</td><td>粼光成片分布，有密有疏；河底有很淡的光斑。</td></tr>
+      <tr><td>能藏人的只有草丛，成丛、比人高</td><td class="st2 ok">做到</td><td>每片叶子是真的几何体，会随风摆。画面上草丛一直长到墙脚，比布局里的范围宽出不到一米，见下面“要你知道的”。</td></tr>
+      <tr><td>防御塔：分层、缝里透出晶体、只有核发光</td><td class="st2 part">大部分</td><td>分层和透光都有了。比设计图素：没有肋条上的卷纹雕花和石芯上的拱形窗框。</td></tr>
+      <tr><td>野区的墙：砌墙的残段加大石块</td><td class="st2 ok">做到</td><td>墙脚石、料石、压顶、墩柱、青铜卡子、大石头都有。残墙那一头的碎石做得简单。</td></tr>
+      <tr><td>地面上近看才有的小细节</td><td class="st2 part">部分</td><td>石板裂纹、缝里的草、水边一圈湿亮都有。杂物还没做。</td></tr>
+      <tr><td>杂物同色系、贴着墙脚和路边</td><td class="st2 miss">没做</td><td>还是只有一根枯木和河里的石头，这一版没动。</td></tr>
+      <tr><td>树在城墙外当背景</td><td class="st2 miss">不在范围内</td><td>样板间这一块里没有城墙外的地方。树留到 2.6。</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="cols">
+  <section>
+    <h3>还差在哪</h3>
+    <ul>
+      <li>防御塔比设计图素。设计图上的肋条是带卷纹、有镂空的雕花件，现在是利落的几何形。要更接近，得继续手工加件，或者换一条建模路线，等你看了再定。</li>
+      <li>草丛的叶子比设计稿散，朝四面张开；设计稿里更直、更齐。</li>
+      <li>草地上没有设计稿里那种大块的树影。样板间里没有树，规矩是树只在城墙外，所以没加。要不要用云影补，留到 2.8 定。</li>
+      <li>岸边没有设计稿里的水草和阔叶植物，留到 2.6。</li>
+      <li>对方一侧只带到一个角：红土地在重绘里大半被画成了草绿色；对方的墙和草丛是同一套结构换了颜色，没单独打磨；没有对方的塔。</li>
+      <li>没有昼夜，没有英雄和小兵站上去看比例。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>没验证的和要你知道的</h3>
+    <ul>
+      <li>帧率只在这台电脑上测过：应用内浏览器 2232×1164 稳定 60 帧，约 88 万个三角形。手机没测。</li>
+      <li>画面上草丛一直长到墙脚，比布局里“能藏人”的范围宽出不到一米。到 2.6 要把布局里的草丛范围同步加宽，才符合“看起来能藏人就真的能藏人”。</li>
+      <li>墙看上去厚 1.3 到 1.6 米，布局里挡路的范围是 2.2 米，英雄贴不到墙面，差三十厘米左右。墙的弧度最多鼓出半米，仍在挡路范围内。</li>
+      <li>地面细化那一遍会把石板画碎，所以石板只取一半、草地只取一成多，其余用底图。这个比例是我看着定的。</li>
+      <li>太阳方向属于 2.8 的范围，这里先照设计稿改了。</li>
+      <li>第一版的塔模型不再使用，文件移到了 <code>art/models_src</code>，没有删。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>花费</h3>
+    <ul>
+      <li>即梦：172 积分。试画两块 42，整张地面 26，四块细化 104。余额 15916。</li>
+      <li>Tripo 和 Codex：这一轮没用。Tripo 余额仍是 700。</li>
+    </ul>
+  </section>
+</section>
+
+<footer class="foot">打开方式：开发服务器起着的时候访问 <code>localhost:5183/slice.html</code>，拖动或 WASD 平移，滚轮缩放。</footer>
+</div>

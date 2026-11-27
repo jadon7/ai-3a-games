@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+__pycache__/
+*.blend1
+# 建模时用的外部参考素材（体积大，不随仓库分发；来源见 README / CREDITS）
+tools/blender/vendor/
+tools/blender/preview/soldier_*.png
+promo/*.mp4
+tools/blender/preview/mech_*.png
+.wrangler/

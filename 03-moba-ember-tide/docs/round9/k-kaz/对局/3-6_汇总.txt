@@ -1,0 +1,44 @@
+h=gorran&a=gorran,kaz,osen,vero,moko&b=torg,lan,osen,vero,moko  19:02  a 队赢  击杀 20:3  报错 0
+  a jungle kaz     L15 8/1/7 刀59 营22 伤害84711 身家10797 抓3
+  a mid    osen    L15 6/1/5 刀38 营0 伤害49474 身家8263
+  a adc    vero    L15 2/1/3 刀76 营2 伤害29484 身家8247
+  a sup    moko    L15 0/0/6 刀0 营0 伤害6477 身家5245
+  b top    torg    L12 1/4/0 刀43 营0 伤害54887 身家4781
+  b jungle lan     L11 1/4/0 刀27 营13 伤害15578 身家4571 抓5
+  b mid    osen    L14 1/4/0 刀45 营1 伤害31058 身家4905
+  b adc    vero    L12 0/4/1 刀61 营2 伤害18197 身家5375
+  b sup    moko    L10 0/4/1 刀1 营0 伤害10142 身家3055
+  a top    gorran  L15 4/0/10 刀46 营2 伤害74624 身家8577
+h=torg&a=torg,lan,osen,vero,moko&b=gorran,kaz,osen,vero,moko  17:35  b 队赢  击杀 6:9  报错 0
+  a jungle lan     L15 2/3/3 刀48 营18 伤害30393 身家6140 抓5
+  a mid    osen    L15 1/1/3 刀41 营0 伤害43782 身家5084
+  a adc    vero    L15 2/0/2 刀76 营0 伤害16566 身家6614
+  a sup    moko    L10 0/1/0 刀2 营0 伤害3953 身家2948
+  b top    gorran  L15 4/0/3 刀51 营0 伤害62930 身家8304
+  b jungle kaz     L15 2/3/4 刀54 营19 伤害41781 身家8488 抓3
+  b mid    osen    L15 2/2/4 刀32 营0 伤害47218 身家7168
+  b adc    vero    L15 1/2/3 刀35 营0 伤害20915 身家6820
+  b sup    moko    L14 0/0/2 刀3 营0 伤害9513 身家5246
+  a top    torg    L14 1/6/1 刀44 营0 伤害40261 身家4932
+h=kaz&seed=2  19:05  a 队赢  击杀 14:4  报错 0
+  a top    gorran  L15 4/1/5 刀60 营1 伤害77732 身家7912
+  a mid    osen    L15 2/1/5 刀35 营0 伤害35470 身家6450
+  a adc    vero    L15 1/1/3 刀69 营1 伤害23503 身家7118
+  a sup    moko    L13 0/0/2 刀3 营0 伤害5355 身家4316
+  b top    torg    L14 1/1/1 刀64 营1 伤害49097 身家6066
+  b jungle lan     L14 2/3/1 刀36 营15 伤害32245 身家5718 抓6
+  b mid    osen    L14 1/7/0 刀38 营0 伤害31188 身家4926
+  b adc    vero    L14 0/0/1 刀76 营0 伤害25283 身家6132
+  b sup    moko    L11 0/4/1 刀2 营0 伤害4810 身家3446
+  a jungle kaz     L15 7/1/4 刀57 营24 伤害69306 身家9400 抓3
+h=lan&seed=5  16:33  a 队赢  击杀 14:0  报错 0
+  a top    gorran  L15 3/0/6 刀58 营1 伤害61918 身家7791
+  a mid    osen    L15 1/0/7 刀42 营1 伤害28711 身家6841
+  a adc    vero    L15 1/0/4 刀56 营0 伤害12389 身家6863
+  a sup    moko    L13 1/0/1 刀0 营0 伤害860 身家4437
+  b top    torg    L13 0/1/0 刀61 营2 伤害35649 身家5485
+  b jungle kaz     L12 0/5/0 刀44 营19 伤害15124 身家5491 抓4
+  b mid    osen    L13 0/3/0 刀46 营0 伤害20108 身家5023
+  b adc    vero    L11 0/3/0 刀64 营2 伤害10819 身家5735
+  b sup    moko    L10 0/2/0 刀0 营0 伤害4114 身家3327
+  a jungle lan     L15 8/0/6 刀29 营9 伤害49841 身家8531 抓1

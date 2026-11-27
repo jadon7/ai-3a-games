@@ -1,0 +1,5 @@
+{
+ "_说明": "盖在旧狼时间表（src_timing.json）上的几项。height：新模型背上的苔藓和蕨叶比旧的高（包围盒高 0.603 对 0.555，身长一样），按旧的 1.45 放身子会小一成，1.55 时身长和旧狼差不多（2.57 对 2.61 米）。points.hand：新骨架的头叫 Head_1",
+ "height": 1.55,
+ "points": {"hand": "tripo::Head_1", "chest": "tripo::Spine_1", "up": 0.3}
+}

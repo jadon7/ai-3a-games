@@ -1,0 +1,131 @@
+{
+ "name": "ugo",
+ "raw": "art/style_b/ugo/tripo_rigged_fix.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/ugo/ugo_b_rigged.glb",
+ "out": "art/style_b/ugo/check/game.glb",
+ "packed": "art/style_b/ugo/check/packed.glb",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.01,
+    -0.035
+   ],
+   "yaw": 0,
+   "lean": 10
+  },
+  "spine": [
+   [
+    6,
+    0
+   ],
+   [
+    7,
+    0
+   ],
+   [
+    6,
+    0
+   ]
+  ],
+  "head": {
+   "yaw": 0,
+   "pitch": -18
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.012,
+     0.0,
+     0
+    ],
+    "pole": [
+     0.25,
+     -1,
+     0
+    ],
+    "toe": 12
+   },
+   "Right": {
+    "offset": [
+     -0.012,
+     0.0,
+     0
+    ],
+    "pole": [
+     -0.25,
+     -1,
+     0
+    ],
+    "toe": -12
+   }
+  },
+  "arms": {
+   "Left": {
+    "dir": [
+     0.1,
+     -0.9,
+     -0.42
+    ],
+    "reach": 0.84,
+    "pole": [
+     0.6,
+     0.5,
+     -0.6
+    ],
+    "blade": [
+     -0.75,
+     0.0,
+     0.65
+    ],
+    "edge": [
+     0.12,
+     -0.9,
+     -0.4
+    ],
+    "shrug": 4
+   },
+   "Right": {
+    "dir": [
+     -0.1,
+     -0.9,
+     -0.42
+    ],
+    "reach": 0.84,
+    "pole": [
+     -0.6,
+     0.5,
+     -0.6
+    ],
+    "blade": [
+     0.75,
+     0.0,
+     0.65
+    ],
+    "edge": [
+     -0.12,
+     -0.9,
+     -0.4
+    ],
+    "shrug": 4
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.2,
+   "shoulder": 0.8,
+   "hand": 0.004
+  }
+ },
+ "grip": {
+  "Left": 0,
+  "Right": 0
+ },
+ "motions": {},
+ "_note": "乌戈 B：Tripo 出的卡通厚涂模型，钓竿和灯球是头的一部分（和第九轮一样不另建武器）。raw 是 fix_model.py 处理过的：大头的权重归 Head、灯球单独一个 weapon_lamp_b 材质。stance、grip 抄旧的"
+}

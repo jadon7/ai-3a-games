@@ -1,0 +1,106 @@
+{
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_skeleton.json",
+  "out_dir": "art/hero/vero/motions",
+  "fps": 30,
+  "smooth": {
+    "Hand": 1.0
+  },
+  "actions": {
+    "idle": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_idle/motion.npz",
+      "loop": [
+        60,
+        112
+      ],
+      "from": 4
+    },
+    "run": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_run/motion.npz",
+      "loop": [
+        18,
+        48
+      ],
+      "from": 8,
+      "stride": true
+    },
+    "attack1": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_attack1/motion.npz",
+      "segments": [
+        [
+          3,
+          11
+        ],
+        [
+          20,
+          46
+        ]
+      ]
+    },
+    "q": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_q/motion.npz",
+      "segments": [
+        [
+          3,
+          10
+        ],
+        [
+          14,
+          24
+        ],
+        [
+          66,
+          118
+        ]
+      ]
+    },
+    "w": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_w/motion.npz",
+      "segments": [
+        [
+          3,
+          19
+        ],
+        [
+          62,
+          88
+        ]
+      ]
+    },
+    "e": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_e/motion.npz",
+      "segments": [
+        [
+          16,
+          20
+        ],
+        [
+          37,
+          50
+        ],
+        [
+          58,
+          72
+        ],
+        [
+          96,
+          118
+        ]
+      ]
+    },
+    "r": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_r02/motion.npz",
+      "range": [
+        1,
+        104
+      ]
+    },
+    "death": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/vero_death/motion.npz",
+      "range": [
+        5,
+        88
+      ],
+      "settle": false
+    }
+  }
+}

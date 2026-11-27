@@ -1,0 +1,19 @@
+{
+ "name": "osen_b",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/osen_b_skeleton.json",
+ "out": "art/style_b/osen/check/game.glb",
+ "packed": "art/style_b/osen/check/packed.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/style_b/osen/retarget/motions/ik/idle.npz",
+  "run": "art/style_b/osen/retarget/motions/ik/run.npz",
+  "attack1": "art/style_b/osen/retarget/motions/ik/attack1.npz",
+  "q": "art/style_b/osen/retarget/motions/ik/q.npz",
+  "w": "art/style_b/osen/retarget/motions/ik/w.npz",
+  "e": "art/style_b/osen/retarget/motions/ik/e.npz",
+  "r": "art/style_b/osen/retarget/motions/ik/r.npz",
+  "death": "art/style_b/osen/retarget/motions/ik/death.npz",
+  "gallop": "art/style_b/osen/retarget/motions/ik/gallop.npz"
+ },
+ "_note": "四足 B 的出品：creature_build.sh 打开 V2R/assets/model/osen_b.blend（rig/make_rig.sh 摆正出来的），加上套好的动作（retarget/motions/ik/），导出。材质名改 _b 和去贴图在 rebuild.sh 里"
+}

@@ -1,0 +1,14 @@
+[
+ {
+  "name": "hero_osen",
+  "image": "art/hero/osen/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ },
+ {
+  "name": "hero_moko",
+  "image": "art/hero/moko/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

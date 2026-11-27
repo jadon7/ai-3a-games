@@ -1,0 +1,11 @@
+烬誓庭三座防御塔已按 B 稿重建。共做了 7 轮对照，最终版已在游戏预览页和三座塔各自的地图位置核对。重跑建模脚本后，三份 GLB 均逐字节一致。
+
+| 模型 | 总高 | 主晶中心离地 | 离地 0.45 米以上最大半径 | 三角形数 |
+| --- | ---: | ---: | ---: | ---: |
+| [外塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_1.glb) | 7.20 米 | 6.20 米 | 1.788 米 | 15,474 |
+| [内塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_2.glb) | 8.80 米 | 7.64 米 | 1.810 米 | 22,886 |
+| [高地塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_3.glb) | 10.60 米 | 9.29 米 | 1.830 米 | 30,368 |
+
+与定稿相比，外塔脚旁露出的石板较窄，高地塔扶壁向外展开的幅度较小。游戏材质下，主晶中心偏金橙，晶根的深红过渡较弱。[设计稿与成品对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/compare.jpg)
+
+[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_game.jpg) · [近景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_close.jpg) · [地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_map.jpg) · [建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/build.py) · [尺寸与七轮修改记录](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/NOTES.md)

@@ -1,0 +1,61 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/mandrill.npz",
+ "src_build": "art/style_b/mandrill/src_build.json",
+ "src_timing": "art/style_b/mandrill/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/mandrill.blend",
+ "src_root": "mixamorig:Hips",
+ "src_game_h": 2.3,
+ "game_h": 2.3,
+ "move_speed": 4.8,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.3,
+  "zc": 0.45
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "death"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "骨面山魈的旧动作 → B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型和人形绑骨）",
+ "tgt_rig": "../rigs/mandrill_b.npz",
+ "tgt_model": "../mandrill_b_rigged.glb",
+ "labels": [
+  "山魈（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "name": "mandrill_b",
+ "mode_bones": {
+  "Hips": "delta",
+  "Spine": "delta",
+  "Neck": "delta",
+  "Head": "delta"
+ },
+ "_note_mode": "躯干、脖子、头按 delta 搬（相对各自静止姿势转了多少）：旧山魈的静止姿势是驼着的（胯斜 23 度、头骨几乎水平朝前下），新模型的静止姿势直一些（头骨朝前上 57 度）；按 dir（照搬世界里的朝向）的话新山魈整段动作都低着头看地、身子多前倾 20 多度。手脚两边的静止方向差不多，照默认的 dir"
+}

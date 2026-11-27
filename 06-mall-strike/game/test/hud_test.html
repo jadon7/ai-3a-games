@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HUD test</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1c1f22; overflow: hidden; }
+  canvas { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; display: block; }
+  #diag { display: none; }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<canvas id="hud"></canvas>
+<pre id="diag"></pre>
+<script type="module">
+// HUD test page.
+//   ?preset=137|320|menu|dead|victory|paused   (default 137)
+//   &bg=still|raw|flat   still = finished video frame with composite.py's HUD (alignment check),
+//                        raw = the same frame without HUD, flat = rgb(60,64,68) (for pixel diffs)
+//   &tag=0  drop the extra name tag in preset 137    &dmg=0  drop the extra damage event in 137
+//   &anim=1 loop the preset's last 2.5 s instead of a still frame    &fps=1 show the FPS readout
+//   &size=1920x1080 force the canvas CSS size (headless Chrome's viewport is shorter than --window-size)
+//   &shadow=0 disable the HUD drop shadow (timing comparison)
+// Serve the project root (or game/) over http; backgrounds live in ../../process and ../../renders.
+import { HUD } from '../src/hud.js';
+
+const Q = new URLSearchParams(location.search);
+const preset = Q.get('preset') || '137';
+const bgMode = Q.get('bg') || 'still';
+const T = (f) => f / 30; // composite.py frame -> seconds
+
+const ME = '大师';
+const basePlayer = (o) => Object.assign({ x: 0, y: 0, yaw: 90, pitch: 0, ads: 0, health: 100, ammo: 30, mag: 30, reserve: 90,
+  reloading: -1, name: ME, level: 55, xp: 0.42, sprint: false }, o);
+
+// Each preset: background frame, final time, and a function giving the state at time t (the
+// page draws a few earlier times first so the HUD's trackers - minimap spotting etc. - have history).
+const PRESETS = {
+  // composite.py frame 137: just after the first kill (Viper_77), ADS, red kill hitmarker
+  '137': {
+    frame: 137, warm: [95, 120, 136],
+    state: (f) => ({
+      t: T(f), mode: 'playing',
+      player: basePlayer({ x: -3.4, y: 4.847, yaw: 45.75, pitch: -0.46, ads: 1, ammo: 26, reserve: 90, xp: 0.46 }),
+      enemies: [
+        { id: 'E1', name: 'Viper_77', x: 7.44, y: 15.92, z: 0, alive: f < 136, spotted: f >= 95 && f < 136, head: null, chest: null },
+        // extra (not in the video at this frame): an enemy on the upper gallery right of the crosshair
+        Q.get('tag') === '0'
+          ? { id: 'E2', name: 'Kodiak', x: 12.5, y: 28.2, z: 5, alive: true, spotted: false, head: null, chest: null }
+          : { id: 'E2', name: 'Kodiak', x: 8.2, y: 17.6, z: 5, alive: true, spotted: true, head: { x: 1018, y: 487 }, chest: { x: 1017, y: 528 } },
+        { id: 'E3', name: 'RAVEN.k', x: 2.55, y: 19.95, z: 0, alive: true, spotted: false, head: null, chest: null },
+        { id: 'E4', name: 'Ghost_09', x: -13.6, y: 19.6, z: 0, alive: true, spotted: false, head: null, chest: null },
+      ],
+      score: { us: f >= 136 ? 62 : 61, them: 58, limit: 75, timeLeft: 277 - Math.floor(f / 30) - 0.5 },
+      killfeed: f >= 136 ? [{ t: T(136), killer: ME, victim: 'Viper_77', headshot: false }] : [],
+      hits: [{ t: T(133), kill: false, headshot: false }, { t: T(135), kill: true, headshot: false }],
+      kills: f >= 136 ? [{ t: T(136), streak: 1 }] : [],
+      damage: Q.get('dmg') === '0' ? [] : [{ t: T(130), srcX: -12, srcY: 10 }],
+      respawnIn: 0,
+    }),
+  },
+  // composite.py frame 320: RAVEN.k shooting at us (damage arc + vignette), name tag, killfeed
+  '320': {
+    frame: 320, warm: [300, 310],
+    state: (f) => ({
+      t: T(f), mode: 'playing',
+      player: basePlayer({ x: -4.0, y: 12.667, yaw: 49.71, pitch: -2.91, ads: 0, ammo: 19, reserve: 90, xp: 0.50 }),
+      enemies: [
+        { id: 'E1', name: 'Viper_77', x: 7.44, y: 15.92, z: 0, alive: false, spotted: false, head: null, chest: null },
+        { id: 'E2', name: 'Kodiak', x: 3.08, y: 27.95, z: 5, alive: false, spotted: false, head: null, chest: null },
+        { id: 'E3', name: 'RAVEN.k', x: 2.55, y: 19.95, z: 0, alive: true, spotted: f >= 300,
+          head: { x: 988.09, y: 521.63 }, chest: { x: 988.04, y: 560.74 } },
+        { id: 'E4', name: 'Ghost_09', x: -13.6, y: 19.6, z: 0, alive: true, spotted: false, head: null, chest: null },
+      ],
+      score: { us: 63, them: 58, limit: 75, timeLeft: 277 - Math.floor(f / 30) - 0.5 },
+      killfeed: [{ t: T(136), killer: ME, victim: 'Viper_77', headshot: false }, { t: T(240), killer: ME, victim: 'Kodiak', headshot: false }],
+      hits: [{ t: T(236), kill: false }, { t: T(239), kill: true }],
+      kills: [{ t: T(136), streak: 1 }, { t: T(240), streak: 2 }],
+      damage: [{ t: T(316), srcX: 2.55, srcY: 19.95 }, { t: T(319), srcX: 2.55, srcY: 19.95 }],
+      respawnIn: 0,
+    }),
+  },
+  // composite.py frame 246: double kill (hexagon medal x2), red kill hitmarker, Kodiak's X on the minimap
+  '246': {
+    frame: 246, warm: [205, 239, 240],
+    state: (f) => ({
+      t: T(f), mode: 'playing',
+      player: basePlayer({ x: -3.784, y: 8.92, yaw: 70.3, pitch: 13.76, ads: 1, ammo: 19, reserve: 90, xp: 0.50 }),
+      enemies: [
+        { id: 'E1', name: 'Viper_77', x: 7.44, y: 15.92, z: 0, alive: false, spotted: false, head: null, chest: null },
+        { id: 'E2', name: 'Kodiak', x: 3.08, y: 27.95, z: 5, alive: f < 240, spotted: f >= 205 && f < 240, head: null, chest: null },
+        { id: 'E3', name: 'RAVEN.k', x: 2.55, y: 19.95, z: 0, alive: true, spotted: false, head: null, chest: null },
+      ],
+      score: { us: f >= 240 ? 63 : 62, them: 58, limit: 75, timeLeft: 277 - Math.floor(f / 30) - 0.5 },
+      killfeed: [{ t: T(136), killer: ME, victim: 'Viper_77', headshot: false }].concat(f >= 240 ? [{ t: T(240), killer: ME, victim: 'Kodiak', headshot: false }] : []),
+      hits: [{ t: T(236), kill: false }, { t: T(239), kill: true }],
+      kills: [{ t: T(136), streak: 1 }].concat(f >= 240 ? [{ t: T(240), streak: 2 }] : []),
+      damage: [], respawnIn: 0,
+    }),
+  },
+  // composite.py frame 530: reloading ('装填中', crosshair at half alpha), 8 rounds -> amber ammo count
+  '530': {
+    frame: 530, warm: [505, 506],
+    state: (f) => ({
+      t: T(f), mode: 'playing',
+      player: basePlayer({ x: -3.433, y: 18.95, yaw: 79.61, pitch: -0.29, ads: 0, ammo: 8, reserve: 90, xp: 0.58,
+        reloading: f >= 506 ? Math.min(1, (f - 506) / 54) : -1 }),
+      enemies: [],
+      score: { us: 65, them: 58, limit: 75, timeLeft: 277 - Math.floor(f / 30) - 0.5 },
+      killfeed: [{ t: T(341), killer: ME, victim: 'RAVEN.k', headshot: false }, { t: T(462), killer: ME, victim: 'Ghost_09', headshot: false }],
+      hits: [], kills: [{ t: T(462), streak: 4 }], damage: [], respawnIn: 0,
+    }),
+  },
+  // killed by RAVEN.k with a headshot: dimmed HUD + death overlay
+  'dead': {
+    frame: 320, bgFrame: 320, warm: [330, 340],
+    state: (f) => ({
+      t: T(f), mode: f >= 330 ? 'dead' : 'playing',
+      player: basePlayer({ x: -4.0, y: 12.667, yaw: 49.71, ads: 0, health: 0, ammo: 12, reserve: 90, xp: 0.50 }),
+      enemies: [{ id: 'E3', name: 'RAVEN.k', x: 2.55, y: 19.95, z: 0, alive: true, spotted: true, head: null, chest: null }],
+      score: { us: 63, them: 59, limit: 75, timeLeft: 266.5 },
+      killfeed: [{ t: T(240), killer: ME, victim: 'Kodiak', headshot: false }, { t: T(330), killer: 'RAVEN.k', victim: ME, headshot: true }],
+      hits: [], kills: [], damage: [{ t: T(329), srcX: 2.55, srcY: 19.95 }],
+      respawnIn: Math.max(0, 5 - (T(f) - T(330))),
+    }),
+    final: 377,
+  },
+  'menu': { frame: 25, warm: [], state: (f) => ({ t: 0, mode: 'menu', player: basePlayer({}), enemies: [], score: { us: 0, them: 0, limit: 75, timeLeft: 600 }, killfeed: [], hits: [], kills: [], damage: [], respawnIn: 0 }) },
+  'paused': { frame: 462, warm: [], state: (f) => ({ t: T(f), mode: 'paused', player: basePlayer({ x: -3.672, y: 16.984, yaw: 167.07 }), enemies: [], score: { us: 65, them: 58, limit: 75, timeLeft: 262 }, killfeed: [], hits: [], kills: [], damage: [], respawnIn: 0 }) },
+  'victory': { frame: 530, warm: [], state: (f) => ({ t: T(f), mode: 'victory', player: basePlayer({}), enemies: [], score: { us: 75, them: 58, limit: 75, timeLeft: 120 }, killfeed: [], hits: [], kills: [], damage: [], respawnIn: 0 }) },
+};
+const P = PRESETS[preset] || PRESETS['137'];
+const finalF = P.final || P.frame;
+const bgFrame = P.bgFrame || P.frame;
+
+const bg = document.getElementById('bg');
+const cv = document.getElementById('hud');
+const forced = (Q.get('size') || '').split('x').map(Number);
+const W = forced[0] || innerWidth, H = forced[1] || innerHeight, dpr = devicePixelRatio || 1;
+if (forced[0]) for (const c of [bg, cv]) { c.style.width = W + 'px'; c.style.height = H + 'px'; }
+
+function loadImage(src) {
+  return new Promise((res) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => res(null); im.src = src; });
+}
+
+async function main() {
+  bg.width = Math.round(W * dpr); bg.height = Math.round(H * dpr);
+  const g = bg.getContext('2d');
+  g.fillStyle = bgMode === 'flat' ? 'rgb(60,64,68)' : '#1c1f22';
+  g.fillRect(0, 0, bg.width, bg.height);
+  if (bgMode !== 'flat') {
+    const pad = String(bgFrame).padStart(3, '0');
+    const src = bgMode === 'raw' ? `../../renders/final/f_${String(bgFrame).padStart(4, '0')}.jpg` : `../../process/成片截图_f${pad}.jpg`;
+    const im = await loadImage(src);
+    if (im) { // cover-fit
+      const s = Math.max(bg.width / im.width, bg.height / im.height);
+      const w = im.width * s, h = im.height * s;
+      g.drawImage(im, (bg.width - w) / 2, (bg.height - h) / 2, w, h);
+    }
+  }
+
+  const hud = new HUD(cv);
+  hud.resize(W, H, dpr);
+  if (Q.get('shadow') === '0') hud.shadows = false;
+  const fps = Q.get('fps') === '1' ? 60 : undefined;
+
+  if (Q.get('anim') === '1') {
+    const start = performance.now();
+    const loopLen = 2.5;
+    const frame = () => {
+      const el = ((performance.now() - start) / 1000) % loopLen;
+      const f = finalF - (loopLen - el) * 30;
+      const st = P.state(Math.round(f)); st.t = f / 30; st.fps = fps;
+      hud.draw(st);
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  } else {
+    for (const f of P.warm) hud.draw(P.state(f));
+    const st = P.state(finalF); st.fps = fps;
+    const t0 = performance.now();
+    for (let i = 0; i < 60; i++) hud.draw(st); // timing sample
+    const ms = (performance.now() - t0) / 60;
+    let prof = null;
+    if (Q.get('prof') === '1') { // per-element timing; each step flushes the canvas so raster cost is attributed
+      prof = {};
+      const flush = (c) => c.getImageData(0, 0, 1, 1);
+      const names = ['_damage', '_minimap', '_compass', '_scoreboard', '_killfeed', '_weapon', '_health', '_nametags', '_crosshair', '_hitmarkers', '_killPopup', '_reloadText', '_xpBar', '_drawLayer'];
+      for (const n of names) {
+        const orig = hud[n].bind(hud);
+        hud[n] = (...a) => { const t = performance.now(); orig(...a); flush(n === '_minimap' ? hud.mctx : hud.lctx); prof[n] = (prof[n] || 0) + performance.now() - t; };
+      }
+      const tt = performance.now();
+      for (let i = 0; i < 20; i++) { hud.draw(st); flush(hud.ctx); }
+      prof.total = performance.now() - tt;
+      for (const k in prof) prof[k] = +(prof[k] / 20).toFixed(2);
+    }
+    hud.draw(st);
+    // diagnostics for the headless run (read with --dump-dom)
+    const m = document.createElement('canvas').getContext('2d');
+    const out = { preset, W, H, dpr, msPerDraw: +ms.toFixed(3), prof };
+    for (const [k, css] of [['din22', 'bold 22px "DIN Alternate"'], ['cn22', 'normal 20.31px "Hiragino Sans GB"']]) {
+      m.font = css; const mt = m.measureText('Hg国');
+      out[k] = { asc: mt.fontBoundingBoxAscent, desc: mt.fontBoundingBoxDescent, w: +m.measureText('大师 Viper_77 0123').width.toFixed(2) };
+    }
+    out.fontsOK = document.fonts ? document.fonts.check('bold 22px "DIN Alternate"') : null;
+    document.getElementById('diag').textContent = JSON.stringify(out);
+  }
+  document.title = 'ready';
+}
+main();
+</script>
+</body>
+</html>

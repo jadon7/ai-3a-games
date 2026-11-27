@@ -1,0 +1,7 @@
+第二轮返工完成，已覆盖[出生点模型](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/spawn_me.glb)。共改四版，每版均在游戏预览页和地图页检查。
+
+- **甲士**不含墩高 **2.90 米**，肩宽 **1.20 米**，圆肩甲直径约 **0.55 米**。剑身宽 **0.20 米**、长 **1.50 米**，双手叠握剑柄。像墩为 **1.10 米见方、高 0.60 米**。[甲士局部对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/rounds/b2_r4_guard_compare.jpg)
+- **门洞**净宽 **2.20 米**。青铜内框宽 **0.30 米**、厚 **0.20 米**，外圈石拱宽 **0.65 米**。斜看能看到浅色石壁。[整体对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/compare.jpg)
+- **整模**高 **8.67 米**，共 **69,007 个三角形**。主晶体位置与返工前一致。游戏镜头能看到出水方墩和顶球，侧前地图能看到沿阶水帘。远景中双手仍主要读成一个握剑轮廓。[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/preview_game.jpg) · [地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/preview_map.jpg)
+
+四版修改记录和 `kit_measure.mjs` 原始输出已追加到[制作记录的“第二轮”](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/NOTES.md)。

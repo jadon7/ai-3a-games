@@ -1,0 +1,1012 @@
+{
+ "floor_marble": {
+  "type": "tiled"
+ },
+ "plaster_white": {
+  "type": "tiled"
+ },
+ "painted_panel": {
+  "type": "principled",
+  "color": [
+   0.8199999928474426,
+   0.8199999928474426,
+   0.800000011920929
+  ],
+  "rough": 0.3199999928474426,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "plaster_warm": {
+  "type": "tiled"
+ },
+ "stainless": {
+  "type": "principled",
+  "color": [
+   0.800000011920929,
+   0.800000011920929,
+   0.800000011920929
+  ],
+  "rough": 0.2199999988079071,
+  "metal": 1.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "beam_paint": {
+  "type": "principled",
+  "color": [
+   0.1599999964237213,
+   0.17000000178813934,
+   0.18000000715255737
+  ],
+  "rough": 0.44999998807907104,
+  "metal": 0.30000001192092896,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "rubber_black": {
+  "type": "principled",
+  "color": [
+   0.014999999664723873,
+   0.014999999664723873,
+   0.014999999664723873
+  ],
+  "rough": 0.550000011920929,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "alu_dark": {
+  "type": "principled",
+  "color": [
+   0.07000000029802322,
+   0.07000000029802322,
+   0.07500000298023224
+  ],
+  "rough": 0.3499999940395355,
+  "metal": 0.8999999761581421,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "ceiling_white": {
+  "type": "principled",
+  "color": [
+   0.8600000143051147,
+   0.8600000143051147,
+   0.8500000238418579
+  ],
+  "rough": 0.8500000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "glass_sky": {
+  "type": "glass",
+  "tint": [
+   0.9300000071525574,
+   0.9599999785423279,
+   0.949999988079071
+  ],
+  "rough": 0.019999999552965164
+ },
+ "glass_clean": {
+  "type": "glass",
+  "tint": [
+   0.8999999761581421,
+   0.9599999785423279,
+   0.949999988079071
+  ],
+  "rough": 0.0
+ },
+ "glass_shard": {
+  "type": "glass",
+  "tint": [
+   0.8500000238418579,
+   0.949999988079071,
+   0.8999999761581421
+  ],
+  "rough": 0.019999999552965164
+ },
+ "CashRegister_01_glass": {
+  "type": "ph"
+ },
+ "security_camera_01_glass": {
+  "type": "ph"
+ },
+ "korean_fire_extinguisher_01_glass": {
+  "type": "ph"
+ },
+ "pavement": {
+  "type": "tiled"
+ },
+ "signband_dark": {
+  "type": "principled",
+  "color": [
+   0.029999999329447746,
+   0.029999999329447746,
+   0.03200000151991844
+  ],
+  "rough": 0.4000000059604645,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_0_0_1": {
+  "type": "principled",
+  "color": [
+   0.8500000238418579,
+   0.800000011920929,
+   0.7200000286102295
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "store_floor_wood": {
+  "type": "principled",
+  "color": [
+   0.3199999928474426,
+   0.2199999988079071,
+   0.14000000059604645
+  ],
+  "rough": 0.4000000059604645,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "goods_8": {
+  "type": "principled",
+  "color": [
+   0.6570194363594055,
+   0.056478023529052734,
+   0.2913939952850342
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_9": {
+  "type": "principled",
+  "color": [
+   0.19253039360046387,
+   0.330628365278244,
+   0.02955525368452072
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_3": {
+  "type": "principled",
+  "color": [
+   0.7581671476364136,
+   0.34626176953315735,
+   0.19834023714065552
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_2": {
+  "type": "principled",
+  "color": [
+   0.11540406942367554,
+   0.07067534327507019,
+   0.1542409062385559
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_4": {
+  "type": "principled",
+  "color": [
+   0.25131773948669434,
+   0.35133710503578186,
+   0.22659218311309814
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_5": {
+  "type": "principled",
+  "color": [
+   0.06548400968313217,
+   0.18014946579933167,
+   0.24755817651748657
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_1_0_1": {
+  "type": "principled",
+  "color": [
+   0.8500000238418579,
+   0.800000011920929,
+   0.7200000286102295
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_2_0_1": {
+  "type": "principled",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   0.8999999761581421
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_7": {
+  "type": "principled",
+  "color": [
+   0.10347218066453934,
+   0.14856889843940735,
+   0.19547484815120697
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_6": {
+  "type": "principled",
+  "color": [
+   0.47129881381988525,
+   0.157647967338562,
+   0.0020468016155064106
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_0": {
+  "type": "principled",
+  "color": [
+   0.10039321333169937,
+   0.5155211687088013,
+   0.4751119613647461
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "goods_1": {
+  "type": "principled",
+  "color": [
+   0.4292949438095093,
+   0.5693692564964294,
+   0.30686864256858826
+  ],
+  "rough": 0.6000000238418579,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_3_0_1": {
+  "type": "principled",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   0.8999999761581421
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "shutter_metal": {
+  "type": "principled",
+  "color": [
+   0.41999998688697815,
+   0.4300000071525574,
+   0.4300000071525574
+  ],
+  "rough": 0.5,
+  "metal": 0.800000011920929,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "int_wall_5_0_1": {
+  "type": "principled",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   0.8999999761581421
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_6_0_1": {
+  "type": "principled",
+  "color": [
+   0.9200000166893005,
+   0.8799999952316284,
+   0.8199999928474426
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_1_0_-1": {
+  "type": "principled",
+  "color": [
+   0.3499999940395355,
+   0.36000001430511475,
+   0.3799999952316284
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_2_0_-1": {
+  "type": "principled",
+  "color": [
+   0.3499999940395355,
+   0.36000001430511475,
+   0.3799999952316284
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_3_0_-1": {
+  "type": "principled",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   0.8999999761581421
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_4_0_-1": {
+  "type": "principled",
+  "color": [
+   0.3499999940395355,
+   0.36000001430511475,
+   0.3799999952316284
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_6_0_-1": {
+  "type": "principled",
+  "color": [
+   0.699999988079071,
+   0.7200000286102295,
+   0.75
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_7_0_-1": {
+  "type": "principled",
+  "color": [
+   0.9200000166893005,
+   0.8799999952316284,
+   0.8199999928474426
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "sign_MERIDIAN": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "panel_light": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.9700000286102295,
+   0.9200000166893005
+  ],
+  "strength": 8.0
+ },
+ "sign_茶舍 TEA HOUSE": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.8500000238418579,
+   0.6000000238418579
+  ],
+  "strength": 6.0
+ },
+ "sign_NORTHWIND": {
+  "type": "emit",
+  "color": [
+   0.699999988079071,
+   0.8500000238418579,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_ATLAS SPORT": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.30000001192092896,
+   0.20000000298023224
+  ],
+  "strength": 6.0
+ },
+ "sign_LUMEN 眼镜": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_KITE & CO.": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.8999999761581421,
+   0.75
+  ],
+  "strength": 6.0
+ },
+ "sign_ORBIT": {
+  "type": "emit",
+  "color": [
+   0.6000000238418579,
+   0.8999999761581421,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_BLOOM 花艺": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.75,
+   0.800000011920929
+  ],
+  "strength": 6.0
+ },
+ "sign_HALCYON": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_数码 DIGITAL": {
+  "type": "emit",
+  "color": [
+   0.5,
+   0.800000011920929,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_CAFE NOIR": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.800000011920929,
+   0.550000011920929
+  ],
+  "strength": 6.0
+ },
+ "sign_VERTEX": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_STRIDE": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_PORTO": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.8500000238418579,
+   0.6000000238418579
+  ],
+  "strength": 6.0
+ },
+ "sign_MONO": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_童趣 KIDS": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.800000011920929,
+   0.30000001192092896
+  ],
+  "strength": 6.0
+ },
+ "sign_AURA": {
+  "type": "emit",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_SOLACE": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_TERRA": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.8999999761581421,
+   0.699999988079071
+  ],
+  "strength": 6.0
+ },
+ "sign_NOVA": {
+  "type": "emit",
+  "color": [
+   0.699999988079071,
+   0.8999999761581421,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "sign_书店 BOOKS": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.949999988079071,
+   0.8500000238418579
+  ],
+  "strength": 6.0
+ },
+ "sign_FJORD": {
+  "type": "emit",
+  "color": [
+   0.800000011920929,
+   0.949999988079071,
+   1.0
+  ],
+  "strength": 6.0
+ },
+ "kiosk_sign": {
+  "type": "emit",
+  "color": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "strength": 5.0
+ },
+ "downlight": {
+  "type": "emit",
+  "color": [
+   1.0,
+   0.9200000166893005,
+   0.8199999928474426
+  ],
+  "strength": 25.0
+ },
+ "int_wall_1_1_1": {
+  "type": "principled",
+  "color": [
+   0.9200000166893005,
+   0.8799999952316284,
+   0.8199999928474426
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_2_1_1": {
+  "type": "principled",
+  "color": [
+   0.8500000238418579,
+   0.800000011920929,
+   0.7200000286102295
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_4_1_1": {
+  "type": "principled",
+  "color": [
+   0.699999988079071,
+   0.7200000286102295,
+   0.75
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_5_1_1": {
+  "type": "principled",
+  "color": [
+   0.699999988079071,
+   0.7200000286102295,
+   0.75
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_7_1_1": {
+  "type": "principled",
+  "color": [
+   0.8500000238418579,
+   0.800000011920929,
+   0.7200000286102295
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_0_1_-1": {
+  "type": "principled",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   0.8999999761581421
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_2_1_-1": {
+  "type": "principled",
+  "color": [
+   0.8999999761581421,
+   0.8999999761581421,
+   0.8999999761581421
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_3_1_-1": {
+  "type": "principled",
+  "color": [
+   0.3499999940395355,
+   0.36000001430511475,
+   0.3799999952316284
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_5_1_-1": {
+  "type": "principled",
+  "color": [
+   0.9200000166893005,
+   0.8799999952316284,
+   0.8199999928474426
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "int_wall_6_1_-1": {
+  "type": "principled",
+  "color": [
+   0.9200000166893005,
+   0.8799999952316284,
+   0.8199999928474426
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "planter_stone": {
+  "type": "tiled"
+ },
+ "soil": {
+  "type": "principled",
+  "color": [
+   0.05999999865889549,
+   0.04500000178813934,
+   0.029999999329447746
+  ],
+  "rough": 0.949999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": true
+ },
+ "kiosk_white": {
+  "type": "principled",
+  "color": [
+   0.8500000238418579,
+   0.8500000238418579,
+   0.8299999833106995
+  ],
+  "rough": 0.25,
+  "metal": 0.0,
+  "coat": 0.30000001192092896,
+  "coat_rough": 0.05000000074505806,
+  "noise_rough": false
+ },
+ "paper_0": {
+  "type": "principled",
+  "color": [
+   0.8199999928474426,
+   0.8100000023841858,
+   0.7799999713897705
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "paper_3": {
+  "type": "principled",
+  "color": [
+   0.8500000238418579,
+   0.699999988079071,
+   0.6000000238418579
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "paper_2": {
+  "type": "principled",
+  "color": [
+   0.75,
+   0.800000011920929,
+   0.8500000238418579
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "paper_1": {
+  "type": "principled",
+  "color": [
+   0.800000011920929,
+   0.7799999713897705,
+   0.699999988079071
+  ],
+  "rough": 0.699999988079071,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "wooden_display_shelves_01": {
+  "type": "ph"
+ },
+ "steel_frame_shelves_02": {
+  "type": "ph"
+ },
+ "Bar Chair": {
+  "type": "ph"
+ },
+ "CashRegister_01": {
+  "type": "ph"
+ },
+ "potted_plant_01_pot": {
+  "type": "ph"
+ },
+ "potted_plant_02_pot": {
+  "type": "ph"
+ },
+ "modular_street_seating_armrests": {
+  "type": "ph"
+ },
+ "modular_street_seating_armrests.001": {
+  "type": "ph"
+ },
+ "modular_street_seating_connectors": {
+  "type": "ph"
+ },
+ "modular_street_seating_supports": {
+  "type": "ph"
+ },
+ "modular_street_seating_timber": {
+  "type": "ph"
+ },
+ "outdoor_table_chair_set_01_chair": {
+  "type": "ph"
+ },
+ "outdoor_table_chair_set_01_table": {
+  "type": "ph"
+ },
+ "plastic_monobloc_chair_01": {
+  "type": "ph"
+ },
+ "CoffeeCart_01_cart": {
+  "type": "ph"
+ },
+ "CoffeeCart_01_mugs": {
+  "type": "principled",
+  "color": [
+   0.800000011920929,
+   0.800000011920929,
+   0.800000011920929
+  ],
+  "rough": 0.15454545617103577,
+  "metal": 0.0,
+  "coat": 0.0,
+  "coat_rough": 0.029999999329447746,
+  "noise_rough": false
+ },
+ "CoffeeCart_01_props": {
+  "type": "ph"
+ },
+ "concrete_road_barrier": {
+  "type": "ph"
+ },
+ "plastic_crate_01": {
+  "type": "ph"
+ },
+ "cardboard_box_01": {
+  "type": "ph"
+ },
+ "metal_trash_can": {
+  "type": "ph"
+ },
+ "metal_trash_can_rust": {
+  "type": "ph"
+ },
+ "metal_trash_can_rust.001": {
+  "type": "ph"
+ },
+ "WetFloorSign_01": {
+  "type": "ph"
+ },
+ "trashbag": {
+  "type": "ph"
+ },
+ "sofa_02": {
+  "type": "ph"
+ },
+ "modern_arm_chair_01_pillow": {
+  "type": "ph"
+ },
+ "korean_fire_extinguisher_01_body": {
+  "type": "ph"
+ },
+ "modern_arm_chair_01_legs": {
+  "type": "ph"
+ },
+ "security_camera_01": {
+  "type": "ph"
+ },
+ "potted_plant_01_leaves": {
+  "type": "ph"
+ },
+ "potted_plant_02_leaves": {
+  "type": "ph"
+ },
+ "korean_fire_extinguisher_01_paper": {
+  "type": "ph"
+ },
+ "_vscale": 0.0625,
+ "_sun": {
+  "dir_blender": [
+   -0.41874557733535767,
+   0.2991040349006653,
+   -0.8574315905570984
+  ],
+  "color": [
+   1.0,
+   0.949999988079071,
+   0.8799999952316284
+  ],
+  "strength": 7.5
+ }
+}

@@ -1,0 +1,176 @@
+{
+ "name": "beast_b",
+ "title": "岩甲巨兽：旧模型（video2rig 现成的那只）的全部动作 → 卡通厚涂的新模型（新的更像龟、腿短一截，骨骼名大半不同，前腿没有肩胛；按骨骼角色对应，k 按腿长之比取 0.74）",
+ "kind": "quadruped",
+ "mode": "delta",
+ "k": 0.6,
+ "src_rig": "../rigs/beast.npz",
+ "tgt_rig": "../rigs/beast_b.npz",
+ "src_build": "art/unit/beast/build.json",
+ "src_timing": "art/style_b/beast/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_b.blend",
+ "tgt_blend_name": "beast_b",
+ "tex": 2048,
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 4.1,
+ "game_h": 3.9,
+ "move_speed": 2.6,
+ "tip_src": "tripo::Head_0",
+ "tip_tgt": "tripo::Head_1",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "tripo::Head_0": "bone_4",
+  "tripo::Head_1": "tripo::Head_0",
+  "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_0",
+  "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_1",
+  "tripo::0_Left_Limb_2": "bone_17",
+  "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_0",
+  "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_1",
+  "tripo::0_Right_Limb_2": "bone_11",
+  "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_0",
+  "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_2": "bone_33",
+  "tripo::1_Left_Limb_3": "bone_34",
+  "tripo::1_Left_Limb_4": "bone_35",
+  "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_0",
+  "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_1",
+  "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_2",
+  "tripo::1_Right_Limb_3": "tripo::1_Right_Limb_3",
+  "tripo::1_Right_Limb_4": "tripo::1_Right_Limb_4"
+ },
+ "chains": [
+  {
+   "tgt": [
+    "tripo::Spine_0",
+    "tripo::Spine_1"
+   ],
+   "src": [
+    "tripo::Spine_0",
+    "tripo::Spine_1",
+    "tripo::Spine_2"
+   ]
+  },
+  {
+   "tgt": [
+    "bone_13",
+    "bone_14",
+    "bone_15",
+    "tripo::Tail_0",
+    "tripo::Tail_1",
+    "tripo::Tail_2",
+    "tripo::Tail_3"
+   ],
+   "src": [
+    "bone_20",
+    "bone_21",
+    "tripo::Tail_0",
+    "tripo::Tail_1"
+   ]
+  }
+ ],
+ "legs": [
+  {
+   "tgt": [
+    "tripo::0_Left_Limb_0",
+    "tripo::0_Left_Limb_1",
+    "tripo::0_Left_Limb_2"
+   ],
+   "src_end": "bone_17"
+  },
+  {
+   "tgt": [
+    "tripo::0_Right_Limb_0",
+    "tripo::0_Right_Limb_1",
+    "tripo::0_Right_Limb_2"
+   ],
+   "src_end": "bone_11"
+  },
+  {
+   "tgt": [
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1",
+    "tripo::1_Left_Limb_2"
+   ],
+   "src_end": "bone_33"
+  },
+  {
+   "tgt": [
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1",
+    "tripo::1_Right_Limb_2"
+   ],
+   "src_end": "tripo::1_Right_Limb_2"
+  }
+ ],
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "tripo::Head_0",
+   "verts_of": "tripo::Head_1"
+  },
+  {
+   "name": "尾根",
+   "base": "bone_14",
+   "verts_of": "bone_15",
+   "max_deg": 30,
+   "margin": 0.01
+  },
+  {
+   "name": "尾巴",
+   "base": "tripo::Tail_1",
+   "verts_of": "tripo::Tail_1",
+   "max_deg": 45,
+   "margin": 0.01
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "旧巨兽（原）",
+  "卡通巨兽·只搬旋转",
+  "卡通巨兽·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.6,
+  "zc": 0.45
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "attack2",
+   "roar",
+   "death"
+  ],
+  "loops": {
+   "run": 3
+  },
+  "spacing": 2.6,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.4
+ },
+ "_尾巴": "新巨兽的尾巴比旧的长、静止时离地低（尾尖 0.13 对身高 0.49），旧尾巴往下甩的那几段（attack1、attack2 人立、roar 低头、death）会插进地里 15–30%；加两段“不入地”：从尾根（bone_14）整条抬一点，再从尾巴中段（Tail_1）往上翘"
+}

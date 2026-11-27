@@ -1,0 +1,13 @@
+{
+ "name": "wolf",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf_skeleton.json",
+ "out": "art/unit/wolf/game.glb",
+ "packed": "public/assets/unit/wolf.glb",
+ "tex": 1024,
+ "motions": {
+  "idle": "art/unit/wolf/motions/idle.npz",
+  "run": "art/unit/wolf/motions/run.npz",
+  "attack1": "art/unit/wolf/motions/attack1.npz",
+  "death": "art/unit/wolf/motions/death.npz"
+ }
+}

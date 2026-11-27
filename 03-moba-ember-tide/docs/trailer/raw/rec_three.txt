@@ -1,0 +1,4 @@
+== j_boar
+{"out":"docs/trailer/raw/j_boar.mp4","ok":true,"rep":{"t":31,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["-","-"],"camps":12,"boss":["troll 还有269秒","beast 还有119秒"],"buff":[[0,0],[0,0]],"heroes":["gorran L7 97% 0/0/0 金62 装0 刀0 [玩家]"]},"errors":[]}
+== s_vero2
+{"out":"docs/trailer/raw/s_vero2.mp4","ok":true,"rep":{"t":23,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有277秒","beast 还有127秒"],"buff":[[0,0],[0,0]],"heroes":["vero L15 100% 0/0/0 金280 装0 刀7 [玩家]","lan* L1 100% 0/0/0 金46 装0 刀0 [玩家]","torg L3 54% 0/0/0 金46 装0 刀0 [玩家]"]},"errors":[]}

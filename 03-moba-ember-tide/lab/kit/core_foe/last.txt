@@ -1,0 +1,9 @@
+已按左侧方案建成烬誓庭水晶。六片旋爪合抱主晶体，外围有六段悬环和四座火盆柱。模型已在游戏预览页完成六版对照，重跑脚本所得 GLB 与交付文件一致。
+
+总高 **12.34 米**，含四柱占地 **9.33 × 9.33 米**，共 **37,415 个三角形**。最低一级台基半径 4.58 米，高 0.163 米，符合尺寸限制。
+
+游戏材质下，晶体比设计图偏浅橙，背光侧的铁爪刻槽较难看清。游戏全景保留了 24 米距离和 56° 俯角，取景中心抬至 5.5 米，以显示完整晶尖。
+
+[模型 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/core_foe.glb) · [游戏全景](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/preview_game.jpg) · [近看图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/preview_close.jpg) · [设计对照图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/compare.jpg)
+
+[建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/build.py) · [尺寸与逐轮修改记录](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/NOTES.md)

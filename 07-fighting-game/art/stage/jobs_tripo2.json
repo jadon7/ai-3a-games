@@ -1,0 +1,5 @@
+[
+ {"name": "stage_bellpavilion", "image": "art/stage/concepts/stage2-bellpavilion.png", "face_limit": 40000, "texture_quality": "detailed"},
+ {"name": "stage_balustrade", "image": "art/stage/concepts/stage2-balustrade.png", "face_limit": 16000, "texture_quality": "detailed"},
+ {"name": "stage_rubble", "image": "art/stage/concepts/stage2-rubble.png", "face_limit": 30000, "texture_quality": "detailed"}
+]

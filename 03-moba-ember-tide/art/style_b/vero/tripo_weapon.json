@@ -1,0 +1,8 @@
+[
+ {
+  "name": "weapon_vero_b",
+  "image": "art/style_b/vero/weapon_b.png",
+  "face_limit": 12000,
+  "texture_quality": "standard"
+ }
+]

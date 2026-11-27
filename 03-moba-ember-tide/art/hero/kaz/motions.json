@@ -1,0 +1,52 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz_skeleton.json",
+ "out_dir": "art/hero/kaz/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "art/hero/kaz/retimed/idle.npz",
+   "loop": [
+    120,
+    120
+   ],
+   "pick": [
+    0,
+    120
+   ]
+  },
+  "run": {
+   "src": "art/hero/kaz/retimed/run.npz",
+   "loop": [
+    28,
+    28
+   ],
+   "pick": [
+    0,
+    28
+   ],
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/hero/kaz/retimed/attack1.npz"
+  },
+  "attack2": {
+   "src": "art/hero/kaz/retimed/attack2.npz"
+  },
+  "q": {
+   "src": "art/hero/kaz/retimed/q.npz"
+  },
+  "w": {
+   "src": "art/hero/kaz/retimed/w.npz"
+  },
+  "e": {
+   "src": "art/hero/kaz/retimed/e.npz"
+  },
+  "r": {
+   "src": "art/hero/kaz/retimed/r.npz"
+  },
+  "death": {
+   "src": "art/hero/kaz/retimed/death.npz",
+   "settle": false
+  }
+ }
+}

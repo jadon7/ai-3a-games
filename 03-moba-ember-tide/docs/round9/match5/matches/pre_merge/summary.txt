@@ -1,0 +1,126 @@
+== f1.json h=lan&seed=31 时长 22:34 胜方 红 击杀 [8, 9] 塔 [1, 6] 打野 [{'team': 1, 'kit': 'lan', 'ganks': 3, 'camps': 16}, {'team': 0, 'kit': 'lan', 'ganks': 3, 'camps': 17}] 报错 0
+   绿 jungle lan    L10 身家 3261 刀 21 营11 [1, 0, 2]
+   绿 adc    vero   L10 身家 3435 刀 45 营 1 [0, 0, 2]
+   绿 top    gorran L11 身家 2941 刀 29 营 0 [0, 2, 3]
+   绿 mid    osen   L11 身家 2689 刀 21 营 0 [1, 0, 1]
+   绿 sup    moko   L9  身家 2053 刀  2 营 0 [1, 0, 1]
+   红 jungle lan    L11 身家 3465 刀 32 营15 [0, 1, 0]
+   红 adc    vero   L8  身家 2575 刀 22 营 0 [0, 0, 0]
+   红 top    torg   L10 身家 2969 刀 33 营 0 [0, 0, 0]
+   红 sup    moko   L8  身家 1795 刀  0 营 0 [0, 1, 0]
+   红 mid    osen   L10 身家 2575 刀 22 营 0 [0, 1, 0]
+    红·adc·vero 下路57 野区24 上路15 家3 中路1
+    红·jungle·lan 野区75 上路10 家5 中路5 阵亡5
+    红·mid·osen 中路70 野区11 上路10 家5 阵亡4
+    红·sup·moko 下路59 野区25 上路6 中路4 阵亡4 家1
+    红·top·torg 上路85 野区10 家4 中路1
+    绿·adc·vero 下路90 野区5 中路3 上路1 家1
+    绿·jungle·lan 野区71 中路15 家10 上路4
+    绿·mid·osen 中路85 家8 上路6 野区1
+    绿·sup·moko 下路84 野区14 上路1 中路1
+    绿·top·gorran 上路86 家6 阵亡6 中路1
+== f2.json h=vero&pos=adc&seed=32 时长 24:30 胜方 绿 击杀 [14, 14] 塔 [4, 3] 打野 [{'team': 0, 'kit': 'lan', 'ganks': 2, 'camps': 16}, {'team': 1, 'kit': 'lan', 'ganks': 6, 'camps': 14}] 报错 0
+   绿 adc    vero   L8  身家 2987 刀 45 营 0 [0, 0, 0]
+   绿 jungle lan    L11 身家 3233 刀 28 营14 [1, 1, 0]
+   绿 top    torg   L9  身家 2453 刀 27 营 1 [0, 0, 1]
+   绿 sup    moko   L7  身家 1381 刀  0 营 0 [0, 1, 0]
+   绿 mid    osen   L9  身家 2093 刀 17 营 0 [0, 1, 1]
+   红 jungle lan    L10 身家 3311 刀 15 营 7 [3, 1, 0]
+   红 top    gorran L10 身家 2989 刀 34 营 1 [0, 0, 2]
+   红 mid    osen   L10 身家 2727 刀 30 营 0 [0, 0, 1]
+   红 sup    moko   L7  身家 1521 刀  0 营 0 [0, 0, 0]
+   红 adc    vero   L9  身家 3021 刀 42 营 0 [0, 0, 0]
+    红·adc·vero 下路97 家3
+    红·jungle·lan 野区76 中路11 家9 阵亡4
+    红·mid·osen 中路78 野区18 家4
+    红·sup·moko 下路86 野区11 家1 中路1
+    红·top·gorran 上路76 野区18 家5 中路1
+    绿·adc·vero 下路97 家3
+    绿·jungle·lan 野区72 中路10 家6 上路6 阵亡5
+    绿·mid·osen 中路68 野区18 家6 阵亡4 上路4
+    绿·sup·moko 下路87 野区8 阵亡3 家1 中路1
+    绿·top·torg 上路73 野区23 家4
+== f3.json h=osen&pos=mid&seed=33 时长 26:00 胜方 绿 击杀 [13, 8] 塔 [5, 2] 打野 [{'team': 0, 'kit': 'lan', 'ganks': 3, 'camps': 15}, {'team': 1, 'kit': 'lan', 'ganks': 7, 'camps': 16}] 报错 0
+   绿 mid    osen   L10 身家 2533 刀 17 营 0 [1, 1, 1]
+   绿 jungle lan    L10 身家 3115 刀 20 营10 [1, 1, 1]
+   绿 top    gorran L10 身家 2903 刀 31 营 1 [1, 0, 0]
+   绿 adc    vero   L9  身家 3431 刀 50 营 0 [0, 0, 1]
+   绿 sup    moko   L8  身家 1651 刀  0 营 0 [0, 0, 1]
+   红 adc    vero   L9  身家 2779 刀 35 营 0 [0, 1, 0]
+   红 jungle lan    L10 身家 3157 刀 29 营14 [0, 0, 1]
+   红 mid    osen   L10 身家 2701 刀 24 营 0 [1, 2, 0]
+   红 top    torg   L11 身家 3493 刀 43 营 1 [1, 0, 1]
+   红 sup    moko   L8  身家 1521 刀  0 营 0 [0, 0, 0]
+    红·adc·vero 下路89 家4 野区4 阵亡4
+    红·jungle·lan 野区78 中路11 家6 上路5
+    红·mid·osen 中路79 阵亡8 野区8 家6
+    红·sup·moko 下路81 野区16 家1 中路1
+    红·top·torg 上路83 野区11 家5 中路1
+    绿·adc·vero 下路88 野区9 家4
+    绿·jungle·lan 野区75 中路9 家8 阵亡4 下路3 上路3
+    绿·mid·osen 中路74 野区18 家5 阵亡4
+    绿·sup·moko 下路78 野区20 中路3
+    绿·top·gorran 上路80 野区13 家8
+== f4.json h=moko&pos=sup&seed=34 时长 21:32 胜方 红 击杀 [3, 3] 塔 [3, 7] 打野 [{'team': 0, 'kit': 'lan', 'ganks': 4, 'camps': 19}, {'team': 1, 'kit': 'lan', 'ganks': 2, 'camps': 15}] 报错 0
+   绿 sup    moko   L7  身家 1385 刀  0 营 0 [0, 0, 0]
+   绿 adc    vero   L8  身家 2953 刀 44 营 0 [0, 0, 0]
+   绿 mid    osen   L9  身家 2325 刀 26 营 0 [0, 0, 0]
+   绿 jungle lan    L10 身家 3039 刀 29 营16 [0, 0, 0]
+   绿 top    gorran L8  身家 2153 刀 22 营 0 [0, 0, 0]
+   红 sup    moko   L7  身家 1365 刀  0 营 0 [0, 0, 0]
+   红 mid    osen   L9  身家 2395 刀 29 营 0 [0, 0, 0]
+   红 adc    vero   L8  身家 2797 刀 40 营 0 [0, 0, 0]
+   红 jungle lan    L8  身家 2661 刀 24 营12 [0, 0, 0]
+   红 top    torg   L9  身家 2773 刀 40 营 1 [0, 0, 0]
+    红·adc·vero 下路97 家3
+    红·jungle·lan 野区81 家8 中路6 上路5
+    红·mid·osen 中路85 野区13 家3
+    红·sup·moko 下路90 野区9 家1
+    红·top·torg 上路80 野区18 家1 中路1
+    绿·adc·vero 下路89 野区9 家3
+    绿·jungle·lan 野区84 中路11 家5
+    绿·mid·osen 中路78 野区16 家5
+    绿·sup·moko 下路89 野区10 家1
+    绿·top·gorran 上路72 野区15 家11 中路1
+== f5.json h=gorran&pos=top&seed=35 时长 24:34 胜方 绿 击杀 [12, 8] 塔 [6, 1] 打野 [{'team': 0, 'kit': 'lan', 'ganks': 3, 'camps': 18}, {'team': 1, 'kit': 'lan', 'ganks': 5, 'camps': 12}] 报错 0
+   绿 top    gorran L10 身家 2786 刀 28 营 1 [0, 0, 2]
+   绿 adc    vero   L9  身家 3076 刀 43 营 0 [0, 0, 0]
+   绿 sup    moko   L8  身家 1576 刀  1 营 0 [0, 0, 0]
+   绿 jungle lan    L11 身家 3476 刀 25 营12 [2, 1, 0]
+   绿 mid    osen   L9  身家 2258 刀 20 营 0 [0, 1, 0]
+   红 adc    vero   L8  身家 3162 刀 50 营 1 [0, 0, 0]
+   红 jungle lan    L9  身家 2986 刀 23 营11 [1, 1, 1]
+   红 sup    moko   L8  身家 1366 刀  0 营 0 [0, 0, 0]
+   红 top    torg   L10 身家 2936 刀 37 营 0 [0, 0, 2]
+   红 mid    osen   L10 身家 2644 刀 24 营 0 [1, 1, 1]
+    红·adc·vero 下路88 野区10 家3
+    红·jungle·lan 野区79 中路10 家6 阵亡4 上路1
+    红·mid·osen 中路73 野区20 阵亡5 家3
+    红·sup·moko 下路90 野区9 中路1
+    红·top·torg 上路75 野区21 家3 中路1
+    绿·adc·vero 下路98 野区1 家1
+    绿·jungle·lan 野区79 中路10 家8 阵亡4
+    绿·mid·osen 中路70 野区19 家6 阵亡4 上路1
+    绿·sup·moko 下路84 野区14 家1 中路1
+    绿·top·gorran 上路74 野区19 家6 中路1
+== f6.json h=lan&seed=36&diff=hard 时长 21:57 胜方 绿 击杀 [6, 11] 塔 [5, 2] 打野 [{'team': 1, 'kit': 'lan', 'ganks': 5, 'camps': 14}, {'team': 0, 'kit': 'lan', 'ganks': 3, 'camps': 11}] 报错 0
+   绿 jungle lan    L10 身家 3083 刀 21 营11 [2, 1, 0]
+   绿 top    gorran L8  身家 2403 刀 26 营 0 [0, 0, 1]
+   绿 sup    moko   L6  身家 1361 刀  0 营 0 [0, 1, 0]
+   绿 adc    vero   L8  身家 2679 刀 37 营 0 [0, 0, 0]
+   绿 mid    osen   L9  身家 2183 刀 15 营 0 [1, 1, 0]
+   红 jungle lan    L9  身家 2943 刀 19 营 9 [2, 1, 0]
+   红 adc    vero   L9  身家 2839 刀 38 营 0 [0, 0, 1]
+   红 sup    moko   L7  身家 1491 刀  0 营 0 [0, 1, 1]
+   红 mid    osen   L10 身家 2553 刀 29 营 0 [0, 1, 1]
+   红 top    torg   L10 身家 2831 刀 33 营 0 [1, 0, 0]
+    红·adc·vero 下路86 野区8 家5 中路1
+    红·jungle·lan 野区76 中路11 家5 上路4 阵亡4
+    红·mid·osen 中路82 野区10 阵亡5 家3
+    红·sup·moko 下路72 野区19 家4 阵亡4 中路1
+    红·top·torg 上路75 野区18 家6 中路1
+    绿·adc·vero 下路99 家1
+    绿·jungle·lan 野区71 中路15 家8 上路4 阵亡3
+    绿·mid·osen 中路76 野区16 家4 阵亡4
+    绿·sup·moko 下路82 野区13 家3 阵亡3
+    绿·top·gorran 上路71 野区18 家10 中路1

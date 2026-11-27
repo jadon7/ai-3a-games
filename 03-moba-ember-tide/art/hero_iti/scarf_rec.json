@@ -1,0 +1,8 @@
+[{"wait": 1500}, {"rec": "scarf.webm"}, {"js": "window.__r0 = performance.now(); 1"}, {"wait": 1300},
+ {"js": "(() => { const a = __play.actor; a.moveTo(a.pos.x + 15, a.pos.z + 4); return 1; })()"}, {"wait": 1700},
+ {"js": "__play.actor.stop(); 1"}, {"wait": 1200},
+ {"js": "(() => { const a = __play.actor; a.moveTo(a.pos.x - 13, a.pos.z - 3); return 1; })()"}, {"wait": 1100},
+ {"js": "(() => { const a = __play.actor; a.moveTo(a.pos.x - 3, a.pos.z + 9); return 1; })()"}, {"wait": 1300},
+ {"js": "(() => { const a = __play.actor; a.stop(); const y = a.yaw(); a.dashTo(a.pos.x + Math.sin(y) * 5, a.pos.z + Math.cos(y) * 5, 0.22); return 1; })()"}, {"wait": 1100},
+ {"js": "(() => { const a = __play.actor; const y = a.yaw(); a.teleport(a.pos.x - Math.sin(y) * 7, a.pos.z - Math.cos(y) * 7); return 1; })()"}, {"wait": 1300},
+ {"js": "(performance.now() - __r0) / 1000", "log": "REAL"}, {"stop": 1}]

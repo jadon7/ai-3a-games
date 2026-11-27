@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>测试：音频引擎</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; min-height: 100%; background: #14161a; color: #e8e4da; font: 14px/1.5 -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 15px; margin: 22px 0 8px; color: #d9b36a; }
+  p.note { margin: 0 0 12px; color: #a39d8f; }
+  button { font: inherit; color: inherit; background: #2a2e36; border: 1px solid #454b57; border-radius: 6px; padding: 7px 12px; margin: 0 6px 6px 0; cursor: pointer; }
+  button:hover { background: #353a44; }
+  button.primary { background: #8a5a1c; border-color: #b97a2a; }
+  button:disabled { opacity: 0.45; cursor: default; }
+  .row { display: flex; align-items: center; gap: 10px; margin: 6px 0; flex-wrap: wrap; }
+  .row label { width: 150px; color: #c9c3b5; }
+  .row input[type=range] { flex: 1 1 260px; max-width: 420px; }
+  .row output { width: 64px; font-variant-numeric: tabular-nums; }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 3px 10px 3px 0; border-bottom: 1px solid #2c3038; white-space: nowrap; }
+  th { color: #a39d8f; font-weight: 500; }
+  td.ok { color: #8fd18a; } td.bad { color: #ff7a6b; }
+  pre { background: #1c1f25; padding: 10px 12px; border-radius: 6px; overflow-x: auto; margin: 8px 0 0; white-space: pre-wrap; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 28px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>音频引擎测试</h1>
+  <p class="note">先点"初始化"（浏览器要求声音必须由一次点击启动），再拖滑块、点按钮试听。地址加 <code>?shot=1</code> 会自动跑一遍自检。</p>
+  <div><button id="init" class="primary">初始化并加载素材</button><button id="demo" disabled>自动演示（约 20 秒）</button><span id="status"></span></div>
+
+  <div id="controls" hidden>
+    <h2>飞行状态（循环层）</h2>
+    <div class="row"><label for="speed">速度（米/秒）</label><input id="speed" type="range" min="0" max="140" step="1" value="45"><output id="speed_o">45</output></div>
+    <div class="row"><label for="boost">冲刺 boost</label><input id="boost" type="range" min="0" max="1" step="0.01" value="0"><output id="boost_o">0</output></div>
+    <div class="row"><label for="nearMiss">贴近石峰 nearMiss</label><input id="nearMiss" type="range" min="0" max="1" step="0.01" value="0"><output id="nearMiss_o">0</output></div>
+    <div class="row"><label for="inCloud">在云里 inCloud</label><input id="inCloud" type="range" min="0" max="1" step="0.01" value="0"><output id="inCloud_o">0</output></div>
+    <div class="row"><label for="master">主音量</label><input id="master" type="range" min="0" max="1" step="0.01" value="0.9"><output id="master_o">0.9</output></div>
+    <div class="row"><label><input id="paused" type="checkbox"> 暂停</label><label><input id="music" type="checkbox" checked> 音乐床</label></div>
+
+    <h2>单次音效</h2>
+    <div id="sfx"></div>
+    <div class="row"><label for="pan">声像 pan</label><input id="pan" type="range" min="-1" max="1" step="0.05" value="0"><output id="pan_o">0</output></div>
+    <div class="row"><label for="rate">播放速率 rate</label><input id="rate" type="range" min="0.5" max="2" step="0.05" value="1"><output id="rate_o">1</output></div>
+  </div>
+
+  <h2>素材</h2>
+  <div id="assets"><p class="note">尚未加载。</p></div>
+  <h2 id="selftest_h" hidden>自检结果</h2>
+  <pre id="selftest" hidden></pre>
+</main>
+<script type="module" src="./src/tests/test_audio.js"></script>
+</body>
+</html>

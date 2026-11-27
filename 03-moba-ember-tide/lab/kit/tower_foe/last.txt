@@ -1,0 +1,13 @@
+烬誓庭三座防御塔已完成。用游戏预览页检查了 7 轮，修改了 6 次。三座塔均符合高度、占地和面数限制。
+
+| 模型 | 高度 | 含台基占地 | 三角形数 |
+| --- | ---: | ---: | ---: |
+| [外塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/tower_foe_1.glb) | 7.20 米 | 3.79 × 3.80 米 | 15,122 |
+| [内塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/tower_foe_2.glb) | 8.80 米 | 5.20 × 5.20 米 | 21,998 |
+| [高地塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/tower_foe_3.glb) | 10.60 米 | 6.40 × 6.40 米 | 28,886 |
+
+塔身和台基均由独立石块砌成。常规石缝含倒角约 3.8 厘米。每个网格使用单一材质和灰度顶点色。主晶体使用独立的 `crystal` 节点。重跑建模脚本后，三份 GLB 均逐字节一致。
+
+[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/preview_game.jpg) · [近景](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/preview_close.jpg) · [设计图与近景对照](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/compare.jpg)
+
+与定稿相比，外塔和内塔露在塔脚外的铺石较窄。当前游戏材质下，主晶偏橙，铁爪内侧的红色层次在远景中较弱。[制作说明与七轮对照](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/NOTES.md) · [建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/build.py)

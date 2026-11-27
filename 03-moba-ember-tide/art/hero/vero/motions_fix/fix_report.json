@@ -1,0 +1,194 @@
+{
+ "idle": {
+  "frames": 123,
+  "yaw": [
+   8.9,
+   22.0
+  ],
+  "yaw_first": 14.5,
+  "pitch": [
+   -8.8,
+   -4.1
+  ],
+  "turn": [
+   0.0,
+   0.0
+  ],
+  "lift_max": 0.003,
+  "tip_min": 0.504,
+  "wrist_bend_max": 28.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.188,
+   0.238
+  ]
+ },
+ "run": {
+  "frames": 51,
+  "yaw": [
+   -3.1,
+   16.0
+  ],
+  "yaw_first": 12.6,
+  "pitch": [
+   -10.8,
+   -0.3
+  ],
+  "turn": [
+   0.0,
+   0.0
+  ],
+  "lift_max": 0.015,
+  "tip_min": 0.476,
+  "wrist_bend_max": 16.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.13,
+   0.228
+  ]
+ },
+ "attack1": {
+  "frames": 45,
+  "yaw": [
+   -0.4,
+   21.1
+  ],
+  "yaw_first": 16.5,
+  "pitch": [
+   -9.9,
+   2.4
+  ],
+  "turn": [
+   -7.4,
+   0.2
+  ],
+  "lift_max": 0.004,
+  "tip_min": 0.488,
+  "wrist_bend_max": 46.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.166,
+   0.23
+  ]
+ },
+ "q": {
+  "frames": 90,
+  "yaw": [
+   -13.8,
+   21.9
+  ],
+  "yaw_first": 19.0,
+  "pitch": [
+   -9.4,
+   58.1
+  ],
+  "turn": [
+   -6.3,
+   22.0
+  ],
+  "lift_max": 0.049,
+  "tip_min": 0.498,
+  "wrist_bend_max": 58.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.148,
+   0.224
+  ]
+ },
+ "w": {
+  "frames": 55,
+  "yaw": [
+   7.8,
+   32.8
+  ],
+  "yaw_first": 19.8,
+  "pitch": [
+   -9.7,
+   48.1
+  ],
+  "turn": [
+   0.0,
+   0.0
+  ],
+  "lift_max": 0.164,
+  "tip_min": 0.346,
+  "wrist_bend_max": 44.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.161,
+   0.231
+  ]
+ },
+ "e": {
+  "frames": 71,
+  "yaw": [
+   -6.0,
+   16.1
+  ],
+  "yaw_first": 15.4,
+  "pitch": [
+   -24.0,
+   -8.3
+  ],
+  "turn": [
+   0.0,
+   0.0
+  ],
+  "lift_max": 0.009,
+  "tip_min": 0.231,
+  "wrist_bend_max": 30.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.13,
+   0.202
+  ]
+ },
+ "r": {
+  "frames": 130,
+  "yaw": [
+   -21.7,
+   23.0
+  ],
+  "yaw_first": 16.1,
+  "pitch": [
+   -5.8,
+   5.9
+  ],
+  "turn": [
+   0.1,
+   7.0
+  ],
+  "lift_max": 0.006,
+  "tip_min": 0.494,
+  "wrist_bend_max": 41.0,
+  "left_unreachable": 0,
+  "left_along": [
+   0.195,
+   0.251
+  ]
+ },
+ "death": {
+  "frames": 110,
+  "yaw": [
+   -38.0,
+   22.8
+  ],
+  "yaw_first": 13.7,
+  "pitch": [
+   -50.0,
+   -8.9
+  ],
+  "turn": [
+   0.0,
+   0.0
+  ],
+  "lift_max": 0.077,
+  "tip_min": 0.03,
+  "wrist_bend_max": 73.0,
+  "left_unreachable": 4,
+  "left_along": [
+   0.13,
+   0.193
+  ]
+ }
+}

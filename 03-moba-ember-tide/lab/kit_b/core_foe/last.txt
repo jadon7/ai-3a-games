@@ -1,0 +1,11 @@
+已按 B 稿重建烬誓庭水晶和四座火盆柱。共做了 **6 版**，每版都查看了游戏镜头、近看图和地图实拍。
+
+[模型文件](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/core_foe.glb>) · [设计稿与成品对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/compare.jpg>) · [地图实拍](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/preview_map.jpg>)
+
+成品高 **12.16 米**，含四柱占地 **9.74 × 9.74 米**，共 **59,016 个三角形**。主晶体宽 **3.60 米**，中心离地 **8.04 米**。离地 0.20 米以上的主体半径为 **4.33 米**。
+
+与设计稿相比，游戏中的晶体正面更偏金黄，橙红集中在侧棱和底部。游戏距离能看清铁叶上的赤陶纹带，铆钉需要近看。
+
+[游戏镜头](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/preview_game.jpg>) · [近看图](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/preview_close.jpg>) · [尺寸与逐版记录](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/NOTES.md>) · [建模脚本](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/build.py>)
+
+已重跑建模脚本，生成的 GLB 与最终截图使用的文件逐字节一致。

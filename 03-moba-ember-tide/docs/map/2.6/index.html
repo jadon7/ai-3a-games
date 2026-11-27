@@ -1,0 +1,227 @@
+<title>烬与潮 植被和枯木</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：2.6 验收。顶部说明 → 全图前后 → 草丛 → 树 → 枯木 → 水边 → 规矩对照 → 还差在哪、没验证的、花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.wide img{aspect-ratio:auto}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 2.6 · 植被和枯木</p>
+  <h1>草丛、树、枯木，<em>长出来了</em></h1>
+  <p class="lede">这一关给整张图种上了植被：能藏人的草丛铺到全图 48 块；城墙外面一圈树；墙脚的倒木、营地和河岸边的树桩；岸边的水草和睡莲。规矩没变：看起来能藏人的只有草丛，树只在城墙外面。塔、水晶、出生点还是白色占位（2.7）。这一关没有花积分。</p>
+</header>
+
+<section>
+  <h2>全图，前后对比</h2>
+  <div class="row">
+    <figure class="wide"><img src="img/before_persp.jpg" alt="上一关：有地面，没有植被" loading="lazy"><figcaption><span class="who old">2.5</span>上一关：有地面，没有植被</figcaption></figure>
+    <figure class="wide"><img src="img/persp.jpg" alt="这一关：草丛、树、枯木、水草都有了" loading="lazy"><figcaption><span class="who ours">现在</span>这一关：草丛、树、枯木、水草都有了</figcaption></figure>
+  </div>
+  <div class="row">
+    <figure class="wide"><img src="img/before_top.jpg" alt="上一关，正俯视" loading="lazy"><figcaption><span class="who old">2.5</span>上一关，正俯视</figcaption></figure>
+    <figure class="wide"><img src="img/top.jpg" alt="这一关，正俯视：我方的树是绿的夹几棵粉花，对方是红枫夹枯树" loading="lazy"><figcaption><span class="who ours">现在</span>这一关，正俯视：我方的树是绿的夹几棵粉花，对方是红枫夹枯树</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>逐项看</h2>
+  <div class="pairs">
+
+    <div class="pair">
+      <h3>一、草丛</h3>
+      <ul>
+        <li>长法就是样板间里你验收过的那一套，一行没改，铺到了全图 48 块（每方 24 块，其中 10 块是蹲伏位），一共约 11 万片叶子。</li>
+        <li>对方的草丛是第一次完整出现。我照对方野区的设计稿把颜色压深了：根是暗红褐，中段锈红，只有叶尖橙黄。</li>
+        <li>布局同步了：画面上草丛是长到墙脚的，现在布局里能藏人的范围也算到墙脚。之前差不到一米。</li>
+        <li>和设计稿的差别：设计稿里草丛是贴着弧形墙的外侧绕一圈的；我们的草丛位置是 2.1 灰盒定的，有几块在墙头外面，像一个单独的小岛（下面第二行右图）。要不要挪是布局的事，我没有动。</li>
+      </ul>
+      <div class="row">
+        <figure><img src="img/c_me.jpg" alt="2.2 定的我方环境：草丛贴着墙" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的我方环境：草丛贴着墙</figcaption></figure>
+        <figure><img src="img/wall_brush.jpg" alt="中路河道口：草丛一直长到墙脚" loading="lazy"><figcaption><span class="who ours">现在</span>中路河道口：草丛一直长到墙脚</figcaption></figure>
+      </div>
+      <div class="row">
+        <figure><img src="img/c_jungle.jpg" alt="2.2 定的我方野区" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的我方野区</figcaption></figure>
+        <figure><img src="img/camp.jpg" alt="我方增益怪凹口旁，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>我方增益怪凹口旁，游戏镜头</figcaption></figure>
+      </div>
+      <div class="row three">
+        <figure><img src="img/c_jungle_foe.jpg" alt="2.2 定的对方野区" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的对方野区</figcaption></figure>
+        <figure><img src="img/foe_camp.jpg" alt="对方增益怪凹口旁" loading="lazy"><figcaption><span class="who ours">现在</span>对方增益怪凹口旁</figcaption></figure>
+        <figure><img src="img/foe_brush.jpg" alt="对方中路河道口的草丛" loading="lazy"><figcaption><span class="who ours">现在</span>对方中路河道口的草丛</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>二、城墙外面的树</h3>
+      <ul>
+        <li>一圈 139 棵，都在城墙外面，够不着。一棵树是一根树干加几团大叶团，叶团上有一块深一块浅的叶斑，朝光的一面亮、背光的一面暗。</li>
+        <li>我方：圆冠的绿树为主，夹着深色的尖冠树和少数开粉花的树。对方：红枫和暗红的树，三成是光秃的枯树。离城墙越远越暗，融进背景。</li>
+        <li>北边、西边的树和山石会把影子投进地图里（太阳在左后方）。</li>
+        <li>和设计稿的差别很明显：设计稿的树是一层层的叶簇，看得出叶子的形状；我们的是圆鼓鼓的叶团，拉近看像捏出来的。游戏镜头下树在画面边上，问题不大，但这是这一关最弱的一项。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/c_trees.jpg" alt="设计稿里的树（高地口子那张的左上角）" loading="lazy"><figcaption><span class="who ">设计稿</span>设计稿里的树（高地口子那张的左上角）</figcaption></figure>
+        <figure><img src="img/trees_me.jpg" alt="我方西边的城墙外，转过镜头看" loading="lazy"><figcaption><span class="who ours">现在</span>我方西边的城墙外，转过镜头看</figcaption></figure>
+        <figure><img src="img/trees_foe.jpg" alt="对方北边的城墙外" loading="lazy"><figcaption><span class="who ours">现在</span>对方北边的城墙外</figcaption></figure>
+      </div>
+      <div class="row">
+        <figure><img src="img/west.jpg" alt="我方上路，游戏镜头：墙后露出树和山石" loading="lazy"><figcaption><span class="who ours">现在</span>我方上路，游戏镜头：墙后露出树和山石</figcaption></figure>
+        <figure><img src="img/north.jpg" alt="对方上路，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>对方上路，游戏镜头</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>三、枯木</h3>
+      <ul>
+        <li>倒木 14 根：贴着野区的墙脚、顺着墙躺着，带一两根断枝，一头是锯口。我方的长苔，对方的焦褐。</li>
+        <li>树桩 28 个：在营地外沿、河岸、墙头旁边，离兵线和土路都远。</li>
+        <li>都不在路上。它们在布局里不挡路（英雄会从上面走过去），要不要挡等阶段 4 再定。</li>
+      </ul>
+      <div class="row three">
+        <figure><img src="img/log.jpg" alt="我方墙脚的倒木" loading="lazy"><figcaption><span class="who ours">现在</span>我方墙脚的倒木</figcaption></figure>
+        <figure><img src="img/foe_log.jpg" alt="对方墙脚的倒木" loading="lazy"><figcaption><span class="who ours">现在</span>对方墙脚的倒木</figcaption></figure>
+        <figure><img src="img/stump.jpg" alt="树桩，旁边是小石子" loading="lazy"><figcaption><span class="who ours">现在</span>树桩，旁边是小石子</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>四、水边</h3>
+      <ul>
+        <li>岸边一丛丛的水草，故意做得矮（一米以内）、稀，一眼看得出藏不了人。水面上有几片睡莲。</li>
+        <li>过河的路、河道两头的石阶、Boss 的石台附近不长。</li>
+      </ul>
+      <div class="row">
+        <figure><img src="img/bank.jpg" alt="河岸近看：水草和睡莲" loading="lazy"><figcaption><span class="who ours">现在</span>河岸近看：水草和睡莲</figcaption></figure>
+        <figure><img src="img/boss.jpg" alt="Boss 潭：岸上有草丛、树桩，水里有睡莲" loading="lazy"><figcaption><span class="who ours">现在</span>Boss 潭：岸上有草丛、树桩，水里有睡莲</figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>规矩逐条对照</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>规矩（2.2 定的）或你的原话</th><th>现在</th><th>情况</th></tr></thead>
+    <tbody>
+      <tr><td>看起来能藏人的植被，就必须真的能藏人。能藏人的只有草丛</td><td>比人高的植被只有草丛；水草在一米以内；布局里草丛的范围和画面一致</td><td class="st ok">做到</td></tr>
+      <tr><td>草丛比人高、成丛、形状整，颜色比地面深一档</td><td>沿用样板间验收过的那套</td><td class="st ok">做到</td></tr>
+      <tr><td>树只在城墙外面和够不着的地方，大叶团、两个面，不做碎叶</td><td>139 棵都在墙外；是大叶团</td><td class="st ok">做到</td></tr>
+      <tr><td>我方植被青绿，对方红褐</td><td>草丛、树、水草、枯木两方各一套颜色</td><td class="st ok">做到</td></tr>
+      <tr><td>蕨、小花只在石头和建筑脚下点几处</td><td>墙顶有阔叶草；石头脚下的蕨和小花没做</td><td class="st miss">没做</td></tr>
+      <tr><td>有枯木、有显著的阴影（你对比 Dota 时说的）</td><td>枯木有了。影子：墙、山石、草丛的影子清楚；树影只在北边和西边的边路上有一点</td><td class="st part">部分</td></tr>
+      <tr><td>和山体、道路要有呼应</td><td>草丛贴墙、倒木贴墙脚、树和山石在墙外交错、水草沿岸</td><td class="st ok">做到</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>还差在哪，没验证的</h2>
+  <div class="cols">
+    <section>
+      <h3>还差的</h3>
+      <ul>
+        <li>树太简单：圆鼓鼓的叶团，没有设计稿那种一层层的叶簇。</li>
+        <li>地图里面没有大块的树影（规矩不让在里面种树），设计稿里草地上那种大片的树影做不出来。</li>
+        <li>有几块草丛像单独的小岛，没有像设计稿那样绕着墙。</li>
+        <li>草丛的叶子还是比设计稿散（样板间时就有的差距，这次没动）。</li>
+        <li>石头脚下的蕨和小花没做。枯木只有倒木和树桩两种。</li>
+      </ul>
+    </section>
+    <section>
+      <h3>没验证的</h3>
+      <ul>
+        <li>帧率：应用内浏览器默认镜头实测 60 帧，当时面板较小（1320×628），约 56 万三角形。无界面 Chrome 1600×900 各机位 60 帧；拉远看全图 60 帧，约 170 到 190 万三角形。手机没测。</li>
+        <li>草丛“能藏人”只是布局数据对上了，没有英雄进去试过。</li>
+        <li>树只从城墙里面和上面看过，没有绕到外面逐棵检查。</li>
+      </ul>
+    </section>
+    <section>
+      <h3>花费</h3>
+      <ul>
+        <li>即梦、Tripo、Codex 这一关都没有用。即梦余额还是 15682。</li>
+        <li>代码没有提交（项目不是 git 仓库）。</li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+<footer class="foot">打开方式：开发服务器起着的时候访问 <code>localhost:5183/map.html</code>。拖动或 WASD 平移，滚轮缩放，Q / E 转镜头。</footer>
+</div>

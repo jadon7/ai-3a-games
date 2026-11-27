@@ -1,0 +1,23 @@
+{
+ "_说明": "卡兹 B（Tripo 新绑的四足骨架，43 根）→ 旧卡兹的骨骼名（50 根）。按骨骼角色和位置对的（inspect/weights.txt、inspect/*_bones.jpg）。没写的新骨骼：撞旧名的改 x::，其余原样",
+ "_keep": ["tripo::Root",
+   "tripo::1_Left_Limb_0", "tripo::1_Left_Limb_1", "tripo::1_Left_Limb_2", "tripo::1_Left_Limb_3", "tripo::1_Left_Limb_4",
+   "tripo::1_Right_Limb_0", "tripo::1_Right_Limb_1", "tripo::1_Right_Limb_2",
+   "tripo::Spine_0", "tripo::Spine_1", "tripo::Spine_2", "tripo::Spine_3", "tripo::Spine_4", "tripo::Spine_5", "tripo::Spine_6",
+   "tripo::Head_1",
+   "tripo::0_Left_Limb_0", "tripo::0_Left_Limb_1", "tripo::0_Left_Limb_2", "tripo::0_Left_Limb_3",
+   "tripo::0_Right_Limb_0", "tripo::0_Right_Limb_1", "tripo::0_Right_Limb_2", "tripo::0_Right_Limb_3"],
+ "bone_9": "tripo::1_Right_Limb_3",
+ "tripo::1_Right_Limb_3": "tripo::1_Right_Limb_4",
+ "tripo::Spine_7": "bone_32",
+ "tripo::Head_0": "bone_33",
+ "tripo::Head_2": "bone_36",
+ "bone_38": "bone_37",
+ "bone_36": "bone_38",
+ "bone_37": "tripo::Head_2",
+ "bone_39": "bone_6", "bone_40": "bone_7", "bone_41": "bone_8", "bone_42": "bone_9",
+ "tripo::0_Left_Limb_4": "tripo::0_Left_Limb_5",
+ "bone_30": "tripo::0_Left_Limb_4",
+ "tripo::0_Right_Limb_4": "tripo::0_Right_Limb_5",
+ "bone_23": "tripo::0_Right_Limb_4"
+}

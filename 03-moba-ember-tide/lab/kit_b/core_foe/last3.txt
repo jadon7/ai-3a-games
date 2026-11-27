@@ -1,0 +1,5 @@
+七片铁叶已改为沿固定径向平面弯曲的厚花瓣。赤陶带沿叶面中线延伸，正前方两片低叶之间能看到晶体。共做了 **3 版**，每版都查看了游戏预览和地图实拍。[模型](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/core_foe.glb>) · [设计稿与成品对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/compare.jpg>) · [地图实拍](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/preview_map.jpg>)
+
+**交付版优先保留了 1.35 米叶宽。** 七片均布在半径 2.90 米处时，离地 5 米的七道净缝实测均为 **1.19 米**，超过指定的 0.30–0.45 米。第二版将叶腹加宽到 **2.25 米**，实测净缝为 **0.38 米**。[宽叶窄缝版对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/rounds/b3_r2_compare.jpg>)
+
+最终模型高 **12.16 米**，共 **59,334 个三角形**。已逐项核对，叶片以外的 22 个网格与第二轮一致。[第三轮记录与量测原文](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/NOTES.md>)

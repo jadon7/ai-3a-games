@@ -1,0 +1,37 @@
+{
+ "height": 3.9,
+ "ring": 4.0,
+ "bar": 0.5,
+ "runSpeed": 1.6,
+ "attacks": [
+  {
+   "clip": "attack1",
+   "swing": 0.53,
+   "hit": 0.73,
+   "end": 1.45,
+   "hands": []
+  },
+  {
+   "clip": "attack2",
+   "swing": 1.8,
+   "hit": 2.2,
+   "end": 2.85,
+   "hands": []
+  }
+ ],
+ "skills": {
+  "roar": {
+   "clip": "roar",
+   "release": 0.85,
+   "end": 2.55
+  }
+ },
+ "death": {
+  "clip": "death"
+ },
+ "points": {
+  "hand": "tripo::Head_1",
+  "chest": "tripo::Spine_0",
+  "up": 0.3
+ }
+}

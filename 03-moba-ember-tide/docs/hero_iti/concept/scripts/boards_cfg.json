@@ -1,0 +1,49 @@
+{
+ "dirs": [
+  {"id": "a", "short": "伊缇 A", "h": 3.3,
+   "label": "方向 A：女性 · 银白短发 · 深紫灰贴身甲 · 火舌尾的围巾（游戏镜头：Q 低身突进斩）",
+   "sheet": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-a-sheet.png",
+   "poster": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-a-poster.png",
+   "game": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-a-game-v2.png"},
+  {"id": "b", "short": "伊缇 B", "h": 3.3,
+   "label": "方向 B：男性 · 黑发绯尾高马尾 · 单边暗铁护肩 · 更宽更长的围巾（游戏镜头：R 落地双刃交叉）",
+   "sheet": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-b-sheet-v2.png",
+   "poster": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-b-poster.png",
+   "game": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-b-game.png"}
+ ],
+ "weapon": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero_iti/concept/iti-weapon-v2.png",
+ "notes": [
+  "左：正面（刀面），右：侧面（刀背，看厚度）。",
+  "暗铁刀身带一点紫褐，刃口一整条绯红细光边；",
+  "赤金椭圆护手，深绯红缠柄，柄尾赤金环 + 绯红短穗。"
+ ],
+ "roster": [
+  {"label": "岚", "h": 3.3, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/lan-p1-sheet.png"},
+  {"label": "葛隆", "h": 3.5, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/gorran-p1-sheet-bright.png"},
+  {"label": "摩珂", "h": 3.3, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/moko-p1-sheet.png"},
+  {"label": "薇萝", "h": 3.3, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/vero-p1-sheet-v3.png"},
+  {"label": "赫达", "h": 3.3, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/hedda-p1-sheet-v2.png"},
+  {"label": "乌戈", "h": 3.7, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/ugo-p1-sheet.png"},
+  {"label": "塞伦", "h": 3.3, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/seren-p1-sheet.png"},
+  {"label": "托尔格", "h": 2.8, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/torg-p1-sheet.png"},
+  {"label": "奥森", "h": 3.4, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/osen-p1-sheet.png"},
+  {"label": "卡兹", "h": 2.8, "file": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/kaz-p1-sheet-v2.png"}
+ ],
+ "grounds": [
+  {"name": "我方草地", "file": "docs/style_b/b-toon/after/05_jungle_me.jpg", "box": [0, 680, 660, 960]},
+  {"name": "我方石板（水晶广场）", "file": "docs/style_b/b-toon/after/03_core_me.jpg", "box": [1462, 772, 1720, 895]},
+  {"name": "对方红土", "file": "docs/style_b/b-toon/after/06_jungle_foe.jpg", "box": [60, 690, 660, 960]}
+ ],
+ "posters": [
+  {"label": "岚", "file": "public/assets/ui/splash/lan.webp"},
+  {"label": "葛隆", "file": "public/assets/ui/splash/gorran.webp"},
+  {"label": "摩珂", "file": "public/assets/ui/splash/moko.webp"},
+  {"label": "薇萝", "file": "public/assets/ui/splash/vero.webp"},
+  {"label": "赫达", "file": "public/assets/ui/splash/hedda.webp"},
+  {"label": "乌戈", "file": "public/assets/ui/splash/ugo.webp"},
+  {"label": "塞伦", "file": "public/assets/ui/splash/seren.webp"},
+  {"label": "托尔格", "file": "public/assets/ui/splash/torg.webp"},
+  {"label": "奥森", "file": "public/assets/ui/splash/osen.webp"},
+  {"label": "卡兹", "file": "public/assets/ui/splash/kaz.webp"}
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/troll.npz",
+ "src_build": "art/style_b/troll/src_build.json",
+ "src_timing": "art/style_b/troll/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/troll.blend",
+ "src_root": "mixamorig:Hips",
+ "src_game_h": 6.0,
+ "game_h": 6.0,
+ "move_speed": 3.4,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.3,
+  "zc": 0.45
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "attack2",
+   "roar",
+   "death"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "岩石巨魔的旧动作 → B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型和人形绑骨）",
+ "tgt_rig": "../rigs/troll_b.npz",
+ "tgt_model": "../troll_b_rigged.glb",
+ "labels": [
+  "巨魔（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "name": "troll_b"
+}

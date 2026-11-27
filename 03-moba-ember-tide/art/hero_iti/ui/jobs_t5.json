@@ -1,0 +1,24 @@
+[
+ {
+  "name": "iti-art-splash-x-p2f1",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/iti-art/art/hero_iti/ui/raw/splash_x-p2f1.png",
+  "model": "jm_image_model_lib_s",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "prompt": "参考这张海报：画风、构图、人物、表情、双手反握交叉的两把直刃、服饰、围巾、满月、X 形刀光、光线、背景全部保持不变，是同一张画。只修她的腿：画面里只有她自己的两条腿，都是深紫灰贴身长裤加暗铁护膝和深色长靴；一条腿在前、脚踩在瓦檐上，另一条腿单膝跪在瓦檐上，跪着那条腿的小腿和脚藏在她身后、被身体挡住看不见；她身后的背景里没有任何多余的腿、脚、靴子和半透明的人影。明亮精致的卡通厚涂 CG 插画。画面里没有任何文字、标志、水印、边框。",
+  "refs": [
+   "iti-art-splash-x-p2"
+  ]
+ },
+ {
+  "name": "iti-art-splash-x-p2f2",
+  "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/iti-art/art/hero_iti/ui/raw/splash_x-p2f2.png",
+  "model": "jm_image_model_lib_s",
+  "ratio": "3:4",
+  "resolution": "2K",
+  "prompt": "参考这张海报：画风、构图、人物、表情、双手反握交叉的两把直刃、服饰、围巾、满月、X 形刀光、光线、背景全部保持不变，是同一张画。只修她的腿：画面里只有她自己的两条腿，都是深紫灰贴身长裤加暗铁护膝和深色长靴；一条腿在前、脚踩在瓦檐上，另一条腿单膝跪在瓦檐上，跪着那条腿的小腿和脚藏在她身后、被身体挡住看不见；她身后的背景里没有任何多余的腿、脚、靴子和半透明的人影。明亮精致的卡通厚涂 CG 插画。画面里没有任何文字、标志、水印、边框。",
+  "refs": [
+   "iti-art-splash-x-p2"
+  ]
+ }
+]

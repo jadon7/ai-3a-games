@@ -1,0 +1,135 @@
+{
+ "name": "seren",
+ "raw": "art/style_b/seren/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-vs/art/style_b/seren/seren_b_rigged.glb",
+ "out": "art/style_b/seren/check/game.glb",
+ "packed": "art/style_b/seren/check/packed.glb",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "gear": [
+  {
+   "type": "file",
+   "src": "art/style_b/seren/weapon_seren_b.glb",
+   "side": "Right",
+   "length": 0.85,
+   "grip": 0.23,
+   "roll": 180,
+   "material": "weapon_b"
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.015,
+    -0.006
+   ],
+   "yaw": -12,
+   "lean": 2,
+   "roll": 3
+  },
+  "spine": [
+   [
+    1,
+    3
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    -1,
+    3
+   ]
+  ],
+  "head": {
+   "yaw": 8,
+   "pitch": -6
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.08,
+     -0.075,
+     0.064
+    ],
+    "pole": [
+     0.25,
+     -1,
+     0
+    ],
+    "toe": 14
+   },
+   "Right": {
+    "ankle": [
+     -0.08,
+     0.05,
+     0.064
+    ],
+    "pole": [
+     -0.2,
+     -1,
+     0
+    ],
+    "toe": -28
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.11,
+     0.01,
+     0.55
+    ],
+    "pole": [
+     1,
+     0.4,
+     0
+    ],
+    "blade": [
+     0,
+     -0.6,
+     -0.8
+    ],
+    "shrug": 0
+   },
+   "Right": {
+    "wrist": [
+     -0.17,
+     -0.13,
+     0.63
+    ],
+    "pole": [
+     -0.5,
+     0.2,
+     -1
+    ],
+    "blade": [
+     -0.07,
+     0.64,
+     0.77
+    ],
+    "edge": [
+     0.94,
+     0.23,
+     -0.23
+    ],
+    "shrug": 4
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.004
+  }
+ },
+ "grip": {
+  "Left": 0.55
+ },
+ "motions": {},
+ "_note": "B 的螺壳长铳：Tripo 照即梦的 B 风格铳图出的（weapon_seren_b_raw.glb，斜着的），straighten_gun.py 摆正成和旧铳一样的朝向（铳口 +Y、压力罐 -Z，weapon_seren_b.glb），所以 roll 180、长度 0.85 照抄旧的；握在枪托第二道珊瑚皮条上（grip 0.23）"
+}

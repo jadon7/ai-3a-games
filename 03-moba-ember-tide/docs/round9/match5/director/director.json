@@ -1,0 +1,30 @@
+{
+ "q": "director=1&h=lan&seed=5",
+ "samples": 231,
+ "fights": 115,
+ "onFight": 77,
+ "focus": {
+  "lane": 83,
+  "fight": 81,
+  "camp": 52,
+  "siege": 15
+ },
+ "shots": [
+  {
+   "n": "director_fight_1",
+   "t": 73,
+   "fighters": 4
+  },
+  {
+   "n": "director_fight_2",
+   "t": 225,
+   "fighters": 4
+  },
+  {
+   "n": "director_fight_3",
+   "t": 346,
+   "fighters": 6
+  }
+ ],
+ "errors": []
+}

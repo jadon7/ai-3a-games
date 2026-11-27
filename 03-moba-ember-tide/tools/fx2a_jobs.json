@@ -1,0 +1,108 @@
+{
+ "lan": [
+  {
+   "name": "lan_Q",
+   "cam": [
+    -7.8,
+    2.6,
+    13,
+    50,
+    90,
+    0.8
+   ],
+   "pre": "a.teleport(-9.2, 7.6); a.face(D.x, D.z, true)",
+   "key": "Q",
+   "sec": 1.4,
+   "lead": 0.1
+  },
+  {
+   "name": "lan_W",
+   "cam": [
+    -7.1,
+    1.6,
+    11.5,
+    50,
+    90,
+    0.8
+   ],
+   "pre": "a.teleport(D.x - 0.4, D.z + 4.4); a.face(D.x, D.z, true)",
+   "js": "a.cast('W'); __api.after(1.05, () => a.attack(D))",
+   "sec": 2.3,
+   "lead": 0.1
+  },
+  {
+   "name": "lan_R",
+   "cam": [
+    -3.8,
+    3.3,
+    16,
+    55,
+    0,
+    0.8
+   ],
+   "pre": "a.teleport(-4.6, 5.4); a.face(-3.5, 2.5, true)",
+   "key": "R",
+   "sec": 3.6,
+   "lead": 0.1
+  }
+ ],
+ "torg": [
+  {
+   "name": "torg_Q",
+   "cam": [
+    -3.6,
+    4.4,
+    12,
+    50,
+    90,
+    0.8
+   ],
+   "pre": "a.teleport(-3.8, 6.6); a.face(-3.7, 2.7, true)",
+   "key": "Q",
+   "aim": [
+    -3.7,
+    2.7
+   ],
+   "sec": 1.6,
+   "lead": 0.1
+  },
+  {
+   "name": "torg_W",
+   "cam": [
+    -4,
+    4.2,
+    17,
+    55,
+    0,
+    0.5
+   ],
+   "pre": "a.teleport(-4, 4.3)",
+   "key": "W",
+   "aim": [
+    -4,
+    2
+   ],
+   "sec": 2.0,
+   "lead": 0.1
+  },
+  {
+   "name": "torg_R",
+   "cam": [
+    -5,
+    4.6,
+    19,
+    55,
+    0,
+    0.5
+   ],
+   "pre": "a.teleport(-8.6, 8.2); a.face(-4, 4, true)",
+   "key": "R",
+   "aim": [
+    -4.3,
+    3.9
+   ],
+   "sec": 4.8,
+   "lead": 0.1
+  }
+ ]
+}

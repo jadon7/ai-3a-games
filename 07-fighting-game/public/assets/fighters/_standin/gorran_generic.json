@@ -1,0 +1,90 @@
+{
+ "id": "gorran",
+ "fps": 30,
+ "stance": "gorran.glb 的 idle 第 0 帧",
+ "clips": {
+  "hit_high": {
+   "dur": 0.533,
+   "impact": 0.0,
+   "recover": 0.433,
+   "travel": -0.061
+  },
+  "hit_high2": {
+   "dur": 0.567,
+   "impact": 0.0,
+   "recover": 0.467,
+   "travel": 0.008
+  },
+  "hit_mid": {
+   "dur": 0.8,
+   "impact": 0.0,
+   "recover": 0.7,
+   "travel": -0.007
+  },
+  "hit_mid2": {
+   "dur": 0.767,
+   "impact": 0.0,
+   "recover": 0.667,
+   "travel": 0.005
+  },
+  "hit_side": {
+   "dur": 0.7,
+   "impact": 0.0,
+   "recover": 0.6,
+   "travel": -0.006
+  },
+  "hit_heavy": {
+   "dur": 1.1,
+   "impact": 0.0,
+   "recover": 1.0,
+   "travel": -0.8
+  },
+  "hit_air": {
+   "dur": 0.6,
+   "impact": 0.0,
+   "airborne": [
+    0.0,
+    0.6
+   ],
+   "recover": 0.6,
+   "travel": 0.0
+  },
+  "knockdown": {
+   "dur": 1.6,
+   "airborne": [
+    0.1,
+    0.733
+   ],
+   "ground": 0.733,
+   "recover": 1.2,
+   "travel": -1.1
+  },
+  "getup": {
+   "dur": 1.533,
+   "recover": 1.333
+  },
+  "ko": {
+   "dur": 2.967,
+   "ground": 1.8,
+   "travel": 0.366
+  },
+  "dizzy": {
+   "loop": true,
+   "dur": 2.0
+  }
+ },
+ "notes": "Tripo 预设（真人动捕）重定向到本角色骨架。受击类是差量叠在架势上（第 0 帧就是架势，结尾回到架势）；击飞、起身、被击败是绝对姿势（首尾向架势过渡）。水平位移已去掉（原地），travel 记原始位移（身高按 1，负数向后）。",
+ "clip_notes": {
+  "hit_high": "hit_to_head 差量(world)×0.65，0.12–1.0s ×1.6 倍速",
+  "hit_high2": "hit_to_body_01 差量(world)×0.8，0.12–1.15s ×1.8 倍速",
+  "hit_mid": "hit_to_body_02 差量(world)×0.85，0.18–1.6s ×1.8 倍速",
+  "hit_mid2": "hit_to_stomach 差量(world)×1.0，0.12–1.45s ×1.7 倍速",
+  "hit_side": "hit_to_side 差量(world)×1.0，0.15–1.2s ×1.5 倍速",
+  "hit_heavy": "上身 hit_to_head 差量×1.0（0.12–1.7s ×1.45）；腿和胯的水平移动取 walk 倒放（1.45→0.22s，×1.75）的差量，向后退两步；水平位移去掉（原地），travel 记退的距离",
+  "hit_air": "hit_to_head 差量叠在手摆的“空中后仰”姿势上，×0.8，0.12–1.0s ×1.5；胯高度固定（网格最低点在 0，空中高度由游戏给）",
+  "knockdown": "关键姿势插值：架势→hit_to_head 后仰（差量）→空中后仰四肢甩开（手摆）→仰面躺（从静止姿势手摆）→弹一下→躺平；高度是贴地 + 抛物线，原地；travel 是建议的被打飞距离（不是动捕量出来的）",
+  "getup": "手摆关键姿势：knockdown 最后一帧的躺姿 → 坐起双手撑地 → 收腿蹲坐 → 右膝跪地、左脚在前 → 半起 → 架势，平滑插值，按网格最低点贴地，原地",
+  "ko": "defeat_03 绝对姿势，1.2–4.6s ×1.15，开头 9 帧从架势过渡，原地，向前扑倒",
+  "dizzy": "程序生成：架势上双手垂下一点，脊柱到头逐节有相位差地画圈摇晃，胯不动；2 秒循环，首尾帧相同"
+ }
+}

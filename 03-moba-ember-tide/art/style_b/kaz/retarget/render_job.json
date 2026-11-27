@@ -1,0 +1,80 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/attack2.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/kaz/motions/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/attack2.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/fk/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/attack2.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/motions/ik/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "q",
+  "r",
+  "e",
+  "death"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   40,
+   14
+  ],
+  [
+   90,
+   10
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 2.0,
+ "zc": 0.42,
+ "game_h": 2.8,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/kaz/retarget/render"
+}

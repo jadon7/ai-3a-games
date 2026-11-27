@@ -1,0 +1,13 @@
+{
+ "runSpeed": 9.5,
+ "attacks": [
+  {"clip": "attack1", "swing": 0.48, "hit": 0.66, "end": 1.05, "hands": ["R"], "speed": 1.5}
+ ],
+ "skills": {
+  "q": {"clip": "q", "release": 0.68, "end": 1.15, "speed": 1.4, "pre": 0.25},
+  "w": {"clip": "w", "release": 0.76, "end": 1.25, "speed": 1.5, "pre": 0.15},
+  "e": {"clip": "e", "release": 0.86, "end": 1.35, "speed": 1.5, "pre": 0.3},
+  "r": {"clip": "r", "release": 0.88, "end": 1.6, "speed": 1.4, "pre": 0.35}
+ },
+ "death": {"clip": "death"}
+}

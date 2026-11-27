@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SFX Test Bench</title>
+<style>
+  :root { --bg: #111214; --panel: #1b1d21; --line: #2c2f36; --fg: #e6e8eb; --dim: #8b919a; --accent: #f0be28; --hot: #e5533d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  p.note { color: var(--dim); margin: 0 0 16px; }
+  #status { font: 12px/1.5 ui-monospace, Menlo, monospace; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; margin-bottom: 16px; white-space: pre-wrap; }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px 12px; margin-bottom: 12px; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0 0 8px; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { background: #262930; color: var(--fg); border: 1px solid #3a3e47; border-radius: 6px; padding: 7px 11px; font: inherit; cursor: pointer; user-select: none; touch-action: manipulation; }
+  button:hover { border-color: var(--accent); }
+  button:active, button.on { background: #3a3220; border-color: var(--accent); }
+  button.hold { border-color: var(--hot); }
+  label { display: flex; align-items: center; gap: 8px; color: var(--dim); }
+  input[type=range] { width: 200px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SFX test bench</h1>
+  <p class="note">Serve the <code>game/</code> folder over HTTP (e.g. <code>python3 -m http.server -d game 8000</code>) and open
+    <code>/test/sfx_test.html</code>. The first click unlocks audio. Listener sits at (0, 1.6, 0) looking down −Z; positions below are in metres.</p>
+  <div id="status">loading…</div>
+
+  <section><h2>Weapon</h2><div class="row">
+    <button data-a="playerShot">Player shot</button>
+    <button data-hold="auto" class="hold">Full auto (hold, 11 rps + casings)</button>
+    <button data-a="adsIn">ADS in</button>
+    <button data-a="adsOut">ADS out</button>
+    <button data-a="reload">Reload sequence (1.9 s)</button>
+    <button data-a="emptyClick">Empty click</button>
+    <button data-a="casing">Casing (1 m right, after flight)</button>
+  </div></section>
+
+  <section><h2>Enemy fire</h2><div class="row">
+    <button data-a="eFront">Enemy shot: front 10 m</button>
+    <button data-a="eLeft">left 10 m</button>
+    <button data-a="eRight">right 25 m</button>
+    <button data-a="eBehind">behind 6 m</button>
+    <button data-hold="eburst" class="hold">Enemy burst front-left 10 m (hold)</button>
+  </div></section>
+
+  <section><h2>Near misses &amp; impacts</h2><div class="row">
+    <button data-a="snapL">Snap left</button>
+    <button data-a="snapR">Snap right</button>
+    <button data-a="whizzL">Whizz left</button>
+    <button data-a="whizzR">Whizz right</button>
+    <button data-a="impactNear">Impact near (2 m)</button>
+    <button data-a="impactFar">Impact far (15 m)</button>
+  </div></section>
+
+  <section><h2>Hits &amp; kills</h2><div class="row">
+    <button data-a="hit">Hit tick</button>
+    <button data-a="kill">Kill tick</button>
+    <button data-a="flesh">Flesh hit (12 m)</button>
+    <button data-a="fallNear">Body fall 6 m (+0.55 s)</button>
+    <button data-a="fallFar">Body fall 20 m (+0.55 s)</button>
+    <button data-a="medal">Medal</button>
+    <button data-a="killCombo">Kill combo (tick + flesh + fall + medal)</button>
+  </div></section>
+
+  <section><h2>Player</h2><div class="row">
+    <button data-a="stepWalk">Step (walk)</button>
+    <button data-a="stepSprint">Step (sprint)</button>
+    <button data-toggle="walk">Walk loop</button>
+    <button data-toggle="sprint">Sprint loop</button>
+    <button data-a="hurt">Hurt</button>
+  </div></section>
+
+  <section><h2>World &amp; state</h2><div class="row">
+    <button data-toggle="ambience">Ambience</button>
+    <button data-toggle="lowHealth">Low health (heartbeat)</button>
+    <button data-a="stopAll">Stop all</button>
+    <label>Master <input id="vol" type="range" min="0" max="1.5" step="0.01" value="0.8"><span id="volv">0.80</span></label>
+  </div></section>
+</main>
+
+<script type="module">
+import { SFX } from '../src/sfx.js';
+
+const sfx = new SFX();
+window.sfx = sfx; // for poking at it from the console
+const statusEl = document.getElementById('status');
+let loadInfo = 'loading…';
+const t0 = performance.now();
+sfx.load('../assets/sfx/')
+  .then(() => {
+    const n = [...sfx.buffers.values()].reduce((a, b) => a + b.length, 0);
+    loadInfo = `loaded ${sfx.buffers.size} sounds / ${n} buffers in ${Math.round(performance.now() - t0)} ms`;
+  })
+  .catch((e) => { loadInfo = 'LOAD FAILED: ' + e.message; console.error(e); });
+
+sfx.setListener(0, 1.6, 0, 0, 0, -1, 0, 1, 0);
+document.addEventListener('pointerdown', () => sfx.unlock(), true);
+document.addEventListener('keydown', () => sfx.unlock(), true);
+
+const P = (x, z, y = 1.6) => [x, y, z];
+const actions = {
+  playerShot: () => sfx.playerShot(),
+  adsIn: () => sfx.adsIn(),
+  adsOut: () => sfx.adsOut(),
+  reload: () => sfx.reloadSequence(),
+  emptyClick: () => sfx.emptyClick(),
+  casing: () => sfx.casing(P(0.9, -0.3, 0.05)),
+  eFront: () => sfx.enemyShot(P(0, -10)),
+  eLeft: () => sfx.enemyShot(P(-10, 0)),
+  eRight: () => sfx.enemyShot(P(25, -2)),
+  eBehind: () => sfx.enemyShot(P(0.5, 6)),
+  snapL: () => sfx.snap(P(-0.6, -0.4, 1.7)),
+  snapR: () => sfx.snap(P(0.6, -0.4, 1.7)),
+  whizzL: () => sfx.whizz(P(-1.0, -0.2, 1.7)),
+  whizzR: () => sfx.whizz(P(1.0, -0.2, 1.7)),
+  impactNear: () => sfx.impact(P(1.2, -1.5, 0.8)),
+  impactFar: () => sfx.impact(P(-4, -14.5, 1.2)),
+  hit: () => sfx.hitTick(false),
+  kill: () => sfx.hitTick(true),
+  flesh: () => sfx.fleshHit(P(2, -12)),
+  fallNear: () => sfx.bodyFall(P(1, -6, 0)),
+  fallFar: () => sfx.bodyFall(P(-3, -20, 0)),
+  medal: () => sfx.medal(),
+  killCombo: () => { sfx.hitTick(true); sfx.fleshHit(P(1, -9)); sfx.bodyFall(P(1, -9, 0)); setTimeout(() => sfx.medal(), 250); },
+  stepWalk: () => sfx.step(false),
+  stepSprint: () => sfx.step(true),
+  hurt: () => sfx.hurt(),
+  stopAll: () => { sfx.stopAll(); stopToggles(); },
+};
+
+document.querySelectorAll('[data-a]').forEach((b) => b.addEventListener('click', () => { sfx.unlock(); actions[b.dataset.a](); }));
+
+// hold buttons: full-auto player fire, enemy burst
+const holds = {
+  auto: { ms: 1000 / 11, fn: () => { sfx.playerShot(); sfx.casing(P(0.9, -0.3, 0.05)); } },
+  eburst: { ms: 100, fn: () => sfx.enemyShot(P(-6, -8)) },
+};
+document.querySelectorAll('[data-hold]').forEach((b) => {
+  let id = null;
+  const h = holds[b.dataset.hold];
+  const stop = () => { if (id) { clearInterval(id); id = null; b.classList.remove('on'); } };
+  b.addEventListener('pointerdown', (e) => { e.preventDefault(); sfx.unlock(); stop(); h.fn(); id = setInterval(h.fn, h.ms); b.classList.add('on'); });
+  ['pointerup', 'pointerleave', 'pointercancel'].forEach((ev) => b.addEventListener(ev, stop));
+});
+
+// toggles
+const toggles = {};
+function stopToggles() {
+  for (const [k, t] of Object.entries(toggles)) if (t.on) t.set(false);
+}
+function makeToggle(name, set) {
+  const b = document.querySelector(`[data-toggle="${name}"]`);
+  const t = { on: false, set: (v) => { t.on = v; b.classList.toggle('on', v); set(v); } };
+  toggles[name] = t;
+  b.addEventListener('click', () => { sfx.unlock(); t.set(!t.on); });
+}
+let walkId = null;
+const walk = (ms, sprint) => (on) => {
+  clearInterval(walkId); walkId = null;
+  if (on) { sfx.step(sprint); walkId = setInterval(() => sfx.step(sprint), ms); }
+};
+makeToggle('walk', (on) => { if (on && toggles.sprint?.on) { toggles.sprint.on = false; document.querySelector('[data-toggle="sprint"]').classList.remove('on'); } walk(530, false)(on); });
+makeToggle('sprint', (on) => { if (on && toggles.walk?.on) { toggles.walk.on = false; document.querySelector('[data-toggle="walk"]').classList.remove('on'); } walk(340, true)(on); });
+makeToggle('ambience', (on) => (on ? sfx.startAmbience() : sfx.stopAmbience(1)));
+makeToggle('lowHealth', (on) => sfx.setLowHealth(on));
+
+const vol = document.getElementById('vol');
+vol.addEventListener('input', () => { sfx.setMasterVolume(+vol.value); document.getElementById('volv').textContent = (+vol.value).toFixed(2); });
+
+setInterval(() => {
+  const c = sfx.ctx;
+  statusEl.textContent = `${loadInfo}\n` + (c
+    ? `AudioContext ${c.state} @ ${c.sampleRate} Hz, base latency ${(c.baseLatency * 1000 || 0).toFixed(1)} ms | voices ${sfx.voiceCount} | reverb ${sfx._reverbReady ? 'ready' : 'pending'} | compressor reduction ${sfx.compressor.reduction.toFixed(1)} dB`
+    : 'AudioContext not created yet: click anything to unlock');
+}, 200);
+</script>
+</body>
+</html>

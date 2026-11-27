@@ -1,0 +1,167 @@
+{
+ "stuck": [
+  {
+   "who": "lan*",
+   "id": 26,
+   "t": 70.2,
+   "x": 46.44,
+   "z": -42.25,
+   "uv": [
+    62.7,
+    3
+   ],
+   "state": "move",
+   "target": null,
+   "tgDist": null,
+   "lane": 0,
+   "s": null,
+   "route": null,
+   "dur": 3,
+   "traveled": 16.08,
+   "doing": "回防"
+  },
+  {
+   "who": "torg*",
+   "id": 24,
+   "t": 292.3,
+   "x": -64.28,
+   "z": -41.83,
+   "uv": [
+    -15.9,
+    -75
+   ],
+   "state": "move",
+   "target": null,
+   "tgDist": null,
+   "lane": 0,
+   "s": null,
+   "route": null,
+   "dur": 3,
+   "traveled": 13.58,
+   "doing": "退出塔的射程"
+  },
+  {
+   "who": "moko*",
+   "id": 25,
+   "t": 466.8,
+   "x": -31.97,
+   "z": -9.53,
+   "uv": [
+    -15.9,
+    -29.3
+   ],
+   "state": "move",
+   "target": null,
+   "tgDist": null,
+   "lane": 0,
+   "s": null,
+   "route": null,
+   "dur": 3,
+   "traveled": 17.36,
+   "doing": "吃亏，后撤"
+  },
+  {
+   "who": "moko*",
+   "id": 25,
+   "t": 469.4,
+   "x": -31.62,
+   "z": -11.17,
+   "uv": [
+    -14.5,
+    -30.3
+   ],
+   "state": "move",
+   "target": null,
+   "tgDist": null,
+   "lane": 0,
+   "s": null,
+   "route": null,
+   "dur": 3,
+   "traveled": 17.36,
+   "doing": "打 岩石巨魔"
+  },
+  {
+   "who": "gorran",
+   "id": 23,
+   "t": 495.1,
+   "x": -18.97,
+   "z": -12.48,
+   "uv": [
+    -4.6,
+    -22.2
+   ],
+   "state": "move",
+   "target": null,
+   "tgDist": null,
+   "lane": 0,
+   "s": null,
+   "route": null,
+   "dur": 3,
+   "traveled": 17.65,
+   "doing": "打 岩石巨魔"
+  },
+  {
+   "who": "moko*",
+   "id": 25,
+   "t": 596.5,
+   "x": 30.56,
+   "z": 13.39,
+   "uv": [
+    12.1,
+    31.1
+   ],
+   "state": "move",
+   "target": null,
+   "tgDist": null,
+   "lane": 0,
+   "s": null,
+   "route": null,
+   "dur": 3,
+   "traveled": 7.25,
+   "doing": "去帮 lan"
+  }
+ ],
+ "report": {
+  "t": 695,
+  "over": 1,
+  "kills": [
+   3,
+   3
+  ],
+  "towers": [
+   8,
+   4
+  ],
+  "lanes": "233 对 022",
+  "order": [
+   "push",
+   "defend"
+  ],
+  "camps": 11,
+  "boss": [
+   "troll 还有89秒",
+   "beast 还有88秒"
+  ],
+  "buff": [
+   [
+    38,
+    0
+   ],
+   [
+    19,
+    0
+   ]
+  ],
+  "heroes": [
+   "vero L13 99% 0/1/1 金1784 装4 刀34 线1 [打水晶] 跟兵线227 清兵153 打88 打野59 打水晶30 回城27",
+   "osen L13 0% 1/2/0 金542 装5 刀19 线2 [阵亡] 跟兵线217 清兵177 打141 阵亡66 打野40 回城15",
+   "gorran L14 100% 2/0/1 金1732 装5 刀36 线0 [退出塔的射程] 打225 跟兵线214 清兵111 退出塔的射程47 拆塔27 躲重击17",
+   "torg* L11 74% 1/0/0 金864 装4 刀39 线1 [清兵] 跟兵线211 清兵170 打170 打野58 吃亏，后撤46 回防21",
+   "moko* L11 86% 0/1/2 金1294 装3 刀29 线2 [吃亏，后撤] 清兵232 跟兵线208 打85 吃亏，后撤81 打野36 阵亡21",
+   "lan* L11 55% 2/2/1 金238 装4 刀20 线0 [在出生点回血] 跟兵线170 打136 清兵107 在出生点回血56 吃亏，后撤53 阵亡38"
+  ]
+ },
+ "time": 694.8375333341038,
+ "over": 1,
+ "errors": []
+}

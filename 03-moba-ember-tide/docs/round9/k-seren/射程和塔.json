@@ -1,0 +1,36 @@
+{
+ "levels": {
+  "1": {
+   "level": 1,
+   "range": 7.15,
+   "hitsTower": 9.05,
+   "hitsCore": 11.55
+  },
+  "6": {
+   "level": 6,
+   "range": 7.9,
+   "hitsTower": 9.8,
+   "hitsCore": 12.3
+  },
+  "11": {
+   "level": 11,
+   "range": 8.65,
+   "hitsTower": 10.55,
+   "hitsCore": 13.05
+  },
+  "15": {
+   "level": 15,
+   "range": 9.25,
+   "hitsTower": 11.15,
+   "hitsCore": 13.65
+  }
+ },
+ "towerHitsHero": 12.09,
+ "coreHitsHero": 14.58,
+ "duel": {
+  "stoodAt": 11.1,
+  "towerLost": 1393,
+  "heroLost": 1592,
+  "towerTarget": true
+ }
+}

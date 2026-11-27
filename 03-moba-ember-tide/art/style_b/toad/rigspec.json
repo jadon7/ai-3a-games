@@ -1,0 +1,11 @@
+{
+ "_说明": "石背巨蟾 B（w-beast）。Tripo 四足绑骨 61 根，原始坐标面朝 +X、左 +Y（这次头尾、左右都没认反）。Root 管着大半个身子（3716 个顶点），Spine_0、Spine_1 是躯干（照旧蟾的做法不受控，躯干硬的一整块跟着 Root）；Spine_2 是两只前腿共用的连接骨（不管顶点，不受控）。脖子 Head_0、头 Head_1、下巴 bone_47。左前腿：上臂 Spine_3、前臂 0_Left_Limb_0、掌 0_Left_Limb_1、指 0_Left_Limb_2 以下；右前腿：上臂 bone_31、前臂 0_Right_Limb_0、掌 0_Right_Limb_1。后腿：大腿 1_*_Limb_0、小腿 Limb_1、脚 Limb_2、脚趾 Limb_3 以下。",
+ "name": "toad_b", "old": "toad", "forward": [1, 0, 0], "target_length": 1.1, "root_bone_length": 0.05,
+ "bones": {"tripo::Root": ["root", 0], "tripo::Head_0": ["head", 0],
+  "tripo::Spine_3": ["upper_f", 1], "tripo::0_Left_Limb_0": ["lower_f", 1], "tripo::0_Left_Limb_1": ["paw_f", 1],
+  "bone_31": ["upper_f", -1], "tripo::0_Right_Limb_0": ["lower_f", -1], "tripo::0_Right_Limb_1": ["paw_f", -1],
+  "tripo::1_Left_Limb_0": ["upper_h", 1], "tripo::1_Left_Limb_1": ["lower_h", 1], "tripo::1_Left_Limb_2": ["foot_h", 1],
+  "tripo::1_Right_Limb_0": ["upper_h", -1], "tripo::1_Right_Limb_1": ["lower_h", -1], "tripo::1_Right_Limb_2": ["foot_h", -1]},
+ "chains": [],
+ "feet": ["tripo::0_Left_Limb_2", "tripo::0_Right_Limb_2", "tripo::1_Left_Limb_3", "tripo::1_Right_Limb_3"]
+}

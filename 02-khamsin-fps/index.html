@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>KHAMSIN · 热风行动</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="description" content="KHAMSIN · 热风行动：浏览器里的第一人称射击，飞行员跑酷与机甲对战">
+<meta name="theme-color" content="#050506">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="热风行动">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/",
+  "three-mesh-bvh": "./node_modules/three-mesh-bvh/build/index.module.js"
+} }
+</script>
+</head>
+<body>
+<div id="stage">
+<canvas id="gl"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="scorebar">
+    <div class="team f"><span class="tname">金隼 · 我方</span><div class="bar"><i id="sbF"></i></div><b id="scF">0</b></div>
+    <div id="timer"><small>消耗战</small><span id="clock">10:00</span></div>
+    <div class="team e"><b id="scE">0</b><div class="bar"><i id="sbE"></i></div><span class="tname">赤蝎 · 敌方</span></div>
+  </div>
+  <div id="minimapWrap"><canvas id="minimap" width="220" height="220"></canvas><div class="mmN">N</div></div>
+  <div id="killfeed"></div>
+  <div id="announce"></div>
+  <div id="warn">⚠ 被狙击手锁定 —— 保持移动</div>
+
+  <div id="cross"><i class="c t"></i><i class="c b"></i><i class="c l"></i><i class="c r"></i><i class="dot"></i><div id="chargeRing"></div></div>
+  <div id="mcross"><i></i><i></i><i></i><i></i><b></b></div>
+  <div id="hit"><i></i><i></i><i></i><i></i></div>
+  <div id="dmg"></div>
+  <div id="popups"></div>
+  <div id="prompt"></div>
+  <div id="speed"><span id="spv">0</span><small>M/S</small><div class="sbar"><i id="spb"></i></div></div>
+
+  <div id="bl" class="panel">
+    <div class="lbl">飞行员状态</div>
+    <div id="hpbar"><i id="hpf"></i></div>
+    <div id="hpn">100</div>
+  </div>
+  <div id="bc">
+    <div class="ab" id="abQ"><kbd>Q</kbd><div class="ic">钩爪</div><div class="pips"><i></i><i></i></div></div>
+    <div class="ab" id="abG"><kbd>G</kbd><div class="ic">手雷</div><div class="pips"><i></i><i></i></div></div>
+    <div class="ab" id="abF"><kbd>F</kbd><div class="ic">近战</div><div class="cd"><i></i></div></div>
+    <div class="ab wide" id="abV"><kbd>V</kbd><div class="ic">机甲</div><div class="meter"><i id="mechFill"></i></div><span id="mechPct">0%</span></div>
+  </div>
+  <div id="br" class="panel">
+    <div id="wname">R-27 卡宾枪</div><div id="wtag">突击步枪</div>
+    <div id="ammo"><b id="ammoN">30</b><span>/ ∞</span></div>
+    <div id="slots"><i data-k="rifle">1 步枪</i><i data-k="shotgun">2 霰弹</i><i data-k="rail">3 轨道</i></div>
+  </div>
+
+  <div id="cockpit">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="none">
+      <path d="M0,0 L1600,0 L1600,900 L0,900 Z M70,60 L1530,60 L1575,180 L1575,650 L1380,845 L220,845 L25,650 L25,180 Z" fill="rgba(6,8,10,0.92)" fill-rule="evenodd"/>
+      <path d="M70,60 L1530,60 L1575,180 L1575,650 L1380,845 L220,845 L25,650 L25,180 Z" fill="none" stroke="rgba(88,224,255,0.45)" stroke-width="2"/>
+      <path d="M25,650 L220,845 M1575,650 L1380,845 M70,60 L25,180 M1530,60 L1575,180" stroke="rgba(255,179,71,0.5)" stroke-width="3"/>
+      <path d="M300,845 L360,790 L1240,790 L1300,845" fill="rgba(6,8,10,0.75)" stroke="rgba(88,224,255,0.35)" stroke-width="1.5"/>
+    </svg>
+    <div class="mstat l"><div class="lbl">机体完整度</div><div class="mbar"><i id="mhp"></i></div><b id="mhpN">100%</b></div>
+    <div class="mstat r"><div class="lbl">熔毁核心 <kbd>X</kbd></div><div class="mbar core"><i id="mcore"></i></div><b id="mcoreN">0%</b></div>
+    <div class="mrow"><span id="mAmmo">主炮 10</span><span id="mRocket">火箭 就绪</span><span id="mDash">冲刺 ●●</span><span>长按 <kbd>E</kbd> 离舱</span></div>
+    <div id="doom">机体濒临摧毁 —— 按 E 弹射</div>
+  </div>
+  <div id="scope"></div>
+  <div id="dead"><h2>阵亡</h2><p id="deadT">重新部署中…</p></div>
+  <div id="softHint">兼容模式：当前环境不支持鼠标锁定 —— 把鼠标移到屏幕边缘可持续转向，Esc 暂停。用 Chrome 直接打开可获得完整体验</div>
+  <div id="letter"><i class="t"></i><i class="b"></i><div class="ttl"><h1>卡姆辛旧城</h1><p>KHAMSIN OLD TOWN · 消耗战</p><small>点击或按空格跳过</small></div></div>
+</div>
+
+<div id="loading" class="screen">
+  <div class="logo"><h1>KHAMSIN</h1><h2>热 风 行 动</h2></div>
+  <div class="lbar"><i id="lfill"></i></div>
+  <p id="ltext">正在初始化渲染器…</p>
+</div>
+
+<div id="menu" class="screen hidden">
+  <div class="mwrap">
+    <div class="logo"><h1>KHAMSIN</h1><h2>热 风 行 动</h2><p>卡姆辛旧城 · 飞行员与机甲的消耗战</p></div>
+    <div class="btns" id="mainBtns">
+      <button id="btnStart" class="primary">开始行动</button>
+      <button id="btnDemo" title="AI 以第一人称自动作战，方便录屏。H 隐藏界面，Enter / 点击画面接管，Esc 返回">自动对战（录制）</button>
+      <button id="btnExplore" title="没有敌人，机甲随时可以呼叫：自己在地图里随便逛、试路线">自由探索（无敌人）</button>
+      <button id="btnMaps">选择地图</button>
+      <button id="btnHow">操作说明</button>
+      <button id="btnSet">设置</button>
+      <button id="btnInstall" class="hidden" title="把游戏装到主屏幕 / 桌面：全屏运行，素材缓存后可以离线玩">安装为应用（可离线）</button>
+    </div>
+    <div class="panelbox hidden" id="howBox">
+      <h3>操作说明</h3>
+      <div class="keys kb">
+        <div><kbd>W A S D</kbd>移动（向前自动冲刺）</div><div><kbd>空格</kbd>跳跃 / 二段跳 / 蹬墙跳</div>
+        <div><kbd>C / Shift</kbd>下蹲，奔跑中按下 = 滑铲</div><div><kbd>贴墙起跳</kbd>自动蹬墙跑，连续换墙会越来越快</div>
+        <div><kbd>Q</kbd>钩爪（再按一次或跳跃脱钩）</div><div><kbd>E</kbd>滑索 / 登机 / 弹射</div>
+        <div><kbd>鼠标左键</kbd>开火　<kbd>右键</kbd>瞄准</div><div><kbd>1 2 3 / 滚轮</kbd>切换武器　<kbd>R</kbd>换弹</div>
+        <div><kbd>G</kbd>手雷　<kbd>F</kbd>近战处决</div><div><kbd>V</kbd>机甲就绪后呼叫空降</div>
+        <div><kbd>机甲内</kbd>左键主炮 · 右键火箭齐射 · Shift 冲刺</div><div><kbd>机甲内</kbd>F 重拳 · X 熔毁核心 · 长按 E 离舱</div>
+        <div><kbd>T</kbd>双界试炼：相位切换（现世 ⇄ 蜃界）</div><div><kbd>按住 Z</kbd>双界试炼：蜃影透视，看见另一界</div>
+        <div><kbd>L</kbd>灰盒地图：显示 / 隐藏区域标注和图例</div><div><kbd>自由探索</kbd>没有敌人，机甲随时可以呼叫（V）</div>
+        <div><kbd>自动对战</kbd>H 隐藏界面 · Enter / 点击画面接管</div><div><kbd>自动对战</kbd>Esc 返回主菜单，一局结束后自动再开</div>
+      </div>
+      <div class="keys tc">
+        <div><kbd>左半屏</kbd>按住拖动 = 移动（向前推自动冲刺）</div><div><kbd>右半屏</kbd>拖动 = 转视角，按着按钮也能拖</div>
+        <div><kbd>跳</kbd>跳跃 / 二段跳 / 蹬墙跳</div><div><kbd>蹲滑</kbd>按住下蹲，奔跑中按 = 滑铲</div>
+        <div><kbd>贴墙起跳</kbd>自动蹬墙跑，连续换墙越来越快</div><div><kbd>瞄准</kbd>点一下开镜，再点收镜</div>
+        <div><kbd>钩爪</kbd>对准目标点一下，再点或跳跃脱钩</div><div><kbd>切枪 · 换弹</kbd>在开火键左边</div>
+        <div><kbd>手雷 · 近战</kbd>在开火键上方</div><div><kbd>机甲</kbd>充能满后点小地图下方的按钮呼叫</div>
+        <div><kbd>机甲内</kbd>开火 · 火箭 · 冲刺 · 重拳 · 核心</div><div><kbd>登机 · 滑索</kbd>靠近时屏幕中间会出现按钮</div>
+        <div><kbd>相位</kbd>双界试炼：现世 ⇄ 蜃界</div><div><kbd>透视</kbd>双界试炼：看见另一界的轮廓</div>
+      </div>
+      <p class="tip">目标：击杀敌方单位为我方得分，先到 150 分获胜。击杀会给机甲充能；敌方机甲用「轨道步枪」和手雷对付。</p>
+      <button class="back">返回</button>
+    </div>
+    <div class="panelbox hidden" id="mapBox">
+      <h3>选择地图</h3>
+      <div id="mapList"></div>
+      <button class="back">返回</button>
+    </div>
+    <div class="panelbox hidden" id="installBox">
+      <h3>安装到主屏幕</h3>
+      <p class="tip" id="installText">在 Safari 里点底部的「分享」按钮，选「添加到主屏幕」。装好后从主屏幕图标打开：全屏运行，素材缓存后没有网络也能玩。</p>
+      <button class="back">返回</button>
+    </div>
+    <div class="panelbox hidden" id="setBox">
+      <h3>设置</h3>
+      <label>画质<select id="optQ"><option value="low">低</option><option value="medium">中</option><option value="high">高</option><option value="ultra">极致</option></select><small>更改后重新载入</small></label>
+      <label>视角灵敏度<input type="range" id="optSens" min="0.4" max="3" step="0.05" value="1"><span id="optSensV">1.00</span></label>
+      <label>视野 FOV<input type="range" id="optFov" min="60" max="95" step="1" value="74"><span id="optFovV">74</span></label>
+      <label>主音量<input type="range" id="optVol" min="0" max="1" step="0.05" value="0.5"><span id="optVolV">50</span></label>
+      <label>自动冲刺<input type="checkbox" id="optSprint" checked><small>关闭后按住 Shift 冲刺（此时用 C 滑铲）</small></label>
+      <button class="back">返回</button>
+    </div>
+  </div>
+  <div class="foot">原创地图 · 程序化建模 + Poly Haven CC0 实拍材质与天空 · WebGL2</div>
+</div>
+
+<div id="pause" class="screen hidden">
+  <div class="mwrap small">
+    <h3>已暂停</h3>
+    <div class="btns"><button id="btnResume" class="primary">继续战斗</button><button id="btnRestart">重新开始</button><button id="btnQuit">返回主菜单</button></div>
+    <p class="tip kb">点击「继续战斗」重新锁定鼠标（刚按过 Esc 时浏览器要等一秒才允许重新锁定，没反应就再点一次）</p>
+  </div>
+</div>
+
+<div id="end" class="screen hidden">
+  <div class="mwrap">
+    <div class="logo"><h1 id="endTitle">胜利</h1><h2 id="endSub">任务完成</h2></div>
+    <div id="endScore"></div>
+    <div id="endStats" class="stats"></div>
+    <div class="btns row"><button id="btnAgain" class="primary">再来一局</button><button id="btnMenu">主菜单</button></div>
+  </div>
+</div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

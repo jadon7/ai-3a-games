@@ -1,0 +1,13 @@
+三座沉月会防御塔已完成。首版后修改了 6 轮，共 7 版，均使用游戏预览页核对。
+
+| 模型 | 高度 | 塔身半径 | 台基 | 三角形 |
+| --- | ---: | ---: | ---: | ---: |
+| [外塔](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/tower_me_1.glb) | 7.50 米 | 1.666 米 | 1 级 | 31,400 |
+| [内塔](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/tower_me_2.glb) | 9.20 米 | 1.831 米 | 2 级 | 39,308 |
+| [高地塔](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/tower_me_3.glb) | 11.00 米 | 1.880 米 | 3 级 | 39,364 |
+
+石缝、窗洞、铜肋和包边均为几何体。已确认三颗主晶体在游戏页中转动。重跑建模脚本后，三个 GLB 与定稿文件逐字节一致。
+
+[游戏视角](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/preview_game.jpg) · [逐塔近看](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/preview_close.jpg) · [设计图与成品对照](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/compare.jpg)
+
+与设计图相比，高地塔冠刃展开较窄，外塔长钩中段较直。游戏材质下的石芯也更灰。每轮的对照图、尺寸和重建命令均已记录。[制作说明](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_me/out/NOTES.md)

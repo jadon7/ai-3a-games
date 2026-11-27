@@ -1,0 +1,83 @@
+html, body { margin: 0; height: 100%; background: #0b0b0c; overflow: hidden; font-family: "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif; color: #f3efe6; -webkit-font-smoothing: antialiased; user-select: none; }
+#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+#ui { position: fixed; inset: 0; pointer-events: none; }
+.layer { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility .35s; }
+.layer.show { opacity: 1; visibility: visible; }
+kbd { font: 600 0.82em/1 "SF Mono", Menlo, monospace; padding: 0.28em 0.55em; border-radius: 5px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); margin: 0 .2em; }
+small { font-weight: 500; opacity: .7; }
+
+/* ---------- 比赛 HUD ---------- */
+#hud { text-shadow: 0 1px 10px rgba(0,0,0,.55); font-variant-numeric: tabular-nums; }
+#hud .tl { position: absolute; left: 3vw; top: 3.2vh; }
+#hud .pos { font: italic 800 clamp(40px, 7vh, 76px)/0.9 "SF Pro Display", "Helvetica Neue", sans-serif; letter-spacing: -0.02em; }
+#hud .pos small { font-size: 0.38em; margin-left: .15em; font-style: normal; }
+#hud .lap { margin-top: .7vh; font-size: clamp(13px, 2vh, 18px); opacity: .92; letter-spacing: .06em; }
+#hud .tr { position: absolute; right: 3vw; top: 3.4vh; text-align: right; }
+#hud .time { font: 700 clamp(24px, 4.2vh, 44px)/1 "SF Pro Display", sans-serif; letter-spacing: 0.01em; }
+#hud .best { font-size: clamp(12px, 1.8vh, 16px); opacity: .82; margin-top: .6vh; letter-spacing: .05em; }
+#hud .br { position: absolute; right: 3vw; bottom: 4vh; text-align: right; display: grid; grid-template-columns: auto auto; column-gap: 1.2vw; align-items: end; }
+#hud .gear { font: italic 800 clamp(30px, 5.4vh, 58px)/0.9 "SF Pro Display", sans-serif; color: #ffb25e; min-width: 1.1em; text-align: center; }
+#hud .spd { font: italic 800 clamp(48px, 9.4vh, 104px)/0.86 "SF Pro Display", sans-serif; letter-spacing: -0.03em; min-width: 2.4em; }
+#hud .spd small { font: 600 clamp(11px, 1.7vh, 15px)/1 sans-serif; letter-spacing: .12em; margin-left: .5em; font-style: normal; }
+#hud .rpm { grid-column: 1 / 3; height: 5px; margin-top: 1.4vh; background: rgba(255,255,255,.22); border-radius: 3px; overflow: hidden; position: relative; width: clamp(200px, 24vw, 340px); justify-self: end; box-shadow: 0 1px 8px rgba(0,0,0,.4); }
+#hud .rpm i { position: absolute; inset: 0; background: linear-gradient(90deg, #f3efe6 0 78%, #ffb25e 88%, #ff5a36 100%); transform-origin: left center; transform: scaleX(0); }
+#hud .rpm i.red { filter: brightness(1.35); }
+#hud .rpm u { position: absolute; right: 7%; top: 0; bottom: 0; width: 2px; background: rgba(0,0,0,.5); }
+#hud .bl { position: absolute; left: 2.4vw; bottom: 3vh; opacity: .92; }
+#hud .bl canvas { width: clamp(150px, 15vw, 230px); height: auto; display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,.45)); }
+#hud .drift { position: absolute; left: 50%; top: 11vh; transform: translate(-50%, -8px); text-align: center; opacity: 0; transition: opacity .2s, transform .2s; }
+#hud .drift.show { opacity: 1; transform: translate(-50%, 0); }
+#hud .drift .dl { font-size: clamp(11px, 1.6vh, 14px); letter-spacing: .5em; text-indent: .5em; opacity: .85; }
+#hud .drift .dp { font: italic 800 clamp(34px, 6.4vh, 68px)/1 "SF Pro Display", "PingFang SC", sans-serif; color: #ffd08a; }
+#hud .drift .dm { font: 700 clamp(14px, 2.2vh, 20px)/1.2 sans-serif; color: #ff9d4a; }
+#hud .drift.lost .dp { color: #ff6a55; font-size: clamp(22px, 3.6vh, 36px); }
+#hud .drift.bank .dp { color: #b9f0a8; }
+#hud .total { position: absolute; left: 50%; top: 3.6vh; transform: translateX(-50%); font-size: clamp(12px, 1.8vh, 16px); letter-spacing: .12em; opacity: .9; }
+#hud .total b { font-size: 1.25em; margin-left: .4em; color: #ffd08a; }
+#hud .msg { position: absolute; left: 50%; top: 27vh; transform: translateX(-50%); font: 700 clamp(18px, 3.2vh, 30px)/1.2 "SF Pro Display", "PingFang SC", sans-serif; letter-spacing: .08em; opacity: 0; transition: opacity .25s; white-space: nowrap; }
+#hud .msg.show { opacity: 1; }
+#hud .hint { position: absolute; left: 50%; bottom: 3.4vh; transform: translateX(-50%); font-size: clamp(11px, 1.6vh, 14px); letter-spacing: .06em; padding: .7em 1.3em; border-radius: 999px; background: rgba(12,12,13,.5); backdrop-filter: blur(8px); opacity: 0; transition: opacity .6s; white-space: nowrap; text-shadow: none; }
+#hud .hint.show { opacity: .95; }
+
+/* ---------- 叠加层 ---------- */
+.overlay { pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2.2vh; padding-bottom: 5vh; box-sizing: border-box; background: linear-gradient(180deg, rgba(8,8,9,.38) 0%, rgba(8,8,9,0) 30%, rgba(8,8,9,.0) 45%, rgba(8,8,9,.82) 100%); }
+.overlay.show { pointer-events: auto; }
+#menu .title { position: absolute; left: 5vw; top: 6vh; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+#menu h1 { margin: 0; font: italic 800 clamp(44px, 10vh, 108px)/0.95 "PingFang SC", "SF Pro Display", sans-serif; letter-spacing: .04em; }
+#menu .title p { margin: 1.2vh 0 0 .3em; font-size: clamp(12px, 1.9vh, 17px); letter-spacing: .34em; opacity: .85; }
+.cards { display: flex; gap: .9vw; max-width: 94vw; overflow-x: auto; padding: 8px 2px 6px; scroll-behavior: smooth; scrollbar-width: none; scroll-snap-type: x proximity; mask-image: linear-gradient(90deg, transparent 0, #000 2.5vw, #000 calc(100% - 2.5vw), transparent 100%); }
+.cards::-webkit-scrollbar { display: none; }
+.card { all: unset; flex: 0 0 auto; scroll-snap-align: center; cursor: pointer; width: clamp(118px, 11.2vw, 190px); padding: 0 0 1vh; border-radius: 12px; background: rgba(16,16,18,.56); backdrop-filter: blur(14px); border: 1.5px solid rgba(255,255,255,.14); display: flex; flex-direction: column; gap: .35vh; overflow: hidden; transition: border-color .2s, transform .2s, background .2s; }
+.card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; opacity: .9; }
+.card b { font-size: clamp(12px, 1.75vh, 16px); padding: .5vh .8vw 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card i { font-style: normal; font-size: clamp(10px, 1.4vh, 12px); color: #ffb25e; padding: 0 .8vw; letter-spacing: .06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card.on { border-color: #ffb25e; background: rgba(30,24,18,.7); transform: translateY(-5px); }
+.cardinfo { font-size: clamp(12px, 1.8vh, 15px); letter-spacing: .04em; min-height: 1.4em; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+.cardinfo b { color: #ffb25e; margin-right: .8em; }
+.cardinfo span { opacity: .85; }
+.go.wait { opacity: .6; pointer-events: none; }
+.row { display: flex; align-items: center; gap: .9vw; }
+.row .lbl { font-size: clamp(12px, 1.8vh, 15px); letter-spacing: .2em; opacity: .8; margin-right: .4vw; }
+.chip { all: unset; cursor: pointer; min-width: 2.6em; text-align: center; padding: .55em 0; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.25); font-weight: 700; font-size: clamp(13px, 1.9vh, 16px); }
+.chip.on { background: #f3efe6; color: #131314; border-color: #f3efe6; }
+.go { all: unset; cursor: pointer; margin-left: 1.6vw; padding: .8em 1.8em; border-radius: 999px; background: #ff8a2a; color: #16110c; font-weight: 800; font-size: clamp(14px, 2.2vh, 19px); letter-spacing: .1em; box-shadow: 0 6px 24px rgba(255,138,42,.35); }
+.go kbd { background: rgba(0,0,0,.16); border-color: rgba(0,0,0,.25); }
+.keys { font-size: clamp(11px, 1.55vh, 13px); opacity: .72; letter-spacing: .05em; }
+.panel { margin: auto; padding: 4.5vh 4.5vw; border-radius: 18px; background: rgba(14,14,16,.68); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.14); text-align: center; min-width: min(520px, 70vw); }
+.panel h2 { margin: 0 0 2.4vh; font: italic 800 clamp(30px, 5.6vh, 58px)/1 "PingFang SC", sans-serif; letter-spacing: .08em; }
+.panel p { margin: 1.4vh 0 0; font-size: clamp(13px, 1.9vh, 16px); }
+.panel .dim { opacity: .62; font-size: clamp(11px, 1.6vh, 13px); margin-top: 2.2vh; }
+#pause, #results { justify-content: center; background: rgba(8,8,9,.42); }
+.rgrid { display: grid; grid-template-columns: repeat(4, auto); gap: 3vw; justify-content: center; margin: 1vh 0 3vh; font-variant-numeric: tabular-nums; }
+.rgrid div { display: flex; flex-direction: column; gap: .8vh; }
+.rgrid small { letter-spacing: .2em; font-size: clamp(11px, 1.5vh, 13px); }
+.rgrid b { font: 800 clamp(20px, 3.6vh, 36px)/1 "SF Pro Display", sans-serif; color: #ffd08a; }
+#loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2vh; background: #0b0b0c; transition: opacity .8s; z-index: 5; }
+#loading h1 { margin: 0; font: italic 800 clamp(36px, 7vh, 72px)/1 "PingFang SC", sans-serif; letter-spacing: .08em; }
+#loading .bar { width: min(320px, 50vw); height: 3px; background: rgba(255,255,255,.15); border-radius: 2px; overflow: hidden; }
+#loading .bar i { display: block; height: 100%; width: 0; background: #ff8a2a; transition: width .3s; }
+#loading p { margin: 0; font-size: 13px; opacity: .6; letter-spacing: .1em; }
+
+.notrans *, .notrans { transition: none !important; }
+.chip.wide { padding: .55em 1.1em; }
+.row .lbl.sp { margin-left: 1.2vw; }

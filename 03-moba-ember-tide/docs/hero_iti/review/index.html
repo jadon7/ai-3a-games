@@ -1,0 +1,216 @@
+<meta charset="utf-8">
+<title>伊缇 · 绯刃 阶段确认</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：新刺客伊缇第二、三阶段的确认页。顶部说明 → 要你定的 → 特效录像（王者那一档）→ 模型和动作 → 还不够好的和第四阶段怎么处理 → 花费。沿用卡通版验收页的字体和版式，强调色换成伊缇的绯红 */
+:root{
+  --bg:#f3f1f4; --surface:#ffffff; --surface-2:#e8e3ea; --fg:#1c1320; --muted:#625868; --line:#d8d0db;
+  --blade:#c4103a; --ember:#a8730f; --ok:#1d7a4a; --shot:#0d0a10;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#141017; --surface:#1d1722; --surface-2:#2a2130; --fg:#f1ebf3; --muted:#a99fae; --line:#3a2f40; --blade:#ff4d73; --ember:#f2c35a; --ok:#5bd08f; --shot:#07050a; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#141017; --surface:#1d1722; --surface-2:#2a2130; --fg:#f1ebf3; --muted:#a99fae; --line:#3a2f40; --blade:#ff4d73; --ember:#f2c35a; --ok:#5bd08f; --shot:#07050a; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--blade);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:52px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--blade)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lede{margin:14px 0 0;max-width:52em;color:var(--muted);font-size:16px}
+.lede q{color:var(--fg)}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em;text-wrap:balance}
+h3.sub{margin:28px 0 10px;font:700 16px/1.4 var(--body)}
+.note{margin:0 0 16px;color:var(--muted);font-size:14px;max-width:58em}
+code{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.stack{display:flex;flex-direction:column;gap:14px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img,figure video{display:block;width:100%;max-width:100%;height:auto;background:var(--shot)}
+figure video{aspect-ratio:16/9}
+figure.narrow{max-width:720px}
+figcaption{font-size:13px;line-height:1.6;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.tag{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--blade);color:var(--blade);white-space:nowrap}
+.tag.dim{border-color:var(--line);color:var(--muted)}
+.speed{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 14px;font-size:13px;color:var(--muted)}
+.speed button{font:600 13px/1 var(--util);letter-spacing:.04em;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.speed button[aria-pressed="true"]{border-color:var(--blade);color:var(--blade)}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-family:var(--util)}
+td b{color:var(--blade);font-weight:700}
+.decide{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--blade);padding:18px 20px;display:flex;flex-direction:column;gap:10px;max-width:60em}
+.decide h3{margin:0;font:700 17px/1.4 var(--body)}
+.decide p{margin:0;font-size:14.5px;line-height:1.75;color:var(--muted)}
+.decide ul{margin:0;padding-left:1.2em;font-size:14.5px;line-height:1.75;display:flex;flex-direction:column;gap:2px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.7}
+.cols li span{color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.nums div{background:var(--surface);border:1px solid var(--line);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.nums b{font:600 26px/1.2 var(--util);font-variant-numeric:tabular-nums}
+.nums span{font-size:13px;color:var(--muted)}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){ .row{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:40px} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 新刺客 · 伊缇 · 绯刃</p>
+  <h1>第二、三阶段确认</h1>
+  <p class="lede">你看完 Codex 试做的特效后说：<q>我想做王者那种很炫酷，打击感很强，很有张力，范围感也很强的感觉</q>。外形你说“你来定”，我定了方向 A（银白短发、绯红长围巾、双持反握直刃）。这一页放两件事的结果：一是特效按王者那一档重做（试验页里，人物暂时还是岚的模型），二是伊缇自己的模型、代码做的围巾、10 段新动作（已经能放进游戏里跑）。第四阶段会把两边合起来，写成真正的技能。</p>
+</header>
+
+<section>
+  <h2>要你定的</h2>
+  <div class="decide">
+    <h3>这两样能过的话，开始第四阶段</h3>
+    <p>第四阶段要做的：</p>
+    <ul>
+      <li>写技能代码：Q 三叠斩、W 残焰（留影换位）、E 影步闪到身后、R 不可选中连闪 6 刀、被动烬痕叠层引爆</li>
+      <li>把这页的三个特效接进游戏，再补 W、E 和普攻的特效；顿帧、震屏、受击闪白用游戏现成的接口</li>
+      <li>动作按技能重新对时间点，下面“还不够好的”里能在这一步解决的一起解决</li>
+      <li>电脑会用她，数值跑几局对战调平衡；海报、头像、技能图标；全套回归</li>
+    </ul>
+    <p>做完再找你看一次。</p>
+  </div>
+</section>
+
+<section>
+  <h2>特效：王者那一档</h2>
+  <p class="note">这次没用 Codex，由 Opus 在试验页里自己做，先看了李白、镜、澜、兰陵王、云中君、韩信的实机画面，只学做法、不拿素材。录像是真实时间、30 帧，开头 0.3 秒静止。游戏镜头和对局里的距离一样（27 米），中镜头拉近到 18 米。</p>
+  <div class="speed" role="group" aria-label="播放速度">
+    <span>播放速度</span>
+    <button type="button" id="sp1" data-rate="1" aria-pressed="true">原速</button>
+    <button type="button" id="sp4" data-rate="0.25" aria-pressed="false">慢放 4 倍</button>
+  </div>
+  <div class="stack">
+    <div class="row">
+      <figure><video src="vid/r_game.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag">R 绯月千刃</span>游戏镜头。按下地面暗一档、出 6 米法阵；六刀连闪，每刀闪白、顿帧、小抖；定格后十字新月炸开，冲击波推到边线。</figcaption></figure>
+      <figure><video src="vid/r_mid.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag">R 绯月千刃</span>中镜头，看刀网和收尾的 X 新月。</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="vid/q_mid.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag">Q 三叠斩</span>中镜头。前两段是澜那样一大弯横切；第三段腾空翻身下劈，落地 3 米范围整片闪一下，3 米外的小兵不受伤。</figcaption></figure>
+      <figure><video src="vid/q_game.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag">Q 三叠斩</span>游戏镜头。三段连着放，每段隔 0.55 秒，第四阶段按技能重排。</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="vid/p_close.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag">被动 烬痕</span>近镜头。头顶三格记号，叠满变白热；第三下命中后一颗星芒，接八瓣尖花绽开、碎掉。</figcaption></figure>
+      <figure><video src="vid/p_game.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag">被动 烬痕</span>游戏镜头。花缩到第一版的 65%，不会每次都把人盖住。</figcaption></figure>
+    </div>
+  </div>
+
+  <h3 class="sub">你说的四个词，落在画面上是什么</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>你要的</th><th>这一版画面上</th><th>离王者还差</th></tr></thead>
+    <tbody>
+      <tr><td><b>炫酷</b></td><td>深绯到亮绯、白热芯；刀气两头尖、拖长尾；每个亮的形状背后一层同形状的柔光；大招有全屏压暗加一闪的高光时刻</td><td>柔光是每个形状各画各的，形状之间不会晕到一起，近看比真泛光硬一点；没有王者刀光里流动的能量丝</td></tr>
+      <tr><td><b>打击感</b></td><td>每下命中都是同一套：目标整个闪白、顿帧、镜头抖、白芯星芒、顺刀路溅火花、身上留刀痕。Codex 那版只有收尾有顿帧和抖动</td><td>大个子（托尔格）挨打时闪白加柔光是一大团白，约 0.1 秒</td></tr>
+      <tr><td><b>张力</b></td><td>起手光往脚下收、往刀上聚；消失留残影；大招收尾前定格 0.12 秒再爆开；Q 第三段腾空劈下</td><td>人物还是岚的模型，Q 的翻身是代码把整个人转一圈；第四阶段换成伊缇自己的动作</td></tr>
+      <tr><td><b>范围感</b></td><td>R 落点 6 米法阵，冲击波推到边线时边线再亮一下，地面裂开再冷成暗疤；Q 第三段 3 米范围整片闪</td><td>地裂冷下去以后在红土地面上几乎看不见</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="sub">和 Codex 那版、和王者比</h3>
+  <div class="stack">
+    <figure><img src="img/fx_codex_vs.jpg" alt="Codex 那版和这一版的大招按阶段对齐并排" loading="lazy"><figcaption><span class="tag dim">对比</span>大招按阶段对齐：上 Codex 那版，下这一版。这一版有顿帧，同一阶段晚 0.1 到 0.2 秒。</figcaption></figure>
+    <figure><img src="img/fx_rework.jpg" alt="返工前后同一时刻" loading="lazy"><figcaption><span class="tag dim">返工</span>我看完第一版后让它又改了一轮：加柔光、从发粉压成深绯红、大招六刀加宽、Q 前两刀加大、被动的花缩小。上第一版，下返工版。</figcaption></figure>
+    <figure class="narrow"><img src="img/fx_wz.jpg" alt="和王者实机截图并排" loading="lazy"><figcaption><span class="tag dim">参照</span>左王者实机截图（只当参考），右这一版同一类时刻。</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>模型和动作</h2>
+  <p class="note">Tripo 出模型和骨骼，一次就成；双直刃用脚本建，刃口一道绯红；围巾的两条长飘带没交给 Tripo（会烤成一块硬布），改用代码做弹簧链，跑、停、转身、冲刺时真的会飘。10 段动作用即梦出视频，再读成骨骼动作。下面的游戏画面借的是岚的技能，伊缇自己的技能代码是第四阶段的事。</p>
+  <div class="stack">
+    <figure><img src="img/m_concept.jpg" alt="设定图、模型、游戏里并排" loading="lazy"><figcaption><span class="tag">外形</span>左上设定图，右上模型三面（反握直刃垂在身侧），左下设定图的游戏镜头图，右下游戏里。</figcaption></figure>
+    <figure><img src="img/m_clips.jpg" alt="游戏里 10 段动作连拍" loading="lazy"><figcaption><span class="tag">10 段动作</span>游戏里 15 米镜头的连拍，从上到下：待机、跑、普攻 1、普攻 2、Q 一二段、Q 三段、W、E、R、死亡。</figcaption></figure>
+  </div>
+
+  <h3 class="sub">每段动作</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>动作</th><th>内容</th><th>按键到出手</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>普攻 1</td><td>大幅旋身斩</td><td class="n">0.15 秒</td><td>手感的规矩是 0.3 秒以内</td></tr>
+      <tr><td>普攻 2</td><td>反向旋身、双刀</td><td class="n">0.29 秒</td><td></td></tr>
+      <tr><td>Q 一二段</td><td>低身前冲斩</td><td class="n">0.17 秒</td><td></td></tr>
+      <tr><td>Q 三段</td><td>腾空前空翻下劈</td><td class="n">起跳 0.12 秒</td><td>落地 1.11 秒。视频里跳得太高还悬停，压低了腾空、加快了播放，仍偏飘</td></tr>
+      <tr><td>W</td><td>后撤一步接前扑</td><td class="n">0.29 秒</td><td></td></tr>
+      <tr><td>E</td><td>一缩、反手上挑刺</td><td class="n">0.28 秒</td><td></td></tr>
+      <tr><td>R</td><td>起跳、空中三刀、落地双刀交叉</td><td class="n">起跳 0.06 秒</td><td>落地 1.53 秒。第一版视频在空中转成一团糊，重出后是分开的三刀，没有“连续翻转”</td></tr>
+      <tr><td>待机、跑、死亡</td><td>压低重心的蹲姿；大幅前倾冲刺跑</td><td class="n">—</td><td>跑步滑步左脚 0.45、右脚 0.25 米/秒；待机和跑的循环接得上</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="sub">个头、显眼度和围巾</h3>
+  <div class="stack">
+    <div class="row">
+      <figure><img src="img/m_size.jpg" alt="和葛隆、岚、小兵站一起" loading="lazy"><figcaption><span class="tag">个头</span>中间是伊缇，左葛隆、右岚。身高定 3.4 米：她待机深蹲、身子细，3.3 米时比岚矮一成。</figcaption></figure>
+      <figure><img src="img/m_pop.jpg" alt="草地、石板、红土上的伊缇" loading="lazy"><figcaption><span class="tag">显眼度</span>草地、石板、红土上。深色甲是设计本身，身上亮度比岚低约一成。</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="vid/scarf.mp4" muted loop playsinline controls preload="metadata"></video><figcaption><span class="tag">围巾</span>跑、急停、转身、冲刺、闪现。闪现时整条重置到身后，不会拉出一条横穿画面的长带。</figcaption></figure>
+      <figure><img src="img/m_scarf.jpg" alt="四个方向跑时的围巾" loading="lazy"><figcaption><span class="tag">围巾</span>四个方向跑。侧跑、背跑都好看；朝镜头跑（第一列）是两根竖着的红带子。</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>还不够好的，第四阶段怎么处理</h2>
+  <div class="cols">
+    <section>
+      <h3>特效</h3>
+      <ul>
+        <li>亮草地、浅石板上，红色柔光叠上去还有点发粉。<span>接进游戏后在对局画面里再压一次颜色。</span></li>
+        <li>大个子挨打时一大团白。<span>闪白改用游戏里英雄自带的受击闪白，按体型减弱。</span></li>
+        <li>地裂在红土上冷下去看不见。<span>红土上换偏暗的冷色。</span></li>
+        <li>还没在迷雾里、团战多个特效叠在一起时看过。<span>接进游戏后录 5v5 团战看。</span></li>
+      </ul>
+    </section>
+    <section>
+      <h3>模型和动作</h3>
+      <ul>
+        <li>Q 三段和 R 的腾空偏飘、偏慢。<span>这两招本身有位移，技能代码里按位移距离重新卡起跳和落地时间，必要时再加快。</span></li>
+        <li>R 动作是空中三刀，不是连续翻转。<span>R 的主体是不可选中、在敌人之间连闪 6 刀，那一段画面靠特效，动作只用在起跳和落地收势，所以我先这样用，不再花即梦重出。</span></li>
+        <li>朝镜头跑时围巾是两根竖带子。<span>再调飘带往两侧分开的力度。</span></li>
+        <li>整体偏暗。<span>试过把提亮从 1.4 调到 1.6，紫色会发灰，第四阶段在对局里定。</span></li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+<section>
+  <h2>花费</h2>
+  <div class="nums">
+    <div><b>65</b><span>Tripo 积分（模型 40、绑骨 25），余 3095</span></div>
+    <div><b>547</b><span>即梦积分（动作视频 11 段 495、特效贴图 4 张 52），余 4748</span></div>
+    <div><b>0</b><span>Codex 次数（这一轮特效没用 Codex）</span></div>
+  </div>
+</section>
+
+<p class="foot">模型、围巾和动作已经合进 <code>style-b</code> 分支，合并后类型检查通过，游戏里载入伊缇没有报错；合并前在它自己的分支上跑过一局全电脑对战（17 分钟正常结束），点击和触屏测试和改之前一致。老英雄不走新加的围巾代码。特效还在试验页 <code>lab/fx_iti/</code> 里，没接进游戏。都没有发布到线上。</p>
+</div>
+<script>
+(function(){
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.speed button'));
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var r = parseFloat(b.getAttribute('data-rate'));
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      vids.forEach(function(v){ v.playbackRate = r; v.defaultPlaybackRate = r; });
+    });
+  });
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    vids.forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls',''); });
+  }
+})();
+</script>

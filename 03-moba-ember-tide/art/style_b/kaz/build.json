@@ -1,0 +1,19 @@
+{
+ "name": "kaz_b",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz_b_skeleton.json",
+ "out": "art/style_b/kaz/check/game.glb",
+ "packed": "art/style_b/kaz/check/packed.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/style_b/kaz/retarget/motions/ik/idle.npz",
+  "run": "art/style_b/kaz/retarget/motions/ik/run.npz",
+  "attack1": "art/style_b/kaz/retarget/motions/ik/attack1.npz",
+  "attack2": "art/style_b/kaz/retarget/motions/ik/attack2.npz",
+  "q": "art/style_b/kaz/retarget/motions/ik/q.npz",
+  "w": "art/style_b/kaz/retarget/motions/ik/w.npz",
+  "e": "art/style_b/kaz/retarget/motions/ik/e.npz",
+  "r": "art/style_b/kaz/retarget/motions/ik/r.npz",
+  "death": "art/style_b/kaz/retarget/motions/ik/death.npz"
+ },
+ "_note": "四足 B 的出品：creature_build.sh 打开 V2R/assets/model/kaz_b.blend（rig/make_rig.sh 摆正出来的），加上套好的动作（retarget/motions/ik/），导出。材质名改 _b 和去贴图在 rebuild.sh 里"
+}

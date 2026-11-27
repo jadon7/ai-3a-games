@@ -1,0 +1,128 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/moko_skeleton.json",
+ "out_dir": "art/hero/moko/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_idle/motion.npz",
+   "loop": [
+    70,
+    116
+   ],
+   "from": 2
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_run/motion.npz",
+   "loop": [
+    8,
+    16
+   ],
+   "from": 33,
+   "stride": true,
+   "to": 52
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_attack1/motion.npz",
+   "segments": [
+    [
+     72,
+     80
+    ],
+    [
+     88,
+     98
+    ],
+    [
+     103,
+     117
+    ]
+   ]
+  },
+  "q": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_q/motion.npz",
+   "segments": [
+    [
+     74,
+     80
+    ],
+    [
+     83,
+     99
+    ],
+    [
+     103,
+     116
+    ]
+   ]
+  },
+  "w": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_w/motion.npz",
+   "segments": [
+    [
+     4,
+     14
+    ],
+    [
+     25,
+     38
+    ],
+    [
+     50,
+     64
+    ]
+   ]
+  },
+  "e": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_e/motion.npz",
+   "segments": [
+    [
+     3,
+     12
+    ],
+    [
+     47,
+     57
+    ],
+    [
+     104,
+     117
+    ]
+   ]
+  },
+  "r": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_r/motion.npz",
+   "segments": [
+    [
+     1,
+     13
+    ],
+    [
+     73,
+     84
+    ],
+    [
+     90,
+     104
+    ]
+   ]
+  },
+  "r_spin": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_r/motion.npz",
+   "range": [
+    33,
+    66
+   ]
+  },
+  "death_src": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/moko_death/motion.npz",
+   "range": [
+    66,
+    77
+   ],
+   "settle": false
+  }
+ }
+}

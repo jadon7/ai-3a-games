@@ -1,0 +1,15 @@
+{
+  "name": "jindouyun-sim",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "筋斗云驾驶模拟器",
+  "scripts": {
+    "serve": "node tools/serve.mjs",
+    "shot": "node tools/shot.mjs"
+  },
+  "dependencies": {
+    "puppeteer-core": "^23.11.1",
+    "three": "^0.170.0"
+  }
+}

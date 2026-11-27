@@ -1,0 +1,152 @@
+{
+  "name": "vero",
+  "raw": "art/hero/vero/tripo_rigged.glb",
+  "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+  "out": "art/hero/vero/game.glb",
+  "packed": "public/assets/hero/vero.glb",
+  "pose_out": "art/hero/vero/stance.npz",
+  "tex": 2048,
+  "weapon_tex": 1024,
+  "motions": {
+    "idle": "art/hero/vero/motions_fix/idle.npz",
+    "run": "art/hero/vero/motions_fix/run.npz",
+    "attack1": "art/hero/vero/motions_fix/attack1.npz",
+    "q": "art/hero/vero/motions_fix/q.npz",
+    "w": "art/hero/vero/motions_fix/w.npz",
+    "e": "art/hero/vero/motions_fix/e.npz",
+    "r": "art/hero/vero/motions_fix/r.npz",
+    "death": "art/hero/vero/motions_fix/death.npz"
+  },
+  "gear": [
+    {
+      "type": "file",
+      "src": "art/models_src/weapon_vero_raw.glb",
+      "side": "Right",
+      "length": 0.75,
+      "grip": 0.18,
+      "flip": true,
+      "roll": 90,
+      "rot": [
+        -25,
+        0,
+        0
+      ]
+    }
+  ],
+  "stance": {
+    "hips": {
+      "offset": [
+        0,
+        0,
+        -0.04
+      ],
+      "yaw": -40,
+      "lean": 4,
+      "roll": 9
+    },
+    "spine": [
+      [
+        3,
+        -5
+      ],
+      [
+        3,
+        -5
+      ],
+      [
+        2,
+        -5
+      ]
+    ],
+    "head": {
+      "yaw": 50,
+      "pitch": -6
+    },
+    "legs": {
+      "Left": {
+        "ankle": [
+          0.05,
+          -0.12,
+          0.08
+        ],
+        "pole": [
+          0.15,
+          -1,
+          0
+        ],
+        "toe": 5
+      },
+      "Right": {
+        "ankle": [
+          -0.07,
+          0.125,
+          0.08
+        ],
+        "pole": [
+          -0.82,
+          -0.57,
+          0
+        ],
+        "toe": -55
+      }
+    },
+    "arms": {
+      "Left": {
+        "wrist": [
+          -0.045,
+          -0.162,
+          0.485
+        ],
+        "pole": [
+          0.9,
+          0.1,
+          -0.3
+        ],
+        "blade": [
+          0.2054,
+          -0.9661,
+          -0.1564
+        ],
+        "shrug": -8,
+        "edge": [
+          -0.9,
+          -0.15,
+          -0.3
+        ]
+      },
+      "Right": {
+        "wrist": [
+          -0.177,
+          0.012,
+          0.622
+        ],
+        "pole": [
+          -0.7,
+          0.62,
+          0.33
+        ],
+        "blade": [
+          0.1999,
+          -0.9403,
+          0.2756
+        ],
+        "edge": [
+          0.0573,
+          -0.2696,
+          -0.9613
+        ],
+        "shrug": 6
+      }
+    },
+    "breath": {
+      "frames": 96,
+      "hips": 0.003,
+      "chest": 1.0,
+      "shoulder": 0.8,
+      "hand": 0.004
+    }
+  },
+  "grip": {
+    "Left": 0.15
+  }
+}

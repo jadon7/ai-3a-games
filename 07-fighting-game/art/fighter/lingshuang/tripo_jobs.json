@@ -1,0 +1,4 @@
+[
+ {"name": "fighter_lingshuang", "image": "art/fighter/lingshuang/ref.png", "face_limit": 60000, "texture_quality": "detailed"},
+ {"name": "weapon_lingshuang", "image": "art/fighter/lingshuang/weapon_concept.png", "face_limit": 12000, "texture_quality": "detailed"}
+]

@@ -1,0 +1,5 @@
+[{"wait": 1500}, {"shot": "a_idle"},
+ {"js": "(() => { const a = __play.actor; window.__p0 = [a.pos.x, a.pos.z]; a.moveTo(a.pos.x + 16, a.pos.z + 3); return 1; })()"}, {"burst": ["b_run", 8, 110]},
+ {"js": "__play.actor.stop(); 1"}, {"burst": ["c_stop", 6, 90]},
+ {"js": "(() => { const a = __play.actor; a.moveTo(a.pos.x - 14, a.pos.z - 2); return 1; })()"}, {"burst": ["d_turn", 8, 90]},
+ {"js": "(() => { const a = __play.actor; a.stop(); a.teleport(a.pos.x + 7, a.pos.z + 3); return 1; })()"}, {"burst": ["e_blink", 5, 70]}]

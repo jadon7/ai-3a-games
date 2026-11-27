@@ -1,0 +1,34 @@
+HERO PINE world [98.0, -37.2, 92.1]
+00:08.936  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/real_env_timing_A.png'
+RENDERED A 6.9s
+00:10.708  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/real_env_timing_A.png'
+RENDERED A again 1.8s
+00:15.338  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/real_env_timing_C.png'
+RENDERED C 4.6s
+00:17.558  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/real_env_timing_C.png'
+RENDERED C again 2.2s
+00:21.461  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/real_env_timing_B.png'
+RENDERED B 3.9s
+00:23.398  render           | Saved: '/Users/jadon7/Library/Application Support/Claude/scratch-workspaces/dfe2b44a-8503-4a5e-af9b-63b1be0e053b/aae3434b-694f-413f-a991-1f79c427025e/scratch-2026-11-22-6c05eb/wukong/tests/real_env_timing_B.png'
+RENDERED B again 1.9s
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit
+       24.31 real        13.51 user         2.56 sys
+          6491291648  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              451026  page reclaims
+               23704  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 744  voluntary context switches
+               67401  involuntary context switches
+        135430213369  instructions retired
+         48156408694  cycles elapsed
+         15437553776  peak memory footprint

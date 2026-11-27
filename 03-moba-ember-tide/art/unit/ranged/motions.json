@@ -1,0 +1,44 @@
+{
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ranged_skeleton.json",
+  "out_dir": "art/unit/ranged/motions",
+  "fps": 30,
+  "smooth": {
+    "Hand": 1.0
+  },
+  "actions": {
+    "walk": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ranged_run/motion.npz",
+      "loop": [
+        10,
+        40
+      ],
+      "from": 20,
+      "stride": true
+    },
+    "attack": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ranged_attack/motion.npz",
+      "segments": [
+        [
+          6,
+          17
+        ],
+        [
+          24,
+          36
+        ],
+        [
+          44,
+          58
+        ]
+      ]
+    },
+    "death": {
+      "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/ranged_death/motion.npz",
+      "range": [
+        54,
+        105
+      ],
+      "settle": false
+    }
+  }
+}

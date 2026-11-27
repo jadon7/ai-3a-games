@@ -1,0 +1,262 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/yanjin_skeleton.json",
+ "out_dir": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0,
+  "ForeArm": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_idle/motion.npz",
+   "loop": [
+    40,
+    80
+   ],
+   "from": 4
+  },
+  "walk_f": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_walk_f/motion.npz",
+   "loop": [
+    14,
+    40
+   ],
+   "from": 4,
+   "stride": true
+  },
+  "walk_b": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_walk_b/motion.npz",
+   "loop": [
+    14,
+    40
+   ],
+   "from": 4,
+   "stride": true
+  },
+  "light1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_light1/motion.npz",
+   "pin": true,
+   "segments": [
+    [
+     4,
+     18
+    ],
+    [
+     44,
+     56
+    ]
+   ]
+  },
+  "light2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_light2/motion.npz",
+   "pin": true,
+   "segments": [
+    [
+     14,
+     36
+    ],
+    [
+     46,
+     60
+    ]
+   ]
+  },
+  "heavy": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_heavy/motion.npz",
+   "pin": true,
+   "segments": [
+    [
+     12,
+     34
+    ],
+    [
+     62,
+     88
+    ]
+   ]
+  },
+  "block": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_block/motion.npz",
+   "pin": true,
+   "segments": [
+    [
+     14,
+     102
+    ]
+   ]
+  },
+  "jump": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_jump/motion.npz",
+   "segments": [
+    [
+     0,
+     58
+    ]
+   ],
+   "pin": true
+  },
+  "launcher": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_launcher/motion.npz",
+   "segments": [
+    [
+     2,
+     54
+    ]
+   ],
+   "pin": true
+  },
+  "air": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_air/motion.npz",
+   "segments": [
+    [
+     2,
+     58
+    ]
+   ],
+   "pin": true
+  },
+  "sweep": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_sweep/motion.npz",
+   "segments": [
+    [
+     8,
+     52
+    ]
+   ],
+   "pin": true
+  },
+  "lunge": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_lunge/motion.npz",
+   "segments": [
+    [
+     4,
+     40
+    ],
+    [
+     64,
+     82
+    ]
+   ],
+   "pin": true
+  },
+  "light3": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_light3/motion.npz",
+   "segments": [
+    [
+     6,
+     34
+    ],
+    [
+     60,
+     84
+    ]
+   ],
+   "pin": true
+  },
+  "grab": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_grab/motion.npz",
+   "segments": [
+    [
+     6,
+     22
+    ],
+    [
+     28,
+     78
+    ],
+    [
+     96,
+     116
+    ]
+   ],
+   "pin": true
+  },
+  "sp1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_sp1/motion.npz",
+   "segments": [
+    [
+     2,
+     64
+    ],
+    [
+     84,
+     114
+    ]
+   ],
+   "pin": true
+  },
+  "sp2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_sp2/motion.npz",
+   "segments": [
+    [
+     6,
+     60
+    ],
+    [
+     96,
+     114
+    ]
+   ],
+   "pin": true
+  },
+  "sp3": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_sp3/motion.npz",
+   "segments": [
+    [
+     12,
+     72
+    ],
+    [
+     96,
+     118
+    ]
+   ],
+   "pin": true
+  },
+  "ult_start": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_ult_start/motion.npz",
+   "segments": [
+    [
+     2,
+     72
+    ],
+    [
+     94,
+     116
+    ]
+   ],
+   "pin": true
+  },
+  "ult_combo": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_ult_combo/motion.npz",
+   "segments": [
+    [
+     3,
+     118
+    ]
+   ],
+   "pin": true
+  },
+  "win": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_win/motion.npz",
+   "segments": [
+    [
+     3,
+     84
+    ]
+   ],
+   "pin": true,
+   "settle": false
+  },
+  "intro": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/yanjin_intro/motion.npz",
+   "segments": [
+    [
+     8,
+     120
+    ]
+   ],
+   "pin": true
+  }
+ }
+}

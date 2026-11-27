@@ -1,0 +1,123 @@
+{
+ "A": {
+  "name": "A",
+  "cam": [
+   -7.2,
+   5.8,
+   15,
+   52,
+   0,
+   0.8
+  ],
+  "pre": "a.teleport(-9.8, 9.4); a.face(-4.95, 2.69, true); a.data.shots = 0",
+  "js": "a.attack(__arena.foes[1])",
+  "sec": 2.4,
+  "lead": 0.1
+ },
+ "P": {
+  "name": "P",
+  "cam": [
+   -5.8,
+   4.6,
+   16,
+   52,
+   0,
+   0.8
+  ],
+  "pre": "a.teleport(-7.64, 6.9); a.face(-4.95, 2.69, true); a.data.shots = 3",
+  "js": "a.attack(__arena.foes[1])",
+  "sec": 1.5,
+  "lead": 0.1
+ },
+ "Q": {
+  "name": "Q",
+  "cam": [
+   -7.2,
+   5.8,
+   15,
+   52,
+   0,
+   0.8
+  ],
+  "pre": "a.teleport(-9.8, 9.4); a.face(-4.95, 2.69, true); a.data.shots = 0",
+  "js": "a.cast('Q'); a.attack(__arena.foes[1])",
+  "sec": 2.6,
+  "lead": 0.1
+ },
+ "W": {
+  "name": "W",
+  "cam": [
+   -6.8,
+   5.2,
+   12,
+   52,
+   0,
+   0.8
+  ],
+  "pre": "a.teleport(-9.0, 6.6); a.face(-4.95, 2.69, true)",
+  "key": "W",
+  "aim": [
+   -4.95,
+   2.69
+  ],
+  "sec": 2.6,
+  "lead": 0.1
+ },
+ "E": {
+  "name": "E",
+  "cam": [
+   -5.8,
+   6.8,
+   13,
+   52,
+   0,
+   0.8
+  ],
+  "pre": "a.teleport(-4.6, 5.9); a.face(-2.0, 4.6, true)",
+  "key": "E",
+  "aim": [
+   -2.0,
+   4.6
+  ],
+  "sec": 1.6,
+  "lead": 0.1
+ },
+ "R": {
+  "name": "R",
+  "cam": [
+   -4.9,
+   3.2,
+   19,
+   55,
+   0,
+   0.8
+  ],
+  "pre": "a.teleport(-3.42, 5.23); a.face(-6.86, -0.49, true)",
+  "key": "R",
+  "aim": [
+   -6.86,
+   -0.49
+  ],
+  "sec": 2.4,
+  "lead": 0.1
+ },
+ "W2": {
+  "name": "W2",
+  "cam": [
+   -7.6,
+   5.6,
+   9,
+   55,
+   0,
+   0.6
+  ],
+  "pre": "a.teleport(-9.6, 7.6); a.face(-6.5, 4.2, true)",
+  "key": "W",
+  "aim": [
+   -6.5,
+   4.2
+  ],
+  "sec": 2.2,
+  "lead": 0.1
+ }
+}

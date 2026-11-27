@@ -1,0 +1,10 @@
+两个特效已在试验页完成，经过四轮录制和调整。可以直接循环播放，看 27 米游戏镜头下的效果。[播放 R · 绯月千刃](http://localhost:5251/lab/fx_codex/index.html?play=r&cam=top&loop=1) · [播放被动 · 烬痕引爆](http://localhost:5251/lab/fx_codex/index.html?play=passive&cam=top&loop=1)
+
+| 技能 | 最终录像 · 1600×900，30 帧/秒 | 峰值绘制次数 · 电脑 / 手机档 | 峰值粒子数 · 电脑 / 手机档 |
+|---|---|---:|---:|
+| R · 绯月千刃 | [27 米游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_top.mp4) · [18 米中镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_mid.mp4) | 16 / 15 | 32 / 16 |
+| 被动 · 烬痕引爆 | [27 米游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_top.mp4) · [12 米近镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_close.mp4) | 3 / 3 | 32 / 16 |
+
+R 的六次闪砍会留下刀网。伊缇回到中心停约 0.12 秒，两道弦长约 9.4 米的新月交叉扫出，随后刀面碎开，地裂冷却。被动第三击会把血条上方的三枚烬痕劈开，收向胸前，七片尖瓣在 0.49 秒内张开、碎散。[参考与成片并排图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/reference_vs_game.jpg)
+
+草地、浅石板和红土场景均已录制。手机档采用桌面 Chrome 的 844×390 横屏视口，真机帧率尚未实测。当前最明显的差距是团战视角里的血条会遮住部分刀弧，刀面也比参考更硬。四组连续帧、逐轮修改和接入方法均已整理。[交付目录](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final) · [制作与接入说明](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/NOTES.md)

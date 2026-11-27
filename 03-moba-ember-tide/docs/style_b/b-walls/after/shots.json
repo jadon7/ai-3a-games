@@ -1,0 +1,186 @@
+[
+ {
+  "name": "01_me",
+  "q": "cam=-20,2,36,50,0,-20",
+  "fps": 60,
+  "calls": 90,
+  "tris": 764318,
+  "errors": []
+ },
+ {
+  "name": "02_foe",
+  "q": "cam=22,-2,36,50,0,0",
+  "fps": 60,
+  "calls": 99,
+  "tris": 749190,
+  "errors": []
+ },
+ {
+  "name": "03_core_me",
+  "q": "cam=-90.3,0,48,58,4",
+  "fps": 60,
+  "calls": 112,
+  "tris": 780352,
+  "errors": []
+ },
+ {
+  "name": "04_jungle_me",
+  "q": "cam=-32,-30,36,52,0,180",
+  "fps": 60,
+  "calls": 87,
+  "tris": 759120,
+  "errors": []
+ },
+ {
+  "name": "05_jungle_foe",
+  "q": "cam=32,30,36,52,0,0",
+  "fps": 60,
+  "calls": 85,
+  "tris": 696204,
+  "errors": []
+ },
+ {
+  "name": "06_gate_me",
+  "q": "cam=-69,0,48,50,0,135",
+  "fps": 60,
+  "calls": 108,
+  "tris": 670152,
+  "errors": []
+ },
+ {
+  "name": "07_spawn_me",
+  "q": "cam=-97,0,44,50,2,45",
+  "fps": 60,
+  "calls": 86,
+  "tris": 587526,
+  "errors": []
+ },
+ {
+  "name": "08_wide",
+  "q": "cam=-40,10,80,55",
+  "fps": 60,
+  "calls": 218,
+  "tris": 1578698,
+  "errors": []
+ },
+ {
+  "name": "09_wall_me_close",
+  "q": "cam=-13.5,13,15,46,1,0",
+  "fps": 60,
+  "calls": 51,
+  "tris": 472904,
+  "errors": []
+ },
+ {
+  "name": "10_wall_foe_close",
+  "q": "cam=13.5,13,15,46,1,0",
+  "fps": 60,
+  "calls": 58,
+  "tris": 461478,
+  "errors": []
+ },
+ {
+  "name": "11_buff_me_close",
+  "q": "cam=-32,30,20,50,1,0",
+  "fps": 60,
+  "calls": 58,
+  "tris": 564290,
+  "errors": []
+ },
+ {
+  "name": "12_buff_foe_close",
+  "q": "cam=32,30,20,50,1,0",
+  "fps": 60,
+  "calls": 56,
+  "tris": 441800,
+  "errors": []
+ },
+ {
+  "name": "13_rampart_me_close",
+  "q": "cam=-64,14,18,46,2,135",
+  "fps": 60,
+  "calls": 48,
+  "tris": 307332,
+  "errors": []
+ },
+ {
+  "name": "14_gate_steps_me",
+  "q": "cam=-64,0,17,46,1.5,135",
+  "fps": 60,
+  "calls": 43,
+  "tris": 259314,
+  "errors": []
+ },
+ {
+  "name": "15_edge_me_close",
+  "q": "cam=-40,60,20,48,2,0",
+  "fps": 60,
+  "calls": 57,
+  "tris": 459700,
+  "errors": []
+ },
+ {
+  "name": "16_edge_foe_close",
+  "q": "cam=40,60,20,48,2,0",
+  "fps": 60,
+  "calls": 54,
+  "tris": 319814,
+  "errors": []
+ },
+ {
+  "name": "17_trees_me",
+  "q": "cam=-46,66,34,50,2,0",
+  "fps": 60,
+  "calls": 79,
+  "tris": 531184,
+  "errors": []
+ },
+ {
+  "name": "18_trees_foe",
+  "q": "cam=46,66,34,50,2,0",
+  "fps": 60,
+  "calls": 66,
+  "tris": 409156,
+  "errors": []
+ },
+ {
+  "name": "19_rampart_foe_close",
+  "q": "cam=64,14,18,46,2,-45",
+  "fps": 60,
+  "calls": 55,
+  "tris": 322578,
+  "errors": []
+ },
+ {
+  "name": "20_wide_foe",
+  "q": "cam=40,-10,80,55",
+  "fps": 60,
+  "calls": 225,
+  "tris": 1398686,
+  "errors": []
+ },
+ {
+  "name": "21_trees_west_me",
+  "q": "cam=-46,-62,30,50,2,0",
+  "fps": 60,
+  "calls": 50,
+  "tris": 362970,
+  "errors": []
+ },
+ {
+  "name": "22_trees_north_foe",
+  "q": "cam=60,-46,30,50,2,0",
+  "fps": 60,
+  "calls": 50,
+  "tris": 257898,
+  "errors": []
+ },
+ {
+  "name": "23_island_boss",
+  "q": "cam=0,-46,26,52,1,0",
+  "fps": 60,
+  "calls": 57,
+  "tris": 506310,
+  "errors": []
+ }
+]

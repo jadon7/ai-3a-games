@@ -1,0 +1,9 @@
+[
+ {"name": "stage_hall", "image": "art/stage/concepts/stage-hall.png", "face_limit": 60000, "texture_quality": "detailed"},
+ {"name": "stage_lion", "image": "art/stage/concepts/stage-lion.png", "face_limit": 30000, "texture_quality": "detailed"},
+ {"name": "stage_stonelantern", "image": "art/stage/concepts/stage-stonelantern.png", "face_limit": 16000, "texture_quality": "detailed"},
+ {"name": "stage_brazier", "image": "art/stage/concepts/stage-brazier.png", "face_limit": 16000, "texture_quality": "detailed"},
+ {"name": "stage_pine", "image": "art/stage/concepts/stage-pine.png", "face_limit": 30000, "texture_quality": "detailed"},
+ {"name": "stage_deadtree", "image": "art/stage/concepts/stage-deadtree.png", "face_limit": 40000, "texture_quality": "detailed"},
+ {"name": "stage_pagoda", "image": "art/stage/concepts/stage-pagoda.png", "face_limit": 20000, "texture_quality": "detailed"}
+]

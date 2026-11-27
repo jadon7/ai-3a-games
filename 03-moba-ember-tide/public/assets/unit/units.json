@@ -1,0 +1,12 @@
+{
+ "melee": {
+  "height": 1.89,
+  "walkSpeed": 2.46,
+  "hit": 0.95
+ },
+ "ranged": {
+  "height": 1.78,
+  "walkSpeed": 3.38,
+  "hit": 0.75
+ }
+}

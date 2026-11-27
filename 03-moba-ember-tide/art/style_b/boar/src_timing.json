@@ -1,0 +1,10 @@
+{
+ "height": 2.7, "ring": 1.9, "bar": 0.5,
+ "runSpeed": 4.4,
+ "attacks": [
+  {"clip": "attack1", "swing": 0.63, "hit": 0.8, "end": 1.4, "hands": []},
+  {"clip": "attack2", "swing": 1.79, "hit": 1.85, "end": 2.55, "hands": []}
+ ],
+ "death": {"clip": "death"},
+ "points": {"hand": "tripo::Head_1", "chest": "tripo::Spine_2", "up": 0.3}
+}

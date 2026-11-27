@@ -1,0 +1,14 @@
+一样    wallLines  52 项
+一样    wallFootprints  267 项
+一样    navRocks  247 项
+一样    rampartSolids  75 项
+一样    rampartContactCircles  90 项
+一样    rampartContactLines  24 项
+一样    foam  36 项
+一样    treeContact  {"circles":[[12.5295,55.1589,1.5034],[0.0744,-22.1915,1.1105],[-32.0107,1.0175,1.2296],[21
+一样    treeCount  {"trees":114,"logs":14,"stumps":28}
+一样    barkGeometry  {"verts":85806,"hash":607281622}
+一样    nav  {"blockedCells":32014,"walkable":73611,"fnv":"5d0ae926"}
+（会变的，只记一下）改前 {"wallTufts":4328,"rampartTufts":1993,"wallVerts":1440972,"rampartVerts":971880,"treeVerts":119650}
+（会变的，只记一下）改后 {"wallTufts":4368,"rampartTufts":1993,"wallVerts":1402620,"rampartVerts":1087824,"treeVerts":119650}
+全部一样

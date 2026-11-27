@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_lan_b",
+  "image": "art/style_b/lan/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

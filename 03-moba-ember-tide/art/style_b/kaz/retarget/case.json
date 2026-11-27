@@ -1,0 +1,161 @@
+{
+ "name": "kaz_b",
+ "title": "卡兹的全部旧动作 → 卡兹 B（路子一卡通厚涂，Tripo 新模型新绑骨，骨骼名已按角色改成旧的）",
+ "kind": "quadruped",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_0",
+  "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_2": "tripo::1_Left_Limb_2",
+  "tripo::1_Left_Limb_3": "tripo::1_Left_Limb_3",
+  "tripo::1_Left_Limb_4": "tripo::1_Left_Limb_4",
+  "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_0",
+  "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_1",
+  "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_2",
+  "tripo::1_Right_Limb_3": "tripo::1_Right_Limb_3",
+  "tripo::1_Right_Limb_4": "tripo::1_Right_Limb_4",
+  "tripo::Spine_0": "tripo::Spine_0",
+  "tripo::Spine_1": "tripo::Spine_1",
+  "tripo::Spine_2": "tripo::Spine_2",
+  "tripo::Spine_3": "tripo::Spine_3",
+  "tripo::Spine_4": "tripo::Spine_4",
+  "tripo::Spine_5": "tripo::Spine_5",
+  "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_0",
+  "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_1",
+  "tripo::0_Right_Limb_2": "tripo::0_Right_Limb_2",
+  "tripo::0_Right_Limb_3": "tripo::0_Right_Limb_3",
+  "tripo::0_Right_Limb_5": "tripo::0_Right_Limb_5",
+  "tripo::0_Right_Limb_4": "tripo::0_Right_Limb_4",
+  "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_0",
+  "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_1",
+  "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_2",
+  "tripo::0_Left_Limb_3": "tripo::0_Left_Limb_3",
+  "tripo::0_Left_Limb_5": "tripo::0_Left_Limb_5",
+  "tripo::0_Left_Limb_4": "tripo::0_Left_Limb_4",
+  "tripo::Spine_6": "tripo::Spine_6",
+  "bone_32": "bone_32",
+  "bone_33": "bone_33",
+  "tripo::Head_1": "tripo::Head_1",
+  "bone_36": "bone_36",
+  "bone_38": "bone_38",
+  "tripo::Head_2": "tripo::Head_2",
+  "bone_37": "bone_37",
+  "bone_6": "bone_6",
+  "bone_7": "bone_7",
+  "bone_8": "bone_8",
+  "bone_9": "bone_9",
+  "bone_29": "tripo::0_Left_Limb_4",
+  "bone_22": "tripo::0_Right_Limb_4"
+ },
+ "mode": "delta",
+ "src_rig": "../rigs/kaz_t.npz",
+ "tgt_rig": "../rigs/kaz_b_t.npz",
+ "src_build": "art/hero/kaz/build.json",
+ "src_timing": "art/style_b/kaz/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/kaz_b.blend",
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 2.8,
+ "game_h": 2.8,
+ "move_speed": 6.0,
+ "tip_src": "tripo::Head_1",
+ "tip_tgt": "tripo::Head_1",
+ "legs": [
+  {
+   "tgt": [
+    "tripo::0_Left_Limb_1",
+    "tripo::0_Left_Limb_2",
+    "tripo::0_Left_Limb_3"
+   ],
+   "src_end": "tripo::0_Left_Limb_3"
+  },
+  {
+   "tgt": [
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1",
+    "tripo::1_Left_Limb_2"
+   ],
+   "src_end": "tripo::1_Left_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::0_Right_Limb_1",
+    "tripo::0_Right_Limb_2",
+    "tripo::0_Right_Limb_3"
+   ],
+   "src_end": "tripo::0_Right_Limb_3"
+  },
+  {
+   "tgt": [
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1",
+    "tripo::1_Right_Limb_2"
+   ],
+   "src_end": "tripo::1_Right_Limb_2"
+  }
+ ],
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "bone_32",
+   "verts_of": "tripo::Head_1"
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "卡兹（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.0,
+  "zc": 0.42
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "r"
+  ],
+  "loops": {
+   "run": 4
+  },
+  "spacing": 1.6,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.35
+ },
+ "tgt_blend_name": "kaz_b",
+ "mode_bones": {
+  "0_Left_Limb_0": "delta",
+  "0_Right_Limb_0": "delta",
+  "_Limb_0": "dir",
+  "_Limb_1": "dir",
+  "_Limb_2": "dir",
+  "_Limb_3": "dir"
+ },
+ "_mode说明": "腿（大腿、小腿、跖骨、上臂、前臂、掌）用 dir：新模型的静止站姿是设定图上的迈步姿势（右前腿在前、左后腿在后，和旧模型差 10–25 厘米），delta 会把这个迈步一直带着；dir 让每节腿在世界里指向和源一样的方向。肩胛（前腿 Limb_0）、脚趾、脊柱、脖子、头、尾巴用 delta（两边静止时差不多，而且这几根的尾巴方向两边对不上）"
+}

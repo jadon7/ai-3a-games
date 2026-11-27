@@ -1,0 +1,11 @@
+第二轮完成，共做了 **5 版**。三座塔的塔身已改为下宽上窄的 2、3、4 节，四根扶壁从宽脚接到塔冠，火焰形铁爪分别为 5、6、6 根。最终版已在三座塔各自的地图位置核对。[同机位返工前后对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/rounds/b2_r5_before_after.jpg) · [设计稿与成品](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/compare.jpg)
+
+| 模型 | 总高 | 0.8–2 米段半径 | 2–4 米段半径 | 塔冠目标段半径，返工前 → 后 | 三角形数 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [外塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_1.glb) | 7.20 米 | 1.84 米 | 1.65 米 | 1.36 → 1.77 米 | 18,744 |
+| [内塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_2.glb) | 8.80 米 | 1.84 米 | 1.71 米 | 1.48 → 1.76 米 | 25,589 |
+| [高地塔](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/tower_foe_3.glb) | 10.60 米 | 1.84 米 | 1.76 米 | 1.42 → 1.73 米 | 31,693 |
+
+三座塔均达到分段半径目标。离地 0.45 米以上的最大半径均为 **1.848 米**。
+
+**主晶宽度已达到指定值。** 为同时保留总高和原晶心，外塔、内塔、高地塔的实际晶高分别为 **2.01、2.32、2.63 米**，比目标少 9、3、2 厘米。游戏俯视时，爪间空隙仍比定稿明显，阴影里的饰带方块也较难辨认。[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_game.jpg) · [地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/preview_map.jpg) · [逐项修改与测量原文](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_foe/out/NOTES.md:60)

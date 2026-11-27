@@ -1,0 +1,78 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/beast/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/beast/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/beast/motions/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/beast/motions/attack2.npz",
+    "roar": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/beast/motions/roar.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/beast/motions/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/fk/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/fk/attack2.npz",
+    "roar": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/fk/roar.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/fk/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/ik/attack1.npz",
+    "attack2": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/ik/attack2.npz",
+    "roar": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/ik/roar.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/motions/ik/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "game_h": 3.59,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/beast/retarget/render",
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "attack2",
+   "roar",
+   "death"
+  ],
+  "size": [
+   1440,
+   640
+  ],
+  "spacing": 2.6,
+  "view": [
+   22,
+   22
+  ],
+  "ortho": 9.360000000000001,
+  "zc": 0.4,
+  "loops": {
+   "run": 3
+  },
+  "run_speed": {
+   "run": [
+    0.5365853658536587,
+    0.30013927576601673,
+    0.2952646239554318
+   ]
+  }
+ }
+}

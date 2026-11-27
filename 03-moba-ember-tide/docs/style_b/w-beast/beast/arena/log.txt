@@ -1,0 +1,3 @@
+camp [6.363961030678929,-6.363961030678926,1]
+buff ["buff_beast"]
+{"errors":[],"stats":{"fps":58,"calls":88,"state":"idle","pos":["3.3","-3.3"]}}

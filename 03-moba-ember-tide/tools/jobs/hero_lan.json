@@ -1,0 +1,4 @@
+[
+  {"name": "hero_lan", "image": "concepts/heroes/h4-lan-sheet-a.png", "face_limit": 40000, "texture_quality": "detailed"},
+  {"name": "blade_lan", "image": "art/hero/lan/blade_ref.png", "face_limit": 6000, "texture_quality": "detailed"}
+]

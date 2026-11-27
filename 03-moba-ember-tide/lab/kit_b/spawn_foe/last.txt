@@ -1,0 +1,7 @@
+已完成[烬誓庭出生点模型](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/spawn_foe.glb>)。门楼高 **8.62 米**，模型占地 **13.62 × 11.28 米**，共 **57,230 个三角形**，低于 70,000 的上限。
+
+完成了初版和四轮修改，每版都在游戏预览页和地图页检查。最终版火盆最高处为 **0.119 米**，余烬槽宽 **0.196 米**，沿 +X 一侧接到第三级台阶下沿。建模脚本已重跑，两次生成的 GLB 文件哈希一致。
+
+[地图实景](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/preview_map.jpg>) · [游戏镜头](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/preview_game.jpg>) · [近看](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/preview_close.jpg>) · [设计稿对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/compare.jpg>)
+
+与设计稿相比，游戏侧光下的胸甲和剑脊分界较弱。地图主图采用侧前方机位，让门冠和下阶槽口同时入镜。指定的两个地图机位及每轮差异均已保留。[建模说明与五轮记录](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/out/NOTES.md>) · [建模脚本](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_foe/build.py>)

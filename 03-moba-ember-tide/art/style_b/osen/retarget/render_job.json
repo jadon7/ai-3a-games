@@ -1,0 +1,85 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/stag.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/death.npz",
+    "gallop": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/motions/gallop.npz"
+   },
+   "root": "tripo::Root",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/osen_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/death.npz",
+    "gallop": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/fk/gallop.npz"
+   },
+   "root": "tripo::Root",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/osen_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/w.npz",
+    "e": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/e.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/death.npz",
+    "gallop": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/motions/ik/gallop.npz"
+   },
+   "root": "tripo::Root",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "idle",
+  "run",
+  "attack1",
+  "q",
+  "w",
+  "e",
+  "r",
+  "death",
+  "gallop"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   40,
+   14
+  ],
+  [
+   90,
+   10
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 2.4,
+ "zc": 0.55,
+ "game_h": 3.4,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/osen/retarget/render"
+}

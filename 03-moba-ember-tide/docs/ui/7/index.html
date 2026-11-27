@@ -1,0 +1,135 @@
+<meta charset="utf-8">
+<title>烬与潮 界面和导播</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：阶段 7 验收。顶部说明 → 一串小节，每节是说明加录像、表格、图片或几栏文字 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.row.three{grid-template-columns:minmax(0,1fr)}}
+.wide img{aspect-ratio:auto}
+.clip{display:flex;flex-direction:column;gap:6px;min-width:0}
+.clip video{width:100%;display:block;background:#000;border:1px solid var(--line)}
+.clip p{margin:0;font-size:13.5px;color:var(--muted)}
+.clip b{color:var(--fg);font-weight:600}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;margin:16px 0 0;padding:0;list-style:none;font-size:14.5px}
+.keys li{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:0 8px;align-items:baseline}
+.keys b{font:600 13px/1.6 var(--util);letter-spacing:.04em;color:var(--tide)}
+.stack{display:flex;flex-direction:column;gap:10px}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 7 · 界面和导播</p>
+  <h1>从主菜单到结算，<em>再看一局导播</em></h1>
+  <p class="lede">界面照 LoL 和 Dota 2 的行业习惯整套重做了：主菜单、选人、载入、对局里的英雄栏和顶栏、击杀条、计分板、商店、结算。技能和装备的图标、六个英雄的立绘是生图做的；英雄栏左边的头像是实时渲染的 3D 头。导播模式下六个英雄都交给电脑，镜头自己跟着打架的地方走，击杀时慢放。</p>
+</header>
+<section>
+  <h2>从主菜单到结算走一遍</h2>
+  <p class="note">一段不间断的录屏：主菜单 → 选人（选了薇萝、困难）→ 载入 → 对局（买两件装备、看计分板）→ 结算 → 回主菜单。对局那一段是脚本直接把对方水晶打掉结束的（比分和时间也是脚本填的），为的是把流程走完；真打一局要十几二十分钟。</p>
+  <div class="row one"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/flow.mp4"></video><p><b>完整流程，原速。</b>选好以后是带着选择重新载入页面进对局的，所以中间有一张载入画面。</p></div></div>
+  <div class="stack" style="margin-top:12px"><div class="row"><figure class="wide"><img src="img/home.jpg" alt="主菜单：背景是游戏里的地图，镜头在上面慢慢转。一屏只有一个主按钮。" loading="lazy"><figcaption><span class="who ours">主菜单</span>主菜单：背景是游戏里的地图，镜头在上面慢慢转。一屏只有一个主按钮。</figcaption></figure><figure class="wide"><img src="img/pick.jpg" alt="选人：顶上是两队的栏位，中间按阵营分组的英雄卡，右边是立绘、技能、电脑难度、分路和“锁定”。" loading="lazy"><figcaption><span class="who ours">选人</span>选人：顶上是两队的栏位，中间按阵营分组的英雄卡，右边是立绘、技能、电脑难度、分路和“锁定”。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/end.jpg" alt="结算：胜负大字用获胜方的颜色，两队英雄是竖版立绘卡片，下面是战绩、补刀、金币、对英雄的伤害；自己那张描金边，表现最好的标“最佳”。" loading="lazy"><figcaption><span class="who ours">结算</span>结算：胜负大字用获胜方的颜色，两队英雄是竖版立绘卡片，下面是战绩、补刀、金币、对英雄的伤害；自己那张描金边，表现最好的标“最佳”。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>对局界面</h2>
+  <p class="note">布局和信息照行业习惯，颜色有固定的意思：绿是己方和增益，红是对方，金是钱，蓝是法力。面板是深色低饱和的底，边缘一条亮线一条暗线。第二行左边是当时拿来对照的 Dota 2 截图。</p>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/hud.jpg" alt="底部：实时渲染的 3D 头像、属性、技能（图标、快捷键、耗蓝、冷却、没到等级上锁）、血条蓝条和回血速度、装备格、金币、回城。顶部：两队头像（等级、血量、阵亡倒计时）、击杀数、时钟。右上：击杀条。中间：大字播报。" loading="lazy"><figcaption><span class="who ours">现在</span>底部：实时渲染的 3D 头像、属性、技能（图标、快捷键、耗蓝、冷却、没到等级上锁）、血条蓝条和回血速度、装备格、金币、回城。顶部：两队头像（等级、血量、阵亡倒计时）、击杀数、时钟。右上：击杀条。中间：大字播报。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/ref_dota_hud.jpg" alt="Dota 2 的对局界面和商店（阶段 1 存的参考图）。" loading="lazy"><figcaption><span class="who ref">Dota 2</span>Dota 2 的对局界面和商店（阶段 1 存的参考图）。</figcaption></figure><figure class="wide"><img src="img/shop.jpg" alt="商店（P）：左边按类别排的装备格，带金点的是给这个英雄推荐的；右边是选中那件的属性、一句背景和“购买”。" loading="lazy"><figcaption><span class="who ours">现在</span>商店（P）：左边按类别排的装备格，带金点的是给这个英雄推荐的；右边是选中那件的属性、一句背景和“购买”。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/tip.jpg" alt="技能说明：名字和施放方式、说明、冷却 / 法力 / 距离，分段之间有细线。装备栏里是买好的两件。" loading="lazy"><figcaption><span class="who ours">现在</span>技能说明：名字和施放方式、说明、冷却 / 法力 / 距离，分段之间有细线。装备栏里是买好的两件。</figcaption></figure><figure class="wide"><img src="img/board.jpg" alt="计分板（按住 Tab）：两队六个人的等级、战绩、补刀、金币、装备。对面的金币要到结束才看得到。" loading="lazy"><figcaption><span class="who ours">现在</span>计分板（按住 Tab）：两队六个人的等级、战绩、补刀、金币、装备。对面的金币要到结束才看得到。</figcaption></figure></div></div>
+  <div class="cols"><section><h3>这次新做的</h3><ul><li>3D 动态头像：英雄的头单独再画一遍，画进界面留出来的方框里；阵亡时换成变灰的立绘加倒计时</li><li>击杀条换成“击杀者头像 → 被杀者头像”，带助攻的小头像</li><li>大字播报：第一滴血、双杀三杀、团灭、Boss 出现和被击杀、拆塔</li><li>计分板、暂停菜单（Esc）、技能说明框的结构</li><li>小地图上的英雄是圆形小头像</li></ul></section><section><h3>顺手修掉的</h3><ul><li>界面里所有字号的声明原来都是无效的：字体简写里用了 <code>inherit</code> 当字体名，浏览器把整条丢掉了，字一直是默认大小。这个毛病从阶段 5 就在，这次放大标题时才发现</li><li>带 <code>hidden</code> 的面板被自己的 <code>display</code> 盖掉、藏不住</li></ul></section></div>
+</section>
+<section>
+  <h2>导播</h2>
+  <p class="note">主菜单里叫“观战”，网址是 <code>?director=1</code>。六个英雄都交给电脑，全图没有迷雾，底部不显示英雄栏。镜头每四分之一秒给场上有戏的地方排一遍分：英雄打英雄最高，其次是打 Boss、拆塔、打野，都没有就轮流看对线的人；一个镜头至少看两秒半，新的地方得明显更有戏才换；近的平着摇过去，远的直接切。击杀和 Boss 倒下时慢放一秒多并推近。</p>
+  <div class="row one"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/director.mp4"></video><p><b>导播，原速，50 秒。</b>这一段里有三次击杀。电脑用的是观战专用的“表演”打法，见下面的说明。</p></div></div>
+  <div class="how" style="margin-top:16px"><section><h3>为什么要有“表演”打法</h3><p>阶段 6 调好的电脑偏保守：残血就跑、不越塔。拿来观战，我录的两段（46 秒和 110 秒）里一次击杀都没有。所以观战时默认换一档只给导播用的打法：敢打、残血不撤、敢进塔，四分钟后两队都去中路抱团。它不追求赢，只为镜头里有团战。正常对局的三档难度没动。</p></section><section><h3>还没做的</h3><p>没有专门的“精彩回放”；慢动作只按击杀触发，不看这一下精不精彩；镜头只有俯视这一种机位，没有低角度的特写；观战时没有解说条或者数据面板。</p></section></div>
+</section>
+<section>
+  <h2>图标和立绘</h2>
+  <p class="note">都是即梦出的图。技能图标每个英雄一张 2×2 的合集，装备和增益是 3×2 的合集，切开后缩到一百多像素；立绘是拿每个英雄的设定图当参考出的半身像，头像是从立绘里裁的。</p>
+  <div class="stack" style="margin-top:12px"><div class="row one"><figure class="wide"><img src="img/icons.jpg" alt="第一排是六个头像；下面是 24 个技能图标（沉月会偏青，烬誓庭偏橙）、12 件装备、四个增益、回城和金币。" loading="lazy"><figcaption><span class="who ours">切好的图</span>第一排是六个头像；下面是 24 个技能图标（沉月会偏青，烬誓庭偏橙）、12 件装备、四个增益、回城和金币。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/splash.jpg" alt="六张立绘：岚、托尔格、摩珂、葛隆、薇萝、奥森。选人、载入、结算和阵亡时的头像框都用它。" loading="lazy"><figcaption><span class="who ours">立绘</span>六张立绘：岚、托尔格、摩珂、葛隆、薇萝、奥森。选人、载入、结算和阵亡时的头像框都用它。</figcaption></figure></div></div>
+</section>
+<section>
+  <h2>对照阶段 1 列的界面清单</h2>
+  <p class="note"><code>docs/benchmark.md</code> 第四节的十三条。</p>
+  <div class="tbl"><table><thead><tr><th>条目</th><th>现在</th></tr></thead><tbody><tr><td>D1 对局界面集中在底部中间一条，不遮战场中心</td><td>做到。小地图在左下角</td></tr><tr><td>D2 面板是深色低饱和的底，边缘有描边做出厚度</td><td>做到一半：有亮线和暗线，但底是纯色渐变，没有 Dota 2 那种细微的材质和雕花边框</td></tr><tr><td>D3 技能图标是手绘的小插画，带快捷键和蓝耗，冷却用压暗加数字</td><td>做到</td></tr><tr><td>D4 血条蓝条上直接写数值和回复速度</td><td>血条做到；蓝条只写了数值，没写回蓝速度</td></tr><tr><td>D5 顶部是双方头像、比分和时钟，阵亡变灰加倒计时</td><td>做到</td></tr><tr><td>D6 字体只用一套，数字等宽</td><td>做到。主菜单的标题另用了一套宋体</td></tr><tr><td>D7 颜色有固定语义</td><td>做到</td></tr><tr><td>D8 说明框：标题、消耗、属性、一段背景描述，分段有细线</td><td>做到。背景描述只有装备有，技能没写</td></tr><tr><td>D9 选人：顶部双方栏位，中间分组的头像网格，右侧详情和锁定</td><td>做到。没有倒计时（对面是电脑，不用等）</td></tr><tr><td>D10 结算：胜负大字用获胜方的颜色，竖版英雄卡片，数据表，自己那行高亮</td><td>做到。卡片用的是立绘，不是 3D 模型的半身</td></tr><tr><td>D11 击杀信息在右侧滚动，连杀有大字播报</td><td>做到。中间没有武器图标，用的是一把通用的小剑</td></tr><tr><td>D12 小地图：己方绿、对方红，建筑是方块</td><td>做到</td></tr><tr><td>D13 菜单的背景是压暗的游戏场景，一屏只有一个主按钮</td><td>做到</td></tr></tbody></table></div>
+</section>
+<section>
+  <h2>验证、差距和花费</h2>
+  <div class="cols"><section><h3>验证过</h3><ul><li>从主菜单到结算再回主菜单的流程用脚本点了一遍，全程无报错（就是上面那段录屏）</li><li>点击测试（真实鼠标键盘）21 项全过</li><li>真实浏览器窗口、两倍分辨率（画布 2149×1209）：带 3D 头像的新界面和导播模式都是 60 帧</li><li>导播跑到六分钟，无报错</li></ul></section><section><h3>还差的</h3><ul><li>面板没有材质和雕花，和 Dota 2 比还是偏“干净的平面”</li><li>没有技能加点、没有装备合成，所以商店和技能栏都比行业标准少一层</li><li>3D 头像只是把游戏里的模型拉近拍，没有单独打光和表情</li><li>选人只有六个英雄，网格显得空；没有按键设置、音量这些选项（也还没有声音）</li><li>导播只有俯视机位，慢动作只按击杀触发</li></ul></section><section><h3>没验证</h3><ul><li>我没有亲手从主菜单打完一整局再看结算，流程是脚本走的，对局是脚本结束的</li><li>手机和触屏：界面写了窄屏的排法，但没在真机上看过</li><li>Safari、Firefox</li><li>一整局导播从头看到尾（只看了前六分钟和抽的几段）</li></ul></section><section><h3>花费</h3><ul><li>即梦 265 积分：9 张图标合集、6 张立绘（余额 10463）</li><li>Tripo 没花（余额 4680）</li><li>这一阶段没有派后台任务</li></ul></section></div>
+</section>
+<footer class="foot">自己走一遍：打开 <code>map.html</code>（什么参数都不带）就是主菜单。带 <code>?h=lan</code> 的网址照旧直接进对局；<code>?director=1</code> 直接进导播。这一页是私有的。</footer>
+</div>

@@ -1,0 +1,142 @@
+{
+ "name": "torg",
+ "palm_by_hand": true,
+ "raw": "art/hero/torg/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/torg_rigged.glb",
+ "out": "art/hero/torg/game.glb",
+ "packed": "public/assets/hero/torg.glb",
+ "pose_out": "art/hero/torg/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "motions": {
+  "idle": "art/hero/torg/motions/idle.npz",
+  "run": "art/hero/torg/motions/run.npz",
+  "attack1": "art/hero/torg/motions/attack1.npz",
+  "q": "art/hero/torg/motions/q.npz",
+  "w": "art/hero/torg/motions/w.npz",
+  "r": "art/hero/torg/motions/r.npz",
+  "death": "art/hero/torg/motions/death.npz"
+ },
+ "gear": [
+  {
+   "type": "script",
+   "path": "art/hero/torg/gear.py",
+   "func": "make_hammer",
+   "side": "Right",
+   "name": "hammer",
+   "offset": [
+    -0.025,
+    0,
+    0
+   ]
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0.0,
+    0.0,
+    -0.03
+   ],
+   "yaw": -10,
+   "lean": 4
+  },
+  "spine": [
+   [
+    4,
+    -4
+   ],
+   [
+    4,
+    -5
+   ],
+   [
+    3,
+    -5
+   ]
+  ],
+  "head": {
+   "yaw": 18,
+   "pitch": 9
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.05,
+     -0.05,
+     0
+    ],
+    "pole": [
+     0.3,
+     -1,
+     0
+    ],
+    "toe": 14
+   },
+   "Right": {
+    "offset": [
+     -0.05,
+     0.04,
+     0
+    ],
+    "pole": [
+     -0.5,
+     -0.85,
+     0
+    ],
+    "toe": -28
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.06179,
+     -0.31333,
+     0.63074
+    ],
+    "pole": [
+     0.7,
+     0.2,
+     -0.7
+    ],
+    "blade": [
+     -0.4397,
+     0.7395,
+     0.5097
+    ],
+    "shrug": 0,
+    "_s": 0.325
+   },
+   "Right": {
+    "wrist": [
+     -0.09842,
+     -0.20647,
+     0.63801
+    ],
+    "pole": [
+     -0.8,
+     0.3,
+     -0.5
+    ],
+    "blade": [
+     -0.4397,
+     0.7395,
+     0.5097
+    ],
+    "shrug": 0,
+    "_grip": [
+     -0.07,
+     -0.215,
+     0.685
+    ]
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.004,
+   "chest": 1.2,
+   "shoulder": 1.0,
+   "hand": 0.005
+  }
+ }
+}

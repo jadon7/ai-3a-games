@@ -1,0 +1,24 @@
+{
+ "type": "animate_retarget",
+ "status": "success",
+ "progress": 100,
+ "input": {
+  "animations": [
+   "preset:hurt",
+   "preset:fall",
+   "preset:dive",
+   "preset:turn"
+  ],
+  "out_format": "glb",
+  "animate_in_place": false,
+  "original_model_id": "b5f0130e-1566-4269-a318-9f3187081a1a",
+  "export_with_geometry": true
+ },
+ "output": {
+  "model_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/42f4bca2-d13f-4f0d-ade0-dd7d5f22c893/tripo_retarget_42f4bca2-d13f-4f0d-ade0-dd7d5f22c893.glb?<签名参数已删除>"
+ },
+ "task_id": "42f4bca2-d13f-4f0d-ade0-dd7d5f22c893",
+ "created_at": "2026-11-23T15:22:19.477969Z",
+ "completed_at": "2026-11-23T15:22:57.843871Z",
+ "credits_consumed": 40.0
+}

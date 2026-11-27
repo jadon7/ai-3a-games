@@ -1,0 +1,63 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  },
+  "ikv": {
+   "ik": true,
+   "lock": false
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/ugo.npz",
+ "src_build": "art/style_b/ugo/src_build.json",
+ "src_timing": "art/style_b/ugo/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/ugo_rigged.glb",
+ "src_game_h": 3.7,
+ "game_h": 3.7,
+ "move_speed": 5.5,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "r",
+   "death"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "乌戈的全部旧动作 → 乌戈 B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型和绑骨；钓竿灯长在头上，大头权重归 Head、灯球单独材质）",
+ "tgt_rig": "../rigs/ugo_b.npz",
+ "tgt_model": "../ugo_b_rigged.glb",
+ "labels": [
+  "乌戈（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK",
+  "B·脚只修高低"
+ ],
+ "name": "ugo_b",
+ "run_clip_variant": "ikv",
+ "run_speed": 9.34,
+ "_note": "跑步不用 ik，用 ikv（脚只修高低、不锁水平）：源的跑步左腿是第九轮用右腿镜像补的，量出来右脚贴地时在往前走（贴地往后速度 −1.29，左脚 11.62），ik 照每只脚自己的速度锁地，右脚会在地上往前滑。run_case.py build 按 ik 和源“该填 runSpeed”的平均值之比改 runSpeed，右脚是负数，算出来 6.6 不能用；run_speed 9.34 = 旧的 9.4 × 只搬旋转那一行左脚的速度比（11.55 / 11.62），rebuild.sh 出品后写进时间表。"
+}

@@ -1,0 +1,55 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/gorran.npz",
+ "src_build": "art/style_b/gorran/src_build.json",
+ "src_timing": "art/style_b/gorran/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/gorran_rigged.glb",
+ "src_game_h": 3.5,
+ "game_h": 3.5,
+ "move_speed": 5.4,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.3,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "r",
+   "death"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "葛隆的全部旧动作 → 葛隆 B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型和绑骨，锤和盾脚本建：形状照旧、贴图按 B 重画）",
+ "tgt_rig": "../rigs/gorran_b.npz",
+ "tgt_model": "../gorran_b_rigged.glb",
+ "labels": [
+  "葛隆（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "name": "gorran_b"
+}

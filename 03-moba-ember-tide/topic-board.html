@@ -1,0 +1,375 @@
+<title>3A 案例选题板</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：选题会看板。顶部简报三栏 → 方向卡（左文右图 2×2）→ 备选三格 → 对比表；底部固定选择条 */
+:root{
+  --bg:#edf0f3; --surface:#ffffff; --surface-2:#e2e7ed; --fg:#131922; --muted:#566172; --line:#cdd4dc;
+  --accent:#a35200; --accent-ink:#ffffff; --accent-soft:#f5e7d2; --shot:#0a0d12; --shot-fg:#e8ecf2;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0e1218; --surface:#161b24; --surface-2:#212a38; --fg:#e8ecf2; --muted:#9aa5b5; --line:#2b3442; --accent:#f0b03a; --accent-ink:#1b1304; --accent-soft:#33270f; --shot:#05070a; --shot-fg:#e8ecf2; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0e1218; --surface:#161b24; --surface-2:#212a38; --fg:#e8ecf2; --muted:#9aa5b5; --line:#2b3442; --accent:#f0b03a; --accent-ink:#1b1304; --accent-soft:#33270f; --shot:#05070a; --shot-fg:#e8ecf2; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding-block:40px 132px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+
+.top{display:flex;flex-direction:column;gap:14px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--accent)}
+h1{margin:0;font:400 clamp(44px,8vw,76px)/1 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lede{margin:0;max-width:44em;color:var(--muted);font-size:16px}
+.brief{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:14px}
+.brief section{min-width:0;border-top:2px solid var(--fg);padding-top:14px}
+.brief h2{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.brief ul,.brief ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.65}
+.brief .advice{border-top-color:var(--accent);background:var(--accent-soft);padding:14px 16px 16px}
+.brief .advice p{margin:10px 0 0;font-size:14px;line-height:1.65}
+
+main{display:flex;flex-direction:column;gap:24px}
+.dir{background:var(--surface);border:1px solid var(--line);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;padding:28px;scroll-margin-top:16px}
+.dir:has(.pick input:checked),.alt:has(.pick input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.dir-text{min-width:0;display:flex;flex-direction:column;gap:18px}
+.dir-head{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:6px;align-items:start}
+.dir-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.num{font:600 15px/1 var(--util);color:var(--accent);letter-spacing:.06em}
+.tag{font-size:12px;line-height:1;padding:4px 7px;border:1px solid var(--line);color:var(--muted)}
+.tag.rec{border-color:var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:500}
+.dir h2{margin:0;font:400 32px/1.15 var(--display);letter-spacing:.02em;text-wrap:balance}
+.pick{display:inline-flex;align-items:center;cursor:pointer;position:relative;align-self:center}
+.pick input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pick span{display:inline-block;border:1px solid var(--fg);padding:5px 12px;font-size:13px;line-height:1.5;white-space:nowrap}
+.pick input:checked + span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pick input:checked + span::before{content:"✓ "}
+.pick input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+dl{margin:0;display:flex;flex-direction:column;gap:2px}
+dt{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-top:10px}
+dt:first-child{margin-top:0}
+dd{margin:0;font-size:14.5px;line-height:1.7}
+.meters{display:flex;flex-wrap:wrap;gap:10px 22px;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+.meter{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.m-l{color:var(--muted)}
+.pips{display:inline-flex;gap:3px}
+.pips i{width:9px;height:9px;background:var(--surface-2);display:block}
+.pips i.on{background:var(--fg)}
+.m-n{font:500 12.5px/1 var(--util);font-variant-numeric:tabular-nums}
+.m-t{font-weight:500}
+
+.shots{min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px;align-content:start}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+.shot{display:block;width:100%;padding:0;border:0;background:var(--shot);cursor:zoom-in}
+.shot img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+figcaption{font-size:12.5px;line-height:1.5;display:flex;flex-direction:column}
+figcaption a{font-weight:500}
+figcaption span{color:var(--muted)}
+
+.sec{margin:0;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.sec-note{margin:4px 0 16px;color:var(--muted);font-size:14px}
+.alts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.alt{min-width:0;background:var(--surface);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:12px}
+.alt-body{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.alt h3{margin:0;font:400 22px/1.2 var(--display);letter-spacing:.02em}
+.alt p{margin:0 0 6px;font-size:14px;line-height:1.65}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em}
+tbody th{font-weight:500}
+tbody td{font-variant-numeric:tabular-nums}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+
+.pickbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--fg);color:var(--bg);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pb-in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.pb-sum{margin:0;flex:1 1 240px;min-width:0;font-size:14px;line-height:1.5}
+.pb-fb{flex:1 1 100%;font:14px var(--body);padding:6px 8px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+.pb-btn{font:500 14px/1 var(--body);padding:10px 18px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.pb-btn:disabled{opacity:.45;cursor:default}
+
+dialog{border:0;padding:0;background:var(--shot);color:var(--shot-fg);width:min(96vw,1400px);max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.78)}
+#lb-img{display:block;width:100%;max-height:calc(94vh - 56px);object-fit:contain;background:var(--shot)}
+.lb-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:10px 14px;font-size:13px}
+.lb-bar span{flex:1 1 200px;min-width:0}
+.lb-bar a{color:var(--shot-fg)}
+.lb-bar button{font:13px var(--body);padding:6px 12px;border:1px solid var(--shot-fg);background:transparent;color:var(--shot-fg);cursor:pointer}
+
+@media (max-width:920px){ .dir{grid-template-columns:minmax(0,1fr);padding:20px;gap:20px} .dir h2{font-size:28px} }
+@media (max-width:480px){ .shots{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 150px;gap:28px} }
+@media (prefers-reduced-motion:no-preference){ .pick span,.pb-btn{transition:background-color .15s,color .15s,border-color .15s} }
+
+</style>
+<div class="wrap">
+<header class="top">
+  <p class="eyebrow">AI 做 3A 大作 · 下一批案例</p>
+  <h1>选题板</h1>
+  <p class="lede">从 Interface In Game 收录的 406 款游戏里筛出 8 个方向和 3 个备选。每个方向都做原创游戏，参考图只用来对标画面和界面的水准。在卡片上勾选，页面底部可以一键复制你的选择发给我。</p>
+  <div class="brief">
+    <section>
+      <h2>我理解的验收标准</h2>
+      <ul>
+        <li>画面对着真实 3A 截图改，写实质感优先。方盒子楼和高饱和霓虹会显得廉价。</li>
+        <li>镜头要有张力：加速拉远、运动模糊、过弯倾斜，变化要连续。自动演示要能直接录成片。</li>
+        <li>一直在画面里的东西要一件一件修精致，比如车尾、枪械、手臂。不能一个效果套所有对象。</li>
+        <li>做完要上线，手机上也能玩。</li>
+      </ul>
+    </section>
+    <section>
+      <h2>筛选依据</h2>
+      <ul>
+        <li>群里的判断：赛车和“我的世界”被测得太多，机制复杂的类型天然显得有分量。跑酷、空战、机甲都被提过。</li>
+        <li>模型的强项：着色器和光照、Blender 硬表面建模、程序化动画、系统和数值、HUD。</li>
+        <li>模型的弱项：写实人类角色和大量手工动作。video2rig 能补上怪物，但每个动作都有成本。</li>
+        <li>所以先看不靠人类角色能不能出彩，再看视频钩子。</li>
+      </ul>
+    </section>
+    <section class="advice">
+      <h2>如果做三个，我建议</h2>
+      <ol>
+        <li><a href="#d06">06 魂系 Boss 战</a>：钩子最强，也把骨骼绑定用上。风险最高，适合压轴。</li>
+        <li><a href="#d01">01 空战</a>：最稳，画面上限高，赛车的镜头经验能直接复用。</li>
+        <li><a href="#d07">07 MOBA</a>：补上“机制复杂”这条线，和已有两个案例差异最大。</li>
+      </ol>
+      <p>想更稳，把 06 换成 <a href="#d05">05 室内恐怖</a>。想吃机甲受众，把 07 换成 <a href="#d04">04 机甲战斗</a>。</p>
+    </section>
+  </div>
+</header>
+<main>
+
+<article class="dir" id="d01">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">01</span><span class="tag">不靠角色</span><span class="tag rec">建议做</span></div>
+      <h2>空战 · 座舱视角狗斗</h2>
+      <label class="pick"><input type="checkbox" id="pick-01" data-label="01 空战 · 座舱视角狗斗"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创喷气机或太空战机的空战。座舱和追尾两个视角，导弹锁定、机炮、干扰弹。一场 5 分钟的遭遇战，加一段峡谷穿越或航母降落。</dd>
+      <dt>为什么适合</dt><dd>天空是成本最低、效果最大的场景，体积云、落日、大气散射全靠着色器。战机是硬表面，Blender 能修到很精。没有人类角色。座舱的全息 HUD 正好是界面设计的展示位。</dd>
+      <dt>视频看点</dt><dd>穿云、导弹尾迹、贴地飞行的速度感。UMBRA GT 里调出来的镜头张力（拉远、运动模糊、倾斜）可以直接搬过来。</dd>
+      <dt>主要风险</dt><dd>体积云在浏览器里的性能要专门优化。高空看地面需要一套远景地形方案。站内没收录现代战机空战游戏，这里的参考图都是太空座舱；选定后我会补找大气层空战的参考。</dd>
+      <dt>可复用</dt><dd>UMBRA GT 的镜头系统、天气、自动驾驶的电影机位。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="m-n">5/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="m-n">3/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">无</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/air-1.jpg" data-cap="Star Wars: Squadrons · 座舱结构、仪表发光、窗外大型舰船的层次" data-href="https://interfaceingame.com/screenshots/star-wars-squadrons-radio-chat/" aria-label="放大：Star Wars: Squadrons · 座舱结构、仪表发光、窗外大型舰船的层次"><img src="refs/air-1.jpg" alt="Star Wars: Squadrons 截图：座舱结构、仪表发光、窗外大型舰船的层次" width="1280" height="720" loading="eager"></button><figcaption><a href="https://interfaceingame.com/screenshots/star-wars-squadrons-radio-chat/" target="_blank" rel="noopener">Star Wars: Squadrons</a><span>座舱结构、仪表发光、窗外大型舰船的层次</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/air-2.jpg" data-cap="Elite: Dangerous · 贴近地表时的全息 HUD 和地平线" data-href="https://interfaceingame.com/screenshots/elite-dangerous-atmospheric-flight/" aria-label="放大：Elite: Dangerous · 贴近地表时的全息 HUD 和地平线"><img src="refs/air-2.jpg" alt="Elite: Dangerous 截图：贴近地表时的全息 HUD 和地平线" width="1280" height="720" loading="eager"></button><figcaption><a href="https://interfaceingame.com/screenshots/elite-dangerous-atmospheric-flight/" target="_blank" rel="noopener">Elite: Dangerous</a><span>贴近地表时的全息 HUD 和地平线</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/air-3.jpg" data-cap="Starfield · 座舱仪表的密度，行星当背景的尺度感" data-href="https://interfaceingame.com/screenshots/starfield-ship-hud-2/" aria-label="放大：Starfield · 座舱仪表的密度，行星当背景的尺度感"><img src="refs/air-3.jpg" alt="Starfield 截图：座舱仪表的密度，行星当背景的尺度感" width="1280" height="720" loading="eager"></button><figcaption><a href="https://interfaceingame.com/screenshots/starfield-ship-hud-2/" target="_blank" rel="noopener">Starfield</a><span>座舱仪表的密度，行星当背景的尺度感</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/air-4.jpg" data-cap="Elite: Dangerous · 恒星眩光和大面积暗部的对比" data-href="https://interfaceingame.com/screenshots/elite-dangerous-near-a-planet/" aria-label="放大：Elite: Dangerous · 恒星眩光和大面积暗部的对比"><img src="refs/air-4.jpg" alt="Elite: Dangerous 截图：恒星眩光和大面积暗部的对比" width="1280" height="720" loading="eager"></button><figcaption><a href="https://interfaceingame.com/screenshots/elite-dangerous-near-a-planet/" target="_blank" rel="noopener">Elite: Dangerous</a><span>恒星眩光和大面积暗部的对比</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d02">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">02</span><span class="tag">不靠角色</span></div>
+      <h2>海战 · 风帆战舰</h2>
+      <label class="pick"><input type="checkbox" id="pick-02" data-label="02 海战 · 风帆战舰"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创风帆时代海战。操帆、抢上风位、侧舷齐射，天气从晴天一路变到暴风雨夜战。</dd>
+      <dt>为什么适合</dt><dd>海面是网页图形的经典展示项：波浪、泡沫、透光、倒影。船体是硬表面，浮力和炮弹弹道是纯物理代码。船员可以省略或只在远景出现。</dd>
+      <dt>视频看点</dt><dd>暴风雨夜战、齐射的火光和硝烟、敌舰起火下沉。AI 做海战的案例很少见，不会撞题。</dd>
+      <dt>主要风险</dt><dd>帆船细节多（帆、索具、船板），一艘精模的工作量比一台车大。帆布的动态要单独做。</dd>
+      <dt>可复用</dt><dd>UMBRA GT 的雨雪天气、后期和录像机位。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">低</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/sea-1.jpg" data-cap="Skull and Bones · 海面颜色、帆船剪影和远景的空气感" data-href="https://interfaceingame.com/screenshots/skull-and-bones-hint/" aria-label="放大：Skull and Bones · 海面颜色、帆船剪影和远景的空气感"><img src="refs/sea-1.jpg" alt="Skull and Bones 截图：海面颜色、帆船剪影和远景的空气感" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/skull-and-bones-hint/" target="_blank" rel="noopener">Skull and Bones</a><span>海面颜色、帆船剪影和远景的空气感</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/sea-2.jpg" data-cap="Skull and Bones · 敌舰起火、浓烟、近岸浅水的通透感" data-href="https://interfaceingame.com/screenshots/skull-and-bones-hud-4/" aria-label="放大：Skull and Bones · 敌舰起火、浓烟、近岸浅水的通透感"><img src="refs/sea-2.jpg" alt="Skull and Bones 截图：敌舰起火、浓烟、近岸浅水的通透感" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/skull-and-bones-hud-4/" target="_blank" rel="noopener">Skull and Bones</a><span>敌舰起火、浓烟、近岸浅水的通透感</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/sea-3.jpg" data-cap="World of Warships · 爆炸火球的体积感和战斗信息标注" data-href="https://interfaceingame.com/screenshots/world-of-warships-spectator-mode/" aria-label="放大：World of Warships · 爆炸火球的体积感和战斗信息标注"><img src="refs/sea-3.jpg" alt="World of Warships 截图：爆炸火球的体积感和战斗信息标注" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/world-of-warships-spectator-mode/" target="_blank" rel="noopener">World of Warships</a><span>爆炸火球的体积感和战斗信息标注</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/sea-4.jpg" data-cap="Skull and Bones · 暗色调下的航迹和岸线" data-href="https://interfaceingame.com/screenshots/skull-and-bones-hud-2/" aria-label="放大：Skull and Bones · 暗色调下的航迹和岸线"><img src="refs/sea-4.jpg" alt="Skull and Bones 截图：暗色调下的航迹和岸线" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/skull-and-bones-hud-2/" target="_blank" rel="noopener">Skull and Bones</a><span>暗色调下的航迹和岸线</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d03">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">03</span><span class="tag">不靠角色</span></div>
+      <h2>第一人称跑酷</h2>
+      <label class="pick"><input type="checkbox" id="pick-03" data-label="03 第一人称跑酷"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创的玻璃都市天台跑酷。蹬墙跑、滑铲、翻越、荡索。一条 2 到 3 分钟的计时路线，带幽灵回放。</dd>
+      <dt>为什么适合</dt><dd>干净的建筑风格主要是几何体、玻璃和光照，适合程序化建模加烘焙光照，简洁但不廉价。第一人称只需要手臂。手感全是代码，可以反复调。</dd>
+      <dt>视频看点</dt><dd>高度、速度、一镜到底的流畅路线。自动演示可以直接录成一段速通。你在群里也提过跑酷。</dd>
+      <dt>主要风险</dt><dd>路线要反复试跑才流畅。翻越、攀爬的手臂动作要一个一个做。</dd>
+      <dt>可复用</dt><dd>KHAMSIN 的第一人称手臂和手套模型。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="m-n">3/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">低（只有手臂）</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/parkour-1.jpg" data-cap="Mirror's Edge Catalyst · 大面积纯色、干净的反射和引导色的用法" data-href="https://interfaceingame.com/screenshots/mirrors-edge-catalyst-tutorial-activate-runners-vision/" aria-label="放大：Mirror's Edge Catalyst · 大面积纯色、干净的反射和引导色的用法"><img src="refs/parkour-1.jpg" alt="Mirror's Edge Catalyst 截图：大面积纯色、干净的反射和引导色的用法" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/mirrors-edge-catalyst-tutorial-activate-runners-vision/" target="_blank" rel="noopener">Mirror's Edge Catalyst</a><span>大面积纯色、干净的反射和引导色的用法</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/parkour-2.jpg" data-cap="Mirror's Edge Catalyst · 玻璃都市的整体造型语言" data-href="https://interfaceingame.com/screenshots/mirrors-edge-catalyst-missions/" aria-label="放大：Mirror's Edge Catalyst · 玻璃都市的整体造型语言"><img src="refs/parkour-2.jpg" alt="Mirror's Edge Catalyst 截图：玻璃都市的整体造型语言" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/mirrors-edge-catalyst-missions/" target="_blank" rel="noopener">Mirror's Edge Catalyst</a><span>玻璃都市的整体造型语言</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/parkour-3.jpg" data-cap="Dying Light 2 · 可跑的屋顶层次和远景" data-href="https://interfaceingame.com/screenshots/dying-light-2-hud-6/" aria-label="放大：Dying Light 2 · 可跑的屋顶层次和远景"><img src="refs/parkour-3.jpg" alt="Dying Light 2 截图：可跑的屋顶层次和远景" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/dying-light-2-hud-6/" target="_blank" rel="noopener">Dying Light 2</a><span>可跑的屋顶层次和远景</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/parkour-4.jpg" data-cap="Marvel's Spider-Man · 第三人称荡索的变体：高度感和城市纵深" data-href="https://interfaceingame.com/screenshots/marvels-spider-man-hint/" aria-label="放大：Marvel's Spider-Man · 第三人称荡索的变体：高度感和城市纵深"><img src="refs/parkour-4.jpg" alt="Marvel's Spider-Man 截图：第三人称荡索的变体：高度感和城市纵深" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/marvels-spider-man-hint/" target="_blank" rel="noopener">Marvel's Spider-Man</a><span>第三人称荡索的变体：高度感和城市纵深</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d04">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">04</span><span class="tag">不靠角色</span></div>
+      <h2>机甲战斗</h2>
+      <label class="pick"><input type="checkbox" id="pick-04" data-label="04 机甲战斗"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创机甲。先在机库里换部件和武器，再进场打一场高机动战斗：推进器冲刺、导弹齐射、近战。</dd>
+      <dt>为什么适合</dt><dd>机甲全是硬表面，行走用程序化 IK 就能做，不依赖动作捕捉。武器、推进、过热、部位破坏叠在一起，机制天然显得复杂。KHAMSIN 里已经有泰坦的底子。</dd>
+      <dt>视频看点</dt><dd>导弹雨、推进器尾焰、巨物感。机库换装界面是“机制复杂”最直观的证据。群里提过机甲受众的消费力和关注度都高。</dd>
+      <dt>主要风险</dt><dd>原创机甲的设计感决定成败，造型平庸就会像玩具。需要对着参考修很多轮。</dd>
+      <dt>可复用</dt><dd>KHAMSIN 的泰坦、驾驶舱界面和武器系统。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="m-n">5/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">无（程序化行走）</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/mecha-1.jpg" data-cap="Daemon X Machina · 机甲和巨型敌人的尺度对比、光束武器" data-href="https://interfaceingame.com/screenshots/daemon-x-machina-colossal-immortals/" aria-label="放大：Daemon X Machina · 机甲和巨型敌人的尺度对比、光束武器"><img src="refs/mecha-1.jpg" alt="Daemon X Machina 截图：机甲和巨型敌人的尺度对比、光束武器" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/daemon-x-machina-colossal-immortals/" target="_blank" rel="noopener">Daemon X Machina</a><span>机甲和巨型敌人的尺度对比、光束武器</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/mecha-2.jpg" data-cap="Daemon X Machina · 高机动战斗时 HUD 的信息密度" data-href="https://interfaceingame.com/screenshots/daemon-x-machina-goal-updated/" aria-label="放大：Daemon X Machina · 高机动战斗时 HUD 的信息密度"><img src="refs/mecha-2.jpg" alt="Daemon X Machina 截图：高机动战斗时 HUD 的信息密度" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/daemon-x-machina-goal-updated/" target="_blank" rel="noopener">Daemon X Machina</a><span>高机动战斗时 HUD 的信息密度</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/mecha-3.jpg" data-cap="Titanfall 2 · 机甲造型细节和涂装的完成度" data-href="https://interfaceingame.com/screenshots/titanfall-2-find-match/" aria-label="放大：Titanfall 2 · 机甲造型细节和涂装的完成度"><img src="refs/mecha-3.jpg" alt="Titanfall 2 截图：机甲造型细节和涂装的完成度" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/titanfall-2-find-match/" target="_blank" rel="noopener">Titanfall 2</a><span>机甲造型细节和涂装的完成度</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/mecha-4.jpg" data-cap="Titanfall 2 · 第一人称驾驶舱的 HUD" data-href="https://interfaceingame.com/screenshots/titanfall-2-titan-hud/" aria-label="放大：Titanfall 2 · 第一人称驾驶舱的 HUD"><img src="refs/mecha-4.jpg" alt="Titanfall 2 截图：第一人称驾驶舱的 HUD" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/titanfall-2-titan-hud/" target="_blank" rel="noopener">Titanfall 2</a><span>第一人称驾驶舱的 HUD</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d05">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">05</span><span class="tag">不靠角色</span></div>
+      <h2>室内恐怖</h2>
+      <label class="pick"><input type="checkbox" id="pick-05" data-label="05 室内恐怖"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创第一人称恐怖。一栋旧公寓或医院的几条走廊，手电筒、解谜、一只追你的怪物，流程 15 分钟左右。</dd>
+      <dt>为什么适合</dt><dd>场景小，所有预算压在一个空间里，是最容易做到照片级的方向。光照可以在 Blender 里烘焙，材质和道具可以取自 Poly Haven 这类扫描素材库（要先确认你的 Blender 插件开了素材库）。恐怖靠光影、雾、声音和后期，都是强项。怪物只要一只，用 video2rig 做。</dd>
+      <dt>视频看点</dt><dd>“这是网页？”级别的写实度。恐怖游戏的试玩反应本身就有流量。</dd>
+      <dt>主要风险</dt><dd>节奏和惊吓点要靠反复试玩来调。平台对恐怖内容的推荐可能受限，封面也不好做。</dd>
+      <dt>可复用</dt><dd>video2rig 的怪物，KHAMSIN 的第一人称底子。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="m-n">5/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="m-n">3/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="m-n">3/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">中（一只怪物）</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/horror-1.jpg" data-cap="Resident Evil Requiem · 越肩视角、警戒线、单一光源下的暗部" data-href="https://interfaceingame.com/screenshots/resident-evil-requiem-hud/" aria-label="放大：Resident Evil Requiem · 越肩视角、警戒线、单一光源下的暗部"><img src="refs/horror-1.jpg" alt="Resident Evil Requiem 截图：越肩视角、警戒线、单一光源下的暗部" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/resident-evil-requiem-hud/" target="_blank" rel="noopener">Resident Evil Requiem</a><span>越肩视角、警戒线、单一光源下的暗部</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/horror-2.jpg" data-cap="Control · 体积光和强逆光的构图" data-href="https://interfaceingame.com/screenshots/control-health-bar/" aria-label="放大：Control · 体积光和强逆光的构图"><img src="refs/horror-2.jpg" alt="Control 截图：体积光和强逆光的构图" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/control-health-bar/" target="_blank" rel="noopener">Control</a><span>体积光和强逆光的构图</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/horror-3.jpg" data-cap="Cronos: The New Dawn · 雾里的手电光束" data-href="https://interfaceingame.com/screenshots/cronos-the-new-dawn-hud/" aria-label="放大：Cronos: The New Dawn · 雾里的手电光束"><img src="refs/horror-3.jpg" alt="Cronos: The New Dawn 截图：雾里的手电光束" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/cronos-the-new-dawn-hud/" target="_blank" rel="noopener">Cronos: The New Dawn</a><span>雾里的手电光束</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/horror-4.jpg" data-cap="Metro Exodus · 第一人称下的脏污材质和局部照明" data-href="https://interfaceingame.com/screenshots/metro-exodus-tutorial/" aria-label="放大：Metro Exodus · 第一人称下的脏污材质和局部照明"><img src="refs/horror-4.jpg" alt="Metro Exodus 截图：第一人称下的脏污材质和局部照明" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/metro-exodus-tutorial/" target="_blank" rel="noopener">Metro Exodus</a><span>第一人称下的脏污材质和局部照明</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d06">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">06</span><span class="tag">靠骨骼绑定</span><span class="tag rec">建议做</span></div>
+      <h2>魂系 Boss 战</h2>
+      <label class="pick"><input type="checkbox" id="pick-06" data-label="06 魂系 Boss 战"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创动作游戏里的一场 Boss 战。一个竞技场、一只巨型 Boss、一个主角。锁定、翻滚、弹反、处决。</dd>
+      <dt>为什么适合</dt><dd>这是三条探索线的合流：KHAMSIN 的写实光影、video2rig 的怪物绑定和动作（岩石巨魔、岩甲巨兽已经跑通）、UMBRA GT 的镜头张力。范围收得很窄，所有精力压在一场战斗上。</dd>
+      <dt>视频看点</dt><dd>钩子最强。《黑神话》《只狼》《影之刃零》的受众最大，“AI 做出了一场 Boss 战”比任何载具游戏都更像 3A。</dd>
+      <dt>主要风险</dt><dd>风险最高。主角的攻击、受击、翻滚和打击感要求很高。Boss 的每个招式都要走一遍生成、绑定、校验，成本按招式数累加。建议第一版只做 6 到 8 招。</dd>
+      <dt>可复用</dt><dd>video2rig 整套管线和两只现成的怪物。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="m-n">3/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="m-n">5/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="m-n">5/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">高</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/souls-1.jpg" data-cap="Sekiro: Shadows Die Twice · 巨型 Boss 的压迫感和火焰特效" data-href="https://interfaceingame.com/screenshots/sekiro-shadows-die-twice-boss-fight/" aria-label="放大：Sekiro: Shadows Die Twice · 巨型 Boss 的压迫感和火焰特效"><img src="refs/souls-1.jpg" alt="Sekiro: Shadows Die Twice 截图：巨型 Boss 的压迫感和火焰特效" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/sekiro-shadows-die-twice-boss-fight/" target="_blank" rel="noopener">Sekiro: Shadows Die Twice</a><span>巨型 Boss 的压迫感和火焰特效</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/souls-2.jpg" data-cap="Phantom Blade Zero · 雨中对峙的氛围、Boss 血条的样式" data-href="https://interfaceingame.com/screenshots/pbz_40/" aria-label="放大：Phantom Blade Zero · 雨中对峙的氛围、Boss 血条的样式"><img src="refs/souls-2.jpg" alt="Phantom Blade Zero 截图：雨中对峙的氛围、Boss 血条的样式" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/pbz_40/" target="_blank" rel="noopener">Phantom Blade Zero</a><span>雨中对峙的氛围、Boss 血条的样式</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/souls-3.jpg" data-cap="God of War · 越肩镜头下主角和 Boss 的体型比" data-href="https://interfaceingame.com/screenshots/god-of-war-boss-fight/" aria-label="放大：God of War · 越肩镜头下主角和 Boss 的体型比"><img src="refs/souls-3.jpg" alt="God of War 截图：越肩镜头下主角和 Boss 的体型比" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/god-of-war-boss-fight/" target="_blank" rel="noopener">God of War</a><span>越肩镜头下主角和 Boss 的体型比</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/souls-4.jpg" data-cap="Black Myth: Wukong · 极简场景也能有的大片感" data-href="https://interfaceingame.com/screenshots/black-myth-wukong-hud/" aria-label="放大：Black Myth: Wukong · 极简场景也能有的大片感"><img src="refs/souls-4.jpg" alt="Black Myth: Wukong 截图：极简场景也能有的大片感" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/black-myth-wukong-hud/" target="_blank" rel="noopener">Black Myth: Wukong</a><span>极简场景也能有的大片感</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d07">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">07</span><span class="tag">靠骨骼绑定</span><span class="tag rec">建议做</span></div>
+      <h2>MOBA · 单路团战</h2>
+      <label class="pick"><input type="checkbox" id="pick-07" data-label="07 MOBA · 单路团战"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创 MOBA，只做一条路：两边各两座塔和一个基地，有小兵和野怪增益。4 到 6 个英雄，每个 4 个技能，带商店和电脑对手。</dd>
+      <dt>为什么适合</dt><dd>俯视角对模型细节的要求低，画面靠地图、技能特效和界面撑起来。技能、装备、数值、电脑对手的逻辑全是系统代码，是模型最擅长的部分。</dd>
+      <dt>视频看点</dt><dd>群里说过，这类游戏天然带着“机制复杂”的信息，观众买账。技能连招和连杀播报很适合剪辑。</dd>
+      <dt>主要风险</dt><dd>英雄数乘以技能数，美术和动作的量不小。电脑对手打得像不像人，决定好不好玩。风格偏卡通，和写实 3A 的调性有距离。</dd>
+      <dt>可复用</dt><dd>video2rig 做英雄和野怪。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="m-n">5/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">中（俯视角要求低）</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/moba-1.jpg" data-cap="League of Legends · 防御塔的攻击范围提示和地图材质" data-href="https://interfaceingame.com/screenshots/league-of-legends-tower/" aria-label="放大：League of Legends · 防御塔的攻击范围提示和地图材质"><img src="refs/moba-1.jpg" alt="League of Legends 截图：防御塔的攻击范围提示和地图材质" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/league-of-legends-tower/" target="_blank" rel="noopener">League of Legends</a><span>防御塔的攻击范围提示和地图材质</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/moba-2.jpg" data-cap="Dota 2 · 暗色调地图和连杀播报" data-href="https://interfaceingame.com/screenshots/dota-2-monster-kill-streak/" aria-label="放大：Dota 2 · 暗色调地图和连杀播报"><img src="refs/moba-2.jpg" alt="Dota 2 截图：暗色调地图和连杀播报" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/dota-2-monster-kill-streak/" target="_blank" rel="noopener">Dota 2</a><span>暗色调地图和连杀播报</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/moba-3.jpg" data-cap="League of Legends: Wild Rift · 手机端技能按钮的布局" data-href="https://interfaceingame.com/screenshots/league-of-legends-wild-rift-double-kill/" aria-label="放大：League of Legends: Wild Rift · 手机端技能按钮的布局"><img src="refs/moba-3.jpg" alt="League of Legends: Wild Rift 截图：手机端技能按钮的布局" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/league-of-legends-wild-rift-double-kill/" target="_blank" rel="noopener">League of Legends: Wild Rift</a><span>手机端技能按钮的布局</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/moba-4.jpg" data-cap="Smite · 第三人称 MOBA 的变体：技能特效" data-href="https://interfaceingame.com/screenshots/smite-action/" aria-label="放大：Smite · 第三人称 MOBA 的变体：技能特效"><img src="refs/moba-4.jpg" alt="Smite 截图：第三人称 MOBA 的变体：技能特效" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/smite-action/" target="_blank" rel="noopener">Smite</a><span>第三人称 MOBA 的变体：技能特效</span></figcaption></figure></div>
+</article>
+<article class="dir" id="d08">
+  <div class="dir-text">
+    <header class="dir-head">
+      <div class="dir-meta"><span class="num">08</span><span class="tag">靠骨骼绑定</span></div>
+      <h2>暗黑式刷宝 ARPG</h2>
+      <label class="pick"><input type="checkbox" id="pick-08" data-label="08 暗黑式刷宝 ARPG"><span>选这个</span></label>
+    </header>
+    <dl>
+      <dt>概念</dt><dd>原创俯视角动作 RPG。一座哥特地牢，成群的怪物、技能树、带词缀的掉落、一个关底 Boss。</dd>
+      <dt>为什么适合</dt><dd>暗场景配动态点光源很出效果。怪物用实例化渲染可以铺满屏。掉落、词缀、背包界面是系统活。单人就能玩，不需要电脑队友。</dd>
+      <dt>视频看点</dt><dd>满屏特效和爆装备的光柱。“暗黑”这两个字本身有认知度。</dd>
+      <dt>主要风险</dt><dd>怪物种类和技能特效的量大。位移和受击反馈的手感要多轮调。</dd>
+      <dt>可复用</dt><dd>video2rig 做怪物，岩石巨魔可以直接当精英怪。</dd>
+    </dl>
+    <div class="meters"><div class="meter"><span class="m-l">出效果把握</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">视频钩子</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span><span class="m-n">3/5</span></div><div class="meter"><span class="m-l">工作量</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span><span class="m-n">4/5</span></div><div class="meter"><span class="m-l">角色动画依赖</span><span class="m-t">中</span></div></div>
+  </div>
+  <div class="shots"><figure><button type="button" class="shot" data-src="refs/arpg-1.jpg" data-cap="Diablo IV Beta · 暗场景里的 Boss 和局部光" data-href="https://interfaceingame.com/screenshots/diablo-iv-beta-boss-fight-2/" aria-label="放大：Diablo IV Beta · 暗场景里的 Boss 和局部光"><img src="refs/arpg-1.jpg" alt="Diablo IV Beta 截图：暗场景里的 Boss 和局部光" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/diablo-iv-beta-boss-fight-2/" target="_blank" rel="noopener">Diablo IV Beta</a><span>暗场景里的 Boss 和局部光</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/arpg-2.jpg" data-cap="Diablo IV Beta · 俯视角下的地形层次" data-href="https://interfaceingame.com/screenshots/diablo-iv-beta-in-game-3/" aria-label="放大：Diablo IV Beta · 俯视角下的地形层次"><img src="refs/arpg-2.jpg" alt="Diablo IV Beta 截图：俯视角下的地形层次" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/diablo-iv-beta-in-game-3/" target="_blank" rel="noopener">Diablo IV Beta</a><span>俯视角下的地形层次</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/arpg-3.jpg" data-cap="Diablo III · 装备掉落的光柱" data-href="https://interfaceingame.com/screenshots/diablo-iii-loot/" aria-label="放大：Diablo III · 装备掉落的光柱"><img src="refs/arpg-3.jpg" alt="Diablo III 截图：装备掉落的光柱" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/diablo-iii-loot/" target="_blank" rel="noopener">Diablo III</a><span>装备掉落的光柱</span></figcaption></figure><figure><button type="button" class="shot" data-src="refs/arpg-4.jpg" data-cap="Hades · 高饱和的技能特效和房间式关卡" data-href="https://interfaceingame.com/screenshots/hades-fight/" aria-label="放大：Hades · 高饱和的技能特效和房间式关卡"><img src="refs/arpg-4.jpg" alt="Hades 截图：高饱和的技能特效和房间式关卡" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/hades-fight/" target="_blank" rel="noopener">Hades</a><span>高饱和的技能特效和房间式关卡</span></figcaption></figure></div>
+</article>
+<section class="alts-wrap">
+  <h2 class="sec">备选</h2>
+  <p class="sec-note">这三个我排在后面，原因写在每条里。</p>
+  <div class="alts">
+<article class="alt">
+  <figure><button type="button" class="shot" data-src="refs/alt-1.jpg" data-cap="Frostpunk · 参考画面" data-href="https://interfaceingame.com/screenshots/frostpunk-coal-thumper-researched/" aria-label="放大：Frostpunk · 参考画面"><img src="refs/alt-1.jpg" alt="Frostpunk 截图：参考画面" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/frostpunk-coal-thumper-researched/" target="_blank" rel="noopener">Frostpunk</a><span>参考画面</span></figcaption></figure>
+  <div class="alt-body">
+    <div class="dir-meta"><span class="num">A1</span></div>
+    <h3>极寒城建</h3>
+    <p>机制重、俯视角，雪和蒸汽的画面辨识度高。节奏慢，不好剪成有冲击力的片段。</p>
+    <label class="pick"><input type="checkbox" id="pick-A1" data-label="A1 极寒城建"><span>选这个</span></label>
+  </div>
+</article>
+<article class="alt">
+  <figure><button type="button" class="shot" data-src="refs/alt-2.jpg" data-cap="Steep · 参考画面" data-href="https://interfaceingame.com/screenshots/steep-race/" aria-label="放大：Steep · 参考画面"><img src="refs/alt-2.jpg" alt="Steep 截图：参考画面" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/steep-race/" target="_blank" rel="noopener">Steep</a><span>参考画面</span></figcaption></figure>
+  <div class="alt-body">
+    <div class="dir-meta"><span class="num">A2</span></div>
+    <h3>雪山极限运动</h3>
+    <p>滑雪加翼装，大场景和速度感都有。看点和赛车重合。</p>
+    <label class="pick"><input type="checkbox" id="pick-A2" data-label="A2 雪山极限运动"><span>选这个</span></label>
+  </div>
+</article>
+<article class="alt">
+  <figure><button type="button" class="shot" data-src="refs/alt-3.jpg" data-cap="Thumper · 参考画面" data-href="https://interfaceingame.com/screenshots/thumper-stage-begin/" aria-label="放大：Thumper · 参考画面"><img src="refs/alt-3.jpg" alt="Thumper 截图：参考画面" width="1280" height="720" loading="lazy"></button><figcaption><a href="https://interfaceingame.com/screenshots/thumper-stage-begin/" target="_blank" rel="noopener">Thumper</a><span>参考画面</span></figcaption></figure>
+  <div class="alt-body">
+    <div class="dir-meta"><span class="num">A3</span></div>
+    <h3>节奏暴力</h3>
+    <p>纯着色器加音画同步，冲击力强，工作量最小。不像“3A 大作”。</p>
+    <label class="pick"><input type="checkbox" id="pick-A3" data-label="A3 节奏暴力"><span>选这个</span></label>
+  </div>
+</article></div>
+</section>
+<section class="cmp">
+  <h2 class="sec">并排对比</h2>
+  <p class="sec-note">分数是我根据前两个案例的制作过程做的判断，没有实测。工作量分数越高越重。</p>
+  <div class="tbl"><table>
+    <thead><tr><th scope="col">方向</th><th scope="col">出效果把握</th><th scope="col">视频钩子</th><th scope="col">工作量</th><th scope="col">角色动画依赖</th><th scope="col">建议做</th></tr></thead>
+    <tbody><tr><th scope="row"><a href="#d01">01 空战 · 座舱视角狗斗</a></th><td>5</td><td>4</td><td>3</td><td>无</td><td>是</td></tr><tr><th scope="row"><a href="#d02">02 海战 · 风帆战舰</a></th><td>4</td><td>4</td><td>4</td><td>低</td><td></td></tr><tr><th scope="row"><a href="#d03">03 第一人称跑酷</a></th><td>4</td><td>4</td><td>3</td><td>低（只有手臂）</td><td></td></tr><tr><th scope="row"><a href="#d04">04 机甲战斗</a></th><td>4</td><td>5</td><td>4</td><td>无（程序化行走）</td><td></td></tr><tr><th scope="row"><a href="#d05">05 室内恐怖</a></th><td>5</td><td>3</td><td>3</td><td>中（一只怪物）</td><td></td></tr><tr><th scope="row"><a href="#d06">06 魂系 Boss 战</a></th><td>3</td><td>5</td><td>5</td><td>高</td><td>是</td></tr><tr><th scope="row"><a href="#d07">07 MOBA · 单路团战</a></th><td>4</td><td>4</td><td>5</td><td>中（俯视角要求低）</td><td>是</td></tr><tr><th scope="row"><a href="#d08">08 暗黑式刷宝 ARPG</a></th><td>4</td><td>3</td><td>4</td><td>中</td><td></td></tr></tbody>
+  </table></div>
+</section>
+</main>
+<footer class="foot">参考图来自 interfaceingame.com，版权属于各游戏的厂商，这里只用作内部选题参考。点图片可以放大，点游戏名打开原页面。</footer>
+</div>
+<div class="pickbar" role="region" aria-label="我的选择">
+  <div class="pb-in">
+    <p id="pb-sum" class="pb-sum">还没选。勾选卡片上的“选这个”。</p>
+    <input id="pb-fallback" class="pb-fb" type="text" readonly hidden aria-label="选择结果，可手动复制">
+    <button type="button" id="pb-copy" class="pb-btn" disabled>复制选择</button>
+  </div>
+</div>
+<dialog id="lb" aria-label="参考图放大">
+  <img id="lb-img" alt="">
+  <div class="lb-bar"><span id="lb-cap"></span><a id="lb-src" target="_blank" rel="noopener">打开原页面</a><button type="button" id="lb-x">关闭</button></div>
+</dialog>
+<script>
+(function(){
+  var KEY='topic-board-picks';
+  var boxes=[].slice.call(document.querySelectorAll('.pick input'));
+  var sum=document.getElementById('pb-sum'), btn=document.getElementById('pb-copy'), fb=document.getElementById('pb-fallback');
+  function picked(){ return boxes.filter(function(b){return b.checked;}).map(function(b){return b.getAttribute('data-label');}); }
+  function text(){ return '我选：' + picked().join('、'); }
+  function render(){
+    var p=picked();
+    btn.disabled=p.length===0; btn.textContent='复制选择'; fb.hidden=true;
+    sum.textContent=p.length? '已选 '+p.length+' 个：'+p.join('、') : '还没选。勾选卡片上的“选这个”。';
+    try{ localStorage.setItem(KEY, JSON.stringify(boxes.filter(function(b){return b.checked;}).map(function(b){return b.id;}))); }catch(e){}
+  }
+  try{ var saved=JSON.parse(localStorage.getItem(KEY)||'[]'); boxes.forEach(function(b){ if(saved.indexOf(b.id)>-1) b.checked=true; }); }catch(e){}
+  boxes.forEach(function(b){ b.addEventListener('change', render); });
+  btn.addEventListener('click', function(){
+    var t=text();
+    function fallback(){ fb.hidden=false; fb.value=t; fb.focus(); fb.select(); btn.textContent='请手动复制'; }
+    try{ navigator.clipboard.writeText(t).then(function(){ btn.textContent='已复制，粘贴发给我'; }, fallback); }catch(e){ fallback(); }
+  });
+  render();
+
+  var lb=document.getElementById('lb'), img=document.getElementById('lb-img'), cap=document.getElementById('lb-cap'), src=document.getElementById('lb-src');
+  document.addEventListener('click', function(e){
+    var s=e.target.closest? e.target.closest('.shot') : null;
+    if(s){ img.src=s.getAttribute('data-src'); img.alt=s.getAttribute('data-cap'); cap.textContent=s.getAttribute('data-cap'); src.href=s.getAttribute('data-href'); if(lb.showModal) lb.showModal(); return; }
+    if(e.target===lb || e.target.id==='lb-x'){ lb.close(); }
+  });
+})();
+
+</script>

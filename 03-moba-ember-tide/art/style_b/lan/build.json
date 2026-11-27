@@ -1,0 +1,139 @@
+{
+ "name": "lan",
+ "raw": "art/style_b/lan/tripo_rigged.glb",
+ "rigged": "art/style_b/lan/lan_b_rigged.glb",
+ "out": "art/style_b/lan/check/game.glb",
+ "packed": "art/style_b/lan/check/packed.glb",
+ "tex": 2048,
+ "weapon_tex": 512,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "gear": [
+  {
+   "type": "script",
+   "path": "art/style_b/lan/gear.py",
+   "func": "make_blade",
+   "side": "Right",
+   "rot": [
+    0,
+    55,
+    0
+   ]
+  },
+  {
+   "type": "script",
+   "path": "art/style_b/lan/gear.py",
+   "func": "make_blade",
+   "side": "Left",
+   "rot": [
+    0,
+    55,
+    0
+   ]
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.012,
+    -0.045
+   ],
+   "yaw": -10,
+   "lean": 3
+  },
+  "spine": [
+   [
+    4,
+    -3
+   ],
+   [
+    4,
+    -4
+   ],
+   [
+    3,
+    -4
+   ]
+  ],
+  "head": {
+   "yaw": 19,
+   "pitch": 5
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.15,
+     -0.105,
+     0.061
+    ],
+    "pole": [
+     0.25,
+     -1,
+     0
+    ],
+    "toe": 12
+   },
+   "Right": {
+    "ankle": [
+     -0.165,
+     0.095,
+     0.061
+    ],
+    "pole": [
+     -0.55,
+     -0.8,
+     0
+    ],
+    "toe": -38
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.235,
+     -0.095,
+     0.475
+    ],
+    "pole": [
+     0.9,
+     0.5,
+     0.1
+    ],
+    "blade": [
+     0.2,
+     -0.95,
+     -0.1
+    ],
+    "shrug": 2
+   },
+   "Right": {
+    "wrist": [
+     -0.245,
+     -0.02,
+     0.44
+    ],
+    "pole": [
+     -0.9,
+     0.55,
+     0.1
+    ],
+    "blade": [
+     -0.32,
+     -0.88,
+     -0.28
+    ],
+    "shrug": 0
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.004,
+   "chest": 1.2,
+   "shoulder": 1.0,
+   "hand": 0.006
+  }
+ },
+ "motions": {},
+ "_note": "gear 的 rot [0,55,0]：刀绕自己的长轴转 55 度。旧刀的刀面竖着（和前臂在一个平面里），游戏的俯视镜头里新月刃常常侧着只剩一条细弧；转 55 度以后站着、挥刀时从上面都看得到新月的整个刀面（b-lan 第二轮试过 0 和 55）"
+}

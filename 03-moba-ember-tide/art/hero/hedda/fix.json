@@ -1,0 +1,239 @@
+{
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/hedda_rigged.glb",
+ "stance": "art/hero/hedda/stance.npz",
+ "src_dir": "art/hero/hedda/motions",
+ "dst_dir": "art/hero/hedda/motions_fix",
+ "_说明": "帧号是成品动作（30 帧每秒）的帧号。mode：two 双手握杆（杆沿两个握点的连线）、dir 单手（[偏航, 俯仰] 相对胯，俯仰 90 竖直向上）、stance 胳膊照站姿。floor 最低的脚贴地",
+ "clips": {
+  "idle": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 88,
+     "mode": "stance"
+    }
+   ]
+  },
+  "run": {
+   "floor": false,
+   "segs": [
+    {
+     "from": 0,
+     "to": 28,
+     "mode": "dir",
+     "dir": [
+      -10,
+      58
+     ]
+    }
+   ]
+  },
+  "attack1": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 25,
+     "mode": "two",
+     "lead": "right",
+     "ramp": 4
+    },
+    {
+     "from": 37,
+     "to": 44,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 9
+    }
+   ]
+  },
+  "attack2": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 2,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 4
+    },
+    {
+     "from": 6,
+     "to": 24,
+     "mode": "dir",
+     "dir": [
+      -5,
+      -6
+     ],
+     "world": true,
+     "ramp": 3
+    },
+    {
+     "from": 31,
+     "to": 37,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 4
+    }
+   ]
+  },
+  "q": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 23,
+     "mode": "dir",
+     "dir": [
+      0,
+      -6
+     ],
+     "world": true,
+     "ramp": 4
+    },
+    {
+     "from": 27,
+     "to": 60,
+     "mode": "dir",
+     "dir": [
+      0,
+      -5
+     ],
+     "ramp": 4
+    },
+    {
+     "from": 75,
+     "to": 84,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 10
+    }
+   ]
+  },
+  "w": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 55,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 4
+    }
+   ]
+  },
+  "e": {
+   "segs": [
+    {
+     "from": 8,
+     "to": 40,
+     "mode": "dir",
+     "dir": [
+      84,
+      -3
+     ],
+     "ramp": 4
+    },
+    {
+     "from": 62,
+     "to": 74,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 5
+    }
+   ]
+  },
+  "r": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 3,
+     "mode": "dir",
+     "dir": [
+      0,
+      85
+     ],
+     "ramp": 4
+    },
+    {
+     "from": 11,
+     "to": 18,
+     "mode": "dir",
+     "dir": [
+      180,
+      -50
+     ],
+     "ramp": 4
+    },
+    {
+     "from": 21,
+     "to": 22,
+     "mode": "dir",
+     "dir": [
+      180,
+      40
+     ],
+     "ramp": 2
+    },
+    {
+     "from": 25,
+     "to": 26,
+     "mode": "dir",
+     "dir": [
+      0,
+      70
+     ],
+     "ramp": 2
+    },
+    {
+     "from": 31,
+     "to": 45,
+     "mode": "dir",
+     "dir": [
+      0,
+      -30
+     ],
+     "ramp": 3
+    },
+    {
+     "from": 64,
+     "to": 75,
+     "mode": "dir",
+     "dir": [
+      0,
+      88
+     ],
+     "ramp": 12
+    }
+   ]
+  },
+  "death": {
+   "segs": [
+    {
+     "from": 0,
+     "to": 104,
+     "mode": "dir",
+     "dir": [
+      0,
+      86
+     ],
+     "ramp": 4
+    }
+   ]
+  }
+ }
+}

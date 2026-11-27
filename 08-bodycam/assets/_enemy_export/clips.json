@@ -1,0 +1,22 @@
+{
+ "walk": {
+  "frames": 70,
+  "speed": 1.007
+ },
+ "run": {
+  "frames": 37,
+  "speed": 2.719
+ },
+ "idle": {
+  "frames": 121,
+  "speed": 0.001
+ },
+ "kneel_down": {
+  "frames": 60,
+  "speed": 0
+ },
+ "kneel": {
+  "frames": 121,
+  "speed": 0
+ }
+}

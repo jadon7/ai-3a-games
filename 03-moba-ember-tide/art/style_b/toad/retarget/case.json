@@ -1,0 +1,122 @@
+{
+ "name": "toad_b",
+ "title": "石背巨蟾：旧模型的全部动作 → 卡通厚涂的新模型（旧的 Tripo 把头尾认反了、新的没有，骨骼名完全对不上；躯干照旧是硬的一整块，只搬头、四条腿；按骨骼角色对应）",
+ "kind": "quadruped",
+ "mode": "delta",
+ "k": 1.0,
+ "src_rig": "../rigs/toad.npz",
+ "tgt_rig": "../rigs/toad_b.npz",
+ "src_build": "art/unit/toad/build.json",
+ "src_timing": "art/style_b/toad/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/toad.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/toad_b.blend",
+ "tgt_blend_name": "toad_b",
+ "tex": 1024,
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 2.3,
+ "game_h": 2.39,
+ "move_speed": 3.6,
+ "tip_src": "bone_37",
+ "tip_tgt": "tripo::Head_1",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "tripo::Head_0": "bone_36",
+  "tripo::Spine_3": "bone_29",
+  "tripo::0_Left_Limb_0": "bone_30",
+  "tripo::0_Left_Limb_1": "bone_31",
+  "bone_31": "bone_39",
+  "tripo::0_Right_Limb_0": "tripo::1_Left_Limb_0",
+  "tripo::0_Right_Limb_1": "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_0": "tripo::0_Right_Limb_0",
+  "tripo::1_Left_Limb_1": "tripo::0_Right_Limb_1",
+  "tripo::1_Left_Limb_2": "tripo::0_Right_Limb_2",
+  "tripo::1_Right_Limb_0": "tripo::0_Left_Limb_0",
+  "tripo::1_Right_Limb_1": "tripo::0_Left_Limb_1",
+  "tripo::1_Right_Limb_2": "tripo::0_Left_Limb_2"
+ },
+ "legs": [
+  {
+   "tgt": [
+    "tripo::Spine_3",
+    "tripo::0_Left_Limb_0",
+    "tripo::0_Left_Limb_1"
+   ],
+   "src_end": "bone_31"
+  },
+  {
+   "tgt": [
+    "bone_31",
+    "tripo::0_Right_Limb_0",
+    "tripo::0_Right_Limb_1"
+   ],
+   "src_end": "tripo::1_Left_Limb_1"
+  },
+  {
+   "tgt": [
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1",
+    "tripo::1_Left_Limb_2"
+   ],
+   "src_end": "tripo::0_Right_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1",
+    "tripo::1_Right_Limb_2"
+   ],
+   "src_end": "tripo::0_Left_Limb_2"
+  }
+ ],
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "tripo::Head_0",
+   "verts_of": "tripo::Head_1"
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "旧巨蟾（原）",
+  "卡通巨蟾·只搬旋转",
+  "卡通巨蟾·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.2,
+  "zc": 0.45
+ },
+ "video": {
+  "clips": [
+   "attack2"
+  ],
+  "loops": {
+   "run": 4
+  },
+  "spacing": 2.2,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.4
+ }
+}

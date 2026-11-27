@@ -1,0 +1,2 @@
+== h_end9
+{"out":"docs/trailer/raw/h_end9.mp4","ok":true,"rep":{"t":1143,"over":1,"kills":[11,13],"towers":[7,2],"lanes":"232 对 110","order":["-","defend"],"camps":12,"boss":["troll 还有64秒","beast 还有132秒"],"buff":[[82,0],[0,0]],"heroes":["lan L15 0% 4/9/3 金2745 装6 刀29 线0 [阵亡] 打387 跟兵线317 阵亡160 清兵110 回防29 逃跑25","moko L15 57% 1/4/6 金2373 装5 刀23 线2 [跟�

@@ -1,0 +1,19 @@
+{
+ "_说明": "dir 模式搭标架用：腿上每节的尾巴指向下一节的头（两边同一个解剖位置）。旧卡兹的右大腿尾巴朝外、前爪掌指向哪不一定，新卡兹前爪掌有三根脚趾",
+ "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_1",
+ "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_2",
+ "tripo::1_Left_Limb_2": "tripo::1_Left_Limb_3",
+ "tripo::1_Left_Limb_3": "tripo::1_Left_Limb_4",
+ "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_1",
+ "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_2",
+ "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_3",
+ "tripo::1_Right_Limb_3": "tripo::1_Right_Limb_4",
+ "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_1",
+ "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_2",
+ "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_3",
+ "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_1",
+ "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_2",
+ "tripo::0_Right_Limb_2": "tripo::0_Right_Limb_3",
+ "tripo::0_Left_Limb_3": "tripo::0_Left_Limb_5",
+ "tripo::0_Right_Limb_3": "tripo::0_Right_Limb_5"
+}

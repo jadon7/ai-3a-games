@@ -1,0 +1,231 @@
+<title>烬与潮 地图灰盒</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：灰盒验收。顶部结论 → 带标注的平面图和图例 → 和上一版同比例并排 → 数字 → 走路时间 → 镜头里的大小 → 决定、要看的、没验证的 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 2.1 · 布局灰盒 · 第三稿</p>
+  <h1>开阔的地面，一段段<em>薄墙</em></h1>
+  <p class="lede">你说山体太多，让我看王者峡谷的墙。我对着它的全景图把结构重排了一遍：地面是开阔的，挡路的是窄长的矮墙。这一页仍然只看结构和大小，色块和方块都是占位。应用内浏览器里刷新灰盒就能走：WASD 或点地面，F 自由镜头，R 回出生点。</p>
+</header>
+
+<section class="how">
+  <section>
+    <h3>地面是开阔的</h3>
+    <p>上一稿是在实心的山体里掏出小路，能走的面积只有 65%。现在整张图默认哪里都能走，能走的面积 86%。兵线只是地面上的路，两边不再有墙夹着；野区里的土路只是告诉人常走哪里，不挡路。</p>
+  </section>
+  <section>
+    <h3>挡路的是片状薄墙</h3>
+    <p>一段段窄长的矮墙：厚 2.2 米、高 3 米、长 8 到 21 米，有直的也有弧的，彼此隔得很开。每方 26 段，每片野区 13 段。这个厚度以后可以让带位移的技能穿过去。</p>
+  </section>
+  <section>
+    <h3>其他结构也照王者对了一遍</h3>
+    <p>营地窝在弧形墙围出的凹口里；草丛贴着墙长，墙在草丛背后；基地是一圈薄城墙围住的广场，三条线各开一个口；地图边缘是一道城墙，拐角处跟着边路的弯走；Boss 潭两岸各加了一道弧形墙，围成一个坑。</p>
+  </section>
+</section>
+
+<section>
+  <h2>平面图</h2>
+  <div class="plan">
+    <figure class="big"><img src="img/map.jpg" alt="带标注的地图平面图：左下是我方绿色基地，右上是对方红色基地，三条兵线，河道从左上斜到右下，地面上散着一段段深色的薄墙">
+      <ul class="legend">
+        <li><i style="background:#9fbe8c"></i>开阔地面，我方一侧</li>
+        <li><i style="background:#cda28d"></i>开阔地面，对方一侧</li>
+        <li><i style="background:#646a74"></i>薄墙和城墙，过不去</li>
+        <li><i style="background:#d3cab6"></i>兵线</li>
+        <li><i style="background:#bfae8e"></i>野区的土路，不挡路</li>
+        <li><i style="background:#dcc98a"></i>野怪营地</li>
+        <li><i style="background:#4d95aa"></i>河道，全程能走</li>
+        <li><i style="background:#d8d0b8"></i>Boss 台地</li>
+        <li><i style="background:#4c9a3a"></i>草丛</li>
+        <li><i style="background:#4c9a3a;outline:2px dashed var(--fg);outline-offset:1px"></i>蹲伏草丛</li>
+      </ul>
+    </figure>
+    <ul class="facts">
+      <li>我方在左下角，地面偏绿；对方在右上角，地面偏红。</li>
+      <li>上、中、下三条兵线。每条线外塔、内塔、高地塔三座，每方 9 座。</li>
+      <li>每方 6 个野怪营地：每片野区一个增益怪在正中，两个小营地一个靠河、一个靠基地。每个营地背后有一道弧形墙。</li>
+      <li>河道从左上到右下，全程是能走的浅水。两头各鼓成一个圆潭，潭中间的台地是一个 Boss，两岸的弧形墙把它围成一个坑。</li>
+      <li>草丛每方 24 块，都贴着墙或河岸，其中 10 块是专门蹲人的。</li>
+      <li>基地是高地上的广场，一圈薄城墙，三条线各有一个口、一道坡。水晶紧挨着出生点。</li>
+      <li>能藏人的只有草丛。灰盒里不再有树。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>和上一版同比例</h2>
+  <p class="note">两张图按同一个比例摆在一起。边长是上一版的一半多一点，面积约为上一版的 27%。</p>
+  <div class="scale">
+    <figure><img src="img/old_square.jpg" alt="上一版地图，300 米见方" loading="lazy"><figcaption><span class="who old">上一版</span>300 米见方</figcaption></figure>
+    <figure><img src="img/new_square.jpg" alt="现在的灰盒，156 米见方" loading="lazy"><figcaption><span class="who ours">现在</span>156 米见方</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>数字</h2>
+  <div class="tbl"><table class="narrow">
+    <thead><tr><th>项目</th><th class="n">上一版</th><th class="n">现在</th></tr></thead>
+    <tbody>
+      <tr><td>可活动区域</td><td class="n">300 × 300 米</td><td class="n">156 × 156 米</td></tr>
+      <tr><td>出生点走到中路河道正中</td><td class="n">约 198 米 · 40 秒</td><td class="n">102 米 · 20 秒</td></tr>
+      <tr><td>出生点到水晶</td><td class="n">26 米</td><td class="n">12 米</td></tr>
+      <tr><td>两个水晶之间</td><td class="n">344 米</td><td class="n">181 米</td></tr>
+      <tr><td>防御塔，每方</td><td class="n">11 座</td><td class="n">9 座</td></tr>
+      <tr><td>野怪营地，每方</td><td class="n">6 个</td><td class="n">6 个</td></tr>
+      <tr><td>草丛，每方</td><td class="n">没有</td><td class="n">24 块</td></tr>
+      <tr><td>薄墙，每方</td><td class="n">没有</td><td class="n">26 段</td></tr>
+      <tr><td>墙的厚度和高度</td><td class="n">没有</td><td class="n">2.2 米 · 3 米</td></tr>
+      <tr><td>兵线宽</td><td class="n">没量</td><td class="n">10 米</td></tr>
+      <tr><td>能走的面积占比</td><td class="n">没量</td><td class="n">86%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:10px">时间按参考移速每秒 5 米算，英雄的真实移速阶段 3 再定。上一版的 198 米是直线距离。水晶底座和防御塔算挡路，要绕着走。</p>
+</section>
+
+<section>
+  <h2>走路时间</h2>
+  <p class="note">沿能走的地面算最短路。按 1 米的格子、八个方向算，斜着拐的路线会略微偏长。</p>
+  <div class="tbl"><table class="narrow">
+    <thead><tr><th>路线</th><th class="n">路程</th><th class="n">时间</th></tr></thead>
+    <tbody>
+      <tr><td>出生点 → 中路外塔</td><td class="n">78 米</td><td class="n">15.7 秒</td></tr>
+      <tr><td>出生点 → 中路河道正中</td><td class="n">102 米</td><td class="n">20.3 秒</td></tr>
+      <tr><td>出生点 → 我方上野增益怪</td><td class="n">81 米</td><td class="n">16.1 秒</td></tr>
+      <tr><td>出生点 → 靠河的小营地</td><td class="n">99 米</td><td class="n">19.9 秒</td></tr>
+      <tr><td>出生点 → Boss 一</td><td class="n">115 米</td><td class="n">23.0 秒</td></tr>
+      <tr><td>出生点 → 上路河道口</td><td class="n">131 米</td><td class="n">26.2 秒</td></tr>
+      <tr><td>出生点 → 对方水晶跟前</td><td class="n">185 米</td><td class="n">37.0 秒</td></tr>
+      <tr><td>中路河道正中 → Boss 一</td><td class="n">41 米</td><td class="n">8.2 秒</td></tr>
+      <tr><td>中路河道正中 → 我方上野增益怪</td><td class="n">47 米</td><td class="n">9.5 秒</td></tr>
+      <tr><td>中路河道正中 → 上路河道口</td><td class="n">82 米</td><td class="n">16.4 秒</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>镜头里的大小</h2>
+  <p class="note">白色小人 2 米高，深色的是薄墙。镜头离地面 24 米，一屏大约能看到 26 × 18 米。</p>
+  <div class="pairs">
+    <div class="pair"><div class="row">
+      <figure><img src="img/spawn.jpg" alt="出生点" loading="lazy"><figcaption><span class="who ours">灰盒</span>出生点和水晶，中心相距 12 米。左边是地图边缘的城墙</figcaption></figure>
+      <figure><img src="img/ramp.jpg" alt="中路高地的口子" loading="lazy"><figcaption><span class="who ours">灰盒</span>中路上高地的口子。两边是基地的薄城墙，坡顶是高地塔</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row">
+      <figure><img src="img/mid_tower.jpg" alt="中路外塔" loading="lazy"><figcaption><span class="who ours">灰盒</span>中路外塔。兵线两边没有墙夹着，草丛背后才是一段薄墙</figcaption></figure>
+      <figure><img src="img/mid_river.jpg" alt="中路河道口" loading="lazy"><figcaption><span class="who ours">灰盒</span>中路河道口。小人站在草丛里，背后是拐角形的薄墙</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row">
+      <figure><img src="img/buff.jpg" alt="增益怪营地" loading="lazy"><figcaption><span class="who ours">灰盒</span>增益怪窝在弧形墙围出的凹口里，开口朝河道和中路</figcaption></figure>
+      <figure><img src="img/boss.jpg" alt="Boss 坑" loading="lazy"><figcaption><span class="who ours">灰盒</span>Boss 坑。小人站在弧形墙内侧的蹲伏草丛里</figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row">
+      <figure><img src="img/top_corner.jpg" alt="上路拐角" loading="lazy"><figcaption><span class="who ours">灰盒</span>上路拐角外侧的蹲伏草丛，背后是地图边缘的城墙</figcaption></figure>
+      <figure><img src="img/small_camp.jpg" alt="靠基地的小营地" loading="lazy"><figcaption><span class="who ours">灰盒</span>靠基地的小营地。小人蹲在营地墙后的草丛里</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section class="cols">
+  <section>
+    <h3>已经定下来的</h3>
+    <ul>
+      <li>每路三座塔，每方 9 座；有草丛；河道全程能走。</li>
+      <li>地图关于河道镜像，上下两半也镜像，两个 Boss 离两方一样远。</li>
+      <li>镜头离地面 24 米；兵线 10 米宽。</li>
+      <li>水晶紧挨着出生点。</li>
+      <li>看起来能藏人的植被，就必须真的能藏人。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>这一稿请你看的</h3>
+    <ul>
+      <li>墙的多少：每片野区 13 段，是不是还多，或者哪里太空。</li>
+      <li>墙的厚度和高度：2.2 米厚、3 米高。</li>
+      <li>营地背后的弧形墙、Boss 坑两岸的弧形墙，围得合不合适。</li>
+      <li>草丛贴墙以后的位置。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>没验证的</h3>
+    <ul>
+      <li>我看的是王者荣耀官网的一张峡谷全景图，学的是它的结构方式。每段墙和草丛的具体位置是我自己排的，没有逐段对照。</li>
+      <li>还没有小兵和英雄。兵线会不会挤、草丛和墙的位置顺不顺，要到阶段 4 真打一局才知道。</li>
+      <li>走路时间用的是参考移速。</li>
+      <li>灰盒在这台电脑的应用内浏览器里是 60 帧，别的机器没测；手机没试。</li>
+    </ul>
+  </section>
+</section>
+
+<footer class="foot">参考：<a href="https://game.gtimg.cn/images/yxzj/coming/v2/system/image/20190411/28bb5a9d2cbb9f33bbdb20fddbeb669f.jpg">王者荣耀官网爆料站的峡谷全景图</a>，版权属于腾讯，只用来对照结构，没有放进这一页。灰盒的代码在项目的 <code>src/map/</code>，入口是 <code>greybox.html</code>。</footer>
+</div>

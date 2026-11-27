@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>商场突袭</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; cursor: default; }
+  canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+  #hud { pointer-events: none; }
+  #loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #e8e6df; font: 600 18px "PingFang SC", "Hiragino Sans GB", sans-serif; background: #050505; z-index: 10; gap: 14px; }
+  #loading .bar { width: 320px; height: 4px; background: #222; }
+  #loading .bar i { display: block; height: 100%; width: 0; background: #ffd65a; transition: width .2s; }
+  #loading .t { letter-spacing: .3em; font-size: 28px; }
+  #loading .s { color: #8b8a85; font-size: 13px; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/",
+  "three-mesh-bvh": "./node_modules/three-mesh-bvh/build/index.module.js"
+} }
+</script>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<canvas id="hud"></canvas>
+<div id="loading"><div class="t">商场突袭</div><div class="bar"><i id="lbar"></i></div><div class="s" id="lmsg">加载中…</div></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

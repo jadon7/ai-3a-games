@@ -1,0 +1,433 @@
+{
+ "_说明": "Tripo 的四足绑骨没有固定命名（很多骨骼叫 bone_N，左右腿拓扑也不对称），所以每只怪物写一份映射：哪根骨骼是什么角色、跟踪哪些点。没列出的骨骼不受控，跟着父骨骼一起动。坐标都是 Tripo 原始坐标（这只怪物面朝 +X）。",
+ "kind": "quadruped",
+ "forward": [
+  1,
+  0,
+  0
+ ],
+ "target_length": 1.2,
+ "root_bone_length": 0.05,
+ "reparent": {
+  "bone_40": "tripo::1_Right_Limb_1"
+ },
+ "bones": {
+  "tripo::Root": [
+   "root",
+   0
+  ],
+  "tripo::Spine_0": [
+   "spine",
+   0
+  ],
+  "tripo::Spine_1": [
+   "spine",
+   0
+  ],
+  "tripo::Spine_2": [
+   "spine",
+   0
+  ],
+  "bone_4": [
+   "neck",
+   0
+  ],
+  "tripo::Head_0": [
+   "head",
+   0
+  ],
+  "bone_8": [
+   "scapula",
+   -1
+  ],
+  "tripo::0_Right_Limb_0": [
+   "upper_f",
+   -1
+  ],
+  "tripo::0_Right_Limb_1": [
+   "lower_f",
+   -1
+  ],
+  "bone_11": [
+   "paw_f",
+   -1
+  ],
+  "tripo::Spine_3": [
+   "scapula",
+   1
+  ],
+  "tripo::0_Left_Limb_0": [
+   "upper_f",
+   1
+  ],
+  "tripo::0_Left_Limb_1": [
+   "lower_f",
+   1
+  ],
+  "bone_17": [
+   "paw_f",
+   1
+  ],
+  "tripo::1_Right_Limb_0": [
+   "upper_h",
+   -1
+  ],
+  "tripo::1_Right_Limb_1": [
+   "lower_h",
+   -1
+  ],
+  "tripo::1_Right_Limb_2": [
+   "hock",
+   -1
+  ],
+  "tripo::1_Right_Limb_3": [
+   "foot_h",
+   -1
+  ],
+  "tripo::1_Right_Limb_4": [
+   "toe_h",
+   -1
+  ],
+  "tripo::1_Left_Limb_0": [
+   "upper_h",
+   1
+  ],
+  "tripo::1_Left_Limb_1": [
+   "lower_h",
+   1
+  ],
+  "bone_33": [
+   "hock",
+   1
+  ],
+  "bone_34": [
+   "foot_h",
+   1
+  ],
+  "bone_35": [
+   "toe_h",
+   1
+  ],
+  "bone_20": [
+   "tail",
+   0
+  ],
+  "bone_21": [
+   "tail",
+   0
+  ],
+  "tripo::Tail_0": [
+   "tail",
+   0
+  ],
+  "tripo::Tail_1": [
+   "tail",
+   0
+  ]
+ },
+ "chains": [
+  {
+   "name": "spine",
+   "role": "spine",
+   "bones": [
+    "tripo::Spine_0",
+    "tripo::Spine_1",
+    "tripo::Spine_2"
+   ],
+   "dofs": [
+    [
+     "pitch",
+     -7,
+     7
+    ],
+    [
+     "yaw",
+     -9,
+     9
+    ],
+    [
+     "twist",
+     -6,
+     6
+    ]
+   ]
+  },
+  {
+   "name": "tailA",
+   "role": "tail",
+   "bones": [
+    "bone_20",
+    "bone_21"
+   ],
+   "dofs": [
+    [
+     "pitch",
+     -22,
+     22
+    ],
+    [
+     "yaw",
+     -28,
+     28
+    ]
+   ]
+  },
+  {
+   "name": "tailB",
+   "role": "tail",
+   "bones": [
+    "tripo::Tail_0",
+    "tripo::Tail_1"
+   ],
+   "dofs": [
+    [
+     "pitch",
+     -28,
+     28
+    ],
+    [
+     "yaw",
+     -32,
+     32
+    ]
+   ]
+  }
+ ],
+ "joints": [
+  {
+   "name": "Root",
+   "bone": "tripo::Root",
+   "group": "M"
+  },
+  {
+   "name": "TailBase",
+   "bone": "bone_20",
+   "group": "M"
+  },
+  {
+   "name": "Spine1",
+   "bone": "tripo::Spine_1",
+   "group": "M"
+  },
+  {
+   "name": "Spine2",
+   "bone": "tripo::Spine_2",
+   "group": "M"
+  },
+  {
+   "name": "Neck",
+   "bone": "bone_4",
+   "group": "M"
+  },
+  {
+   "name": "Head",
+   "bone": "tripo::Head_0",
+   "group": "M"
+  },
+  {
+   "name": "Nose",
+   "bone": "tripo::Head_0",
+   "group": "M",
+   "region": [
+    "tripo::Head_0",
+    "tripo::Head_1"
+   ],
+   "axis": [
+    0,
+    -1,
+    0.25
+   ],
+   "top": 0.012
+  },
+  {
+   "name": "LeftHorn",
+   "bone": "tripo::Head_0",
+   "group": "L",
+   "region": [
+    "tripo::Head_0",
+    "tripo::Head_1"
+   ],
+   "axis": [
+    1,
+    0,
+    0.8
+   ],
+   "top": 0.012
+  },
+  {
+   "name": "RightHorn",
+   "bone": "tripo::Head_0",
+   "group": "R",
+   "region": [
+    "tripo::Head_0",
+    "tripo::Head_1"
+   ],
+   "axis": [
+    -1,
+    0,
+    0.8
+   ],
+   "top": 0.012
+  },
+  {
+   "name": "Tail1",
+   "bone": "bone_21",
+   "group": "M"
+  },
+  {
+   "name": "Tail2",
+   "bone": "tripo::Tail_0",
+   "group": "M"
+  },
+  {
+   "name": "Tail3",
+   "bone": "tripo::Tail_1",
+   "group": "M"
+  },
+  {
+   "name": "TailTip",
+   "bone": "tripo::Tail_1",
+   "group": "M",
+   "at": "tail"
+  },
+  {
+   "name": "LeftFShoulder",
+   "bone": "tripo::0_Left_Limb_0",
+   "group": "L"
+  },
+  {
+   "name": "LeftFElbow",
+   "bone": "tripo::0_Left_Limb_1",
+   "group": "L"
+  },
+  {
+   "name": "LeftFWrist",
+   "bone": "bone_17",
+   "group": "L"
+  },
+  {
+   "name": "LeftFToe",
+   "bone": "bone_17",
+   "group": "L",
+   "at": "tail"
+  },
+  {
+   "name": "LeftHHip",
+   "bone": "tripo::1_Left_Limb_0",
+   "group": "L"
+  },
+  {
+   "name": "LeftHKnee",
+   "bone": "tripo::1_Left_Limb_1",
+   "group": "L"
+  },
+  {
+   "name": "LeftHHock",
+   "bone": "bone_33",
+   "group": "L"
+  },
+  {
+   "name": "LeftHAnkle",
+   "bone": "bone_34",
+   "group": "L"
+  },
+  {
+   "name": "LeftHToe",
+   "bone": "bone_35",
+   "group": "L"
+  },
+  {
+   "name": "LeftHToeTip",
+   "bone": "bone_35",
+   "group": "L",
+   "at": "tail"
+  },
+  {
+   "name": "RightFShoulder",
+   "bone": "tripo::0_Right_Limb_0",
+   "group": "R"
+  },
+  {
+   "name": "RightFElbow",
+   "bone": "tripo::0_Right_Limb_1",
+   "group": "R"
+  },
+  {
+   "name": "RightFWrist",
+   "bone": "bone_11",
+   "group": "R"
+  },
+  {
+   "name": "RightFToe",
+   "bone": "bone_11",
+   "group": "R",
+   "at": "tail"
+  },
+  {
+   "name": "RightHHip",
+   "bone": "tripo::1_Right_Limb_0",
+   "group": "R"
+  },
+  {
+   "name": "RightHKnee",
+   "bone": "tripo::1_Right_Limb_1",
+   "group": "R"
+  },
+  {
+   "name": "RightHHock",
+   "bone": "tripo::1_Right_Limb_2",
+   "group": "R"
+  },
+  {
+   "name": "RightHAnkle",
+   "bone": "tripo::1_Right_Limb_3",
+   "group": "R"
+  },
+  {
+   "name": "RightHToe",
+   "bone": "tripo::1_Right_Limb_4",
+   "group": "R"
+  },
+  {
+   "name": "RightHToeTip",
+   "bone": "tripo::1_Right_Limb_4",
+   "group": "R",
+   "at": "tail"
+  }
+ ],
+ "torso_joints": [
+  "Root",
+  "TailBase",
+  "Spine1",
+  "Spine2",
+  "LeftHHip",
+  "RightHHip",
+  "LeftFShoulder",
+  "RightFShoulder"
+ ],
+ "root_joint": "Root",
+ "ground_joints": [
+  "LeftFWrist",
+  "LeftFToe",
+  "RightFWrist",
+  "RightFToe",
+  "LeftHAnkle",
+  "LeftHToe",
+  "LeftHToeTip",
+  "RightHAnkle",
+  "RightHToe",
+  "RightHToeTip"
+ ],
+ "joint_weight": {
+  "Nose": 0.8,
+  "LeftHorn": 0.8,
+  "RightHorn": 0.8,
+  "TailTip": 0.7
+ },
+ "sampling": {
+  "t_xy": [
+   0.06,
+   0.16
+  ]
+ }
+}

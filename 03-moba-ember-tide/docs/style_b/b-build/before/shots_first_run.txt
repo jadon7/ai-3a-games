@@ -1,0 +1,19 @@
+改前第一次全量截图时的读数（5190，style-b，厚涂版建筑；fps 是锁 60 帧的，calls 是绘制调用，tris 是三角形）。之后几张改了机位重截，这份原始记录被覆盖了，从当时的输出抄回来：
+t_me1 cam=-22,0,17,38,3.6,-20 fps 60 calls 90 tris 750162
+t_me2 cam=-45,0,19,38,4.2,-20 fps 60 calls 97 tris 869122
+t_me3 cam=-73.3,0,21,38,5,-20 fps 60 calls 118 tris 888862
+t_foe1 cam=22,0,17,38,3.6,20 fps 60 calls 85 tris 679904
+t_foe2 cam=45,0,19,38,4.2,20 fps 60 calls 90 tris 630136
+t_foe3 cam=73.3,0,21,38,5,20 fps 60 calls 88 tris 426574
+core_me cam=-90.3,0,28,40,5,-10 fps 60 calls 113 tris 775752
+core_foe cam=90.3,0,28,40,5,10 fps 60 calls 66 tris 355136
+g_me1 cam=-22,0,27,56,0 fps 60 calls 69 tris 556234
+g_foe1 cam=22,0,27,56,0 fps 60 calls 59 tris 454512
+g_me3 cam=-77,17.9,27,56,0 fps 60 calls 63 tris 363994
+g_foe3 cam=77,-17.9,27,56,0 fps 60 calls 54 tris 278884
+base_me cam=-88,0,52,54,0 fps 60 calls 117 tris 770184
+base_foe cam=88,0,52,54,0 fps 60 calls 107 tris 496224
+wide_me cam=-40,0,90,56,0 fps 60 calls 237 tris 1158038
+wide_foe cam=40,0,90,56,0 fps 60 calls 233 tris 1037012
+g_spawn_me cam=-100,0,27,56,0 fps 60 calls 48 tris 324408
+g_spawn_foe cam=100,0,27,56,0 fps 60 calls 43 tris 190812

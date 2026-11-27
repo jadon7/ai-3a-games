@@ -1,0 +1,117 @@
+{
+ "errors": [],
+ "我选seren": {
+  "cards": [
+   {
+    "i": 0,
+    "text": "塞塞伦珠铳 · 射手",
+    "soon": false
+   },
+   {
+    "i": 1,
+    "text": "薇薇萝烬弩 · 射手",
+    "soon": false
+   },
+   {
+    "i": 2,
+    "text": "托托尔格沉钟 · 上单",
+    "soon": false
+   },
+   {
+    "i": 3,
+    "text": "葛葛隆砧卫 · 上单",
+    "soon": false
+   },
+   {
+    "i": 4,
+    "text": "岚岚汐刃 · 打野",
+    "soon": false
+   },
+   {
+    "i": 5,
+    "text": "奥奥森烛语者 · 中单",
+    "soon": false
+   },
+   {
+    "i": 6,
+    "text": "摩摩珂引潮人 · 辅助",
+    "soon": false
+   },
+   {
+    "i": 7,
+    "text": "卡卡兹焚爪 · 打野即将上线",
+    "soon": true
+   },
+   {
+    "i": 8,
+    "text": "乌乌戈渊灯 · 中单即将上线",
+    "soon": true
+   },
+   {
+    "i": 9,
+    "text": "赫赫达缚钳 · 辅助即将上线",
+    "soon": true
+   }
+  ],
+  "clicked": 0,
+  "url": "http://localhost:5214/map.html?h=seren&diff=normal&pos=adc&a=gorran%2Clan%2Cosen%2Cseren%2Cmoko&b=torg%2Clan%2Cosen%2Cvero%2Cmoko",
+  "lineup": "五对五 · 对战电脑（普通）\n葛隆\n砧卫\n坦克\n上单\n岚\n汐刃\n刺客\n打野\n奥森\n烛语者\n法师\n中单\n塞伦\n珠铳\n射手\n摩珂\n引潮人\n辅助\n对\n托尔格\n沉钟\n斗士\n上单\n岚\n汐刃\n刺客\n打野\n奥森\n烛语者\n法师\n中单\n薇萝\n烬弩\n射手\n摩珂\n引潮人\n辅助\n\n提示河道里的 Boss 被击杀后，击杀它的一队全队获得增益。\n\n5%"
+ },
+ "我选vero": {
+  "cards": [
+   {
+    "i": 0,
+    "text": "塞塞伦珠铳 · 射手",
+    "soon": false
+   },
+   {
+    "i": 1,
+    "text": "薇薇萝烬弩 · 射手",
+    "soon": false
+   },
+   {
+    "i": 2,
+    "text": "托托尔格沉钟 · 上单",
+    "soon": false
+   },
+   {
+    "i": 3,
+    "text": "葛葛隆砧卫 · 上单",
+    "soon": false
+   },
+   {
+    "i": 4,
+    "text": "岚岚汐刃 · 打野",
+    "soon": false
+   },
+   {
+    "i": 5,
+    "text": "奥奥森烛语者 · 中单",
+    "soon": false
+   },
+   {
+    "i": 6,
+    "text": "摩摩珂引潮人 · 辅助",
+    "soon": false
+   },
+   {
+    "i": 7,
+    "text": "卡卡兹焚爪 · 打野即将上线",
+    "soon": true
+   },
+   {
+    "i": 8,
+    "text": "乌乌戈渊灯 · 中单即将上线",
+    "soon": true
+   },
+   {
+    "i": 9,
+    "text": "赫赫达缚钳 · 辅助即将上线",
+    "soon": true
+   }
+  ],
+  "clicked": 1,
+  "url": "http://localhost:5214/map.html?h=vero&diff=normal&pos=adc&a=torg%2Clan%2Cosen%2Cvero%2Cmoko&b=gorran%2Clan%2Cosen%2Cseren%2Cmoko",
+  "lineup": "五对五 · 对战电脑（普通）\n托尔格\n沉钟\n斗士\n上单\n岚\n汐刃\n刺客\n打野\n奥森\n烛语者\n法师\n中单\n薇萝\n烬弩\n射手\n摩珂\n引潮人\n辅助\n对\n葛隆\n砧卫\n坦克\n上单\n岚\n汐刃\n刺客\n打野\n奥森\n烛语者\n法师\n中单\n塞伦\n珠铳\n射手\n摩珂\n引潮人\n辅助\n\n提示击杀和助攻都给金币；补到小兵的最后一刀才有补刀的钱。\n\n5%"
+ }
+}

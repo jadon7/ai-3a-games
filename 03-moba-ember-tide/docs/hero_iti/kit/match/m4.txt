@@ -1,0 +1,11 @@
+h=iti&a=gorran,lan,iti,seren,hedda&b=torg,kaz,osen,vero,moko  14:02  a 队赢  击杀 16:4  报错 0
+  a top    gorran  L15 2/0/10 刀39 营1 伤害39518 身家6500
+  a jungle lan     L15 3/0/10 刀38 营14 伤害49195 身家6965 抓2
+  a adc    seren   L15 1/0/4 刀70 营1 伤害8749 身家6599
+  a sup    hedda   L13 2/1/2 刀0 营0 伤害6962 身家4385
+  b top    torg    L12 0/1/1 刀40 营0 伤害41779 身家4239
+  b jungle kaz     L12 1/6/1 刀23 营11 伤害16574 身家4154 抓9
+  b mid    osen    L13 1/4/2 刀41 营0 伤害18366 身家4723
+  b adc    vero    L12 0/3/1 刀68 营2 伤害16603 身家5224
+  b sup    moko    L11 2/3/0 刀2 营0 伤害11360 身家3533
+  a mid    iti     L15 8/3/0 刀41 营1 伤害47824 身家6911

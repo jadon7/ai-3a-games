@@ -1,0 +1,13 @@
+file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/WaitTask.js:45
+            this.#timeoutError = new TimeoutError(`Waiting failed: ${options.timeout}ms exceeded`);
+                                 ^
+
+TimeoutError: Waiting failed: 900000ms exceeded
+    at new WaitTask (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/WaitTask.js:45:34)
+    at IsolatedWorld.waitForFunction (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/api/Realm.js:22:26)
+    at CdpFrame.waitForFunction (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/api/Frame.js:568:43)
+    at CdpFrame.<anonymous> (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/util/decorators.js:101:27)
+    at CdpPage.waitForFunction (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:1430:37)
+    at file:///Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/polish-lib/tools/fps_fight.mjs:14:14
+
+Node.js v25.8.1

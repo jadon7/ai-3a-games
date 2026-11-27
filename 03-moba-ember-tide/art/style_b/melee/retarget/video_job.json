@@ -1,0 +1,67 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/melee_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/melee/motions/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/melee/motions/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/melee/motions/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/../melee_b_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/motions/fk/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/motions/fk/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/motions/fk/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/../melee_b_rigged.glb",
+   "motions": {
+    "walk": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/motions/ik/walk.npz",
+    "attack": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/motions/ik/attack.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/motions/ik/death.npz"
+   },
+   "root": "mixamorig:Hips",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "game_h": 1.45,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/melee/retarget/render",
+ "video": {
+  "clips": [
+   "walk",
+   "attack",
+   "death"
+  ],
+  "size": [
+   1440,
+   640
+  ],
+  "spacing": 0.85,
+  "view": [
+   15,
+   18
+  ],
+  "ortho": 3.06,
+  "zc": 0.45,
+  "loops": {
+   "walk": 4
+  },
+  "run_speed": {
+   "walk": [
+    1.3448275862068966,
+    0.08965517241379312,
+    0.6137931034482759
+   ]
+  }
+ }
+}

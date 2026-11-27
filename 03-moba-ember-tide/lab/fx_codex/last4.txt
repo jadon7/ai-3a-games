@@ -1,0 +1,7 @@
+第四轮完成两版，交付第 2 版。四条成片均为 1600×900、30 帧/秒。[参考、第三轮与交付版并排图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/reference_vs_game.jpg)
+
+**R · 十字新月斩**：每弯刀满幅中段宽 **1.09 米**，三道速度线集中在实色刃面，尾流只留在刀尖。1.20 秒中镜头实测，刀身外的 **12,183 个人物像素和 39,743 个地面像素**均与同帧底图同色。刀身三档分别透出约 **3%、50%、80%** 的底色。[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_top.mp4) · [中镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/r_mid.mp4)
+
+**被动 · 烬痕引爆**：爆团半径收至 **0.75 米**，暖白和亮绯沿火舌方向分成不规则色块。刺根留白，深绯收在刺尖和背光侧。爆后 **0.055 秒**中心像素已经透出。到 **0.15 秒**，摩珂胸甲中央 31×31 像素全部恢复同帧原色。[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_top.mp4) · [近镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final/passive_close.mp4)
+
+绘制峰值为 **R 13 次、被动 5 次**。两个技能的粒子峰值均为电脑档 **28**、手机档 **14**。手机档已用桌面 Chrome 横屏录制；27 米镜头下能看清白芯和破洞，内部短笔在近镜头更清楚。真机帧率尚未测量。[连续帧与成片](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/out/final) · [第四轮测量记录](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/fx_codex/NOTES.md:171)

@@ -1,0 +1,128 @@
+{
+ "name": "moko",
+ "raw": "art/hero/moko/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/moko_rigged.glb",
+ "out": "art/hero/moko/game.glb",
+ "packed": "public/assets/hero/moko.glb",
+ "pose_out": "art/hero/moko/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "motions": {
+  "idle": "art/hero/moko/motions_fx/idle.npz",
+  "run": "art/hero/moko/motions_fx/run.npz",
+  "attack1": "art/hero/moko/motions_fx/attack1.npz",
+  "q": "art/hero/moko/motions_fx/q.npz",
+  "w": "art/hero/moko/motions_fx/w.npz",
+  "e": "art/hero/moko/motions_fx/e.npz",
+  "r": "art/hero/moko/motions_fx/r.npz",
+  "r_spin": "art/hero/moko/motions_fx/r_spin.npz",
+  "death": "art/hero/moko/motions_fx/death.npz"
+ },
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.0,
+    -0.012
+   ],
+   "yaw": -3,
+   "lean": 2
+  },
+  "spine": [
+   [
+    2,
+    -1
+   ],
+   [
+    2,
+    -1
+   ],
+   [
+    1,
+    -1
+   ]
+  ],
+  "head": {
+   "yaw": 5,
+   "pitch": -2
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.01,
+     -0.015,
+     0
+    ],
+    "pole": [
+     0.3,
+     -1,
+     0
+    ],
+    "toe": 6
+   },
+   "Right": {
+    "offset": [
+     -0.005,
+     0.03,
+     0
+    ],
+    "pole": [
+     -0.35,
+     -1,
+     0
+    ],
+    "toe": -8
+   }
+  },
+  "arms": {
+   "Left": {
+    "dir": [
+     0.55,
+     -0.28,
+     -0.79
+    ],
+    "reach": 0.88,
+    "pole": [
+     0.8,
+     0.6,
+     0
+    ],
+    "blade": [
+     0.5,
+     -0.85,
+     0.1
+    ]
+   },
+   "Right": {
+    "wrist": [
+     -0.235,
+     -0.072,
+     0.53
+    ],
+    "pole": [
+     -0.45,
+     0.55,
+     -0.7
+    ],
+    "blade": [
+     -0.05,
+     0,
+     1
+    ]
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.0015
+  }
+ },
+ "grip": {
+  "Left": null,
+  "Right": 1.0
+ },
+ "palm_by_hand": true,
+ "_note": "套动作出品用的“源” build.json：旧摩珂的动作和站姿，去掉旧杖（新模型 moko_b_rigged.glb 里已经装好了 B 的杖），握拳按新模型的掌心算（palm_by_hand）"
+}

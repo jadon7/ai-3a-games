@@ -1,0 +1,22 @@
+{
+  "name": "khamsin",
+  "version": "1.0.0",
+  "description": "KHAMSIN · 热风行动 — WebGL FPS",
+  "scripts": {
+    "start": "node tools/serve.mjs 5173",
+    "build": "node tools/build.mjs",
+    "deploy": "node tools/build.mjs && npx wrangler deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.187.0",
+    "three-mesh-bvh": "^0.9.18"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "private": true
+}

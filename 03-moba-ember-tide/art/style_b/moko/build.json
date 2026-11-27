@@ -1,0 +1,131 @@
+{
+ "name": "moko",
+ "raw": "art/style_b/moko/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-mu/art/style_b/moko/moko_b_rigged.glb",
+ "out": "art/style_b/moko/check/game.glb",
+ "packed": "art/style_b/moko/check/packed.glb",
+ "tex": 2048,
+ "weapon_tex": 512,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "gear": [
+  {
+   "type": "script",
+   "path": "art/style_b/moko/gear.py",
+   "func": "make_staff",
+   "side": "Right",
+   "rot": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.0,
+    -0.012
+   ],
+   "yaw": -3,
+   "lean": 2
+  },
+  "spine": [
+   [
+    2,
+    -1
+   ],
+   [
+    2,
+    -1
+   ],
+   [
+    1,
+    -1
+   ]
+  ],
+  "head": {
+   "yaw": 5,
+   "pitch": -2
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.01,
+     -0.015,
+     0
+    ],
+    "pole": [
+     0.3,
+     -1,
+     0
+    ],
+    "toe": 6
+   },
+   "Right": {
+    "offset": [
+     -0.005,
+     0.03,
+     0
+    ],
+    "pole": [
+     -0.35,
+     -1,
+     0
+    ],
+    "toe": -8
+   }
+  },
+  "arms": {
+   "Left": {
+    "dir": [
+     0.55,
+     -0.28,
+     -0.79
+    ],
+    "reach": 0.88,
+    "pole": [
+     0.8,
+     0.6,
+     0
+    ],
+    "blade": [
+     0.5,
+     -0.85,
+     0.1
+    ]
+   },
+   "Right": {
+    "wrist": [
+     -0.235,
+     -0.072,
+     0.53
+    ],
+    "pole": [
+     -0.45,
+     0.55,
+     -0.7
+    ],
+    "blade": [
+     -0.05,
+     0,
+     1
+    ]
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.0015
+  }
+ },
+ "grip": {
+  "Left": null,
+  "Right": 1.0
+ },
+ "motions": {},
+ "_note": "摩珂 B：Tripo 出的卡通厚涂模型 + 脚本建的螺号月灯杖（art/style_b/moko/gear.py，全长 1.2、握在 0.455，和旧杖一样）。stance、grip 抄旧的"
+}

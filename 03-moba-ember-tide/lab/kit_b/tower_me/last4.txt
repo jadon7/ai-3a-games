@@ -1,0 +1,13 @@
+第四轮已完成。外塔框条加宽到 **0.50 米**，内塔和高地塔立柱分别加宽到 **0.60 米、0.70 米**。内塔增加一道铜裙边，高地塔增加两道。裙边和腰带均高 **0.50 米**。裙边在柱脚处略微内收，地图镜头里能看到护片下尖。
+
+在同一 56° 俯视机位，塔身可见青铜面积占比如下，金边另计。
+
+| 模型 | 第三轮 → 第四轮 | 三角形数 |
+|---|---:|---:|
+| 外塔 | 28.8% → 30.1% | 17,200 |
+| 内塔 | 47.9% → 53.5% | 25,760 |
+| 高地塔 | 49.7% → 58.3% | 31,984 |
+
+裙边标注的 **1.82 米和 1.70 米按半径制作**，使铜环包住原石钟口。已核对石身、细颈、塔冠和晶体的几何坐标，均与第三轮一致。背光侧的铜边亮带仍比设计稿窄。
+
+[第三轮与第四轮同机位对照，左旧右新](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/rounds/b4_before_after.jpg) · [三塔地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_map.jpg) · [设计稿与定稿](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/compare.jpg) · [第四轮量测记录](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/NOTES.md:141)

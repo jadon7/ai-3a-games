@@ -1,0 +1,37 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/toad_skeleton.json",
+ "out_dir": "art/unit/toad/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/toad_idle/motion_fix.npz",
+   "loop": [
+    70,
+    114
+   ],
+   "from": 3
+  },
+  "run": {
+   "src": "art/unit/toad/retimed/run.npz",
+   "loop": [
+    16,
+    16
+   ],
+   "pick": [
+    0,
+    16
+   ],
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/unit/toad/retimed/attack1.npz"
+  },
+  "attack2": {
+   "src": "art/unit/toad/retimed/attack2.npz"
+  },
+  "death": {
+   "src": "art/unit/toad/retimed/death.npz",
+   "settle": false
+  }
+ }
+}

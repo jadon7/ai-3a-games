@@ -1,0 +1,38 @@
+# 依赖和构建产物
+node_modules
+dist
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+
+# Codex 建模时留下的临时目录（里面有它的浏览器缓存和 Blender 缓存）
+/lab/**/tmp/
+
+# worktree 如果建在项目里，不算项目文件
+.claude/worktrees/
+
+# 大体积的素材和产物不进仓库：设计稿、参考图、原始模型、重绘和训练的中间图、验收页里的图片和录像。
+# 它们都还在磁盘上（art/、concepts/、refs/、lab/、docs/ 等），由群晖同步盘备份；
+# 在 worktree 里要用到时，从主目录按绝对路径读。
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.glb
+*.gltf
+*.npz
+*.npy
+*.blend
+*.blend1
+*.mp4
+*.webm
+*.mov
+*.fbx
+*.obj
+*.zip
+*.old
+*.glb.txt
+
+# 例外：运行游戏要用的资源全部进仓库，这样每个 worktree 检出来就能直接跑
+!/public/**

@@ -1,0 +1,7 @@
+第三轮已完成。交付版 `b3_r3` 只改了一条主晶棱，把一处折角从 12.20° 调到 11.83°。两层切面的折角均在 8°–12° 内，晶尖偏心 0.20 米。
+
+六片外刀在离地 5.5 米处伸到半径 4.08 米，刀尖向内勾回半径 3.30 米。八片内瓣已形成外翻的瓣尖，瓣间可见晶体。成品总高 **12.82 米**，共 **69,456 个三角形**。地图远景中，部分后排瓣尖与外刀重叠，主晶上部的切面明暗也比设计稿接近。
+
+已更新四张预览图，并把实测数据写入第三轮记录。
+
+[模型](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_me/out/core_me.glb) · [游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_me/out/preview_game.jpg) · [近景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_me/out/preview_close.jpg) · [地图](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_me/out/preview_map.jpg) · [设计稿对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_me/out/compare.jpg) · [第三轮记录](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_me/out/NOTES.md:115)

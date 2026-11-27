@@ -1,0 +1,14 @@
+{
+ "name": "boar",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/boar_skeleton.json",
+ "out": "art/unit/boar/game.glb",
+ "packed": "public/assets/unit/boar.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/unit/boar/motions/idle.npz",
+  "run": "art/unit/boar/motions/run.npz",
+  "attack1": "art/unit/boar/motions/attack1.npz",
+  "attack2": "art/unit/boar/motions/attack2.npz",
+  "death": "art/unit/boar/motions/death.npz"
+ }
+}

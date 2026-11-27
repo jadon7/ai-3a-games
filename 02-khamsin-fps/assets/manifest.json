@@ -1,0 +1,127 @@
+{
+ "plaster": {
+  "id": "white_plaster_02",
+  "name": "White Plaster 02",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 1.0
+ },
+ "brick": {
+  "id": "red_brick_plaster_patch_02",
+  "name": "Red Brick Plaster Patch 02",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 1.5
+ },
+ "sandstone": {
+  "id": "sandstone_blocks_08",
+  "name": "Sandstone Blocks 08",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 3.0
+ },
+ "sand": {
+  "id": "sandy_gravel_02",
+  "name": "Sandy Gravel 02",
+  "authors": [
+   "Dario Barresi"
+  ],
+  "size_m": 2.5299999713897705
+ },
+ "dirt": {
+  "id": "dirt_floor",
+  "name": "Dirt Floor",
+  "authors": [
+   "eye-candy.xyz"
+  ],
+  "size_m": 2.0699996948242188
+ },
+ "paving": {
+  "id": "rectangular_paving",
+  "name": "Rectangular Paving",
+  "authors": [
+   "Dimitrios Savva"
+  ],
+  "size_m": 2.0
+ },
+ "concrete": {
+  "id": "dirty_concrete",
+  "name": "Dirty Concrete",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 3.0
+ },
+ "wood": {
+  "id": "brown_planks_03",
+  "name": "Brown Planks 03",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 1.0
+ },
+ "woodPaint": {
+  "id": "white_planks_clean",
+  "name": "White Planks Clean",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 1.8000000715255737
+ },
+ "metalPaint": {
+  "id": "rusty_metal_sheet",
+  "name": "Rusty Metal Sheet",
+  "authors": [
+   "Amal Kumar"
+  ],
+  "size_m": 1.9999996423721313
+ },
+ "metalRusty": {
+  "id": "rusty_metal_02",
+  "name": "Rusty Metal 02",
+  "authors": [
+   "Rob Tuytel"
+  ],
+  "size_m": 1.0
+ },
+ "corrugated": {
+  "id": "worn_corrugated_iron",
+  "name": "Worn Corrugated Iron",
+  "authors": [
+   "Jenelle van Heerden",
+   "Dimitrios Savva"
+  ],
+  "size_m": 1.7999995946884155
+ },
+ "shutter": {
+  "id": "painted_metal_shutter",
+  "name": "Painted Metal Shutter",
+  "authors": [
+   "Dario Barresi",
+   "Rico Cilliers",
+   "Charlotte Baglioni"
+  ],
+  "size_m": 2.0
+ },
+ "rock": {
+  "id": "cliff_side",
+  "name": "Cliff Side",
+  "authors": [
+   "James Ray Cock",
+   "Jenelle van Heerden",
+   "Dario Barresi"
+  ],
+  "size_m": 1.8300000429153442
+ },
+ "sky": {
+  "id": "kloofendal_38d_partly_cloudy_puresky",
+  "name": "Kloofendal 38d Partly Cloudy (Pure Sky)",
+  "authors": [
+   "Greg Zaal",
+   "Jarod Guest"
+  ]
+ }
+}

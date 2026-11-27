@@ -1,0 +1,143 @@
+{
+ "name": "torg_b",
+ "title": "托尔格（钟龟）的全部旧动作 → 托尔格 B（路子一卡通厚涂，Tripo 新模型新绑骨，骨骼名已按角色改成旧的）",
+ "kind": "quadruped",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_0",
+  "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_2": "tripo::1_Left_Limb_2",
+  "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_0",
+  "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_1",
+  "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_2",
+  "bone_13": "bone_13",
+  "bone_14": "bone_14",
+  "tripo::Head_1": "tripo::Head_1",
+  "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_0",
+  "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_1",
+  "tripo::0_Right_Limb_2": "tripo::0_Right_Limb_2",
+  "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_0",
+  "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_1",
+  "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_2",
+  "tripo::Spine_1": "tripo::Spine_1"
+ },
+ "mode": "delta",
+ "src_rig": "../rigs/turtle_t.npz",
+ "tgt_rig": "../rigs/torg_b_t.npz",
+ "src_build": "art/hero/torg_turtle/build.json",
+ "src_timing": "art/style_b/torg/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/turtle.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/torg_b.blend",
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 2.8,
+ "game_h": 2.8,
+ "move_speed": 6.0,
+ "tip_src": "tripo::Head_1",
+ "tip_tgt": "tripo::Head_1",
+ "legs": [
+  {
+   "tgt": [
+    "tripo::0_Left_Limb_0",
+    "tripo::0_Left_Limb_1",
+    "tripo::0_Left_Limb_2"
+   ],
+   "src_end": "tripo::0_Left_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::0_Right_Limb_0",
+    "tripo::0_Right_Limb_1",
+    "tripo::0_Right_Limb_2"
+   ],
+   "src_end": "tripo::0_Right_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1",
+    "tripo::1_Left_Limb_2"
+   ],
+   "src_end": "tripo::1_Left_Limb_2"
+  },
+  {
+   "tgt": [
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1",
+    "tripo::1_Right_Limb_2"
+   ],
+   "src_end": "tripo::1_Right_Limb_2"
+  }
+ ],
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "bone_13",
+   "verts_of": "tripo::Head_1"
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "托尔格（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.0,
+  "zc": 0.42
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "r"
+  ],
+  "loops": {
+   "run": 4
+  },
+  "spacing": 1.6,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.35
+ },
+ "tgt_blend_name": "torg_b",
+ "mode_bones": {},
+ "chains": [
+  {
+   "tgt": [
+    "bone_13",
+    "bone_14"
+   ],
+   "src": [
+    "bone_13",
+    "bone_14",
+    "tripo::Head_0"
+   ]
+  }
+ ],
+ "k": 1.0,
+ "_k说明": "k 不按胯高比（1.073）：新龟的背甲比旧的往下多垂 3 厘米（相对 Root），按胯高比放，R（砸地）和死亡时背甲插进地里 11–18 厘米；按 1.0 放，背甲贴地时和旧的一样深，腿多弯一点",
+ "_mode说明": "全部 delta：试过腿用 dir（和卡兹一样），新龟的肩比旧的高 5 厘米、腿一样长，照旧龟的腿的方向摆脚够不着地，站着就要把身子放低 3.4%，R 砸地和死亡时背甲插进地里 8 厘米；全 delta 的胯放低最多 1.3–2.9%（W 人立那一下 8.5%，看不出来）"
+}

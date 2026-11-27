@@ -1,0 +1,240 @@
+<title>烬与潮 画面方向</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：画面方向。顶部说明 → 要挑的五件事和我的建议 → 整体画风两个方向并排 → 六类规矩（参考局部 + 规矩）→ 塔、水晶、出生点、墙的设计稿 → 没验证的和花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.picks article{min-width:0;background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.picks h3{margin:0;font:700 15px/1.4 var(--body)}
+.picks p{margin:0;font-size:13.5px;line-height:1.65;color:var(--muted)}
+.picks b{color:var(--tide);font-weight:700}
+.rules{display:flex;flex-direction:column;gap:22px}
+.rule{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:20px;align-items:start;border-top:1px solid var(--line);padding-top:18px}
+.rule h3{margin:0 0 6px;font:400 22px/1.2 var(--display);letter-spacing:.02em}
+.rule .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.rule h4{margin:0 0 4px;font:600 12px/1 var(--util);letter-spacing:.1em;color:var(--muted)}
+.rule ul{margin:0;padding-left:1.15em;font-size:14px;line-height:1.7}
+.sheet img{aspect-ratio:auto}
+.sheets{display:flex;flex-direction:column;gap:14px}
+@media (max-width:860px){ .rule{grid-template-columns:minmax(0,1fr)} .rule .two{grid-template-columns:minmax(0,1fr)} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 2.2 · 画面方向 · 第二稿</p>
+  <h1>塔要有<em>层次</em>，水晶要隆重，出生点长在基地里</h1>
+  <p class="lede">画风你定了 A，墙你定了高地用砌墙、野区用墙体加石块。这一稿按你的意见重出了三样：防御塔照你认可的那座塔的路子做成一家三档；水晶看了别的游戏的终极建筑以后重新设计；出生点和基地一角放在一起设计。</p>
+</header>
+
+<section>
+  <h2>已经定下来的</h2>
+  <div class="picks">
+    <article><h3>整体画风</h3><p><b>A 厚涂写实</b>，接近 Dota 2。</p></article>
+    <article><h3>墙</h3><p>基地高地和地图边缘用<b>砌出来的整墙</b>；野区用<b>砌墙的残段加大石块</b>组合。</p></article>
+    <article><h3>过河</h3><p>兵线在过河的地方沉到浅水下面，<b>水面连续盖过去</b>。</p></article>
+    <article><h3>塔的路子</h3><p>照环境样张里那座塔：分层，石芯外面包着肋片，<b>缝里透出晶体的颜色</b>，雕饰细。</p></article>
+  </div>
+</section>
+
+<section>
+  <h2>画风 A</h2>
+  <div class="pairs">
+    <div class="pair"><div class="row">
+      <figure><img src="img/env_me_a.jpg" alt="我方环境" loading="lazy"><figcaption><span class="who ours">我方</span>你认可的那座塔在这张图里</figcaption></figure>
+      <figure><img src="img/env_foe_a.jpg" alt="对方环境" loading="lazy"><figcaption><span class="who">对方</span></figcaption></figure>
+    </div></div>
+    <div class="pair"><div class="row">
+      <figure><img src="img/env_river_a.jpg" alt="河道两岸，石板路沉在水下" loading="lazy"><figcaption><span class="who ours">河道</span>两侧的颜色隔河相接，中路沉在水下穿过去</figcaption></figure>
+      <figure><img src="img/env_gate_a.jpg" alt="我方基地的口子" loading="lazy"><figcaption><span class="who ours">高地</span>基地的口子：砌出来的薄城墙、坡道、高地塔</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>防御塔：一家三档</h2>
+  <p class="note">把你认可的那座塔裁出来当参考图交给 Codex，让它沿用同一种语言画出外塔、内塔、高地塔。由矮到高、由简到繁，灰色小人 2 米高。下面两张特写是即梦按同样的描述画在场景里的高地塔。</p>
+  <div class="sheets">
+    <figure class="sheet"><img src="img/tower_me_v2.jpg" alt="我方三档防御塔" loading="lazy"><figcaption><span class="who ours">我方</span>从左到右：外塔、内塔、高地塔</figcaption></figure>
+    <figure class="sheet"><img src="img/tower_foe_v2.jpg" alt="对方三档防御塔" loading="lazy"><figcaption><span class="who">对方</span>从左到右：外塔、内塔、高地塔</figcaption></figure>
+  </div>
+  <div class="pairs" style="margin-top:14px"><div class="pair"><div class="row">
+    <figure><img src="img/tower_me_s.jpg" alt="我方高地塔在场景里的特写" loading="lazy"><figcaption><span class="who ours">我方</span>高地塔在场景里</figcaption></figure>
+    <figure><img src="img/tower_foe_s.jpg" alt="对方高地塔在场景里的特写" loading="lazy"><figcaption><span class="who">对方</span>高地塔在场景里</figcaption></figure>
+  </div></div></div>
+</section>
+
+<section>
+  <h2>水晶：终极目标</h2>
+  <p class="note">我看了 Dota 2 的遗迹、英雄联盟的水晶枢纽、王者荣耀的水晶。它们的共同点：比塔大两三倍；地面图案、多级台基、托座、核、悬浮物一层层往上；核被建筑半包着，从缝里透光；周围有小柱或雕像呼应。按这些重新设计，造型是自己的。</p>
+  <div class="sheets">
+    <figure class="sheet"><img src="img/core_me_v2.jpg" alt="我方水晶两个方案" loading="lazy"><figcaption><span class="who ours">我方</span>A 弯月形青铜叶片合拢的托座 · B 层层打开的贝壳形石瓣</figcaption></figure>
+    <figure class="sheet"><img src="img/core_foe_v2.jpg" alt="对方水晶两个方案" loading="lazy"><figcaption><span class="who">对方</span>A 向上合拢的铁爪 · B 像炉壁的玄武岩拱肋</figcaption></figure>
+  </div>
+  <div class="pairs" style="margin-top:14px"><div class="pair"><div class="row">
+    <figure><img src="img/core_me_s.jpg" alt="我方水晶在基地广场里" loading="lazy"><figcaption><span class="who ours">我方</span>放在基地广场里看：放射状铺地，三条路通向三个口</figcaption></figure>
+    <figure><img src="img/core_foe_s.jpg" alt="对方水晶在基地广场里" loading="lazy"><figcaption><span class="who">对方</span>放在基地广场里看</figcaption></figure>
+  </div></div></div>
+</section>
+
+<section>
+  <h2>出生点：和基地一角一起设计</h2>
+  <p class="note">出生点不再是一个单独的圆盘。它背靠地图角上的城墙和大型建筑，用台阶、水槽和铺地跟十几米外的水晶连成一体。每方两个方案：一个是抬高的平台，一个是嵌在地面里的浅池。</p>
+  <div class="pairs">
+    <div class="pair"><h3>我方</h3><div class="row">
+      <figure><img src="img/spawn_me_s1.jpg" alt="我方出生点方案一" loading="lazy"><figcaption><span class="who ours">一</span>抬高的泉水平台，背靠月牙拱门，泉水沿水槽流进水晶的底座</figcaption></figure>
+      <figure><img src="img/spawn_me_s2.jpg" alt="我方出生点方案二" loading="lazy"><figcaption><span class="who ours">二</span>下沉的月相浅池，四根灯柱，一条水槽通向水晶</figcaption></figure>
+    </div></div>
+    <div class="pair"><h3>对方</h3><div class="row">
+      <figure><img src="img/spawn_foe_s1.jpg" alt="对方出生点方案一" loading="lazy"><figcaption><span class="who">一</span>抬高的余烬平台，背靠铁门，熔火沿石槽流进水晶的底座</figcaption></figure>
+      <figure><img src="img/spawn_foe_s2.jpg" alt="对方出生点方案二" loading="lazy"><figcaption><span class="who">二</span>下沉的火塘，四根铁灯柱，一条石槽通向水晶</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>野区的墙：墙体加石块</h2>
+  <p class="note">野怪营地的凹口由一截砌墙和几块大石头围成，石头压着墙的两头。草丛贴在外侧。基地的整墙见上面“高地”那张。</p>
+  <div class="pairs"><div class="pair"><div class="row">
+    <figure><img src="img/jungle_me.jpg" alt="我方野区营地的墙石组合" loading="lazy"><figcaption><span class="who ours">我方</span>浅灰白砌墙加长苔的圆石</figcaption></figure>
+    <figure><img src="img/jungle_foe.jpg" alt="对方野区营地的墙石组合" loading="lazy"><figcaption><span class="who">对方</span>玄武岩砌墙加深色大石</figcaption></figure>
+  </div></div></div>
+</section>
+
+<section>
+  <h2>六类规矩</h2>
+  <p class="note">左边是 Dota 2 截图里的局部。完整的文字版在项目的 <code>docs/map/2.2/rules.md</code>，后面每个小阶段做素材之前先对一遍。</p>
+  <div class="rules">
+    <div class="rule"><figure><img src="refs/ground.jpg" alt="Dota 2：石板碎开融进草地" loading="lazy"><figcaption><span class="who">DOTA 2</span>石板越往外越稀，最后几块散在草里</figcaption></figure>
+      <div><h3>地面</h3><div class="two">
+        <div><h4>参考里</h4><ul><li>地面是一张连续的画，草是底，石板一块块铺上去，缝里长草。</li><li>路的边缘不是一条线。</li><li>明暗收敛，没有突然变黑变亮的斑块。</li></ul></div>
+        <div><h4>我们的规矩</h4><ul><li>全图一张地面，石板和土路从底里长出来，边缘碎开。</li><li>过河的地方路沉到浅水下面，水面连续盖过去。</li><li>杂物和地面同色系，只放墙脚、路边、建筑脚下。</li></ul></div>
+      </div></div></div>
+    <div class="rule"><figure><img src="refs/wall.jpg" alt="Dota 2：矮石栏、火盆和旗" loading="lazy"><figcaption><span class="who">DOTA 2</span>矮石栏两种材质，端头用火盆和旗收住</figcaption></figure>
+      <div><h3>墙</h3><div class="two">
+        <div><h4>参考里</h4><ul><li>王者：一段段窄长的矮石墙，墙顶长草，隔得很开。</li><li>Dota 2：石栏的形是雕出来的，端头有柱墩、火盆或旗。</li></ul></div>
+        <div><h4>我们的规矩</h4><ul><li>墙是薄的一片，厚 2.2 米、高 3 米左右，不做成山。</li><li>基地高地和地图边缘用砌出来的整墙；野区用砌墙的残段加大石块组合。</li><li>一段墙最多两种材质，端头要收。</li></ul></div>
+      </div></div></div>
+    <div class="rule"><figure><img src="refs/plants.jpg" alt="Dota 2：大叶团的树" loading="lazy"><figcaption><span class="who">DOTA 2</span>树是大叶团，亮面暗面各一块</figcaption></figure>
+      <div><h3>植被</h3><div class="two">
+        <div><h4>参考里</h4><ul><li>能藏人的草丛是成丛的高草，和地表的短草一眼分得开。</li><li>树长在够不着的地方当背景。</li></ul></div>
+        <div><h4>我们的规矩</h4><ul><li>看起来能藏人的植被，就必须真的能藏人。能藏人的只有草丛。</li><li>草丛比人高、成丛、形状整。</li><li>树只在城墙外面，大叶团，不做碎叶。</li></ul></div>
+      </div></div></div>
+    <div class="rule"><figure><img src="refs/tower.jpg" alt="Dota 2：防御塔" loading="lazy"><figcaption><span class="who">DOTA 2</span>塔是一个雕像一样的整形，脚下一圈圆形铺地</figcaption></figure>
+      <div><h3>关键建筑</h3><div class="two">
+        <div><h4>参考里</h4><ul><li>塔是一个整形加一颗阵营色的核，占地很小。</li><li>泉水是同心圆的浅石池，只有水在发微光。</li><li>细节集中在少数几处。</li></ul></div>
+        <div><h4>我们的规矩</h4><ul><li>一个大形加一个发光的重点，底座、身、颈、冠分清层次。</li><li>外壳包着石芯，缝里透出核的颜色，雕饰要细。</li><li>三档塔是一家的，由矮到高、由简到繁。</li><li>水晶比塔隆重得多；出生点和基地一角一起设计。</li></ul></div>
+      </div></div></div>
+    <div class="rule"><figure><img src="refs/water.jpg" alt="Dota 2：石阶沉进水里" loading="lazy"><figcaption><span class="who">DOTA 2</span>石阶直接走进水里，水清得能看见河底</figcaption></figure>
+      <div><h3>水</h3><div class="two">
+        <div><h4>参考里</h4><ul><li>水清、浅、通透，能看见河底。</li><li>路直接走进水里，岸边是软过渡。</li><li>水面有细碎的反光。</li></ul></div>
+        <div><h4>我们的规矩</h4><ul><li>清澈见底，浅色。</li><li>细碎的粼光铺到所有水面，出生点的水池也用同一套。</li><li>不用堤或桥把河切断。</li></ul></div>
+      </div></div></div>
+    <div class="rule"><figure><img src="refs/light.jpg" alt="Dota 2：影子清楚，发光很少" loading="lazy"><figcaption><span class="who">DOTA 2</span>影子清楚，画面里几乎没有东西在发光</figcaption></figure>
+      <div><h3>光</h3><div class="two">
+        <div><h4>参考里</h4><ul><li>日光柔和，影子清楚但不黑。</li><li>发光的只有泉水、塔和水晶的核、少数火盆。</li><li>没有满屏的光晕。</li></ul></div>
+        <div><h4>我们的规矩</h4><ul><li>发光有预算：出生点、水晶、塔的核，加基地口子上的少数火盆。地面、植物、杂物不发光。</li><li>只用阵营色：我方青色，对方橙红色。</li><li>辉光半径小。层次靠影子。</li></ul></div>
+      </div></div></div>
+  </div>
+</section>
+
+
+<section class="cols">
+  <section>
+    <h3>这一稿请你看的</h3>
+    <ul>
+      <li>三档防御塔的层次和精细程度够不够，两方各自像不像一家。</li>
+      <li>水晶每方两个方案选哪个，够不够隆重。</li>
+      <li>出生点每方两个方案选哪个，和基地结合得够不够。</li>
+      <li>野区墙体加石块的组合对不对。</li>
+      <li>我的建议：水晶两方都用 A，托座都是往上合拢的形，是一家；出生点两方都用方案一，抬高的平台从俯视镜头看更醒目，水槽把它和水晶连得更紧。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>这些图是什么、不是什么</h3>
+    <ul>
+      <li>都是 AI 出的设计稿，用来定方向，不是游戏里的画面。</li>
+      <li>游戏里能不能做到，2.3 的样板间见分晓。关键建筑的精细建模在 2.7。</li>
+      <li>场景图里建筑之间的距离和灰盒不完全一致，以灰盒为准。</li>
+      <li>对方一侧的赭红地面铺满半张图以后会不会太艳，要到样板间里看。</li>
+    </ul>
+  </section>
+  <section>
+    <h3>花费</h3>
+    <ul>
+      <li>即梦：两稿共 24 张，544 积分。</li>
+      <li>Codex：6 张建筑设计稿，不计即梦积分。</li>
+      <li>Tripo 没有用。</li>
+    </ul>
+  </section>
+</section>
+
+<footer class="foot">Dota 2 的参考图来自 interfaceingame.com 和 Steam 商店页，版权属于 Valve；王者峡谷看的是王者荣耀官网的全景图，版权属于腾讯；英雄联盟的水晶枢纽看的是它的官方百科。都只用作内部对标，没有放进设计稿。</footer>
+</div>

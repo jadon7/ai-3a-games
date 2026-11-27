@@ -1,0 +1,62 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/torg_skeleton.json",
+ "out_dir": "art/hero/torg/motions",
+ "fps": 30,
+ "smooth": {},
+ "actions": {
+  "idle": {
+   "src": "art/hero/torg/motions_src/idle.npz",
+   "loop": [
+    100,
+    118
+   ],
+   "from": 1
+  },
+  "run": {
+   "src": "art/hero/torg/motions_src/run.npz",
+   "loop": [
+    28,
+    36
+   ],
+   "from": 48,
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/hero/torg/motions_src/attack1.npz",
+   "range": [
+    0,
+    32
+   ]
+  },
+  "q": {
+   "src": "art/hero/torg/motions_src/q.npz",
+   "range": [
+    0,
+    40
+   ]
+  },
+  "w": {
+   "src": "art/hero/torg/motions_src/w.npz",
+   "range": [
+    0,
+    71
+   ],
+   "speed": 1.25
+  },
+  "r": {
+   "src": "art/hero/torg/motions_src/r.npz",
+   "range": [
+    0,
+    72
+   ]
+  },
+  "death": {
+   "src": "art/hero/torg/motions_src/death.npz",
+   "range": [
+    2,
+    112
+   ],
+   "settle": false
+  }
+ }
+}

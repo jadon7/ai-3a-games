@@ -1,0 +1,23 @@
+{
+ "height": 2.3,
+ "ring": 1.1,
+ "bar": 0.3,
+ "runSpeed": 8.0,
+ "attacks": [
+  {
+   "clip": "attack1",
+   "swing": 0.55,
+   "hit": 0.72,
+   "end": 1.15,
+   "hands": []
+  }
+ ],
+ "death": {
+  "clip": "death"
+ },
+ "points": {
+  "hand": "RightHand",
+  "chest": "Spine2",
+  "up": 0
+ }
+}

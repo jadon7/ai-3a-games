@@ -1,0 +1,175 @@
+{
+ "name": "gorran",
+ "raw": "art/style_b/gorran/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-gh/art/style_b/gorran/gorran_b_rigged.glb",
+ "out": "art/style_b/gorran/check/game.glb",
+ "packed": "art/style_b/gorran/check/packed.glb",
+ "pose_out": "art/style_b/gorran/check/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 512,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "gear": [
+  {
+   "type": "script",
+   "path": "art/style_b/gorran/gear.py",
+   "func": "make_hammer",
+   "side": "Right",
+   "name": "hammer"
+  },
+  {
+   "type": "script",
+   "path": "art/style_b/gorran/gear.py",
+   "func": "make_shield",
+   "side": "Left",
+   "mount": "forearm",
+   "name": "shield",
+   "rot": [
+    18.4,
+    4.56,
+    -103.45
+   ],
+   "_solve": {
+    "gap": 0.082,
+    "along": -0.005,
+    "drop": 0.1,
+    "yaw": 0,
+    "tilt": 0,
+    "arm": [
+     [
+      0.0846,
+      0.1214,
+      -0.082
+     ],
+     [
+      -0.0943,
+      0.0761,
+      -0.082
+     ]
+    ],
+    "grip": [
+     [
+      -0.1455,
+      0.0743,
+      -0.1157
+     ],
+     [
+      0.0016,
+      0.9976,
+      -0.0694
+     ]
+    ],
+    "blend": 0.5
+   },
+   "offset": [
+    -0.1183,
+    0.0195,
+    0.0011
+   ]
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.01,
+    -0.045
+   ],
+   "yaw": -5,
+   "lean": 2
+  },
+  "spine": [
+   [
+    2,
+    -2
+   ],
+   [
+    2,
+    -2
+   ],
+   [
+    1,
+    -1
+   ]
+  ],
+  "head": {
+   "yaw": 6,
+   "pitch": 2
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.215,
+     -0.045,
+     0.061
+    ],
+    "pole": [
+     0.35,
+     -1,
+     0
+    ],
+    "toe": -8
+   },
+   "Right": {
+    "ankle": [
+     -0.22,
+     0.055,
+     0.061
+    ],
+    "pole": [
+     -0.55,
+     -0.85,
+     0
+    ],
+    "toe": -10
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.135,
+     -0.19,
+     0.64
+    ],
+    "pole": [
+     0.9,
+     -0.1,
+     -0.2
+    ],
+    "blade": [
+     0,
+     0,
+     1
+    ],
+    "shrug": 2
+   },
+   "Right": {
+    "wrist": [
+     -0.345,
+     0.16,
+     0.455
+    ],
+    "pole": [
+     -0.8,
+     0.6,
+     0.1
+    ],
+    "blade": [
+     -0.2,
+     -0.72,
+     -0.66
+    ],
+    "shrug": 0
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.004,
+   "chest": 1.2,
+   "shoulder": 1.0,
+   "hand": 0.005
+  }
+ },
+ "motions": {},
+ "_note": "葛隆 B：武器形状照第九轮（art/hero/gorran/gear.py），贴图按 B 重画（art/style_b/gorran/gear.py）。盾的 rot、offset、_solve 先照旧（palm_by_hand 在旧骨架上和旧的掌心约定一致，量过）"
+}

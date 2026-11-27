@@ -1,0 +1,139 @@
+<meta charset="utf-8">
+<title>烬与潮 对局循环</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：阶段 4 验收。顶部说明 → 四段录像 → 规则表 → 一局的节奏 → 各个环节的截图 → 怎么做的、验证了什么 → 差距、没验证的、花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.wide img{aspect-ratio:auto}
+.clip{display:flex;flex-direction:column;gap:6px;min-width:0}
+.clip video{width:100%;display:block;background:#000;border:1px solid var(--line)}
+.clip p{margin:0;font-size:13.5px;color:var(--muted)}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 24px;margin:16px 0 0;padding:0;list-style:none;font-size:14.5px}
+.keys li{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 8px;align-items:baseline}
+.keys b{font:600 13px/1.6 var(--util);letter-spacing:.04em;color:var(--tide)}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 4 · 对局循环</p>
+  <h1>一局<em>能打完了</em></h1>
+  <p class="lede">阶段 4 做完了：三条线上两边每 30 秒各出一波兵，沿兵线推进、对打、拆塔；塔和水晶会还手；补到最后一刀有金币，附近死的小兵给经验，升级加血加攻击；阵亡后在出生点复活；拆掉一条线的三座塔再打爆水晶就赢。迷雾、小地图和一套基础界面也在。验收标准是“一个人推完一条线，打爆对面基地”：我让一个自动操作代打，完整跑了 8 局都打爆了，最快 8 分 33 秒，最慢 12 分 05 秒。对方现在只有小兵和塔，没有英雄，电脑对手是阶段 6 的事，所以现在赢是必然的。</p>
+</header>
+
+<section>
+  <h2>录像</h2>
+  <p class="note">四段都是自动操作（网址加 <code>?auto=1</code>）实际打出来的，不是我手动操作，也不是摆拍。录屏是在无界面浏览器里录的，每秒只有十几帧，画面的卡顿是录屏造成的，不是游戏的帧率（帧率见下面“怎么做的、验证了什么”）。</p>
+  <div class="row"><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/full.mp4"></video><p>整局快进（16 倍速，48 秒）：从出生点出门，推掉中路三座塔，10 分 37 秒打爆对方水晶。最后 6 秒是正常速度。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/lane.mp4"></video><p>对线（正常速度，32 秒）：两边的兵在河道对打，英雄补刀、放钩引和潮隐，推到塔下被塔打就退，等下一波兵。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/tower.mp4"></video><p>拆第一座塔（正常速度，23 秒）：清掉一波兵，跟着自己的小兵进塔，塔倒下后剩一截石座和碎石。</p></div><div class="clip"><video controls muted loop playsinline preload="metadata" src="vid/end.mp4"></video><p>打爆水晶（正常速度，9 秒）：水晶塌掉，镜头移过去，一秒多以后出胜利面板。</p></div></div>
+  <ul class="keys"><li><b>点地面</b><span>移动</span></li><li><b>点对方的小兵、塔、水晶</b><span>走过去普攻</span></li><li><b>A</b><span>打最近的一个</span></li><li><b>Q 钩引</b><span>只能钩小兵，碰到墙和塔会停</span></li><li><b>W 潮隐</b><span>隐身 4 秒，破隐的第一刀翻倍</span></li><li><b>S</b><span>停下</span></li><li><b>点小地图 / 拖动</b><span>看别处</span></li><li><b>空格</b><span>镜头回到英雄</span></li></ul>
+</section>
+
+<section>
+  <h2>规则</h2>
+  <p class="note">规矩按王者荣耀的简化版来。数值是我定的第一版，只调到“自动操作十分钟左右能打完一局”，没有细调过平衡。</p>
+  <div class="tbl"><table><thead><tr><th>环节</th><th>现在的规矩</th></tr></thead><tbody><tr><td>兵线</td><td>三条线。开局 5 秒出第一波，之后每 30 秒一波：两个近战一个远程，4 分钟后加一个近战；每过一分钟小兵的血和攻击加 3%。小兵沿兵线走，8.5 米内有对方就打：差不多远的话先打小兵，再打英雄，最后打建筑。</td></tr><tr><td>超级兵</td><td>拆掉对方一条线的高地塔以后，我方这条线每波多一个超级兵：血是近战兵的 3 倍，攻击 2 倍，个头大三成。对方拆了我方的高地塔也一样。</td></tr><tr><td>防御塔</td><td>每方 9 座，一条线 3 座。同一条线上要从外往里拆，前面的塔还在时后面的打不动（血条是灰的，打上去跳“打不动”）。塔先打小兵，射程里没有小兵才打英雄；连着打同一个英雄会越来越疼，每一下多三成，最多到 2.2 倍。被塔盯上时有一条红色光带连到英雄身上。</td></tr><tr><td>水晶</td><td>拆掉任意一条线的高地塔之后才打得动。水晶自己也会还手。打爆对方水晶获胜，自己的被打爆就输。分出胜负时镜头移到那座水晶上。</td></tr><tr><td>补刀、金币、经验</td><td>最后一刀是英雄打的才有金币（近战兵 38，远程兵 30，超级兵 60），拆塔 160，另外每秒自己涨 2 金。15 米内死的对方小兵都给经验。每升一级血量和攻击各加 8.5%，最高 15 级。金币现在只是记数，商店是阶段 5 的事。</td></tr><tr><td>死亡和复活</td><td>阵亡后等 7 秒加每级 1.6 秒，在出生点复活。站在自己出生点里回血很快；站进对方出生点会持续掉血。</td></tr><tr><td>视野和迷雾</td><td>我方英雄（15 米）、小兵（9 到 10 米）、塔（12 米）、水晶（13 米）周围看得见，其余地方压暗，暗处的对方小兵不显示；对方的塔和水晶一直显示。躲在草丛里的要贴到 3.5 米内才看得见。</td></tr><tr><td>小地图和界面</td><td>左下角小地图：塔、水晶、小兵、英雄、当前镜头的范围，看不见的地方压暗，点一下镜头跳过去。顶部是时间和双方剩几座塔；底部是等级、血条、经验、金币、补刀数和三个技能键（可以点）；阵亡和胜负有提示。自己的塔和水晶满血时不显示血条。</td></tr><tr><td>挡住英雄的建筑</td><td>塔和水晶很高，英雄走到它们背后时，挡住英雄的那一圈会镂空。</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>一局的节奏</h2>
+  <p class="note">下面是“整局快进”那一局里各件事发生的时刻。修完小兵卡住的问题以后一共完整跑了 8 局，全赢：最快 8 分 33 秒，最慢 12 分 05 秒，其中 1 局英雄阵亡过 1 次。这张表只说明节奏，不说明难度。</p>
+  <div class="tbl"><table class="narrow"><thead><tr><th>时刻</th><th>发生了什么</th></tr></thead><tbody><tr><td>0:05</td><td>三条线第一波兵出发，每边每条线两个近战一个远程</td></tr><tr><td>约 0:29</td><td>两边的兵在河道碰面，开打</td></tr><tr><td>2:13</td><td>对方中路外塔倒。英雄 3 级，补刀 6</td></tr><tr><td>5:18</td><td>对方中路二塔倒。5 级，补刀 17</td></tr><tr><td>8:59</td><td>对方中路高地塔倒，水晶变成打得动，我方中路从下一波起多一个超级兵。7 级，补刀 28</td></tr><tr><td>10:37</td><td>对方水晶被打爆，胜利。7 级，补刀 30，阵亡 0 次，我方 9 座塔都在，对方剩 6 座</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>各个环节</h2>
+  <div style="display:flex;flex-direction:column;gap:10px"><div class="row one"><figure class="wide"><img src="img/lane.jpg" alt="对线。补到最后一刀，头上跳金币（+38）和这一刀的伤害。" loading="lazy"><figcaption><span class="who ours">现在</span>对线。补到最后一刀，头上跳金币（+38）和这一刀的伤害。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/hud.jpg" alt="界面的下半边：小地图、等级、血条和经验条、金币和补刀数、三个技能键。" loading="lazy"><figcaption><span class="who ours">现在</span>界面的下半边：小地图、等级、血条和经验条、金币和补刀数、三个技能键。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/fog_on.jpg" alt="有迷雾：只有我方英雄和小兵周围是亮的，对方的塔看得见，塔后面的小兵看不见。" loading="lazy"><figcaption><span class="who ours">现在</span>有迷雾：只有我方英雄和小兵周围是亮的，对方的塔看得见，塔后面的小兵看不见。</figcaption></figure><figure class="wide"><img src="img/fog_off.jpg" alt="同一个位置关掉迷雾（网址加 ?nofog）对照。" loading="lazy"><figcaption><span class="who ref">对照</span>同一个位置关掉迷雾（网址加 ?nofog）对照。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/aim.jpg" alt="被塔盯上：红色光带从塔顶连到英雄，塔的弹道正飞过来。" loading="lazy"><figcaption><span class="who ours">现在</span>被塔盯上：红色光带从塔顶连到英雄，塔的弹道正飞过来。</figcaption></figure><figure class="wide"><img src="img/closed.jpg" alt="外塔还在，二塔的血条是灰的，打上去跳“打不动”，它照样打你。" loading="lazy"><figcaption><span class="who ours">现在</span>外塔还在，二塔的血条是灰的，打上去跳“打不动”，它照样打你。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/ruin.jpg" alt="塔被拆掉以后：晶体和金属件没了，剩一截矮石座和一圈碎石。" loading="lazy"><figcaption><span class="who ours">现在</span>塔被拆掉以后：晶体和金属件没了，剩一截矮石座和一圈碎石。</figcaption></figure><figure class="wide"><img src="img/super.jpg" alt="对方高地塔倒了以后的中路：左下血条最宽的是超级兵。" loading="lazy"><figcaption><span class="who ours">现在</span>对方高地塔倒了以后的中路：左下血条最宽的是超级兵。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/dead.jpg" alt="阵亡：英雄倒地，周围失去视野变暗，上方提示几秒后复活。" loading="lazy"><figcaption><span class="who ours">现在</span>阵亡：英雄倒地，周围失去视野变暗，上方提示几秒后复活。</figcaption></figure><figure class="wide"><img src="img/respawn.jpg" alt="在出生点复活。" loading="lazy"><figcaption><span class="who ours">现在</span>在出生点复活。</figcaption></figure></div><div class="row"><figure class="wide"><img src="img/win.jpg" alt="胜利：镜头停在被打爆的对方水晶上。" loading="lazy"><figcaption><span class="who ours">现在</span>胜利：镜头停在被打爆的对方水晶上。</figcaption></figure><figure class="wide"><img src="img/lose.jpg" alt="失败。正常打不出来（对方没有英雄），是测试时把自己一条线的塔和水晶按顺序拆掉触发的。" loading="lazy"><figcaption><span class="who ours">现在</span>失败。正常打不出来（对方没有英雄），是测试时把自己一条线的塔和水晶按顺序拆掉触发的。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/see.jpg" alt="英雄走到自家水晶背后：挡住他的那一圈镂空。水晶本身还是占掉了大半个画面，见下面的差距。" loading="lazy"><figcaption><span class="who ours">现在</span>英雄走到自家水晶背后：挡住他的那一圈镂空。水晶本身还是占掉了大半个画面，见下面的差距。</figcaption></figure></div></div>
+</section>
+
+<section>
+  <h2>怎么做的、验证了什么</h2>
+  <div class="how"><section><h3>小兵的模型和动作</h3><p>和主角同一条管线。每个小兵一张正面参考图，Tripo 生成模型并自动绑骨；斧、圆盾、法杖是我用脚本在 Blender 里建的简单形状，绑在手和前臂的骨头上。动作是即梦出双机位参考视频，再用训练出来的关节识别把视频读成骨骼动作。两个小兵共用一个识别网络（3200 张训练图，计划训练 4 轮，第 2 轮考试就过了，提前停掉：关节偏差 1.0% 和 1.2% 身高，过线是 3%）。每个小兵打包后 0.64MB，带站、跑、打、倒四个动作。</p></section><section><h3>小兵进游戏</h3><p>规则和画面是分开的：规则那边只算位置、血量、谁打谁；画面这边，小兵走到镜头附近而且看得见才建模型（每帧最多建 3 个），走远了撤掉。所有血条合成一次绘制，脚下的影子也是。出手的时刻按动作里手落下的那一帧对齐到规则里的出手时间。</p></section><section><h3>这一阶段踩的坑</h3><p>① 最早出的两段“走路”视频步子太小，近战兵几乎是原地踏步，在游戏里像在滑，重出了两段“小跑”换掉。② 武器颜色不对查了两轮：合并网格后有两套贴图坐标，游戏读了错的那套；调色板贴图只有 4 个像素，压缩后串色，改成 64×16。③ 每条线第一波的第一个近战兵会卡在自家高地塔旁边一动不动，两边都有，卡住的兵越积越多。给小兵加了“半秒没挪地方就让寻路给一条绕过去的路”，场上同时活着的小兵最多从 90 个降到 54 到 57 个。④ 第一版里拆完高地塔还要磨 10 分钟才拆得掉水晶（对方三路兵都在水晶边上出生），加了超级兵、水晶血量从 9000 降到 8000 以后是一两分钟。⑤ 塔盯人的红线一开始只有一像素宽，看不见，改成有宽度的光带。⑥ 塔的血条在塔顶，塔顶出了画面就看不到血，改成出画面时顺着塔身滑回画面里。</p></section><section><h3>验证了什么</h3><p>① 自动操作完整跑 8 局，都打爆了对方水晶。② 用脚本真的移动鼠标和按键逐项点过：点地面走、点小兵打、Q、W、点小地图、空格、点界面上的技能键、失败面板，都通。③ 帧率：另开一个真实的 Chrome 窗口，按视网膜屏分辨率（画布 2232×1164）量，基地 59 到 61，对线 60，后期 60，打水晶时（场上 51 个小兵）57 到 60；偶尔有单帧 36 到 53 毫秒的卡顿。</p></section></div>
+  <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px"><div class="row one"><figure class="wide"><img src="img/unit_refs.jpg" alt="两个小兵的正面参考图。近战兵从阶段 1 的设计稿里裁出来；远程兵的设计稿是侧身的，用即梦重画成正面站姿。" loading="lazy"><figcaption><span class="who ref">参考</span>两个小兵的正面参考图。近战兵从阶段 1 的设计稿里裁出来；远程兵的设计稿是侧身的，用即梦重画成正面站姿。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/unit_video.jpg" alt="参考视频（近战兵举斧下劈）的抽帧，每一帧里同时有正面和侧面两个机位。" loading="lazy"><figcaption><span class="who ref">参考</span>参考视频（近战兵举斧下劈）的抽帧，每一帧里同时有正面和侧面两个机位。</figcaption></figure></div><div class="row one"><figure class="wide"><img src="img/units.jpg" alt="进游戏以后。左边三个是我方的近战兵、远程兵、超级兵；右边三个是对方，同一个模型，青色换成暗铁和余烬色。" loading="lazy"><figcaption><span class="who ours">现在</span>进游戏以后。左边三个是我方的近战兵、远程兵、超级兵；右边三个是对方，同一个模型，青色换成暗铁和余烬色。</figcaption></figure></div></div>
+</section>
+
+<section>
+  <h2>差距、没验证的、花费</h2>
+  <div class="cols">
+    <section><h3>我自己看出来的差距</h3><ul><li>没有对手。对方只有小兵和塔，推线没有对抗，胜负没有悬念。电脑对手是阶段 6。</li><li>小兵跑步时脚下会滑：近战兵的参考视频是原地高抬腿，远程兵是把冲刺放慢到 0.8 倍。死亡是跪倒，不是倒地。</li><li>两边的小兵是同一个模型换色，对方没有自己的造型。武器是纯色的简单形状，近看很素。</li><li>塔和水晶被拆后只是压扁成一截石座加碎石，没有倒塌的过程。</li><li>水晶太高，英雄经过自家水晶背后时它会占掉大半个画面，现在只是把挡住英雄的那一圈镂空。树和围墙挡住英雄时不镂空。</li><li>视野只按距离算，墙和高低差不挡视线。迷雾是按一个固定高度的平面算的，高的建筑顶上明暗分界会偏。</li><li>英雄可以从小兵身上穿过去；小兵之间只是互相轻推。</li><li>界面是基础版：技能键上是文字不是图标，没有头像、计分板、目标高亮。金币没有用处。</li><li>塔打英雄很疼（一级时独自进塔约 7 秒阵亡），对新手不友好；这是照王者的规矩来的，但数值没细调。</li><li>自动操作只是测试用的代打，打法很死板（跟兵、够得着什么打什么、没兵就退），不是电脑对手。</li></ul></section>
+    <section><h3>没验证的</h3><ul><li>我没有手动打完过一整局。“一个人推完一条线、打爆基地”是自动操作代打验证的，手动操作只用脚本逐项点过。</li><li>平衡没有验证：对方没有英雄，现在怎么打都赢。</li><li>内置浏览器里的帧率这次没量成（会话不在窗口里时页面被限速），用的是另开的 Chrome 窗口。</li><li>手机、触屏、Safari、Firefox 没试。</li><li>无界面测试里有两次整块三维画面是白的，重跑正常。怀疑是无界面 Chrome 的显卡进程问题，在真实窗口里没见过，没查到底。</li><li>超过 12 分钟的长局、我方的塔被推、双方都有超级兵的情况没有专门测。</li><li>小兵卡住的修复，只确认了场上小兵总数不再越积越多，没有逐条线盯每一个小兵。</li></ul></section>
+    <section><h3>花费</h3><ul><li>即梦 381 积分：远程兵正面参考图 21；参考视频 8 段共 360（每段 45），其中 2 段走路没用上。余额 15036，已核对。</li><li>Tripo 110 积分：两个小兵的模型和绑骨。余额 485，是做完小兵后核对的。</li><li>本机：渲染 3200 张训练图，训练 23.5 分钟（第 2 轮结束时停掉）。训练期间无界面截图会偶尔失败。</li><li>没有用 Codex，没有用外部素材。</li><li>以后每加一种小兵或野怪，大约是 Tripo 55、即梦 135 到 180（三四段视频），训练可以几个角色共用一个网络。</li></ul></section>
+  </div>
+</section>
+
+<footer class="foot">自己试：开发服务器起着的时候打开 <code>localhost:5183/map.html</code>，从出生点出发，沿中路推。想快进，网址后面加 <code>?speed=2</code>；想看自动操作代打，加 <code>?auto=1&amp;speed=4</code>。</footer>
+</div>

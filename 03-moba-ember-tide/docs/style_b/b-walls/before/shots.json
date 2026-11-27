@@ -1,0 +1,26 @@
+[
+ {
+  "name": "21_trees_west_me",
+  "q": "cam=-46,-62,30,50,2,0",
+  "fps": 60,
+  "calls": 51,
+  "tris": 378282,
+  "errors": []
+ },
+ {
+  "name": "22_trees_north_foe",
+  "q": "cam=60,-46,30,50,2,0",
+  "fps": 60,
+  "calls": 52,
+  "tris": 268908,
+  "errors": []
+ },
+ {
+  "name": "23_island_boss",
+  "q": "cam=0,-46,26,52,1,0",
+  "fps": 60,
+  "calls": 61,
+  "tris": 559976,
+  "errors": []
+ }
+]

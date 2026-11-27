@@ -1,0 +1,61 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/moko.npz",
+ "src_build": "art/style_b/moko/src_build.json",
+ "src_timing": "art/style_b/moko/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/moko_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 5.6,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "q",
+   "r",
+   "death"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "摩珂的全部旧动作 → 摩珂 B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型和绑骨，杖脚本建）。Q、R 是双手握杖：右手握、左手跟",
+ "tgt_rig": "../rigs/moko_b.npz",
+ "tgt_model": "../moko_b_rigged.glb",
+ "labels": [
+  "摩珂（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "name": "moko_b",
+ "hands": {
+  "lead": "Right",
+  "follow": "Left",
+  "hold": 0.2
+ },
+ "_note": "hands.hold 0.2：只在两只手真的一起握杖（两手距离不到身高的 25%）时锁副手（Q、R、E 的握杖段）；默认按每段动作两手距离的 10 分位算，摩珂待机、普攻两手本来就分开，会被整段锁上"
+}

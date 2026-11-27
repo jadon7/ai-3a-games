@@ -1,0 +1,13 @@
+三座沉月会防御塔已按画风 B 重建。共做了七版，每版都在游戏预览页和中路地图检查。三座塔均符合高度、碰撞半径和 32,000 个三角形的上限。
+
+| 模型 | 总高 | 晶体中心高度 | 三角形 |
+| --- | ---: | ---: | ---: |
+| [外塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/tower_me_1.glb) | 7.52 米 | 6.62 米 | 18,456 |
+| [内塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/tower_me_2.glb) | 9.24 米 | 8.24 米 | 26,324 |
+| [高地塔 GLB](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/tower_me_3.glb) | 11.06 米 | 9.86 米 | 31,088 |
+
+高地塔的后瓣比设计稿低，让中路机位能看见主晶体的正面。近看时，晶体内部的色带比原稿少，明暗主要由切面表现。
+
+[设计稿与成品对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/compare.jpg) · [地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_map.jpg) · [游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_game.jpg) · [近看图](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/preview_close.jpg)
+
+已重跑[建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/towers.py)，三个 GLB 均与交付件逐字节一致。[尺寸、修改记录与重建方法](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/tower_me/out/NOTES.md)

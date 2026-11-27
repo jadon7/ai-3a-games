@@ -1,0 +1,132 @@
+{
+ "name": "seren",
+ "raw": "art/hero/seren/tripo_rigged_fix.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/seren_rigged.glb",
+ "out": "art/hero/seren/chk/pose_aim.glb",
+ "packed": "public/assets/hero/seren.glb",
+ "tex": 2048,
+ "weapon_tex": 1024,
+ "palm_by_hand": true,
+ "motions": {},
+ "gear": [
+  {
+   "type": "file",
+   "src": "art/models_src/weapon_seren_raw.glb",
+   "side": "Right",
+   "length": 0.85,
+   "grip": 0.22,
+   "roll": 180
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.015,
+    -0.006
+   ],
+   "yaw": -12,
+   "lean": 2,
+   "roll": 3
+  },
+  "spine": [
+   [
+    1,
+    3
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    -1,
+    3
+   ]
+  ],
+  "head": {
+   "yaw": -5,
+   "pitch": 8
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.08,
+     -0.075,
+     0.064
+    ],
+    "pole": [
+     0.25,
+     -1,
+     0
+    ],
+    "toe": 14
+   },
+   "Right": {
+    "ankle": [
+     -0.08,
+     0.05,
+     0.064
+    ],
+    "pole": [
+     -0.2,
+     -1,
+     0
+    ],
+    "toe": -28
+   }
+  },
+  "arms": {
+   "Right": {
+    "wrist": [
+     -0.07,
+     -0.17,
+     0.7
+    ],
+    "pole": [
+     -1,
+     0,
+     -0.4
+    ],
+    "blade": [
+     0,
+     -1,
+     0
+    ],
+    "edge": [
+     0,
+     0.2,
+     1
+    ],
+    "shrug": 0
+   },
+   "Left": {
+    "wrist": [
+     0.0,
+     -0.22,
+     0.67
+    ],
+    "pole": [
+     0.6,
+     0,
+     -1
+    ],
+    "blade": [
+     -0.3,
+     -0.2,
+     0.9
+    ],
+    "shrug": 0
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.004
+  }
+ },
+ "grip": {
+  "Left": 0.55
+ }
+}

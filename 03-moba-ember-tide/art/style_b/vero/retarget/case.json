@@ -1,0 +1,63 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik_feet": {
+   "ik": true,
+   "hands": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/vero.npz",
+ "src_build": "art/style_b/vero/src_build.json",
+ "src_timing": "art/style_b/vero/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 5.7,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "attack1",
+   "q",
+   "r",
+   "run"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "薇萝的全部旧动作 → 薇萝 B 风格（路子一 卡通厚涂）的新模型（Tripo 出模型、绑骨和连弩）。连弩双手拿：右手握、左手托，副手跟主手",
+ "tgt_rig": "../rigs/vero_b.npz",
+ "tgt_model": "../vero_b_rigged.glb",
+ "labels": [
+  "薇萝（旧模型）",
+  "B·只搬旋转",
+  "B·只加脚 IK",
+  "B·脚 + 副手 IK"
+ ],
+ "name": "vero_b",
+ "hands": {
+  "lead": "Right",
+  "follow": "Left"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "name": "turtle",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/turtle_skeleton.json",
+ "out": "art/hero/torg_turtle/game.glb",
+ "packed": "public/assets/hero/torg.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/hero/torg_turtle/motions/idle.npz",
+  "run": "art/hero/torg_turtle/motions/run.npz",
+  "attack1": "art/hero/torg_turtle/motions/attack1.npz",
+  "q": "art/hero/torg_turtle/motions/q.npz",
+  "w": "art/hero/torg_turtle/motions/w.npz",
+  "r": "art/hero/torg_turtle/motions/r.npz",
+  "death": "art/hero/torg_turtle/motions/death.npz"
+ }
+}

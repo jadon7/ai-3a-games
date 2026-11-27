@@ -1,0 +1,2 @@
+== h_end5
+{"out":"docs/trailer/raw/h_end5.mp4","ok":true,"rep":{"t":1105,"over":1,"kills":[14,16],"towers":[7,1],"lanes":"133 对 100","order":["boss","defend"],"camps":12,"boss":["troll 还有56秒","beast93%"],"buff":[[0,0],[0,0]],"heroes":["lan L15 96% 5/9/3 金2214 装6 刀8 线0 [打 岩甲巨兽] 打418 跟兵线211 阵亡211 清兵86 回城31 在出生点回血31","osen* L14 92% 0/6/9 金1440 装5 �

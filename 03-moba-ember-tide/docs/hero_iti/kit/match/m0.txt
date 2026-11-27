@@ -1,0 +1,11 @@
+h=ugo&a=gorran,lan,ugo,seren,hedda&b=torg,kaz,osen,vero,moko  16:21  a 队赢  击杀 7:7  报错 0
+  a top    gorran  L15 2/1/2 刀40 营2 伤害43869 身家6297
+  a jungle lan     L15 1/3/3 刀46 营17 伤害34644 身家6582 抓4
+  a adc    seren   L14 2/1/0 刀49 营1 伤害10322 身家6229
+  a sup    hedda   L11 0/3/2 刀0 营0 伤害5738 身家4438
+  b top    torg    L15 2/3/4 刀56 营1 伤害64837 身家6301
+  b jungle kaz     L15 2/3/2 刀60 营25 伤害30590 身家6225 抓7
+  b mid    osen    L14 0/1/2 刀61 营0 伤害28155 身家5583
+  b adc    vero    L15 2/0/2 刀69 营1 伤害11705 身家6590
+  b sup    moko    L14 1/0/5 刀0 营0 伤害11595 身家4308
+  a mid    ugo     L15 2/1/3 刀41 营0 伤害28275 身家6467

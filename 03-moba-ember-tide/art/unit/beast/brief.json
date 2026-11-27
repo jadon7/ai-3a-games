@@ -1,0 +1,36 @@
+{
+ "name": "beast",
+ "title": "岩甲巨兽（Boss，守下面那个河心岛）",
+ "legs": 4,
+ "height_guess": 3.3,
+ "ring_guess": 3.2,
+ "move_speed": 3.8,
+ "look": "一头四足的岩甲巨兽，像甲龙：蓝灰色龟裂的厚甲，背上和尾巴上一排青色的晶刺，鼻子上一只角，肚皮灰白，粗长的尾巴。高度按连背上晶刺算，游戏里身长七八米。",
+ "have": {
+  "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast.blend",
+  "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_skeleton.json",
+  "rigmap": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/beast_rigmap.json",
+  "weights": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/runs/beast/jointnet.pt",
+  "ref": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/ref/beast_ref.png",
+  "motions": {
+   "attack1": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/beast_gore/motion.npz（刨地、压低蓄力、用角向上顶、甩尾；只要“压低蓄力到向上顶再回正”这一段）",
+   "attack2": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/beast_rear/motion.npz（人立起来再双前脚砸地，看 /Users/jadon7/Documents/SynologyDrive/code/video2rig/prompts/beast_rear.txt）"
+  },
+  "prompts": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/prompts/beast_gore.txt、beast_rear.txt（照这个写法）",
+  "note": "权重和骨架是管线早期做的。动手前先确认它们和现在的脚本对得上：cd V2R && PY scripts/pipeline.py exam beast --seed 1 --reuse。对不上就在远程重训（从现有的 runs/beast/jointnet.pt 起步）。"
+ },
+ "clips_new": {
+  "idle": "原地四足站立：缓慢而深的呼吸让背甲明显起伏；头慢慢向左转、再向右转；粗尾巴缓缓左右摆。四只脚不动。",
+  "run": "像在跑步机上一样原地沉重地行走：四条粗腿交替大步迈开，每一步身体都往下一沉、左右摇晃，头向前伸，尾巴跟着步子左右摆。是走，不是跑。",
+  "roar": "咆哮：四肢弯曲、把头和前身压低，然后猛地把头向前上方伸出、张大嘴，身体前压、尾巴绷直抬起，保持一秒，再收回站姿。四只脚留在原地。",
+  "death": "死亡：身体摇晃，两条前腿一软跪下，胸口贴到地面，接着后腿也趴下，头垂到地上、下巴贴地，尾巴落下，停住不动。不要翻身、不要侧躺。"
+ },
+ "clips_all": [
+  "idle",
+  "run",
+  "attack1",
+  "attack2",
+  "roar",
+  "death"
+ ]
+}

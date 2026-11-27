@@ -1,0 +1,44 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/turtle_skeleton.json",
+ "out_dir": "art/hero/torg_turtle/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/turtle_idle/motion.npz",
+   "loop": [
+    70,
+    114
+   ],
+   "from": 3
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/turtle_run/motion.npz",
+   "loop": [
+    20,
+    54
+   ],
+   "from": 10,
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/hero/torg_turtle/retimed/attack1.npz"
+  },
+  "q": {
+   "src": "art/hero/torg_turtle/q_mirror/motion.npz",
+   "range": [
+    70,
+    114
+   ]
+  },
+  "w": {
+   "src": "art/hero/torg_turtle/retimed/w.npz"
+  },
+  "r": {
+   "src": "art/hero/torg_turtle/retimed/r.npz"
+  },
+  "death": {
+   "src": "art/hero/torg_turtle/retimed/death.npz",
+   "settle": false
+  }
+ }
+}

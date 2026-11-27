@@ -1,0 +1,20 @@
+[
+ {
+  "name": "08_wide",
+  "q": "cam=-40,10,80,55",
+  "fps": 275,
+  "fpsMin": 257,
+  "calls": 229,
+  "tris": 1651186,
+  "errors": []
+ },
+ {
+  "name": "20_wide_foe",
+  "q": "cam=40,-10,80,55",
+  "fps": 290,
+  "fpsMin": 280,
+  "calls": 235,
+  "tris": 1462472,
+  "errors": []
+ }
+]

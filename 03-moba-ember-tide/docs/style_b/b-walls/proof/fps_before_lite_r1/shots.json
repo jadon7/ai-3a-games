@@ -1,0 +1,29 @@
+[
+ {
+  "name": "06_gate_me",
+  "q": "cam=-69,0,48,50,0,135",
+  "fps": 271,
+  "fpsMin": 161,
+  "calls": 110,
+  "tris": 684770,
+  "errors": []
+ },
+ {
+  "name": "08_wide",
+  "q": "cam=-40,10,80,55",
+  "fps": 213,
+  "fpsMin": 200,
+  "calls": 215,
+  "tris": 1556686,
+  "errors": []
+ },
+ {
+  "name": "20_wide_foe",
+  "q": "cam=40,-10,80,55",
+  "fps": 128,
+  "fpsMin": 126,
+  "calls": 224,
+  "tris": 1391552,
+  "errors": []
+ }
+]

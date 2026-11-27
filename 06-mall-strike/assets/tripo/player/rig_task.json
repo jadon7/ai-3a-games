@@ -1,0 +1,19 @@
+{
+ "type": "animate_rig",
+ "status": "success",
+ "progress": 100,
+ "input": {
+  "spec": "mixamo",
+  "topology": "biped",
+  "out_format": "glb",
+  "original_model_id": "9d2dde61-d0e6-4519-82e7-ecbb487f58f2"
+ },
+ "output": {
+  "model_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/bdd9dc7e-d811-4b99-b46f-1e52b559792c/tripo_rigging_bdd9dc7e-d811-4b99-b46f-1e52b559792c.glb?<签名参数已删除>",
+  "rendered_image_url": "https://openapi-dl.data.tripo3d.com/tcli_2312c7f80c4d4a718c4e11fabd853fc9/20261123/bdd9dc7e-d811-4b99-b46f-1e52b559792c/legacy_mesh.webp?<签名参数已删除>"
+ },
+ "task_id": "bdd9dc7e-d811-4b99-b46f-1e52b559792c",
+ "created_at": "2026-11-23T15:14:41.505594Z",
+ "completed_at": "2026-11-23T15:16:37.991493Z",
+ "credits_consumed": 25.0
+}

@@ -1,0 +1,54 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/lan.npz",
+ "src_build": "art/hero/lan/build.json",
+ "src_timing": "public/assets/hero/lan.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 6.0,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "hook",
+   "r_end"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "岚的全部动作 → 岚自己改成卡通比例的模型（头 1.35 倍、手 1.4 倍、大小腿 0.75、脚 1.1 倍，武器大小不变）",
+ "tgt_rig": "../rigs/lan_toon.npz",
+ "tgt_model": "../models/lan_toon_rigged.glb",
+ "labels": [
+  "岚（原）",
+  "卡通·只搬旋转",
+  "卡通·加脚 IK"
+ ],
+ "name": "lan_to_toon"
+}

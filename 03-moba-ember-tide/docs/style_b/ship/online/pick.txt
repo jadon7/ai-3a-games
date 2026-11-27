@@ -1,0 +1,41 @@
+{
+ "home": {
+  "itiButton": true,
+  "itiTitle": "伊缇 · 绯刃（中单 · 刺客）",
+  "soon": []
+ },
+ "picks": "打包版里没法数",
+ "pick": [
+  "ugo",
+  "osen",
+  "iti",
+  "torg",
+  "gorran",
+  "lan",
+  "kaz",
+  "seren",
+  "vero",
+  "moko",
+  "hedda"
+ ],
+ "clickedIti": true,
+ "lineup": {
+  "url": "?h=iti&diff=normal&pos=mid&a=torg%2Ckaz%2Citi%2Cvero%2Cmoko&b=gorran%2Clan%2Cosen%2Cseren%2Chedda",
+  "a": [
+   "torg",
+   "kaz",
+   "iti",
+   "vero",
+   "moko"
+  ],
+  "b": [
+   "gorran",
+   "lan",
+   "osen",
+   "seren",
+   "hedda"
+  ]
+ },
+ "errors": []
+}
+pick exit 0

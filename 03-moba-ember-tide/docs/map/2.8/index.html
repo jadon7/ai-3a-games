@@ -1,0 +1,218 @@
+<title>烬与潮 地图收尾</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：2.8 验收。顶部说明 → 旗和火盆 → 水面 → 发光预算 → 帧率 → 巡检 → 整个阶段 2 留下的问题 → 没验证的、花费 */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --surface-2:#e3e6ea; --fg:#14181f; --muted:#59616e; --line:#cdd3da;
+  --ember:#a84f08; --tide:#0c7480; --ok:#1d7a4a; --part:#9a6a00; --miss:#a8322a; --shot:#07090c;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0d1014; --surface:#151a21; --surface-2:#1f2630; --fg:#e7ebf0; --muted:#98a2b0; --line:#2a323d; --ember:#f0a03c; --tide:#4fd0d8; --ok:#5bd08f; --part:#e8b84a; --miss:#f0786c; --shot:#030405; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--tide);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--ember)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--tide)}
+.lede{margin:14px 0 0;max-width:46em;color:var(--muted);font-size:16px}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em}
+.note{margin:0 0 18px;color:var(--muted);font-size:14px;max-width:52em}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.how section{min-width:0;border-top:2px solid var(--fg);padding-top:12px}
+.how h3{margin:0 0 6px;font:700 15px/1.4 var(--body)}
+.how p,.how li{font-size:14px;line-height:1.7}
+.how ul{margin:0;padding-left:1.2em}
+.how p{margin:0}
+code,kbd{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.pairs{display:flex;flex-direction:column;gap:30px}
+.pair{display:flex;flex-direction:column;gap:8px}
+.pair h3{margin:0;font:700 16px/1.4 var(--body)}
+.pair p{margin:0;font-size:14px;color:var(--muted);max-width:60em}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:5px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--shot)}
+figcaption{font-size:12.5px;line-height:1.5;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.who{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.who.ours{border-color:var(--ember);color:var(--ember)}
+.who.old{border-style:dashed}
+.big img{aspect-ratio:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.id{font:600 13px var(--util);white-space:nowrap}
+.st{font-weight:700;white-space:nowrap}
+.st.ok{color:var(--ok)} .st.part{color:var(--part)} .st.miss{color:var(--miss)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.7}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:32px} }
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 0;padding:0;list-style:none;font-size:13.5px}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.plan{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;align-items:start}
+.plan ul.facts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.7}
+.scale{display:flex;align-items:flex-end;gap:14px}
+.scale figure:first-child{flex:300 1 0}
+.scale figure:last-child{flex:156 1 0}
+.scale img{aspect-ratio:1/1}
+table.narrow{min-width:520px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.n{font:500 14px var(--util)}
+@media (max-width:860px){ .plan{grid-template-columns:minmax(0,1fr)} }
+
+.st2{font-weight:700;white-space:nowrap}
+.st2.ok{color:var(--ok)} .st2.part{color:var(--part)} .st2.miss{color:var(--miss)}
+.said{margin:0;padding:10px 14px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;line-height:1.7;max-width:60em}
+.said b{font:600 11.5px/1 var(--util);letter-spacing:.08em;color:var(--ember);margin-right:10px;white-space:nowrap}
+.row.tall figure img{aspect-ratio:4/5}
+.who.new{border-color:var(--tide);color:var(--tide)}
+.pair ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.7;color:var(--muted);max-width:62em}
+.row.one{grid-template-columns:minmax(0,1fr)}
+.wide img{aspect-ratio:auto}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 阶段 2.8 · 水面、光影和收尾</p>
+  <h1>旗和火盆加上了，地图<em>收尾</em></h1>
+  <p class="lede">先做了你要的旗帜和火盆，然后是 2.8 的收尾：粼光铺到了所有水面，查了一遍发光的东西，把绘制次数降下来，全图巡检了十二个位置并修了查出来的两处问题。这是地图阶段的最后一关。手机只在电脑上模拟了屏幕尺寸，没有上真机。</p>
+</header>
+
+<section>
+  <h2>全图</h2>
+  <div class="row">
+    <figure class="wide"><img src="img/top.jpg" alt="正俯视" loading="lazy"><figcaption><span class="who ours">现在</span>正俯视</figcaption></figure>
+    <figure class="wide"><img src="img/persp.jpg" alt="斜看全图" loading="lazy"><figcaption><span class="who ours">现在</span>斜看全图</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>旗帜和火盆</h2>
+  <p class="note">六个口子，每个口子两面旗、两个火盆。旗立在两根门墩的顶上，随风轻轻摆；火盆坐在台阶底下两侧护墙的方墩上。</p>
+  <div class="how">
+    <section><h3>我方</h3><p>深青底、金边、一弯新月的燕尾旗。火盆是青铜盆里几颗小晶体，是灯不是火（发光只用阵营色，我方是青色）。</p></section>
+    <section><h3>对方</h3><p>暗红底、铁边、一团火的燕尾旗。火盆是铁盆里一堆余烬加一小簇火苗，火苗会忽大忽小。</p></section>
+    <section><h3>发光</h3><p>只有盆里那一点亮，外面一圈很小的光晕，没有加照亮周围的灯。</p></section>
+  </div>
+  <div class="row" style="margin-top:18px">
+    <figure class="wide"><img src="img/c_gate.jpg" alt="2.2 定的高地口子：门墩旁有一面旗" loading="lazy"><figcaption><span class="who ">设计稿</span>2.2 定的高地口子：门墩旁有一面旗</figcaption></figure>
+    <figure class="wide"><img src="img/gate_me.jpg" alt="我方中路口子，从外面正对着看" loading="lazy"><figcaption><span class="who ours">现在</span>我方中路口子，从外面正对着看</figcaption></figure>
+  </div>
+  <div class="row">
+    <figure class="wide"><img src="img/gate_foe.jpg" alt="对方中路口子，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>对方中路口子，游戏镜头</figcaption></figure>
+    <figure class="wide"><img src="img/gate_side.jpg" alt="我方下路口子，游戏镜头" loading="lazy"><figcaption><span class="who ours">现在</span>我方下路口子，游戏镜头</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>粼光铺到所有水面</h2>
+  <p class="note">你最早说过河面上细碎的反光好，希望更多水面有。河道和两个 Boss 潭本来就是这一套；这一关把出生点的水池、流下台阶的水道、水晶脚下那圈水槽也换成了同一套。对方那边是余烬槽，不是水，没有粼光。</p>
+  <div class="row">
+    <figure class="wide"><img src="img/pool.jpg" alt="我方出生点的水池和水道" loading="lazy"><figcaption><span class="who ours">现在</span>我方出生点的水池和水道</figcaption></figure>
+    <figure class="wide"><img src="img/ring.jpg" alt="我方水晶脚下的一圈水槽" loading="lazy"><figcaption><span class="who ours">现在</span>我方水晶脚下的一圈水槽</figcaption></figure>
+  </div>
+  <div class="row">
+    <figure class="wide"><img src="img/river.jpg" alt="中路过河" loading="lazy"><figcaption><span class="who ours">现在</span>中路过河</figcaption></figure>
+    <figure class="wide"><img src="img/boss.jpg" alt="Boss 潭" loading="lazy"><figcaption><span class="who ours">现在</span>Boss 潭</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>发光预算</h2>
+  <p class="note">你说过光污染严重。现在整张图会发光的东西只有下面这些，都只用阵营色（我方青、对方橙红），没有全屏的辉光。</p>
+  <div class="tbl"><table class="narrow">
+    <thead><tr><th>发光的东西</th><th class="n">数量</th><th>怎么亮</th></tr></thead>
+    <tbody>
+      <tr><td>防御塔顶的晶体和塔身缝里的芯</td><td class="n">18 座</td><td>晶体自己亮，外面一个小光晕</td></tr>
+      <tr><td>水晶，和它四角的小灯柱</td><td class="n">2 座</td><td>同上，光晕大一号</td></tr>
+      <tr><td>出生点（我方是拱门上的晶体，对方是火盆坑）</td><td class="n">2 处</td><td>一小块</td></tr>
+      <tr><td>口子上的火盆</td><td class="n">12 个</td><td>盆里一点亮，对方有火苗</td></tr>
+      <tr><td>真正照亮周围的灯</td><td class="n">4 盏</td><td>每一帧分给离镜头最近的四处，其余不照亮周围</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:14px">地面、植物、墙、杂物都不发光。水面的粼光是反光，不是发光。</p>
+</section>
+
+<section>
+  <h2>帧率和绘制次数</h2>
+  <div class="tbl"><table class="narrow">
+    <thead><tr><th>看哪里</th><th class="n">三角形</th><th class="n">绘制次数</th><th class="n">帧率</th></tr></thead>
+    <tbody>
+      <tr><td>游戏镜头，十五个位置</td><td class="n">29 万到 58 万</td><td class="n">39 到 70</td><td class="n">60</td></tr>
+      <tr><td>我方基地全景</td><td class="n">89 万</td><td class="n">132（原来 204）</td><td class="n">60</td></tr>
+      <tr><td>斜看全图</td><td class="n">232 万</td><td class="n">538（原来 881）</td><td class="n">60</td></tr>
+      <tr><td>手机尺寸（电脑上模拟），竖屏 375×812 和横屏 812×375</td><td class="n">34 万到 69 万</td><td class="n">43 到 83</td><td class="n">60</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:14px">前三行是在这台电脑上用不显示窗口的浏览器量的，画面 1280×720。个别截图的那一瞬间读到过 54 到 59，停稳三秒再读都是 60。</p>
+  <div class="how" style="margin-top:20px">
+    <section><h3>做了什么</h3><ul>
+      <li>每件建筑原来是几十个小网格，现在不转的部分按材质并成几个，全图的绘制次数少了四成。</li>
+      <li>给水面算水深的那张图换了一种存法：原来的存法在不少手机上不能用。</li>
+      <li>触屏可以两指捏合缩放。</li>
+      <li>页面一打开先显示“正在搭地图”，不再是一两秒的黑屏。</li>
+    </ul></section>
+    <section><h3>手机</h3><p>下图是把窗口缩成手机横屏大小截的。能正常显示，60 帧，但这是电脑的显卡在跑，不代表真手机的帧率。真机没有测。</p><figure><img src="img/phone.jpg" alt="手机横屏尺寸（812×375）" loading="lazy"><figcaption><span class="who old">模拟</span>手机横屏尺寸（812×375）</figcaption></figure></section>
+  </div>
+</section>
+
+<section>
+  <h2>全图巡检</h2>
+  <p class="note">用游戏镜头在十二个位置各看了一遍：三条路的塔位、河道两头、两个 Boss 潭、两方野区。查出两处问题，都修了。</p>
+  <div class="row">
+    <figure class="wide"><img src="img/bot.jpg" alt="下路贴着南墙：原来墙外的树会伸进画面底部挡住路。镜头是朝北看的，所以南墙外不再种贴墙的树，山石也压矮了" loading="lazy"><figcaption><span class="who ours">修好后</span>下路贴着南墙：原来墙外的树会伸进画面底部挡住路。镜头是朝北看的，所以南墙外不再种贴墙的树，山石也压矮了</figcaption></figure>
+    <figure class="wide"><img src="img/corner.jpg" alt="河道尽头的蹲伏草丛：原来两方的草在河道中线上混在一起，红里夹绿。现在各长各的一侧" loading="lazy"><figcaption><span class="who ours">修好后</span>河道尽头的蹲伏草丛：原来两方的草在河道中线上混在一起，红里夹绿。现在各长各的一侧</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>整个地图阶段留下的问题</h2>
+  <p class="note">这是地图的最后一关，把 2.3 到 2.7 各关我自己列过、到现在还没解决的问题汇总在这里。</p>
+  <div class="cols">
+    <section>
+      <h3>画面上的</h3>
+      <ul>
+        <li>对方的三档塔不够厚重，对方水晶的铁爪偏瘦。</li>
+        <li>晶体是纯色的切面体，没有内部的层次。</li>
+        <li>城墙外的树是圆鼓鼓的叶团，比设计稿简单。</li>
+        <li>地面的清晰度比样板间低一档；野区的土路是染的，不是画的。</li>
+        <li>地图里没有大块的树影。</li>
+        <li>广场上的徽记铺地没做；石头脚下的蕨和小花没做。</li>
+        <li>没有昼夜。</li>
+      </ul>
+    </section>
+    <section>
+      <h3>要等后面阶段的</h3>
+      <ul>
+        <li>挡路的范围：台阶两侧的护墙、塔的台基、水晶的灯柱、出生点的石像、倒木和树桩，都没有和布局逐个核对。阶段 4 做寻路前要同步。</li>
+        <li>没有英雄和小兵：台阶怎么走、草丛能不能藏人、对方深色广场上角色看不看得清，都要到阶段 3 才能验证。</li>
+        <li>旧的两版地图代码（<code>src/world/</code>）还在项目里，没有删。</li>
+      </ul>
+    </section>
+    <section>
+      <h3>没验证的，和花费</h3>
+      <ul>
+        <li>真手机没有测，只模拟了屏幕尺寸。</li>
+        <li>快速拖动镜头时，近处的地面细图来不来得及加载，没有测。</li>
+        <li>内存占用没有量。</li>
+        <li>真实浏览器只在较小的面板里测过（1320×628，60 帧）。</li>
+        <li>这一关没有用即梦、Tripo、Codex。</li>
+        <li>代码没有提交（项目不是 git 仓库）。</li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+<footer class="foot">打开方式：开发服务器起着的时候访问 <code>localhost:5183/map.html</code>。拖动或 WASD 平移，滚轮（触屏用两指）缩放，Q / E 转镜头。</footer>
+</div>

@@ -1,0 +1,15 @@
+{
+ "name": "troll",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/troll_skeleton.json",
+ "out": "art/unit/troll/game.glb",
+ "packed": "public/assets/unit/troll.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/unit/troll/motions/idle.npz",
+  "run": "art/unit/troll/motions/run.npz",
+  "attack1": "art/unit/troll/motions/attack1.npz",
+  "attack2": "art/unit/troll/motions/attack2.npz",
+  "roar": "art/unit/troll/motions/roar.npz",
+  "death": "art/unit/troll/motions/death.npz"
+ }
+}

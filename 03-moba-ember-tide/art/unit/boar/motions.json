@@ -1,0 +1,35 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/boar_skeleton.json",
+ "out_dir": "art/unit/boar/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/boar_idle/motion_dg.npz",
+   "loop": [
+    100,
+    119
+   ],
+   "from": 0
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/boar_run2/motion_dg.npz",
+   "loop": [
+    26,
+    38
+   ],
+   "from": 50,
+   "stride": true,
+   "speed": 2.5
+  },
+  "attack1": {
+   "src": "art/unit/boar/retimed/attack1.npz"
+  },
+  "attack2": {
+   "src": "art/unit/boar/retimed/attack2.npz"
+  },
+  "death": {
+   "src": "art/unit/boar/retimed/death.npz",
+   "settle": false
+  }
+ }
+}

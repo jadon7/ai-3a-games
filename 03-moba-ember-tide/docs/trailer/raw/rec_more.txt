@@ -1,0 +1,42 @@
+== j_camp
+file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:77
+            this._reject(callback, new TargetCloseError('Target closed'));
+                                   ^
+
+TargetCloseError: Protocol error (Runtime.callFunctionOn): Target closed
+    at CallbackRegistry.clear (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:77:36)
+    at CdpCDPSession._onClosed (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/CDPSession.js:105:25)
+    at #onClose (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Connection.js:171:21)
+    at WebSocket.<anonymous> (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/node/NodeWebSocketTransport.js:43:30)
+    at callListener (/Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/ws/lib/event-target.js:290:14)
+    at WebSocket.onClose (/Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/ws/lib/event-target.js:220:9)
+    at WebSocket.emit (node:events:508:20)
+    at WebSocket.emitClose (/Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/ws/lib/websocket.js:300:10)
+    at Socket.socketOnClose (/Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/ws/lib/websocket.js:1424:15)
+    at Socket.emit (node:events:508:20) {
+  cause: ProtocolError
+      at <instance_members_initializer> (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:97:14)
+      at new Callback (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:101:16)
+      at CallbackRegistry.create (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:20:26)
+      at Connection._rawSend (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Connection.js:89:26)
+      at CdpCDPSession.send (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/CDPSession.js:65:33)
+      at #evaluate (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/ExecutionContext.js:360:50)
+      at ExecutionContext.evaluateHandle (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/ExecutionContext.js:327:36)
+      at IsolatedWorld.evaluateHandle (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/IsolatedWorld.js:86:30)
+      at CdpJSHandle.evaluateHandle (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/api/JSHandle.js:154:37)
+      at WaitTask.rerun (file:///Users/jadon7/Documents/SynologyDrive/code/moba/node_modules/puppeteer-core/lib/esm/puppeteer/common/WaitTask.js:98:47)
+}
+
+Node.js v25.8.1
+== b_beast
+{"out":"docs/trailer/raw/b_beast.mp4","ok":true,"rep":{"t":319,"over":0,"kills":[3,4],"towers":[8,9],"lanes":"233 对 333","order":["push","defend"],"camps":12,"boss":["troll100%","beast35%"],"buff":[[0,0],[0,0]],"heroes":["lan L6 74% 1/1/0 金709 装1 刀6 线0 [拆塔] 跟兵线119 打46 回城27 逃跑24 在出生点回血24 清兵22","moko L7 100% 1/1/0 金589 装2 刀14 线2 [打 vero] 跟兵
+== b_troll
+{"out":"docs/trailer/raw/b_troll.mp4","ok":true,"rep":{"t":668,"over":0,"kills":[6,12],"towers":[7,8],"lanes":"133 对 233","order":["defend","boss"],"camps":12,"boss":["troll71%","beast100%"],"buff":[[0,0],[0,0]],"heroes":["lan L11 0% 3/5/2 金356 装4 刀14 线0 [阵亡] 跟兵线205 打165 清兵91 阵亡75 守29 回防25","vero* L14 91% 6/3/1 金444 装6 刀25 线1 [打 岩石巨魔] 跟兵线
+== t_tower
+{"out":"docs/trailer/raw/t_tower.mp4","ok":true,"rep":{"t":683,"over":0,"kills":[3,11],"towers":[2,8],"lanes":"101 对 233","order":["defend","push"],"camps":12,"boss":["troll 还有23秒","beast 还有162秒"],"buff":[[0,112],[0,0]],"heroes":["lan L11 85% 1/5/1 金1234 装3 刀26 线0 [打 vero] 跟兵线231 打117 清兵98 阵亡68 回防49 回城33","osen* L14 23% 3/1/5 金1116 装6 刀11 线2 
+== l_clash
+{"out":"docs/trailer/raw/l_clash.mp4","ok":true,"rep":{"t":69,"over":0,"kills":[1,1],"towers":[9,9],"lanes":"333 对 333","order":["-","-"],"camps":12,"boss":["troll 还有231秒","beast 还有81秒"],"buff":[[0,0],[0,0]],"heroes":["lan L1 100% 0/0/0 金137 装0 刀0 线0 [跟兵线] 跟兵线30 打13 回城8 逃跑6 在出生点回血6 等兵5","vero* L3 24% 1/0/0 金505 装0 刀2 线1 [清兵] �
+== e_coreE2
+{"out":"docs/trailer/raw/e_coreE2.mp4","ok":true,"rep":{},"errors":[]}
+== h_end2
+{"out":"docs/trailer/raw/h_end2.mp4","ok":true,"rep":{"t":1197,"over":-1,"kills":[18,19],"towers":[0,7],"lanes":"000 对 133","order":["defend","push"],"camps":12,"boss":["troll 还有91秒","beast 还有122秒"],"buff":[[72,0],[0,21]],"heroes":["lan L15 0% 5/9/7 金2812 装6 刀36 线0 [阵亡] 打350 跟兵线290 阵亡197 清兵132 回防52 在出生点回血42","gorran* L15 0% 10/4/4 金6382 �

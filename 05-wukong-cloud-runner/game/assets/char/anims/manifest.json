@@ -1,0 +1,78 @@
+{
+ "file": "wukong_anims.glb",
+ "note": "video2rig 管线生成（即梦 Seedance 2.5 样片 480p 5 秒 → 本角色专用关节检测器 → 求解）。只含骨架节点和动画；旋转轨按游戏 wukong.glb 的骨骼节点（mixamorig:*）局部坐标写，胯另有一条位移轨（游戏加载器会丢掉）。循环片段首尾已融合、去掉水平位移和转向漂移、手腕平滑、统一 30 帧。",
+ "clips": [
+  {
+   "name": "look",
+   "file": "wukong_anims.glb",
+   "duration": 3.0,
+   "loop": true,
+   "fps": 30,
+   "frames": 91,
+   "frames_inconsistent": 0,
+   "frames_total": 121,
+   "reproj_pct": 0.64,
+   "note": "左手搭凉棚张望；视频里转头转身幅度偏小（胯约 13° 以内），动作比较含蓄。左大臂和前臂解出约 35°/39° 的自转，近看袖子可能略拧"
+  },
+  {
+   "name": "scratch",
+   "file": "wukong_anims.glb",
+   "duration": 1.6,
+   "loop": true,
+   "fps": 30,
+   "frames": 49,
+   "frames_inconsistent": 0,
+   "frames_total": 121,
+   "reproj_pct": 0.72,
+   "note": "抓耳挠腮；循环取视频第 28-66 帧（只有 1.6 秒，含挠头部分），首尾差 2.5% 身高已摊平"
+  },
+  {
+   "name": "staff",
+   "file": "wukong_anims.glb",
+   "duration": 4.5,
+   "loop": false,
+   "fps": 30,
+   "frames": 136,
+   "frames_inconsistent": 1,
+   "frames_total": 121,
+   "reproj_pct": 1.61,
+   "note": "耍棍花后扛肩站定（一次性）；棍花是靠手腕和前臂转出来的，比视频慢、幅度小；原视频转身最多 29°，结尾已拉回正面"
+  },
+  {
+   "name": "proud",
+   "file": "wukong_anims.glb",
+   "duration": 3.467,
+   "loop": true,
+   "fps": 30,
+   "frames": 105,
+   "frames_inconsistent": 0,
+   "frames_total": 121,
+   "reproj_pct": 1.25,
+   "note": "左手叉腰仰头大笑；右手竖拄棍，但棍子比视频略斜（手腕自转读不准）"
+  },
+  {
+   "name": "surf",
+   "file": "wukong_anims.glb",
+   "duration": 2.8,
+   "loop": true,
+   "fps": 30,
+   "frames": 85,
+   "frames_inconsistent": 0,
+   "frames_total": 121,
+   "reproj_pct": 0.69,
+   "note": "半蹲压重心随气流微调平衡，可循环"
+  },
+  {
+   "name": "point",
+   "file": "wukong_anims.glb",
+   "duration": 4.833,
+   "loop": false,
+   "fps": 30,
+   "frames": 146,
+   "frames_inconsistent": 0,
+   "frames_total": 121,
+   "reproj_pct": 1.0,
+   "note": "举棍向前一指再收回（一次性）；视频里是握棍尾向前平指，模型里棍子握在中段，所以指出去时棍子是斜向前上方的"
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "kind": "mixamo",
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "src_rig": "../rigs/lan.npz",
+ "src_build": "art/hero/lan/build.json",
+ "src_timing": "public/assets/hero/lan.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lan_rigged.glb",
+ "src_game_h": 3.3,
+ "game_h": 3.3,
+ "move_speed": 6.0,
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    30,
+    10
+   ],
+   [
+    90,
+    12
+   ]
+  ],
+  "ortho": 1.25,
+  "zc": 0.48
+ },
+ "video": {
+  "clips": [
+   "run",
+   "attack1",
+   "hook",
+   "r_end"
+  ],
+  "loops": {
+   "run": 4
+  }
+ },
+ "title": "岚的全部动作 → 塞伦的模型（手臂长 10%、肩宽 22%、胯低 5%）",
+ "tgt_rig": "../rigs/seren.npz",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/seren_rigged.glb",
+ "hide_weapon_tgt": true,
+ "labels": [
+  "岚（原）",
+  "塞伦·只搬旋转",
+  "塞伦·加脚 IK"
+ ],
+ "name": "lan_to_seren"
+}

@@ -1,0 +1,12 @@
+balance 任务的回归（改前 = 45a0b15 的快照，端口 5249；改后 = r9-balance d89fabc，端口 5219）
+
+1. npx tsc --noEmit -p .：无报错。
+2. 鼠标键盘 click_test（click_before.json / click_after.json）：26 项一致，只有“右键点小兵后它剩的血”483 → 485（普攻时机的正常抖动）。报错都是空的。
+   触屏 touch_test（touch_before.json / touch_after.json）：31 项都在、都过。数值项有抖动：点一下攻击键小兵掉血 668 → 502（以前各次记录在 484–517 之间，改前这次的 668 是偏高的那次），点地面走了 3.6 → 2.9 米（COMMON 说的 4–9 米跳动那一项）。
+   第一次跑改后的触屏时会话中途断了（detached Frame），重跑一次全过。
+3. 全电脑对战 match_batch.sh（match.txt、match/lan_normal.txt）：h=lan 普通，16:58 分出胜负（1 队赢，8:12），errors 空，帧率 58。
+   另外改后 8 局 + 镜像 6 局（tools/balance_match.mjs）全部分出胜负、报错都是空的（有三局遇到别的任务抢显卡的 Shader Error，脚本自动重跑）。
+4. npm run build（build.txt）：能打包。
+5. 观战（director=1）、测试场（arena=1，arena_kaz.jpg）、单人（solo=1，click/touch 测试走的就是它）、手机布局（touch=1，touch_test）都能用。
+6. 团战帧率：tools/fps_fight.mjs 要等“两边各 N 个人挤在 13–16 米内”，5v5 观战里 N=4、3、2 都等了 8–15 分钟没等到（第一次是机器负载 400 多的时候），没量成。
+   换成 fps_mid.mjs：观战 16 倍速到对局 10 分钟、切回 1 倍速每秒读一次，共 12 次。改前最低 60、平均 60（画面附近最多 6 个英雄挤在一起）；改后最低 60、平均 60（最多 8 个）。（fps_before.json / fps_after.json）

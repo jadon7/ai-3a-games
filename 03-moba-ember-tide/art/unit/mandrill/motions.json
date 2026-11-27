@@ -1,0 +1,44 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/mandrill_skeleton.json",
+ "out_dir": "art/unit/mandrill/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/mandrill_idle_fix/motion.npz",
+   "loop": [
+    96,
+    118
+   ],
+   "from": 1
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/mandrill_run_fix/motion.npz",
+   "loop": [
+    24,
+    24
+   ],
+   "from": 56,
+   "to": 100,
+   "stride": true
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/mandrill_attack1_fix/motion.npz",
+   "range": [
+    74,
+    118
+   ],
+   "speed": 1.4
+  },
+  "death": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/mandrill_death_fix/motion.npz",
+   "range": [
+    2,
+    100
+   ],
+   "settle": false
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf_skeleton.json",
+ "out_dir": "art/unit/wolf/motions",
+ "fps": 30,
+ "actions": {
+  "idle": {
+   "src": "art/unit/wolf/retimed/idle.npz",
+   "loop": [
+    112,
+    112
+   ],
+   "pick": [
+    0,
+    112
+   ]
+  },
+  "run": {
+   "src": "art/unit/wolf/retimed/run.npz",
+   "loop": [
+    38,
+    38
+   ],
+   "pick": [
+    0,
+    38
+   ],
+   "stride": true
+  },
+  "attack1": {
+   "src": "art/unit/wolf/retimed/attack1.npz"
+  },
+  "death": {
+   "src": "art/unit/wolf/retimed/death.npz",
+   "settle": false
+  }
+ }
+}

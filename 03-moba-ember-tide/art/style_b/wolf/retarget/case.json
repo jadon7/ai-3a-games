@@ -1,0 +1,42 @@
+{
+ "name": "wolf_b",
+ "title": "苔背狼：旧模型的全部动作 → 卡通厚涂的新模型（同一只狼，两次 Tripo 绑骨，骨骼名大半一样，右前腿错开一位、脖子和头的名字不同，按骨骼角色对应）",
+ "kind": "quadruped",
+ "mode": "delta",
+ "src_rig": "../rigs/wolf.npz",
+ "tgt_rig": "../rigs/wolf_b.npz",
+ "src_build": "art/unit/wolf/build.json",
+ "src_timing": "art/style_b/wolf/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf_b.blend",
+ "tgt_blend_name": "wolf_b",
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 1.45,
+ "game_h": 1.55,
+ "move_speed": 5.4,
+ "tip_src": "tripo::Head_2",
+ "tip_tgt": "tripo::Head_1",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "tripo::Spine_0": "tripo::Spine_0", "tripo::Spine_1": "tripo::Spine_1", "tripo::Spine_2": "tripo::Spine_2",
+  "tripo::Spine_3": "tripo::Spine_3", "tripo::Spine_4": "tripo::Head_0", "tripo::Head_0": "tripo::Head_1", "tripo::Head_1": "tripo::Head_2", "bone_18": "tripo::Head_3",
+  "bone_4": "bone_4", "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_0", "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_1", "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_2", "tripo::0_Left_Limb_3": "tripo::0_Left_Limb_3",
+  "bone_9": "tripo::0_Right_Limb_0", "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_1", "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_2", "tripo::0_Right_Limb_2": "tripo::0_Right_Limb_3", "tripo::0_Right_Limb_3": "tripo::0_Right_Limb_4",
+  "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_0", "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_1", "tripo::1_Left_Limb_2": "tripo::1_Left_Limb_2", "tripo::1_Left_Limb_3": "tripo::1_Left_Limb_3",
+  "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_0", "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_1", "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_2", "tripo::1_Right_Limb_3": "tripo::1_Right_Limb_3",
+  "bone_23": "bone_23", "tripo::Tail_0": "tripo::Tail_0", "tripo::Tail_1": "tripo::Tail_1", "tripo::Tail_2": "tripo::Tail_2", "tripo::Tail_3": "tripo::Tail_3", "tripo::Tail_4": "bone_28"
+ },
+ "legs": [
+  {"tgt": ["tripo::0_Left_Limb_0", "tripo::0_Left_Limb_1", "tripo::0_Left_Limb_2"], "src_end": "tripo::0_Left_Limb_2"},
+  {"tgt": ["tripo::0_Right_Limb_0", "tripo::0_Right_Limb_1", "tripo::0_Right_Limb_2"], "src_end": "tripo::0_Right_Limb_3"},
+  {"tgt": ["tripo::1_Left_Limb_0", "tripo::1_Left_Limb_1", "tripo::1_Left_Limb_2"], "src_end": "tripo::1_Left_Limb_2"},
+  {"tgt": ["tripo::1_Right_Limb_0", "tripo::1_Right_Limb_1", "tripo::1_Right_Limb_2"], "src_end": "tripo::1_Right_Limb_2"}
+ ],
+ "ground_chains": [{"name": "头", "base": "tripo::Spine_3", "verts_of": "tripo::Head_1"}],
+ "variants": {"fk": {"ik": false}, "ik": {"ik": true}},
+ "out_dir": "motions",
+ "labels": ["旧狼（原）", "卡通狼·只搬旋转", "卡通狼·加脚 IK"],
+ "render": {"frames": 8, "views": [[40, 14], [90, 10]], "ortho": 2.4, "zc": 0.45},
+ "video": {"clips": ["run", "attack1", "death"], "loops": {"run": 4}, "spacing": 2.0, "view": [22, 22], "zc": 0.4}
+}

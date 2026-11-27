@@ -1,0 +1,121 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.165.0 (update available 4.166.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 369 files from the assets directory /Users/jadon7/Documents/SynologyDrive/code/moba/dist
+🌀 Starting asset upload...
+🌀 Found 328 new or modified static assets to upload. Proceeding with upload...
++ /assets/unit/units.json
++ /assets/unit/toad.json
++ /assets/unit/beast.json
++ /assets/hero/moko.json
++ /assets/hero/hedda.json
++ /assets/hero/osen.json
++ /assets/ui/skill/osen_e.webp
++ /assets/ui/item/edge.webp
++ /assets/ui/item/great.webp
++ /assets/ui/item/reaper.webp
++ /assets/ui/item/forge.webp
++ /assets/ui/item/vamp.webp
++ /assets/ui/item/coral.webp
++ /assets/ui/item/charm.webp
++ /assets/ui/skill/osen_w.webp
++ /assets/ui/item/bulwark.webp
++ /assets/ui/buff/troll.webp
++ /assets/ui/item/conch.webp
++ /assets/ui/item/locket.webp
++ /assets/ui/gold.webp
++ /assets/ui/item/boots_as.webp
++ /assets/ui/skill/ugo_w.webp
++ /assets/ui/skill/seren_r.webp
++ /assets/ui/skill/lan_w.webp
++ /assets/ui/skill/seren_w.webp
++ /assets/ui/skill/seren_e.webp
++ /assets/ui/skill/moko_e.webp
++ /assets/ui/item/boots_cd.webp
++ /assets/ui/skill/lan_q.webp
++ /assets/ui/skill/moko_q.webp
++ /assets/ui/skill/seren_q.webp
++ /assets/ui/skill/gorran_e.webp
++ /assets/ui/skill/torg_w.webp
++ /assets/ui/skill/vero_e.webp
++ /assets/ui/skill/vero_w.webp
++ /assets/ui/skill/kaz_e.webp
++ /assets/ui/skill/vero_q.webp
++ /assets/ui/skill/hedda_r.webp
++ /assets/ui/skill/torg_q.webp
++ /assets/map/ground/c_0_7.webp
++ /assets/map/ground/c_7_6.webp
++ /assets/map/ground/c_0_2.webp
++ /assets/map/ground/c_6_7.webp
++ /assets/map/ground/c_5_7.webp
++ /assets/ui/face/lan.webp
++ /assets/ui/face/osen.webp
++ /assets/ui/face/vero.webp
++ /assets/map/ground/c_0_4.webp
++ /assets/map/ground/c_3_0.webp
++ /assets/map/ground/c_4_7.webp
++ /assets/map/ground/c_2_4.webp
++ /assets/map/ground/c_7_2.webp
++ /assets/map/ground/c_7_1.webp
++ /assets/map/ground/c_5_3.webp
++ /assets/map/ground/c_0_5.webp
++ /assets/map/ground/c_0_6.webp
++ /assets/map/ground/c_5_4.webp
++ /assets/map/ground/c_6_2.webp
++ /assets/map/ground/c_4_4.webp
++ /assets/map/ground/c_3_3.webp
++ /assets/map/ground/c_6_3.webp
++ /assets/map/ground/c_3_1.webp
++ /assets/map/ground/c_1_3.webp
++ /assets/map/ground/c_4_3.webp
++ /assets/map/ground/c_2_1.webp
++ /assets/map/ground/c_3_4.webp
++ /assets/map/ground/c_1_2.webp
++ /assets/ui/emblem.webp
++ /assets/kit/tower_me_3.glbz
++ /assets/kit/tower_me_1.glb
++ /assets/kit/tower_foe_3.glbz
++ /assets/kit/core_me.glbz
++ /assets/kit/tower_me_2.glb
++ /assets/ui/wide/vero.webp
++ /assets/ui/splash/hedda.webp
++ /assets/ui/wide/seren.webp
++ /assets/kit/tower_foe_2.glb
++ /assets/ui/splash/osen.webp
++ /assets/ui/wide/moko.webp
++ /assets/ui/splash/seren.webp
++ /assets/kit/spawn_foe.glbz
++ /assets/ui/splash/torg.webp
++ /assets/ui/splash/iti.webp
++ /assets/unit/melee.glbz
++ /assets/unit/m/toad.glbz
++ /assets/unit/m/wolf.glbz
++ /assets/unit/ranged.glb
++ /assets/unit/m/melee.glb
++ /assets/kit/spawn_me.glb
++ /assets/hero/m/ugo.glbz
++ /assets/unit/m/beast.glbz
++ /assets/hero/m/kaz.glbz
++ /assets/hero/m/lan.glbz
++ /assets/hero/m/gorran.glbz
++ /assets/hero/m/moko.glbz
++ /assets/hero/ugo.glbz
++ /assets/unit/beast.glbz
++ /assets/hero/m/seren.glbz
++ /assets/hero/torg.glbz
++ /assets/unit/m/beast.glb
+   (truncating changed assets log, set `WRANGLER_LOG=debug` environment variable to see full diff)
+Uploaded 110 of 328 assets
+Uploaded 219 of 328 assets
+Uploaded 328 of 328 assets
+✨ Success! Uploaded 328 files (18 already uploaded) (22.43 sec)
+
+Total Upload: 0.31 KiB / gzip: 0.22 KiB
+Uploaded jinyuchao (25.99 sec)
+Deployed jinyuchao triggers (1.78 sec)
+  moba.dsxzai.com (custom domain)
+Current Version ID: fdfeca74-5a77-4ec1-bb1c-e65f68dea379

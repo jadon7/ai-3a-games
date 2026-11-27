@@ -1,0 +1,252 @@
+{
+ "items": [
+  {
+   "id": "moko",
+   "label": "摩珂 · 引潮人（沉月会，辅助）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/moko-p1-sheet.png"
+  },
+  {
+   "id": "vero",
+   "label": "薇萝 · 烬弩（烬誓庭，射手）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h2-vero-sheet-a.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/vero-p1-sheet-v3.png"
+  },
+  {
+   "id": "hedda",
+   "label": "赫达 · 缚钳（烬誓庭，辅助）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h8-hedda-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/hedda-p1-sheet-v2.png"
+  },
+  {
+   "id": "ugo",
+   "label": "乌戈 · 渊灯（沉月会，法师）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h9-ugo-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/ugo-p1-sheet.png"
+  },
+  {
+   "id": "seren",
+   "label": "塞伦 · 珠铳（沉月会，射手）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h10-seren-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/seren-p1-sheet.png"
+  },
+  {
+   "id": "gorran",
+   "label": "葛隆 · 砧卫 备选（b-concept 原图 → 提亮）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/gorran-p1-sheet.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/gorran-p1-sheet-bright.png"
+  },
+  {
+   "id": "torg",
+   "label": "托尔格 · 沉钟（钟龟，沉月会，斗士）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/torg-p1-sheet.png"
+  },
+  {
+   "id": "osen",
+   "label": "奥森 · 烛语者（烛角鹿，烬誓庭，法师）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/osen-p1-sheet.png"
+  },
+  {
+   "id": "kaz",
+   "label": "卡兹 · 焚爪（猞猁，烬誓庭，打野）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h7-kaz-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/kaz-p1-sheet-v2.png"
+  },
+  {
+   "id": "melee",
+   "label": "近战小兵（两队共用，中性配色）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/melee_ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/minion-melee-p1-sheet.png"
+  },
+  {
+   "id": "ranged",
+   "label": "远程小兵（两队共用，中性配色）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged_ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/minion-ranged-p1-sheet.png"
+  },
+  {
+   "id": "wolf",
+   "label": "苔背狼（小营地）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/wolf/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/wolf-p1-sheet-v2.png"
+  },
+  {
+   "id": "boar",
+   "label": "烬鬃野猪（红增益）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/boar/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/boar-p1-sheet.png"
+  },
+  {
+   "id": "toad",
+   "label": "石背巨蟾（蓝增益）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/toad/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/toad-p1-sheet-v2.png"
+  },
+  {
+   "id": "mandrill",
+   "label": "骨面山魈（小营地）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/mandrill/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/mandrill-p1-sheet-v2.png"
+  },
+  {
+   "id": "troll",
+   "label": "岩石巨魔（首领，现在是 video2rig 的模型）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/ref/troll_ref.png",
+   "now_half": "L",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/troll-p1-sheet.png"
+  },
+  {
+   "id": "beast",
+   "label": "岩甲巨兽（首领，现在是 video2rig 的模型）",
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/ref/beast_ref.png",
+   "now_half": "R",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/beast-p1-sheet.png"
+  }
+ ],
+ "grounds": [
+  {
+   "name": "我方草地",
+   "file": "docs/style_b/b-toon/after/05_jungle_me.jpg",
+   "box": [
+    0,
+    680,
+    660,
+    960
+   ]
+  },
+  {
+   "name": "我方石板（水晶广场）",
+   "file": "docs/style_b/b-toon/after/03_core_me.jpg",
+   "box": [
+    1462,
+    772,
+    1720,
+    895
+   ]
+  },
+  {
+   "name": "对方红土",
+   "file": "docs/style_b/b-toon/after/06_jungle_foe.jpg",
+   "box": [
+    60,
+    690,
+    660,
+    960
+   ]
+  }
+ ],
+ "roster": [
+  {
+   "label": "岚(参照)",
+   "h": 3.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h4-lan-sheet-a.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/lan-p1-sheet.png"
+  },
+  {
+   "label": "葛隆(提亮备选)",
+   "h": 3.5,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h1-gorran-sheet-a.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/gorran-p1-sheet-bright.png"
+  },
+  {
+   "label": "摩珂",
+   "h": 3.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/moko/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/moko-p1-sheet.png"
+  },
+  {
+   "label": "薇萝",
+   "h": 3.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h2-vero-sheet-a.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/vero-p1-sheet-v3.png"
+  },
+  {
+   "label": "赫达",
+   "h": 3.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h8-hedda-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/hedda-p1-sheet-v2.png"
+  },
+  {
+   "label": "乌戈",
+   "h": 3.7,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h9-ugo-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/ugo-p1-sheet.png"
+  },
+  {
+   "label": "塞伦",
+   "h": 3.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h10-seren-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/seren-p1-sheet.png"
+  },
+  {
+   "label": "托尔格",
+   "h": 2.8,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/torg-p1-sheet.png"
+  },
+  {
+   "label": "奥森",
+   "h": 3.4,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/osen_stag/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/osen-p1-sheet.png"
+  },
+  {
+   "label": "卡兹",
+   "h": 2.8,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/concepts/heroes/h7-kaz-sheet-b.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/kaz-p1-sheet-v2.png"
+  },
+  {
+   "label": "近战兵",
+   "h": 1.45,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/melee_ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/minion-melee-p1-sheet.png"
+  },
+  {
+   "label": "远程兵",
+   "h": 1.37,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/ranged_ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/minion-ranged-p1-sheet.png"
+  },
+  {
+   "label": "狼",
+   "h": 1.45,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/wolf/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/wolf-p1-sheet-v2.png"
+  },
+  {
+   "label": "野猪",
+   "h": 2.7,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/boar/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/boar-p1-sheet.png"
+  },
+  {
+   "label": "巨蟾",
+   "h": 2.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/toad/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/toad-p1-sheet-v2.png"
+  },
+  {
+   "label": "山魈",
+   "h": 2.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/mandrill/ref.png",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/mandrill-p1-sheet-v2.png"
+  },
+  {
+   "label": "岩石巨魔",
+   "h": 6.0,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/ref/troll_ref.png",
+   "now_half": "L",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/troll-p1-sheet.png"
+  },
+  {
+   "label": "岩甲巨兽",
+   "h": 3.3,
+   "now": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/ref/beast_ref.png",
+   "now_half": "R",
+   "new": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/style_b/concept/beast-p1-sheet.png"
+  }
+ ]
+}

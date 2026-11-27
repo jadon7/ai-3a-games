@@ -1,0 +1,18 @@
+{
+ "name": "stag",
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/stag_skeleton.json",
+ "out": "art/hero/osen_stag/game.glb",
+ "packed": "public/assets/hero/osen.glb",
+ "tex": 2048,
+ "motions": {
+  "idle": "art/hero/osen_stag/motions/idle.npz",
+  "run": "art/hero/osen_stag/motions/run.npz",
+  "attack1": "art/hero/osen_stag/motions/attack1.npz",
+  "q": "art/hero/osen_stag/motions/q.npz",
+  "w": "art/hero/osen_stag/motions/w.npz",
+  "e": "art/hero/osen_stag/motions/e.npz",
+  "r": "art/hero/osen_stag/motions/r.npz",
+  "death": "art/hero/osen_stag/motions/death.npz",
+  "gallop": "art/hero/osen_stag/motions/gallop.npz"
+ }
+}

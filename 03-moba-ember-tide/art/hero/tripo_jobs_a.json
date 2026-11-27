@@ -1,0 +1,38 @@
+[
+ {
+  "name": "hero_gorran",
+  "image": "art/hero/gorran/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ },
+ {
+  "name": "hero_vero",
+  "image": "art/hero/vero/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ },
+ {
+  "name": "hero_torg",
+  "image": "art/hero/torg/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ },
+ {
+  "name": "weapon_vero",
+  "image": "art/hero/vero/weapon_ref.png",
+  "face_limit": 12000,
+  "texture_quality": "standard"
+ },
+ {
+  "name": "weapon_osen",
+  "image": "art/hero/osen/weapon_ref.png",
+  "face_limit": 10000,
+  "texture_quality": "standard"
+ },
+ {
+  "name": "weapon_moko",
+  "image": "art/hero/moko/weapon_ref.png",
+  "face_limit": 10000,
+  "texture_quality": "standard"
+ }
+]

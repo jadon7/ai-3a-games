@@ -1,0 +1,1 @@
+powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { \$_.Name -eq 'blender.exe' } | ForEach-Object { '' + \$_.ProcessId + ' ' + (\$_.CommandLine -replace '.*assets/model/', '') }" | cut -c 1-120

@@ -1,0 +1,7 @@
+第二轮已交付，共改了 **5 版**，每版都查看了游戏近景、俯视和地图实拍。[设计稿与成品对照](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/compare.jpg>) · [地图实拍](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/preview_map.jpg>) · [模型文件](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/core_foe.glb>)
+
+七片铁叶的中段宽 **1.35 米**、厚 **0.36 米**。正面两片高 **8.20 米**，后排三片高 **9.60 米**。每片正中有一道 **0.42 米**宽的赤陶带，两侧各有五颗铆钉。
+
+项目脚本量得，**4–6 米段最大半径为 3.14 米，6–8 米段为 3.15 米**，均达到目标。总高 **12.16 米**，共 **59,698 个三角形**。晶体、断环、台基及火盆柱的 22 个网格已与第一轮逐项核对，数据一致。
+
+离地 5 米处，七道叶缝实测为 **0.38–0.42 米**。上部开口较宽，离地 7.5 米处为 **0.64–1.25 米**。游戏距离下能看清赤陶带，背光侧的铆钉仍需近看。[近看图](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/preview_close.jpg>) · [逐版记录与量测原文](</Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/core_foe/out/NOTES.md>)

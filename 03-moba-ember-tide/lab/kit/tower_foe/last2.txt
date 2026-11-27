@@ -1,0 +1,11 @@
+三座防御塔已完成第二轮返工。共做了六版，每版都在游戏预览页截取游戏镜头和近景。三个 GLB 和三张最终预览图已更新。[设计图与成品并排](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/compare.jpg>) · [游戏镜头](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/preview_game.jpg>) · [近景](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/preview_close.jpg>)
+
+每层有六组向外突出的方石扶壁，底部外撇，层间用厚铁箍承托。朝外大面的顶点亮度已设为 1.0。四片铁爪加宽加厚，爪间露出放大的主晶和晶座火光。正面赤陶拱板也已放大，带分块拱框和火纹浮雕。
+
+| 模型 | 高度 | 塔体最大半径 | 台基级数 / 最大半径 | 三角形数 |
+| --- | ---: | ---: | ---: | ---: |
+| [外塔](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/tower_foe_1.glb>) | 7.20 米 | 1.775 米 | 1 级 / 1.90 米 | 21,554 |
+| [内塔](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/tower_foe_2.glb>) | 8.80 米 | 1.846 米 | 2 级 / 2.60 米 | 26,466 |
+| [高地塔](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/tower_foe_3.glb>) | 10.60 米 | 1.888 米 | 3 级 / 3.20 米 | 32,100 |
+
+最终截图取自受光侧。背光时，铁爪和石扶壁仍比设计图难分。主晶偏亮橙，晶根的深红层次较弱。外塔受台基半径限制，塔脚外露的铺石较窄。[六版对照与返工记录](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/tower_foe/out/NOTES.md:44>)

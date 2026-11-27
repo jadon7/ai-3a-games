@@ -1,0 +1,139 @@
+{
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/vero_rigged.glb",
+ "stance": "art/hero/vero/stance.npz",
+ "src_dir": "art/hero/vero/motions",
+ "dst_dir": "art/hero/vero/motions_fix",
+ "grip": {
+  "left": 0.08,
+  "up": -0.077
+ },
+ "clips": {
+  "idle": {
+   "loop": true
+  },
+  "run": {
+   "loop": true,
+   "wmean": 8
+  },
+  "attack1": {
+   "aim": [
+    {
+     "t": [
+      3,
+      8,
+      28,
+      36
+     ],
+     "yaw": 0,
+     "pitch": 0
+    }
+   ]
+  },
+  "q": {
+   "aim": [
+    {
+     "t": [
+      4,
+      12,
+      36,
+      52
+     ],
+     "yaw": 0
+    }
+   ]
+  },
+  "w": {},
+  "e": {
+   "one": [
+    {
+     "from": 6,
+     "to": 62,
+     "yaw": -6,
+     "pitch": -24,
+     "blend": 6
+    }
+   ]
+  },
+  "r": {
+   "aim": [
+    {
+     "t": [
+      0,
+      8,
+      122,
+      130
+     ],
+     "turn": 7
+    }
+   ],
+   "kick": {
+    "t0": 0.3,
+    "n": 18,
+    "gap_from": 0.26,
+    "gap_to": 0.1,
+    "pitch": 3.0,
+    "spine": 1.6,
+    "decay": 0.045
+   },
+   "max_yaw": 16
+  },
+  "death": {
+   "one": [
+    {
+     "from": 10,
+     "to": 999,
+     "yaw": -38,
+     "pitch": "ground",
+     "blend": 8,
+     "max_pitch": 50
+    }
+   ],
+   "finish": {
+    "at": 56,
+    "drop": 15,
+    "slump": 16,
+    "hold": 22,
+    "a": {
+     "z": 0.275,
+     "y": 0.02,
+     "lean": 6,
+     "spine": 5,
+     "head": 8,
+     "knees": 0.05,
+     "arms": {
+      "Left": {
+       "out": 0.3,
+       "fwd": 0.1,
+       "fwd2": 0.25
+      },
+      "Right": {
+       "out": 0.3,
+       "fwd": 0.2,
+       "fwd2": 0.45
+      }
+     }
+    },
+    "b": {
+     "z": 0.255,
+     "y": 0.05,
+     "lean": 22,
+     "spine": 13,
+     "head": 34,
+     "knees": 0.05,
+     "arms": {
+      "Left": {
+       "out": 0.2,
+       "fwd": 0.05,
+       "fwd2": 0.2
+      },
+      "Right": {
+       "out": 0.25,
+       "fwd": 0.1,
+       "fwd2": 0.35
+      }
+     }
+    }
+   }
+  }
+ }
+}

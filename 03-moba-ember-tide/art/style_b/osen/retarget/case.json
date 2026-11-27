@@ -1,0 +1,148 @@
+{
+ "name": "osen_b",
+ "title": "奥森（烛角鹿）的全部旧动作 → 奥森 B（路子一卡通厚涂，Tripo 新模型新绑骨，骨骼名已按角色改成旧的）",
+ "kind": "quadruped",
+ "map": {
+  "tripo::Root": "tripo::Root",
+  "bone_24": "bone_24",
+  "bone_16": "bone_16",
+  "tripo::1_Left_Limb_0": "tripo::1_Left_Limb_0",
+  "tripo::1_Left_Limb_1": "tripo::1_Left_Limb_1",
+  "tripo::1_Left_Limb_2": "tripo::1_Left_Limb_2",
+  "bone_20": "bone_20",
+  "tripo::1_Right_Limb_0": "tripo::1_Right_Limb_0",
+  "tripo::1_Right_Limb_1": "tripo::1_Right_Limb_1",
+  "tripo::1_Right_Limb_2": "tripo::1_Right_Limb_2",
+  "tripo::Spine_0": "tripo::Spine_0",
+  "tripo::Spine_1": "tripo::Spine_1",
+  "tripo::Spine_2": "tripo::Spine_2",
+  "tripo::Spine_3": "tripo::Spine_3",
+  "tripo::Head_0": "tripo::Head_0",
+  "bone_4": "bone_4",
+  "bone_5": "bone_5",
+  "tripo::0_Left_Limb_0": "tripo::0_Left_Limb_0",
+  "tripo::0_Left_Limb_1": "tripo::0_Left_Limb_1",
+  "tripo::0_Left_Limb_2": "tripo::0_Left_Limb_2",
+  "bone_9": "bone_9",
+  "bone_10": "bone_10",
+  "tripo::0_Right_Limb_0": "tripo::0_Right_Limb_0",
+  "tripo::0_Right_Limb_1": "tripo::0_Right_Limb_1"
+ },
+ "mode": "delta",
+ "src_rig": "../rigs/stag_t.npz",
+ "tgt_rig": "../rigs/osen_b_t.npz",
+ "src_build": "art/hero/osen_stag/build.json",
+ "src_timing": "art/style_b/osen/src_timing.json",
+ "src_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/stag.blend",
+ "tgt_model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/osen_b.blend",
+ "src_root": "tripo::Root",
+ "tgt_root": "tripo::Root",
+ "src_game_h": 3.4,
+ "game_h": 3.4,
+ "move_speed": 6.0,
+ "tip_src": "tripo::Head_0",
+ "tip_tgt": "tripo::Head_0",
+ "legs": [
+  {
+   "tgt": [
+    "bone_5",
+    "tripo::0_Left_Limb_0",
+    "tripo::0_Left_Limb_1"
+   ],
+   "src_end": "tripo::0_Left_Limb_1"
+  },
+  {
+   "tgt": [
+    "bone_10",
+    "tripo::0_Right_Limb_0",
+    "tripo::0_Right_Limb_1"
+   ],
+   "src_end": "tripo::0_Right_Limb_1"
+  },
+  {
+   "tgt": [
+    "bone_16",
+    "tripo::1_Left_Limb_0",
+    "tripo::1_Left_Limb_1"
+   ],
+   "src_end": "tripo::1_Left_Limb_1"
+  },
+  {
+   "tgt": [
+    "bone_20",
+    "tripo::1_Right_Limb_0",
+    "tripo::1_Right_Limb_1"
+   ],
+   "src_end": "tripo::1_Right_Limb_1"
+  }
+ ],
+ "ground_chains": [
+  {
+   "name": "头",
+   "base": "tripo::Spine_3",
+   "verts_of": "tripo::Head_0"
+  }
+ ],
+ "variants": {
+  "fk": {
+   "ik": false
+  },
+  "ik": {
+   "ik": true
+  }
+ },
+ "out_dir": "motions",
+ "labels": [
+  "奥森（旧模型）",
+  "B·只搬旋转",
+  "B·加脚 IK"
+ ],
+ "render": {
+  "frames": 8,
+  "views": [
+   [
+    40,
+    14
+   ],
+   [
+    90,
+    10
+   ]
+  ],
+  "ortho": 2.4,
+  "zc": 0.55
+ },
+ "video": {
+  "clips": [
+   "run",
+   "gallop",
+   "attack1",
+   "r"
+  ],
+  "loops": {
+   "run": 4,
+   "gallop": 3
+  },
+  "spacing": 1.6,
+  "view": [
+   22,
+   22
+  ],
+  "zc": 0.35
+ },
+ "tgt_blend_name": "osen_b",
+ "mode_bones": {},
+ "chains": [
+  {
+   "tgt": [
+    "tripo::Spine_3",
+    "x::neck1",
+    "x::neck2"
+   ],
+   "src": [
+    "tripo::Spine_3"
+   ]
+  }
+ ],
+ "_mode说明": "全部 delta：新旧两头鹿的静止站姿几乎一样（腿的方向差 3–10 度），骨骼位置差几厘米"
+}

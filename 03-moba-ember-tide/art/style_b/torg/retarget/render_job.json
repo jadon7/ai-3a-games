@@ -1,0 +1,77 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/turtle.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/w.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/hero/torg_turtle/motions/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/torg_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/w.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/fk/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/torg_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/attack1.npz",
+    "q": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/q.npz",
+    "w": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/w.npz",
+    "r": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/r.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/motions/ik/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "idle",
+  "run",
+  "attack1",
+  "q",
+  "w",
+  "r",
+  "death"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   40,
+   14
+  ],
+  [
+   90,
+   10
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 2.0,
+ "zc": 0.42,
+ "game_h": 2.8,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-quad/art/style_b/torg/retarget_delta/render"
+}

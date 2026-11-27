@@ -1,0 +1,7 @@
+{
+ "id": "yanjin",
+ "rig": "public/assets/fighters/yanjin/yanjin.glb",
+ "frame_ref": "art/fighter/yanjin/tripo_rigged.glb",
+ "sources": {"v1a": "art/generic/yanjin/v1_a.glb", "v1b": "art/generic/yanjin/v1_b.glb", "v1e": "art/generic/yanjin/v1_e.glb"},
+ "out": "public/assets/fighters/yanjin/yanjin_generic.glb"
+}

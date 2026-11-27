@@ -1,0 +1,169 @@
+{
+ "version": 1,
+ "sfx": {
+  "block": [
+   "block_1.m4a",
+   "block_2.m4a"
+  ],
+  "block_blade": [
+   "block_blade_1.m4a",
+   "block_blade_2.m4a"
+  ],
+  "bodyfall": [
+   "bodyfall_1.m4a",
+   "bodyfall_2.m4a"
+  ],
+  "dash": [
+   "dash_1.m4a"
+  ],
+  "fight_drum": [
+   "fight_drum_1.m4a"
+  ],
+  "fire_blast": [
+   "fire_blast_1.m4a"
+  ],
+  "fire_charge": [
+   "fire_charge_1.m4a"
+  ],
+  "fire_explode": [
+   "fire_explode_1.m4a",
+   "fire_explode_2.m4a"
+  ],
+  "fire_fly": [
+   "fire_fly_1.m4a"
+  ],
+  "frost_charge": [
+   "frost_charge_1.m4a"
+  ],
+  "frost_fly": [
+   "frost_fly_1.m4a"
+  ],
+  "frost_shatter": [
+   "frost_shatter_1.m4a",
+   "frost_shatter_2.m4a"
+  ],
+  "frost_spike": [
+   "frost_spike_1.m4a"
+  ],
+  "frost_wave": [
+   "frost_wave_1.m4a"
+  ],
+  "guard_break": [
+   "guard_break_1.m4a"
+  ],
+  "hit_fire": [
+   "hit_fire_1.m4a",
+   "hit_fire_2.m4a"
+  ],
+  "hit_frost": [
+   "hit_frost_1.m4a",
+   "hit_frost_2.m4a"
+  ],
+  "hit_heavy": [
+   "hit_heavy_1.m4a",
+   "hit_heavy_2.m4a",
+   "hit_heavy_3.m4a"
+  ],
+  "hit_light": [
+   "hit_light_1.m4a",
+   "hit_light_2.m4a",
+   "hit_light_3.m4a"
+  ],
+  "hit_slash": [
+   "hit_slash_1.m4a",
+   "hit_slash_2.m4a",
+   "hit_slash_3.m4a"
+  ],
+  "jump": [
+   "jump_1.m4a"
+  ],
+  "ko": [
+   "ko_1.m4a"
+  ],
+  "land": [
+   "land_1.m4a"
+  ],
+  "parry": [
+   "parry_1.m4a"
+  ],
+  "round_gong": [
+   "round_gong_1.m4a"
+  ],
+  "step": [
+   "step_1.m4a",
+   "step_2.m4a",
+   "step_3.m4a"
+  ],
+  "super_fire": [
+   "super_fire_1.m4a"
+  ],
+  "super_freeze": [
+   "super_freeze_1.m4a"
+  ],
+  "super_frost": [
+   "super_frost_1.m4a"
+  ],
+  "ui_back": [
+   "ui_back_1.m4a"
+  ],
+  "ui_confirm": [
+   "ui_confirm_1.m4a"
+  ],
+  "ui_move": [
+   "ui_move_1.m4a"
+  ],
+  "whoosh_blade": [
+   "whoosh_blade_1.m4a",
+   "whoosh_blade_2.m4a",
+   "whoosh_blade_3.m4a"
+  ],
+  "whoosh_heavy": [
+   "whoosh_heavy_1.m4a",
+   "whoosh_heavy_2.m4a",
+   "whoosh_heavy_3.m4a"
+  ],
+  "whoosh_light": [
+   "whoosh_light_1.m4a",
+   "whoosh_light_2.m4a",
+   "whoosh_light_3.m4a"
+  ],
+  "win_sting": [
+   "win_sting_1.m4a"
+  ]
+ },
+ "music": {
+  "amb_snow": {
+   "file": "amb_snow.m4a",
+   "loop": true,
+   "loopSec": 20.0,
+   "loopSamples": 882000,
+   "sr": 44100
+  },
+  "music_battle": {
+   "file": "music_battle.m4a",
+   "loop": true,
+   "loopSec": 73.14285714285714,
+   "loopSamples": 3225600,
+   "sr": 44100
+  },
+  "music_menu": {
+   "file": "music_menu.m4a",
+   "loop": true,
+   "loopSec": 40.0,
+   "loopSamples": 1764000,
+   "sr": 44100
+  },
+  "music_victory": {
+   "file": "music_victory.m4a",
+   "loop": false,
+   "loopSec": null,
+   "loopSamples": null,
+   "sr": 44100
+  }
+ },
+ "loops": [
+  "fire_fly",
+  "frost_fly"
+ ],
+ "totalBytes": 3119184
+}

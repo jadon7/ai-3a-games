@@ -1,0 +1,5 @@
+已按 B 稿重建[沉月会出生点模型](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/spawn_me.glb)，完成六轮游戏预览和地图对照。月尖高 **8.67 米**，占地 **12.17 × 8.40 米**，共 **66,670 个三角形**，低于 80,000 上限。建模脚本重跑两次，生成的 GLB 完全一致。
+
+[地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/preview_map.jpg) · [设计稿对照](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/compare.jpg) · [游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/preview_game.jpg) · [近看](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/preview_close.jpg)
+
+水池适配了现有实心台面。主水面高出台面约 **3.4 厘米**，低于池沿约 **5.8 厘米**。主地图图采用左前机位，避开基地水晶的遮挡。指定正面、斜后机位及每轮差异均已保留。[制作记录](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/out/NOTES.md) · [建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/b-build/lab/kit_b/spawn_me/build.py)

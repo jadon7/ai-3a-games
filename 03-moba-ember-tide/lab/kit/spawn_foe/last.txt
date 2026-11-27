@@ -1,0 +1,9 @@
+已完成[烬誓庭出生点模型](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/spawn_foe.glb)。门顶距台面 **8.68 米**，占地 **13.32 × 11.11 米**，共 **47,234 个三角形**。火盆最高点为 **0.114 米**，符合台面限高。
+
+完成了六轮预览。完整地图复查时，修正了城墙遮住甲士小腿、地表盖住余烬槽的问题。最终图中可以看到两尊甲士的靴子、石墩和跨过台阶的连续槽面。[地图实景](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/rounds/r6_map.jpg)
+
+[游戏镜头](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/preview_game.jpg) · [近看图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/preview_close.jpg) · [设计图对照](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/compare.jpg)
+
+游戏镜头保留了 24 米距离和 56 度俯角，瞄准高度调至 3.8 米以收全门冠。与原稿相比，甲士的肩甲棱角更硬，披风褶皱更少。火盆用低浮雕表现坑口深度。[默认镜头原图](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/rounds/r6_game_default.jpg)
+
+建模脚本已经重跑，生成的 GLB 与交付文件逐字节一致。[建模脚本](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/build.py) · [尺寸和六轮修改记录](/Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/spawn_foe/out/NOTES.md)

@@ -1,0 +1,159 @@
+{
+ "src_dir": "art/hero/moko/motions",
+ "out_dir": "art/hero/moko/motions_fx",
+ "clips": {
+  "idle": {
+   "plant": {},
+   "loop": true,
+   "ground": true
+  },
+  "run": {
+   "loop": true,
+   "ground": 30
+  },
+  "attack1": {
+   "ground": true
+  },
+  "q": {
+   "push": [
+    {
+     "side": "Right",
+     "from": 16,
+     "to": 24,
+     "ease": 3,
+     "offset": [
+      0,
+      -0.1,
+      0.02
+     ]
+    }
+   ],
+   "ground": true
+  },
+  "w": {
+   "plant": {},
+   "ground": true
+  },
+  "e": {
+   "hold": [
+    {
+     "at": 26,
+     "n": 9
+    }
+   ],
+   "aim": [
+    {
+     "from": 0,
+     "to": 5,
+     "ease_in": 0,
+     "ease_out": 4,
+     "blade": [
+      -0.05,
+      0,
+      1
+     ]
+    }
+   ],
+   "ground": true
+  },
+  "r": {
+   "push": [
+    {
+     "side": "Left",
+     "from": 7,
+     "to": 23,
+     "ease": 3,
+     "offset": [
+      0.14,
+      -0.06,
+      -0.03
+     ]
+    },
+    {
+     "side": "Right",
+     "from": 24,
+     "to": 36,
+     "ease": 3,
+     "offset": [
+      0,
+      -0.08,
+      0
+     ]
+    }
+   ],
+   "aim": [
+    {
+     "from": 0,
+     "to": 7,
+     "ease_in": 0,
+     "ease_out": 3,
+     "blade": [
+      0,
+      0.1,
+      1
+     ]
+    },
+    {
+     "from": 24,
+     "to": 36,
+     "ease": 3,
+     "blade": [
+      0,
+      -0.15,
+      1
+     ]
+    },
+    {
+     "from": 35,
+     "to": 44,
+     "ease": 3,
+     "blade": [
+      -0.08,
+      0,
+      1
+     ]
+    }
+   ],
+   "ground": true
+  },
+  "r_spin": {
+   "push": [
+    {
+     "side": "Left",
+     "from": 0,
+     "to": 999,
+     "ease": 0,
+     "offset": [
+      0.14,
+      -0.06,
+      -0.03
+     ]
+    }
+   ],
+   "aim": [
+    {
+     "from": 0,
+     "to": 999,
+     "ease_in": 6,
+     "ease_out": 6,
+     "space": "hips",
+     "blade": [
+      1,
+      0,
+      0.18
+     ]
+    }
+   ],
+   "ground": true
+  },
+  "death": {
+   "src": "death_src",
+   "tail": {
+    "blend": 8,
+    "hold": 8,
+    "back": 0.03
+   },
+   "ground": true
+  }
+ }
+}

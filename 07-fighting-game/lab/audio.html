@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>音频试听</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; padding: 16px 20px 60px; background: #121216; color: #ddd; font: 14px/1.5 system-ui, -apple-system, "PingFang SC", sans-serif; }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    h2 { font-size: 14px; margin: 18px 0 6px; color: #e9b36a; font-weight: 600; }
+    .hint { color: #888; font-size: 12px; }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; }
+    button { background: #23232b; color: #eee; border: 1px solid #3a3a46; border-radius: 4px; padding: 5px 9px; cursor: pointer; font: inherit; font-size: 13px; }
+    button:hover { background: #2f2f3a; }
+    button.on { background: #6a3b1c; border-color: #c27a3a; }
+    button .n { color: #888; font-size: 11px; margin-left: 3px; }
+    label { display: inline-flex; align-items: center; gap: 6px; margin-right: 16px; }
+    input[type=range] { width: 160px; }
+    #status { margin-top: 4px; }
+    .imgs img { max-width: 100%; border: 1px solid #333; margin: 4px 0; }
+    details summary { cursor: pointer; color: #aaa; }
+  </style>
+</head>
+<body>
+  <h1>音频试听</h1>
+  <div class="hint">先点页面任意处解锁声音。按钮旁的数字是变体数，每次点会随机挑一个变体并做一点音高随机。</div>
+  <div id="status" class="hint">加载中…</div>
+
+  <h2>配乐和环境声</h2>
+  <div class="row" id="music"></div>
+
+  <h2>参数</h2>
+  <div>
+    <label>时间倍率 <input id="ts" type="range" min="0.05" max="1" step="0.01" value="1" /> <span id="tsv">1.00</span></label>
+    <label>声像 <input id="pan" type="range" min="-1" max="1" step="0.1" value="0" /> <span id="panv">0</span></label>
+    <label>音高 rate <input id="rate" type="range" min="0.5" max="2" step="0.01" value="1" /> <span id="ratev">1.00</span></label>
+  </div>
+  <div style="margin-top:6px">
+    <label>总 <input id="v_master" type="range" min="0" max="1" step="0.01" value="1" /></label>
+    <label>音效 <input id="v_sfx" type="range" min="0" max="1" step="0.01" value="1" /></label>
+    <label>配乐 <input id="v_music" type="range" min="0" max="1" step="0.01" value="0.7" /></label>
+  </div>
+  <div class="row" style="margin-top:6px" id="tests"></div>
+
+  <div id="groups"></div>
+
+  <h2>分析图</h2>
+  <details><summary>展开波形和频谱（docs/audio/*.png）</summary><div class="imgs" id="imgs"></div></details>
+
+  <script type="module" src="./audio.ts"></script>
+</body>
+</html>

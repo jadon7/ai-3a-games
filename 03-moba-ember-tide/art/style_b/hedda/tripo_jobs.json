@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_hedda_b",
+  "image": "art/style_b/hedda/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

@@ -1,0 +1,65 @@
+[
+{
+"js": "__setSpeed(16)"
+},
+{
+"until": "__sim.time>360||__sim.over",
+"timeout": 600000
+},
+{
+"js": "__report()",
+"log": "6分"
+},
+{
+"js": "JSON.stringify(__sim.ents.filter(e=>e.h).map(e=>[e.h.kit+(e.team?\"*\":\"\"), Math.round(e.h.dmg)]))",
+"log": "伤害"
+},
+{
+"until": "__sim.time>720||__sim.over",
+"timeout": 600000
+},
+{
+"js": "__report()",
+"log": "12分"
+},
+{
+"js": "JSON.stringify(__sim.ents.filter(e=>e.h).map(e=>[e.h.kit+(e.team?\"*\":\"\"), Math.round(e.h.dmg)]))",
+"log": "伤害"
+},
+{
+"until": "__sim.time>1080||__sim.over",
+"timeout": 600000
+},
+{
+"js": "__report()",
+"log": "18分"
+},
+{
+"js": "JSON.stringify(__sim.ents.filter(e=>e.h).map(e=>[e.h.kit+(e.team?\"*\":\"\"), Math.round(e.h.dmg)]))",
+"log": "伤害"
+},
+{
+"until": "__sim.time>1500||__sim.over",
+"timeout": 600000
+},
+{
+"js": "__report()",
+"log": "25分"
+},
+{
+"js": "JSON.stringify(__sim.ents.filter(e=>e.h).map(e=>[e.h.kit+(e.team?\"*\":\"\"), Math.round(e.h.dmg)]))",
+"log": "伤害"
+},
+{
+"until": "__sim.time>2100||__sim.over",
+"timeout": 900000
+},
+{
+"js": "__report()",
+"log": "35分"
+},
+{
+"js": "JSON.stringify(__sim.ents.filter(e=>e.h).map(e=>[e.h.kit+(e.team?\"*\":\"\"), Math.round(e.h.dmg)]))",
+"log": "伤害"
+}
+]

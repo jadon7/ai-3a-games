@@ -1,0 +1,7 @@
+已完成 5 轮返工。保留六片铁爪，爪身最宽处从 **1.77 米减到 0.89 米**，螺旋转角从 **96° 减到 45°**。晶体加宽，晶尖比最高的外翻爪尖高 **2.70 米**。从四个方位查看，都能看清晶尖和爪间的大切面。[设计图与成品对照](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/compare.jpg>) · [四个方位对照](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/rounds/v2_r5_angles.jpg>)
+
+成品总高 **12.47 米**，共 **37,712 个三角形**。离地 0.20 米以上的主体最大半径为 **4.359 米**。最下级台基半径 4.580 米，高 0.163 米。含四柱占地 9.33 × 9.33 米。
+
+游戏材质下，晶体仍偏琥珀橙，与设计图相比，内部暗红到亮黄的层次较弱。近景选用受光侧，能看清暖灰铁面的纵棱和晶体断口。[游戏镜头](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/preview_game.jpg>) · [近景](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/preview_close.jpg>)
+
+[最终模型](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/core_foe.glb>) · [建模脚本](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/build.py>) · [五轮对照与返工记录](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_foe/out/NOTES.md>)

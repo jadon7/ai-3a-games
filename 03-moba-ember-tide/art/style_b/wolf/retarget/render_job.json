@@ -1,0 +1,65 @@
+{
+ "actors": [
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/wolf/motions/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/wolf/motions/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/wolf/motions/attack1.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/art/unit/wolf/motions/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "src",
+   "ortho": null
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/fk/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/fk/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/fk/attack1.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/fk/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "fk",
+   "hide_weapon": false
+  },
+  {
+   "model": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/wolf_b.blend",
+   "motions": {
+    "idle": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/ik/idle.npz",
+    "run": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/ik/run.npz",
+    "attack1": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/ik/attack1.npz",
+    "death": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/motions/ik/death.npz"
+   },
+   "root": "tripo::Root",
+   "label": "ik",
+   "hide_weapon": false
+  }
+ ],
+ "clips": [
+  "idle",
+  "run",
+  "attack1",
+  "death"
+ ],
+ "frames": 8,
+ "views": [
+  [
+   40,
+   14
+  ],
+  [
+   90,
+   10
+  ]
+ ],
+ "cell": [
+  240,
+  300
+ ],
+ "ortho": 2.4,
+ "zc": 0.45,
+ "game_h": 1.55,
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-beast/art/style_b/wolf/retarget/render"
+}

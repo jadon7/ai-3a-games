@@ -1,0 +1,149 @@
+{
+ "skeleton": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/iti_skeleton.json",
+ "out_dir": "art/hero_iti/motions",
+ "fps": 30,
+ "smooth": {
+  "Hand": 1.0,
+  "ForeArm": 1.0
+ },
+ "actions": {
+  "idle": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_idle/motion.npz",
+   "loop": [
+    40,
+    100
+   ],
+   "from": 4
+  },
+  "run": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_run/motion.npz",
+   "loop": [
+    12,
+    30
+   ],
+   "from": 8,
+   "stride": true
+  },
+  "attack1": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_attack1/motion.npz",
+   "segments": [
+    [
+     21,
+     31
+    ],
+    [
+     43,
+     54
+    ]
+   ]
+  },
+  "attack2": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_attack2/motion.npz",
+   "segments": [
+    [
+     18,
+     38
+    ],
+    [
+     44,
+     53
+    ]
+   ]
+  },
+  "q": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_q/motion.npz",
+   "segments": [
+    [
+     18,
+     34
+    ],
+    [
+     50,
+     61
+    ]
+   ]
+  },
+  "q3": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_q3/motion.npz",
+   "segments": [
+    [
+     2,
+     66
+    ],
+    [
+     98,
+     112
+    ]
+   ],
+   "_note": "去掉单膝跪地停着的一截（67–97 帧）。试过把空翻翻完在最高处悬停的 45–55 帧也剪掉，但 hero_motion 在接缝处连胯的高低也一起接上，空中剪开的话后面整段往下沉了 0.3 个身高（跪地时胯在地面以下），所以空中不剪，靠播放倍率加快"
+  },
+  "w": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_w/motion.npz",
+   "segments": [
+    [
+     9,
+     22
+    ],
+    [
+     27,
+     34
+    ],
+    [
+     47,
+     57
+    ]
+   ],
+   "_note": "后撤一步（9–22）→ 飞扑（27–34，视频里 28 帧就已经是平飞的姿势）→ 落地收回（47–57）；平飞在空中停着的 35–46 帧剪掉"
+  },
+  "e": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_e/motion.npz",
+   "segments": [
+    [
+     7,
+     13
+    ],
+    [
+     34,
+     58
+    ]
+   ],
+   "_note": "“一缩”直接从第 7 帧开始（原来从站姿慢慢蹲下去要 0.4 秒，挑刺出手太晚）；蹲着不动的 14–33 帧剪掉"
+  },
+  "r": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_r/motion.npz",
+   "_note": "第二版视频 iti_r_02（第一版空中转成一团模糊）。去掉三刀之间在空中悬停不动的几截（视频 27–32、46、67–73 帧）",
+   "segments": [
+    [
+     8,
+     26
+    ],
+    [
+     33,
+     45
+    ],
+    [
+     47,
+     66
+    ],
+    [
+     74,
+     100
+    ]
+   ]
+  },
+  "death": {
+   "src": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/out/anim/iti_death/motion.npz",
+   "segments": [
+    [
+     8,
+     32
+    ],
+    [
+     76,
+     106
+    ]
+   ],
+   "settle": false
+  }
+ }
+}

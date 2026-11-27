@@ -1,0 +1,159 @@
+{
+ "name": "yanjin",
+ "raw": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/tripo_rigged_fix.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/yanjin_rigged.glb",
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/game.glb",
+ "packed": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/public/assets/fighters/yanjin/yanjin.glb",
+ "pose_out": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/stance.npz",
+ "body_material": "fighter",
+ "tex": 4096,
+ "weapon_tex": 2048,
+ "palm_by_hand": true,
+ "motions": {
+  "idle": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/idle.npz",
+  "walk_f": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/walk_f.npz",
+  "walk_b": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/walk_b.npz",
+  "jump": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/jump.npz",
+  "block": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/block.npz",
+  "light1": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/light1.npz",
+  "light2": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/light2.npz",
+  "light3": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/light3.npz",
+  "heavy": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/heavy.npz",
+  "lunge": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/lunge.npz",
+  "launcher": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/launcher.npz",
+  "sweep": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/sweep.npz",
+  "air": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/air.npz",
+  "grab": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/grab.npz",
+  "sp1": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/sp1.npz",
+  "sp2": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/sp2.npz",
+  "sp3": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/sp3.npz",
+  "ult_start": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/ult_start.npz",
+  "ult_combo": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/ult_combo.npz",
+  "win": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/win.npz",
+  "intro": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/yanjin/motions/intro.npz"
+ },
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.02,
+    -0.06
+   ],
+   "yaw": -40,
+   "lean": 4,
+   "roll": 0
+  },
+  "spine": [
+   [
+    2,
+    -7
+   ],
+   [
+    2,
+    -7
+   ],
+   [
+    1,
+    -6
+   ]
+  ],
+  "head": {
+   "yaw": 52,
+   "pitch": 4
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.07,
+     -0.16,
+     0.061
+    ],
+    "pole": [
+     0.3,
+     -1,
+     0
+    ],
+    "toe": 15
+   },
+   "Right": {
+    "ankle": [
+     -0.09,
+     0.17,
+     0.061
+    ],
+    "pole": [
+     -0.6,
+     -0.6,
+     0
+    ],
+    "toe": -50
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.01,
+     -0.27,
+     0.71
+    ],
+    "pole": [
+     0.4,
+     0.2,
+     -1
+    ],
+    "blade": [
+     0,
+     1,
+     0
+    ],
+    "edge": [
+     0,
+     0,
+     1
+    ],
+    "shrug": 0
+   },
+   "Right": {
+    "wrist": [
+     -0.11,
+     0.08,
+     0.5
+    ],
+    "pole": [
+     -0.3,
+     1,
+     -0.3
+    ],
+    "blade": [
+     -0.5,
+     0.87,
+     0
+    ],
+    "shrug": 0
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.004,
+   "chest": 1.2,
+   "shoulder": 1.0,
+   "hand": 0.004
+  }
+ },
+ "grip": {},
+ "stance_grip": {
+  "Left": 0.12
+ },
+ "grip_actions": {
+  "idle": {
+   "Left": 0.12
+  },
+  "walk_f": {
+   "Left": 0.12
+  },
+  "walk_b": {
+   "Left": 0.12
+  }
+ },
+ "weights_note": "raw 是 fix_weights.py 改过肩甲、皮带头、前臂权重的模型（输入是第一次 rig 出来的 V2R/assets/model/yanjin_rigged.glb，已备份为 work/rigged_v0.glb）"
+}

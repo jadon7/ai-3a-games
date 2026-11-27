@@ -1,0 +1,2 @@
+== h_end8
+{"out":"docs/trailer/raw/h_end8.mp4","ok":true,"rep":{"t":1077,"over":-1,"kills":[12,15],"towers":[0,8],"lanes":"000 对 233","order":["defend","boss"],"camps":12,"boss":["troll100%","beast0%"],"buff":[[0,0],[0,0]],"heroes":["lan L15 79% 2/8/6 金1365 装6 刀45 线0 [回防] 打287 跟兵线265 阵亡201 清兵139 回防75 守23","vero* L15 70% 4/5/5 金3323 装6 刀40 线1 [打 岩甲巨兽] 跟

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>伊缇特效试验 · 第四阶段</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #1d3324; font: 13px/1.5 "PingFang SC", system-ui, sans-serif; color: #eef; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+  #hud { position: fixed; left: 10px; top: 10px; display: flex; flex-wrap: wrap; gap: 6px; max-width: 70vw; }
+  #hud button { background: rgba(20, 24, 30, .78); color: #fff; border: 1px solid rgba(255, 255, 255, .25); border-radius: 6px; padding: 5px 10px; cursor: pointer; font: inherit; }
+  #hud button.on { background: #a3123f; }
+  #info { position: fixed; left: 10px; bottom: 10px; background: rgba(0, 0, 0, .55); padding: 4px 8px; border-radius: 4px; white-space: pre; font: 12px/1.45 ui-monospace, Menlo, monospace; }
+  body.nohud #hud, body.nohud #info { display: none; }
+</style>
+</head>
+<body>
+<div id="hud"></div>
+<div id="info"></div>
+<script type="module" src="./main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+ "id": "lingshuang", "height": 1.74, "skeleton": "mixamo",
+ "weapon": {"bone": "mixamorig:RightHand", "base": [0.0217, 0.0859, 0.0171], "tip": [0.4306, 0.1956, 0.1901]},
+ "stance": {"lead": "L"},
+ "clips": {
+  "idle_pose": {"loop": true, "dur": 3.00},
+  "idle":      {"loop": true, "dur": 2.50},
+  "walk_f":    {"loop": true, "dur": 1.03, "stride": 0.29},
+  "walk_b":    {"loop": true, "dur": 1.67, "stride": 0.36},
+  "jump":      {"dur": 2.30, "takeoff": 0.57, "land": 1.47, "recover": 1.97},
+  "block":     {"dur": 3.07, "hold": [0.37, 2.62], "recover": 2.87},
+  "light1":    {"dur": 1.70, "hits": [{"t": 0.27, "limb": "W"}], "recover": 1.47},
+  "light2":    {"dur": 1.83, "hits": [{"t": 0.67, "limb": "W"}], "recover": 1.63},
+  "light3":    {"dur": 1.73, "hits": [{"t": 0.73, "limb": "W"}], "recover": 1.57},
+  "heavy":     {"dur": 1.93, "hits": [{"t": 0.80, "limb": "W"}], "recover": 1.67},
+  "lunge":     {"dur": 1.70, "hits": [{"t": 0.83, "limb": "W"}], "recover": 1.50},
+  "launcher":  {"dur": 2.27, "hits": [{"t": 1.07, "limb": "W"}], "takeoff": 1.10, "land": 1.73, "recover": 2.10},
+  "sweep":     {"dur": 1.93, "hits": [{"t": 0.67, "limb": "RF"}], "recover": 1.70},
+  "air":       {"dur": 2.07, "hits": [{"t": 1.00, "limb": "W"}], "takeoff": 0.30, "land": 1.07, "recover": 1.87},
+  "grab":      {"dur": 1.87, "hits": [{"t": 0.27, "limb": "LH"}, {"t": 0.80, "limb": "RK"}, {"t": 1.33, "limb": "RH"}], "recover": 1.67},
+  "sp1":       {"dur": 2.87, "hits": [{"t": 1.27, "limb": "W"}], "release": 1.27, "recover": 2.70},
+  "sp2":       {"dur": 3.07, "hits": [{"t": 1.20, "limb": "W"}], "release": 1.20, "recover": 2.87},
+  "sp3":       {"dur": 3.87, "hits": [{"t": 1.80, "limb": "W"}], "release": 1.80, "recover": 3.73},
+  "ult_start": {"dur": 4.30, "hits": [{"t": 3.17, "limb": "W"}], "recover": 4.17},
+  "ult_combo": {"dur": 5.07, "hits": [{"t": 0.70, "limb": "W"}, {"t": 1.10, "limb": "W"}, {"t": 1.50, "limb": "W"}, {"t": 2.00, "limb": "W"}, {"t": 2.40, "limb": "W"}, {"t": 2.90, "limb": "W"}, {"t": 3.70, "limb": "W"}], "takeoff": 2.95, "land": 3.67, "recover": 4.93},
+  "win":       {"dur": 2.47, "hold": [1.80, 2.47]},
+  "intro":     {"dur": 4.30, "recover": 4.13}
+ },
+ "notes": "21 段全齐。时间点从成品动作里量（art/fighter/lingshuang/pipeline/track.py + timing_report.py）：hits 取刀尖（或对应肢体）速度峰值、伸得最远的那一帧；recover 取之后身体各关键点离末帧架势都在 6cm 内、刀尖在 12cm 内的时刻；takeoff/land 取双脚离地超过 3cm 的起止。估的：air 的 hit（刀尖速度峰值和落地同一帧，取前两帧 1.00）、ult_combo 第 5 下（转身回旋斩，2.40 按刀尖扫过身前的位置估）、block 的 hold（按视频裁剪帧换算）、grab 三下按左手/右膝/右手最靠前的时刻。win 停在胜利姿势不回架势（hold 是定格段）；ult_combo 视频结尾是单膝跪地，末尾 0.6 秒是脚本补的回架势过渡（4.37s 起）。所有一次性动作末尾 0.3 秒做了往架势的平滑收尾，首尾和架势严格对上。walk 的 stride 是踩地脚相对胯整圈挪动的距离（身高按 1）；walk_b 是往后退。模型身高按 1 建（含马尾和发冠），游戏放大到 1.74；weapon.base/tip 是刀镡中心和刀尖在 GLB 里 mixamorig:RightHand 骨骼局部坐标（放大前单位）。"
+}

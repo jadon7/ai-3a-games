@@ -1,0 +1,8 @@
+[
+ {
+  "name": "hero_kaz_b",
+  "image": "art/style_b/kaz/ref.png",
+  "face_limit": 40000,
+  "texture_quality": "detailed"
+ }
+]

@@ -1,0 +1,62 @@
+{
+ "tower": {
+  "r": 1.9,
+  "range": 11.5
+ },
+ "core": {
+  "r": 4.4,
+  "range": 14
+ },
+ "heroes": {
+  "vero": {
+   "range": 8.5,
+   "ranged": true,
+   "r": 0.6,
+   "tower": 10.4,
+   "core": 12.9
+  },
+  "lan": {
+   "range": 2.1,
+   "ranged": false,
+   "r": 0.6,
+   "tower": 3.3,
+   "core": 5.8
+  },
+  "moko": {
+   "range": 7.5,
+   "ranged": true,
+   "r": 0.6,
+   "tower": 9.4,
+   "core": 11.9
+  },
+  "gorran": {
+   "range": 2.4,
+   "ranged": false,
+   "r": 0.6,
+   "tower": 3.6,
+   "core": 6.1
+  },
+  "torg": {
+   "range": 3.4,
+   "ranged": false,
+   "r": 0.6,
+   "tower": 4.6,
+   "core": 7.1
+  },
+  "osen": {
+   "range": 8.5,
+   "ranged": true,
+   "r": 0.6,
+   "tower": 10.4,
+   "core": 12.9
+  }
+ },
+ "towerHitsHero": {
+  "new": 12.09,
+  "old": 10.1
+ },
+ "coreHitsHero": {
+  "new": 14.58,
+  "old": 10.6
+ }
+}

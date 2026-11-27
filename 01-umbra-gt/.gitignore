@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.snaps/
+.DS_Store
+*.blend1
+.wrangler/
+.claude/
+# 宣传片成片、封面和宣传图不进仓库（可以用 promo/ 里的脚本重新生成）
+promo/umbra-gt-promo.mp4
+promo/work/
+promo/*.jpg
+promo/*.png

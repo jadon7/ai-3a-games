@@ -1,0 +1,7 @@
+[打开沉月会水晶模型](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/out/core_me.glb>) · [查看设计图与成品对照](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/out/compare.jpg>)
+
+按左案建成了八片青铜肋、六段悬浮石环和四根灯柱。模型高 **12.82 米**，共 **88,794 个三角形**，低于 90,000 上限。游戏预览页已完成六版对照、五次修改。重跑脚本得到的 GLB 与交付文件逐字节一致。
+
+默认游戏镜头会裁掉晶尖。全貌图保持 24 米距离和 56 度俯角，将注视点抬高到 4.85 米，可以同时看到晶尖和四根灯柱。[游戏全貌](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/out/rounds/r6_game_full.jpg>) · [默认游戏镜头](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/out/preview_game.jpg>) · [近景](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/out/preview_close.jpg>)
+
+与设计图相比，游戏里的青铜更暗，主晶内部的通透层次较少。[建模脚本](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/build.py>) · [尺寸与逐轮修改记录](</Users/jadon7/Documents/SynologyDrive/code/moba/lab/kit/core_me/out/NOTES.md>)

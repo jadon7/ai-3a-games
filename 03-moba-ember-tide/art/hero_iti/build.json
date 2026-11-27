@@ -1,0 +1,143 @@
+{
+ "name": "iti",
+ "raw": "art/hero_iti/tripo_rigged.glb",
+ "rigged": "art/hero_iti/iti_rigged.glb",
+ "out": "art/hero_iti/check/game.glb",
+ "packed": "art/hero_iti/check/packed.glb",
+ "pose_out": "art/hero_iti/stance.npz",
+ "tex": 2048,
+ "weapon_tex": 256,
+ "body_material": "hero_b",
+ "palm_by_hand": true,
+ "gear": [
+  {
+   "type": "script",
+   "path": "art/hero_iti/gear.py",
+   "func": "make_blade",
+   "side": "Right",
+   "name": "blade_R"
+  },
+  {
+   "type": "script",
+   "path": "art/hero_iti/gear.py",
+   "func": "make_blade",
+   "side": "Left",
+   "name": "blade_L"
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.02,
+    -0.075
+   ],
+   "yaw": -12,
+   "lean": 10,
+   "roll": 0
+  },
+  "spine": [
+   [
+    4,
+    -3
+   ],
+   [
+    4,
+    -4
+   ],
+   [
+    3,
+    -4
+   ]
+  ],
+  "head": {
+   "yaw": 14,
+   "pitch": -4
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.17,
+     -0.12,
+     0.062
+    ],
+    "pole": [
+     0.3,
+     -1,
+     0
+    ],
+    "toe": 14
+   },
+   "Right": {
+    "ankle": [
+     -0.18,
+     0.11,
+     0.062
+    ],
+    "pole": [
+     -0.45,
+     -0.9,
+     0
+    ],
+    "toe": -34
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.19,
+     -0.22,
+     0.58
+    ],
+    "pole": [
+     0.8,
+     0.6,
+     -0.3
+    ],
+    "blade": [
+     -0.45,
+     -0.2,
+     1
+    ],
+    "shrug": 2
+   },
+   "Right": {
+    "wrist": [
+     -0.21,
+     -0.15,
+     0.54
+    ],
+    "pole": [
+     -0.8,
+     0.6,
+     -0.3
+    ],
+    "blade": [
+     0.45,
+     -0.2,
+     1
+    ],
+    "shrug": 0
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.004,
+   "chest": 1.2,
+   "shoulder": 1.0,
+   "hand": 0.005
+  }
+ },
+ "motions": {
+  "idle": "art/hero_iti/motions/idle.npz",
+  "run": "art/hero_iti/motions/run_s.npz",
+  "attack1": "art/hero_iti/motions/attack1.npz",
+  "attack2": "art/hero_iti/motions/attack2.npz",
+  "q": "art/hero_iti/motions/q.npz",
+  "q3": "art/hero_iti/motions/q3.npz",
+  "w": "art/hero_iti/motions/w.npz",
+  "e": "art/hero_iti/motions/e.npz",
+  "r": "art/hero_iti/motions/r.npz",
+  "death": "art/hero_iti/motions/death.npz"
+ }
+}

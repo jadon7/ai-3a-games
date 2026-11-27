@@ -1,0 +1,4 @@
+[
+ {"name": "clutter_c", "image": "concepts/props/clutter_c.png", "face_limit": 5000},
+ {"name": "clutter_m", "image": "concepts/props/clutter_m.png", "face_limit": 5000}
+]

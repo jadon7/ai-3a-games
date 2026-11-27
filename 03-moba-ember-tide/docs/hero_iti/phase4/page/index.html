@@ -1,0 +1,237 @@
+<meta charset="utf-8">
+<title>伊缇 · 绯刃 第四阶段</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* 布局：新刺客伊缇第四阶段（整个英雄进游戏）的确认页。沿用第二、三阶段确认页的字体、版式和绯红强调色。
+   顶部说明 → 要你定的 → 真实 5v5 团战里的大招 → 测试场里每个技能 → 游戏里一整套 → 技能和数值 → 我验收时改的 → 还不够好的 → 帧率 → 花费 */
+:root{
+  --bg:#f3f1f4; --surface:#ffffff; --surface-2:#e8e3ea; --fg:#1c1320; --muted:#625868; --line:#d8d0db;
+  --blade:#c4103a; --ember:#a8730f; --ok:#1d7a4a; --shot:#0d0a10;
+  --display:"ZCOOL QingKe HuangYou","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --util:"Chakra Petch","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#141017; --surface:#1d1722; --surface-2:#2a2130; --fg:#f1ebf3; --muted:#a99fae; --line:#3a2f40; --blade:#ff4d73; --ember:#f2c35a; --ok:#5bd08f; --shot:#07050a; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#141017; --surface:#1d1722; --surface-2:#2a2130; --fg:#f1ebf3; --muted:#a99fae; --line:#3a2f40; --blade:#ff4d73; --ember:#f2c35a; --ok:#5bd08f; --shot:#07050a; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--blade);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:52px}
+.eyebrow{margin:0;font:600 13px/1 var(--util);letter-spacing:.14em;color:var(--blade)}
+h1{margin:10px 0 0;font:400 clamp(40px,7vw,68px)/1.05 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lede{margin:14px 0 0;max-width:52em;color:var(--muted);font-size:16px}
+.lede q{color:var(--fg)}
+h2{margin:0 0 6px;font:400 28px/1.2 var(--display);letter-spacing:.02em;text-wrap:balance}
+.note{margin:0 0 16px;color:var(--muted);font-size:14px;max-width:58em}
+code{font:500 13px var(--util);background:var(--surface-2);padding:1px 6px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stack{display:flex;flex-direction:column;gap:14px}
+figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+figure img,figure video{display:block;width:100%;max-width:100%;height:auto;background:var(--shot)}
+figure video{aspect-ratio:16/9}
+figcaption{font-size:13px;line-height:1.6;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.tag{font:600 11.5px/1 var(--util);letter-spacing:.08em;padding:3px 6px;border:1px solid var(--blade);color:var(--blade);white-space:nowrap}
+.tag.dim{border-color:var(--line);color:var(--muted)}
+.speed{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 14px;font-size:13px;color:var(--muted)}
+.speed button{font:600 13px/1 var(--util);letter-spacing:.04em;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.speed button[aria-pressed="true"]{border-color:var(--blade);color:var(--blade)}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-family:var(--util)}
+td.k{white-space:nowrap}
+td.k img{width:40px;height:40px;display:block;margin-bottom:4px}
+td b{color:var(--blade);font-weight:700}
+.decide{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--blade);padding:18px 20px;display:flex;flex-direction:column;gap:10px;max-width:60em}
+.decide h3{margin:0;font:700 17px/1.4 var(--body)}
+.decide p{margin:0;font-size:14.5px;line-height:1.75;color:var(--muted)}
+.decide ul{margin:0;padding-left:1.2em;font-size:14.5px;line-height:1.75;display:flex;flex-direction:column;gap:2px}
+.decide .opt{border-top:1px dashed var(--line);padding-top:10px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.cols section{min-width:0}
+.cols h3{margin:0 0 8px;font:700 15px/1.4 var(--body)}
+.cols ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.7}
+.cols li span{color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.nums div{background:var(--surface);border:1px solid var(--line);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.nums b{font:600 26px/1.2 var(--util);font-variant-numeric:tabular-nums}
+.nums b small{font-size:14px;font-weight:500;color:var(--muted);margin-left:4px}
+.nums span{font-size:13px;color:var(--muted)}
+.kit{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:start}
+.kit .icons{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.kit .icons figure{width:64px}
+.kit .icons img{width:64px;height:64px;background:none}
+.kit .icons figcaption{justify-content:center;font:600 12px/1 var(--util)}
+.fixes{display:flex;flex-direction:column;gap:14px;max-width:62em}
+.fixes div{border-left:3px solid var(--blade);padding:2px 0 2px 14px}
+.fixes b{display:block;font-weight:700}
+.fixes p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){ .row,.row.three{grid-template-columns:minmax(0,1fr)} .kit{grid-template-columns:minmax(0,1fr)} .wrap{padding-block:24px 56px;gap:40px} }
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">烬与潮 · 新刺客 · 伊缇 · 绯刃</p>
+  <h1>第四阶段确认</h1>
+  <p class="lede">上一次你说：<q>特效我希望再夸张一些，光效更多，范围更大……效果也可以完全跳脱出来</q>，数值也可以更夸张。这一阶段把伊缇整个做进了游戏：选人界面能选、电脑会用她，四个技能加被动都写成真的技能，特效由 Fable 5.2（xhigh）做成屏幕级演出并接进对局，另外有她专属的音效、海报、头像和技能图标。下面的录像全是游戏里实录的。</p>
+</header>
+
+<section>
+  <h2>要你定的</h2>
+  <div class="decide">
+    <h3>这一版能过的话，伊缇就算做完了</h3>
+    <ul>
+      <li>五个技能全部按设计做出来，三段 Q 和两段 W 能连按，技能栏上显示第几段、窗口还剩多久</li>
+      <li>大招是屏幕级演出：上方横幅切进眼部特写，整个世界压成绯黑，八刀织成刀网，绯月升起，镜头推近；两帧白底黑影的打击帧之后，屏幕沿 X 形斩开，十字新月炸到范围边上</li>
+      <li>真实 5v5 团战里能用：迷雾里的伊缇放大招，看不见的一方不会被压暗，也不会顿帧</li>
+      <li>数值往夸张了定：11 级一套秒满血法师和射手，坦克要两套</li>
+    </ul>
+    <p class="opt"><b>还有一处，我先按自己的判断做了，你可以改：</b>大招压暗时，别的英雄的特效没有跟着暗，团战里蓝色水罩、橙色火圈会和绯红抢一点戏。要压它们，人物会跟着暗一截，就不是现在“只留人亮着”的样子，所以我没做。你要是想让她更独占画面，我再加。</p>
+  </div>
+</section>
+
+<section>
+  <h2>真实 5v5 团战里的大招</h2>
+  <p class="note">十个人都是 12 级，挪到中路以后电脑自己打，伊缇的技能由脚本按顺序放；录像期间她的血量锁在六成以上，免得连招没放完人先倒了。游戏镜头，HUD 全开。这一遍大招打中了卡兹、乌戈和托尔格三个英雄。</p>
+  <div class="speed" role="group" aria-label="播放速度">
+    <span>实录的几条</span>
+    <button type="button" data-rate="1" aria-pressed="true">原速</button>
+    <button type="button" data-rate="0.5" aria-pressed="false">半速</button>
+  </div>
+  <div class="row">
+    <figure><video src="vid/team.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag">团战 原速</span>一套连招接大招，9 秒。</figcaption></figure>
+    <figure><video src="vid/team_slow.mp4" muted loop playsinline autoplay preload="auto"></video><figcaption><span class="tag dim">慢放 4 倍</span>同一场团战的大招那一段，逐帧渲染出来的慢放（不受上面按钮影响）。</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>测试场里每个技能</h2>
+  <p class="note">假人和几个小兵站在河道边，背景是最亮的草地和石板，在这种地面上最难做出质感。大招、连招、Q 这三条是我改完地上的焦痕以后重录的。</p>
+  <div class="stack">
+    <div class="row">
+      <figure><video src="vid/r.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag">R 绯月千刃</span>切进眼部特写、压暗、八刀、绯月和镜头推近、打击帧、X 斩开、十字新月。地上留下的裂纹慢慢冷成浅褐色。</figcaption></figure>
+      <figure><video src="vid/combo.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag">连招</span>E 闪到身后，接三段 Q，最后接大招。</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="vid/q.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag">Q 三叠斩</span>前两段低身冲 6 米，砍穿路上的人；第三段翻身跃起砸地，5 米范围内减速。</figcaption></figure>
+      <figure><video src="vid/w.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag">W 残焰</span>原地留下残影，自己往前冲；再按一次和残影换位，残影在她刚才站的地方炸开。</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="vid/e.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag">E 影步 · 穿心</span>闪到目标身后反手一刺，目标 3 秒内多受 25% 伤害。</figcaption></figure>
+      <figure><video src="vid/a.mp4" muted loop playsinline autoplay preload="auto" data-speed></video><figcaption><span class="tag dim">普攻</span>两下一组，第二下双刀交叉。</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>游戏里一整套</h2>
+  <div class="kit">
+    <div>
+      <figure><img src="img/splash.webp" alt="伊缇的竖版海报：银白短发、绯红长围巾、双持反握直刃" loading="lazy"><figcaption><span class="tag dim">海报</span>选人和载入画面用的竖版图。</figcaption></figure>
+      <div class="icons">
+        <figure><img src="img/sk_p.webp" alt="被动烬痕图标"><figcaption>被动</figcaption></figure>
+        <figure><img src="img/sk_q.webp" alt="Q 三叠斩图标"><figcaption>Q</figcaption></figure>
+        <figure><img src="img/sk_w.webp" alt="W 残焰图标"><figcaption>W</figcaption></figure>
+        <figure><img src="img/sk_e.webp" alt="E 影步穿心图标"><figcaption>E</figcaption></figure>
+        <figure><img src="img/sk_r.webp" alt="R 绯月千刃图标"><figcaption>R</figcaption></figure>
+      </div>
+    </div>
+    <div class="stack">
+      <figure><img src="img/flow.jpg" alt="主菜单、选人界面选中伊缇、载入画面、进入对局后的技能栏四张截图" loading="lazy"><figcaption><span class="tag dim">从开局到对局</span>主菜单 → 选人（中单第三个，难度 3 颗星）→ 载入画面 → 对局里的技能栏。这是我合并以后用脚本真点了一遍截下来的。</figcaption></figure>
+      <figure><img src="img/fog.jpg" alt="对面伊缇在迷雾里放大招时，自己这边画面不被压暗的对照图" loading="lazy"><figcaption><span class="tag dim">只给看得见的</span>对面的伊缇在迷雾里放大招，自己这边没有压暗、切入和打击帧，特效也被迷雾藏住；走到看得见的地方再放，全套都有。</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>技能和数值</h2>
+  <p class="note">伤害都是物理伤害，按“基础 + 攻击力加成”算，等级越高越疼。英雄本身：3300 血、170 攻击、28 护甲、移速 6.1、攻速 1.2、攻击距离 2.2。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>技能</th><th>做什么</th><th>范围</th><th>冷却</th></tr></thead>
+    <tbody>
+      <tr><td class="k"><img src="img/sk_p.webp" alt="">被动 烬痕</td><td>技能打中英雄叠一层，最多 3 层；叠满那一下引爆，额外打出目标<b>已损失生命的 15%</b>。参与击杀以后 Q 立刻回满，R 剩下的冷却减 30%。</td><td class="n">—</td><td class="n">5 秒内叠满</td></tr>
+      <tr><td class="k"><img src="img/sk_q.webp" alt="">Q 三叠斩</td><td>5 秒内能放三段：一、二段冲 6 米砍穿路上的人；第三段跃起砸地，<b>减速 50%</b>。打中英雄的话，下一段一落地就能接。</td><td class="n">6 / 6 / 7 米<br>砸地 5 米</td><td class="n">7 秒</td></tr>
+      <tr><td class="k"><img src="img/sk_w.webp" alt="">W 残焰</td><td>留下残影，自己冲出去；5 秒内再按一次和残影换位，残影炸开。</td><td class="n">冲 7 米<br>炸 5 米</td><td class="n">12 秒</td></tr>
+      <tr><td class="k"><img src="img/sk_e.webp" alt="">E 影步 · 穿心</td><td>闪到目标身后一刺，目标 3 秒内<b>多受 25% 伤害</b>；目标已有 2 层烬痕时直接引爆。</td><td class="n">10 米</td><td class="n">8 秒</td></tr>
+      <tr><td class="k"><img src="img/sk_r.webp" alt="">R 绯月千刃</td><td>跃起消失、<b>不能被选中</b>，在范围里的敌人之间闪砍 8 刀（先砍英雄、先砍血少的）；落回中心放十字新月斩，额外打出<b>已损失生命的 25%</b>，中心 4 米内再多 30%。</td><td class="n">施放 14 米<br>范围 11 米</td><td class="n">45 秒</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:14px">全电脑对局里，有她的那一队六局全赢，比同阵容快 1.5～3.5 分钟结束；她一局 7～13 杀，伤害大约是同位置老英雄的两倍。作为对外演示的英雄，我按偏强保留了。</p>
+</section>
+
+<section>
+  <h2>我验收时另外改的</h2>
+  <div class="fixes">
+    <div><b>大招会被眩晕打断</b><p>特效那边录团战时，有一遍砍到第五、六刀就停了，没有十字新月。我查到的原因是：她不能被选中，但有的技能先记下目标、过一会儿再生效，眩晕照样落到她身上，就把大招打断了。现在定成跟 LoL 一样：不能被选中的时候，眩晕、定身、沉默、减速、嘲讽、击退、拉拽一律不吃，岚的大招也一样。实测在大招中途强行给她上眩晕、击退、减速、嘲讽，八刀和十字新月都完整放完。</p></div>
+    <div><b>音效比老英雄响太多</b><p>我接了分析器量响度：她 Q 第三段的峰值比别的英雄大招还高 5 分贝左右。我把砸地、引爆、收尾几声调小了：现在大招比别的英雄的大招略响一点，小技能和别人的大招差不多。</p></div>
+    <div><b>地上的焦痕像一根黑棍子</b><p>Q 冲过去以后，地上的刀痕冷却后是一根两头尖、完全不透明的暗褐线，在亮地面上看着像一根黑棍子横在地上；大招收尾时，河面上的裂纹也是一张黑网。现在冷下来以后边缘变软，只把地面压暗四成左右，然后淡掉。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>还不够好的</h2>
+  <div class="cols">
+    <section>
+      <h3>没验证到的</h3>
+      <ul>
+        <li>音效没人用耳朵听过。<span>测试用的浏览器不出声，我只量了响度。15 种合成音的音色、叠在一起吵不吵，要你开一局听一下。</span></li>
+        <li>没有真人手操打过一整局，也没上过真手机。</li>
+        <li>两个伊缇同时放大招没试过。<span>正常排阵容一局只会有一个伊缇。</span></li>
+      </ul>
+    </section>
+    <section>
+      <h3>看得出来的小毛病</h3>
+      <ul>
+        <li>只砍一个人时，刀网缩成一团。<span>八刀都穿过同一个人，线交在一点上；范围里有好几个英雄时才是一张网。</span></li>
+        <li>大招期间，左下角的头像框是一块红底。<span>人藏起来以后头像画不出来，是技能代码藏人的做法带来的。</span></li>
+        <li>老英雄的镜头抖动有一点变化。<span>顿帧期间镜头现在也在抖（以前是跟着停住），葛隆 Q 的最大抖动从 0.15 米变成 0.22 米。我看着更利落，但这是手感，你亲手试一下葛隆的 Q 最准。</span></li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+<section>
+  <h2>帧率</h2>
+  <p class="note">数字是每帧花多少毫秒（中位数），越小越好，16.7 毫秒以内就是 60 帧。量的时候另一个会话的 Blender 一直占着显卡，所以只能当相对参考。</p>
+  <div class="nums">
+    <div><b>3.4 → 5.8<small>毫秒</small></b><span>电脑档：团战里伊缇不放技能 → 放大招压暗时</span></div>
+    <div><b>3.7 → 5.1<small>毫秒</small></b><span>手机档：同上，十字新月那一下最慢一帧 49 毫秒</span></div>
+    <div><b>272</b><span>绘制次数最高（电脑档），不放技能时 142～190</span></div>
+    <div><b>439</b><span>同时在画的粒子最多（电脑档），手机档 220</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>花费</h2>
+  <div class="nums">
+    <div><b>148</b><span>即梦积分（海报、头像、技能图标 122，特效贴图 26），余 4650</span></div>
+    <div><b>0</b><span>Tripo 积分（这一阶段没动模型）</span></div>
+    <div><b>0</b><span>Codex 次数</span></div>
+  </div>
+</section>
+
+<p class="foot" id="foot">技能代码、海报图标、特效三个分支都已合进 <code>style-b</code>，加上我验收时改的三处，类型检查通过。改完以后跑了两局全电脑 5v5，都正常打完，没有报错：有伊缇的一局 18 分 34 秒分出胜负，她 12/7/0；有岚的一局 19 分 55 秒结束（岚的大招也受“不能被选中时不吃控制”这条影响）。点击和触屏测试是特效那边在合并前的最终代码上跑的，结果和改之前一致。没有发布到线上，线上还是厚涂版。</p>
+</div>
+<script>
+(function(){
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-speed]'));
+  var all = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.speed button'));
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var r = parseFloat(b.getAttribute('data-rate'));
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      vids.forEach(function(v){ v.playbackRate = r; v.defaultPlaybackRate = r; });
+    });
+  });
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    all.forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls',''); });
+  }
+})();
+</script>

@@ -1,0 +1,203 @@
+{
+ "name": "lingshuang",
+ "raw": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/video2rig/assets/model/lingshuang_rigged.glb",
+ "out": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/game.glb",
+ "packed": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/public/assets/fighters/lingshuang/lingshuang.glb",
+ "pose_out": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/stance.npz",
+ "body_material": "lingshuang",
+ "tex": 4096,
+ "weapon_tex": 2048,
+ "palm_by_hand": true,
+ "grip": {
+  "Right": 1.0,
+  "Left": 0.35
+ },
+ "motion_grip": {
+  "idle_pose": {
+   "Left": {
+    "Index": 0,
+    "Middle": 0,
+    "Ring": 1,
+    "Pinky": 1,
+    "Thumb": 0.9,
+    "Together": [
+     "Index",
+     "Middle"
+    ]
+   }
+  }
+ },
+ "motions": {
+  "idle": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/idle.npz",
+  "walk_f": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/walk_f.npz",
+  "walk_b": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/walk_b.npz",
+  "light1": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/light1.npz",
+  "light2": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/light2.npz",
+  "heavy": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/heavy.npz",
+  "block": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/block.npz",
+  "jump": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/jump.npz",
+  "light3": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/light3.npz",
+  "lunge": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/lunge.npz",
+  "launcher": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/launcher.npz",
+  "sweep": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/sweep.npz",
+  "air": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/air.npz",
+  "grab": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/grab.npz",
+  "sp1": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/sp1.npz",
+  "sp2": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/sp2.npz",
+  "sp3": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/sp3.npz",
+  "ult_start": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/ult_start.npz",
+  "ult_combo": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/ult_combo.npz",
+  "win": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/win.npz",
+  "intro": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/motions/intro.npz"
+ },
+ "gear": [
+  {
+   "type": "script",
+   "path": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/gear.py",
+   "func": "make_sword",
+   "side": "Right",
+   "name": "weapon"
+  }
+ ],
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.02,
+    -0.05
+   ],
+   "yaw": -52,
+   "lean": 4,
+   "roll": 0
+  },
+  "spine": [
+   [
+    2,
+    -8
+   ],
+   [
+    2,
+    -7
+   ],
+   [
+    1,
+    -5
+   ]
+  ],
+  "head": {
+   "yaw": 55,
+   "pitch": 4
+  },
+  "legs": {
+   "Left": {
+    "ankle": [
+     0.05,
+     -0.13,
+     0.062
+    ],
+    "pole": [
+     0.3,
+     -1,
+     0
+    ],
+    "toe": 15
+   },
+   "Right": {
+    "ankle": [
+     -0.08,
+     0.12,
+     0.062
+    ],
+    "pole": [
+     -0.6,
+     -0.8,
+     0
+    ],
+    "toe": -55
+   }
+  },
+  "arms": {
+   "Left": {
+    "wrist": [
+     0.0,
+     -0.17,
+     0.66
+    ],
+    "pole": [
+     0.6,
+     0.2,
+     -1
+    ],
+    "blade": [
+     0,
+     1,
+     0.2
+    ],
+    "edge": [
+     0,
+     0,
+     1
+    ],
+    "shrug": 0
+   },
+   "Right": {
+    "wrist": [
+     -0.17,
+     0.07,
+     0.47
+    ],
+    "pole": [
+     -0.5,
+     0.7,
+     0
+    ],
+    "blade": [
+     -0.12,
+     -0.31,
+     -0.38
+    ],
+    "edge": [
+     0,
+     0.3,
+     -1
+    ],
+    "shrug": -4
+   }
+  },
+  "breath": {
+   "frames": 90,
+   "hips": 0.004,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.003
+  }
+ },
+ "pony": {
+  "y": 0.085,
+  "z": 0.72
+ },
+ "phys_out": "/Users/jadon7/Documents/SynologyDrive/code/fighting-game/art/fighter/lingshuang/game_phys.glb",
+ "aim": {
+  "lunge": [
+   [
+    17,
+    39,
+    "forearm",
+    5
+   ]
+  ],
+  "sp3": [
+   [
+    57,
+    90,
+    [
+     0,
+     -0.15,
+     -1
+    ],
+    6
+   ]
+  ]
+ }
+}

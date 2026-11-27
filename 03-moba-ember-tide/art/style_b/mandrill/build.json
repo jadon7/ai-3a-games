@@ -1,0 +1,119 @@
+{
+ "name": "mandrill",
+ "raw": "art/style_b/mandrill/tripo_rigged.glb",
+ "rigged": "/Users/jadon7/Documents/SynologyDrive/code/moba/.claude/worktrees/w-unit/art/style_b/mandrill/mandrill_b_rigged.glb",
+ "out": "art/style_b/mandrill/check/game.glb",
+ "packed": "art/style_b/mandrill/check/packed.glb",
+ "tex": 1024,
+ "body_material": "unit_b",
+ "palm_by_hand": true,
+ "grip": {
+  "Left": null,
+  "Right": null
+ },
+ "stance": {
+  "hips": {
+   "offset": [
+    0,
+    0.005,
+    -0.025
+   ],
+   "yaw": -6,
+   "lean": 3
+  },
+  "spine": [
+   [
+    3,
+    -2
+   ],
+   [
+    3,
+    -2
+   ],
+   [
+    2,
+    -2
+   ]
+  ],
+  "head": {
+   "yaw": 10,
+   "pitch": 3
+  },
+  "legs": {
+   "Left": {
+    "offset": [
+     0.015,
+     -0.06,
+     0
+    ],
+    "pole": [
+     0.2,
+     -1,
+     0
+    ],
+    "toe": 8
+   },
+   "Right": {
+    "offset": [
+     -0.02,
+     0.05,
+     0
+    ],
+    "pole": [
+     -0.4,
+     -0.9,
+     0
+    ],
+    "toe": -22
+   }
+  },
+  "arms": {
+   "Left": {
+    "dir": [
+     -0.25,
+     -0.75,
+     -0.6
+    ],
+    "reach": 0.72,
+    "pole": [
+     0.9,
+     0.3,
+     -0.4
+    ],
+    "blade": [
+     -0.6,
+     -0.5,
+     0.6
+    ],
+    "shrug": 2
+   },
+   "Right": {
+    "dir": [
+     -0.35,
+     -0.3,
+     -0.9
+    ],
+    "reach": 0.85,
+    "pole": [
+     -0.9,
+     0.5,
+     0.1
+    ],
+    "blade": [
+     -0.15,
+     -0.8,
+     0.55
+    ]
+   }
+  },
+  "breath": {
+   "frames": 96,
+   "hips": 0.003,
+   "chest": 1.0,
+   "shoulder": 0.8,
+   "hand": 0.004
+  }
+ },
+ "motions": {},
+ "_note": "野怪原来走 creature_build.sh（V2R 的 .blend）；B 的新模型是 Tripo 的人形绑骨（Mixamo 骨骼名，和旧的一样），所以照小兵、英雄走 hero_build.sh：站姿 stance 借近战兵的，只用来出垫底的 idle_pose（游戏里有 idle 就不用它）；grip 写 null，手指跟着动作走，不握拳"
+}

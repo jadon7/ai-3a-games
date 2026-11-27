@@ -1,0 +1,34 @@
+== e_aerial
+{"out":"docs/trailer/raw/e_aerial.mp4","ok":true,"rep":{},"errors":[]}
+== e_tide
+{"out":"docs/trailer/raw/e_tide.mp4","ok":true,"rep":{},"errors":[]}
+== e_ember
+{"out":"docs/trailer/raw/e_ember.mp4","ok":true,"rep":{},"errors":[]}
+== e_river
+{"out":"docs/trailer/raw/e_river.mp4","ok":true,"rep":{},"errors":[]}
+== e_coreT
+{"out":"docs/trailer/raw/e_coreT.mp4","ok":true,"rep":{},"errors":[]}
+== e_coreE
+{"out":"docs/trailer/raw/e_coreE.mp4","ok":true,"rep":{},"errors":[]}
+== h0
+{"out":"docs/trailer/raw/h0.mp4","ok":true,"rep":{"t":99,"over":0,"kills":[1,2],"towers":[9,9],"lanes":"333 对 333","order":["-","-"],"camps":12,"boss":["troll 还有201秒","beast 还有51秒"],"buff":[[0,0],[0,0]],"heroes":["lan L2 17% 0/1/0 金311 装0 刀3 线0 [清兵] 跟兵线51 打12 清兵12 阵亡9 等兵6 守5","vero* L3 41% 1/0/0 金603 装0 刀3 线1 [跟兵线] 跟兵线65 打18 清
+== h1
+{"out":"docs/trailer/raw/h1.mp4","ok":true,"rep":{"t":325,"over":0,"kills":[2,4],"towers":[9,8],"lanes":"333 对 233","order":["push","push"],"camps":12,"boss":["troll100%","beast100%"],"buff":[[0,0],[0,0]],"heroes":["lan L6 100% 0/1/2 金499 装2 刀6 线0 [跟兵线] 跟兵线136 清兵39 回城27 打26 在出生点回血24 逃跑22","torg L8 100% 2/0/0 金349 装2 刀8 线1 [跟兵线] 跟兵�
+== h2
+{"out":"docs/trailer/raw/h2.mp4","ok":true,"rep":{"t":547,"over":0,"kills":[3,13],"towers":[9,7],"lanes":"333 对 133","order":["push","boss"],"camps":12,"boss":["troll18%","beast 还有146秒"],"buff":[[96,0],[0,0]],"heroes":["lan L10 100% 0/5/3 金889 装3 刀17 线0 [跟兵线] 跟兵线236 阵亡83 清兵67 打52 拆塔19 回防16","vero* L12 30% 4/1/5 金107 装5 刀14 线1 [在出生点回�
+== h_end
+{"out":"docs/trailer/raw/h_end.mp4","ok":true,"rep":{"t":748,"over":0,"kills":[2,23],"towers":[1,8],"lanes":"010 对 233","order":["push","boss"],"camps":12,"boss":["troll65%","beast 还有141秒"],"buff":[[0,91],[0,0]],"heroes":["lan L10 64% 0/11/1 金981 装3 刀24 线0 [打 gorran] 跟兵线251 阵亡179 清兵107 打55 吃亏，后撤23 回防23","gorran* L15 77% 9/0/13 金5235 装6 刀42 线0
+== s_lan
+{"out":"docs/trailer/raw/s_lan.mp4","ok":true,"rep":{"t":24,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有276秒","beast 还有126秒"],"buff":[[0,0],[0,0]],"heroes":["lan L15 100% 0/0/0 金124 装0 刀2 [玩家]","torg* L1 100% 0/0/0 金48 装0 刀0 [玩家]","moko L1 49% 0/0/0 金48 装0 刀0 [玩家]"]},"errors":[]}
+== s_torg
+{"out":"docs/trailer/raw/s_torg.mp4","ok":true,"rep":{"t":24,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有276秒","beast 还有126秒"],"buff":[[0,0],[0,0]],"heroes":["torg L15 100% 0/0/0 金396 装0 刀10 [玩家]","lan* L1 29% 0/0/0 金48 装0 刀0 [玩家]","moko L3 53% 0/0/0 金48 装0 刀0 [玩家]"]},"errors":[]}
+== s_moko
+{"out":"docs/trailer/raw/s_moko.mp4","ok":true,"rep":{"t":24,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有276秒","beast 还有126秒"],"buff":[[0,0],[0,0]],"heroes":["moko L15 100% 0/0/0 金124 装0 刀2 [玩家]","lan* L1 89% 0/0/0 金48 装0 刀0 [玩家]","torg L1 60% 0/0/0 金48 装0 刀0 [玩家]"]},"errors":[]}
+== s_gorran
+{"out":"docs/trailer/raw/s_gorran.mp4","ok":true,"rep":{"t":24,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有276秒","beast 还有126秒"],"buff":[[0,0],[0,0]],"heroes":["gorran L15 100% 0/0/0 金396 装0 刀10 [玩家]","lan* L1 57% 0/0/0 金48 装0 刀0 [玩家]","torg L3 56% 0/0/0 金48 装0 刀0 [玩家]"]},"errors":[]}
+== s_vero
+{"out":"docs/trailer/raw/s_vero.mp4","ok":true,"rep":{"t":23,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有277秒","beast 还有127秒"],"buff":[[0,0],[0,0]],"heroes":["vero L15 100% 0/0/0 金258 装0 刀6 [玩家]","lan* L1 100% 0/0/0 金46 装0 刀0 [玩家]","torg L3 54% 0/0/0 金46 装0 刀0 [玩家]"]},"errors":[]}
+== s_osen
+{"out":"docs/trailer/raw/s_osen.mp4","ok":true,"rep":{"t":24,"over":0,"kills":[0,0],"towers":[9,9],"lanes":"333 对 333","order":["push","-"],"camps":0,"boss":["troll 还有276秒","beast 还有126秒"],"buff":[[0,0],[0,0]],"heroes":["osen L15 100% 0/0/0 金48 装0 刀0 [玩家]","lan* L1 78% 0/0/0 金48 装0 刀0 [玩家]","torg L1 52% 0/0/0 金48 装0 刀0 [玩家]"]},"errors":[]}
+== m_phone
+{"out":"docs/trailer/raw/m_phone.mp4","ok":true,"rep":{"t":215,"over":0,"kills":[1,2],"towers":[9,9],"lanes":"333 对 333","order":["-","-"],"camps":12,"boss":["troll 还有85秒","beast100%"],"buff":[[0,0],[0,0]],"heroes":["lan L3 54% 0/2/0 金132 装1 刀4 线0 [清兵] 跟兵线105 清兵27 阵亡17 守14 打12 回防12","gorran* L7 98% 2/0/0 金1544 装0 刀15 线0 [打 lan] 跟兵线138 打38

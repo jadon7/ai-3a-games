@@ -1,0 +1,11 @@
+Model Information:
+* title:	M4A1 Assault Rifle - Animated
+* source:	https://sketchfab.com/3d-models/m4a1-assault-rifle-animated-2903881deab0447d9a0410a74f3311f9
+* author:	user77 (https://sketchfab.com/user77)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "M4A1 Assault Rifle - Animated" (https://sketchfab.com/3d-models/m4a1-assault-rifle-animated-2903881deab0447d9a0410a74f3311f9) by user77 (https://sketchfab.com/user77) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
