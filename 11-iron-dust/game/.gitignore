@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# autotest output
+_shots/*.png
+_shots/*.log

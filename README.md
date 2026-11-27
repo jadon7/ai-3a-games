@@ -1,6 +1,6 @@
 # AI 做 3A 大作 · 项目合集
 
-这是抖音「大师的AI小灶」《如何做出自己的第一款3A大作》这期视频里所有项目的代码。每个项目都是和 Claude（Fable 5.2 / Opus 5.5）一起，从零做出来的：网页游戏、CG 短片管线，还有一条给怪物做骨骼动画的 AI 管线。
+01–10 是抖音「大师的AI小灶」《如何做出自己的第一款3A大作》这期视频里项目的代码：网页游戏、CG 短片管线，还有一条给怪物做骨骼动画的 AI 管线；11–14 是按同一套「源码 + 文档 + 小配置」格式收录的后续独立样例。每个项目都是和 Claude（Fable 5.2 / Opus 5.5）一起，从零做出来的。
 
 每个子目录是一个项目，进去先看它自己的 `README.md`。
 
@@ -16,6 +16,10 @@
 | [08-bodycam](08-bodycam/) | BODY CAM · 清剿 | 随身记录仪视角的 CG 枪战短片，加上用同一个厂房做的可玩版 | Blender 脚本 + Python；three.js + three-mesh-bvh | 见目录 README |
 | [09-video2rig](09-video2rig/) | video2rig | 让 AI 视频（即梦 Seedance）拍怪物的动作，再把关节读出来，放回怪物自己的骨架上 | Python（PyTorch / DINOv2 / OpenCV）+ Blender + Tripo | 见目录 README |
 | [10-midnight-sprint](10-midnight-sprint/) | 午夜冲刺 MIDNIGHT SPRINT | 42 秒原创夜景街头赛车 CG 短片，场景、动画、特效、HUD、音频都由脚本生成 | Blender Cycles + Python + ffmpeg | 见目录 README |
+| [11-iron-dust](11-iron-dust/) | 铁尘 IRON DUST | 第三人称重型机甲战术动作：驾驶舱、换装机体、沙漠与轨道战场 | Godot 4.7 + GDScript，Blender 脚本建模 | 见目录 README |
+| [12-blind-tide](12-blind-tide/) | 盲潮 Blind Tide | 声音驱动的恐怖游戏垂直切片：声呐视物、引开潮听者、开井固守 | Godot 4.7 + GDScript，Blender 脚本建模 | 见目录 README |
+| [13-starship-cockpits](13-starship-cockpits/) | 三界座舱 Starship Cockpits | 赛博朋克 / NASA 朋克 / Y2K 三套实时飞船仪表盘 | three.js r170 + WebGL2 | 见目录 README |
+| [14-qingming-menu](14-qingming-menu/) | 青冥劫 · 行者菜单 | 水墨暗金角色菜单：行囊、舆图、卷宗、3D 检视与配伍 | three.js r160 + 原生 JS / CSS | 见目录 README |
 
 ## 这个仓库里有什么，没有什么
 
