@@ -57,3 +57,7 @@ renders_real/
 out/
 output/
 runs/
+
+# 发布版压缩包：例外放行（其余 *.zip 仍然忽略）
+!11-iron-dust/*-win64.zip
+!12-blind-tide/*-win64.zip
